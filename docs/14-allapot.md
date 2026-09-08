@@ -11,9 +11,9 @@
 | Regiszterbeli változó | **905** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1933** |
-| Mag: fájl / sor | 161 / 43898 |
-| Teszt: fájl / sor | 82 / 21190 |
+| Teszt | **1935** |
+| Mag: fájl / sor | 162 / 44017 |
+| Teszt: fájl / sor | 82 / 21234 |
 | Dokumentum | 134 |
 | Regiszterfájl | 139 |
 
@@ -147,6 +147,7 @@ Ami az átvételt megállítja, tételenként:
 | `core/exassist/` | 1 | 355 |
 | `core/szabaly/` | 1 | 333 |
 | `core/eeszt/` | 1 | 317 |
+| `core/hianyzo/` | 2 | 314 |
 | `core/biobank/` | 1 | 303 |
 | `core/fedes/` | 1 | 279 |
 | `core/complaints/` | 2 | 275 |
@@ -158,7 +159,6 @@ Ami az átvételt megállítja, tételenként:
 | `core/anamnezis/` | 1 | 220 |
 | `core/neo/` | 1 | 212 |
 | `core/prom/` | 1 | 200 |
-| `core/hianyzo/` | 1 | 195 |
 | `core/mdr/` | 1 | 185 |
 | `core/jelentes/` | 1 | 167 |
 | `core/log/` | 1 | 161 |

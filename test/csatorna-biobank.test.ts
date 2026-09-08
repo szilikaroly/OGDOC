@@ -228,3 +228,47 @@ test("A TÖBBSÉG NEM FEJLESZTŐI FELADAT — és ez a jegyzék legfontosabb sz�
   assert.equal(x.cimzettNelkul, 0);
   assert.ok(x.blokkolo > 0, "a blokkoló tételeket külön kell látni");
 });
+
+/* ── A GYŰJTÉS EGY HELYEN VAN ────────────────────────────────────────── */
+
+/**
+ * EGY VALÓDI SZÉTCSÚSZÁS UTÁN.
+ *
+ * A modulok hiányait EDDIG két hely gyűjtötte külön másolatban: a validátor és
+ * az artifact-generátor. Ahogy új gyűjtők kerültek a validátorba (soros
+ * profilok, DICOM-oldalkocsi, belgyógyászati aláírások), a bemutató másolata
+ * háromnál maradt: a rendszer 73 tételt mondott, az artifact 51-et. Mindkettő
+ * „a forrásból generált" volt — csak nem ugyanabból.
+ */
+test("a modulhiány-gyűjtés EGYETLEN helyen van definiálva", async () => {
+  const { readFileSync } = await import("node:fs");
+  for (const f of ["tools/validate.ts", "tools/gen-artifact.ts"]) {
+    const src = readFileSync(join(ROOT, f), "utf8");
+    assert.doesNotMatch(src, /MODUL_HIANYOK: ModulHiany\[\] = \[/,
+      `${f} saját másolatot tart a gyűjtésről — ez csúszott szét egyszer már.`);
+    assert.match(src, /modulHianyok\(/, `${f} nem a közös gyűjtőt hívja.`);
+  }
+});
+
+test("a közös gyűjtő minden hiányt jelentő regisztert lefed", async () => {
+  const { modulHianyok } = await import("../core/hianyzo/modulhianyok.ts");
+  const g = modulHianyok((x) => join(ROOT, x));
+  const forrasok = new Set(g.map((x) => x.forras));
+  for (const kell of [
+    "registry/biobank/isber.json",
+    "registry/auth/szolgaltatok.json",
+    "registry/interop/csatornak.json",
+    "registry/interop/soros-profilok.json",
+    "registry/interop/dicom.json",
+    "registry/belgyogyaszat/mwho.json",
+    "registry/belgyogyaszat/kardio-jelek.json",
+    "registry/belgyogyaszat/palliativ.json",
+  ]) {
+    assert.ok(forrasok.has(kell), `hiányzik a gyűjtésből: ${kell}`);
+  }
+  // Minden gyűjtött tételnek van címzettje és legalább egy hiánya.
+  for (const t of g) {
+    assert.ok(t.kinel?.trim(), `${t.id}: nincs címzett`);
+    assert.ok(t.hianyzik.length, `${t.id}: üres hiánylista`);
+  }
+});

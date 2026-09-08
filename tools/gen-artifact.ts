@@ -20,6 +20,7 @@ import { loadCsatornak, merleg as csMerleg, bizalom } from "../core/interop/csat
 import { loadIsber, isberMerleg } from "../core/biobank/minta.ts";
 import { loadHianyok, gyujt, merleg as hMerleg } from "../core/hianyzo/jegyzek.ts";
 import type { ModulHiany } from "../core/hianyzo/jegyzek.ts";
+import { modulHianyok } from "../core/hianyzo/modulhianyok.ts";
 import { loadParameterek, merleg as pMerleg } from "../core/karbantartas/parameter.ts";
 import { loadSzolgaltatok } from "../core/auth/szolgaltato.ts";
 import { loadCsoportok } from "../core/auth/csoport.ts";
@@ -150,23 +151,8 @@ const btk = loadBtk(R("registry/gyermek/beleegyezes-btk.json"));
 const mec = loadMec(R("registry/fogamzas/usmec-2024.json"));
 const helyek = loadHelyek(R("registry/fekvo/helyek.json"));
 
-const MODUL_HIANYOK: ModulHiany[] = [
-  ...isber.tetelek.filter((t) => t.hianyzik.length).map((t) => ({
-    forras: "registry/biobank/isber.json", modul: 22, id: t.id, cim: t.cim,
-    hianyzik: t.hianyzik, kinel: "biobank-vezető", fajta: "dokumentum" as const,
-  })),
-  ...szolgaltatok.szolgaltatok.filter((x) => x.hianyzik.length).map((x) => ({
-    forras: "registry/auth/szolgaltatok.json", modul: 19, id: x.id, cim: x.nev,
-    hianyzik: x.hianyzik, kinel: x.kinel, fajta: "licenc" as const,
-  })),
-  ...csatornak.csatornak.filter((c) => c.allapot !== "mukodik").map((c) => ({
-    forras: "registry/interop/csatornak.json", modul: 8, id: c.id, cim: c.megnevezes,
-    hianyzik: c.allapot === "feltetelreVar"
-      ? ["intézményi integrációs megállapodás és tesztkörnyezet"]
-      : ["a csatorna implementációja"],
-    kinel: "intézményi informatika", fajta: "eszkoz" as const,
-  })),
-];
+const MODUL_HIANYOK: ModulHiany[] = modulHianyok(R);
+
 const hianyMind = gyujt(hianyok, MODUL_HIANYOK);
 
 const mag = sorok(R("core"), [".ts"]);
