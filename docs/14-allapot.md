@@ -14,7 +14,7 @@
 | Teszt | **1939** |
 | Mag: fájl / sor | 162 / 44108 |
 | Teszt: fájl / sor | 82 / 21294 |
-| Dokumentum | 134 |
+| Dokumentum | 135 |
 | Regiszterfájl | 139 |
 
 ## A forrásrendszerek felülettérképe

@@ -16,7 +16,7 @@
     "docs": "node tools/gen-calc-doc.ts > docs/fejlesztes/07-kalkulatorok.md && node tools/gen-field-catalog.ts > docs/fejlesztes/05-mezokatalogus.md && node tools/gen-coverage.ts > docs/fejlesztes/11-lefedettseg.md && node tools/gen-dontes-allokacio.ts > docs/fejlesztes/37-dontes-allokacio.md && node tools/gen-complaint-roster.ts && node tools/gen-drug-roster.ts && node tools/gen-procedure-roster.ts && node tools/gen-allapot.ts > docs/14-allapot.md",
     "docs:check": "node tools/check-generated.ts && node tools/gen-complaint-roster.ts --check && node tools/gen-drug-roster.ts --check && node tools/gen-procedure-roster.ts --check",
     "test:modules": "node --test \"modules/*/teszt/*.test.ts\"",
-    "check": "npm run validate && npm test && npm run test:modules && npm run docs:check",
+    "check": "npm run validate && npm test && npm run test:modules && npm run docs:check && npm run artifact:check",
     "xlsx": "python3 tools/export/felulet_xlsx.py felulet-mezoleltar.xlsx",
     "bench": "node --experimental-strip-types tools/bench.ts",
     "egyeztet": "node --experimental-strip-types tools/mezo-egyeztetes.ts",
@@ -44,6 +44,7 @@
     "ingest:vedono": "python3 tools/ingest/vedono_kerdoiv.py --src forrasok/vedono --out registry/vedono/kerdoivek.json",
     "ingest:vedono-lista": "python3 tools/ingest/vedono_lista.py --src forrasok/vedono/Vedono_ujhonlap.xls --out registry/vedono/helyi/szolgalatok.json",
     "fedes": "node --experimental-strip-types tools/dupla-mezok.ts",
-    "artifact": "node --experimental-strip-types tools/gen-artifact.ts"
+    "artifact": "node --experimental-strip-types tools/gen-artifact.ts",
+    "artifact:check": "node --experimental-strip-types tools/check-artifact.ts"
   }
 }
