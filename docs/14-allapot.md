@@ -11,9 +11,9 @@
 | Regiszterbeli változó | **905** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1935** |
-| Mag: fájl / sor | 162 / 44017 |
-| Teszt: fájl / sor | 82 / 21234 |
+| Teszt | **1939** |
+| Mag: fájl / sor | 162 / 44108 |
+| Teszt: fájl / sor | 82 / 21294 |
 | Dokumentum | 134 |
 | Regiszterfájl | 139 |
 
@@ -108,10 +108,10 @@ Ami az átvételt megállítja, tételenként:
 | `core/us/` | 6 | 2060 |
 | `core/coding/` | 8 | 1872 |
 | `core/store/` | 4 | 1431 |
+| `core/auth/` | 6 | 1423 |
 | `core/szepszis/` | 4 | 1365 |
 | `core/vedono/` | 4 | 1355 |
 | `core/gyermek/` | 4 | 1344 |
-| `core/auth/` | 6 | 1332 |
 | `core/fekvo/` | 6 | 1268 |
 | `core/belgyogyaszat/` | 2 | 1043 |
 | `core/scores/` | 6 | 984 |

@@ -1,3 +1,24 @@
+/* ── A `hidden` ATTRIBÚTUM MINDIG NYER ────────────────────────────────
+ *
+ * EZT EGY BÖNGÉSZŐ TALÁLTA MEG, ÉS EGYETLEN EGYSÉGTESZT SEM TALÁLHATTA VOLNA.
+ *
+ * A `[hidden] { display:none }` a BÖNGÉSZŐ alapstíluslapjában van, azt pedig
+ * BÁRMELYIK szerzői szabály felülírja — az osztályé is. A `.takaro`,
+ * a `.belepo`, a `.langbar` és a `.warn` mind ad `display`-t, tehát az
+ * `el.hidden = true` NEM tüntette el őket.
+ *
+ * A következménye nem apró elcsúszás volt: az adminpanel (`#adminTakaro`,
+ * `position:fixed; inset:0; z-index:50`) `hidden` állapotban is teljes
+ * képernyőn kirajzolódott, ELTAKARTA A BEJELENTKEZŐ ŰRLAPOT, és elnyelte az
+ * összes kattintást. A felület megnyitva használhatatlan volt — miközben a
+ * kiszolgáló HTTP 200-at adott, a mezők ott voltak a DOM-ban, és a
+ * konzolon egyetlen hiba sem jelent meg.
+ *
+ * Ezért áll itt `!important`: a láthatóság kapcsolója nem versenyezhet a
+ * megjelenítési szabályokkal.
+ */
+[hidden] { display: none !important; }
+
 :root {
   color-scheme: light dark;
   --bg: #fbfbfa; --panel: #fff; --ink: #1c1b19; --muted: #6b6862;

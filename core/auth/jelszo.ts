@@ -73,7 +73,9 @@ export type JelszoAllapot =
   /** A felhasználónevet vagy a nevet tartalmazza. */
   | "sajatAdat"
   /** Egyetlen ismétlődő karakter vagy szomszédos sor a billentyűzeten. */
-  | "mintazatos";
+  | "mintazatos"
+  /** Egy rövid egység megismételve — a hossz látszat, a titok az egységé. */
+  | "ismetelt";
 
 export interface JelszoItelet {
   allapot: JelszoAllapot;
@@ -86,6 +88,69 @@ const ekezettelen = (s: string) =>
 
 /** A végén álló számsor levágása: „Tavasz2026” töve „tavasz”. */
 const tő = (s: string) => ekezettelen(s).replace(/[0-9!?.\-_*]+$/u, "");
+
+/**
+ * A LEGRÖVIDEBB EGYSÉG, AMINEK EZ A JELSZÓ AZ ISMÉTLÉSE.
+ *
+ * `null`, ha a jelszó nem tiszta ismétlés. A „jelszojelszo” egysége a
+ * „jelszo”, a „123456123456”-é a „123456”, a „qwertyqwerty”-é a „qwerty”.
+ *
+ * MIÉRT KELL EZ. A szabály — hossz igen, összetettség nem — helyes, de van
+ * egy kiszámítható mellékhatása: akinek van egy hatkarakteres megszokott
+ * jelszava, és tizenkettőt kérünk tőle, azt LEÍRJA KÉTSZER. A tiltólista
+ * viszont csak a teljes szót nézte, ezért a „passwordpassword”, a
+ * „123456123456” és a „qwertyqwerty” mind átment — miközben mindegyik a
+ * kiszivárgott listák legelső soraiban szereplő jelszó, kétszer.
+ *
+ * A megismételt egység nem ad új titkot: aki az egységet kitalálja, a
+ * jelszót is tudja. A hossz itt LÁTSZAT.
+ */
+function ismetlodoEgyseg(s: string): string | null {
+  const t = s.normalize("NFC");
+  for (let h = 1; h <= t.length >> 1; h++) {
+    if (t.length % h !== 0) continue;
+    const e = t.slice(0, h);
+    if (e.repeat(t.length / h) === t) return e;
+  }
+  return null;
+}
+
+/**
+ * A TELJES JELSZÓ EGYETLEN SOROZAT-E — és ha igen, milyen.
+ *
+ * `null`, ha nem az. Ez NEM ismétlés, tehát az `ismetlodoEgyseg()` nem fogja
+ * meg: az „abcdefghijkl” és a „qwertzuiopőú” egyaránt átcsúszna rajta.
+ *
+ * A típus `mintazatos` állapota eddig azt ígérte, hogy „egyetlen ismétlődő
+ * karakter VAGY szomszédos sor a billentyűzeten” — a második fele viszont
+ * sosem készült el, és az elsőt az ismétlésvizsgálat átvette. Ez a függvény
+ * az, ami a doc-komment ígéretét valóban hordozza.
+ */
+const SOROK = [
+  "qwertzuiopőú", "qwertyuiop", "asdfghjkléá", "yxcvbnm", "zxcvbnm",
+  "1234567890", "árvíztűrőtükörfúrógép",
+];
+
+function sorozat(t: string): string | null {
+  if (t.length < 4) return null;
+  // Egybefüggő kódpont-lépés (növekvő vagy csökkenő), pl. „abcdefghijkl”.
+  const k = [...t].map((c) => c.codePointAt(0)!);
+  const lep = k[1] - k[0];
+  if ((lep === 1 || lep === -1) && k.every((x, i) => i === 0 || x - k[i - 1] === lep)) {
+    return lep === 1 ? `növekvő karaktersorozat` : `csökkenő karaktersorozat`;
+  }
+  // Billentyűzetsor egy szakasza, mindkét irányban.
+  // A SOROKAT IS ÉKEZETTELENÍTENI KELL: a hívó `tomor` már ékezettelen, tehát
+  // a „qwertzuiopőú” itt „qwertzuiopou”-ként érkezik, és az ékezetes sorban
+  // nem található meg. Enélkül a magyar billentyűzet felső sora átcsúszott.
+  const vissza = [...t].reverse().join("");
+  for (const s of SOROK) {
+    const e = ekezettelen(s);
+    if (e.includes(t)) return `a(z) „${s}” sor egy szakasza`;
+    if (e.includes(vissza)) return `a(z) „${s}” sor egy szakasza, visszafelé`;
+  }
+  return null;
+}
 
 export function jelszoItelet(
   jelszo: string, sajat: string[] = [],
@@ -105,6 +170,26 @@ export function jelszoItelet(
         `A jelszó ${jelszo.length} karakter, a felső korlát ${HOSSZ_MAX}. A ` +
         `korlát nem biztonsági, hanem szolgáltatásmegtagadás elleni: a scrypt ` +
         `költsége a bemenettel nő.` };
+  }
+  // AZ ISMÉTLÉST A TILTÓLISTA ELŐTT KELL FELBONTANI — különben a lista
+  // megkerülhető azzal, hogy a tiltott szót kétszer írják le.
+  // A szóközöket és az elválasztókat előbb eltüntetjük: a „jelszo jelszo”
+  // ugyanaz a titok, mint a „jelszojelszo”.
+  const tomor = ekezettelen(jelszo).replace(/[\s._\-]+/gu, "");
+  const egyseg = ismetlodoEgyseg(tomor);
+  if (egyseg !== null) {
+    const egysegTő = tő(egyseg);
+    const tiltott = TILTOLISTA.has(egyseg) || TILTOLISTA.has(egysegTő);
+    return { allapot: "ismetelt", megfelel: false,
+      miert:
+        `A jelszó egyetlen ${egyseg.length} karakteres egység ` +
+        `(„${egyseg}”) ${tomor.length / egyseg.length}-szor megismételve` +
+        (tiltott ? `, és ez az egység TILTÓLISTÁN van` : ``) +
+        `. A hossz itt látszat: aki az egységet kitalálja, a jelszót is tudja — ` +
+        `a titok annyi, amennyi az egységben van (${egyseg.length} karakter, a ` +
+        `minimum ${HOSSZ_MIN}).\n\nEz a szabály a hosszkövetelmény kiszámítható ` +
+        `mellékhatása ellen véd: akinek van egy rövid megszokott jelszava, és ` +
+        `tizenkettőt kérünk tőle, azt LEÍRJA KÉTSZER.` };
   }
   const t = tő(jelszo);
   if (TILTOLISTA.has(ekezettelen(jelszo)) || TILTOLISTA.has(t)) {
@@ -134,9 +219,15 @@ export function jelszoItelet(
           `„mintaanna” ugyanaz a titok.` };
     }
   }
-  if (/^(.)\1+$/u.test(jelszo)) {
+  // A SOROZAT NEM ISMÉTLÉS, ezért az előző szabály nem fogja meg.
+  const sor = sorozat(tomor);
+  if (sor) {
     return { allapot: "mintazatos", megfelel: false,
-      miert: `A jelszó egyetlen ismétlődő karakter.` };
+      miert:
+        `A jelszó egyetlen összefüggő sorozat: ${sor}. Ez a hosszkövetelmény ` +
+        `másik kiszámítható mellékhatása — aki tizenkét karaktert kér, gyakran ` +
+        `a billentyűzet egy sorát vagy az ábécé egy szakaszát kapja. A hossz ` +
+        `itt is látszat: a titok annyi, hogy hol kezdődik a sorozat.` };
   }
   return { allapot: "megfelel", megfelel: true,
     miert: `A jelszó megfelel: ${jelszo.length} karakter, nincs tiltólistán.` };

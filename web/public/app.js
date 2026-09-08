@@ -261,7 +261,22 @@ async function send(f, el, row) {
     else el.value = prev == null ? "" : String(prev);
     return;
   }
-  paint(r.view);
+  // A KISZOLGÁLÓ A NÉZETET LAPOSAN ADJA VISSZA — nincs `view` kulcs.
+  //
+  // A `/api/value` válasza `{ ok, ...caseView, entries, basis, affected, seq }`,
+  // a kliens viszont `r.view`-t olvasott. Az `undefined` továbbadva a
+  // `paint()`-nek minden SIKERES íráskor TypeError-t dobott
+  // („Cannot read properties of undefined (reading 'values')”), a kivétel
+  // pedig kifelé szállt a `change` eseménykezelőből.
+  //
+  // A KÖVETKEZMÉNY NEM VOLT LÁTHATÓ, ÉS ÉPP EZÉRT VOLT ROSSZ: az érték
+  // ELMENTŐDÖTT, de a képernyő nem frissült — a keresztfeltöltött és
+  // levezetett mezők üresen maradtak a következő újratöltésig. Egy
+  // regiszter-vezérelt rendszernél, aminek a lényege, hogy egy mező feltölt
+  // egy másikat, pontosan ez a lényeg maradt el, némán.
+  paint(r);
+  $("#entries").textContent = String(r.entries ?? 0);
+  if (r.basis) $("#basis").textContent = r.basis;
   for (const id of r.affected ?? []) {
     const target = document.querySelector(`.field[data-id="${CSS.escape(id)}"]`);
     if (target) { target.classList.remove("flash"); void target.offsetWidth; target.classList.add("flash"); }
@@ -278,6 +293,24 @@ function fill(boxSel, listSel, items, make) {
   for (const it of items) list.append(make(it));
 }
 
+/**
+ * EGY ISO-IDŐBÉLYEG A MEZŐ SAJÁT ALAKJÁRA.
+ *
+ * A `<input type="datetime-local">` NEM fogad el teljes ISO-értéket: a
+ * `2026-09-08T18:50:38.156Z` alakot a böngésző elutasítja, és a mezőt ÜRESEN
+ * hagyja — figyelmeztetéssel a konzolon, amit senki nem néz. A `ctx.now` így
+ * tárolt értékkel is üresnek látszott, vagyis a KÉPERNYŐ ÉS AZ ÁLLAPOT MÁST
+ * MONDOTT ugyanarról. Egy olyan mezőnél, amiből a gesztációs kor számolódik,
+ * ez nem kozmetikai kérdés.
+ */
+function mezoErtek(el, ertek) {
+  const sz = String(ertek);
+  if (el.type === "datetime-local") return sz.slice(0, 16);
+  if (el.type === "date") return sz.slice(0, 10);
+  if (el.type === "time") return sz.length > 8 ? sz.slice(11, 16) : sz.slice(0, 5);
+  return sz;
+}
+
 function paint(view) {
   const byId = new Map(view.values.map((v) => [v.id, v]));
   for (const v of view.values) LAST.set(v.id, v.value);
@@ -287,10 +320,10 @@ function paint(view) {
       if (!el) continue;
       const v = byId.get(f.id);
       if (f.control === "readonly") {
-        el.value = v ? String(v.value) : "";
+        el.value = v ? mezoErtek(el, v.value) : "";
         el.title = v?.formula ?? f.computed?.explain ?? "";
       } else if (v && el.value === "" && f.control !== "checkbox") {
-        el.value = String(v.value);
+        el.value = mezoErtek(el, v.value);
       }
     }
   }

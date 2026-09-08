@@ -533,3 +533,63 @@ test("a visszavonás hatását a KEZELŐORVOS is megnézheti", async () => {
   const r = await kap("/api/torles/visszavonas", K.anna);
   assert.equal(r.status, 200);
 });
+
+/* ── AMIT A BÖNGÉSZŐ TALÁLT MEG ──────────────────────────────────────── */
+
+/**
+ * HÁROM HIBA, AMIT CSAK EGY VALÓDI BÖNGÉSZŐ TALÁLHATOTT MEG.
+ *
+ * Egyik sem adott hibaüzenetet, egyik sem bukott el a kiszolgálón, és
+ * mindhárom a FELÜLETEN okozott kárt: egy takaró, ami nem tűnt el; egy
+ * válaszalak, amiben a kliens rossz kulcsot keresett; és egy időbélyeg,
+ * amit a mező elutasított. A tárolóig egyik sem jutott el — ezért nem
+ * fogta meg őket egyetlen korábbi teszt sem.
+ *
+ * Ezek a tesztek a SZERZŐDÉST rögzítik, amit a felület használ.
+ */
+
+test("az írás válasza LAPOSAN adja a nézetet — nincs `view` kulcs", async () => {
+  // A kliens `paint(r.view)`-t hívott, a kiszolgáló viszont `{ok, ...view}`-t
+  // ad. Az `undefined` minden SIKERES íráskor TypeError-t dobott, és a
+  // keresztfeltöltött mezők üresen maradtak a következő újratöltésig — az
+  // érték közben elmentődött. Néma, és épp ezért rossz.
+  const r = await post("/api/value", K.anna, { id: "anthro.height", value: 168 });
+  assert.equal(r.status, 200);
+  const b = r.body as Record<string, unknown>;
+  assert.equal(b.ok, true);
+  assert.equal(b.view, undefined,
+    "ha ez a kulcs megjelenik, a kliens `paint(r)` hívása némán rossz nézetet kap");
+  assert.ok(Array.isArray(b.values), "a `values` a válasz TETEJÉN kell legyen");
+  assert.ok(Array.isArray(b.visible), "a `visible` a válasz TETEJÉN kell legyen");
+  assert.ok(Array.isArray(b.affected), "az `affected` villantja fel az átszámolt mezőket");
+  assert.equal(typeof b.entries, "number", "a bejegyzésszám a fejlécet frissíti");
+});
+
+test("a levezetett érték MÁR AZ ÍRÁS VÁLASZÁBAN benne van", async () => {
+  // Enélkül a felület csak újratöltés után mutatná a BMI-t — egy
+  // regiszter-vezérelt rendszernél épp a lényeg maradna el.
+  const r = await post("/api/value", K.anna,
+    { id: "anthro.weight.prepregnancy", value: 64 });
+  const ertekek = (r.body as { values: Array<{ id: string; value: unknown }> }).values;
+  const bmi = ertekek.find((v) => v.id === "calc.bmi" || v.id === "anthro.bmi");
+  assert.ok(bmi, "a levezetett BMI hiányzik az írás válaszából");
+  assert.ok(Number(bmi.value) > 20 && Number(bmi.value) < 25, `BMI = ${bmi.value}`);
+});
+
+test("a `hidden` attribútumot a stíluslap nem írhatja felül", async () => {
+  // A `.takaro { display:grid }` osztályszabály verte a böngésző
+  // `[hidden]{display:none}` szabályát, ezért az adminpanel `hidden`
+  // állapotban is teljes képernyőn kirajzolódott, ELTAKARTA A BEJELENTKEZŐ
+  // ŰRLAPOT, és elnyelte az összes kattintást. A felület megnyitva
+  // használhatatlan volt — HTTP 200 mellett, konzolhiba nélkül.
+  const css = readFileSync(join(ROOT, "web", "public", "style.css"), "utf8");
+  assert.match(css, /\[hidden\]\s*\{[^}]*display:\s*none\s*!important/,
+    "hiányzik a `[hidden] { display:none !important }` — a takarók visszajöhetnek");
+});
+
+test("minden `hidden`-nel kapcsolt elem osztálya adhat display-t — ezért kell az !important", () => {
+  const html = readFileSync(join(ROOT, "web", "public", "index.html"), "utf8");
+  const kapcsolt = [...html.matchAll(/<[^>]*\bhidden\b[^>]*>/g)].length;
+  assert.ok(kapcsolt >= 10,
+    `csak ${kapcsolt} hidden-nel kapcsolt elem — a szabály fontossága a számmal nő`);
+});
