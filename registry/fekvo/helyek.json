@@ -1,0 +1,251 @@
+{
+  "megnevezes": "Helyhierarchia — DEMÓ, SZINTETIKUS",
+  "modul": 34,
+  "note": "NEM RÖGZÍTETT MÉLYSÉG, HANEM LÁNC.\n\nA készlet SZÁNDÉKOSAN nem tölti ki mind a kilenc fajtát: nincs benne külön `intezmeny` és `intezet` szint, a szülőszoba szobái közvetlenül az osztály alatt vannak (alosztály nélkül), és van egy FOLYOSÓI ÁGY, ami nem szobában áll, hanem közvetlenül az osztályon.\n\nEz nem hiányosság, hanem a modell lényege. Egy kilenc oszlopos táblában mindezt fantomsorokkal kellene kitölteni („nincs intézet”, „nincs alosztály”), és a fantomok utána megjelennének a statisztikában, a jogosultsági szabályokban és a jelentésben — egy fantom részleg, aminek ágyai vannak, pontosan úgy néz ki, mint egy valódi.\n\nA szerkezet egyben a HL7 FHIR `Location.partOf` lánca, tehát a kifelé illesztés nem külön munka.",
+  "helyek": [
+    {
+      "id": "hely.klinika",
+      "fajta": "klinika",
+      "nev": "Szülészeti és Nőgyógyászati Klinika (DEMÓ)",
+      "resze": null
+    },
+    {
+      "id": "hely.telephely.fo",
+      "fajta": "telephely",
+      "nev": "Központi telephely",
+      "resze": "hely.klinika"
+    },
+    {
+      "id": "hely.reszleg.szuleszet",
+      "fajta": "reszleg",
+      "nev": "Szülészeti részleg",
+      "resze": "hely.telephely.fo"
+    },
+    {
+      "id": "hely.reszleg.nogyogyaszat",
+      "fajta": "reszleg",
+      "nev": "Nőgyógyászati részleg",
+      "resze": "hely.telephely.fo"
+    },
+    {
+      "id": "hely.osztaly.szuloszoba",
+      "fajta": "osztaly",
+      "nev": "Szülőszoba",
+      "resze": "hely.reszleg.szuleszet"
+    },
+    {
+      "id": "hely.osztaly.gyermekagyas",
+      "fajta": "osztaly",
+      "nev": "Gyermekágyas osztály",
+      "resze": "hely.reszleg.szuleszet"
+    },
+    {
+      "id": "hely.osztaly.terhespat",
+      "fajta": "osztaly",
+      "nev": "Terhespatológia",
+      "resze": "hely.reszleg.szuleszet"
+    },
+    {
+      "id": "hely.osztaly.nogyogyaszat",
+      "fajta": "osztaly",
+      "nev": "Nőgyógyászati osztály",
+      "resze": "hely.reszleg.nogyogyaszat"
+    },
+    {
+      "id": "hely.alosztaly.gya.1em",
+      "fajta": "alosztaly",
+      "nev": "Gyermekágyas — 1. emelet",
+      "resze": "hely.osztaly.gyermekagyas"
+    },
+    {
+      "id": "hely.szoba.szsz1",
+      "fajta": "szoba",
+      "nev": "Szülőszoba 1",
+      "resze": "hely.osztaly.szuloszoba",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "CTG",
+        "oxigén",
+        "újraélesztő asztal"
+      ]
+    },
+    {
+      "id": "hely.agy.szsz1",
+      "fajta": "agy",
+      "nev": "Szülőágy 1",
+      "resze": "hely.szoba.szsz1",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.szoba.szsz2",
+      "fajta": "szoba",
+      "nev": "Szülőszoba 2",
+      "resze": "hely.osztaly.szuloszoba",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "CTG",
+        "oxigén",
+        "újraélesztő asztal"
+      ]
+    },
+    {
+      "id": "hely.agy.szsz2",
+      "fajta": "agy",
+      "nev": "Szülőágy 2",
+      "resze": "hely.szoba.szsz2",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.szoba.szsz3",
+      "fajta": "szoba",
+      "nev": "Szülőszoba 3",
+      "resze": "hely.osztaly.szuloszoba",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "CTG",
+        "oxigén",
+        "újraélesztő asztal"
+      ]
+    },
+    {
+      "id": "hely.agy.szsz3",
+      "fajta": "agy",
+      "nev": "Szülőágy 3",
+      "resze": "hely.szoba.szsz3",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.szoba.G1",
+      "fajta": "szoba",
+      "nev": "Gyermekágyas G1",
+      "resze": "hely.alosztaly.gya.1em",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "oxigén",
+        "csecsemőágy"
+      ]
+    },
+    {
+      "id": "hely.agy.gya.1",
+      "fajta": "agy",
+      "nev": "Ágy 1 (G1)",
+      "resze": "hely.szoba.G1",
+      "roomingIn": true
+    },
+    {
+      "id": "hely.agy.gya.2",
+      "fajta": "agy",
+      "nev": "Ágy 2 (G1)",
+      "resze": "hely.szoba.G1",
+      "roomingIn": true
+    },
+    {
+      "id": "hely.szoba.G2",
+      "fajta": "szoba",
+      "nev": "Gyermekágyas G2",
+      "resze": "hely.alosztaly.gya.1em",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "oxigén",
+        "csecsemőágy"
+      ]
+    },
+    {
+      "id": "hely.agy.gya.3",
+      "fajta": "agy",
+      "nev": "Ágy 3 (G2)",
+      "resze": "hely.szoba.G2",
+      "roomingIn": true
+    },
+    {
+      "id": "hely.agy.gya.4",
+      "fajta": "agy",
+      "nev": "Ágy 4 (G2)",
+      "resze": "hely.szoba.G2",
+      "roomingIn": true
+    },
+    {
+      "id": "hely.szoba.G3",
+      "fajta": "szoba",
+      "nev": "Gyermekágyas elkülönítő",
+      "resze": "hely.alosztaly.gya.1em",
+      "nem": "no",
+      "elkulonites": "kontakt",
+      "felszereles": [
+        "oxigén",
+        "csecsemőágy",
+        "előtér"
+      ]
+    },
+    {
+      "id": "hely.agy.gya.5",
+      "fajta": "agy",
+      "nev": "Elkülönítő ágy",
+      "resze": "hely.szoba.G3",
+      "roomingIn": true
+    },
+    {
+      "id": "hely.szoba.P1",
+      "fajta": "szoba",
+      "nev": "Terhespatológia P1",
+      "resze": "hely.osztaly.terhespat",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "CTG",
+        "oxigén"
+      ]
+    },
+    {
+      "id": "hely.agy.tp.1",
+      "fajta": "agy",
+      "nev": "Ágy 1 (P1)",
+      "resze": "hely.szoba.P1",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.agy.tp.2",
+      "fajta": "agy",
+      "nev": "Ágy 2 (P1)",
+      "resze": "hely.szoba.P1",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.szoba.N1",
+      "fajta": "szoba",
+      "nev": "Nőgyógyászat N1",
+      "resze": "hely.osztaly.nogyogyaszat",
+      "nem": "no",
+      "elkulonites": "nincs",
+      "felszereles": [
+        "oxigén"
+      ]
+    },
+    {
+      "id": "hely.agy.nog.1",
+      "fajta": "agy",
+      "nev": "Ágy 1 (N1)",
+      "resze": "hely.szoba.N1",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.agy.nog.2",
+      "fajta": "agy",
+      "nev": "Ágy 2 (N1)",
+      "resze": "hely.szoba.N1",
+      "roomingIn": false
+    },
+    {
+      "id": "hely.agy.folyoso.1",
+      "fajta": "agy",
+      "nev": "Folyosói ideiglenes ágy",
+      "resze": "hely.osztaly.terhespat",
+      "roomingIn": false
+    }
+  ]
+}

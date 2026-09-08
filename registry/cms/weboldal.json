@@ -1,0 +1,205 @@
+{
+  "megnevezes": "Intézményi weboldal, CMS és betegtájékoztató — DEMÓ, SZINTETIKUS",
+  "modul": 31,
+  "note": "MINDEN TARTALOM KITALÁLT. A szerkezet a SZTE Szülészeti és Nőgyógyászati Klinika oldalának felosztását követi, cserélhetően — a szerkezet nyilvántartásból jön, nem kódból.\n\nA készlet SZÁNDÉKOSAN tartalmaz egy lejárt és egy dátum nélküli tájékoztatót: a modul lényege nem az, hogy minden rendben van, hanem hogy a nem rendben lévő LÁTSZIK.",
+  "szerkezet": [
+    {
+      "id": "kezdolap",
+      "cim": {
+        "hu": "Kezdőlap"
+      },
+      "tartalmak": [
+        "cms.bemutatkozas",
+        "cms.hir.ambulancia"
+      ]
+    },
+    {
+      "id": "bemutatkozas",
+      "cim": {
+        "hu": "Bemutatkozás"
+      },
+      "tartalmak": [
+        "cms.bemutatkozas"
+      ]
+    },
+    {
+      "id": "munkatarsak",
+      "cim": {
+        "hu": "Munkatársak"
+      },
+      "tartalmak": [
+        "cms.munkatars.demo"
+      ]
+    },
+    {
+      "id": "betegellatas",
+      "cim": {
+        "hu": "Betegellátás"
+      },
+      "tartalmak": [
+        "cms.hir.ambulancia"
+      ]
+    },
+    {
+      "id": "tajekoztatok",
+      "cim": {
+        "hu": "Betegtájékoztatók"
+      },
+      "tartalmak": [
+        "cms.taj.szoptatas",
+        "cms.taj.ogtt",
+        "cms.taj.mehnyakszures",
+        "cms.taj.csaszar"
+      ]
+    },
+    {
+      "id": "elerhetoseg",
+      "cim": {
+        "hu": "Elérhetőség"
+      },
+      "tartalmak": [
+        "cms.elerhetoseg"
+      ]
+    }
+  ],
+  "tartalmak": [
+    {
+      "id": "cms.bemutatkozas",
+      "tipus": "oldal",
+      "cim": {
+        "hu": "A klinikáról"
+      },
+      "szoveg": "A klinika szülészeti és nőgyógyászati ellátást nyújt, oktat és kutat. (Demó szöveg.)",
+      "felulvizsgalat": "2028-01-01",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-09-01"
+      }
+    },
+    {
+      "id": "cms.elerhetoseg",
+      "tipus": "oldal",
+      "cim": {
+        "hu": "Elérhetőség"
+      },
+      "szoveg": "Központi betegfelvétel a főbejáraton át. Időpontkérés a 27. modul kapuján keresztül. (Demó szöveg.)",
+      "felulvizsgalat": "2027-06-30",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-09-01"
+      }
+    },
+    {
+      "id": "cms.munkatars.demo",
+      "tipus": "munkatars",
+      "cim": {
+        "hu": "dr. Demó Orvos"
+      },
+      "szoveg": "Szülész-nőgyógyász szakorvos. (Demó adat.)",
+      "felulvizsgalat": "2027-03-01",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-09-01"
+      }
+    },
+    {
+      "id": "cms.hir.ambulancia",
+      "tipus": "hir",
+      "cim": {
+        "hu": "Új rendelési idő a terhesgondozási ambulancián"
+      },
+      "szoveg": "A terhesgondozási ambulancia rendelési ideje bővül. (Demó közlemény.)",
+      "megjelent": "2026-08-15",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-08-15"
+      }
+    },
+    {
+      "id": "cms.taj.szoptatas",
+      "tipus": "tajekoztato",
+      "cim": {
+        "hu": "Szoptatás az első hetekben"
+      },
+      "szoveg": "Demó tájékoztató szöveg a szoptatás első heteiről. A tartalmat az intézménynek kell megírnia vagy licencelnie.",
+      "szerzo": "Demó Szerző",
+      "valtozat": "laikus",
+      "jovahagyta": {
+        "ki": "dr. Demó Jóváhagyó",
+        "mikor": "2023-05-01",
+        "minosegben": "neonatológus szakorvos"
+      },
+      "felulvizsgalat": "2025-05-01",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2023-05-01"
+      }
+    },
+    {
+      "id": "cms.taj.ogtt",
+      "tipus": "tajekoztato",
+      "cim": {
+        "hu": "Felkészülés a terhességi cukorterhelésre"
+      },
+      "szoveg": "Demó tájékoztató a 75 g OGTT-re való felkészülésről. Mindhárom vérvétel a vizsgálat része.",
+      "szerzo": "Demó Szerző",
+      "valtozat": "laikus",
+      "jovahagyta": {
+        "ki": "dr. Demó Jóváhagyó",
+        "mikor": "2026-02-01",
+        "minosegben": "szülész-nőgyógyász szakorvos"
+      },
+      "felulvizsgalat": "2026-11-15",
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-02-01"
+      }
+    },
+    {
+      "id": "cms.taj.mehnyakszures",
+      "tipus": "tajekoztato",
+      "cim": {
+        "hu": "Méhnyakszűrés — mire számítson"
+      },
+      "szoveg": "Demó tájékoztató a méhnyakszűrésről. A szűrés befejezése nem az életkoron, hanem a dokumentált előzményen múlik.",
+      "szerzo": "Demó Szerző",
+      "valtozat": "laikus",
+      "jovahagyta": {
+        "ki": "dr. Demó Jóváhagyó",
+        "mikor": "2026-06-01",
+        "minosegben": "szülész-nőgyógyász szakorvos"
+      },
+      "felulvizsgalat": "2029-06-01",
+      "forditasok": [
+        {
+          "nyelv": "en",
+          "szoveg": "Demo leaflet on cervical screening."
+        }
+      ],
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-06-01"
+      }
+    },
+    {
+      "id": "cms.taj.csaszar",
+      "tipus": "tajekoztato",
+      "cim": {
+        "hu": "Császármetszés utáni felépülés"
+      },
+      "szoveg": "Demó tájékoztató a császármetszés utáni felépülésről.",
+      "szerzo": "Demó Szerző",
+      "valtozat": "szakmai",
+      "jovahagyta": {
+        "ki": "dr. Demó Jóváhagyó",
+        "mikor": "2026-04-01",
+        "minosegben": "szülész-nőgyógyász szakorvos"
+      },
+      "publikalast_vallalta": {
+        "ki": "Demó Kommunikációs vezető",
+        "mikor": "2026-04-01"
+      },
+      "felulvizsgalat": "2029-04-01"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "kulso.bcnatal",
+  "label": {
+    "hu": "BCNatal — Medicina Fetal Barcelona: protokollok és kalkulátorok",
+    "en": "BCNatal — Fetal Medicine Barcelona: protocols and calculators"
+  },
+  "kiado": {
+    "nev": "BCNatal — Barcelona Center for Maternal-Fetal and Neonatal Medicine (Hospital Clínic + Hospital Sant Joan de Déu)",
+    "url": "https://fetalmedicinebarcelona.org/",
+    "protokollok": "https://fetalmedicinebarcelona.org/en/protocols/",
+    "kalkulatorok": "https://fetalmedicinebarcelona.org/calc-en/"
+  },
+  "miertSzamit": {
+    "hu": "A BCNatal perinatológiai protokolljai és referenciagörbéi a magyar szülészeti gyakorlatban is széles körben hivatkozottak, és a rendszer normogram-katalógusának több tétele ugyanabból az irodalmi körből származik. A kalkulátorok ugyanazokat a kérdéseket teszik fel, amiket a rendszer 05. és 10. modulja: percentilis, Doppler-arány, súlybecslés, monochorionalis ikerkövetés."
+  },
+
+  "beszerzes": {
+    "allapot": "nem-beszerzett",
+    "megkiserelve": "2026-09-05",
+    "akadaly": "A `fetalmedicinebarcelona.org` domaint a futtatókörnyezet egress-proxyja blokkolja (HTTP 403 a CONNECT-re). Sem a protokolloldal, sem a kalkulátoroldal nem volt olvasható.",
+    "amitTudunk": "keresési találatokból származó CÍMEK és kategórianevek — nem a forrásból",
+    "amitNemTudunk": "a protokollok szövege, a kalkulátorok képletei, együtthatói, referenciagörbéi és bemenetei"
+  },
+
+  "licenc": {
+    "ismert": false,
+    "megjegyzes": {
+      "hu": "A felhasználási feltételeket nem olvastuk. Amíg a licenc nem ismert, a tartalom NEM vehető át — ugyanaz a szabály, mint a SNOMED CT GPS-nél (CC BY-ND 4.0) és az ICHOM-nál. A protokollok „orientative information … directed to specialist doctors” minősítése szakmai iránymutatásra utal, nem szabad felhasználásra: a kettő nem ugyanaz."
+    }
+  },
+
+  "note": {
+    "hu": "EZ A FÁJL NEM TARTALMAZ ÁTVETT TARTALMAT. Katalógus: megnevezi, mi létezik, mihez kötődne a rendszerben, és mi akadályozza az átvételt. A `mihezKotodik` mezők a MI változóinkra mutatnak — így a haszon a beszerzés ELŐTT is látszik, és eldönthető, megéri-e."
+  },
+
+  "tetelek": [
+    {
+      "id": "bcn.prot.doppler", "tipus": "protokoll",
+      "cim": "Doppler",
+      "cimForrasa": "kereses",
+      "terulet": "doppler",
+      "mihezKotodik": ["us.ua.pi", "us.mca.pi", "us.cpr", "us.dv.pi", "us.uta.pi.left", "us.ua.enddiastolic"],
+      "mitAdnaHozza": {
+        "hu": "A 39 katalogizált Doppler-görbe egyikéhez sincs telepített referencia. Egy hitelesített protokoll megmondaná, MELYIK görbét használjuk, és milyen küszöbnél mit teszünk."
+      }
+    },
+    {
+      "id": "bcn.prot.fetalGrowth", "tipus": "protokoll",
+      "cim": "Fetal growth disorders",
+      "cimForrasa": "kereses",
+      "terulet": "novekedes",
+      "mihezKotodik": ["us.efw", "us.ac", "us.uta.pi.left", "us.cpr", "us.mca.pi"],
+      "mitAdnaHozza": {
+        "hu": "A növekedési zavar (FGR/SGA) besorolása és a követés sűrűsége. A rendszer ma súlybecslést ad, besorolást nem."
+      }
+    },
+    {
+      "id": "bcn.prot.echo", "tipus": "protokoll",
+      "cim": "Fetal echocardiography",
+      "cimForrasa": "kereses",
+      "terulet": "kardio",
+      "mihezKotodik": ["us.cardiac.ef", "us.cardiac.aorticRoot", "us.tricuspid"],
+      "mitAdnaHozza": {
+        "hu": "A 28 katalogizált szív-normogram használati kerete: mit mérünk, mikor, és mi számít eltérésnek."
+      }
+    },
+    {
+      "id": "bcn.prot.arrhythmia", "tipus": "protokoll",
+      "cim": "Fetal arrhythmias",
+      "cimForrasa": "kereses",
+      "terulet": "kardio",
+      "mihezKotodik": ["status.obs.fhr", "ctg.category"],
+      "mitAdnaHozza": {
+        "hu": "A magzati ritmuszavar elkülönítése a CTG-eltéréstől — ma a rendszer erre nem tesz különbséget."
+      }
+    },
+    {
+      "id": "bcn.prot.monochorionic", "tipus": "protokoll",
+      "cim": "Monochorionic twin pregnancy conditions",
+      "cimForrasa": "kereses",
+      "terulet": "iker",
+      "mihezKotodik": ["ctx.multiple", "us.mca.psv", "us.afi", "us.efw"],
+      "mitAdnaHozza": {
+        "hu": "TTTS/sIUGR/TAPS stádiumbeosztás és követési rend. A rendszer ma a chorionicitást rögzíti, a szövődményeket nem osztályozza."
+      }
+    },
+    {
+      "id": "bcn.prot.alloimmunization", "tipus": "protokoll",
+      "cim": "Alloimmunization in pregnancy",
+      "cimForrasa": "kereses",
+      "terulet": "immun",
+      "mihezKotodik": ["lab.antibodyScreen", "us.mca.psv", "lab.bloodGroup.rhd"],
+      "mitAdnaHozza": {
+        "hu": "Az MCA-PSV MoM alapú anaemia-követés küszöbei és a beavatkozási határ."
+      }
+    },
+    {
+      "id": "bcn.prot.aneuploidy", "tipus": "protokoll",
+      "cim": "Prenatal screening for chromosomal defects",
+      "cimForrasa": "kereses",
+      "terulet": "szures",
+      "mihezKotodik": ["us.nt", "us.nasalBone", "lab.plgf", "us.dv.pi", "us.tricuspid"],
+      "mitAdnaHozza": {
+        "hu": "A kombinált szűrés lépései és küszöbei. A rendszernek van szűrési esedékessége, de nincs hitelesített kockázati modellje."
+      }
+    },
+    {
+      "id": "bcn.prot.surveillance", "tipus": "protokoll",
+      "cim": "Antepartum fetal surveillance",
+      "cimForrasa": "kereses",
+      "terulet": "kovetes",
+      "mihezKotodik": ["ctg.category", "us.afi", "us.sdp", "us.ua.pi"],
+      "mitAdnaHozza": {
+        "hu": "A követés SŰRŰSÉGE kockázati csoportonként — a 13. modul vizitrendjének hiányzó fele."
+      }
+    },
+    {
+      "id": "bcn.prot.macrosomia", "tipus": "protokoll",
+      "cim": "Macrosomia",
+      "cimForrasa": "kereses",
+      "terulet": "novekedes",
+      "mihezKotodik": ["us.efw", "hx.repro.prevBirth.shoulderDystocia", "hx.repro.gdm"],
+      "mitAdnaHozza": { "hu": "A szülésmód-tanácsadás küszöbei becsült súly szerint." }
+    },
+    {
+      "id": "bcn.prot.oligohydramnios", "tipus": "protokoll",
+      "cim": "Oligohydramnios",
+      "cimForrasa": "kereses",
+      "terulet": "magzatviz",
+      "mihezKotodik": ["us.afi", "us.sdp", "status.obs.amnioticFluid"],
+      "mitAdnaHozza": { "hu": "A kivizsgálás és a követés rendje; a rendszer ma csak kritikus sávot ismer." }
+    },
+    {
+      "id": "bcn.prot.polyhydramnios", "tipus": "protokoll",
+      "cim": "Polyhydramnios",
+      "cimForrasa": "kereses",
+      "terulet": "magzatviz",
+      "mihezKotodik": ["us.afi", "us.sdp"],
+      "mitAdnaHozza": { "hu": "Az ok keresésének algoritmusa — ma a rendszer nem javasol kivizsgálást." }
+    },
+    {
+      "id": "bcn.prot.hydrops", "tipus": "protokoll",
+      "cim": "Non-immune hydrops fetalis",
+      "cimForrasa": "kereses",
+      "terulet": "immun",
+      "mihezKotodik": ["us.mca.psv", "lab.antibodyScreen"],
+      "mitAdnaHozza": { "hu": "A nem immun eredetű hydrops kivizsgálási sorrendje. A rendszerben ma nincs hydrops-változó." }
+    },
+    {
+      "id": "bcn.prot.placenta", "tipus": "protokoll",
+      "cim": "Placental anomalies",
+      "cimForrasa": "kereses",
+      "terulet": "lepeny",
+      "mihezKotodik": ["us.placenta.site", "us.placenta.accretaSigns", "hx.repro.currentPregnancy.previa", "hx.repro.currentPregnancy.accreta"],
+      "mitAdnaHozza": {
+        "hu": "Az accreta-spektrum ultrahangjeleinek értékelése — a CMQCC vérzési kockázat legsúlyosabb tételének megalapozása."
+      }
+    },
+    {
+      "id": "bcn.prot.amniocentesis", "tipus": "protokoll",
+      "cim": "Amniocentesis",
+      "cimForrasa": "kereses",
+      "terulet": "beavatkozas",
+      "mihezKotodik": ["ctx.consentState"],
+      "mitAdnaHozza": { "hu": "A beavatkozás javallata, kockázata és a tájékoztatás tartalma." }
+    },
+    {
+      "id": "bcn.prot.cordocentesis", "tipus": "protokoll",
+      "cim": "Cordocentesis",
+      "cimForrasa": "kereses",
+      "terulet": "beavatkozas",
+      "mihezKotodik": ["ctx.consentState", "us.mca.psv"],
+      "mitAdnaHozza": { "hu": "Ugyanaz, magasabb kockázatú beavatkozásra." }
+    },
+    {
+      "id": "bcn.prot.genetics", "tipus": "protokoll",
+      "cim": "Genetic studies in fetal samples",
+      "cimForrasa": "kereses",
+      "terulet": "genetika",
+      "mihezKotodik": ["ctx.consentState"],
+      "mitAdnaHozza": {
+        "hu": "Melyik mintából melyik vizsgálat — a 23. modul nyitott kérdése."
+      }
+    },
+    {
+      "id": "bcn.prot.neurosonography", "tipus": "protokoll",
+      "cim": "NGS fetal neurosonography clinical guide",
+      "cimForrasa": "kereses",
+      "terulet": "neuro",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "A magzati neuroszonográfia mérési rendje. A rendszernek ma nincs neuroszonográfiai változócsoportja."
+      }
+    },
+    {
+      "id": "bcn.prot.secondTrimesterLoss", "tipus": "protokoll",
+      "cim": "Second trimester pregnancy loss",
+      "cimForrasa": "kereses",
+      "terulet": "vesztes",
+      "mihezKotodik": ["hx.repro.loss.spontaneous", "us.cervicalLength"],
+      "mitAdnaHozza": { "hu": "A kivizsgálás rendje és a következő terhesség tervezése." }
+    },
+    {
+      "id": "bcn.prot.screening", "tipus": "protokoll",
+      "cim": "Fetal screening protocol",
+      "cimForrasa": "kereses",
+      "terulet": "szures",
+      "mihezKotodik": ["us.nt", "us.crl", "us.cervicalLength", "lab.plgf"],
+      "mitAdnaHozza": {
+        "hu": "A terhesgondozás ultrahangos szűrési menetrendje — a `registry/szuresek/` bővítésének forrása."
+      }
+    },
+
+    {
+      "id": "bcn.calc.doppler", "tipus": "kalkulator",
+      "cim": "Doppler (kalkulátor-kategória)",
+      "cimForrasa": "kereses",
+      "terulet": "doppler",
+      "mihezKotodik": ["us.ua.pi", "us.mca.pi", "us.cpr", "us.dv.pi", "us.uta.pi.left"],
+      "mitAdnaHozza": {
+        "hu": "Percentilis és MoM a Doppler-indexekhez. A rendszer ma nyers indexet tárol, percentilist nem ad: a 265 katalogizált görbéből 0 hitelesített."
+      }
+    },
+    {
+      "id": "bcn.calc.growth", "tipus": "kalkulator",
+      "cim": "Fetal growth (kalkulátor-kategória)",
+      "cimForrasa": "kereses",
+      "terulet": "novekedes",
+      "mihezKotodik": ["us.efw", "us.ac", "us.bpd", "us.hc", "us.fl"],
+      "mitAdnaHozza": {
+        "hu": "Súlybecslés és percentilis. A rendszernek van súlybecslése, percentilise nincs — ez a 7. és a 18. lépés tétele."
+      }
+    },
+    {
+      "id": "bcn.calc.monochorionic", "tipus": "kalkulator",
+      "cim": "Monochorionic twins (kalkulátor-kategória)",
+      "cimForrasa": "kereses",
+      "terulet": "iker",
+      "mihezKotodik": ["ctx.multiple", "us.efw", "us.mca.psv"],
+      "mitAdnaHozza": { "hu": "Súlykülönbség és TTTS/TAPS-küszöbök ikerterhességben." }
+    },
+    {
+      "id": "bcn.calc.cardiac", "tipus": "kalkulator",
+      "cim": "Cardiac morphometry (kalkulátor-kategória)",
+      "cimForrasa": "kereses",
+      "terulet": "kardio",
+      "mihezKotodik": ["us.cardiac.aorticRoot", "us.cardiac.lvot", "us.cardiac.ef"],
+      "mitAdnaHozza": { "hu": "Szívmorfometriai z-score-ok — a 28 katalogizált szívgörbe használata." }
+    },
+    {
+      "id": "bcn.calc.dating", "tipus": "kalkulator",
+      "cim": "Dating / gestational age (LMP, CRL, BPD, HC)",
+      "cimForrasa": "kereses",
+      "terulet": "kormeghatarozas",
+      "mihezKotodik": ["ctx.ga", "ctx.lmp", "us.crl", "us.crl.first", "us.bpd", "us.hc"],
+      "mitAdnaHozza": {
+        "hu": "A CRL-alapú kormeghatározás. A rendszer ma az utolsó menstruációból számol; a `ctx.gaSource` mező már megvan, a CRL-képlet nincs."
+      }
+    }
+  ]
+}

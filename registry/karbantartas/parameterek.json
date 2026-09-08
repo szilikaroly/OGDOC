@@ -1,0 +1,147 @@
+{
+ "megnevezes": "Rendszerparaméterek — 37. modul (karbantartás és szerkesztés)",
+ "modul": 37,
+ "note": "EZ A MODUL MINDEN MODUL FÖLÖTT ÁLL, ÉS EZÉRT A LEGVESZÉLYESEBB. Ami itt állítható, az minden más modul viselkedését megváltoztatja.\n\nHÁROM KÖR, HÁROM FELELŐSSÉG:\n\n  megjelenites  mennyit mutat a felület. Klinikai tartalmat nem érint — rendszergazda állíthatja.\n  uzemeltetes   lejáratok, méretkorlátok, naplózás. Rendszergazdai kör.\n  klinikai      küszöb, határérték, besorolás. RENDSZERGAZDA NEM ÁLLÍTHATJA: aki a rendszert üzemelteti, és aki a klinikai határt megállapítja, nem ugyanaz a felelősség.\n\nMINDEN SZÁM TÍPUSÚ PARAMÉTERNEK VAN ALSÓ ÉS FELSŐ HATÁRA. A korlátlan paraméter nem paraméter, hanem nyitva hagyott ajtó: egy elgépelt nagyságrend némán elronthatja az egész modult.\n\nÉS A KLINIKAI PARAMÉTER ÁTÁLLÍTÁSA ELAVULTTÁ TESZI AZ ALÁÍRÁST. A `hatasAlairasra` nem dokumentáció, hanem működés: az aláíró egy konkrét értéket hitelesített, és ha az érték megváltozik, az aláírás egy már nem létező állítást igazolna.",
+ "parameterek": [
+  {
+   "id": "ui.lanc.maxHossz",
+   "megnevezes": "A részletező lánc legnagyobb hossza",
+   "kor": "megjelenites",
+   "tipus": "szam",
+   "alapertek": 6,
+   "min": 1,
+   "max": 20,
+   "egyseg": "lépés",
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "A click-open részletező lánc (`finding.cascade`) legfeljebb ennyi lépést nyit meg egymás után. A hosszabb lánc nem tűnik el, csak a további lépések egy gombra nyílnak — az adat nem vész el, a képernyő nem lesz áttekinthetetlen.",
+   "leiras": "A lánc hossza eddig implicit volt: annyi, amennyi a `cascade` tömbben áll. Egy tíz lépéses lánc a képernyőn viszont ugyanolyan rossz, mint a szabad szöveg — a klinikus kikerüli. Ez a paraméter köti a megjelenítést, NEM az adatot: a mögöttes mezők attól még rögzíthetők."
+  },
+  {
+   "id": "ui.lanc.automataNyitas",
+   "megnevezes": "A lánc automatikusan nyíljon-e tovább",
+   "kor": "megjelenites",
+   "tipus": "logikai",
+   "alapertek": true,
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "Ha igaz, a lánc következő lépése magától megjelenik, amint az előző ki van töltve. Ha hamis, a klinikusnak kell kérnie.",
+   "leiras": "Van, ahol a magától nyíló lánc segít, és van, ahol zavar. Ez ízlés és munkarend kérdése, nem klinikai döntés — ezért állítható."
+  },
+  {
+   "id": "ui.nyelvJeloles",
+   "megnevezes": "A le nem fordított szöveg jelölése",
+   "kor": "megjelenites",
+   "tipus": "valasztas",
+   "alapertek": "jelolt",
+   "valaszthato": [
+    { "ertek": "jelolt", "megnevezes": "Forrásnyelvi alak, MEGJELÖLVE (⟨hu⟩)" },
+    { "ertek": "csendes", "megnevezes": "Forrásnyelvi alak, jelölés nélkül" }
+   ],
+   "allithatja": [],
+   "hatasAlairasra": [],
+   "hatas": "A hiányzó fordítás megjelenítése.",
+   "leiras": "SENKI NEM ÁLLÍTHATJA, és ez szándékos. A `csendes` érték azt jelentené, hogy a felhasználó nem tudja, mikor lát fordítatlan szöveget — vagyis a rendszer csendben helyettesít, amit minden más ponton tilt. A választás azért szerepel a listán, hogy látszódjon: megfontoltuk, és elutasítottuk."
+  },
+  {
+   "id": "munkamenet.tetlensegPerc",
+   "megnevezes": "Munkamenet tétlenségi lejárata",
+   "kor": "uzemeltetes",
+   "tipus": "szam",
+   "alapertek": 15,
+   "min": 2,
+   "max": 120,
+   "egyseg": "perc",
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "Ennyi tétlenség után a munkamenet lejár, és újra be kell jelentkezni.",
+   "leiras": "A folyosón otthagyott, bejelentkezve maradt gép ellen véd — ez a valóságos kockázat, nem a betörés. A felső korlát 120 perc: efölött a védelem elméleti."
+  },
+  {
+   "id": "munkamenet.abszolutOra",
+   "megnevezes": "Munkamenet abszolút lejárata",
+   "kor": "uzemeltetes",
+   "tipus": "szam",
+   "alapertek": 12,
+   "min": 1,
+   "max": 24,
+   "egyseg": "óra",
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "A munkamenet ennyi idő után akkor is lejár, ha a felhasználó folyamatosan dolgozott.",
+   "leiras": "Az ELLOPOTT munkamenet-azonosító ellen véd, amit a tétlenségi óra sosem fogna meg: a támadó folyamatosan újraindítja. A 24 órás felső korlát nem kényelmi: efölött a lopott munkamenet gyakorlatilag örök."
+  },
+  {
+   "id": "jelszo.minHossz",
+   "megnevezes": "A jelszó legrövidebb hossza",
+   "kor": "uzemeltetes",
+   "tipus": "szam",
+   "alapertek": 12,
+   "min": 12,
+   "max": 64,
+   "egyseg": "karakter",
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "Ennél rövidebb jelszó nem állítható be.",
+   "leiras": "A MINIMUM MAGA IS 12: lejjebb nem vihető. A NIST SP 800-63B ezt tekinti alsó határnak, és a paraméter nem arra való, hogy a szabályt ki lehessen kapcsolni vele. Felfelé állítható."
+  },
+  {
+   "id": "megbizas.maxNyitottNap",
+   "megnevezes": "Kézi megbízás legnagyobb nyitott időtartama",
+   "kor": "uzemeltetes",
+   "tipus": "szam",
+   "alapertek": 365,
+   "min": 1,
+   "max": 1095,
+   "egyseg": "nap",
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "Nyitott (`ig: null`) kézi megbízásnál ennyi idő után a rendszer felülvizsgálatot kér.",
+   "leiras": "A nyitott megbízás nem tilos, de nem is felejthető el. A műszakhoz kötött megbízás ettől függetlenül KÖTELEZŐEN lezárt — ott ez a paraméter nem játszik."
+  },
+  {
+   "id": "biobank.vonalkod.szabvany",
+   "megnevezes": "A minta-vonalkód szabványa",
+   "kor": "uzemeltetes",
+   "tipus": "valasztas",
+   "alapertek": "gs1-datamatrix",
+   "valaszthato": [
+    { "ertek": "gs1-datamatrix", "megnevezes": "GS1 DataMatrix (ISO/IEC 16022, GS1 General Specifications)" },
+    { "ertek": "gs1-128", "megnevezes": "GS1-128 (lineáris)" },
+    { "ertek": "qr-iso18004", "megnevezes": "QR Code (ISO/IEC 18004)" }
+   ],
+   "allithatja": ["admin"],
+   "hatasAlairasra": [],
+   "hatas": "Milyen szimbólumot nyomtat a rendszer a mintacsövekre, és mit vár beolvasáskor.",
+   "leiras": "Az ISBER Best Practices és a laboratóriumi gyakorlat a 2D DataMatrixot részesíti előnyben kriogén csöveknél: kisebb felületen több adat, és részleges sérülés mellett is olvasható. A QR akkor jön szóba, ha a leolvasó telefonos."
+  },
+  {
+   "id": "riasztas.eszkalacioPerc",
+   "megnevezes": "Riasztás eszkalációs ideje",
+   "kor": "klinikai",
+   "tipus": "szam",
+   "alapertek": 15,
+   "min": 1,
+   "max": 120,
+   "egyseg": "perc",
+   "allithatja": ["clinician"],
+   "hatasAlairasra": ["riasztas.eszkalacio"],
+   "hatas": "Ennyi idő után a nyugtázatlan riasztás a következő címzetthez kerül.",
+   "leiras": "KLINIKAI PARAMÉTER: rendszergazda nem állíthatja. Az eszkalációs idő azt dönti el, mennyi ideig maradhat egy riasztás válasz nélkül — ez betegellátási kérdés, nem üzemeltetési."
+  },
+  {
+   "id": "gyermek.jelzes.ismetlodesHatar",
+   "megnevezes": "Ismétlődő genitális megjelenés riasztási határa",
+   "kor": "klinikai",
+   "tipus": "szam",
+   "alapertek": 3,
+   "min": 2,
+   "max": 12,
+   "egyseg": "alkalom",
+   "allithatja": ["clinician"],
+   "hatasAlairasra": ["gyermek.jelzes"],
+   "hatas": "Ennyi genitális panasz miatti megjelenés fölött (12 hónapon belül, pubertás előtti korban) a rendszer gyermekvédelmi mérlegelést kér.",
+   "leiras": "KLINIKAI PARAMÉTER. Feljebb állítva a mintázat később szólal meg — és a gyermekvédelmi mulasztások jelentős része épp abból ered, hogy a mintázatot senki nem nézte meg egyben. Lejjebb állítva több hamis riasztás, ami a valódi esetek hitelét rontja."
+  }
+ ]
+}

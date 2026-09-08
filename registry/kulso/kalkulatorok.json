@@ -1,0 +1,289 @@
+{
+  "id": "kulso.kalkulatorok",
+  "label": {
+    "hu": "Szülészeti-nőgyógyászati kockázati kalkulátorok — vegyes forrásokból",
+    "en": "Obstetric and gynaecologic risk calculators — mixed sources"
+  },
+  "kiado": {
+    "nev": "vegyes (Wayne State PRB, Nottingham, Mount Sinai/Toronto, MedCentral, obgyntools.com, Science Repository)",
+    "url": "https://www.medcentral.com/calculators/obgyn"
+  },
+  "miertSzamit": {
+    "hu": "Kilenc hivatkozott kalkulátor és egy R-csomag. Nem azonos súlyúak, és éppen ez a lényeg: egyikük egy TELJESEN LEÍRT modell a szerzők saját csomagjából, kettőnek csak a közleménye érhető el, hat pedig egy weboldal, amit nem tudtunk megnyitni. Ugyanaz a szó — „kalkulátor” — takar mindhármat."
+  },
+  "beszerzes": {
+    "allapot": "nem-beszerzett",
+    "megkiserelve": "2026-09-05",
+    "akadaly": "A tételek nagy részének forrását a futtatókörnyezet egress-proxyja blokkolja (`curl` HTTP 000/403 mind a kilenc URL-re, `WebFetch`: EGRESS_BLOCKED). Tételenként lásd a `beszerzes` mezőt: ami mégis megvan, az a feltöltött R-csomag és a PubMed-en át elért két közlemény-metaadat.",
+    "amitTudunk": "egy R-csomag teljes tartalma; két közlemény absztraktja a PubMed-ről; a többiről a cím és az URL",
+    "amitNemTudunk": "a be nem szerzett kalkulátorok képletei, együtthatói, bemenetei és felhasználási feltételei"
+  },
+  "licenc": {
+    "ismert": false,
+    "megjegyzes": {
+      "hu": "A katalógus egésze vegyes licencű; a forrásszintű `ismert: false` a FAIL-CLOSED alapértelmezés. Ahol a licenc tételszinten ismert (PRBPERIsk: GPLv2), ott a tétel saját `licenc` mezője írja felül — de az ISMERT licenc sem jelent automatikus átvehetőséget. Az OGDOC licence 2026-09-05 óta MIT, és az MIT a GPLv2-vel a TERJESZTÉS irányában nem egyeztethető össze: MIT-kódot be lehet vinni egy GPL-műbe, visszafelé nem."
+    }
+  },
+  "note": {
+    "hu": "EZ A FÁJL NEM TARTALMAZ ÁTVETT KÉPLETET. A PRBPERIsk együtthatói a `registry/kulso/helyi/prb-pe/` alá kerülnek, ami a .gitignore-ban van: a modell NEM része a terjesztett MIT-műnek, a felhasználó telepíti helyben, és a `core/kulso/modell.ts` ADATKÉNT olvassa. A mag egyetlen PRB-specifikus nevet vagy számot sem tartalmaz — ezt teszt őrzi."
+  },
+  "tetelek": [
+    {
+      "id": "calc.prb.pe",
+      "tipus": "kalkulator",
+      "cim": "PRBPERIsk 0.1.0 — preeclampsia-kockázat anyai jellemzőkből és angiogén biomarkerekből",
+      "cimForrasa": "forras",
+      "terulet": "preeclampsia",
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-05",
+        "amitTudunk": "a TELJES modell: a prior-kockázat 6 együtthatója forráskódban, valamint 4 együtthatómátrix (MoM 24×15, összesített/preterm/term kockázat 12×6) a sysdata.rda-ból kinyerve",
+        "amitNemTudunk": "az empirikus referenciaeloszlások (ALLEmpirical, PretermEmpirical, TermEmpirical) — ezek listák, nem táblák, és a p-érték számításához kellenek; továbbá a modell kalibrációja MAGYAR populáción"
+      },
+      "forras": {
+        "megnevezes": "PRBPERIsk_0.1.0.tar.gz",
+        "sha256": "2b7ef0a2cd2e8636214192b5645a28d45f0ec5215edf6fbb9815b64b068d6bb1",
+        "szerzok": "Adi Laurentiu Tarca, Gaurav Bhatti — Wayne State University / Perinatology Research Branch",
+        "kiadva": "2020-11-19",
+        "helyiTabla": "registry/kulso/helyi/prb-pe/"
+      },
+      "licenc": {
+        "ismert": true,
+        "azonosito": "GPL-2.0",
+        "megjegyzes": {
+          "hu": "COPYLEFT, és az OGDOC MIT — a kettő a TERJESZTÉS irányában ÜTKÖZIK. Ez nem feloldható a mi oldalunkról: egy GPLv2 műből származtatott mű nem adható tovább MIT alatt. HÁROM ÚT VAN: (1) a szerzők írásos engedélye vagy megengedő újralicencelése; (2) a modell újraépítése a KÖZLEMÉNYBŐL, a csomag forráskódjának érintése nélkül; (3) HELYI TELEPÍTÉS — a származék a felhasználó gépén áll elő, a terjesztett mű nem tartalmazza. A (3) ma MŰKÖDIK: `python3 tools/ingest/prb-pe.py PRBPERIsk_0.1.0.tar.gz`."
+        }
+      },
+      "mihezKotodik": [
+        "lab.plgf",
+        "lab.sflt1",
+        "vitals.map",
+        "vitals.bp.systolic",
+        "vitals.bp.diastolic",
+        "anthro.weight.current",
+        "anthro.height",
+        "patient.age",
+        "hx.life.smoking",
+        "ctx.parity.para",
+        "hx.sys.htn",
+        "hx.repro.preeclampsia",
+        "ctx.ga"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Az első olyan preeclampsia-kockázat, aminek MINDEN bemenete megvan nálunk — egy kivétellel: a szolubilis endoglin (sEng) változó HIÁNYZIK a regiszterből. A modell 6 gesztációskor-sávra (8–16, 16–20, 20–24, 24–28, 28–32, 32–37 hét) külön együtthatókat ad, és külön kockázatot preterm és term preeclampsiára. A GÉPEZET KÉSZ: helyben telepítve a `core/kulso/modell.ts` kiértékeli — de SZÁM MA NEM SZÜLETIK BELŐLE, mert a `verification: assumed`, és a hitelesítetlen modell teljes bemenettel sem ad eredményt. Egyetlen névvel igazolt összevetés nyitja ki."
+      }
+    },
+    {
+      "id": "calc.prb.pecalc.web",
+      "tipus": "kalkulator",
+      "cim": "PEcalcRaw — a PRB webes preeclampsia-kalkulátora (Shiny)",
+      "cimForrasa": "kereses",
+      "terulet": "preeclampsia",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`tarcalab.med.wayne.edu:3838` — a kérés nem jutott ki (HTTP 000, egress-proxy)."
+      },
+      "mihezKotodik": [
+        "lab.plgf",
+        "lab.sflt1",
+        "vitals.map",
+        "ctx.ga"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A `calc.prb.pe` csomag webes megfelelője — a HITELESÍTÉS eszköze volna: ugyanazt a beteget mindkettőn végigfuttatva ellenőrizhető, hogy a kinyert együtthatókból ugyanaz a szám jön-e ki."
+      }
+    },
+    {
+      "id": "calc.prb.preprint",
+      "tipus": "bizonyitek",
+      "cim": "Europe PMC preprint PPR256732 (a PRB preeclampsia-modell közleménye)",
+      "cimForrasa": "kereses",
+      "terulet": "preeclampsia",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`europepmc.org` és a `www.ebi.ac.uk` REST-végpont egyaránt blokkolt (HTTP 000)."
+      },
+      "mihezKotodik": [
+        "lab.plgf",
+        "lab.sflt1",
+        "vitals.map"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A modell SZÁRMAZÁSA: milyen populáción tanult, milyen kimenetelre, milyen diszkriminációval. Enélkül a kinyert együtthatók számok maradnak, amelyeknek nincs hatókörük — és a hatókör az, ami a `calc.verified` kaput kinyitná."
+      }
+    },
+    {
+      "id": "calc.aog.cesarean.validation",
+      "tipus": "bizonyitek",
+      "cim": "Validated Calculators Predicting Cesarean Delivery After Induction: Accuracy in an External Population (Obstet Gynecol 2023;142:99–107)",
+      "cimForrasa": "forras",
+      "terulet": "szules",
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-05",
+        "amitTudunk": "a teljes absztrakt a PubMed-ről (PMID 37290103, DOI 10.1097/AOG.0000000000005234) — a `journals.lww.com` oldal maga blokkolt",
+        "amitNemTudunk": "a teljes szöveg, a kalibrációs ábrák és a két vizsgált kalkulátor pontos képlete"
+      },
+      "forras": {
+        "megnevezes": "PubMed PMID 37290103",
+        "doi": "10.1097/AOG.0000000000005234",
+        "szerzok": "Shao SJ, Teal EN, Lewkowitz AK, Gaw SL, Sobhani NC",
+        "kiadva": "2023-06-07"
+      },
+      "licenc": {
+        "ismert": true,
+        "azonosito": "nincs átvétel — csak hivatkozás",
+        "megjegyzes": {
+          "hu": "Ebből a tételből nem képlet származik, hanem ÁLLÍTÁS a képletekről. Az állítás hivatkozható; átvenni nincs mit."
+        }
+      },
+      "mihezKotodik": [
+        "score.bishop.total",
+        "hx.repro.prevBirth.cs",
+        "anthro.bmi",
+        "ctx.parity.para"
+      ],
+      "mitAdnaHozza": {
+        "hu": "EZ A KATALÓGUS LEGFONTOSABB TÉTELE, és nem azért, mert kalkulátort ad — hanem mert ELVESZ egyet. Két publikált, „validált” szülésindítási császármetszés-kalkulátort külső populáción vizsgálva mindkettő GYENGÉN teljesített (AUC ≤ 0,57, azaz alig jobb az érmefeldobásnál), és mindkettő FELÜLBECSÜLTE a kockázatot a magasabb rizikójú harmadokban. A szerzők következtetése szó szerint az, hogy a széles körű bevezetés ellen intenek populáció-specifikus újrahangolás nélkül. Ez a rendszer `calc.verified` kapujának legerősebb külső alátámasztása: egy kalkulátor attól, hogy publikált és „validált”, MÁS populáción még lehet rosszabb a semminél — mert a felülbecsült kockázat a beteget beszélheti le a hüvelyi szülésről."
+      }
+    },
+    {
+      "id": "calc.bjog.pour",
+      "tipus": "kalkulator",
+      "cim": "POUR — postoperatív vizeletretenció kockázata hüvelyi medencefenék-műtét után (BJOG 2022;129:2203–2213)",
+      "cimForrasa": "forras",
+      "terulet": "urogyn",
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-05",
+        "amitTudunk": "a teljes absztrakt a PubMed-ről (PMID 35596931, DOI 10.1111/1471-0528.17225): lasszó-logisztikus modell, belső keresztvalidált c-index 0,73 (95% CI 0,71–0,74), külső validálás n = 94; a fejlesztő minta 700 nő, közülük 301 (43%) POUR",
+        "amitNemTudunk": "a modell EGYÜTTHATÓI — a közlemény kalkulátort hivatkoz (shinyapps.io), nem képletet; a 18 változóból 24 paraméter lett, de melyik maradt bent, nem derül ki az absztraktból"
+      },
+      "forras": {
+        "megnevezes": "PubMed PMID 35596931",
+        "doi": "10.1111/1471-0528.17225",
+        "szerzok": "Anglim BC, Tomlinson G, Paquette J, McDermott CD",
+        "kiadva": "2022-06-14"
+      },
+      "mihezKotodik": [
+        "patient.age",
+        "op.procedure",
+        "op.intra.qbl",
+        "op.intra.incisionAt",
+        "op.intra.closureAt"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Egy egész TERÜLET hiányzik hozzá: a rendszerben ma NINCS urogynekológiai változócsoport — sem prolapsus-stádium, sem uroflowmetria, sem menopauzális státusz mint műtéti prediktor. A tétel haszna ezért ma nem a modell, hanem a HIÁNY MEGNEVEZÉSE: enélkül a nőgyógyászati műtéti modul csendben hiányos marad."
+      }
+    },
+    {
+      "id": "calc.vte.nottingham",
+      "tipus": "kalkulator",
+      "cim": "VTE-RPT — vénás thromboembolia kockázatbecslés terhességben és a gyermekágyban (Nottingham)",
+      "cimForrasa": "kereses",
+      "terulet": "thrombosis",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`vterpt.nottingham.ac.uk` — HTTP 000 (`curl`) és EGRESS_BLOCKED (`WebFetch`)."
+      },
+      "mihezKotodik": [
+        "hx.sys.vte",
+        "hx.sys.thrombophilia",
+        "anthro.bmi",
+        "patient.age",
+        "ctx.parity.para",
+        "op.post.vte.prophylaxis"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A rendszer ma VTE-kockázati TÉNYEZŐKET sorol fel, kockázati SZINTET nem ad — ugyanaz a helyzet, mint a CMQCC vérzési táblánál. Egy hitelesített, terhességre kalibrált modell zárná ezt a rést. Súlyozza a fontosságát, hogy a rögzített „nem tudom” → „nem” hiba éppen a thrombosis-anamnézisnél volt a legdrágább."
+      }
+    },
+    {
+      "id": "calc.medcentral.obgyn",
+      "tipus": "kalkulator",
+      "cim": "MedCentral — OB/GYN kalkulátorgyűjtemény",
+      "cimForrasa": "kereses",
+      "terulet": "gyujtemeny",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`www.medcentral.com` — HTTP 000 (`curl`) és EGRESS_BLOCKED (`WebFetch`). A gyűjtemény TARTALMA sem ismert: hány kalkulátor, melyek."
+      },
+      "mihezKotodik": [
+        "ctx.ga",
+        "ctx.lmp",
+        "anthro.bmi"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Gyűjtemény, nem egyetlen eszköz — a haszna a LEFEDETTSÉG felmérése volna: mely rutin szülészeti számításokra van széles körben használt eszköz. Átvételre önmagában nem alkalmas: egy gyűjtemény licence a benne lévő tételekét nem váltja ki."
+      }
+    },
+    {
+      "id": "calc.gynonc.personalised",
+      "tipus": "kalkulator",
+      "cim": "Személyre szabott kockázati kalkulátor nőgyógyászati onkológiai műtétben (Science Repository, COR-2020-5-104)",
+      "cimForrasa": "kereses",
+      "terulet": "onkologia",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`www.sciencerepository.org` — HTTP 000 (egress-proxy)."
+      },
+      "mihezKotodik": [
+        "onc.gyn.site",
+        "onc.gyn.histology",
+        "onc.gyn.grade",
+        "op.procedure",
+        "anthro.bmi",
+        "patient.age"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Műtéti szövődménykockázat a nőgyógyászati onkológiában — a 19. modul műtéti kapujához és a betegtájékoztatáshoz kötődne. A rendszer ma WHO-listát és kontraindikációs kaput ad, egyénre szabott szövődménykockázatot nem."
+      }
+    },
+    {
+      "id": "calc.obgyntools.gtn",
+      "tipus": "kalkulator",
+      "cim": "GTN Score Calculator (obgyntools.com) — gestatiós trophoblast neoplasia prognosztikai pontszám",
+      "cimForrasa": "kereses",
+      "terulet": "trophoblast",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`obgyntools.com` — HTTP 403 az egress-proxytól."
+      },
+      "mihezKotodik": [
+        "lab.hcg",
+        "hx.repro.loss.mola",
+        "patient.age",
+        "onc.gyn.site"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A FIGO/WHO prognosztikai pontszám a trophoblast-betegségben — kis rizikó/nagy rizikó besorolás, ami a kemoterápia megválasztását vezérli. FONTOS KÜLÖNBSÉG: a pontszám maga a FIGO-tól származik, nem ettől az oldaltól. Ha a pontszám kell, az ELSŐDLEGES FORRÁS a FIGO-közlemény — egy weboldal-implementáció legfeljebb ellenőrzésre jó, forrásnak nem."
+      }
+    },
+    {
+      "id": "calc.obgyntools.betahcg",
+      "tipus": "kalkulator",
+      "cim": "Beta-hCG Graph (obgyntools.com) — a hCG-kinetika ábrázolása",
+      "cimForrasa": "kereses",
+      "terulet": "korai-terhesseg",
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-05",
+        "akadaly": "`obgyntools.com` — HTTP 403 az egress-proxytól."
+      },
+      "mihezKotodik": [
+        "lab.hcg",
+        "ctx.ga",
+        "us.crl"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A hCG VÁLTOZÁSA két mérés között — a korai terhesség életképességének és az extrauterin terhesség gyanújának egyik alapszáma. A rendszer ma egyetlen hCG-értéket tárol, kinetikát nem számol: ehhez időbélyeges ismételt mérés kell, ami a példány-dimenzió kérdése, nem képleté."
+      }
+    }
+  ]
+}

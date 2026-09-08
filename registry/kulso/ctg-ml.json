@@ -1,0 +1,347 @@
+{
+  "id": "kulso.ctgml",
+  "label": {
+    "hu": "CTG- és magzati állapot osztályozó gépi tanulási tárak",
+    "en": "CTG and fetal-health machine-learning repositories"
+  },
+  "kiado": {
+    "nev": "vegyes, nyilvános GitHub-tárak (anandms101, arya-azimi, Farman24476, naomifridman, Fillo001)",
+    "url": "https://github.com/topics/fetal-health"
+  },
+  "miertSzamit": {
+    "hu": "Öt tár ugyanarra a kérdésre: gépi osztályozás CTG-ből. A 28. modul (ExAssist) CTG/NST AI-asszisztált vizsgálati sora és a 29. modul magzati kockázatbecslése ugyanezt a döntést támogatná. A tárak együtt viszont NEM öt bizonyíték, és ez a katalógus legfontosabb megállapítása."
+  },
+  "beszerzes": {
+    "allapot": "beszerzett",
+    "megkiserelve": "2026-09-08",
+    "amitTudunk": "mind a négy tár klónozva, a licencfájlok és az adatállományok lenyomata ellenőrizve",
+    "amitNemTudunk": "a betanított modellek belső súlyai és a betanítás pontos protokollja tételenként eltérő részletességgel dokumentált"
+  },
+  "licenc": {
+    "ismert": false,
+    "megjegyzes": {
+      "hu": "TÉTELENKÉNT ELTÉR, és a katalógus egésze ezért nem kap egyetlen licencet. Kettőnek NINCS licencfájlja — ezekből semmi nem vehető át (a licenc hiánya nem szabad felhasználás, hanem minden jog fenntartása). Egy GPLv3 (copyleft, a terjesztett MIT-műbe nem kerülhet), egy Apache-2.0 (megengedő, forrásmegjelöléssel átvehető)."
+    }
+  },
+  "note": {
+    "hu": "NÉGY TÁR UGYANAZT AZ EGYETLEN ADATSORT HASZNÁLJA, BÁJTRA AZONOSAN — ÉS TOVÁBBI KETTŐ UGYANERRE HIVATKOZIK.\n\nA `fetal_health.csv` md5 lenyomata mind a négyben `e9a749d3003a7c2f224c92ce0ffd99df`: 2126 sor, 21 jellemző. Ez a Kaggle „Fetal Health Classification” adatsor, amely az UCI Cardiotocography adatsorból származik (Ayres-de-Campos et al., SisPorto 2.0, J Matern Fetal Med 2000) — EGYETLEN portugál centrum felvételei.\n\nEbből következik, amit a katalógus ki akar mondani: KILENC TÁR NEM KILENC BIZONYÍTÉK. Ha a rendszer a modelljeiket egymás mellé tenné és az egyetértésüket megerősítésnek olvasná, egyetlen 2126 soros adatsort hallana hatszor. Az együttes hangosabb lenne, nem megbízhatóbb.\n\nÉS A CÍMKE NEM KIMENETEL. A `fetal_health` mező (normális 77,8% · gyanús 13,9% · kóros 8,3%) HÁROM SZÜLÉSZ KONSZENZUSA A GÖRBÉRŐL, nem az újszülött állapota. Egy ezen tanított modell azt jósolja meg, MIT MONDANÁNAK A SZÜLÉSZEK a tracéról — nem azt, hogy mi történt a gyerekkel. A rendszer 17. lépésben bekötött kimeneteli hurka (`outcomeAudit`) éppen a másik kérdést méri, és a kettő összekeverése a legdrágább tévedés ezen a területen: egy modell, ami tökéletesen egyezik a szakértői olvasattal, a szakértői olvasat HIBÁIT is tökéletesen reprodukálja.\n\nA negyedik tár (naomifridman) MÁS: nyers FHR-jelfeldolgozás a lille-i adatsorból (Houzé de l'Aulnoit / Boudet), nem ugyanaz az adat és nem ugyanaz a feladat. Viszont GPLv3.\n\nAZ ÖSSZEVONÁS EBBŐL KÖVETKEZIK. A `core/ai/egyuttes.ts` a tanítóadat UJJLENYOMATA szerint csoportosít: egy ujjlenyomat = EGY HANG, akárhány modell tartozik hozzá. A panel a modellek számát nem mutatja megerősítésnek, és két független hang eltéréséből nem képez többséget — a többségképzés pontosan azt a bizonytalanságot tüntetné el, ami ott az egyetlen valódi információ."
+  },
+  "tetelek": [
+    {
+      "id": "ctgml.anandms101",
+      "tipus": "kalkulator",
+      "cim": "anandms101/fetal-health-classification — CTG-alapú osztályozó jegyzetfüzet és betanított modell",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.variability",
+        "ctg.decel"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Teljes, futtatható betanítási jegyzetfüzet és mentett modell ugyanarra a 2126 soros adatsorra. Az EGYETLEN tétel, amelynek licence megengedő."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "Apache-2.0",
+        "megjegyzes": {
+          "hu": "Megengedő: a kód átvehető forrásmegjelöléssel és a NOTICE megtartásával. A BENNE LÉVŐ ADATSOR licence viszont NEM ezé a táré — az UCI/Kaggle adat saját feltételekkel jár, és a tár licence arra nem terjed ki."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "dataset/fetal_health.csv (2126 sor, 21 jellemző)",
+        "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df"
+      }
+    },
+    {
+      "id": "ctgml.aryaazimi",
+      "tipus": "kalkulator",
+      "cim": "arya-azimi/fetal-health-classification — osztályozó és irányítópult",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.variability"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Ugyanaz az adatsor, ugyanaz a feladat, felhasználói felülettel. Semmi nem vehető át belőle."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL. A licenc hiánya nem szabad felhasználás: minden jog fenntartva. Sem a kód, sem a modell nem vehető át — a licenckapu megelőzi a hitelesítést, ötödször."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "A tár klónozható, de licenc nélkül nem használható fel.",
+        "amitTudunk": "hogy ugyanazt a bájtra azonos adatsort használja",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      },
+      "forras": {
+        "megnevezes": "data/fetal_health.csv",
+        "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df"
+      }
+    },
+    {
+      "id": "ctgml.farman24476",
+      "tipus": "kalkulator",
+      "cim": "Farman24476/Early-Detection-of-Fetal-Distress-Using-Machine-Learning-on-CTG-Data — jegyzetfüzet",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.decel"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Egyetlen jegyzetfüzet ugyanarra az adatsorra, 98%-os pontosságot állító címmel. A cím maga is figyelmeztetés: 77,8%-ban normális osztályeloszlás mellett a puszta pontosság semmit nem mond."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva, semmi nem vehető át."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a jegyzetfüzet ugyanazt az UCI-eredetű adatsort dolgozza fel",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "ctgml.naomifridman",
+      "tipus": "kalkulator",
+      "cim": "naomifridman/fetus_stress_detection_FHR_UC — FHR-jelfeldolgozás és alapvonal-számítás",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.variability"
+      ],
+      "mitAdnaHozza": {
+        "hu": "AZ EGYETLEN, AMI MÁS KÉRDÉST TESZ FEL: nyers FHR-jelből számol alapvonalat és gyorsulás/lassulás-felismerést, a lille-i szakértői konszenzussal validált adatsoron (Houzé de l'Aulnoit / Boudet). Ez a rendszer szempontjából értékesebb, mint a táblázatos osztályozók — az alapvonal MEGHATÁROZÁSA az, ami a CTG-értékelésben ténylegesen ingadozik értékelők között."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "GPL-3.0",
+        "megjegyzes": {
+          "hu": "COPYLEFT. Ugyanaz a helyzet, mint a PRBPERIsk (GPLv2) tételnél: származékos mű nem kerülhet a terjesztett, MIT-licencű műbe. Ha telepítjük, csak a `registry/kulso/helyi/` alá (gitignorált, az exportcsomagból kizárva), és a `validateKulsoTerjesztes()` build-hibává teszi, ha mégis a terjesztett fába kerülne."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "FHR-jelfeldolgozó jegyzetfüzetek; a lille-i FHR-adatsor Matlab-eszköztárának python-átirata",
+        "szerzok": "Naomi Fridman; az eredeti eszköztár: Boudet S, Houzé de l'Aulnoit A et al.",
+        "helyiTabla": "registry/kulso/helyi/fhr-alapvonal/"
+      }
+    },
+    {
+      "id": "ctgml.ctgguardian",
+      "tipus": "kalkulator",
+      "cim": "Fillo001/CTG-Guardian",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Korábban felvett tétel, itt a teljesség kedvéért: ugyanabba a családba tartozik, és ugyanaz a válasz."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENC — semmi nem vehető át belőle."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-06",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a tár létezik és nyilvános",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "ctgml.kduffuor",
+      "tipus": "kalkulator",
+      "cim": "kduffuor/fetal-health-ml-analysis",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.variability"
+      ],
+      "mitAdnaHozza": {
+        "hu": "MIT-licencű jegyzetfüzet és mentett modellek — ugyanaz a 2126 soros adatsor, bájtra azonos."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "MIT",
+        "megjegyzes": {
+          "hu": "Megengedő. A benne lévő ADATSOR licence viszont nem ezé a táré."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "fetal_health.csv",
+        "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df"
+      }
+    },
+    {
+      "id": "ctgml.cdt",
+      "tipus": "kalkulator",
+      "cim": "laurentinobezerra/cdt-model — döntési fa",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline",
+        "ctg.decel"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Döntésifa-modell — ÁTLÁTHATÓ szerkezet, ami itt klinikailag többet ér a fekete dobozoknál: a fa ágai megnézhetők és összevethetők a FIGO-szabályokkal. Ugyanaz az adatsor, bájtra azonosan."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "MIT",
+        "megjegyzes": {
+          "hu": "Megengedő — DE a tárban lévő portugál nyelvű szakdolgozat-PDF nem MIT alatt áll: az szerzői jogvédett szöveg."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "fetal_health.csv",
+        "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df"
+      }
+    },
+    {
+      "id": "ctgml.svm",
+      "tipus": "kalkulator",
+      "cim": "AdityaTheDev/FetalHealthClassification-Using-SupportVectorMachine",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline"
+      ],
+      "mitAdnaHozza": {
+        "hu": "SVM-osztályozó ugyanazon az adatsoron."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "Apache-2.0"
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "fetalhealth-classification-using-svm.ipynb (a tár nem szállítja az adatsort, a jegyzetfüzet ugyanarra hivatkozik)"
+      }
+    },
+    {
+      "id": "ctgml.vishesh",
+      "tipus": "kalkulator",
+      "cim": "VisheshData/Fetal_health_classification",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.baseline"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Jegyzetfüzet ugyanarra az adatsorra."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a jegyzetfüzet ugyanazt az adatsort dolgozza fel",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "ctgml.felicia",
+      "tipus": "kalkulator",
+      "cim": "feliciasalim/fetal-health-classification — random erdő",
+      "cimForrasa": "forras",
+      "terulet": "magzati monitorozás",
+      "mihezKotodik": [
+        "ctg.variability"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Random erdő ugyanarra az adatsorra, kísérő PDF-fel."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a tár nyilvános és a jegyzetfüzet olvasható",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "ctgml.sonoai",
+      "tipus": "kalkulator",
+      "cim": "Niedrigerregen/SonoAI — magzati agydaganat ultrahangképen",
+      "cimForrasa": "forras",
+      "terulet": "magzati ultrahang",
+      "mihezKotodik": [
+        "us.hc",
+        "us.bpd"
+      ],
+      "mitAdnaHozza": {
+        "hu": "KÉPALAPÚ modell, tehát MÁS fajta, mint a többi: CNN ultrahangképre, két betanított Keras-modellel. A szerző maga nevezi kísérletinek, és megnevezi a nehézséget: kevés, zajos, kiegyensúlyozatlan adat. Ez nem a tár hiányossága, hanem a szerző tisztessége — és pontosan ezért nem klinikai eszköz."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva. A licenckapu itt egybeesik a klinikaival: a szerző saját leírása szerint sem klinikai használatra való."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a modellek és a betanító szkript nyilvánosan olvashatók; a szerző kísérletinek jelöli",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    }
+  ]
+}

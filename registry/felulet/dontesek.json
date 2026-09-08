@@ -1,0 +1,8 @@
+{
+  "id": "felulet.dontesek",
+  "label": { "hu": "A felülettérkép szabályainak aláírt döntései" },
+  "note": {
+    "hu": "ÜRESEN INDUL, ÉS EZ NEM HIÁNYOSSÁG. A döntést klinikai vezető, DPO és fejlesztés hozza, együtt ülve — a gép javaslatot ad, nem aláírást. Amíg egy szabály nincs itt, a hozzá tartozó mezők NEM kerülnek át. A munkalap: `npm run xlsx` „Döntések” lapja; a lenyomatot a `npm run dontes` írja ki."
+  },
+  "dontesek": []
+}

@@ -1,0 +1,6458 @@
+[
+  {
+    "id": "anthro.bmi",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testtömegindex (BMI)",
+      "en": "Body mass index"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "kg/m2",
+    "domain": {
+      "min": 10,
+      "max": 80,
+      "critical": [
+        null,
+        40
+      ]
+    },
+    "derivation": {
+      "kind": "computed",
+      "explain": {
+        "hu": "BMI = testsúly (kg) / testmagasság (m)²"
+      },
+      "calc": "calc.bmi"
+    },
+    "standards": {
+      "loinc": "39156-5",
+      "ichom": "PCB019"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terhesség előtti testsúlyból számolt testtömegindex."
+      },
+      "whyItMatters": {
+        "hu": "A CMQCC vérzési kockázat, a VBAC-esély és a VTE-profilaxis dózisa is ettől függ."
+      }
+    }
+  },
+  {
+    "id": "anthro.bsa",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testfelszín"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "m2",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.bsa.mosteller"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Mosteller-képlettel számolt testfelszín."
+      },
+      "whyItMatters": {
+        "hu": "A kemoterápiás dózisok ebből számolnak (12. modul)."
+      }
+    },
+    "domain": {
+      "min": 0.5,
+      "max": 3.5
+    }
+  },
+  {
+    "id": "anthro.height",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testmagasság",
+      "en": "Body height"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "cm",
+    "domain": {
+      "min": 120,
+      "max": 210,
+      "plausible": [
+        140,
+        200
+      ]
+    },
+    "standards": {
+      "loinc": "8302-2",
+      "ichom": "PCB015"
+    },
+    "provenanceAllowed": [
+      "clinician",
+      "patient"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Cipő nélkül mért testmagasság."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "anthro.weight.current",
+    "label": {
+      "hu": "Aktuális testsúly",
+      "en": "Current weight"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "kg",
+    "domain": {
+      "min": 25,
+      "max": 250
+    },
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P30D",
+      "labour": "P7D"
+    },
+    "standards": {
+      "loinc": "29463-7",
+      "ichom": "PCB017"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A vizsgálat napján mért testsúly."
+      },
+      "whyItMatters": {
+        "hu": "A testfelszín, a gyógyszerdózisok és a terhességi súlygyarapodás ebből számol."
+      },
+      "pitfalls": {
+        "hu": "NEM ezt kell a BMI-hez használni: a BMI a terhesség előtti súlyból számol."
+      }
+    }
+  },
+  {
+    "id": "anthro.weight.prepregnancy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhesség előtti testsúly",
+      "en": "Pre-pregnancy weight"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "kg",
+    "domain": {
+      "min": 30,
+      "max": 250,
+      "plausible": [
+        40,
+        180
+      ]
+    },
+    "provenanceAllowed": [
+      "patient",
+      "clinician"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A fogantatás előtti testsúly."
+      },
+      "pitfalls": {
+        "hu": "Rendszerint önbevallott — a confidence ilyenkor `reported`, nem `measured`."
+      }
+    }
+  },
+  {
+    "id": "anthro.weightGain",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhességi súlygyarapodás"
+    },
+    "module": "anthro",
+    "datatype": "quantity",
+    "unit": "kg",
+    "domain": {
+      "min": -20,
+      "max": 60
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.weightGain",
+      "explain": {
+        "hu": "Aktuális testsúly mínusz a terhesség előtti."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terhesség előtti súlyhoz képest hízott mennyiség."
+      },
+      "whyItMatters": {
+        "hu": "Az IOM 2009 célsávjához mérve értékelendő — a célsáv a kiindulási BMI-től függ."
+      },
+      "pitfalls": {
+        "hu": "A negatív érték nem hiba: hyperemesis vagy tudatos fogyás mellett előfordul, és önmagában is klinikai jel."
+      }
+    }
+  },
+  {
+    "id": "exam.cervix.consistency",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A cervix konzisztenciája",
+      "en": "Cervical consistency"
+    },
+    "module": "exam.obs",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "kemény"
+      },
+      {
+        "code": 1,
+        "label_hu": "közepes"
+      },
+      {
+        "code": 2,
+        "label_hu": "puha"
+      }
+    ],
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A cervix tapintási konzisztenciája."
+      }
+    }
+  },
+  {
+    "id": "exam.cervix.dilation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhszáj-tágulat",
+      "en": "Cervical dilation"
+    },
+    "module": "exam.obs",
+    "datatype": "quantity",
+    "unit": "cm",
+    "cardinality": "series",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A méhszáj tágultsága centiméterben."
+      }
+    }
+  },
+  {
+    "id": "exam.cervix.effacement",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elvékonyodás",
+      "en": "Cervical effacement"
+    },
+    "module": "exam.obs",
+    "datatype": "quantity",
+    "unit": "%",
+    "cardinality": "series",
+    "domain": {
+      "min": 0,
+      "max": 100
+    },
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A cervix elvékonyodása százalékban."
+      }
+    }
+  },
+  {
+    "id": "exam.cervix.position",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pozíció",
+      "en": "Cervical position"
+    },
+    "module": "exam.obs",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "hátsó"
+      },
+      {
+        "code": 1,
+        "label_hu": "közép"
+      },
+      {
+        "code": 2,
+        "label_hu": "elülső"
+      }
+    ],
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A cervix elhelyezkedése."
+      }
+    }
+  },
+  {
+    "id": "exam.cervix.station",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Beszállás (station)",
+      "en": "Fetal station"
+    },
+    "module": "exam.obs",
+    "datatype": "coded",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A vezérrész beszállása a spinae ischiadicae-hoz viszonyítva. A klinikus a látott állapotot választja; a Bishop-pontérték a kód, nem külön beírandó adat."
+      },
+      "pitfalls": {
+        "hu": "A −3…+3 klinikai skála NEM azonos a 0–3 Bishop-pontsávval: a −1 és a 0 egy sávba esik. Ezért ez választós mező, nem szabad számbeírás."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "−3 (magasan)",
+        "label_en": "−3 (high)"
+      },
+      {
+        "code": 1,
+        "label_hu": "−2",
+        "label_en": "−2"
+      },
+      {
+        "code": 2,
+        "label_hu": "−1 vagy 0 (spinákban)",
+        "label_en": "−1 or 0 (at spines)"
+      },
+      {
+        "code": 3,
+        "label_hu": "+1 vagy +2 (mélyen)",
+        "label_en": "+1 or +2 (low)"
+      }
+    ]
+  },
+  {
+    "id": "score.bishop.dilation",
+    "version": 1,
+    "status": "active",
+    "aliasOf": "exam.cervix.dilation",
+    "label": {
+      "hu": "Tágulat (Bishop-kártya)",
+      "en": "Dilation (Bishop card)"
+    },
+    "module": "score",
+    "datatype": "quantity",
+    "unit": "cm",
+    "documentation": {
+      "definition": {
+        "hu": "A méhszáj-tágulat megjelenítése a Bishop-kártyán. Nem önálló mező: ugyanaz az adat, mint az exam.cervix.dilation — ez oldja fel az IPRACS hármas duplikációját."
+      }
+    }
+  },
+  {
+    "id": "score.bishop.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bishop-összpontszám",
+      "en": "Bishop score"
+    },
+    "module": "score",
+    "datatype": "quantity",
+    "domain": {
+      "min": 0,
+      "max": 13
+    },
+    "derivation": {
+      "kind": "computed",
+      "explain": {
+        "hu": "A tágulat és az elvékonyodás sávosan pontozódik, a másik három közvetlen pontérték."
+      },
+      "calc": "calc.bishop"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az indukció várható sikerességét becslő pontszám."
+      },
+      "whyItMatters": {
+        "hu": "≥8 kedvező · 6–7 közepes · <6 kedvezőtlen (érlelés mérlegelendő)."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.auscultation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szívhallgatózás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.cardio.site",
+        "status.cardio.character"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A szívhangok vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A szívhangok vizsgálatakor eltérést találtunk, amit további vizsgálat tisztáz."
+      },
+      "limited": {
+        "hu": "A szívhangok vizsgálata csak korlátozottan volt elvégezhető; a leletet a következő viziten kiegészítjük."
+      },
+      "impossible": {
+        "hu": "A szívhangok vizsgálata a körülmények miatt nem volt elvégezhető."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kardiológiai konzílium — újonnan észlelt eltérés terhességben"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Szív-ultrahang (echocardiographia)"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "limited",
+        "kind": "followup",
+        "what": {
+          "hu": "A hallgatózás kiegészítése a következő viziten"
+        },
+        "urgency": "routine"
+      },
+      {
+        "when": "impossible",
+        "kind": "followup",
+        "what": {
+          "hu": "A hallgatózás megismétlése megfelelő körülmények között"
+        },
+        "urgency": "routine"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A szívhangok és zörejek hallgatózásos vizsgálata."
+      },
+      "whyItMatters": {
+        "hu": "A CARPREG II és a terhességi kardiológiai kockázat bemenete."
+      },
+      "pitfalls": {
+        "hu": "Alapból csukva: a normálisat nem kell beírni. A KORLÁTOZOTT vizsgálat (láttunk valamit, de nem teljesen) és a NEM VIZSGÁLHATÓ (meg sem lehetett nézni) két külön állapot — és mindkettő más, mint a KIMARADT, amit nem is rögzítettünk."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.character",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A szívzörej jellege"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "murmur",
+        "label_hu": "Zörej",
+        "opens": [
+          "status.cardio.murmur.grade",
+          "status.cardio.murmur.timing"
+        ]
+      },
+      {
+        "code": "extra",
+        "label_hu": "Extra hang (S3, S4)"
+      },
+      {
+        "code": "rub",
+        "label_hu": "Dörzszörej"
+      },
+      {
+        "code": "arrhy",
+        "label_hu": "Szabálytalan ritmus"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen jellegű az eltérés."
+      },
+      "pitfalls": {
+        "hu": "A jelleg dönti el, mit kérdez tovább a rendszer: a zörej mértéket és típust kér, az extra hang nem."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.congestion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pangásjelek"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.cardio.congestion.sign"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "Pangásra utaló jelet nem találtunk."
+      },
+      "abnormal": {
+        "hu": "Pangásra utaló jelet találtunk, amit tisztázunk."
+      },
+      "limited": {
+        "hu": "A pangásjelek megítélése korlátozott volt."
+      },
+      "impossible": {
+        "hu": "A pangásjelek nem voltak megítélhetők."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A keringési pangás klinikai jelei."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Szív-ultrahang"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "NT-proBNP"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.cardio.congestion.sign",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pangásjel"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "jvd",
+        "label_hu": "Nyaki vénatágulat (JVD)"
+      },
+      {
+        "code": "hepatomegaly",
+        "label_hu": "Megnagyobbodott máj"
+      },
+      {
+        "code": "edema",
+        "label_hu": "Végtagi oedema"
+      },
+      {
+        "code": "orthopnea",
+        "label_hu": "Ortopnoe"
+      },
+      {
+        "code": "pnd",
+        "label_hu": "Éjszakai rohamszerű nehézlégzés"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik jel észlelhető."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.murmur.grade",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Zörej mértéke"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "1/6"
+      },
+      {
+        "code": 2,
+        "label_hu": "2/6"
+      },
+      {
+        "code": 3,
+        "label_hu": "3/6"
+      },
+      {
+        "code": 4,
+        "label_hu": "4/6"
+      },
+      {
+        "code": 5,
+        "label_hu": "5/6"
+      },
+      {
+        "code": 6,
+        "label_hu": "6/6"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A szívzörej hangossága Levine szerint, 1–6."
+      },
+      "whyItMatters": {
+        "hu": "A 4/6 vagy hangosabb zörej tapintható rezgéssel jár, és mindig kivizsgálandó."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.murmur.timing",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Zörej típusa"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "sys",
+        "label_hu": "Szisztolés"
+      },
+      {
+        "code": "dia",
+        "label_hu": "Diasztolés"
+      },
+      {
+        "code": "cont",
+        "label_hu": "Folyamatos"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A szívciklus melyik szakaszában hallható."
+      },
+      "whyItMatters": {
+        "hu": "A diasztolés zörej terhességben MINDIG kórosnak tekintendő; a halk szisztolés zörej viszont gyakran fiziológiás a megnövekedett perctérfogat miatt."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.nyha",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "NYHA-osztály"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "I — panaszmentes"
+      },
+      {
+        "code": 2,
+        "label_hu": "II — enyhe korlátozottság"
+      },
+      {
+        "code": 3,
+        "label_hu": "III — kifejezett korlátozottság"
+      },
+      {
+        "code": 4,
+        "label_hu": "IV — nyugalmi panasz"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A funkcionális terhelhetőség NYHA szerint."
+      },
+      "whyItMatters": {
+        "hu": "A CARPREG II 3 pontos tétele III–IV. osztálynál; a terhesség kimenetelét erősebben jelzi előre, mint a szerkezeti eltérés maga."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a fiziológiás terhelhetőség-csökkenés miatt könnyen túlbecsülhető. A kiindulási, terhesség előtti osztály a viszonyítási alap."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.peripheralPulse",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Perifériás pulzusok"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.cardio.peripheralPulse.site"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A perifériás pulzusok jól tapinthatók."
+      },
+      "abnormal": {
+        "hu": "A perifériás pulzusok között eltérést találtunk."
+      },
+      "limited": {
+        "hu": "A perifériás pulzusok tapintása korlátozott volt."
+      },
+      "impossible": {
+        "hu": "A perifériás pulzusok nem voltak tapinthatók."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A végtagi pulzusok tapinthatósága."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Érultrahang (Doppler)"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.cardio.peripheralPulse.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hol"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "radial",
+        "label_hu": "Radialis"
+      },
+      {
+        "code": "femoral",
+        "label_hu": "Femoralis"
+      },
+      {
+        "code": "popliteal",
+        "label_hu": "Poplitealis"
+      },
+      {
+        "code": "dorsalis",
+        "label_hu": "Dorsalis pedis"
+      },
+      {
+        "code": "tibial",
+        "label_hu": "Tibialis posterior"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik pulzus hiányzik vagy gyengült."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.pulseQuality",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pulzuskvalitás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "regular",
+        "label_hu": "Szabályos"
+      },
+      {
+        "code": "irregular",
+        "label_hu": "Szabálytalan"
+      },
+      {
+        "code": "weak",
+        "label_hu": "Gyenge"
+      },
+      {
+        "code": "bounding",
+        "label_hu": "Ugráló"
+      },
+      {
+        "code": "alternans",
+        "label_hu": "Alternáló"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A pulzus jellege."
+      }
+    }
+  },
+  {
+    "id": "status.cardio.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A szívhang/zörej lokalizációja"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ao",
+        "label_hu": "Aorta felett"
+      },
+      {
+        "code": "pulm",
+        "label_hu": "Pulmonalis felett"
+      },
+      {
+        "code": "mitr",
+        "label_hu": "Mitralis felett"
+      },
+      {
+        "code": "tric",
+        "label_hu": "Tricuspidalis felett"
+      },
+      {
+        "code": "diff",
+        "label_hu": "Diffúz, nem lokalizálható"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol hallható az eltérés."
+      },
+      "whyItMatters": {
+        "hu": "A lokalizáció és a típus együtt utal a billentyűre."
+      },
+      "pitfalls": {
+        "hu": "A lokalizáció önmagában nem kér tovább semmit — a JELLEG dönti el, mit kérdez a rendszer. Így a lánc nem ágazik el kétszer ugyanarra."
+      }
+    }
+  },
+  {
+    "id": "status.endo.acanthosis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Acanthosis nigricans"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.endo.acanthosis.site",
+        "status.endo.acanthosis.severity"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A hajlatok bőrének vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A hajlatokban olyan bőrelváltozást találtunk, ami inzulinrezisztenciára utalhat."
+      },
+      "limited": {
+        "hu": "A vizsgálat csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A vizsgálat nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A hajlatok sötét, bársonyos bőrelváltozásának vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Felnőttkorban HIRTELEN, kiterjedten megjelenő acanthosis paraneoplasiás lehet (leggyakrabban gyomor-adenocarcinoma) — a kor és a kialakulás gyorsasága különbözteti meg a metabolikus formától."
+      },
+      "whyItMatters": {
+        "hu": "Az acanthosis nigricans az inzulinrezisztencia legjobban látható bőrjele, és PCOS-ben a metabolikus kockázat irányába mozdítja a kivizsgálást."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Éhomi vércukor és HbA1c, terheléses vércukorvizsgálat mérlegelése"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "diet",
+        "what": {
+          "hu": "Életmódi és étrendi tanácsadás inzulinrezisztencia mellett"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "status.endo.acanthosis.severity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kiterjedtség"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Enyhe — csak közelről látható"
+      },
+      {
+        "code": 2,
+        "label_hu": "Közepes — jól látható, körülírt"
+      },
+      {
+        "code": 3,
+        "label_hu": "Kiterjedt — nagy felületen, bőrfüggelékekkel"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire kiterjedt az elváltozás."
+      }
+    }
+  },
+  {
+    "id": "status.endo.acanthosis.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az acanthosis lokalizációja"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "neck",
+        "label_hu": "Nyak"
+      },
+      {
+        "code": "axilla",
+        "label_hu": "Hónalj"
+      },
+      {
+        "code": "groin",
+        "label_hu": "Lágyék"
+      },
+      {
+        "code": "knuckles",
+        "label_hu": "Ujjperc-hajlatok"
+      },
+      {
+        "code": "multiple",
+        "label_hu": "Több hajlatban"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol látható az elváltozás."
+      }
+    }
+  },
+  {
+    "id": "status.endo.eyeSigns",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szemtünetek"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.endo.eyeSigns.sign"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A szem vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A szem körül a pajzsmirigyműködéssel összefüggő eltérést találtunk."
+      },
+      "limited": {
+        "hu": "A szem vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A szem vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A pajzsmirigy-túlműködéshez társuló szemtünetek vizsgálata."
+      },
+      "whyItMatters": {
+        "hu": "A Graves-orbitopathia a hyperthyreosis egyetlen olyan jele, ami a pajzsmirigyfunkció rendezése UTÁN is progrediálhat, és önálló kezelést kér."
+      }
+    }
+  },
+  {
+    "id": "status.endo.eyeSigns.sign",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szemtünet"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "exophthalmos",
+        "label_hu": "Exophthalmus (kiálló szem)"
+      },
+      {
+        "code": "lidRetraction",
+        "label_hu": "Szemhéjretrakció (Dalrymple)"
+      },
+      {
+        "code": "lidLag",
+        "label_hu": "Szemhéj-elmaradás lefelé tekintéskor (von Graefe)"
+      },
+      {
+        "code": "chemosis",
+        "label_hu": "Kötőhártya-duzzanat"
+      },
+      {
+        "code": "diplopia",
+        "label_hu": "Kettőslátás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "visusLoss",
+        "label_hu": "Látásromlás",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Sürgős szemészeti konzílium — nervus opticus veszélyeztetettsége"
+        },
+        "urgency": "urgent",
+        "code": "visusLoss"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Szemészeti konzílium"
+        },
+        "urgency": "soon",
+        "code": "diplopia"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen szemtünet észlelhető."
+      }
+    }
+  },
+  {
+    "id": "status.endo.fatDistribution",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Zsíreloszlás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "even",
+        "label_hu": "Egyenletes"
+      },
+      {
+        "code": "central",
+        "label_hu": "Centrális (hasi)"
+      },
+      {
+        "code": "gluteofemoral",
+        "label_hu": "Csípő-comb túlsúlyú"
+      },
+      {
+        "code": "cushingoid",
+        "label_hu": "Cushingoid (holdvilágarc, buffalo hump, vékony végtagok)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "lipodystrophy",
+        "label_hu": "Lipodystrophia (végtagi zsírvesztés)",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Cushing-szűrés"
+        },
+        "urgency": "soon",
+        "code": "cushingoid"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A testzsír eloszlásának mintázata."
+      },
+      "whyItMatters": {
+        "hu": "A centrális zsíreloszlás a metabolikus szindróma és a terhességi cukorbetegség önálló kockázati tényezője, a BMI-től FÜGGETLENÜL — normális BMI mellett is."
+      }
+    }
+  },
+  {
+    "id": "status.endo.hip",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Csípőkörfogat"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "cm",
+    "domain": {
+      "min": 50,
+      "max": 220
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A csípő legnagyobb körfogata a trochanterek magasságában."
+      },
+      "howToMeasure": {
+        "hu": "Álló helyzetben, a farizom legnagyobb kiterjedésénél (WHO 2008)."
+      }
+    }
+  },
+  {
+    "id": "status.endo.striae",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Striák"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.endo.striae.color",
+        "status.endo.striae.site"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A bőr vizsgálata striát nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A bőrön csíkozottságot találtunk; a jelentőségéről a kezelőorvos tájékoztat."
+      },
+      "limited": {
+        "hu": "A bőr vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A bőr vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A bőr csíkozottságának vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a striae gravidarum szinte szabályszerű; önmagában rögzítve értéktelen adat. A SZÍN és a SZÉLESSÉG hordozza az információt."
+      },
+      "whyItMatters": {
+        "hu": "A HALVÁNY strák terhesség és súlyváltozás után élettaniak. A LILÁS-VÖRÖS, 1 cm-nél szélesebb striák viszont a Cushing-szindróma egyik megkülönböztető jele — ez a különbség dönti el, kell-e endokrin kivizsgálás."
+      }
+    }
+  },
+  {
+    "id": "status.endo.striae.color",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Striák színe"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "white",
+        "label_hu": "Halvány, fehér (régi)"
+      },
+      {
+        "code": "pink",
+        "label_hu": "Rózsaszín (friss)"
+      },
+      {
+        "code": "purple",
+        "label_hu": "Lilás-vörös, széles (> 1 cm)",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Cushing-szűrés: éjféli nyálkortizol vagy 1 mg dexametazon-teszt"
+        },
+        "urgency": "soon",
+        "code": "purple"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A striák megjelenése."
+      }
+    }
+  },
+  {
+    "id": "status.endo.striae.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Striák elhelyezkedése"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "abdomen",
+        "label_hu": "Has"
+      },
+      {
+        "code": "breast",
+        "label_hu": "Emlő"
+      },
+      {
+        "code": "thigh",
+        "label_hu": "Comb"
+      },
+      {
+        "code": "hip",
+        "label_hu": "Csípő"
+      },
+      {
+        "code": "axilla",
+        "label_hu": "Hónalj"
+      },
+      {
+        "code": "multiple",
+        "label_hu": "Több területen"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol láthatók a striák."
+      }
+    }
+  },
+  {
+    "id": "status.endo.thyroid",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pajzsmirigy tapintás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.endo.thyroid.size",
+        "status.endo.thyroid.nodule",
+        "status.endo.thyroid.consistency",
+        "status.endo.thyroid.tenderness"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A pajzsmirigy vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A pajzsmirigyen eltérést tapintottunk, amit további vizsgálat tisztáz."
+      },
+      "limited": {
+        "hu": "A pajzsmirigy tapintása csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A pajzsmirigy tapintása nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A pajzsmirigy megtekintéses és tapintásos vizsgálata."
+      },
+      "howToMeasure": {
+        "hu": "A beteg mögé állva, nyeletés közben, mindkét lebeny és az isthmus áttapintása."
+      },
+      "pitfalls": {
+        "hu": "Rövid, vaskos nyaknál és elhízásnál a tapintás KORLÁTOZOTT — a „nem tapintható kóros” ilyenkor nem zárja ki a göböt."
+      },
+      "whyItMatters": {
+        "hu": "A terhesség alatt a pajzsmirigy élettanilag 10–15%-kal megnagyobbodik, és a hypothyreosis a leggyakoribb kezelhető endokrin ok, ami a magzat idegrendszeri fejlődését befolyásolja."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "TSH és szabad T4"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Pajzsmirigy-ultrahang"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.endo.thyroid.consistency",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A pajzsmirigy konzisztenciája"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "soft",
+        "label_hu": "Puha"
+      },
+      {
+        "code": "firm",
+        "label_hu": "Tömött (rugalmas)"
+      },
+      {
+        "code": "hard",
+        "label_hu": "Kemény, köves",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "fixed",
+        "label_hu": "A környezetéhez fixált",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A pajzsmirigy tapintott állománya."
+      }
+    }
+  },
+  {
+    "id": "status.endo.thyroid.nodule",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Göb"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "solitary",
+        "label_hu": "Szoliter göb",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "multi",
+        "label_hu": "Többgöbös"
+      },
+      {
+        "code": "diffuse",
+        "label_hu": "Diffúz megnagyobbodás göb nélkül"
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Pajzsmirigy-ultrahang, szükség esetén vékonytű-aspiráció"
+        },
+        "urgency": "soon",
+        "code": "solitary"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Tapintható-e göb a pajzsmirigyben."
+      },
+      "whyItMatters": {
+        "hu": "A szoliter, tömött, fixált göb a malignitás legerősebb tapintási jele. A terhesség NEM ok a kivizsgálás halasztására: az ultrahang és a vékonytű-aspiráció terhesen is elvégezhető, csak az izotópvizsgálat ellenjavallt."
+      }
+    }
+  },
+  {
+    "id": "status.endo.thyroid.size",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Nagyság (WHO golyva-fokozat)"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nem tapintható és nem látható"
+      },
+      {
+        "code": 1,
+        "label_hu": "I — tapintható, de nyújtott nyakon sem látható"
+      },
+      {
+        "code": 2,
+        "label_hu": "II — normál nyaktartásnál is látható"
+      }
+    ],
+    "codeSystem": {
+      "id": "who-goitre",
+      "version": "2007",
+      "source": "WHO/UNICEF/ICCIDD: Assessment of iodine deficiency disorders (3rd ed., 2007)"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A pajzsmirigy nagysága a WHO golyvabesorolása szerint."
+      },
+      "whyItMatters": {
+        "hu": "A besorolás populációs jódellátottsági felmérésre készült; egyénnél a méret megítélésére az ultrahang pontosabb."
+      }
+    }
+  },
+  {
+    "id": "status.endo.thyroid.tenderness",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Nyomásérzékenység"
+    },
+    "module": "status",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Fájdalmas-e a pajzsmirigy tapintása."
+      },
+      "whyItMatters": {
+        "hu": "A fájdalmas pajzsmirigy subacut (de Quervain) thyreoiditisre utal — ez az egyetlen pajzsmirigy-gyulladás, ami tipikusan fáj, és a kezelése is más."
+      }
+    }
+  },
+  {
+    "id": "status.endo.virilization",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Virilizáció jelei"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.endo.virilization.sign"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A hormonhatásra utaló testi jelek vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "Olyan testi jeleket találtunk, amelyek hormonvizsgálatot indokolnak."
+      },
+      "limited": {
+        "hu": "A vizsgálat csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A vizsgálat nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A kifejezett androgénhatás fizikális jeleinek vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "A hirsutismus és a virilizáció nem ugyanaz: a virilizáció a klitorisz megnagyobbodását, hangmélyülést és halántéki hajritkulást is jelent. A kettő összemosása miatt marad fel nem ismerve a ritka, de gyorsan romló daganatos ok."
+      },
+      "whyItMatters": {
+        "hu": "A VIRILIZÁCIÓ (nem a puszta hirsutismus) gyors megjelenése androgéntermelő mellékvese- vagy petefészek-daganat gyanúját veti fel — ez sürgős kivizsgálást kér, míg a lassan alakuló hirsutismus jellemzően PCOS."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Összes és szabad tesztoszteron, DHEAS, 17-OH-progeszteron"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Mellékvese- és petefészek-képalkotás androgéntermelő daganat keresésére"
+        },
+        "urgency": "urgent"
+      }
+    ]
+  },
+  {
+    "id": "status.endo.virilization.sign",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Virilizációs jel"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "clitoromegaly",
+        "label_hu": "Klitorisz-megnagyobbodás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "voice",
+        "label_hu": "Hangmélyülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "balding",
+        "label_hu": "Halántéki hajritkulás (androgén típusú)"
+      },
+      {
+        "code": "muscle",
+        "label_hu": "Férfias izomzat-eloszlás"
+      },
+      {
+        "code": "breastAtrophy",
+        "label_hu": "Emlő-sorvadás"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen jel észlelhető."
+      }
+    }
+  },
+  {
+    "id": "status.endo.waist",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Derékkörfogat"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "cm",
+    "domain": {
+      "min": 40,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A derék legkisebb körfogata, illetve a köldök magasságában mért körfogat."
+      },
+      "howToMeasure": {
+        "hu": "Álló helyzetben, kilégzés végén, a bordaív alsó széle és a csípőlapát felső széle közötti felezőpontban (WHO 2008)."
+      },
+      "pitfalls": {
+        "hu": "TERHESSÉG ALATT NEM ÉRTELMEZHETŐ zsíreloszlásként — a mérés a terhesség előtti vagy a szülés utáni állapotra vonatkozik."
+      },
+      "whyItMatters": {
+        "hu": "A derék–csípő arány és a hasi elhízás megítélésének bemenete."
+      }
+    }
+  },
+  {
+    "id": "status.endo.whr",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Derék–csípő arány"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0.5,
+      "max": 2.0
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.whr",
+      "explain": {
+        "hu": "Derékkörfogat osztva a csípőkörfogattal."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A derékkörfogat és a csípőkörfogat hányadosa."
+      },
+      "whyItMatters": {
+        "hu": "A WHO szerint nőnél 0,85 felett centrális zsíreloszlás — a BMI-nél jobban jelzi előre a metabolikus kockázatot."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.arm",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — felkar"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A felkar külső felszíne."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.chest",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — mellkas"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A szegycsont és a mellbimbók környéke."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.chin",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — áll"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. Az áll és az állkapocs vonala."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.lowerAbdomen",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — alhas"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A köldök alatt, a szeméremcsont felé."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.lowerBack",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — ágyéki-keresztcsonti terület"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A derék és a keresztcsont fölött."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.thigh",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — comb"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A comb elülső felszíne."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey összpontszám"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 36
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.ferrimanGallwey",
+      "explain": {
+        "hu": "A kilenc androgénfüggő testtájék pontszámának összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A kilenc testtájék pontszámának összege."
+      },
+      "pitfalls": {
+        "hu": "A küszöb ETNIKUMFÜGGŐ, és a kozmetikai szőrtelenítés csökkenti a pontszámot anélkül, hogy az androgénhatás változna — ezért a kezeltség tényét rögzíteni kell (`status.fert.fg.treated`), különben a score hamisan megnyugtat."
+      },
+      "whyItMatters": {
+        "hu": "A hirsutismus objektív mérőszáma, a PCOS Rotterdam-kritériumainak egyik eleme (klinikai hyperandrogenismus)."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.treated",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szőrtelenítő kezelés alatt áll"
+    },
+    "module": "status",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Alkalmaz-e a beteg gyantázást, lézeres vagy más szőrtelenítést a pontozott területeken."
+      },
+      "whyItMatters": {
+        "hu": "Ez az a mező, ami nélkül a Ferriman–Gallwey-pontszám félrevezet: a kezelt beteg alacsony pontszáma NEM zárja ki a hyperandrogenismust. A rendszer ezért a kezeltséget a pontszám mellett mindig megjeleníti."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.upperAbdomen",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — felhas"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A köldök felett, a középvonalban."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.upperBack",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — hát felső része"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A lapockák közötti terület."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.fg.upperLip",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ferriman–Gallwey — felső ajak"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs terminális szőrzet"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — kevés, szórt"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — mérsékelt"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — kifejezett, férfias mintázat"
+      }
+    ],
+    "codeSystem": {
+      "id": "mfg",
+      "version": "1961/2012",
+      "source": "Ferriman & Gallwey 1961, módosított (mFG) kilenc tájékos változat"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terminális (vastag, pigmentált) szőrzet mennyisége. A felső ajak felett."
+      },
+      "howToMeasure": {
+        "hu": "Csak a TERMINÁLIS szőrzet számít; a pihe (vellus) nem. A pontozás kezeletlen állapotra vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "status.fert.galactorrhoea",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Galactorrhoea"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.fert.galactorrhoea.side",
+        "status.fert.galactorrhoea.character"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "Az emlő vizsgálata váladékozást nem mutatott."
+      },
+      "abnormal": {
+        "hu": "Az emlőbimbóból váladékozást észleltünk, amit további vizsgálat tisztáz."
+      },
+      "limited": {
+        "hu": "Az emlő vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "Az emlő vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Ürül-e váladék az emlőbimbóból szoptatáson kívül."
+      },
+      "pitfalls": {
+        "hu": "Az EGYOLDALI, VÉRES váladék NEM galactorrhoea: az emlődaganat gyanúját veti fel, és képalkotást kér, nem prolaktin-mérést. A kettő összemosása a legdrágább tévedés ebben a szekcióban."
+      },
+      "whyItMatters": {
+        "hu": "A kétoldali, tejszerű váladékozás hyperprolactinaemiára utal, ami a meddőség és a ciklusszabálytalanság gyakori, jól kezelhető oka."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Prolaktin, TSH és terhességi teszt"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.fert.galactorrhoea.character",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Váladék jellege"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "milky",
+        "label_hu": "Tejszerű"
+      },
+      {
+        "code": "serous",
+        "label_hu": "Savós, tiszta"
+      },
+      {
+        "code": "green",
+        "label_hu": "Zöldes-barnás"
+      },
+      {
+        "code": "bloody",
+        "label_hu": "Véres",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "purulent",
+        "label_hu": "Gennyes"
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Emlő-ultrahang és mammográfia — véres váladék"
+        },
+        "urgency": "urgent",
+        "code": "bloody"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Emlősebészeti konzílium"
+        },
+        "urgency": "urgent",
+        "code": "bloody"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Prolaktin-szint meghatározása"
+        },
+        "urgency": "soon",
+        "code": "milky"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A váladék megjelenése."
+      }
+    }
+  },
+  {
+    "id": "status.fert.galactorrhoea.side",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Galactorrhoea — melyik oldal"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "both",
+        "label_hu": "Mindkét oldal"
+      },
+      {
+        "code": "right",
+        "label_hu": "Jobb",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "left",
+        "label_hu": "Bal",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik emlőből ürül a váladék."
+      },
+      "whyItMatters": {
+        "hu": "Az egyoldali váladékozás lokális emlőbetegségre gyanús, a kétoldali endokrin okra."
+      }
+    }
+  },
+  {
+    "id": "status.fert.partner.semenAnalysis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Partner ondóvizsgálatának eredménye"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "normo",
+        "label_hu": "Normozoospermia"
+      },
+      {
+        "code": "oligo",
+        "label_hu": "Oligozoospermia"
+      },
+      {
+        "code": "astheno",
+        "label_hu": "Asthenozoospermia"
+      },
+      {
+        "code": "terato",
+        "label_hu": "Teratozoospermia"
+      },
+      {
+        "code": "oat",
+        "label_hu": "Oligo-astheno-teratozoospermia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "crypto",
+        "label_hu": "Cryptozoospermia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "azoo",
+        "label_hu": "Azoospermia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notDone",
+        "label_hu": "Nem történt vizsgálat",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "who-semen",
+      "version": "6th ed. (2021)",
+      "source": "WHO laboratory manual for the examination and processing of human semen, 6th edition (2021)"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Andrológiai konzílium"
+        },
+        "urgency": "soon",
+        "code": "azoo"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Andrológiai konzílium"
+        },
+        "urgency": "soon",
+        "code": "oat"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Ondóvizsgálat elvégzése — a meddőségi kivizsgálás nem teljes nélküle"
+        },
+        "urgency": "soon",
+        "code": "notDone"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A partner legutóbbi spermiogramjának összefoglaló besorolása."
+      },
+      "pitfalls": {
+        "hu": "Ez HIVATKOZÁS, nem lelet: a részletes paraméterek a partner saját dokumentációjában élnek. A WHO 6. kiadása (2021) más referenciaértékeket használ, mint az 5. — a besorolás csak a kiadás megnevezésével együtt értelmezhető, ezért a rendszer az osztályozás verzióját az értékre bélyegzi."
+      },
+      "whyItMatters": {
+        "hu": "A meddőségi esetek mintegy felében férfi tényező is szerepet játszik, mégis a kivizsgálás gyakran csak a nőre terjed ki. Ez a mező azért van a NŐ státuszában, hogy a hiánya LÁTHATÓ legyen: a „nem történt vizsgálat” önálló, rögzített válasz, nem üres mező."
+      }
+    }
+  },
+  {
+    "id": "status.fert.tanner.breast",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Emlő Tanner-stádium"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "B1 — gyermeki emlő"
+      },
+      {
+        "code": 2,
+        "label_hu": "B2 — emlőbimbó-kiemelkedés"
+      },
+      {
+        "code": 3,
+        "label_hu": "B3 — az emlő és az udvar tovább növekszik"
+      },
+      {
+        "code": 4,
+        "label_hu": "B4 — az udvar önálló dombot képez"
+      },
+      {
+        "code": 5,
+        "label_hu": "B5 — érett emlő"
+      }
+    ],
+    "codeSystem": {
+      "id": "tanner",
+      "version": "1969",
+      "source": "Marshall WA, Tanner JM. Arch Dis Child 1969;44:291-303"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az emlő fejlettségi foka a Tanner-beosztás szerint."
+      },
+      "pitfalls": {
+        "hu": "A stádium megítélése TAPINTÁSSAL történik, nem megtekintéssel: elhízásnál a zsírszövet emlőnek látszik. A vizsgálat serdülőnél különös körültekintést és a vizsgálat indokának elmagyarázását kéri."
+      },
+      "whyItMatters": {
+        "hu": "Elmaradt vagy hiányzó mell-fejlődés primer amenorrhoeánál az ösztrogénhatás hiányára utal, és a kivizsgálás irányát azonnal meghatározza."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.adnex.finding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Függelék — lelet"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "tender",
+        "label_hu": "Érzékenység"
+      },
+      {
+        "code": "resistance",
+        "label_hu": "Rezisztencia"
+      },
+      {
+        "code": "mass",
+        "label_hu": "Körülírt terime",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "fixedMass",
+        "label_hu": "Fixált, egyenetlen terime",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Hüvelyi ultrahang IOTA-leírással"
+        },
+        "urgency": "soon",
+        "code": "mass"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Nőgyógyászati onkológiai centrum"
+        },
+        "urgency": "urgent",
+        "code": "fixedMass"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mi tapintható a függelék tájékán."
+      },
+      "whyItMatters": {
+        "hu": "A fixált, egyenetlen adnex-terime malignitásra gyanús, és a kivizsgálás irányát azonnal megváltoztatja (tumormarkerek, IOTA-elvű ultrahang, onkológiai centrum)."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.adnex.side",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Függelék — oldal"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "right",
+        "label_hu": "Jobb"
+      },
+      {
+        "code": "left",
+        "label_hu": "Bal"
+      },
+      {
+        "code": "both",
+        "label_hu": "Mindkét oldal"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik oldalon tapintható eltérés."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.bimanual",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bimanuális tapintás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.gyn.uterus.size",
+        "status.gyn.uterus.position",
+        "status.gyn.uterus.mobility",
+        "status.gyn.cmt",
+        "status.gyn.adnex.side",
+        "status.gyn.adnex.finding",
+        "status.gyn.douglas"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A méh és a függelékek tapintásos vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A tapintásos vizsgálat eltérést mutatott, amit további vizsgálat tisztáz."
+      },
+      "limited": {
+        "hu": "A tapintásos vizsgálat csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A tapintásos vizsgálat nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A méh és a függelékek kétkezes (hüvelyi + hasi) tapintásos vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Elhízásnál, feszes hasfalnál és szűz betegnél a tapintás KORLÁTOZOTT, nem normális. A „nem tapintható kóros” elhízott betegnél nem zárja ki a petefészek-daganatot — ilyenkor a korlátozott lelet rögzítése és az ultrahang a helyes út."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Hüvelyi ultrahang a tapintási lelet tisztázására"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "limited",
+        "kind": "imaging",
+        "what": {
+          "hu": "Hüvelyi ultrahang — a tapintás nem volt megítélhető"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "status.gyn.cmt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Portio mozgatási fájdalom"
+    },
+    "module": "status",
+    "datatype": "bool",
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "PID empirikus antibiotikus kezelése (CDC-séma) — a megerősítésre nem kell várni"
+        },
+        "urgency": "urgent",
+        "code": true
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Chlamydia és gonorrhoea NAAT, terhességi teszt"
+        },
+        "urgency": "urgent",
+        "code": true
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Fájdalmas-e a méhnyak oldalirányú mozgatása (cervical motion tenderness)."
+      },
+      "whyItMatters": {
+        "hu": "A kismedencei gyulladás (PID) egyik minimál-kritériuma a CDC szerint: portio-mozgatási, méh- vagy adnex-érzékenység egyike elég a kezelés megkezdéséhez fogamzóképes, kismedencei fájdalommal jelentkező betegnél. A kezelés KÉSLELTETÉSE meddőséghez vezet — a diagnózist nem szabad megerősítő vizsgálatra várva halasztani."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.colposcopy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kolposzkópos lelet"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.gyn.colposcopy.tz",
+        "status.gyn.colposcopy.finding",
+        "status.gyn.colposcopy.biopsy"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A méhnyak nagyítós vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A méhnyak nagyítós vizsgálata eltérést mutatott; a mintavétel eredményéről a kezelőorvos tájékoztat."
+      },
+      "limited": {
+        "hu": "A méhnyak nagyítós vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A méhnyak nagyítós vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A méhnyak nagyítós, ecetsavas és jódos vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a kolposzkópia elvégezhető, de a méhnyakcsatorna-kaparás (ECC) ELLENJAVALLT. A vérzékenyebb, ödémás terhes méhnyak a leletet gyakran súlyosabbnak mutatja, mint amilyen."
+      },
+      "whyItMatters": {
+        "hu": "A kolposzkópia a citológiai eltérés tisztázásának eszköze, de ÖNMAGÁBAN nem diagnózis: a szövettani mintavétel dönt."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.colposcopy.biopsy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Történt célzott biopszia"
+    },
+    "module": "status",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Vettek-e szövettani mintát a vizsgálat során."
+      },
+      "whyItMatters": {
+        "hu": "A szövettani eredmény és a kolposzkópos vélemény ELTÉRHET; a rendszer ezért külön rögzíti, hogy volt-e mintavétel — enélkül nem tudható, hogy a negatív lelet vizuális vélemény vagy szövettani tény."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.colposcopy.finding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kolposzkópos kép"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "normal",
+        "label_hu": "Normális kolposzkópos kép"
+      },
+      {
+        "code": "grade1",
+        "label_hu": "1. fokú (minor) elváltozás"
+      },
+      {
+        "code": "grade2",
+        "label_hu": "2. fokú (major) elváltozás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "invasion",
+        "label_hu": "Invázióra gyanús kép",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "nonspec",
+        "label_hu": "Nem specifikus eltérés (gyulladás, atrophia)"
+      },
+      {
+        "code": "inadeq",
+        "label_hu": "Nem megítélhető",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "ifcpc",
+      "version": "2011",
+      "source": "IFCPC colposcopic terminology, Rio de Janeiro (2011)"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Célzott biopszia"
+        },
+        "urgency": "soon",
+        "code": "grade1"
+      },
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Célzott biopszia"
+        },
+        "urgency": "urgent",
+        "code": "grade2"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Sürgős nőgyógyászati onkológiai konzílium"
+        },
+        "urgency": "urgent",
+        "code": "invasion"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az ecetsavas és jódos próba utáni kép besorolása."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.colposcopy.tz",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Transzformációs zóna típusa"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "1. típus — teljesen látható, ectocervicalis"
+      },
+      {
+        "code": 2,
+        "label_hu": "2. típus — teljesen látható, endocervicalis komponenssel"
+      },
+      {
+        "code": 3,
+        "label_hu": "3. típus — nem teljesen látható",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "ifcpc",
+      "version": "2011",
+      "source": "IFCPC colposcopic terminology, Rio de Janeiro (2011)"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "A látótéren kívüli terület tisztázása — a negatív lelet 3. típusú zónánál nem zár ki"
+        },
+        "urgency": "soon",
+        "code": 3
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A hám átalakulási zónájának láthatósága."
+      },
+      "whyItMatters": {
+        "hu": "A 3. típusú transzformációs zóna azt jelenti, hogy a laphám-hengerhám határ nem látható — a NEGATÍV kolposzkópos lelet ilyenkor nem megnyugtató, mert az elváltozás a csatornában rejtve maradhat."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.cytology",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhnyak-citológia eredménye"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "nilm",
+        "label_hu": "NILM — negatív intraepithelialis laesióra"
+      },
+      {
+        "code": "ascus",
+        "label_hu": "ASC-US — meghatározatlan jelentőségű laphámsejt-eltérés"
+      },
+      {
+        "code": "lsil",
+        "label_hu": "LSIL — enyhe fokú laphám-elváltozás"
+      },
+      {
+        "code": "asch",
+        "label_hu": "ASC-H — HSIL nem zárható ki",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "hsil",
+        "label_hu": "HSIL — súlyos fokú laphám-elváltozás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "agc",
+        "label_hu": "AGC — mirigyhámsejt-eltérés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ais",
+        "label_hu": "AIS — adenocarcinoma in situ",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ca",
+        "label_hu": "Karcinóma-gyanús",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "inadeq",
+        "label_hu": "Nem értékelhető minta",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "bethesda",
+      "version": "2014",
+      "source": "The Bethesda System for Reporting Cervical Cytology, 3rd edition (2014)",
+      "validFrom": "2015-01-01"
+    },
+    "cardinality": "series",
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia és célzott biopszia"
+        },
+        "urgency": "urgent",
+        "code": "hsil"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia és célzott biopszia"
+        },
+        "urgency": "urgent",
+        "code": "asch"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia, méhnyakcsatorna- és méhűri mintavétel mérlegelésével"
+        },
+        "urgency": "urgent",
+        "code": "agc"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia — adenocarcinoma in situ"
+        },
+        "urgency": "urgent",
+        "code": "ais"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Sürgős nőgyógyászati onkológiai konzílium"
+        },
+        "urgency": "urgent",
+        "code": "ca"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "HPV-tipizálás a további teendő eldöntéséhez"
+        },
+        "urgency": "soon",
+        "code": "ascus"
+      },
+      {
+        "when": "abnormal",
+        "kind": "followup",
+        "what": {
+          "hu": "Ismételt kenetvétel — a minta nem volt értékelhető"
+        },
+        "urgency": "soon",
+        "code": "inadeq"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A méhnyakról vett kenet citológiai besorolása."
+      },
+      "pitfalls": {
+        "hu": "A „nem értékelhető minta” NEM negatív lelet: a vizsgálat meg nem történtnek tekintendő, és a kenetet meg kell ismételni. Ez a leggyakoribb adminisztratív hiba, ami miatt egy beteg kiesik a szűrésből."
+      },
+      "whyItMatters": {
+        "hu": "A citológiai besorolás vezérli a további teendőt (ismétlés, HPV-tipizálás, kolposzkópia). A rendszer a rögzítéskori BETHESDA-VERZIÓT az értékre bélyegzi: a régebbi, „P1–P5” Papanicolaou-osztályozás szerinti leletek NEM feleltethetők meg egy az egyben a Bethesda-kategóriáknak, és egy évekkel korábbi kenet visszamenőleges átolvasása a mai rendszer szerint csendben mást állítana, mint amit akkor leírtak."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.douglas",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Douglas-üreg"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "free",
+        "label_hu": "Szabad"
+      },
+      {
+        "code": "tender",
+        "label_hu": "Érzékeny"
+      },
+      {
+        "code": "bulging",
+        "label_hu": "Boltosuló (szabad folyadék gyanúja)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "nodular",
+        "label_hu": "Göbös, egyenetlen",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Terhességi teszt (hCG) — megrepedt ectopia kizárása"
+        },
+        "urgency": "urgent",
+        "code": "bulging"
+      },
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Sürgős hüvelyi ultrahang szabad folyadékra"
+        },
+        "urgency": "urgent",
+        "code": "bulging"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A méh mögötti mélyedés tapintási lelete."
+      },
+      "whyItMatters": {
+        "hu": "A boltosuló Douglas szabad hasi folyadékot jelez — fogamzóképes, fájdalmas betegnél a megrepedt méhen kívüli terhesség lehetőségét kell elsőként kizárni. A GÖBÖS Douglas a mély infiltráló endometriosis legjellemzőbb tapintási jele, és a legjobb időpont a tapintására a menstruáció ideje."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.fluor.character",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fluor jellege"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "physiologic",
+        "label_hu": "Élettani (fehéres, szagtalan)"
+      },
+      {
+        "code": "curdy",
+        "label_hu": "Sajtos, túrószerű"
+      },
+      {
+        "code": "frothy",
+        "label_hu": "Habos, szürkés-zöldes"
+      },
+      {
+        "code": "greyThin",
+        "label_hu": "Szürke, híg, tapadó"
+      },
+      {
+        "code": "purulent",
+        "label_hu": "Gennyes"
+      },
+      {
+        "code": "bloody",
+        "label_hu": "Véres",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "watery",
+        "label_hu": "Bő, vizes",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Burokrepedés kizárása (AFP/PAMG-1 vagy IGFBP-1 teszt)"
+        },
+        "urgency": "urgent",
+        "code": "watery"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A hüvelyváladék megjelenése."
+      },
+      "pitfalls": {
+        "hu": "Terhesség végén a bő, vizes folyás burokrepedés lehet, nem fluor — ez a megkülönböztetés a legdrágább tévedés ebben a mezőben."
+      },
+      "whyItMatters": {
+        "hu": "A jelleg irányba mutat: sajtos → candida, habos → trichomonas, szürke-híg → bakteriális vaginosis. De EGYIK SEM diagnózis mikroszkópia nélkül."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.fluor.odor",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szag"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "amine",
+        "label_hu": "Halszagú (amin)"
+      },
+      {
+        "code": "foul",
+        "label_hu": "Bűzös",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Van-e kóros szaga a váladéknak."
+      },
+      "pitfalls": {
+        "hu": "Vajúdás alatt a bűzös magzatvíz chorioamnionitis jele — ott nem fluor-szagról van szó, és azonnali teendőt kér."
+      },
+      "whyItMatters": {
+        "hu": "A halszag KOH-hozzáadásra (whiff-teszt) az Amsel-kritériumok egyike a bakteriális vaginosis diagnózisában."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.hpv",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "HPV-státusz"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "neg",
+        "label_hu": "Negatív"
+      },
+      {
+        "code": "hr",
+        "label_hu": "Magas kockázatú HPV pozitív (nem 16/18)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "hpv16",
+        "label_hu": "HPV 16 pozitív",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "hpv18",
+        "label_hu": "HPV 18 pozitív",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "posUntyped",
+        "label_hu": "Pozitív, genotipizálás nélkül",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notDone",
+        "label_hu": "Nem történt",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia — HPV 16 pozitivitás"
+        },
+        "urgency": "soon",
+        "code": "hpv16"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia — HPV 18 pozitivitás"
+        },
+        "urgency": "soon",
+        "code": "hpv18"
+      },
+      {
+        "when": "abnormal",
+        "kind": "followup",
+        "what": {
+          "hu": "Citológiával együtt értékelendő; ismétlés 12 hónap múlva, ha a citológia negatív"
+        },
+        "urgency": "routine",
+        "code": "hr"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A magas kockázatú HPV-tipizálás eredménye."
+      },
+      "pitfalls": {
+        "hu": "A NEGATÍV HPV-teszt nem jelenti, hogy a meglévő elváltozás megszűnt: a citológiai lelet önmagában is vezérel. A két vizsgálat egymást kiegészíti, nem helyettesíti."
+      },
+      "whyItMatters": {
+        "hu": "A HPV 16 és 18 együtt a méhnyakrákok kb. 70%-áért felelős, és a HPV-alapú szűrésben a 16/18 pozitivitás a citológiai eredménytől FÜGGETLENÜL kolposzkópiát indokol."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.ph",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hüvelyi pH"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 3.5,
+      "max": 8.0,
+      "step": 0.1,
+      "plausible": [
+        3.8,
+        6.0
+      ]
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A hüvelyváladék pH-ja indikátorpapírral mérve."
+      },
+      "howToMeasure": {
+        "hu": "Az indikátorpapírt a hüvely oldalfalára kell érinteni, NEM a méhnyakcsatornára és nem a hátsó boltozatba gyűlt váladékra."
+      },
+      "pitfalls": {
+        "hu": "A vér, az ondó és a magzatvíz mind LÚGOS — mindhárom hamisan emeli a mért pH-t. Menstruáció alatt, közösülés után és burokrepedés után a mérés nem értelmezhető."
+      },
+      "whyItMatters": {
+        "hu": "A 4,5 feletti pH a bakteriális vaginosis és a trichomoniasis irányába mutat; a candida mellett a pH jellemzően normális marad. Az Amsel-kritériumok egyike."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.portio",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Portio (méhszáj)"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.gyn.portio.surface",
+        "status.gyn.portio.contactBleeding"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A méhszáj vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A méhszájon eltérést találtunk, ami további vizsgálatot igényel."
+      },
+      "limited": {
+        "hu": "A méhszáj vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A méhszáj vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A hüvelybe domborodó méhnyakrész megtekintéses vizsgálata."
+      },
+      "whyItMatters": {
+        "hu": "A méhnyakrák a szemmel LÁTHATÓ daganatok közé tartozik — a fejlett stádiumú esetek nagy része olyan betegnél alakul ki, akinél évek óta nem történt feltárás. A negatív cytológia nem helyettesíti a megtekintést: az exophyticus tumor mellől vett kenet hamisan negatív lehet."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.portio.contactBleeding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontaktvérzés"
+    },
+    "module": "status",
+    "datatype": "bool",
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia kontaktvérzés miatt — normális cytológia mellett is"
+        },
+        "urgency": "soon",
+        "code": true
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Vérzik-e a portio a kenetvétel vagy az érintés hatására."
+      },
+      "whyItMatters": {
+        "hu": "A kontaktvérzés a méhnyakrák egyik legkorábbi objektív jele, és a cytológiánál hamarabb jelentkezhet — normális kenet mellett is kolposzkópiát indokol."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.portio.surface",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Felszín"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "smooth",
+        "label_hu": "Sima, ép"
+      },
+      {
+        "code": "ectopy",
+        "label_hu": "Ectopia (hengerhám-kiterjedés)"
+      },
+      {
+        "code": "nabothian",
+        "label_hu": "Ovula Nabothi"
+      },
+      {
+        "code": "polyp",
+        "label_hu": "Nyaki polyp"
+      },
+      {
+        "code": "erosion",
+        "label_hu": "Erosio, hámhiány"
+      },
+      {
+        "code": "ulcer",
+        "label_hu": "Fekély",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "exophytic",
+        "label_hu": "Exophyticus, tumorgyanús terime",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "condyloma",
+        "label_hu": "Condyloma"
+      },
+      {
+        "code": "cerclage",
+        "label_hu": "Cerclage-öltés látható"
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Sürgős kolposzkópia és célzott biopszia"
+        },
+        "urgency": "urgent",
+        "code": "exophytic"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Kolposzkópia"
+        },
+        "urgency": "soon",
+        "code": "ulcer"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A portio felszínének megjelenése."
+      },
+      "whyItMatters": {
+        "hu": "Az ectopia FIZIOLÓGIÁS fiatal nőnél, fogamzásgátló szedésekor és terhességben — önmagában nem kóros, kezelést nem igényel, és nem indok kolposzkópiára."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.speculum",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hüvelyi feltárás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.gyn.fluor.character",
+        "status.gyn.fluor.odor",
+        "status.gyn.ph"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A hüvely vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A hüvelyváladék vizsgálata eltérést mutatott; a szükséges kezelésről a kezelőorvos tájékoztat."
+      },
+      "limited": {
+        "hu": "A hüvely feltárása csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A hüvely feltárása nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A hüvely és a méhszáj megtekintése tükörrel."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a hüvelyi feltárás burokrepedés gyanújakor STERIL tükörrel történik, és a digitális vizsgálat ilyenkor kerülendő — az növeli a chorioamnionitis kockázatát."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Hüvelyváladék natív mikroszkópia és tenyésztés"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.gyn.uterus.mobility",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mozgathatóság"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "free",
+        "label_hu": "Szabadon mozgatható"
+      },
+      {
+        "code": "limited",
+        "label_hu": "Korlátozottan mozgatható"
+      },
+      {
+        "code": "fixed",
+        "label_hu": "Fixált",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szabadon elmozdítható-e a méh a tapintás során."
+      },
+      "whyItMatters": {
+        "hu": "A FIXÁLT méh mély infiltráló endometriosisra, kismedencei összenövésre vagy előrehaladott daganatra utal — mindhárom megváltoztatja a műtéti tervezést."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.uterus.position",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méh helyzete"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ante",
+        "label_hu": "Anteflexio-anteversio"
+      },
+      {
+        "code": "medio",
+        "label_hu": "Medioflexio (középállás)"
+      },
+      {
+        "code": "retro",
+        "label_hu": "Retroflexio-retroversio"
+      },
+      {
+        "code": "dextro",
+        "label_hu": "Jobbra deviált"
+      },
+      {
+        "code": "sinistro",
+        "label_hu": "Balra deviált"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A méhtest dőlésiránya a méhnyakhoz és a medencetengelyhez képest."
+      },
+      "pitfalls": {
+        "hu": "A helyzet leírását sokan kórosnak olvassák. A `retro` érték a betegtájékoztatóban ezért nem jelenik meg eltérésként."
+      },
+      "whyItMatters": {
+        "hu": "A retroflexio ÖNMAGÁBAN élettani változat (a nők 15–20%-a), NEM betegség és nem meddőségi ok. Klinikai jelentősége akkor van, ha FIXÁLT — az endometriosisra vagy összenövésre utal —, és eszközös beavatkozás (méhűri mintavétel, IUD-behelyezés) előtt ismerni kell az irányát."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.uterus.size",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méh nagysága"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "normal",
+        "label_hu": "Normális nagyságú"
+      },
+      {
+        "code": "gt6",
+        "label_hu": "Kisujjnyival nagyobb (≈6–8 hetes)"
+      },
+      {
+        "code": "gt8",
+        "label_hu": "8–12 hetes terhességnek megfelelő"
+      },
+      {
+        "code": "gt12",
+        "label_hu": "12 hetes terhességnél nagyobb",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "small",
+        "label_hu": "Kisebb a szokásosnál (atrophiás)"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A méh tapintott nagysága, terhességi hetekben kifejezve."
+      },
+      "whyItMatters": {
+        "hu": "A myomás méh nagyságát hagyományosan terhességi hetekben adják meg — a 12 hetes méret felett a méh a kismedencéből kiemelkedik, és hasi úton is tapintható."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.vulva",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Külső genitália"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.gyn.vulva.lesion",
+        "status.gyn.vulva.site"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A külső nemi szervek vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A külső nemi szerveken eltérést találtunk, amiről a kezelőorvos tájékoztat."
+      },
+      "limited": {
+        "hu": "A külső nemi szervek vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A külső nemi szervek vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szeméremtest, a gát és a hüvelybemenet megtekintéses vizsgálata."
+      },
+      "whyItMatters": {
+        "hu": "A vulva a hüvelyi feltárás előtti első lelet, és az egyetlen hely, ahol a beteg maga is látja az eltérést — a lichen sclerosus és a vulva-carcinoma évekig fel nem ismerve marad, ha senki nem nézi meg."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "followup",
+        "what": {
+          "hu": "Kontroll a kezelés megkezdése után"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "status.gyn.vulva.lesion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Eltérés jellege"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "erythema",
+        "label_hu": "Bőrpír, gyulladás"
+      },
+      {
+        "code": "edema",
+        "label_hu": "Duzzanat"
+      },
+      {
+        "code": "excoriation",
+        "label_hu": "Vakarásnyom, hámhiány"
+      },
+      {
+        "code": "ulcer",
+        "label_hu": "Fekély",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "condyloma",
+        "label_hu": "Condyloma (szemölcs)"
+      },
+      {
+        "code": "leukoplakia",
+        "label_hu": "Fehéres, hegesedő terület (lichen gyanúja)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "atrophy",
+        "label_hu": "Sorvadás"
+      },
+      {
+        "code": "cyst",
+        "label_hu": "Ciszta (pl. Bartholin)"
+      },
+      {
+        "code": "tumor",
+        "label_hu": "Tumorgyanús terime",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "varix",
+        "label_hu": "Vulva-varicositas"
+      },
+      {
+        "code": "laceration",
+        "label_hu": "Sérülés, repedés"
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Vulva-biopszia — a fekély kivizsgálandó"
+        },
+        "urgency": "soon",
+        "code": "ulcer"
+      },
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Vulva-biopszia — lichen sclerosus / VIN gyanúja"
+        },
+        "urgency": "soon",
+        "code": "leukoplakia"
+      },
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Nőgyógyászati onkológiai konzílium"
+        },
+        "urgency": "urgent",
+        "code": "tumor"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen elváltozás látható a külső nemi szerveken."
+      },
+      "pitfalls": {
+        "hu": "A vulva-elváltozásokat gyakran „gomba” címszó alatt kezelik hetekig. Ha egy elváltozás gombaellenes kezelésre nem javul, az nem gomba."
+      },
+      "whyItMatters": {
+        "hu": "A fekély, a leukoplakia és a terime BIOPSZIÁT kér — a megjelenés alapján a lichen sclerosus és a differenciált VIN nem különíthető el."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.vulva.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A vulvaelváltozás lokalizációja"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "labMaj",
+        "label_hu": "Nagyajak"
+      },
+      {
+        "code": "labMin",
+        "label_hu": "Kisajak"
+      },
+      {
+        "code": "clitoris",
+        "label_hu": "Csikló"
+      },
+      {
+        "code": "introitus",
+        "label_hu": "Hüvelybemenet"
+      },
+      {
+        "code": "perineum",
+        "label_hu": "Gát"
+      },
+      {
+        "code": "perianal",
+        "label_hu": "Végbélnyílás körül"
+      },
+      {
+        "code": "diffuse",
+        "label_hu": "Kiterjedt, több területet érint"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol látható az eltérés."
+      }
+    }
+  },
+  {
+    "id": "status.internal.abdomen",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hasi tapintás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.internal.abdomen.region",
+        "status.internal.abdomen.sign"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A has vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A has vizsgálatakor érzékenységet vagy eltérést találtunk."
+      },
+      "limited": {
+        "hu": "A has vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A has vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A has tapintásos vizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Előrehaladott terhességben a has tapintása KORLÁTOZOTT — a méh eltakarja a szerveket, és a féregnyúlvány elmozdul. Ilyenkor a helyes válasz a korlátozott, nem a normális."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Hasi ultrahang"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Vérkép, CRP, májfunkció, amiláz"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.internal.abdomen.region",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hasi régió"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ruq",
+        "label_hu": "Jobb bordaív alatt"
+      },
+      {
+        "code": "epigastrium",
+        "label_hu": "Epigastrium"
+      },
+      {
+        "code": "luq",
+        "label_hu": "Bal bordaív alatt"
+      },
+      {
+        "code": "rlq",
+        "label_hu": "Jobb alhas"
+      },
+      {
+        "code": "suprapubic",
+        "label_hu": "Symphysis felett"
+      },
+      {
+        "code": "llq",
+        "label_hu": "Bal alhas"
+      },
+      {
+        "code": "diffuse",
+        "label_hu": "Diffúz"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik hasi régióban."
+      },
+      "whyItMatters": {
+        "hu": "A JOBB BORDAÍV ALATTI és az EPIGASTRIALIS fájdalom terhességben súlyos praeeclampsia vagy HELLP jele, amíg az ellenkezője be nem bizonyosodik."
+      }
+    }
+  },
+  {
+    "id": "status.internal.abdomen.sign",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tapintási jel"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "tender",
+        "label_hu": "Nyomásérzékenység"
+      },
+      {
+        "code": "defense",
+        "label_hu": "Défense (izomvédekezés)"
+      },
+      {
+        "code": "rebound",
+        "label_hu": "Rebound (Blumberg)"
+      },
+      {
+        "code": "mass",
+        "label_hu": "Tapintható terime"
+      },
+      {
+        "code": "hepatomegaly",
+        "label_hu": "Megnagyobbodott máj"
+      },
+      {
+        "code": "splenomegaly",
+        "label_hu": "Megnagyobbodott lép"
+      }
+    ],
+    "recommends": [
+      {
+        "when": "abnormal",
+        "code": "defense",
+        "kind": "referral",
+        "what": {
+          "hu": "Sebészeti konzílium — izomvédekezés (défense)"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "code": "rebound",
+        "kind": "referral",
+        "what": {
+          "hu": "Sebészeti konzílium — rebound (Blumberg) érzékenység"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "code": "mass",
+        "kind": "imaging",
+        "what": {
+          "hu": "Hasi ultrahang a tapintható terime tisztázására"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen eltérés tapintható."
+      },
+      "whyItMatters": {
+        "hu": "A JEL dönti el a teendőt, nem a „kóros hasi lelet” önmagában: a défense és a rebound sebészeti konzíliumot kér, a nyomásérzékenység nem. Ezért a javaslatok ÉRTÉKHEZ (`code`) kötöttek — egy „mindig” szóló javaslat itt minden hasi tapintásnál sebészt hívna, és a klinikus egy hét alatt megtanulná figyelmen kívül hagyni."
+      },
+      "pitfalls": {
+        "hu": "Előrehaladott terhességben a megnagyobbodott méh miatt a défense és a rebound is elmosódhat, és az appendix helyzete feljebb tolódik — a jel HIÁNYA itt nem zárja ki a hasi katasztrófát. Ilyenkor a lelet `korlátozott`, nem `normális`."
+      }
+    }
+  },
+  {
+    "id": "status.internal.edema",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Oedema"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.internal.edema.site",
+        "status.internal.edema.grade"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "Vizenyőt nem találtunk."
+      },
+      "abnormal": {
+        "hu": "Vizenyőt találtunk, aminek az okát tisztázzuk."
+      },
+      "limited": {
+        "hu": "A vizenyő megítélése csak korlátozottan volt lehetséges."
+      },
+      "impossible": {
+        "hu": "A vizenyő megítélése nem volt lehetséges."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Vizelet fehérje/kreatinin arány"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "followup",
+        "what": {
+          "hu": "Vérnyomás-ellenőrzés 48 órán belül"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "diet",
+        "what": {
+          "hu": "Sószegény étrend és folyadékbevitel-tanácsadás"
+        },
+        "urgency": "routine"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Végtagi vizenyő jelenléte és mértéke."
+      },
+      "whyItMatters": {
+        "hu": "A praeeclampsia klinikai képének része, és a szívelégtelenségé is."
+      },
+      "pitfalls": {
+        "hu": "Alapból csukva: a normálisat nem kell beírni. A KORLÁTOZOTT vizsgálat (láttunk valamit, de nem teljesen) és a NEM VIZSGÁLHATÓ (meg sem lehetett nézni) két külön állapot — és mindkettő más, mint a KIMARADT, amit nem is rögzítettünk."
+      }
+    }
+  },
+  {
+    "id": "status.internal.edema.grade",
+    "label": {
+      "hu": "Oedema fokozata"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "+"
+      },
+      {
+        "code": 2,
+        "label_hu": "++"
+      },
+      {
+        "code": 3,
+        "label_hu": "+++"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A benyomat mélysége és visszatelődési ideje szerint."
+      }
+    },
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "id": "status.internal.edema.site",
+    "label": {
+      "hu": "Oedema kiterjedése"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ankle",
+        "label_hu": "Boka"
+      },
+      {
+        "code": "leg",
+        "label_hu": "Lábszár"
+      },
+      {
+        "code": "gen",
+        "label_hu": "Generalizált"
+      },
+      {
+        "code": "face",
+        "label_hu": "Arc, kéz"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol jelentkezik a vizenyő."
+      },
+      "whyItMatters": {
+        "hu": "Az arc és a kéz oedemája praeeclampsiára gyanús, a bokaoedema terhességben gyakran fiziológiás."
+      }
+    },
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "id": "status.internal.general",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Általános megtekintés"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.internal.skin",
+        "status.internal.hydration"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "Az általános vizsgálat eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "Az általános vizsgálatkor eltérést találtunk, amit tisztázunk."
+      },
+      "limited": {
+        "hu": "Az általános vizsgálat csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "Az általános vizsgálat nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az általános benyomás: bőr, hidratáltság, ikterus, cyanosis."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Vérkép, májfunkció, ionok"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.internal.hydration",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hidratáltság"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "normal",
+        "label_hu": "Megfelelő"
+      },
+      {
+        "code": "mild",
+        "label_hu": "Enyhén kiszáradt"
+      },
+      {
+        "code": "severe",
+        "label_hu": "Súlyosan kiszáradt"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A hidratáltsági állapot."
+      },
+      "whyItMatters": {
+        "hu": "Hyperemesis gravidarum és elhúzódó vajúdás után a folyadékpótlás igényét jelzi."
+      }
+    }
+  },
+  {
+    "id": "status.internal.lungs",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tüdőhallgatózás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.internal.lungs.side",
+        "status.internal.lungs.sound"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A tüdő vizsgálata eltérést nem mutatott."
+      },
+      "abnormal": {
+        "hu": "A tüdő hallgatózásakor eltérést találtunk, amit további vizsgálat tisztáz."
+      },
+      "limited": {
+        "hu": "A tüdő vizsgálata csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A tüdő vizsgálata nem volt elvégezhető."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A légzési hangok hallgatózásos vizsgálata."
+      },
+      "whyItMatters": {
+        "hu": "A tüdőoedema a súlyos praeeclampsia szövődménye, és a leggyakoribb ok, ami miatt terhes beteg intenzív osztályra kerül."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Mellkasröntgen — terhességben hasi árnyékolással"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Vérgáz vagy pulzoximetria ismétlése"
+        },
+        "urgency": "soon"
+      }
+    ]
+  },
+  {
+    "id": "status.internal.lungs.side",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tüdőlelet — melyik oldal"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "right",
+        "label_hu": "Jobb"
+      },
+      {
+        "code": "left",
+        "label_hu": "Bal"
+      },
+      {
+        "code": "both",
+        "label_hu": "Mindkét oldalon"
+      },
+      {
+        "code": "base",
+        "label_hu": "Bázisokon"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik oldalon hallható az eltérés."
+      }
+    }
+  },
+  {
+    "id": "status.internal.lungs.sound",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hallgatózási lelet"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "crackles",
+        "label_hu": "Szörtyzörej"
+      },
+      {
+        "code": "wheeze",
+        "label_hu": "Sípolás, búgás"
+      },
+      {
+        "code": "diminished",
+        "label_hu": "Halkult légzés"
+      },
+      {
+        "code": "absent",
+        "label_hu": "Néma terület"
+      },
+      {
+        "code": "rub",
+        "label_hu": "Pleurális dörzszörej"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen kóros légzési hang."
+      },
+      "whyItMatters": {
+        "hu": "A kétoldali bazális szörtyzörej terhesség végén tüdőoedemára gyanús."
+      }
+    }
+  },
+  {
+    "id": "status.internal.lymph",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Nyirokcsomók"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.internal.lymph.region"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "Kóros nyirokcsomó-megnagyobbodást nem találtunk."
+      },
+      "abnormal": {
+        "hu": "Megnagyobbodott nyirokcsomót találtunk, amit tisztázunk."
+      },
+      "limited": {
+        "hu": "A nyirokcsomók vizsgálata korlátozott volt."
+      },
+      "impossible": {
+        "hu": "A nyirokcsomók nem voltak vizsgálhatók."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A tapintható nyirokcsomó-régiók."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Célzott ultrahang a régióra"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "status.internal.lymph.region",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Nyirokcsomó-régió"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "cervical",
+        "label_hu": "Nyaki"
+      },
+      {
+        "code": "axillary",
+        "label_hu": "Hónalji"
+      },
+      {
+        "code": "supraclav",
+        "label_hu": "Kulcscsont feletti"
+      },
+      {
+        "code": "inguinal",
+        "label_hu": "Lágyéki"
+      },
+      {
+        "code": "generalized",
+        "label_hu": "Generalizált"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol tapintható."
+      },
+      "whyItMatters": {
+        "hu": "A KULCSCSONT FELETTI nyirokcsomó mindig kivizsgálandó — ez a legritkábban jóindulatú."
+      }
+    }
+  },
+  {
+    "id": "status.internal.perfusion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Perifériás keringés"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "normal",
+        "label_hu": "Megfelelő"
+      },
+      {
+        "code": "cool",
+        "label_hu": "Hűvös végtagok"
+      },
+      {
+        "code": "mottled",
+        "label_hu": "Márványozott bőr"
+      },
+      {
+        "code": "delayed",
+        "label_hu": "Elhúzódó kapilláris újratelődés"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A végtagok keringése."
+      },
+      "whyItMatters": {
+        "hu": "A márványozott bőr és az elhúzódó újratelődés a sokk KORAI jele, gyakran még normális vérnyomás mellett."
+      }
+    }
+  },
+  {
+    "id": "status.internal.skin",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bőr"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pale",
+        "label_hu": "Sápadt"
+      },
+      {
+        "code": "jaundice",
+        "label_hu": "Ikterusos"
+      },
+      {
+        "code": "cyanotic",
+        "label_hu": "Cyanotikus"
+      },
+      {
+        "code": "flushed",
+        "label_hu": "Kipirult"
+      },
+      {
+        "code": "rash",
+        "label_hu": "Kiütéses"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A bőr színe és állapota."
+      },
+      "whyItMatters": {
+        "hu": "Az ikterus HELLP-szindróma vagy terhességi cholestasis jele lehet."
+      }
+    }
+  },
+  {
+    "id": "status.internal.varicosity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Varicositas"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "mild",
+        "label_hu": "Enyhe"
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Közepes"
+      },
+      {
+        "code": "severe",
+        "label_hu": "Kifejezett"
+      },
+      {
+        "code": "vulvar",
+        "label_hu": "Vulvaris varicositas"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Visszértágulat."
+      },
+      "whyItMatters": {
+        "hu": "A VTE-kockázat egyik tétele, és a vulvaris varicositas a szülésmódot is befolyásolhatja."
+      }
+    }
+  },
+  {
+    "id": "status.obs.amnioticFluid",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzatvíz jellege"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "intact",
+        "label_hu": "Burok ép"
+      },
+      {
+        "code": "clear",
+        "label_hu": "Tiszta"
+      },
+      {
+        "code": "meconiumThin",
+        "label_hu": "Híg meconiumos"
+      },
+      {
+        "code": "meconiumThick",
+        "label_hu": "Sűrű meconiumos",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "bloody",
+        "label_hu": "Véres",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "foul",
+        "label_hu": "Bűzös",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "absent",
+        "label_hu": "Nem ürül (oligohydramnion gyanúja)",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Újszülött-ellátási készenlét a szülésre (meconium-aspiráció)"
+        },
+        "urgency": "urgent",
+        "code": "meconiumThick"
+      },
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Chorioamnionitis: antibiotikum és szülésbefejezés mérlegelése"
+        },
+        "urgency": "urgent",
+        "code": "foul"
+      },
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Magzatvíz-mennyiség mérése (AFI vagy DVP)"
+        },
+        "urgency": "urgent",
+        "code": "absent"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A lefolyó magzatvíz megjelenése."
+      },
+      "whyItMatters": {
+        "hu": "A sűrű meconiumos magzatvíz meconium-aspirációs szindróma kockázatát jelzi, és újszülött-ellátási készenlétet kér a szülésnél. A bűzös magzatvíz chorioamnionitis, a véres lepényleválás vagy vasa praevia gyanúját veti fel."
+      }
+    }
+  },
+  {
+    "id": "status.obs.caput",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Caput succedaneum"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs"
+      },
+      {
+        "code": 1,
+        "label_hu": "1+ — kismértékű"
+      },
+      {
+        "code": 2,
+        "label_hu": "2+ — kifejezett"
+      },
+      {
+        "code": 3,
+        "label_hu": "3+ — jelentős"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A vezérpont feletti lágyrész-duzzanat mértéke."
+      },
+      "whyItMatters": {
+        "hu": "Az elhúzódó, akadályozott vajúdás jele. A nagy caput a beszállás tapintásos megítélését HAMISAN kedvezőnek mutatja — a fej magasabban van, mint amit a hüvelyi vizsgálat sugall."
+      }
+    }
+  },
+  {
+    "id": "status.obs.contractions.duration",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontrakció időtartama"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "s",
+    "domain": {
+      "min": 0,
+      "max": 240,
+      "plausible": [
+        20,
+        120
+      ]
+    },
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT1H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Egy összehúzódás hossza másodpercben."
+      },
+      "pitfalls": {
+        "hu": "Tapintással a kontrakció eleje és vége nem érzékelhető pontosan — a tapintott időtartam rendszeresen rövidebb a tokográfiásnál."
+      }
+    }
+  },
+  {
+    "id": "status.obs.contractions.freq",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontrakciók száma"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "/(10.min)",
+    "domain": {
+      "min": 0,
+      "max": 10,
+      "plausible": [
+        0,
+        6
+      ],
+      "critical": [
+        null,
+        5
+      ]
+    },
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT1H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány összehúzódás jelentkezik 10 perc alatt."
+      },
+      "howToMeasure": {
+        "hu": "Legalább 10, lehetőleg 30 perces megfigyelés átlaga."
+      },
+      "whyItMatters": {
+        "hu": "Tíz perc alatt öt kontrakciónál több (30 perces átlagban) tachysystolia — csökkenti a méhlepény perfúzióját, és oxitocin mellett a dózis csökkentését vagy felfüggesztését indokolja."
+      }
+    }
+  },
+  {
+    "id": "status.obs.contractions.intensity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontrakció erőssége"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "mild",
+        "label_hu": "Gyenge (a méh benyomható)"
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Közepes"
+      },
+      {
+        "code": "strong",
+        "label_hu": "Erős (a méh nem nyomható be)"
+      },
+      {
+        "code": "tetanic",
+        "label_hu": "Tartós, nem enged fel",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT1H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "procedure",
+        "what": {
+          "hu": "Oxitocin felfüggesztése, tokolízis mérlegelése"
+        },
+        "urgency": "urgent",
+        "code": "tetanic"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A tapintott összehúzódás ereje."
+      },
+      "pitfalls": {
+        "hu": "A külső tokográfia GÖRBÉJE nem erősséget mér, csak alakot — az erősség megítélése tapintással történik. A tokográfiás amplitúdóból erősségre következtetni módszertani hiba."
+      }
+    }
+  },
+  {
+    "id": "status.obs.engagement",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fejbeszállás (ötödökben)"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 5,
+        "label_hu": "5/5 — teljesen a bemenet felett"
+      },
+      {
+        "code": 4,
+        "label_hu": "4/5"
+      },
+      {
+        "code": 3,
+        "label_hu": "3/5"
+      },
+      {
+        "code": 2,
+        "label_hu": "2/5 — beszállóban"
+      },
+      {
+        "code": 1,
+        "label_hu": "1/5"
+      },
+      {
+        "code": 0,
+        "label_hu": "0/5 — nem tapintható"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A koponya hány ötöde tapintható még a medencebemenet felett hasi tapintással."
+      },
+      "howToMeasure": {
+        "hu": "Leopold IV. fogás; a WHO és a UK gyakorlat az ötödös leírást használja."
+      },
+      "pitfalls": {
+        "hu": "Ne keverjük a Bishop-score beszállásával (`exam.cervix.station`): az a spinákhoz viszonyít, ez a bemenethez, és a kettő IRÁNYA ellentétes — a nagy ötödszám kis beszállást jelent."
+      },
+      "whyItMatters": {
+        "hu": "A hasi ötödös leírás a HÜVELYI beszállásnál megbízhatóbb, mert a caput succedaneum nem téveszti meg. A 2/5 vagy kevesebb tapintható rész beszállt fejet jelent."
+      }
+    }
+  },
+  {
+    "id": "status.obs.fhr",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzati szívfrekvencia"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "/min",
+    "domain": {
+      "min": 50,
+      "max": 240,
+      "plausible": [
+        100,
+        180
+      ],
+      "critical": [
+        110,
+        160
+      ]
+    },
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT30M",
+      "ambulatory": "P7D"
+    },
+    "standards": {
+      "loinc": "55283-6"
+    },
+    "recommends": null,
+    "documentation": {
+      "definition": {
+        "hu": "A magzat alapszívfrekvenciája percenkénti ütésszámban."
+      },
+      "howToMeasure": {
+        "hu": "Legalább 10 percen át, kontrakción kívül értékelt alapvonal. A hallgatózás helye az előfekvő rész háta felőli oldal."
+      },
+      "pitfalls": {
+        "hu": "A LEGVESZÉLYESEBB tévedés az anyai pulzus rögzítése magzatiként — vajúdás alatt az anyai szívfrekvencia 100–140 közé emelkedhet, és a Doppler ezt magzatiként hozza. Ezért az anyai pulzus EGYIDEJŰ mérése kötelező, ha a kettő közel esik."
+      },
+      "whyItMatters": {
+        "hu": "Az alapvonal a magzati állapot legelérhetőbb jelzője, és minden CTG-értékelés kiindulópontja (NICHD/FIGO). A 110 alatti és a 160 feletti tartós érték azonnali értékelést kér."
+      }
+    }
+  },
+  {
+    "id": "status.obs.fhr.method",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szívhang észlelésének módja"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pinard",
+        "label_hu": "Pinard-féle kürt"
+      },
+      {
+        "code": "doppler",
+        "label_hu": "Kézi Doppler"
+      },
+      {
+        "code": "ctg",
+        "label_hu": "CTG (kardiotokográfia)"
+      },
+      {
+        "code": "us",
+        "label_hu": "Ultrahang"
+      },
+      {
+        "code": "fse",
+        "label_hu": "Fejbőr-elektróda (belső)"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mivel történt a magzati szívhang megítélése."
+      },
+      "whyItMatters": {
+        "hu": "A módszer megszabja, mit lehet a leletből kiolvasni: időszakos hallgatózásból variabilitás és decelerációtípus NEM ítélhető meg, csak alapvonal és a kontrakció utáni lassulás megléte."
+      }
+    }
+  },
+  {
+    "id": "status.obs.fundalHeight",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhmagasság"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "norm",
+        "label_hu": "Eltérés nélkül"
+      },
+      {
+        "code": "abn",
+        "label_hu": "Eltérés"
+      },
+      {
+        "code": "lim",
+        "label_hu": "Korlátozott vizsgálat"
+      },
+      {
+        "code": "imp",
+        "label_hu": "Nem vizsgálható",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "finding": {
+      "normal": "norm",
+      "limited": "lim",
+      "impossible": "imp",
+      "cascade": [
+        "status.obs.fundalHeight.cm",
+        "status.obs.fundalHeight.dev"
+      ]
+    },
+    "patientText": {
+      "normal": {
+        "hu": "A méh nagysága a terhességi hétnek megfelelő."
+      },
+      "abnormal": {
+        "hu": "A méh nagysága eltér a terhességi hétnek megfelelőtől, ezért ultrahangot kérünk."
+      },
+      "limited": {
+        "hu": "A méhmagasság mérése csak korlátozottan volt elvégezhető."
+      },
+      "impossible": {
+        "hu": "A méhmagasság mérése nem volt elvégezhető."
+      }
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "imaging",
+        "what": {
+          "hu": "Ultrahangos biometria és magzatvíz-mennyiség"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "kind": "followup",
+        "what": {
+          "hu": "Növekedés-követő ultrahang 2–3 hét múlva"
+        },
+        "urgency": "routine"
+      },
+      {
+        "when": "limited",
+        "kind": "imaging",
+        "what": {
+          "hu": "Ultrahangos biometria a tapintás helyett"
+        },
+        "urgency": "routine"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A symphysis-fundus távolság megítélése a gesztációs korhoz mérten."
+      },
+      "whyItMatters": {
+        "hu": "A növekedési eltérés legegyszerűbb szűrővizsgálata."
+      },
+      "pitfalls": {
+        "hu": "Magas BMI mellett a tapintás rendszeresen KORLÁTOZOTT — ilyenkor a helyes válasz nem a „normális\", hanem a korlátozott, és a rendszer ultrahangot javasol helyette."
+      }
+    }
+  },
+  {
+    "id": "status.obs.fundalHeight.cm",
+    "label": {
+      "hu": "Méhmagasság (symphysis-fundus távolság)"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "cm",
+    "domain": {
+      "min": 5,
+      "max": 50
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Symphysis-fundus távolság centiméterben."
+      }
+    },
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "id": "status.obs.fundalHeight.dev",
+    "label": {
+      "hu": "Eltérés iránya"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "small",
+        "label_hu": "Kisebb a vártnál"
+      },
+      {
+        "code": "large",
+        "label_hu": "Nagyobb a vártnál"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A méhmagasság a gesztációs korhoz képest."
+      }
+    },
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "id": "status.obs.lie",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzat fekvése"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "long",
+        "label_hu": "Hosszfekvés"
+      },
+      {
+        "code": "transverse",
+        "label_hu": "Harántfekvés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "oblique",
+        "label_hu": "Ferdefekvés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unstable",
+        "label_hu": "Instabil (változó)"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P14D",
+      "labour": "PT4H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülészeti értékelés — harántfekvés a 36. hét után"
+        },
+        "urgency": "urgent",
+        "code": "transverse"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A magzat hossztengelyének viszonya a méh hossztengelyéhez."
+      },
+      "howToMeasure": {
+        "hu": "Leopold I–II. fogás; kétes esetben ultrahanggal ellenőrzendő."
+      },
+      "pitfalls": {
+        "hu": "A 36. hét ELŐTT a nem hosszfekvés gyakori és általában magától rendeződik — ott a lelet nem kóros, csak követendő. A klinikai jelentőség a terminus közeledtével jelenik meg."
+      },
+      "whyItMatters": {
+        "hu": "A harántfekvés vajúdás alatt köldökzsinór-előesés és méhrepedés kockázatát hordozza, és hüvelyi szülésre alkalmatlan. Burokrepedéskor haránt- vagy ferdefekvésnél a köldökzsinór-előesés esélye a legnagyobb."
+      }
+    }
+  },
+  {
+    "id": "status.obs.membranes",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzatburok"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "intact",
+        "label_hu": "Intakt"
+      },
+      {
+        "code": "srom",
+        "label_hu": "Spontán repedt",
+        "opens": [
+          "status.obs.membranes.rupturedAt"
+        ]
+      },
+      {
+        "code": "arom",
+        "label_hu": "Mesterségesen megnyitott",
+        "opens": [
+          "status.obs.membranes.rupturedAt"
+        ]
+      },
+      {
+        "code": "uncertain",
+        "label_hu": "Bizonytalan — repedés gyanúja",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "lab",
+        "what": {
+          "hu": "Burokrepedés-teszt (PAMG-1 vagy IGFBP-1) steril tükrözéssel"
+        },
+        "urgency": "urgent",
+        "code": "uncertain"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A magzatburok állapota."
+      },
+      "pitfalls": {
+        "hu": "A „bizonytalan” válasz nem hiányzó adat: azt jelenti, hogy a beteg folyást észlelt, de a vizsgálat nem erősítette meg. Ilyenkor tesztre van szükség, és a beteget nem szabad hazaküldeni „nincs repedés” címszóval."
+      },
+      "whyItMatters": {
+        "hu": "A burokrepedés óta eltelt idő a fertőzéskockázat és a GBS-profilaxis indikációjának alapja — ezért a REPEDÉS IDŐPONTJA nyílik meg, amint a burok repedt. Ez a rendszer általános mintája: az érték nyitja a következő kérdést, nem a felület."
+      }
+    }
+  },
+  {
+    "id": "status.obs.membranes.hours",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Burokrepedés óta eltelt idő"
+    },
+    "module": "status",
+    "datatype": "quantity",
+    "unit": "h",
+    "domain": {
+      "min": 0,
+      "max": 2000
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.rom.hours",
+      "explain": {
+        "hu": "A vizsgálat ideje mínusz a burokrepedés időpontja."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A magzatburok megrepedése óta eltelt óra."
+      },
+      "whyItMatters": {
+        "hu": "18 óra felett GBS-profilaxis és fertőzésfigyelés, 24 óra felett a szülésbefejezés mérlegelendő — a küszöbök a kalkulátor sávjaiban."
+      }
+    }
+  },
+  {
+    "id": "status.obs.membranes.rupturedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Burokrepedés időpontja"
+    },
+    "module": "status",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor repedt meg a magzatburok."
+      },
+      "pitfalls": {
+        "hu": "Szinte mindig a beteg BESZÁMOLÓJA, nem mért adat — az érték `reported` megbízhatóságú, és órákat tévedhet. Ha a beteg nem tudja megmondani, ez a mező üresen marad: a becsült idő beírása a rekordba hamis pontosságot visz."
+      },
+      "whyItMatters": {
+        "hu": "Ebből számol a burokrepedés óta eltelt idő, és ezen múlik a GBS-profilaxis és a szülésbefejezés időzítése."
+      }
+    }
+  },
+  {
+    "id": "status.obs.moulding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Koponyacsont-egymásra csúszás"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — a varratok elkülönülnek"
+      },
+      {
+        "code": 1,
+        "label_hu": "1+ — a csontok érintkeznek"
+      },
+      {
+        "code": 2,
+        "label_hu": "2+ — egymásra csúsztak, de eltolhatók"
+      },
+      {
+        "code": 3,
+        "label_hu": "3+ — egymásra csúsztak, nem eltolhatók",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülészeti újraértékelés — fej-medence aránytalanság gyanúja"
+        },
+        "urgency": "urgent",
+        "code": 3
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A koponyavarratok mentén a csontok egymásra csúszásának mértéke."
+      },
+      "whyItMatters": {
+        "hu": "A WHO partogram részeként a 3+ moulding a fej-medence aránytalanság legerősebb tapintásos jele, és elhúzódó vajúdásban a szülésbefejezés irányába billenti a döntést."
+      }
+    }
+  },
+  {
+    "id": "status.obs.position",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzat állása"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "oa",
+        "label_hu": "OA — nyakszirt elöl"
+      },
+      {
+        "code": "loa",
+        "label_hu": "LOA — bal elülső"
+      },
+      {
+        "code": "roa",
+        "label_hu": "ROA — jobb elülső"
+      },
+      {
+        "code": "lot",
+        "label_hu": "LOT — bal haránt"
+      },
+      {
+        "code": "rot",
+        "label_hu": "ROT — jobb haránt"
+      },
+      {
+        "code": "op",
+        "label_hu": "OP — nyakszirt hátul"
+      },
+      {
+        "code": "lop",
+        "label_hu": "LOP — bal hátulsó"
+      },
+      {
+        "code": "rop",
+        "label_hu": "ROP — jobb hátulsó"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT2H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A vezérpont viszonya az anyai medencéhez."
+      },
+      "pitfalls": {
+        "hu": "A tapintásos állásmeghatározás megbízhatatlan: caput succedaneum és elhúzódó vajúdás mellett a varratok tapintása gyakran téves. Kétes esetben ultrahang dönt."
+      },
+      "whyItMatters": {
+        "hu": "A tartós nyakszirt-hátulsó (OP) állás elhúzódó kitolási szakaszt, több műtétes befejezést és több gátrepedést okoz — a felismerése változtat a vezetésen (helyzetváltoztatás, türelmi idő)."
+      }
+    }
+  },
+  {
+    "id": "status.obs.presentation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Előfekvő rész"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "cephalic",
+        "label_hu": "Koponyavégű"
+      },
+      {
+        "code": "breechFrank",
+        "label_hu": "Farfekvés — tiszta far"
+      },
+      {
+        "code": "breechComplete",
+        "label_hu": "Farfekvés — komplett"
+      },
+      {
+        "code": "breechFootling",
+        "label_hu": "Farfekvés — lábra álló",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "shoulder",
+        "label_hu": "Váll",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "face",
+        "label_hu": "Arctartás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "brow",
+        "label_hu": "Homloktartás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compound",
+        "label_hu": "Kombinált (végtag a fej mellett)",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P14D",
+      "labour": "PT4H"
+    },
+    "recommends": [
+      {
+        "when": "abnormal",
+        "code": "breechFrank",
+        "kind": "imaging",
+        "what": {
+          "hu": "Ultrahangos megerősítés, becsült magzati súly és magzatvíz-mennyiség"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "code": "breechFrank",
+        "kind": "referral",
+        "what": {
+          "hu": "Külső fordítás (ECV) felajánlása a 36–37. héten"
+        },
+        "urgency": "routine"
+      },
+      {
+        "when": "abnormal",
+        "code": "breechComplete",
+        "kind": "imaging",
+        "what": {
+          "hu": "Ultrahangos megerősítés, becsült magzati súly és magzatvíz-mennyiség"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "code": "breechComplete",
+        "kind": "referral",
+        "what": {
+          "hu": "Külső fordítás (ECV) felajánlása a 36–37. héten"
+        },
+        "urgency": "routine"
+      },
+      {
+        "when": "abnormal",
+        "code": "breechFootling",
+        "kind": "imaging",
+        "what": {
+          "hu": "Ultrahangos megerősítés"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "code": "breechFootling",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülésvezetési terv — lábra álló farfekvésnél a külső fordítás nem javasolt"
+        },
+        "urgency": "soon"
+      },
+      {
+        "when": "abnormal",
+        "code": "shoulder",
+        "kind": "referral",
+        "what": {
+          "hu": "Azonnali szülészeti értékelés — haránthelyzet"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "code": "face",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülészeti értékelés — arctartás; a mentum hátsó állás hüvelyi úton nem szülhető"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "code": "brow",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülészeti értékelés — homloktartás érett magzatnál hüvelyi úton nem szülhető"
+        },
+        "urgency": "urgent"
+      },
+      {
+        "when": "abnormal",
+        "code": "compound",
+        "kind": "referral",
+        "what": {
+          "hu": "Szülészeti értékelés — kombinált tartás"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A medencebemenet felett elhelyezkedő magzati rész."
+      },
+      "howToMeasure": {
+        "hu": "Leopold III–IV. fogás; a 36. hét után ultrahangos megerősítés ajánlott."
+      },
+      "whyItMatters": {
+        "hu": "A homloktartás terminusban lévő magzatnál hüvelyi úton nem szülhető meg, és a legkésőbb felismert kóros tartás — gyakran csak elakadt vajúdásból derül ki. A lábra álló farfekvés köldökzsinór-előesésre hajlamosít. A javaslatok ÉRTÉKHEZ kötöttek: a farfekvésnél fordítást ajánlunk, a lábra állónál kifejezetten nem — egy közös „kóros tartás” javaslat a kettőt összemosná."
+      }
+    }
+  },
+  {
+    "id": "vitals.bp.diastolic",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Diasztolés vérnyomás",
+      "en": "Diastolic blood pressure"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "mm[Hg]",
+    "cardinality": "series",
+    "domain": {
+      "min": 20,
+      "max": 200,
+      "plausible": [
+        40,
+        140
+      ],
+      "critical": [
+        null,
+        110
+      ]
+    },
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT4H"
+    },
+    "standards": {
+      "loinc": "8462-4"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az artériás nyomás legalacsonyabb értéke."
+      }
+    },
+    "reference": {
+      "source": {
+        "cite": "ACOG Practice Bulletin 222: Gestational Hypertension and Preeclampsia (2020); NICE NG133: Hypertension in pregnancy (2019)",
+        "doi": "10.1097/AOG.0000000000003891"
+      },
+      "verification": "assumed",
+      "ranges": [
+        {
+          "context": "nonpregnant",
+          "low": null,
+          "high": 89
+        },
+        {
+          "context": "pregnancy.t1",
+          "low": null,
+          "high": 89,
+          "note": {
+            "hu": "≥90 Hgmm: hypertonia."
+          }
+        },
+        {
+          "context": "pregnancy.t2",
+          "low": null,
+          "high": 89
+        },
+        {
+          "context": "pregnancy.t3",
+          "low": null,
+          "high": 89
+        },
+        {
+          "context": "postpartum",
+          "low": null,
+          "high": 89
+        }
+      ]
+    }
+  },
+  {
+    "id": "vitals.bp.systolic",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szisztolés vérnyomás",
+      "en": "Systolic blood pressure"
+    },
+    "short": {
+      "hu": "RRsys"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "mm[Hg]",
+    "cardinality": "series",
+    "domain": {
+      "min": 40,
+      "max": 300,
+      "plausible": [
+        70,
+        220
+      ],
+      "critical": [
+        null,
+        160
+      ]
+    },
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT4H"
+    },
+    "standards": {
+      "loinc": "8480-6",
+      "snomed": "271649006",
+      "fhir": {
+        "resource": "Observation",
+        "code": "8480-6"
+      }
+    },
+    "provenanceAllowed": [
+      "clinician",
+      "device",
+      "patient"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az artériás nyomás csúcsértéke."
+      },
+      "howToMeasure": {
+        "hu": "Ülő helyzetben, 5 perc nyugalom után, megfelelő méretű mandzsettával."
+      },
+      "pitfalls": {
+        "hu": "Túl kicsi mandzsetta 10–15 Hgmm-rel felülbecsül. Vajúdás alatt kontrakció közben ne mérj."
+      },
+      "whyItMatters": {
+        "hu": "A preeclampsia diagnózisának és a MEOWS-nak is közvetlen bemenete."
+      }
+    },
+    "evidence": [
+      {
+        "cite": "ACOG Practice Bulletin 222 (2020)",
+        "doi": "10.1097/AOG.0000000000003891"
+      }
+    ],
+    "reference": {
+      "source": {
+        "cite": "ACOG Practice Bulletin 222: Gestational Hypertension and Preeclampsia (2020); NICE NG133: Hypertension in pregnancy (2019)",
+        "doi": "10.1097/AOG.0000000000003891"
+      },
+      "verification": "assumed",
+      "ranges": [
+        {
+          "context": "nonpregnant",
+          "low": null,
+          "high": 139
+        },
+        {
+          "context": "pregnancy.t1",
+          "low": null,
+          "high": 139,
+          "note": {
+            "hu": "≥140 Hgmm: hypertonia. A terhesség alatt ÚJONNAN megjelenő érték terhességi hypertonia vagy praeeclampsia gyanúja."
+          }
+        },
+        {
+          "context": "pregnancy.t2",
+          "low": null,
+          "high": 139
+        },
+        {
+          "context": "pregnancy.t3",
+          "low": null,
+          "high": 139
+        },
+        {
+          "context": "postpartum",
+          "low": null,
+          "high": 139,
+          "note": {
+            "hu": "A praeeclampsia a szülés után is kialakulhat, jellemzően az első héten."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "vitals.consciousness",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tudatállapot"
+    },
+    "module": "vitals",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "a",
+        "label_hu": "Éber (Alert)"
+      },
+      {
+        "code": "v",
+        "label_hu": "Hangra reagál (Voice)"
+      },
+      {
+        "code": "p",
+        "label_hu": "Fájdalomra reagál (Pain)"
+      },
+      {
+        "code": "u",
+        "label_hu": "Nem reagál (Unresponsive)"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT1H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "AVPU szerinti tudatállapot."
+      },
+      "whyItMatters": {
+        "hu": "A MEOWS és az omqSOFA bemenete; eclampsiás rohamot követően a legfontosabb követett érték."
+      }
+    }
+  },
+  {
+    "id": "vitals.map",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Középartériás nyomás (MAP)",
+      "en": "Mean arterial pressure"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "mm[Hg]",
+    "derivation": {
+      "kind": "computed",
+      "explain": {
+        "hu": "MAP = (szisztolés + 2 × diasztolés) / 3"
+      },
+      "calc": "calc.map"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szisztolés és diasztolés értékből számolt középnyomás."
+      }
+    }
+  },
+  {
+    "id": "vitals.pain",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fájdalom (VAS)"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "cardinality": "series",
+    "provenanceAllowed": [
+      "patient",
+      "clinician"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beteg által jelzett fájdalom 0–10 skálán."
+      },
+      "howToMeasure": {
+        "hu": "A BETEG mondja meg, nem a vizsgáló becsli."
+      },
+      "pitfalls": {
+        "hu": "Ez az egyetlen vitális paraméter, aminek a betege a forrása. Klinikusi „felülbírálása” értelmetlen — legfeljebb a viselkedéses megfigyelés rögzíthető mellé."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "vitals.pulse",
+    "label": {
+      "hu": "Pulzus",
+      "en": "Pulse"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "/min",
+    "domain": {
+      "min": 20,
+      "max": 250,
+      "plausible": [
+        50,
+        120
+      ],
+      "critical": [
+        40,
+        130
+      ]
+    },
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT4H"
+    },
+    "standards": {
+      "loinc": "8867-4"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Percenkénti szívfrekvencia."
+      },
+      "whyItMatters": {
+        "hu": "A sokk-index, a MEOWS és a QT-korrekció is ebből számol."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a nyugalmi pulzus fiziológiásan 10–20/min-nel magasabb. A nem-terhes riasztási küszöbök itt hamis pozitívot adnak."
+      }
+    }
+  },
+  {
+    "id": "vitals.pulsePressure",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pulzusnyomás"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "mm[Hg]",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.pulsePressure"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szisztolés és diasztolés nyomás különbsége."
+      },
+      "whyItMatters": {
+        "hu": "A szűkült pulzusnyomás a vérzéses sokk korai jele, gyakran még normális szisztolés érték mellett."
+      }
+    },
+    "domain": {
+      "min": 0,
+      "max": 150
+    }
+  },
+  {
+    "id": "vitals.rr",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Légzésszám"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "/min",
+    "domain": {
+      "min": 4,
+      "max": 60
+    },
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT4H"
+    },
+    "standards": {
+      "loinc": "9279-1"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Percenkénti légvételek száma."
+      },
+      "whyItMatters": {
+        "hu": "A MEOWS és az omqSOFA bemenete; a szepszis egyik legkorábbi, leggyakrabban elmulasztott jele."
+      },
+      "pitfalls": {
+        "hu": "A leggyakrabban NEM mért vitális paraméter — pedig a romlás legkorábbi jelzője. Becsülni nem szabad: egy teljes percig kell számolni."
+      }
+    }
+  },
+  {
+    "id": "vitals.shockIndex",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Sokk-index"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "1",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.shockIndex"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Pulzus osztva a szisztolés vérnyomással."
+      },
+      "whyItMatters": {
+        "hu": "A szülészeti vérzés súlyosságának egyik legkorábbi jelzője."
+      }
+    },
+    "domain": {
+      "min": 0.2,
+      "max": 3
+    }
+  },
+  {
+    "id": "vitals.spo2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "SpO₂",
+      "en": "Oxygen saturation"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "%",
+    "cardinality": "series",
+    "domain": {
+      "min": 50,
+      "max": 100,
+      "plausible": [
+        88,
+        100
+      ],
+      "critical": [
+        95,
+        null
+      ]
+    },
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT1H"
+    },
+    "standards": {
+      "loinc": "2708-6"
+    },
+    "provenanceAllowed": [
+      "device",
+      "clinician"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Pulzoximéterrel mért perifériás oxigénszaturáció."
+      },
+      "whyItMatters": {
+        "hu": "A fullPIERS és a MEOWS bemenete."
+      }
+    }
+  },
+  {
+    "id": "vitals.temp",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testhőmérséklet"
+    },
+    "module": "vitals",
+    "datatype": "quantity",
+    "unit": "Cel",
+    "domain": {
+      "min": 30,
+      "max": 43
+    },
+    "cardinality": "series",
+    "validity": {
+      "ambulatory": "P7D",
+      "labour": "PT4H"
+    },
+    "standards": {
+      "loinc": "8310-5"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Maghőmérséklet."
+      },
+      "whyItMatters": {
+        "hu": "A MEOWS és az omqSOFA bemenete; vajúdás alatt a chorioamnionitis első jele."
+      },
+      "pitfalls": {
+        "hu": "Terhességben az alaphőmérséklet enyhén magasabb. Vajúdás alatt 38 °C felett chorioamnionitis gyanúja, nem egyszerű láz."
+      }
+    }
+  },
+  {
+    "id": "status.gyn.hpv.collection",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A HPV-minta vételi módja"
+    },
+    "module": "status",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "imported"
+    ],
+    "valueSet": [
+      {
+        "code": "clinician",
+        "label_hu": "Ellátó által vett méhnyakminta"
+      },
+      {
+        "code": "selfVaginal",
+        "label_hu": "Önmintavétel — hüvelyi minta"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A magas kockázatú HPV-teszthez felhasznált minta vételi módja."
+      },
+      "whyItMatters": {
+        "hu": "Az önmintavétel azokat éri el, akiket a hívólevél nem: a soha nem szűrtek. Az elérés a szűrés legnagyobb tartaléka — a hazai programban a meg nem jelenés, nem a teszt érzékenysége a szűk keresztmetszet."
+      },
+      "pitfalls": {
+        "hu": "AZ ÖNMINTAVÉTELES MINTÁBÓL CITOLÓGIA NEM KÉSZÍTHETŐ, tehát KOTESZT SEM. Ha a rendszer nem tudja, hogyan vették a mintát, egy negatív HPV-eredményt kotesztnek olvashat, és a következő szűrést a hosszabb — kotesztre szabott — időközzel ütemezi. Ez a hiba nem látszik: egy negatív lelet és egy elcsúsztatott időpont."
+      }
+    }
+  }
+]

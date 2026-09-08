@@ -1,0 +1,303 @@
+[
+  {
+    "id": "epi.body",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az okoslelet szövege"
+    },
+    "module": "epi",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A generált összefoglaló szövege, ahogy a dokumentumba került."
+      },
+      "whyItMatters": {
+        "hu": "A SZÖVEGET IS TÁROLNI KELL, nem csak újragenerálni: a rekord azt őrzi, ami akkor elhangzott. Ha a regiszter vagy egy kalkulátor később változik, az újragenerált szöveg más lenne — a dokumentum viszont az marad, amit aláírtak."
+      }
+    }
+  },
+  {
+    "id": "epi.consult.question",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A konzíliumtól kért kérdés"
+    },
+    "module": "epi",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Mit kérdezünk a konzulenstől."
+      },
+      "whyItMatters": {
+        "hu": "A konzulensi kérés akkor hasznos, ha KÉRDÉST tartalmaz, nem csak adatot. A „kérem szíves véleményét” nem kérdés, és a válasz sem lesz az."
+      }
+    }
+  },
+  {
+    "id": "epi.followUp.plan",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Utánkövetési terv"
+    },
+    "module": "epi",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor és hova jöjjön vissza a beteg, és mire figyeljen."
+      },
+      "whyItMatters": {
+        "hu": "A zárójelentés legfontosabb bekezdése a beteg szempontjából, és a leggyakrabban a leghomályosabb. A KONKRÉT időpont és hely az, ami használható; a „kontroll szükség szerint” nem az."
+      }
+    }
+  },
+  {
+    "id": "epi.gaps.acknowledged",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az információhiány tudomásul véve"
+    },
+    "module": "epi",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A klinikus látta és tudomásul vette az „amit nem tudunk” szakaszt."
+      },
+      "whyItMatters": {
+        "hu": "A MODUL LEGFONTOSABB TERVEZÉSI DÖNTÉSE: a klinikus a meg nem jelent kockázati blokkot könnyen negatív leletnek olvassa. Ezért a hiány az epikrízisben explicit — és a tudomásulvétel önálló, rögzített lépés."
+      }
+    }
+  },
+  {
+    "id": "epi.generation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Előállítás módja"
+    },
+    "module": "epi",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ruleBased",
+        "label_hu": "Okoslelet — szabályalapú generálás"
+      },
+      {
+        "code": "manual",
+        "label_hu": "Kézzel írt"
+      },
+      {
+        "code": "assisted",
+        "label_hu": "Gépi javaslat, klinikusi átírással"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan készült a szöveg."
+      },
+      "pitfalls": {
+        "hu": "Az `assisted` érték arra az esetre van, amikor a jövőben nyelvi modell is bekerül a láncba. AKKOR IS meg kell tartani a megkülönböztetést: a klinikus tudja meg, mit olvas."
+      },
+      "whyItMatters": {
+        "hu": "A MODUL NYITOTT KÉRDÉSE ezzel dől el. A dokumentum neve OKOSLELET, nem „AI lelet”: nincs nyelvi modell a folyamatban, a szöveg determinisztikus, szabályalapú generálás. Az „okos” itt azt jelenti, hogy a lelet magától áll össze a rögzített adatból, minden állítása mögött ott a forrás, és kimondja, mit nem tud — nem azt, hogy gondolkodik. Ha ez nincs kimondva, a felhasználó nagyobb — vagy kisebb — megbízhatóságot tulajdonít neki, mint amennyi jár."
+      }
+    }
+  },
+  {
+    "id": "epi.outcome.disposition",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az ellátás kimenetele"
+    },
+    "module": "epi",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "home",
+        "label_hu": "Otthonába bocsátva"
+      },
+      {
+        "code": "admitted",
+        "label_hu": "Felvéve"
+      },
+      {
+        "code": "transferred",
+        "label_hu": "Átadva másik intézménynek"
+      },
+      {
+        "code": "selfDischarge",
+        "label_hu": "Saját felelősségre távozott",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "deceased",
+        "label_hu": "Elhunyt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ongoing",
+        "label_hu": "Az ellátás folyamatban",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan zárult az ellátás."
+      }
+    }
+  },
+  {
+    "id": "epi.outcome.lengthOfStay",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ápolási idő"
+    },
+    "module": "epi",
+    "datatype": "quantity",
+    "unit": "d",
+    "domain": {
+      "min": 0,
+      "max": 400,
+      "step": 0.5
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány napot töltött bent a beteg."
+      }
+    }
+  },
+  {
+    "id": "epi.reviewed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az okoslelet átnézve"
+    },
+    "module": "epi",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A klinikus végigolvasta-e a generált szöveget aláírás előtt."
+      },
+      "whyItMatters": {
+        "hu": "A GENERÁLT SZÖVEG NEM AUTOMATIKUSAN IGAZ, csak automatikusan visszavezethető. Az átnézés külön, rögzített lépés — enélkül az aláírás formalitás."
+      }
+    }
+  },
+  {
+    "id": "epi.signedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az epikrízis aláírásának időpontja"
+    },
+    "module": "epi",
+    "datatype": "datetime",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor írták alá."
+      }
+    }
+  },
+  {
+    "id": "epi.signedBy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Aláíró"
+    },
+    "module": "epi",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki írta alá az epikrízist."
+      },
+      "whyItMatters": {
+        "hu": "Az aláírás a felelősségvállalás: a generált szöveget a klinikus teszi magáévá. Aláírás nélkül a dokumentum piszkozat."
+      }
+    }
+  },
+  {
+    "id": "epi.style",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Okoslelet stílusa"
+    },
+    "module": "epi",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "clinical",
+        "label_hu": "Klinikai narratíva"
+      },
+      {
+        "code": "sbar",
+        "label_hu": "SBAR átadás"
+      },
+      {
+        "code": "discharge",
+        "label_hu": "Zárójelentés"
+      },
+      {
+        "code": "nursing",
+        "label_hu": "Ápolói összefoglaló"
+      },
+      {
+        "code": "consult",
+        "label_hu": "Konzulensi kérés"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Melyik változat készült."
+      },
+      "whyItMatters": {
+        "hu": "Öt stílus, EGY tartalomból. A stílus azt dönti el, mely szakaszok jelennek meg és milyen sorrendben — nem azt, mi igaz."
+      }
+    }
+  },
+  {
+    "id": "epi.version",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Verziószám"
+    },
+    "module": "epi",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 1,
+      "max": 1000
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hányadik változata ez az epikrízisnek."
+      },
+      "whyItMatters": {
+        "hu": "Az epikrízis JAVÍTHATÓ, de a korábbi változat nem tűnik el: az aláírt dokumentum a rekord része marad, és a javítás új verzió."
+      }
+    }
+  }
+]

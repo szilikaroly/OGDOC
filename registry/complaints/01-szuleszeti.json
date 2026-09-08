@@ -1,0 +1,1090 @@
+[
+  {
+    "id": "compl.fetal.reducedMovement",
+    "label": {
+      "hu": "Csökkent magzatmozgás"
+    },
+    "synonyms": [
+      "kevesebbet mozog a baba",
+      "nem érzem úgy mozogni",
+      "gyengébben rúg",
+      "alig mozog a magzat",
+      "kevesebb mozgás",
+      "ritkábban mozog"
+    ],
+    "bodySite": "uterus",
+    "redflag": true,
+    "opens": [
+      "ctg.category",
+      "status.obs.fhr",
+      "us.afi"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.course",
+      "compl.q.firstEpisode"
+    ],
+    "snomed": "289431008",
+    "differential": [
+      "magzati hypoxia",
+      "magzati elhalás",
+      "oligohydramnion",
+      "lepényelégtelenség"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A várandós a szokásosnál kevesebb magzatmozgást érzékel."
+      },
+      "pitfalls": {
+        "hu": "A SZÁMOLÁS nem szűrőeszköz, de a beteg SAJÁT észlelése a legjobb, ami van: a csökkent magzatmozgás bejelentése soha nem utasítható el „még korai” vagy „biztos alszik” magyarázattal. A vizsgálat elvégzése az egyetlen helyes válasz. A vizsgálat után normálisnak talált eset ismétlődő bejelentése MAGASABB, nem alacsonyabb kockázatot jelent."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.fetal.noMovement",
+    "label": {
+      "hu": "Nem érzett magzatmozgás"
+    },
+    "synonyms": [
+      "egyáltalán nem mozog",
+      "nem érzem a babát",
+      "megszűnt a mozgás",
+      "24 órája nem mozdult"
+    ],
+    "bodySite": "uterus",
+    "redflag": true,
+    "opens": [
+      "us.fetal.viability",
+      "ctg.category",
+      "status.obs.fhr"
+    ],
+    "asks": [
+      "compl.q.onset"
+    ],
+    "differential": [
+      "magzati elhalás",
+      "súlyos hypoxia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Azonnali vizsgálat, előjegyzés nélkül. Ez az a panasz, ahol a várakoztatás önmagában ellátási hiba."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.neuro.headache.visual",
+    "label": {
+      "hu": "Fejfájás látászavarral"
+    },
+    "synonyms": [
+      "fáj a fejem és villog a szemem",
+      "homályos látás fejfájással",
+      "csillagokat látok",
+      "fényvillanások és fejfájás",
+      "fejfájás szemkápráztatással"
+    ],
+    "bodySite": "head",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.bp.diastolic",
+      "lab.urine.protein",
+      "lab.plt",
+      "lab.ast",
+      "lab.cr"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.provoke",
+      "compl.q.relieve"
+    ],
+    "snomed": "25064002",
+    "differential": [
+      "praeeclampsia",
+      "eclampsia előjele",
+      "migrén",
+      "sinus-thrombosis",
+      "subarachnoidealis vérzés"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Fejfájás, amit látászavar (villogás, homályos látás, kettőslátás) kísér."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a látászavarral járó fejfájás praeeclampsia, amíg az ellenkezője be nem bizonyosodik — akkor is, ha a vérnyomás még normális. A migrénes előzmény NEM zárja ki: praeeclampsia migrénesnél is kialakul."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.pain.epigastric",
+    "label": {
+      "hu": "Epigasztriális fájdalom"
+    },
+    "synonyms": [
+      "gyomorszáji fájdalom",
+      "fáj a gyomrom szája",
+      "bordák alatt fáj",
+      "gyomortájéki nyomás",
+      "mintha kő lenne a gyomromban"
+    ],
+    "bodySite": "abdomen.epigastric",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "vitals.bp.systolic",
+      "lab.ast",
+      "lab.plt",
+      "lab.urine.protein",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "snomed": "27355003",
+    "differential": [
+      "HELLP-szindróma",
+      "praeeclampsia",
+      "májtok-feszülés",
+      "reflux",
+      "epekő",
+      "gyomorfekély",
+      "pancreatitis"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesség második felében a jobb bordaív alatti vagy gyomorszáji fájdalom HELLP-szindrómára gyanús — és a betegek egy részénél a vérnyomás ilyenkor még normális. A reflux diagnózisa csak a praeeclampsia kizárása UTÁN állítható fel."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.edema.generalized",
+    "label": {
+      "hu": "Kiterjedt vizenyő"
+    },
+    "synonyms": [
+      "dagad a kezem és az arcom",
+      "feldagadtam",
+      "nem megy fel a gyűrűm",
+      "puffadt az arcom",
+      "vizesedés",
+      "ödéma"
+    ],
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "status.internal.edema",
+      "vitals.bp.systolic",
+      "lab.urine.protein"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "snomed": "267038008",
+    "differential": [
+      "praeeclampsia",
+      "élettani terhességi oedema",
+      "vese-eredetű oedema",
+      "szívelégtelenség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A boka-oedema terhességben ÉLETTANI, és önmagában nem jelez semmit. Az ARCON és a KEZEN megjelenő, hirtelen kialakuló duzzanat viszont más — a kettőt a lokalizáció és a gyorsaság különbözteti meg, nem a mennyiség."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.resp.dyspnea",
+    "label": {
+      "hu": "Nehézlégzés"
+    },
+    "synonyms": [
+      "nehezen kapok levegőt",
+      "fulladok",
+      "légszomj",
+      "elfullad a hangom",
+      "nem tudok mély levegőt venni",
+      "kifulladok lépcsőn"
+    ],
+    "bodySite": "chest",
+    "redflag": true,
+    "opens": [
+      "vitals.spo2",
+      "vitals.rr",
+      "status.internal.lungs",
+      "status.cardio.nyha",
+      "lab.dimer",
+      "ekg.qt"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "snomed": "267036007",
+    "differential": [
+      "tüdőembólia",
+      "tüdőoedema",
+      "peripartum cardiomyopathia",
+      "asthma",
+      "anaemia",
+      "élettani terhességi hyperventilatio"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beteg légzési nehezítettséget vagy levegőéhséget él meg."
+      },
+      "pitfalls": {
+        "hu": "Terhességben a nehézlégzés MINDIG vörös zászló, mert a tüdőembólia az anyai halálozás vezető közvetlen oka a fejlett országokban, és a D-dimer terhesen nem zárja ki. Az „élettani terhességi nehézlégzés” kizárásos diagnózis, nem első magyarázat."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.bleeding.vaginal",
+    "label": {
+      "hu": "Hüvelyi vérzés terhességben"
+    },
+    "synonyms": [
+      "vérzek",
+      "vérzés terhesség alatt",
+      "barnás folyás vérrel",
+      "pecsételő vérzés",
+      "friss piros vérzés"
+    ],
+    "bodySite": "vagina",
+    "redflag": true,
+    "opens": [
+      "us.fetal.viability",
+      "us.gyn",
+      "lab.hgb",
+      "status.obs.fhr",
+      "ctg.category"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.provoke",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode"
+    ],
+    "snomed": "289530006",
+    "differential": [
+      "lepényleválás",
+      "placenta praevia",
+      "vetélés",
+      "méhen kívüli terhesség",
+      "jelvérzés",
+      "méhnyak-eredetű vérzés",
+      "vasa praevia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "HÜVELYI VIZSGÁLAT ELŐTT a lepény helyzetét ismerni kell: placenta praevia mellett a digitális vizsgálat életveszélyes vérzést indíthat. Ha a lepény helyzete nem ismert, ultrahang előzi meg a tapintást."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.contractions",
+    "label": {
+      "hu": "Összehúzódások"
+    },
+    "synonyms": [
+      "fájások",
+      "összehúzódik a hasam",
+      "kemény lesz a hasam",
+      "méhösszehúzódás",
+      "elkezdődtek a fájások",
+      "görcsöl a hasam"
+    ],
+    "bodySite": "uterus",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "ctx.ga",
+        "op": "lt",
+        "value": 37
+      }
+    ],
+    "opens": [
+      "status.obs.contractions.freq",
+      "status.obs.contractions.duration",
+      "exam.cervix.dilation",
+      "exam.cervix.effacement",
+      "ctg.category"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.provoke"
+    ],
+    "snomed": "289531005",
+    "differential": [
+      "koraszülési fenyegetés",
+      "Braxton-Hicks",
+      "szülés megindulása",
+      "lepényleválás",
+      "húgyúti fertőzés"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A 37. hét ELŐTT jelentkező rendszeres összehúzódás koraszülési fenyegetés, és a méhszáj állapotának megítélése nem halasztható. A 37. hét után ugyanez élettani."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.fluidLeak",
+    "label": {
+      "hu": "Folyadékszivárgás, burokrepedés gyanúja"
+    },
+    "synonyms": [
+      "elfolyt a magzatvizem",
+      "csorog valami",
+      "vizes lettem",
+      "elment a víz",
+      "folyik belőlem",
+      "nedves a bugyim"
+    ],
+    "bodySite": "vagina",
+    "redflag": true,
+    "opens": [
+      "status.obs.membranes",
+      "status.obs.amnioticFluid",
+      "vitals.temp",
+      "ctg.category",
+      "lab.swab.vaginal"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.course"
+    ],
+    "snomed": "44223004",
+    "differential": [
+      "burokrepedés",
+      "vizeletcsorgás",
+      "fokozott hüvelyváladékozás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "STERIL tükrözés, digitális vizsgálat NÉLKÜL — az ujjas vizsgálat a burokrepedés után növeli a chorioamnionitis kockázatát és rövidíti a latenciaidőt. A vizeletcsorgástól való elkülönítés teszttel történik, nem megnyugtatással."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.hyperemesis",
+    "label": {
+      "hu": "Makacs terhességi hányás"
+    },
+    "synonyms": [
+      "mindent kihányok",
+      "nem tudok enni inni",
+      "állandóan hányok",
+      "reggeli rosszullét ami nem múlik",
+      "hyperemesis"
+    ],
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "anthro.weight.current",
+      "lab.cr",
+      "lab.urine.protein",
+      "lab.tsh"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "snomed": "14094001",
+    "differential": [
+      "hyperemesis gravidarum",
+      "molaterhesség",
+      "pajzsmirigy-túlműködés",
+      "húgyúti fertőzés",
+      "gyomor-bél fertőzés"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A testsúlyvesztés és a ketonuria választja el az élettani reggeli rosszulléttől. Elhúzódó hányásnál a B1-vitamin (thiamin) pótlása a glükózinfúzió ELŐTT esedékes — fordított sorrendben Wernicke-encephalopathia alakulhat ki."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.itching",
+    "label": {
+      "hu": "Viszketés terhességben"
+    },
+    "synonyms": [
+      "viszket a tenyerem",
+      "éjszaka viszketek",
+      "viszket a talpam",
+      "vakarom magam egész éjjel",
+      "bőrviszketés terhesen"
+    ],
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "lab.ast",
+      "status.internal.skin"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "snomed": "418290006",
+    "differential": [
+      "terhességi intrahepaticus cholestasis",
+      "PUPPP",
+      "ekcéma",
+      "epeút-betegség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A TENYÉR és a TALP viszketése, kiütés nélkül, éjszaka rosszabbodva terhességi cholestasis gyanúja — az epesavszint meghatározása és a magzati követés esedékes. A „száraz bőr” magyarázat itt késleltet."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.fever",
+    "label": {
+      "hu": "Láz terhességben"
+    },
+    "synonyms": [
+      "lázas vagyok",
+      "hőemelkedésem van",
+      "38 fokom van terhesen",
+      "kiráz a hideg"
+    ],
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "vitals.temp",
+      "status.obs.fhr",
+      "lab.crp",
+      "lab.wbc",
+      "lab.urine.nitrite",
+      "lab.urine.leukocyte"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "snomed": "386661006",
+    "differential": [
+      "chorioamnionitis",
+      "pyelonephritis",
+      "influenza",
+      "listeriosis",
+      "COVID-19"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesség alatti láznál a magzati tachycardia gyakran az ELSŐ jele a chorioamnionitisnek — a magzati szívhang ellenőrzése a lázas terhes vizsgálatának része, nem külön döntés."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.trauma",
+    "label": {
+      "hu": "Hasi sérülés terhességben"
+    },
+    "synonyms": [
+      "elestem",
+      "hasba ütöttem magam",
+      "autóbaleset volt",
+      "megütöttek",
+      "nekimentem valaminek a hasammal"
+    ],
+    "bodySite": "abdomen",
+    "redflag": true,
+    "opens": [
+      "ctg.category",
+      "status.obs.fhr",
+      "us.fetal.viability",
+      "lab.hgb",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset"
+    ],
+    "differential": [
+      "lepényleválás",
+      "méhrepedés",
+      "magzati sérülés",
+      "feto-maternalis transzfúzió"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A lepényleválás a sérülés után ÓRÁKKAL is jelentkezhet, ezért a tünetmentes várandós is megfigyelést igényel (a hazai gyakorlatban 4–6 óra CTG). Rh-negatív anyánál anti-D profilaxis mérlegelendő."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.seizure",
+    "label": {
+      "hu": "Görcsroham terhességben"
+    },
+    "synonyms": [
+      "görcsölt",
+      "elveszítette az eszméletét és rángott",
+      "rohama volt",
+      "eszméletvesztés rángással"
+    ],
+    "redflag": true,
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.consciousness",
+      "lab.plt",
+      "lab.ast",
+      "lab.cr",
+      "lab.urine.protein"
+    ],
+    "asks": [
+      "compl.q.onset"
+    ],
+    "snomed": "91175000",
+    "differential": [
+      "eclampsia",
+      "epilepszia",
+      "agyvérzés",
+      "hypoglykaemia",
+      "sinus-thrombosis"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhes vagy nemrég szült nőnél a görcsroham ECLAMPSIA, amíg az ellenkezője be nem bizonyosodik — a magnézium-szulfát adása nem várhat a kivizsgálásra."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.pelvicPressure",
+    "label": {
+      "hu": "Medencei nyomásérzés"
+    },
+    "synonyms": [
+      "nyom lefelé",
+      "mintha kiesne",
+      "nehezedik a medencémre",
+      "nyomást érzek lent",
+      "tolat lefelé a baba"
+    ],
+    "bodySite": "pelvis",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "ctx.ga",
+        "op": "lt",
+        "value": 37
+      }
+    ],
+    "opens": [
+      "exam.cervix.dilation",
+      "exam.cervix.effacement",
+      "status.obs.engagement"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "koraszülési fenyegetés",
+      "méhszáj-elégtelenség",
+      "fejbeszállás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A 37. hét előtti, új keletű nyomásérzés a méhszáj megítélését kéri — a méhszáj-elégtelenség klasszikusan FÁJDALMATLAN, ezért a fájások hiánya nem megnyugtató."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.backPain",
+    "label": {
+      "hu": "Deréktáji fájdalom terhességben"
+    },
+    "synonyms": [
+      "fáj a derekam",
+      "hátfájás terhesen",
+      "beszorult a derekam",
+      "keresztcsonti fájdalom"
+    ],
+    "bodySite": "back",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "ctx.ga",
+        "op": "lt",
+        "value": 37
+      }
+    ],
+    "opens": [
+      "status.obs.contractions.freq",
+      "lab.urine.nitrite",
+      "vitals.temp"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "mozgásszervi eredet",
+      "koraszülési fenyegetés",
+      "pyelonephritis",
+      "vesekő"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A derékfájás terhességben többnyire mozgásszervi, de a RITMUSOS, visszatérő derékfájás koraszülési fenyegetés lehet, a lázas, kopogtatásra érzékeny pedig vesemedence-gyulladás. A gyakori ok nem teszi feleslegessé a ritka kizárását."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.obs.dizziness",
+    "label": {
+      "hu": "Szédülés, ájulásérzés terhességben"
+    },
+    "synonyms": [
+      "szédülök",
+      "elsötétül előttem a világ",
+      "majdnem elájultam",
+      "forog velem a világ",
+      "gyengeség ájulásérzéssel"
+    ],
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.pulse",
+      "lab.hgb"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "vena cava-szindróma",
+      "anaemia",
+      "hypoglykaemia",
+      "arrhythmia",
+      "méhen kívüli terhesség vérzése"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Háton fekvésnél jelentkező szédülés a vena cava kompressziójára jellemző, és bal oldalfekvéssel megszűnik. Ha nem szűnik meg, más okot kell keresni — korai terhességben a megrepedt ectopia is így indulhat."
+      }
+    },
+    "pathways": [
+      "prenatal",
+      "pregnancy.pathology"
+    ]
+  },
+  {
+    "id": "compl.pp.bleeding",
+    "label": {
+      "hu": "Fokozott gyermekágyi vérzés"
+    },
+    "synonyms": [
+      "sokat vérzek szülés után",
+      "óránként átázik a betét",
+      "alvadékok jönnek",
+      "erős vérzés a szülés után"
+    ],
+    "bodySite": "vagina",
+    "redflag": true,
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.pulse",
+      "lab.hgb",
+      "us.gyn"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course"
+    ],
+    "differential": [
+      "méhatonia",
+      "visszamaradt lepényrész",
+      "szülési sérülés",
+      "véralvadási zavar",
+      "endometritis"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A gyermekágyi vérzés az anyai halálozás vezető oka világszerte, és a fiatal nő KERINGÉSE sokáig kompenzál: a vérnyomásesés késői jel. A pulzusszám és a shock-index korábban jelez."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pp.fever",
+    "label": {
+      "hu": "Gyermekágyi láz"
+    },
+    "synonyms": [
+      "lázas vagyok a szülés után",
+      "hőemelkedés szülés után",
+      "kirázott a hideg szülés után"
+    ],
+    "opens": [
+      "vitals.temp",
+      "lab.crp",
+      "lab.wbc",
+      "status.internal.abdomen",
+      "lab.urine.nitrite"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "endometritis",
+      "sebfertőzés",
+      "mastitis",
+      "húgyúti fertőzés",
+      "mélyvénás thrombosis"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Szülés utáni lázas állapotnál a mellkasi és a végtagi vizsgálat is a kötelező kör része: a tüdőembólia és a thrombosis lázzal is indulhat."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pp.breastPain",
+    "label": {
+      "hu": "Emlőfájdalom szoptatás alatt"
+    },
+    "synonyms": [
+      "fáj a mellem szoptatáskor",
+      "begyulladt a mellem",
+      "kemény és piros a mellem",
+      "berepedt a mellbimbóm",
+      "tejbelövellés fájdalom"
+    ],
+    "bodySite": "breast",
+    "opens": [
+      "vitals.temp",
+      "us.breast"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "mastitis",
+      "tejcsatorna-elzáródás",
+      "emlőtályog",
+      "candida-fertőzés",
+      "helytelen mellre helyezés"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A mastitis kezelése mellett a SZOPTATÁST FOLYTATNI kell — az emlő ürítése a kezelés része. A szoptatás felfüggesztése tályogképződéshez vezet. Ha a gyulladás 48 óra alatt nem javul, tályogra kell gondolni."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pp.mood",
+    "label": {
+      "hu": "Hangulatzavar a szülés után"
+    },
+    "synonyms": [
+      "nem érzek semmit a baba iránt",
+      "állandóan sírok",
+      "nem tudok örülni",
+      "szorongok a baba miatt",
+      "félek hogy ártok a babának"
+    ],
+    "redflag": true,
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "postpartum depresszió",
+      "postpartum pszichózis",
+      "baby blues",
+      "szorongásos zavar",
+      "bipoláris zavar fellángolása"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A „félek, hogy ártok a babának” gondolat KÉT nagyon különböző dolgot jelenthet: kényszeres, félelemmel teli gondolatot (gyakori, kezelhető) vagy pszichotikus késztetést (sürgősség). A kettő elkülönítése nem halasztható a következő vizitre, és nem történhet önkitöltős kérdőívvel."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pp.woundPain",
+    "label": {
+      "hu": "Műtéti seb vagy gátseb fájdalma"
+    },
+    "synonyms": [
+      "fáj a varrat",
+      "sajog a császármetszés hege",
+      "duzzadt a seb",
+      "vörös és meleg a seb",
+      "váladékozik a varrat"
+    ],
+    "opens": [
+      "vitals.temp",
+      "lab.crp"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "sebfertőzés",
+      "seb szétnyílása",
+      "haematoma",
+      "élettani gyógyulási fájdalom"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A ROMLÓ, nem a fennálló sebfájdalom a jelző: a normális gyógyulás során a fájdalom naponta csökken. Az újra erősödő fájdalom fertőzésre vagy haematomára gyanús."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pp.urinaryRetention",
+    "label": {
+      "hu": "Vizelési képtelenség szülés után"
+    },
+    "synonyms": [
+      "nem tudok vizelni",
+      "nem jön a pisi",
+      "tele a hólyagom de nem megy",
+      "csak csöpög a vizelet"
+    ],
+    "redflag": true,
+    "opens": [
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset"
+    ],
+    "differential": [
+      "postpartum vizeletretenció",
+      "epidurális érzéstelenítés utóhatása",
+      "gátsérülés utáni fájdalom",
+      "haematoma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A fel nem ismert vizeletretenció maradandó hólyagkárosodáshoz vezet. A „nem tud vizelni” panaszt a szülés utáni első órákban aktívan kérdezni kell, mert az érzéstelenítés miatt a beteg nem érzi a telt hólyagot."
+      }
+    },
+    "pathways": [
+      "postpartum"
+    ]
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "megnevezes": "Telemedicina — konzultációtípusok és laikus kérések",
+  "modul": 27,
+  "konzultaciok": [
+    {
+      "id": "tele.uh",
+      "megnevezes": "UH-lelet konzultáció",
+      "protokoll": "ex.uh.szuleszeti",
+      "kellKerdes": true,
+      "kellMinoseg": true,
+      "mit": [
+        "imaging"
+      ],
+      "miert": "Kérdés nélküli konzultációkérés nem vehető fel: a „nézd meg, mit gondolsz” nem kérdés, és a rá adott válasz nem lelet."
+    },
+    {
+      "id": "tele.ttctg",
+      "megnevezes": "TTCTG — telemetrikus CTG",
+      "protokoll": "ex.ctg",
+      "kellKerdes": true,
+      "kellMinoseg": true,
+      "mit": [
+        "status.obs.ctg"
+      ],
+      "miert": "A görbe a felvételi kontextus nélkül érkezik. Az anyai pulzus-tévesztés megnyugtató görbét mutat halott magzatnál, és telemetrikus felvételnél a leggyakoribb."
+    },
+    {
+      "id": "tele.kolposzkopia",
+      "megnevezes": "Kolposzkópia külső képfogadással",
+      "protokoll": "ex.kolposzkopia",
+      "kellKerdes": true,
+      "kellMinoseg": true,
+      "kulsoKep": true,
+      "mit": [
+        "exam.obs"
+      ],
+      "miert": "A külső kép ismeretlen eszközről érkezik, néha beégetett betegazonosítóval. Karanténba érkezik, és csak megnevezett cselekvő társításával kerül ki onnan."
+    },
+    {
+      "id": "tele.labor",
+      "megnevezes": "Laborlelet-konzultáció",
+      "protokoll": null,
+      "kellKerdes": true,
+      "kellMinoseg": false,
+      "kellReferencia": true,
+      "mit": [
+        "lab"
+      ],
+      "miert": "Egy szám kontextus nélkül. Ugyanaz az érték két laborban két különböző dolgot jelent — mérőlabor és referenciatartomány nélkül az érték `nincsKuszob`, nem „normális”."
+    },
+    {
+      "id": "tele.referalas",
+      "megnevezes": "Referálás — beteg átadása",
+      "protokoll": null,
+      "kellKerdes": true,
+      "kellMinoseg": false,
+      "mit": [
+        "plan"
+      ],
+      "miert": "A referálás nem vélemény, hanem ellátás átadása: a fogadó fél elfogadásáig a felelősség a küldőnél marad."
+    }
+  ],
+  "laikusKeresek": [
+    {
+      "id": "keres.recept",
+      "megnevezes": "E-recept igénylés",
+      "celReteg": "rx",
+      "miert": "Egy „megújítás” gomb, ami a korábbi receptet ismétli, pontosan az a hiba, amit a rendszer mindenütt máshol tilt: a korábbi döntés nem bizonyítja a mostani indikációt. A gyógyszer közben ellenjavallttá válhatott — terhesség, új interakció, laboreltérés —, és a kérés ezt nem tudja."
+    },
+    {
+      "id": "keres.vizsgalat",
+      "megnevezes": "Vizsgálat igénylés",
+      "celReteg": "plan",
+      "miert": "A kérésből FELADAT lesz egy klinikusnak, nem időpont."
+    },
+    {
+      "id": "keres.tanacs",
+      "megnevezes": "Tanácsadás kérés",
+      "celReteg": "plan",
+      "miert": "Vészjelet tartalmazhat („elfolyt a magzatvizem”). A szabad szöveg értelmezése NEM elég: kérdéssor kell, ami a vészjeleket kérdésként teszi fel."
+    }
+  ],
+  "veszjelek": [
+    {
+      "id": "vj.magzatviz",
+      "kerdes": "Elfolyt a magzatvize?",
+      "azonnali": true
+    },
+    {
+      "id": "vj.verzes",
+      "kerdes": "Van hüvelyi vérzése?",
+      "azonnali": true
+    },
+    {
+      "id": "vj.mozgas",
+      "kerdes": "Érzi a magzat mozgását a szokásos módon?",
+      "azonnali": true,
+      "forditott": true
+    },
+    {
+      "id": "vj.fejfajas",
+      "kerdes": "Van erős fejfájása, látászavara vagy felhasi fájdalma?",
+      "azonnali": true
+    },
+    {
+      "id": "vj.lazas",
+      "kerdes": "Lázas?",
+      "azonnali": true
+    },
+    {
+      "id": "vj.gorcs",
+      "kerdes": "Volt görcsrohama vagy eszméletvesztése?",
+      "azonnali": true
+    }
+  ],
+  "konzultansIgazolas": null,
+  "valaszIdoOra": null
+}

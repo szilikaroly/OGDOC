@@ -1,0 +1,228 @@
+{
+  "id": "eeszt.csatlakozas",
+  "label": {
+    "hu": "EESZT-csatlakozás — a beadandó dosszié"
+  },
+  "note": "AZ ŰRLAPOK SZÖVEGE NEM SZEREPEL ITT, csak a SZERKEZET: milyen adatot kérnek, ki írja alá, és mi az, amit a rendszer önmagából meg tud válaszolni. Az űrlapok a Működtető (ÁEEK) sablonjai; a kitöltött példányok a szervezetnél maradnak — és személyes adatot tartalmaznak (születési hely és idő, anyja neve), ezért a repóba SEMMIKÉPP nem kerülhetnek. Ami itt van: a mezőnkénti számonkérés, hogy a beadás előtt kiderüljön, MELYIK adat hiányzik és KI tudja megadni. A `mitAllit` mezők állítások: amit a beadványban kimondunk, azt bizonyítani kell tudni — ugyanaz a szabály, mint az ETT-dossziénál.",
+  "forras": "EESZT fejlesztői regisztrációs lap v4.1 · referenciaigazolás v2.2 · titoktartási nyilatkozat v1 · tokenkezelés v1 · tanúsítványkezelés v1",
+  "urlapok": [
+    {
+      "id": "eeszt.reg",
+      "megnevezes": "Fejlesztői regisztrációs lap (v4.1)",
+      "kiAdjaBe": "rendszerfejlesztő",
+      "alairo": [
+        "cegvezeto",
+        "kapcsolattarto"
+      ],
+      "melleklet": [
+        "eeszt.titok"
+      ],
+      "mezok": [
+        {
+          "id": "ceg.nev",
+          "megnevezes": "Cég elnevezése",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ceg.rovid",
+          "megnevezes": "Cég rövidített elnevezése",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ceg.adoszam",
+          "megnevezes": "Adószám",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ceg.szekhely",
+          "megnevezes": "Cég székhelye",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ceg.levelezesi",
+          "megnevezes": "Levelezési cím (ha eltér)",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ellatas.tipusok",
+          "megnevezes": "Milyen ellátási típusokra fejleszt (járó-, fekvőbeteg…)",
+          "kitolti": "rendszer",
+          "bizonyitek": "ellatas-tipusok"
+        },
+        {
+          "id": "ellato.szam",
+          "megnevezes": "Hány egészségügyi ellátónak nyújt szolgáltatást",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "fejl.nyelv",
+          "megnevezes": "Szoftverfejlesztés során használt programnyelv",
+          "kitolti": "rendszer",
+          "bizonyitek": "fejlesztesi-kornyezet"
+        },
+        {
+          "id": "fejl.os",
+          "megnevezes": "Szoftver használatának operációs rendszerkörnyezete",
+          "kitolti": "rendszer",
+          "bizonyitek": "fejlesztesi-kornyezet"
+        },
+        {
+          "id": "fejl.ip",
+          "megnevezes": "A fejlesztés helyének FIX IP-címe",
+          "kitolti": "uzemeltetes",
+          "megjegyzes": "Fix IP-cím. Üzemeltetési döntés és költség — a rendszer nem tudja megválaszolni, és nem is szabad tippelnie."
+        }
+      ]
+    },
+    {
+      "id": "eeszt.referencia",
+      "megnevezes": "Referenciaigazolás (v2.2)",
+      "kiAdjaBe": "egészségügyi szolgáltató (az intézmény igazolja a szállítót)",
+      "alairo": [
+        "intezmenyi-kepviselo"
+      ],
+      "mezok": [
+        {
+          "id": "ref.intezmeny",
+          "megnevezes": "Az igazoló intézmény és képviselője",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ref.szallito",
+          "megnevezes": "A rendszerszállító és a rendszer megnevezése",
+          "kitolti": "szervezet"
+        },
+        {
+          "id": "ref.ellatas",
+          "megnevezes": "Mely ellátási tevékenységek kapcsán használják JELENLEG",
+          "kitolti": "szervezet",
+          "megjegyzes": "A JELENLEG a kulcsszó: az igazolás ÉLŐ használatot állít. Egy még nem használt rendszerre nem adható ki — tehát a 16. lépés (pilot) ELŐBB van, mint ez az űrlap."
+        }
+      ]
+    },
+    {
+      "id": "eeszt.titok",
+      "megnevezes": "Titoktartási nyilatkozat (v1)",
+      "kiAdjaBe": "rendszerfejlesztő (Gyártó)",
+      "alairo": [
+        "cegvezeto"
+      ],
+      "mezok": [
+        {
+          "id": "titok.gyarto",
+          "megnevezes": "A Gyártó megnevezése és vezetője",
+          "kitolti": "szervezet"
+        }
+      ],
+      "mitAllit": [
+        {
+          "id": "titok.adatfeldolgozo",
+          "allitas": "A Gyártó ADATFELDOLGOZÓKÉNT gondoskodik a hatáskörébe tartozó, jogszabály szerinti kötelezettségek teljesítéséről, és megtesz minden lépést, ami az általa szállított rendszer EESZT-használata során felmerülő adatkezelés jogszerűségét biztosítja.",
+          "bizonyitek": "adatfeldolgozoi-kepesseg"
+        },
+        {
+          "id": "titok.hatarido-nelkul",
+          "allitas": "A titoktartási kötelezettség LEJÁRATI HATÁRIDŐ NÉLKÜL, a megállapodás megszűnésére tekintet nélkül terheli a Gyártót.",
+          "bizonyitek": null,
+          "megjegyzes": "A rendszer EGYETLEN olyan kötelezettsége, aminek nincs lejárata. A megőrzési idők lejárnak, a licencek lejárnak, a MEES-tanúsítványok lejárnak, a dokumentumfelülvizsgálatok lejárnak — ez nem."
+        },
+        {
+          "id": "titok.mentesites",
+          "allitas": "A Gyártó MENTESÍTI a Működtetőt bármilyen, ezzel az együttműködéssel kapcsolatos adatvédelmi követeléssel, veszteséggel, kárral vagy felelősséggel szemben, és a titoktartás megszegése esetén teljes körű kártérítési kötelezettség terheli.",
+          "bizonyitek": null,
+          "megjegyzes": "MEGNEVEZETT FELELŐSSÉGVÁLLALÁS, nem formanyomtatvány-szöveg: a teljes adatvédelmi kockázatot a fejlesztő oldalára telepíti. A projektnek ezt látnia kell, MIELŐTT aláírja — és ezért áll itt, nem egy PDF 8. bekezdésében."
+        }
+      ]
+    },
+    {
+      "id": "eeszt.token",
+      "megnevezes": "Intézményi megbízott kijelölése — OTP tokenkezelés (v1)",
+      "kiAdjaBe": "intézmény",
+      "alairo": [
+        "intezmenyi-vezeto",
+        "megbizott"
+      ],
+      "szabalyzat": "ÁEEK Tokenkezelési Szabályzat",
+      "visszavonasig": true,
+      "mezok": [
+        {
+          "id": "token.vezeto",
+          "megnevezes": "Intézményi vezető (név, születési hely/idő, anyja neve, e-mail, telefon)",
+          "kitolti": "szervezet",
+          "szemelyesAdat": true
+        },
+        {
+          "id": "token.megbizott",
+          "megnevezes": "Megbízott (név, születési hely/idő, anyja neve, e-mail, mobil)",
+          "kitolti": "szervezet",
+          "szemelyesAdat": true
+        }
+      ],
+      "mitAllit": [
+        {
+          "id": "token.szabalyzat",
+          "allitas": "A megbízott a tokenek igénylését, átvételét, átadását és visszaszolgáltatását a kibocsátó Szabályzata szerint látja el.",
+          "bizonyitek": null
+        }
+      ]
+    },
+    {
+      "id": "eeszt.tanusitvany",
+      "megnevezes": "Intézményi megbízott kijelölése — tanúsítványkezelés (v1)",
+      "kiAdjaBe": "intézmény",
+      "alairo": [
+        "intezmenyi-vezeto",
+        "megbizott"
+      ],
+      "szabalyzat": "ÁEEK Tanúsítványkezelési Szabályzat",
+      "visszavonasig": true,
+      "mezok": [
+        {
+          "id": "tan.vezeto",
+          "megnevezes": "Intézményi vezető (személyes adatokkal)",
+          "kitolti": "szervezet",
+          "szemelyesAdat": true
+        },
+        {
+          "id": "tan.megbizott",
+          "megnevezes": "Megbízott (személyes adatokkal)",
+          "kitolti": "szervezet",
+          "szemelyesAdat": true
+        }
+      ],
+      "mitAllit": [
+        {
+          "id": "tan.szabalyzat",
+          "allitas": "A megbízott a tanúsítványok igénylését, átvételét, átadását és visszaszolgáltatását a kibocsátó Szabályzata szerint látja el.",
+          "bizonyitek": null
+        }
+      ]
+    }
+  ],
+  "kapuk": [
+    {
+      "id": "eeszt.kapu.auditnaplo",
+      "megnevezes": "Auditnapló",
+      "bizonyitek": "auditnaplo",
+      "miert": "A lépéslista kimondja: csatlakozni auditnapló nélkül nem lehet. A beküldött üzenetről vissza kell tudni keresni, MELYIK VÁLTOZÓ MELYIK ÉRTÉKE került bele, és ki küldte."
+    },
+    {
+      "id": "eeszt.kapu.hitelesites",
+      "megnevezes": "Hitelesítés",
+      "bizonyitek": "hitelesites",
+      "miert": "AZ EESZT-CSATLAKOZÁS A HITELESÍTÉS HIÁNYÁT BELSŐ KOCKÁZATBÓL KÜLSŐVÉ TESZI. Ma a cselekvő kilétét egyetlen ellenőrizetlen kérésfejléc állítja; csatlakozás után a rendszer az ORSZÁGOS nyilvántartásba írna egy olyan azonosító nevében, amit senki nem ellenőrzött. Ez nem fokozati különbség: a hibás belső bejegyzés javítható, az országos térbe küldött üzenet nem a miénk többé."
+    },
+    {
+      "id": "eeszt.kapu.szintetikus",
+      "megnevezes": "Szintetikus üzemmód",
+      "bizonyitek": "szintetikus-kapu",
+      "miert": "A kiszolgáló `OGDOC_SYNTHETIC=1` nélkül el sem indul. Amíg ez így van, ÉLES EESZT-csatlakozás nem lehetséges — és ez a helyes irány: szintetikus adaton futó rendszer nem küldhet országos nyilvántartásba."
+    },
+    {
+      "id": "eeszt.kapu.agazati-azonosito",
+      "megnevezes": "Ágazati azonosító a profilban",
+      "bizonyitek": "agazati-azonosito",
+      "miert": "Az EESZT minden művelethez az ágazati azonosítóhoz kötött cselekvőt vár. A megfelelési fejezet ezt a 4. fázis ELSŐ feladataként nevezi meg."
+    }
+  ]
+}

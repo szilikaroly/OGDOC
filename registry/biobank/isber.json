@@ -1,0 +1,117 @@
+{
+ "megnevezes": "ISBER Best Practices — a biobanki réteg megfelelési térképe",
+ "modul": 22,
+ "forras": "ISBER Best Practices for Repositories, 5th edition (International Society for Biological and Environmental Repositories)",
+ "hivatkozas": "https://www.isber.org/page/BPR",
+ "licencNote": "AZ ISBER BEST PRACTICES SZERZŐI JOGVÉDETT KIADVÁNY. A rendszer a KÖVETELMÉNYEKRE hivatkozik szakaszszámmal, a szövegét NEM másolja — ugyanaz a szabály, mint a BELLA-standardoknál és a MEES 2.1 kézikönyvnél. A `kovetelmeny` mezők SAJÁT MEGFOGALMAZÁSOK; a hiteles szöveg az ISBER kiadványa. A validálás figyelmeztet, ha egy leírás olyan hosszú, hogy már átvételnek látszik.",
+ "note": "A TÉRKÉP NEM MEGFELELÉSI NYILATKOZAT. Azt mutatja meg, hogy a rendszer melyik ISBER-követelményhez ad gépi támogatást, és melyikhez nem — egy követelmény lehet teljesen fedett szervezeti oldalról úgy is, hogy a szoftver semmit nem tesz hozzá.\n\nAMI `fedett`, AHHOZ BIZONYÍTÉK KELL. A bizonyíték kódra vagy dokumentumra mutat, nem állításra: egy akkreditációs auditon az „megvan” nem elég.",
+ "tetelek": [
+  {
+   "id": "isber.azonositas",
+   "szakasz": "Best Practices — Specimen and Data Identification",
+   "cim": "Egyedi, ellenőrizhető mintaazonosító",
+   "kovetelmeny": "A mintának a tárolóban egyedi azonosítója van, amely gépileg olvasható, ellenőrizhető, és nem hordoz azonosításra alkalmas személyes adatot.",
+   "allapot": "fedett",
+   "bizonyitek": [
+    "core/biobank/minta.ts — `azonositoEllenoriz()`: alak + súlyozott ellenőrző jegy",
+    "core/biobank/minta.ts — `betegadatGyanu()`: TAJ- és dátumminta elutasítása",
+    "test/biobank.test.ts"
+   ],
+   "hianyzik": []
+  },
+  {
+   "id": "isber.alikvot",
+   "szakasz": "Best Practices — Specimen Processing",
+   "cim": "Az alikvot visszavezethető a szülőmintára",
+   "kovetelmeny": "Minden leszármaztatott alikvot saját azonosítót kap, és a származási lánc a gyökérmintáig visszakövethető.",
+   "allapot": "fedett",
+   "bizonyitek": [
+    "core/biobank/minta.ts — `mintaEllenoriz()`: lánc a gyökérig, árva alikvot és kör felismerése"
+   ],
+   "hianyzik": []
+  },
+  {
+   "id": "isber.hozzajarulas",
+   "szakasz": "Best Practices — Ethical, Legal and Social Issues",
+   "cim": "A donor hozzájárulása és annak visszavonhatósága",
+   "kovetelmeny": "A minta felhasználása a donor dokumentált hozzájárulásának keretén belül marad, és a visszavonás hatása azonnal érvényesül.",
+   "allapot": "reszben",
+   "bizonyitek": [
+    "core/store/torles.ts — kriptográfiai törlés és kétágú visszavonás",
+    "web/tarolo-api.ts — a visszavonás hatásának előnézete"
+   ],
+   "hianyzik": [
+    "A biobanki hozzájáruló nyilatkozat nyolc pontjának LEKÉPEZÉSE mezőkre — ma a nyilatkozat dokumentum, nem strukturált adat",
+    "A hozzájárulás hatókörének gépi összevetése a KÉRT felhasználással (mire adta, mire kérik)"
+   ]
+  },
+  {
+   "id": "isber.homerseklet",
+   "szakasz": "Best Practices — Storage Conditions and Monitoring",
+   "cim": "A tárolási hőmérséklet folyamatos felügyelete",
+   "kovetelmeny": "A tárolóegység hőmérsékletét folyamatosan mérik, az eltérés riasztást vált ki, és a kitérés a mintához rendelve rögzül.",
+   "allapot": "nincs",
+   "bizonyitek": [],
+   "hianyzik": [
+    "Hőmérséklet-adatgyűjtő csatlakoztatása — a soros vonal (`serial`) csatorna ehhez való, de tervezett állapotban van",
+    "A kitérés (excursion) rögzítése a mintához: a minta minőségét ez befolyásolja, és a felhasználónak tudnia kell róla",
+    "Riasztási címzett — a riasztási rend 0/8 típusa kiadható"
+   ]
+  },
+  {
+   "id": "isber.lanc",
+   "szakasz": "Best Practices — Chain of Custody",
+   "cim": "Őrzési lánc: ki, mikor, mit vett ki és tett vissza",
+   "kovetelmeny": "A minta minden mozgása naplózott, a napló nem módosítható, és a naplóból visszakereshető, ki fért hozzá.",
+   "allapot": "reszben",
+   "bizonyitek": [
+    "core/journal/ — írás-előrehaladó napló, négyféle romlás megkülönböztetése",
+    "core/store/hozzaferes.ts — szerepkör, ellátási kapcsolat, időablak",
+    "core/auth/csoport.ts — a megbízás hatóköre és időablaka"
+   ],
+   "hianyzik": [
+    "A FIZIKAI mozgás rögzítése: a napló ma az ADAT hozzáférését követi, a cső kivételét nem",
+    "Vonalkód-leolvasó bekötése a kivételi és visszahelyezési művelethez"
+   ]
+  },
+  {
+   "id": "isber.minoseg",
+   "szakasz": "Best Practices — Quality Management",
+   "cim": "Minőségirányítási rendszer és dokumentumkezelés",
+   "kovetelmeny": "A folyamatokat írott eljárások szabályozzák, az eljárások verziózottak és hatályosak, és a hatálybalépés dokumentált.",
+   "allapot": "reszben",
+   "bizonyitek": [
+    "core/mir/ — 37 dokumentum és 45 ISO-kontroll nyilvántartása"
+   ],
+   "hianyzik": [
+    "0/37 dokumentum HATÁLYOS — a nyilvántartás megvan, az aláírások nem",
+    "0/45 ISO-kontroll bizonyítva"
+   ]
+  },
+  {
+   "id": "isber.katasztrofa",
+   "szakasz": "Best Practices — Disaster Planning and Recovery",
+   "cim": "Katasztrófaterv és helyreállítás",
+   "kovetelmeny": "A tárolóegység meghibásodására és az áramkimaradásra írott terv van, tartalék kapacitással és próbával.",
+   "allapot": "nincs",
+   "bizonyitek": [],
+   "hianyzik": [
+    "Ez SZERVEZETI feladat, nem fejlesztői: tartalék fagyasztó, generátor, riasztási lánc és próbariasztás",
+    "A rendszer annyit tud hozzátenni, hogy a mintanyilvántartás túléli a kiszolgáló elvesztését — ehhez a mentési eljárás leírása kell"
+   ]
+  },
+  {
+   "id": "isber.kiadas",
+   "szakasz": "Best Practices — Specimen Distribution",
+   "cim": "A minta kiadása és a felhasználás követése",
+   "kovetelmeny": "A kiadott minta mennyisége, címzettje és a felhasználás célja rögzül, és a készlet ennek megfelelően csökken.",
+   "allapot": "nincs",
+   "bizonyitek": [],
+   "hianyzik": [
+    "Készletnyilvántartás: hány alikvot van még, és mennyi fogyott",
+    "A kiadás összevetése a donor hozzájárulásának hatókörével",
+    "Anyagátadási megállapodás (MTA) sablonja és nyilvántartása"
+   ]
+  }
+ ]
+}

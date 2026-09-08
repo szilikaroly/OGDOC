@@ -1,0 +1,72 @@
+{
+  "id": "spr.terhessegKizarasa",
+  "megnevezes": "Ésszerű bizonyosság arról, hogy a páciens nem terhes",
+  "verzio": "US SPR 2024",
+  "forras": "U.S. Selected Practice Recommendations for Contraceptive Use (US SPR), CDC — 2024. Az Egyesült Államok szövetségi kormányzati munkája: KÖZKINCS.",
+  "hivatkozas": "https://www.cdc.gov/contraception/hcp/usspr/",
+  "vars": [
+    "tunetek",
+    "menzeszOtaNap",
+    "voltKozosulesMenzeszOta",
+    "megbizhatoModszert",
+    "abortuszOtaNap",
+    "szulesUtanHet",
+    "teljesSzoptatasAmenorrhea"
+  ],
+  "szabalyok": [
+    {
+      "kat": "nemBizonyos",
+      "ha": "tunetek == 1",
+      "miert": "Terhességre utaló TÜNET vagy JEL áll fenn.",
+      "teendo": "Ésszerű bizonyosság NEM állapítható meg. Terhességi teszt és klinikai megítélés szükséges."
+    },
+    {
+      "kat": "bizonyos.menzesz",
+      "ha": "menzeszOtaNap <= 7",
+      "miert": "A normális menstruáció kezdete óta legfeljebb 7 nap telt el.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "bizonyos.nemVoltKozosules",
+      "ha": "voltKozosulesMenzeszOta == 0",
+      "miert": "Az utolsó normális menstruáció kezdete óta nem volt közösülés.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "bizonyos.modszer",
+      "ha": "megbizhatoModszert == 1",
+      "miert": "Megbízható fogamzásgátló módszert használt helyesen és következetesen.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "bizonyos.abortusz",
+      "ha": "abortuszOtaNap <= 7",
+      "miert": "Spontán vagy művi vetélés óta legfeljebb 7 nap telt el.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "bizonyos.szulesUtan",
+      "ha": "szulesUtanHet <= 4",
+      "miert": "A szülés után legfeljebb 4 héttel.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "bizonyos.laktacios",
+      "ha": "teljesSzoptatasAmenorrhea == 1 && szulesUtanHet < 26",
+      "miert": "Teljes vagy csaknem teljes szoptatás (a táplálások legalább 85%-a szoptatás), amenorrhoea, és a szülés óta kevesebb mint 6 hónap telt el.",
+      "teendo": "Ésszerű bizonyosság megállapítható."
+    },
+    {
+      "kat": "nemBizonyos",
+      "ha": "tunetek >= 0",
+      "miert": "Egyetlen kritérium sem teljesül.",
+      "teendo": "Ésszerű bizonyosság NEM állapítható meg. Implantátum, DMPA, kombinált hormonális fogamzásgátló és POP esetén a kezdés előnye valószínűleg meghaladja a kockázatot — a módszer bármikor indítható, 2–4 hét múlva terhességi teszttel. IUD-behelyezésnél viszont NEM: addig más módszert kell adni, amíg az ésszerű bizonyosság meg nem állapítható.",
+      "megjegyzes": "A hét kritérium BÁRMELYIKE elég — ez a tábla nem pontoz, hanem az első illeszkedő kritériumot nevezi meg."
+    }
+  ],
+  "eloirasok": [
+    "A kritériumok VAGY kapcsolatban állnak: bármelyik teljesülése elég.",
+    "A tünetmentesség ELŐFELTÉTEL: terhességre utaló tünet vagy jel mellett egyik kritérium sem alkalmazható. Ezért áll az első sorban.",
+    "AZ IUD KÜLÖN ESET: bizonytalanság mellett a többi módszer indítható, az IUD nem."
+  ]
+}

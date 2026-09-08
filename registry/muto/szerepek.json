@@ -1,0 +1,50 @@
+{
+  "megnevezes": "Műtéti szerepkövetelmények — DEMÓ",
+  "note": "MELY SZEREPEK KÖTELEZŐK. A lista ADAT, nem kód: egy új beavatkozás felvételéhez nem szabad kódot írni. A csapat elérhetőségét a CRM (19. modul) válaszolja meg — a rendszer nem tart saját HR-nyilvántartást, csak KÉRDEZ, és a hallgatást nem olvassa igennek.",
+  "beavatkozasok": [
+    {
+      "id": "bea.cs",
+      "megnevezes": "Császármetszés",
+      "szukseges": [
+        "operator",
+        "aneszteziologus",
+        "mutosseged",
+        "szulesznő"
+      ]
+    },
+    {
+      "id": "bea.hyst",
+      "megnevezes": "Hysterectomia",
+      "szukseges": [
+        "operator",
+        "aneszteziologus",
+        "mutosseged"
+      ]
+    },
+    {
+      "id": "bea.lsc",
+      "megnevezes": "Laparoszkópia",
+      "szukseges": [
+        "operator",
+        "aneszteziologus",
+        "mutosseged"
+      ]
+    },
+    {
+      "id": "bea.abrasio",
+      "megnevezes": "Abrasio",
+      "szukseges": [
+        "operator",
+        "aneszteziologus"
+      ]
+    },
+    {
+      "id": "bea.konizacio",
+      "megnevezes": "Konizáció helyi érzéstelenítésben",
+      "szukseges": [
+        "operator",
+        "mutosseged"
+      ]
+    }
+  ]
+}

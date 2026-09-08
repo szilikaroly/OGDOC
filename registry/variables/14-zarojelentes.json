@@ -1,0 +1,442 @@
+[
+  {
+    "id": "disch.admittedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Felvétel időpontja"
+    },
+    "module": "disch",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kezdődött az ellátási esemény."
+      },
+      "whyItMatters": {
+        "hu": "A zárójelentés fejlécének kötelező eleme az ELLÁTÁS IDŐSZAKA, nem csak a vége. Enélkül nem állapítható meg az ápolási idő, és a következő ellátó sem tudja, mennyi ideig tartott, amit olvas."
+      }
+    }
+  },
+  {
+    "id": "disch.at",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elbocsátás időpontja"
+    },
+    "module": "disch",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor zárult le az ellátás."
+      },
+      "whyItMatters": {
+        "hu": "A megőrzési idő ettől számít (`recordClose`), és az újrafelvételi mutatók is ehhez képest mérnek."
+      }
+    }
+  },
+  {
+    "id": "disch.type",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az elbocsátás módja"
+    },
+    "module": "disch",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "home",
+        "label_hu": "Otthonába"
+      },
+      {
+        "code": "transfer",
+        "label_hu": "Áthelyezés másik intézménybe"
+      },
+      {
+        "code": "againstAdvice",
+        "label_hu": "Távozás saját felelősségre",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "death",
+        "label_hu": "Elhalálozás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan végződött az ellátási esemény."
+      },
+      "pitfalls": {
+        "hu": "A „saját felelősségre” távozás önálló érték, nem az „otthonába” egy változata: más dokumentációs kötelezettséggel jár, és a következő ellátónak tudnia kell róla."
+      }
+    }
+  },
+  {
+    "id": "disch.condition",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Állapot az elbocsátáskor"
+    },
+    "module": "disch",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "recovered",
+        "label_hu": "Gyógyult"
+      },
+      {
+        "code": "improved",
+        "label_hu": "Javult"
+      },
+      {
+        "code": "unchanged",
+        "label_hu": "Változatlan"
+      },
+      {
+        "code": "worsened",
+        "label_hu": "Romlott",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "death",
+        "label_hu": "Elhalálozott",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beteg állapota az ellátás lezárásakor."
+      }
+    }
+  },
+  {
+    "id": "disch.dxAdmission",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Felvételi diagnózis"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Amivel a beteg érkezett."
+      },
+      "pitfalls": {
+        "hu": "SZABAD SZÖVEG, mert a kódolt BNO a 17. modulé, ami még nincs feltöltve. A mező addig sem maradhat ki: a felvételi és a végdiagnózis ELTÉRÉSE önmagában klinikai információ."
+      }
+    }
+  },
+  {
+    "id": "disch.dxFinal",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Végdiagnózis"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Amivel a beteg távozik."
+      },
+      "pitfalls": {
+        "hu": "SZABAD SZÖVEG, amíg a 17. modul BNO-törzse el nem készül. A kódolás ettől a mezőtől függ, nem fordítva."
+      }
+    }
+  },
+  {
+    "id": "disch.institution.name",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ellátó intézmény"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Az intézmény megnevezése a fejlécben."
+      }
+    }
+  },
+  {
+    "id": "disch.institution.approved",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az intézmény befogadta a generált zárójelentést"
+    },
+    "module": "disch",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen, a dokumentációs rend része"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Jóváhagyta-e az intézmény a generált zárójelentést, és illesztette-e a saját dokumentációs rendjébe."
+      },
+      "pitfalls": {
+        "hu": "A „nem ismert” NEM jóváhagyás. Jóváhagyás nélkül a dokumentum belső munkaanyag: kinyomtatható, de nem hiteles egészségügyi dokumentum."
+      },
+      "whyItMatters": {
+        "hu": "Ez a modul nyitott kérdésének a mezője. A generálás minősége és a JOGI STÁTUSZ két külön dolog — egy tökéletes tartalmú dokumentum is lehet nem hiteles."
+      }
+    }
+  },
+  {
+    "id": "disch.signedBy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Aláíró orvos"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki írta alá a zárójelentést."
+      },
+      "pitfalls": {
+        "hu": "MA CSAK SZÖVEG, és ezért NEM BIZONYÍT SEMMIT: hitelesítés (25. modul) nélkül bárki bármit beírhat. Ezért a hitelességi kapu a beírt névtől függetlenül zárva marad."
+      }
+    }
+  },
+  {
+    "id": "disch.signedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A zárójelentés aláírásának időpontja"
+    },
+    "module": "disch",
+    "datatype": "datetime",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor történt az aláírás."
+      }
+    }
+  },
+  {
+    "id": "disch.countersignedBy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ellenjegyző"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki ellenjegyezte a zárójelentést."
+      },
+      "whyItMatters": {
+        "hu": "A dokumentumtörzs (`doc.zarojelentes`) ellenjegyzést ír elő: a zárójelentés a leghosszabb megőrzési idejű dokumentum, és két ember felelőssége."
+      }
+    }
+  },
+  {
+    "id": "disch.countersignedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ellenjegyzés időpontja"
+    },
+    "module": "disch",
+    "datatype": "datetime",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor történt az ellenjegyzés."
+      }
+    }
+  },
+  {
+    "id": "disch.medication.reconciled",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gyógyszerelés egyeztetve az elbocsátáskor"
+    },
+    "module": "disch",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Összevetették-e a felvétel előtti és az elbocsátáskori gyógyszerlistát."
+      },
+      "whyItMatters": {
+        "hu": "Az elbocsátáskori gyógyszer-egyeztetés elmaradása a leggyakoribb megelőzhető gyógyszerelési hiba forrása: az otthoni szer elmarad, vagy a kórházi szer duplán folytatódik."
+      }
+    }
+  },
+  {
+    "id": "disch.patientCopyGiven",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A beteg példánya átadva"
+    },
+    "module": "disch",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Megkapta-e a beteg a saját példányát."
+      }
+    }
+  },
+  {
+    "id": "disch.language",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A beteg példányának nyelve"
+    },
+    "module": "disch",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "hu",
+        "label_hu": "Magyar"
+      },
+      {
+        "code": "en",
+        "label_hu": "Angol"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      },
+      {
+        "code": "notUnderstood",
+        "label_hu": "A beteg nyelvén nem állt rendelkezésre",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen nyelven kapta meg a beteg a zárójelentést."
+      },
+      "pitfalls": {
+        "hu": "A „nem állt rendelkezésre a beteg nyelvén” vörös zászló: az átadás formálisan megtörtént, tartalmilag nem."
+      }
+    }
+  },
+  {
+    "id": "disch.gpNotified",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A háziorvos értesítve"
+    },
+    "module": "disch",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Eljutott-e a zárójelentés a háziorvoshoz."
+      },
+      "whyItMatters": {
+        "hu": "Az ellátás közötti átmenet a legsérülékenyebb pont: a beteg hazamegy, a javaslat pedig nem jut el ahhoz, akinek végre kellene hajtania."
+      }
+    }
+  },
+  {
+    "id": "disch.restrictions",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korlátozások, életmódi javaslatok"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Terhelhetőség, sebkezelés, közösülés, fürdés, gépjárművezetés."
+      }
+    }
+  },
+  {
+    "id": "disch.sickLeave.until",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Keresőképtelenség vége"
+    },
+    "module": "disch",
+    "datatype": "date",
+    "documentation": {
+      "definition": {
+        "hu": "Meddig tart a kiadott keresőképtelenség."
+      }
+    }
+  },
+  {
+    "id": "disch.summaryReviewedBy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A generált tartalmat átnézte"
+    },
+    "module": "disch",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki olvasta át a generált zárójelentést az aláírás előtt."
+      },
+      "pitfalls": {
+        "hu": "Az átnézés és az aláírás KÉT KÜLÖN esemény, és szándékosan két mező. Az automatikusan összeálló dokumentum legnagyobb kockázata, hogy senki nem olvassa el — az aláírás önmagában nem bizonyítja, hogy elolvasták."
+      }
+    }
+  }
+]

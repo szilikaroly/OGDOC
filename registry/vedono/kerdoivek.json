@@ -1,0 +1,955 @@
+{
+  "megnevezes": "Területi védőnői szűrővizsgálat — szülői kérdőív",
+  "modul": 30,
+  "forras": "51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd) mellékletei",
+  "note": "GENERÁLT — `python3 tools/ingest/vedono_kerdoiv.py`. Jogszabályi melléklet, ezért feldolgozható. A KITÖLTÖTT példány PHI-t tartalmaz (TAJ, anyja születési neve), és soha nem kerül a repóba.\n\nA `vedonoiEgyezes` a forma legfontosabb szerkezeti eleme: a szülő válaszol, és a védőnő KÜLÖN rögzíti, hogy a saját észlelése ugyanaz-e. Ez beépített egyezés-ellenőrzés — a 17. lépés audit-hurka kicsiben, és már a jogszabályi űrlapon ott van.",
+  "skala": [
+    {
+      "kod": "rendszeresen",
+      "label_hu": "Igen, rendszeresen (gyakran, többnyire)"
+    },
+    {
+      "kod": "neha",
+      "label_hu": "Néha (ritkán, nem nagyon, de előfordul)"
+    },
+    {
+      "kod": "megNem",
+      "label_hu": "Még nem"
+    }
+  ],
+  "vedonoiEgyezes": {
+    "kerdes": "Védőnői tapasztalat: ugyanaz?",
+    "ertekek": [
+      "igen",
+      "nem"
+    ]
+  },
+  "ivek": [
+    {
+      "id": "vedono.szures.1h",
+      "honap": 1.0,
+      "megnevezes": "1 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Hason fekve, fejét rövid időre megemeli, majd átfordítja mindkét oldalra?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Egyforma gyakorisággal mozgatja-e mind a négy végtagját?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Nyugodt állapotban erős hangra összerezzen? ( jtócsapódás, kulcsleesés, tüsszentés stb.)"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Erős fényre hunyorog? ámpa felkapcsolása, napfény"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Alkalomtól függően (éhség, fáradtság, fájdalom stb.) megváltozik-e a sírás módja?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Szoptatással (táplálással), ringatással, énekléssel, simogatással megnyugtatható?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Megfelelően szopik, vagy jól eszik cumisüvegből? (Azaz ajkak, vagy közvetlen környékük érintésére kinyitja-e száját, majd szopáskor ütemesen szívó-nyelő mozgást végez?) Nem csurgat, nem köhécsel?"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Kezd-e kialakulni rendszer a mindennapi tevékenységében? (Közel azonos időben való ébredés, alvás, étkezés.) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "HALLÁS ÉS BESZÉDFEJLŐDÉS VIZSGÁLATA",
+        "LÁTÁS VIZSGÁLATA",
+        "PSZICHOMOTOROS",
+        "TESTI FEJLŐDÉS",
+        "ÉS MENTÁLIS FEJLŐDÉS VIZSGÁLATA"
+      ]
+    },
+    {
+      "id": "vedono.szures.2h",
+      "honap": 2.0,
+      "megnevezes": "2 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Háton fekve fejét mindkét irányba forgatja?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Hason fekve fejét megemelve mindkét irányba elfordítja?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Közeli – 25-30 cm-re lévő arcra, játékra felfigyel?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Arca előtt lassan mozduló játék után néz?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Beszédhangra akkor is felfigyel, ha a közelében lévő beszélő arcát nem látja? (Pl.: a sírást abbahagyja vagy nyugodt állapotban beszédhangra élénk végtagmozgásokba kezd.)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Ökölben lévő kezeit nyitogatja, azaz ujjait mindkét kezén egyformán nyújtogatja?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Háton fekve kezeit észreveszi?"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Elnyújtott hangzókkal gőgicsél? (Pl.: óóó, ááá, gííí, hemmmm"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Ha beszél hozzá, szokott visszagőgicsélni?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Mosolyra mosollyal válaszol? (Azaz nyugodt állapotban visszamosolyog, ha mi rámosolygunk?)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Amikor az anya mellét vagy a cumisüveget látja, van-e jele annak, hogy tudja: most evés következik? (Pl.:.nyugtalanul kapálózik végtagjaival vagy éppen türelmetlenül, sürgetően gőgicsél?)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Éjszaka többet alszik, mint nappal? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.3h",
+      "honap": 3.0,
+      "megnevezes": "3 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": false,
+      "kerdesek": [],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "HALLÁS ÉS BESZÉDFEJLŐDÉS VIZSGÁLATA",
+        "LÁTÁS VIZSGÁLATA",
+        "PSZICHOMOTOROS ÉS MENTÁLIS FEJLŐDÉS VIZSGÁLATA",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.4h",
+      "honap": 4.0,
+      "megnevezes": "4 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Ha hasra fekteti, fejét felemelve, alkarján támaszkodik?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Hátáról az oldalára fordul?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Hason fekve a körülötte lévő játékért hol az egyik, hol a másik kezével egyformán nyúl?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Tekintetével és fejfordítással minden irányba követi a mozgó tárgyat? (Azaz oldalra, fel- és lefelé egyaránt képes erre?)"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Kezeit középen összefogva szájához viszi?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Háton fekve vagy félig ülő helyzetben tartva a középről nyújtott tárgyakért mindkét kézzel egyformán nyúl?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Mindkét kezével egyformán markolászik? (pl.: hajat, ruhát vagy takarót)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "A kezébe adott csörgőt megtartja, és bizonyos idő után mindkét keze el tudja engedni?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Mosolyog vagy hangot ad annak érdekében, hogy ráfigyeljenek?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Hason fekve 10-15 percet önállóan eljátszik?"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Ébren, nyugalomban külső inger (pl. hirtelen zaj, gyors közeli mozdulat, érintés) nélkül is gyakran összerezzen?"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Hason fekve az oldalról nyújtott játékért a másik kezével átnyúl? (Azaz a jobbról nyújtott tárgyat is csak bal kezével fogja meg vagy fordítva?) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.6h",
+      "honap": 6.0,
+      "megnevezes": "6 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Mindkét irányba forog? (Azaz hasról hátra, ill. hátról hasra?)"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Háton fekve mindkét lábfejével játszik? (Pl. megfogja vagy akár szájába veszi azokat?)"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Hason fekve, mellkasát is felemelve, mindkét karjával nyújtott könyökkel, mindkét kezével nyitott tenyerére rá tud támaszkodni?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "A hangok forrását odafordulással keresi?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Az apró tárgyakat (pl. szösz, morzsa, mazsolaszemek stb.) is észreveszi? (Pl. nézegeti, kezével odanyúl, markolássza?)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Párbeszédszerű hangadásba bevonható? (Azaz hallgat, amikor beszélnek hozzá és hangokat ad, amikor a felnőtt elhallgat?)"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "A játékot egyik kezéből a másikba átveszi?"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Az elejtett tárgyat visszaveszi a kezébe?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "„Kukucs” játéknál a fejére borított kendőt leveszi?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Mosolyogva vagy nevetve élvezi a felnőttel a közös játékot? (Pl.: „kukucs” játéknál)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Élvezi a hangadást, hosszasan játszik a saját hangjával? (Azaz 2-3 különböző hangból álló s zótagokat dallamosan ejt – pl. „ mba, ábűű, pamááá, adu geee, gaaaj habűűű” változó hangerővel stb.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "A szülő mozdulattal kísért hívását megérti? (Pl.: a szülő „gyere” szólítására és intésére teste, karja a felnőtt felé lendül?) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "HALLÁS ÉS BESZÉDFEJŐDÉS VIZSGÁLATA",
+        "LÁTÁS VIZSGÁLATA",
+        "PSZICHOMOTOROS ÉS MENTÁLIS FEJLŐDÉS VIZSGÁLATA",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.9h",
+      "honap": 9.0,
+      "megnevezes": "9 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Önállóan felül?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Kúszva vagy mászva helyet változtat?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Négykézláb rugózik (”kutyázik”)?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Leeső játéknak, tárgynak utána néz?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Két tárgyat (pl.: játékot) megfog és egymással összeütöget?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "A játékot eldobálva, várja, hogy visszakapja?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Ülve, támaszkodás nélkül játszik? (Azaz nem görnyed előre, nem támaszkodik a széttett lába közé, vagy a combjaira"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Ismételget szótagokat? l.: „ba-ba-ba, ma-ma-ma, te-te-te” Mozdulattal kísért, egyszerű utasításokat megért? (Pl. „Kérem!” „Nem szabad !”, „Add a kezed!”, Gyere ide!”, „t apsi-tapsi”, pá-pá”"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Idegenekkel másként viselkedik, mint az ismerősökkel? (Pl. tartózkodó, visszahúzódik, bizalmatlanul néz, sírva fakad?)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Tükörképét élvezettel nézegeti? (Pl.: a tükröt tapogatja, grimaszol, mosolyog, hangot ad?)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Tányérjából, darabos ételt önállóan eszik, majszol? (Pl. falatkát, kekszet, kenyérhéjat próbál rágni?) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.12h",
+      "honap": 12.0,
+      "megnevezes": "1 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Bútorok mellett kapaszkodva, önállóan feláll? („Még nem” a válasz, ha csak segítséggel felállítva képes megállni.)"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Álló helyzetből, a földön lévő játékot felveszi? (Közben bútorba, falba kapaszkodhat vagy támaszkodhat egyik kezével.)"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Bútor/fal mellett oldalazva lépeget?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Gyorsan és célirányosan mászik?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Dobozból (vagy tálból, fiókból) játékokat (vagy más tárgyakat) kipakol?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Apró tárgyat hüvelyk és mutató ujjával felcsippent? (Pl. morzsát, szöszt"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Utánozza a látott mozdulatokat? (Pl. tapsi-tapsi, pá-pá"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Kérésre, de anélkül, hogy Ön segítené, ismerős tárgyakra rámutat? (Azaz Ön nem mutat, és nem néz rá a tárgyra, és úgy kérdezi pl.: Hol van a labda, lámpa, maci? stb.)"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Ha valamit szeretne megkapni, amit nem ér el, akkor mutatóujjával rámutat a tárgyra?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Iváskor a poharat döntve megtartja? (Még mellé csuroghat az ital."
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Öltöztetésnél segít? (Pl.: Amikor a kezét a ruha ujjába illesztik, igyekszik átdugni, fölemeli a lábát a cipő, zokni vagy a nadrágszár fölhúzásához"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Ha nevén szólítják, akkor odafordulva a kérdező szemébe néz? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "BESZÉDFEJLŐDÉS VIZSGÁLATA",
+        "EGYÉB MEGJEGYZÉS",
+        "HALLÁS VIZSGÁLATA",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS FEJLŐDÉS ÉS MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.15h",
+      "honap": 15.0,
+      "megnevezes": "15 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Önállóan, kapaszkodás nélkül, sarkát letéve megáll?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Önállóan, kapaszkodás nélkül, sarkát letéve jár?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Felnőtt méretű bútorokra felmászik? (Pl.: székre, ágyra, heverőre"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Ismerős dallamra dünnyög vagy rázza, ringatja magát? (Pl. hinta-palinta, zsipp-zsupp, ismerős ritmus"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Egyre több szót vagy szótöredéket ugyanazzal a jelentéssel mond? (Pl. kutya helyett ”vau-vau”, „kanál” helyett „kanga”, tányér helyett „tá”, „zsiráf” helyett “áf”, “kutya” helyett “tya”, eszik helyett „esz” stb.)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Fiókba vagy vödörbe, dobozba, kosárba tárgyakat vagy játékokat betesz, belepakol?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Tárgyakat egymásra tesz? (Kockákat egymásra, kekszet a tányérra, játékot a polcra, macit a párnára, edényre fedőt stb.)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Szeret „bohóckodni”? (Akár maga is nevet a „közönségével”?)"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Kezdi felismerni, hogy melyik játék mire való (pl. autót tologat, babát ölel)"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Próbál másokat utánozni? (Egyszerű mozdulatokat tárggyal vagy anélkül pl. lábával dobol, labdát rúg, dobál"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Próbál vetkőzni? (Zoknit, sapkát, cipőt vagy kesztyűt levenni.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Próbál önállóan kanállal enni? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.18h",
+      "honap": 18.0,
+      "megnevezes": "18 hónapos korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Szeret „cipekedni”? (Pl. kavicsokkal, homokkal telerakott vagy vízzel megtöltött kis vödröt, porszívó csövét, kisseprűt, édesanyja kézitáskáját stb.)"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Utánozza a mindennapokban látott cselekvéseket, egy-egy tárggyal, játékkal? (Pl.: törölget, kalapál, porszívózik, kavargat"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Támaszkodás és kapaszkodás nélkül le tud guggolni és fel is tud állni?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Kis szelet sajtot, csokit kicsomagol?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Szeret vizet öntögetni? (Pl.: egyik edényből a másikba, vagy fürdésnél saját hasára, fejére.)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Mond 5-10 szót vagy szókezdeményt, hangutánzó szavakat? (Pl. va-va, „ké-” kér helyett, miáú, mama"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Egyszerű kérdésekre a fejével „igen”-t vagy „nem”-et int? (Pl. „Kérsz inni?”)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Képeskönyvben vagy újságban, ismerős tárgyakra rámutat? (Pl. „Mutasd meg a cicát, házat, macit” stb. anélkül, hogy Ön segítené: azaz Ön nem mutat, és nem néz rá a képre.)"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Ha valami érdekeset talál, akkor a szülőre nézve megmutatja a tárgyat?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Evéskor harap és rág? (Pl. kenyér-, sajt-, gyümölcs szeletet 11.Új táplálékokat megízlelve elfogadja azt? (Pl. rakott, töltött ételek"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Próbál-e más gyermekekkel kapcsolatot létesíteni? (Pl. enni adni nekik, megpuszilni, vagy akár lökdösni vagy elvenni tőlük a játékot.) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.24h",
+      "honap": 24.0,
+      "megnevezes": "2 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Irányt változtatva futkározik?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Páros lábbal ugrál? (Pl.: földön, ágyon, vagy alacsony lépcsőfokról, járdaszegélyről leugrik?)"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Tornyot épít háromnál több tárgyból, játékból?"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Szívesen firkál homokba, porba, papírra?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Csavaró mozdulatot utánoz? (Pl.: kupakot, doboztetőt próbál lecsavarni?)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Kétszavas mondatokban beszél? (Pl.: „ pa el”, „ aba be”,” pa autó”, „ utya eszik”, „ nya megy”"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Saját magát bármilyen módon megnevezi? (Pl. baba, Titike"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Testrészeit (legalább ötöt) meg tudja mutatni magán vagy babán, vagy anyán? (Pl. fej, kéz, láb, szem, száj, fül, stb.)"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Gyakran kérdezi-e: „Ez mi?” vagy „Mi ez?”"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Játszik egyszerre két különféle játékkal? (Pl. a b abáját játékautóba, babakocsiba ülteti, ágyba fekteti, j áték járművel szállít valamit? „Még nem” a válasz, ha pl. két kockát csak összekoppintgat!)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Átérzi mások érzéseit? (Pl. ezért vigasztal, simogat, odaad neki valamit.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Jelzi, ha pisis, kakis? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "BESZÉDFEJLŐDÉS VIZSGÁLATA",
+        "EGYÉB MEGJEGYZÉS",
+        "HALLÁS VIZSGÁLATA",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS FEJLŐDÉS ÉS MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.30h",
+      "honap": 30.0,
+      "megnevezes": "2,5 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Jelzi, ha pisilni, kakilni kell?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "El tud rúgni labdát, kavicsot?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Rövid, 3-4 fokos lépcsőn felfelé váltott lábbal önállóan megy? („Még nem” a válasz, ha csak kézen fogva megy. „Igen” a válasz, ha önállóan kapaszkodik a korlátba.)"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Kérésre, összepárosít azonos színű tárgyakat? (Pl.. „Hozd ide az ugyanilyen zoknit!”)"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Használ 3-4 szavas mondatokat?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Beszédében használja az: „én, enyém, tiéd” szavakat?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "A „Mit csinál?” kérdésre tud válaszolni? (Pl. „Mit csinál a fiú?”fut, eszik, sír, alszik, stb.)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Amikor más gyermekek játszanak, próbál hozzájuk csatlakozni?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Önállóan, csaknem tisztán eszik/iszik? (Azaz kanállal keveset kilöttyinthet.)"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Megérti, ha kérnek tőle valamit, de mutatással nem segítik? (Pl. „Légy szíves húzd fel a papucsod!” – és a papucsra nem mutatunk „Danika, töröld meg a szádat!” – és szalvétát nem nyújtunk"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Próbál egyedül öltözködni?"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Képes vékony lapú könyvet, újságot lapozni? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS"
+      ]
+    },
+    {
+      "id": "vedono.szures.36h",
+      "honap": 36.0,
+      "megnevezes": "3 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Rövidebb lépcsőn (3-4 fok) önállóan megy fel-le (kézfogás és kapaszkodás nélkül)?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Szokott-e úgy csinálni játékból, mintha főzne, autót vezetne stb.? (Pl.: kis edényekben főz kavicsból, homokból, kavargat, öntöget, kezeivel játékból kormányoz, stb.)"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Egyszerű dallamot, mondókát ismétel? (Pl.”hóc-hóc katona”, „süss fel nap, fényes nap”"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Legalább 15 cm távolságból rajzol vagy nézi a mesekönyvet?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Tudja-e, hogy lány vagy fiú?"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Tud-e zárt kört, karikát rajzolni? (Nem kell szép szabályosnak lennie!)"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Beszéde érthető-e idegen számára?"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Párbeszédbe bevonható? (Azaz beszélgetést kezdeményez, kérdez és a hozzá intézett kérdésekre válaszol. Pl. „Te most mit csinálsz? Miért vágod le az ágakat?” - „Metszem a fákat”.) 9. Seg ít társainak, családtagjainak (p l.: elpakolni, teríteni, rendet rakni)?"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Szobatiszta nappal? (Időben jelzi, ha pisilni, kakilni kell?)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Megosztja örömét, bánatát, vagy a számára fontos eseményeket? (Pl. „Nézd apu, de szép markoló!”, „Képzeld anyu, láttam egy nagy kutyát!” stb.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Játéka során különböző tárgyakkal helyettesíti a jelen nem lévő tárgyakat? (Pl. kock a = gombóc, ceruza = horgászbot stb.) Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "FEJLŐDÉS VIZSGÁLATA",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS FEJLŐDÉS ÉS MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS",
+        "VÉRNYOMÁSMÉRÉS EREDMÉNYE"
+      ]
+    },
+    {
+      "id": "vedono.szures.48h",
+      "honap": 48.0,
+      "megnevezes": "4 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Egyértelműen jobb- vagy balkezes?"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Egy lábon több mint 6 mp-ig megáll?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Megnevezi az alapszíneket (piros, sárga, zöld, kék, fekete, fehér)"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Suttogva adott, egyszerű utasítást végrehajt? (Pl.: „Nyújtsd ide a kezed!”, „Vedd le a zoknidat!”)"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Szívesen hallgat mesét? (Azaz érdekli, érti a mesét?)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Emberábrázolásában felismerhető a fej, törzs és a négy végtag?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Mesél történeteket, vagy elmeséli az élményeit?"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Tud együtt játszani más gyermekekkel?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Szokott-e úgy csinálni játékból, mintha főzne, autót vezetne stb.? (Pl.: kis edényekben főz kavicsból, homokból, kavargat, öntöget, kezeivel játékból kormányoz stb.)"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Meg tudja nevezni érzelmeit, közérzetét? (Pl. szomorú, vidám, fél, mérges, viszket, fáj, éget, szúr, éhes, szomjas, álmos.)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Napi rutinfeladataiban önálló? (Pl.: önállóan fogat mos vagy meg tudja mosni a kezét egyedül, szappannal és vízzel , aztán törölközővel megtörölni, vagy tud egyedül öltözni és vetkőzni, kapcsolás, gombolás és cipzárhúzás kivételével.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Meg tud mondani az alábbiak közül legalább kettőt: keresztnév, életkor, lakóhely (a város, falu neve), vezetéknév? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "FEJLŐDÉS VIZSGÁLATA",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "MOZGÁSSZERVEK VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS FEJLŐDÉS ÉS MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS",
+        "VÉRNYOMÁSMÉRÉS EREDMÉNYE"
+      ]
+    },
+    {
+      "id": "vedono.szures.60h",
+      "honap": 60.0,
+      "megnevezes": "5 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": null,
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Jobb és bal lábán is képes egy lábon előre ugrálni, legalább ötöt? (Kb. másfél méter távolságot"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Többször bukfencezik előre anélkül, hogy oldalra eldőlne?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Tisztában van-e az évszakok jellemzőivel? (Pl.: „Meg tudod-e mondani melyik az az évszak, amikor esik a hó? Meg tudod-e mondani melyik az az évszak, amikor lehullanak a fáról a levelek?”"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Képes-e felismerhető, összetett formákat rajzolni (fa, ház, autó, ember)?"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Szokott úgy csinálni mintha írna? (Amikor úgy csinál, mintha írna, de az csak firka, a mozdulat azonban olyan, mint az igazi írómozgás: folyamatos, lendületes, van egy bizonyos kiterjedése, pl.: sor.)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Szabályosan, 3 ujjal fogja a ceruzát?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Tud-e mennyiségeket felismerni ötig? (Pl. megszámolni, hogy hány tányért kell az asztalra tenni, vagy hány szelet kenyér kell, hogy mindenkinek jusson.)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Verset, rövid mesét képes elmondani?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "„Miért?” kérdésekre válaszol? (Pl. „Miért vizes a ruhád?” „Mert esik az eső.”)"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Játszik társaival szerepjátékokat? (Gazdag fantáziával cselekményeket, történeteket játszik, a szerepeket egymás között kiosztják: „doktoros”, tündérvilág, űrutazás, szuperhősök.)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Minden hangzót tisztán ki tud mondani (nincs pöszeség, raccsolás)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Éjjel-nappal szobatiszta? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "BESZÉDFEJLŐDÉS VIZSGÁLATA",
+        "EGYÉB MEGJEGYZÉS",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS  FEJLŐDÉS  ÉS  MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS",
+        "VÉRNYOMÁSMÉRÉS EREDMÉNYE"
+      ]
+    },
+    {
+      "id": "vedono.szures.72h",
+      "honap": 72.0,
+      "megnevezes": "6 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§;49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Amikor gyermekekkel játszik, többnyire betartja a játékszabályokat? (Pl. társasjáték, bújócska, fogócska, kidobós során kivárja-e a sorát, érti-e a szabályokat stb.?)"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Változatos mozgásformákat kipróbál? (Pl. mászókázik, fára mászik, függeszkedik, hintázik, kerékpározik, rollerezik, görkorcsolyázik stb.?)"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Figyelembe veszi a másik ember érzéseit? (Pl. megértő vagy bocsánatot kér vagy hajlandó lemondani?)"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Rákérdez a valóságos dolgok összefüggéseire? (Pl. hogyan nő a növény, honnan esik az eső, mitől megy az autó?)"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Használ–e olyan szavakat, amely a térre vonatkozik ( l. alatt, fölött, mellé)? . Megfelelő (legalább arasznyi/ kb. 15 cm) távolságból rajzol, nézi a mesekönyvet?"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Képes-e megmondani, hogy egy szó milyen hanggal kezdődik? (Pl. „Mit visz a kishajó k-val?” – „Kakast.” – „Mit visz a kishajó cs-vel?” – „Csacsit.”)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Érdeklik a betűk, a számok? (Pl.: Kérdezgeti melyik betű micsoda vagy van olyan betű, amit felismer? Leírja saját nevének valamely betűjét?)"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Önállóan öltözik? (Beleértve a gombolást cipőfűzést és kötést, csatolást, cipzárhúzást"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "A járdáról lelépve mindkét irányba körülnéz?"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Olyan szeretne lenni, mint a barátai? (Pl. olyan játékot, ruhát, programot stb. akar ő is.)"
+        },
+        {
+          "sorszam": 12,
+          "kerdes": "Használ–e olyan szavakat, mely az időre vonatkoznak? (Pl.: holnap, tegnap, amikor a nagymamához mentünk, utazáskor Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "LÁTÁS, KANCSALSÁG VIZSGÁLATA",
+        "PSZICHÉS, MOTOROS, MENTÁLIS, SZOCIÁLIS FEJLŐDÉS ÉS MAGATARTÁSPROBLÉMÁK VIZSGÁLATA",
+        "TESTI FEJLŐDÉS",
+        "VÉRNYOMÁSMÉRÉS EREDMÉNYE"
+      ]
+    },
+    {
+      "id": "vedono.szures.84h",
+      "honap": 84.0,
+      "megnevezes": "7 éves korban végzett területi védőnői szűrővizsgálatról és eredményéről",
+      "jogszabaly": "[49/2004. (V. 21.) ESZCSM rendelet 3.§ dd)]",
+      "vanKerdoiv": true,
+      "kerdesek": [
+        {
+          "sorszam": 1,
+          "kerdes": "Kitartóan mozog? (Pl. focizik, biciklizik, versenyt fut, gyalogol.)"
+        },
+        {
+          "sorszam": 2,
+          "kerdes": "Labdát pattogtat?"
+        },
+        {
+          "sorszam": 3,
+          "kerdes": "Utánozza a papírhajtogatást? (Pl. papírhajót vagy csákót készít, utánozva.)"
+        },
+        {
+          "sorszam": 4,
+          "kerdes": "Rajzában eseményeket ábrázol? (Pl.: mit csináltunk, mikor kirándultunk? Mi történt a születésnapodon?)"
+        },
+        {
+          "sorszam": 5,
+          "kerdes": "Késleltetni tudja kívánságait, vágyait? (Pl.: ha arra kérjük, hogy ” árj, egy kicsit kérlek, míg ezt befejezem, és máris odaadom neked”.)"
+        },
+        {
+          "sorszam": 6,
+          "kerdes": "Tud veszíteni? (Pl.: társasjáték, verseny.)"
+        },
+        {
+          "sorszam": 7,
+          "kerdes": "Képes 20 percig egy feladatra figyelni? (Pl. lecke, házimunka.)"
+        },
+        {
+          "sorszam": 8,
+          "kerdes": "Önállóan képes margarint vagy vajat kenyérszeletre kenni?"
+        },
+        {
+          "sorszam": 9,
+          "kerdes": "Feladattudata kialakult (Pl. táskáját bepakolja, számon tartja a teendőit, rendbe teszi játékait.)"
+        },
+        {
+          "sorszam": 10,
+          "kerdes": "Önálló a mindennapi rutinokban? (Pl. fürdésnél, öltözködésnél, fogmosásnál, lefekvés előtti előkészületnél , WC- használatnál.)"
+        },
+        {
+          "sorszam": 11,
+          "kerdes": "Igyekszik a felnőttek elvárásainak megfelelni? Védőnői szűrővizsgálat és eredménye"
+        }
+      ],
+      "szakaszok": [
+        "EGYÉB MEGJEGYZÉS",
+        "TESTI FEJLŐDÉS",
+        "VÉRNYOMÁSMÉRÉS EREDMÉNYE"
+      ]
+    }
+  ]
+}

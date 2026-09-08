@@ -1,0 +1,4482 @@
+{
+ "id": "tbl.fno",
+ "label": {
+  "hu": "FNO — a funkcióképesség, fogyatékosság és egészség nemzetközi osztályozása (ICF)"
+ },
+ "version": "FNOTORZS 2019-10-03",
+ "validFrom": "2004-01-01",
+ "coverage": "full",
+ "source": {
+  "cite": "FNO törzs (FNOTORZS.DBF); WHO ICF magyar kiadás",
+  "standard": "FNO / ICF"
+ },
+ "rows": {
+  "b1100": {
+   "label": "Tudati funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1101": {
+   "label": "Tudati funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1102": {
+   "label": "Tudati funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1103": {
+   "label": "Tudati funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1104": {
+   "label": "Tudati funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1108": {
+   "label": "Tudati funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1140": {
+   "label": "Tájékozódási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1141": {
+   "label": "Tájékozódási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1142": {
+   "label": "Tájékozódási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1143": {
+   "label": "Tájékozódási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1144": {
+   "label": "Tájékozódási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1148": {
+   "label": "Tájékozódási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1170": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1171": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1172": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1173": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1174": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1178": {
+   "label": "Intellektuális funkciók (szellemi fejlődés), K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1220": {
+   "label": "Általános pszichoszociális funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1221": {
+   "label": "Általános pszichoszociális funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1222": {
+   "label": "Általános pszichoszociális funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1223": {
+   "label": "Általános pszichoszociális funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1224": {
+   "label": "Általános pszichoszociális funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1228": {
+   "label": "Általános pszichoszociális funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1260": {
+   "label": "Temperamentum és személyiségfunkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1261": {
+   "label": "Temperamentum és személyiségfunkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1262": {
+   "label": "Temperamentum és személyiségfunkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1263": {
+   "label": "Temperamentum és személyiségfunkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1264": {
+   "label": "Temperamentum és személyiségfunkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1268": {
+   "label": "Temperamentum és személyiségfunkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1300": {
+   "label": "Energia és indíték funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1301": {
+   "label": "Energia és indíték funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1302": {
+   "label": "Energia és indíték funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1303": {
+   "label": "Energia és indíték funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1304": {
+   "label": "Energia és indíték funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1308": {
+   "label": "Energia és indíték funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1340": {
+   "label": "Alvásfunkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1341": {
+   "label": "Alvásfunkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1342": {
+   "label": "Alvásfunkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1343": {
+   "label": "Alvásfunkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1344": {
+   "label": "Alvásfunkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1348": {
+   "label": "Alvásfunkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1390": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1391": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1392": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1393": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1394": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1398": {
+   "label": "Általános mentális funkciók, másképpen meghatározott és nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1400": {
+   "label": "Figyelmi funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1401": {
+   "label": "Figyelmi funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1402": {
+   "label": "Figyelmi funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1403": {
+   "label": "Figyelmi funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1404": {
+   "label": "Figyelmi funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1408": {
+   "label": "Figyelmi funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1440": {
+   "label": "Emlékezésfunkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1441": {
+   "label": "Emlékezésfunkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1442": {
+   "label": "Emlékezésfunkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1443": {
+   "label": "Emlékezésfunkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1444": {
+   "label": "Emlékezésfunkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1448": {
+   "label": "Emlékezésfunkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1470": {
+   "label": "Pszichomotoros funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1471": {
+   "label": "Pszichomotoros funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1472": {
+   "label": "Pszichomotoros funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1473": {
+   "label": "Pszichomotoros funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1474": {
+   "label": "Pszichomotoros funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1478": {
+   "label": "Pszichomotoros funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1520": {
+   "label": "Érzelmi funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1521": {
+   "label": "Érzelmi funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1522": {
+   "label": "Érzelmi funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1523": {
+   "label": "Érzelmi funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1524": {
+   "label": "Érzelmi funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1528": {
+   "label": "Érzelmi funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1560": {
+   "label": "Észlelési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1561": {
+   "label": "Észlelési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1562": {
+   "label": "Észlelési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1563": {
+   "label": "Észlelési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1564": {
+   "label": "Észlelési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1568": {
+   "label": "Észlelési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1600": {
+   "label": "Gondolkodási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1601": {
+   "label": "Gondolkodási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1602": {
+   "label": "Gondolkodási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1603": {
+   "label": "Gondolkodási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1604": {
+   "label": "Gondolkodási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1608": {
+   "label": "Gondolkodási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1640": {
+   "label": "Magasabb rendű kognitív funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1641": {
+   "label": "Magasabb rendű kognitív funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1642": {
+   "label": "Magasabb rendű kognitív funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1643": {
+   "label": "Magasabb rendű kognitív funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1644": {
+   "label": "Magasabb rendű kognitív funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1648": {
+   "label": "Magasabb rendű kognitív funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1670": {
+   "label": "Nyelvi mentális funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1671": {
+   "label": "Nyelvi mentális funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1672": {
+   "label": "Nyelvi mentális funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1673": {
+   "label": "Nyelvi mentális funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1674": {
+   "label": "Nyelvi mentális funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1678": {
+   "label": "Nyelvi mentális funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1760": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1761": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1762": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1763": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1764": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1768": {
+   "label": "Összetett mozdulatok sorba rendezésének mentális funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1990": {
+   "label": "Mentális funkciók, nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1991": {
+   "label": "Mentális funkciók, nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1992": {
+   "label": "Mentális funkciók, nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1993": {
+   "label": "Mentális funkciók, nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1994": {
+   "label": "Mentális funkciók, nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b1998": {
+   "label": "Mentális funkciók, nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2100": {
+   "label": "Látási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2101": {
+   "label": "Látási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2102": {
+   "label": "Látási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2103": {
+   "label": "Látási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2104": {
+   "label": "Látási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2108": {
+   "label": "Látási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2300": {
+   "label": "Hallási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2301": {
+   "label": "Hallási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2302": {
+   "label": "Hallási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2303": {
+   "label": "Hallási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2304": {
+   "label": "Hallási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2308": {
+   "label": "Hallási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2500": {
+   "label": "Ízérzékelési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2501": {
+   "label": "Ízérzékelési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2502": {
+   "label": "Ízérzékelési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2503": {
+   "label": "Ízérzékelési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2504": {
+   "label": "Ízérzékelési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2508": {
+   "label": "Ízérzékelési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2550": {
+   "label": "Szagérzékelési funkció, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2551": {
+   "label": "Szagérzékelési funkció, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2552": {
+   "label": "Szagérzékelési funkció, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2553": {
+   "label": "Szagérzékelési funkció, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2554": {
+   "label": "Szagérzékelési funkció, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2558": {
+   "label": "Szagérzékelési funkció, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2600": {
+   "label": "Proprioceptív funkció, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2601": {
+   "label": "Proprioceptív funkció, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2602": {
+   "label": "Proprioceptív funkció, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2603": {
+   "label": "Proprioceptív funkció, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2604": {
+   "label": "Proprioceptív funkció, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2608": {
+   "label": "Proprioceptív funkció, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2650": {
+   "label": "Tapintási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2651": {
+   "label": "Tapintási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2652": {
+   "label": "Tapintási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2653": {
+   "label": "Tapintási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2654": {
+   "label": "Tapintási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2658": {
+   "label": "Tapintási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2700": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2701": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2702": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2703": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2704": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2708": {
+   "label": "A hőmérséklet és egyéb ingerek érzékelésének funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2800": {
+   "label": "Fájdalom érzése, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2801": {
+   "label": "Fájdalom érzése, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2802": {
+   "label": "Fájdalom érzése, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2803": {
+   "label": "Fájdalom érzése, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2804": {
+   "label": "Fájdalom érzése, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b2808": {
+   "label": "Fájdalom érzése, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3100": {
+   "label": "Hangadási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3101": {
+   "label": "Hangadási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3102": {
+   "label": "Hangadási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3103": {
+   "label": "Hangadási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3104": {
+   "label": "Hangadási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3108": {
+   "label": "Hangadási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3200": {
+   "label": "Artikulációs funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3201": {
+   "label": "Artikulációs funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3202": {
+   "label": "Artikulációs funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3203": {
+   "label": "Artikulációs funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3204": {
+   "label": "Artikulációs funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b3208": {
+   "label": "Artikulációs funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4100": {
+   "label": "A szív funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4101": {
+   "label": "A szív funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4102": {
+   "label": "A szív funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4103": {
+   "label": "A szív funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4104": {
+   "label": "A szív funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4108": {
+   "label": "A szív funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4150": {
+   "label": "A véredények funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4151": {
+   "label": "A véredények funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4152": {
+   "label": "A véredények funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4153": {
+   "label": "A véredények funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4154": {
+   "label": "A véredények funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4158": {
+   "label": "A véredények funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4200": {
+   "label": "Vérnyomásfunkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4201": {
+   "label": "Vérnyomásfunkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4202": {
+   "label": "Vérnyomásfunkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4203": {
+   "label": "Vérnyomásfunkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4204": {
+   "label": "Vérnyomásfunkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4208": {
+   "label": "Vérnyomásfunkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4290": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4291": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4292": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4293": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4294": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4298": {
+   "label": "A cardiovascularis rendszer funkciói, másképpen meghatározott és nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4350": {
+   "label": "Az immunrendszer funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4351": {
+   "label": "Az immunrendszer funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4352": {
+   "label": "Az immunrendszer funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4353": {
+   "label": "Az immunrendszer funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4354": {
+   "label": "Az immunrendszer funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4358": {
+   "label": "Az immunrendszer funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4390": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4391": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4392": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4393": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4394": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4398": {
+   "label": "A vérképző és az immunrendszer funkciói, másképpen meghatározott és nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4400": {
+   "label": "Légzési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4401": {
+   "label": "Légzési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4402": {
+   "label": "Légzési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4403": {
+   "label": "Légzési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4404": {
+   "label": "Légzési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4408": {
+   "label": "Légzési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4450": {
+   "label": "A légzőizmok funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4451": {
+   "label": "A légzőizmok funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4452": {
+   "label": "A légzőizmok funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4453": {
+   "label": "A légzőizmok funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4454": {
+   "label": "A légzőizmok funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4458": {
+   "label": "A légzőizmok funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4500": {
+   "label": "Járulékos légzési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4501": {
+   "label": "Járulékos légzési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4502": {
+   "label": "Járulékos légzési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4503": {
+   "label": "Járulékos légzési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4504": {
+   "label": "Járulékos légzési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4508": {
+   "label": "Járulékos légzési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4550": {
+   "label": "A terheléstolerancia funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4551": {
+   "label": "A terheléstolerancia funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4552": {
+   "label": "A terheléstolerancia funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4553": {
+   "label": "A terheléstolerancia funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4554": {
+   "label": "A terheléstolerancia funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4558": {
+   "label": "A terheléstolerancia funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4600": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4601": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4602": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4603": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4604": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b4608": {
+   "label": "A cardiovascularis és légzési funkciókhoz társuló érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5100": {
+   "label": "A táplálékfelvétel funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5101": {
+   "label": "A táplálékfelvétel funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5102": {
+   "label": "A táplálékfelvétel funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5103": {
+   "label": "A táplálékfelvétel funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5104": {
+   "label": "A táplálékfelvétel funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5108": {
+   "label": "A táplálékfelvétel funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5150": {
+   "label": "Emésztési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5151": {
+   "label": "Emésztési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5152": {
+   "label": "Emésztési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5153": {
+   "label": "Emésztési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5154": {
+   "label": "Emésztési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5158": {
+   "label": "Emésztési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5200": {
+   "label": "Táplálékhasznosítási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5201": {
+   "label": "Táplálékhasznosítási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5202": {
+   "label": "Táplálékhasznosítási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5203": {
+   "label": "Táplálékhasznosítási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5204": {
+   "label": "Táplálékhasznosítási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5208": {
+   "label": "Táplálékhasznosítási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5250": {
+   "label": "Székletürítési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5251": {
+   "label": "Székletürítési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5252": {
+   "label": "Székletürítési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5253": {
+   "label": "Székletürítési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5254": {
+   "label": "Székletürítési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5258": {
+   "label": "Székletürítési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5300": {
+   "label": "Testsúlymegtartási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5301": {
+   "label": "Testsúlymegtartási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5302": {
+   "label": "Testsúlymegtartási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5303": {
+   "label": "Testsúlymegtartási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5304": {
+   "label": "Testsúlymegtartási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5308": {
+   "label": "Testsúlymegtartási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5350": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5351": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5352": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5353": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5354": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5358": {
+   "label": "Az emésztőrendszerhez kapcsolódó érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5400": {
+   "label": "Általános anyagcsere-funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5401": {
+   "label": "Általános anyagcsere-funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5402": {
+   "label": "Általános anyagcsere-funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5403": {
+   "label": "Általános anyagcsere-funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5404": {
+   "label": "Általános anyagcsere-funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5408": {
+   "label": "Általános anyagcsere-funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5450": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5451": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5452": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5453": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5454": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5458": {
+   "label": "A folyadék-, ásványianyag- és elektrolit-egyensúly funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5500": {
+   "label": "A hőszabályozás funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5501": {
+   "label": "A hőszabályozás funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5502": {
+   "label": "A hőszabályozás funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5503": {
+   "label": "A hőszabályozás funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5504": {
+   "label": "A hőszabályozás funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5508": {
+   "label": "A hőszabályozás funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5550": {
+   "label": "Az endokrin mirigyek funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5551": {
+   "label": "Az endokrin mirigyek funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5552": {
+   "label": "Az endokrin mirigyek funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5553": {
+   "label": "Az endokrin mirigyek funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5554": {
+   "label": "Az endokrin mirigyek funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b5558": {
+   "label": "Az endokrin mirigyek funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6100": {
+   "label": "A vizeletkiválasztás funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6101": {
+   "label": "A vizeletkiválasztás funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6102": {
+   "label": "A vizeletkiválasztás funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6103": {
+   "label": "A vizeletkiválasztás funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6104": {
+   "label": "A vizeletkiválasztás funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6108": {
+   "label": "A vizeletkiválasztás funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6200": {
+   "label": "Vizeletürítési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6201": {
+   "label": "Vizeletürítési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6202": {
+   "label": "Vizeletürítési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6203": {
+   "label": "Vizeletürítési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6204": {
+   "label": "Vizeletürítési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6208": {
+   "label": "Vizeletürítési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6300": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6301": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6302": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6303": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6304": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6308": {
+   "label": "A vizelési funkciókkal kapcsolatos érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6400": {
+   "label": "Szexuális funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6401": {
+   "label": "Szexuális funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6402": {
+   "label": "Szexuális funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6403": {
+   "label": "Szexuális funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6404": {
+   "label": "Szexuális funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6408": {
+   "label": "Szexuális funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6500": {
+   "label": "Menstruációs funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6501": {
+   "label": "Menstruációs funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6502": {
+   "label": "Menstruációs funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6503": {
+   "label": "Menstruációs funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6504": {
+   "label": "Menstruációs funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6508": {
+   "label": "Menstruációs funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6600": {
+   "label": "Nemzési funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6601": {
+   "label": "Nemzési funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6602": {
+   "label": "Nemzési funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6603": {
+   "label": "Nemzési funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6604": {
+   "label": "Nemzési funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6608": {
+   "label": "Nemzési funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6700": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6701": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6702": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6703": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6704": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6708": {
+   "label": "Az ivarszervi és szaporodási funkciókhoz kapcsolódó érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6790": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6791": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6792": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6793": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6794": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6798": {
+   "label": "Ivarszervi és szaporodási funkciók, másképpen meghatározott és nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6980": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6981": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6982": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6983": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6984": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6988": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, másképpen meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6990": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6991": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6992": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6993": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6994": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b6998": {
+   "label": "Húgy-ivar szervi és szaporodási funkciók, nem meghatározott, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7100": {
+   "label": "Az izületek mobilitási funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7101": {
+   "label": "Az izületek mobilitási funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7102": {
+   "label": "Az izületek mobilitási funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7103": {
+   "label": "Az izületek mobilitási funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7104": {
+   "label": "Az izületek mobilitási funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7108": {
+   "label": "Az izületek mobilitási funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7150": {
+   "label": "Az ízületek stabilitási funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7151": {
+   "label": "Az ízületek stabilitási funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7152": {
+   "label": "Az ízületek stabilitási funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7153": {
+   "label": "Az ízületek stabilitási funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7154": {
+   "label": "Az ízületek stabilitási funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7158": {
+   "label": "Az ízületek stabilitási funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7200": {
+   "label": "A csontok mozgásának funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7201": {
+   "label": "A csontok mozgásának funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7202": {
+   "label": "A csontok mozgásának funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7203": {
+   "label": "A csontok mozgásának funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7204": {
+   "label": "A csontok mozgásának funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7208": {
+   "label": "A csontok mozgásának funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7300": {
+   "label": "Izomerő-funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7301": {
+   "label": "Izomerő-funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7302": {
+   "label": "Izomerő-funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7303": {
+   "label": "Izomerő-funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7304": {
+   "label": "Izomerő-funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7308": {
+   "label": "Izomerő-funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7350": {
+   "label": "Izomtónus-funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7351": {
+   "label": "Izomtónus-funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7352": {
+   "label": "Izomtónus-funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7353": {
+   "label": "Izomtónus-funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7354": {
+   "label": "Izomtónus-funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7358": {
+   "label": "Izomtónus-funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7400": {
+   "label": "Az izom-állóképesség funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7401": {
+   "label": "Az izom-állóképesség funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7402": {
+   "label": "Az izom-állóképesség funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7403": {
+   "label": "Az izom-állóképesség funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7404": {
+   "label": "Az izom-állóképesség funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7408": {
+   "label": "Az izom-állóképesség funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7500": {
+   "label": "Motoros reflex funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7501": {
+   "label": "Motoros reflex funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7502": {
+   "label": "Motoros reflex funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7503": {
+   "label": "Motoros reflex funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7504": {
+   "label": "Motoros reflex funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7508": {
+   "label": "Motoros reflex funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7600": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7601": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7602": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7603": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7604": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7608": {
+   "label": "Az akaratlagos mozgási funkciók kontrollja, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7650": {
+   "label": "Akaratlan mozgási funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7651": {
+   "label": "Akaratlan mozgási funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7652": {
+   "label": "Akaratlan mozgási funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7653": {
+   "label": "Akaratlan mozgási funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7654": {
+   "label": "Akaratlan mozgási funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7658": {
+   "label": "Akaratlan mozgási funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7700": {
+   "label": "Járásminta-funkciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7701": {
+   "label": "Járásminta-funkciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7702": {
+   "label": "Járásminta-funkciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7703": {
+   "label": "Járásminta-funkciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7704": {
+   "label": "Járásminta-funkciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7708": {
+   "label": "Járásminta-funkciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7800": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7801": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7802": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7803": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7804": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b7808": {
+   "label": "Izmokhoz és mozgási funkciókhoz kapcsolódó érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8100": {
+   "label": "A bőr védőfunkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8101": {
+   "label": "A bőr védőfunkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8102": {
+   "label": "A bőr védőfunkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8103": {
+   "label": "A bőr védőfunkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8104": {
+   "label": "A bőr védőfunkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8108": {
+   "label": "A bőr védőfunkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8200": {
+   "label": "A bőr helyreállító funkciói, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8201": {
+   "label": "A bőr helyreállító funkciói, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8202": {
+   "label": "A bőr helyreállító funkciói, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8203": {
+   "label": "A bőr helyreállító funkciói, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8204": {
+   "label": "A bőr helyreállító funkciói, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8208": {
+   "label": "A bőr helyreállító funkciói, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8400": {
+   "label": "Bőrrel kapcsolatos érzetek, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8401": {
+   "label": "Bőrrel kapcsolatos érzetek, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8402": {
+   "label": "Bőrrel kapcsolatos érzetek, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8403": {
+   "label": "Bőrrel kapcsolatos érzetek, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8404": {
+   "label": "Bőrrel kapcsolatos érzetek, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "b8408": {
+   "label": "Bőrrel kapcsolatos érzetek, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1200": {
+   "label": "Egyéb akaratlagos érzékelés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1201": {
+   "label": "Egyéb akaratlagos érzékelés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1202": {
+   "label": "Egyéb akaratlagos érzékelés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1203": {
+   "label": "Egyéb akaratlagos érzékelés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1204": {
+   "label": "Egyéb akaratlagos érzékelés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1208": {
+   "label": "Egyéb akaratlagos érzékelés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1300": {
+   "label": "Utánzás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1301": {
+   "label": "Utánzás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1302": {
+   "label": "Utánzás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1303": {
+   "label": "Utánzás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1304": {
+   "label": "Utánzás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1308": {
+   "label": "Utánzás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1600": {
+   "label": "Figyelem összpontosítás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1601": {
+   "label": "Figyelem összpontosítás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1602": {
+   "label": "Figyelem összpontosítás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1603": {
+   "label": "Figyelem összpontosítás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1604": {
+   "label": "Figyelem összpontosítás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1608": {
+   "label": "Figyelem összpontosítás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1630": {
+   "label": "Gondolkodás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1631": {
+   "label": "Gondolkodás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1632": {
+   "label": "Gondolkodás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1633": {
+   "label": "Gondolkodás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1634": {
+   "label": "Gondolkodás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1638": {
+   "label": "Gondolkodás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1660": {
+   "label": "Olvasás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1661": {
+   "label": "Olvasás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1662": {
+   "label": "Olvasás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1663": {
+   "label": "Olvasás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1664": {
+   "label": "Olvasás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1668": {
+   "label": "Olvasás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1700": {
+   "label": "Írás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1701": {
+   "label": "Írás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1702": {
+   "label": "Írás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1703": {
+   "label": "Írás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1704": {
+   "label": "Írás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1708": {
+   "label": "Írás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1720": {
+   "label": "Számolás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1721": {
+   "label": "Számolás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1722": {
+   "label": "Számolás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1723": {
+   "label": "Számolás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1724": {
+   "label": "Számolás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1728": {
+   "label": "Számolás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1750": {
+   "label": "Problémák megoldása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1751": {
+   "label": "Problémák megoldása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1752": {
+   "label": "Problémák megoldása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1753": {
+   "label": "Problémák megoldása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1754": {
+   "label": "Problémák megoldása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1758": {
+   "label": "Problémák megoldása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1770": {
+   "label": "Döntéshozatal, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1771": {
+   "label": "Döntéshozatal, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1772": {
+   "label": "Döntéshozatal, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1773": {
+   "label": "Döntéshozatal, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1774": {
+   "label": "Döntéshozatal, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d1778": {
+   "label": "Döntéshozatal, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2100": {
+   "label": "Egyetlen feladat végrehajtása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2101": {
+   "label": "Egyetlen feladat végrehajtása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2102": {
+   "label": "Egyetlen feladat végrehajtása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2103": {
+   "label": "Egyetlen feladat végrehajtása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2104": {
+   "label": "Egyetlen feladat végrehajtása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2108": {
+   "label": "Egyetlen feladat végrehajtása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2200": {
+   "label": "Több feladat végrehajtása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2201": {
+   "label": "Több feladat végrehajtása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2202": {
+   "label": "Több feladat végrehajtása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2203": {
+   "label": "Több feladat végrehajtása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2204": {
+   "label": "Több feladat végrehajtása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2208": {
+   "label": "Több feladat végrehajtása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2300": {
+   "label": "Napi rutinfeladatok elvégzése, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2301": {
+   "label": "Napi rutinfeladatok elvégzése, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2302": {
+   "label": "Napi rutinfeladatok elvégzése, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2303": {
+   "label": "Napi rutinfeladatok elvégzése, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2304": {
+   "label": "Napi rutinfeladatok elvégzése, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2308": {
+   "label": "Napi rutinfeladatok elvégzése, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2400": {
+   "label": "A stressz és más pszichés terhek kezelése, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2401": {
+   "label": "A stressz és más pszichés terhek kezelése, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2402": {
+   "label": "A stressz és más pszichés terhek kezelése, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2403": {
+   "label": "A stressz és más pszichés terhek kezelése, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2404": {
+   "label": "A stressz és más pszichés terhek kezelése, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d2408": {
+   "label": "A stressz és más pszichés terhek kezelése, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3100": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3101": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3102": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3103": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3104": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3108": {
+   "label": "Kommunikáció - beszélt üzenetek megértésével, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3300": {
+   "label": "Beszéd, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3301": {
+   "label": "Beszéd, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3302": {
+   "label": "Beszéd, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3303": {
+   "label": "Beszéd, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3304": {
+   "label": "Beszéd, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d3308": {
+   "label": "Beszéd, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4100": {
+   "label": "Az alaptesthelyzet változtatása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4101": {
+   "label": "Az alaptesthelyzet változtatása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4102": {
+   "label": "Az alaptesthelyzet változtatása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4103": {
+   "label": "Az alaptesthelyzet változtatása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4104": {
+   "label": "Az alaptesthelyzet változtatása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4108": {
+   "label": "Az alaptesthelyzet változtatása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4150": {
+   "label": "A testhelyzet megtartása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4151": {
+   "label": "A testhelyzet megtartása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4152": {
+   "label": "A testhelyzet megtartása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4153": {
+   "label": "A testhelyzet megtartása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4154": {
+   "label": "A testhelyzet megtartása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4158": {
+   "label": "A testhelyzet megtartása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4200": {
+   "label": "Saját test áthelyezése, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4201": {
+   "label": "Saját test áthelyezése, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4202": {
+   "label": "Saját test áthelyezése, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4203": {
+   "label": "Saját test áthelyezése, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4204": {
+   "label": "Saját test áthelyezése, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4208": {
+   "label": "Saját test áthelyezése, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4300": {
+   "label": "Tárgyak emelése és hordozása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4301": {
+   "label": "Tárgyak emelése és hordozása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4302": {
+   "label": "Tárgyak emelése és hordozása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4303": {
+   "label": "Tárgyak emelése és hordozása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4304": {
+   "label": "Tárgyak emelése és hordozása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4308": {
+   "label": "Tárgyak emelése és hordozása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4400": {
+   "label": "Finom kézmozdulatok, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4401": {
+   "label": "Finom kézmozdulatok, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4402": {
+   "label": "Finom kézmozdulatok, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4403": {
+   "label": "Finom kézmozdulatok, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4404": {
+   "label": "Finom kézmozdulatok, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4408": {
+   "label": "Finom kézmozdulatok, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4450": {
+   "label": "Kéz- és karhasználat, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4451": {
+   "label": "Kéz- és karhasználat, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4452": {
+   "label": "Kéz- és karhasználat, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4453": {
+   "label": "Kéz- és karhasználat, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4454": {
+   "label": "Kéz- és karhasználat, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4458": {
+   "label": "Kéz- és karhasználat, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4500": {
+   "label": "Járás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4501": {
+   "label": "Járás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4502": {
+   "label": "Járás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4503": {
+   "label": "Járás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4504": {
+   "label": "Járás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4508": {
+   "label": "Járás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4600": {
+   "label": "Helyváltoztatás különböző helyszíneken, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4601": {
+   "label": "Helyváltoztatás különböző helyszíneken, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4602": {
+   "label": "Helyváltoztatás különböző helyszíneken, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4603": {
+   "label": "Helyváltoztatás különböző helyszíneken, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4604": {
+   "label": "Helyváltoztatás különböző helyszíneken, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4608": {
+   "label": "Helyváltoztatás különböző helyszíneken, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4650": {
+   "label": "Helyváltoztatás segédeszköz használatával, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4651": {
+   "label": "Helyváltoztatás segédeszköz használatával, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4652": {
+   "label": "Helyváltoztatás segédeszköz használatával, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4653": {
+   "label": "Helyváltoztatás segédeszköz használatával, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4654": {
+   "label": "Helyváltoztatás segédeszköz használatával, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4658": {
+   "label": "Helyváltoztatás segédeszköz használatával, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4700": {
+   "label": "Szállítóeszköz használata, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4701": {
+   "label": "Szállítóeszköz használata, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4702": {
+   "label": "Szállítóeszköz használata, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4703": {
+   "label": "Szállítóeszköz használata, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4704": {
+   "label": "Szállítóeszköz használata, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4708": {
+   "label": "Szállítóeszköz használata, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4750": {
+   "label": "Járművezetés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4751": {
+   "label": "Járművezetés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4752": {
+   "label": "Járművezetés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4753": {
+   "label": "Járművezetés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4754": {
+   "label": "Járművezetés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d4758": {
+   "label": "Járművezetés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5100": {
+   "label": "Mosakodás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5101": {
+   "label": "Mosakodás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5102": {
+   "label": "Mosakodás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5103": {
+   "label": "Mosakodás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5104": {
+   "label": "Mosakodás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5108": {
+   "label": "Mosakodás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5200": {
+   "label": "Testrészek ápolása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5201": {
+   "label": "Testrészek ápolása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5202": {
+   "label": "Testrészek ápolása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5203": {
+   "label": "Testrészek ápolása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5204": {
+   "label": "Testrészek ápolása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5208": {
+   "label": "Testrészek ápolása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5300": {
+   "label": "Toilette-használat, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5301": {
+   "label": "Toilette-használat, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5302": {
+   "label": "Toilette-használat, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5303": {
+   "label": "Toilette-használat, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5304": {
+   "label": "Toilette-használat, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5308": {
+   "label": "Toilette-használat, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5400": {
+   "label": "Öltözködés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5401": {
+   "label": "Öltözködés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5402": {
+   "label": "Öltözködés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5403": {
+   "label": "Öltözködés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5404": {
+   "label": "Öltözködés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5408": {
+   "label": "Öltözködés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5500": {
+   "label": "Étkezés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5501": {
+   "label": "Étkezés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5502": {
+   "label": "Étkezés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5503": {
+   "label": "Étkezés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5504": {
+   "label": "Étkezés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5508": {
+   "label": "Étkezés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5600": {
+   "label": "Ivás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5601": {
+   "label": "Ivás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5602": {
+   "label": "Ivás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5603": {
+   "label": "Ivás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5604": {
+   "label": "Ivás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5608": {
+   "label": "Ivás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5700": {
+   "label": "Egészségmegőrzés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5701": {
+   "label": "Egészségmegőrzés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5702": {
+   "label": "Egészségmegőrzés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5703": {
+   "label": "Egészségmegőrzés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5704": {
+   "label": "Egészségmegőrzés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d5708": {
+   "label": "Egészségmegőrzés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6200": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6201": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6202": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6203": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6204": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6208": {
+   "label": "Áruk beszerzése, szolgáltatások igénybevétele, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6300": {
+   "label": "Ételkészítés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6301": {
+   "label": "Ételkészítés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6302": {
+   "label": "Ételkészítés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6303": {
+   "label": "Ételkészítés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6304": {
+   "label": "Ételkészítés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6308": {
+   "label": "Ételkészítés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6400": {
+   "label": "Házimunka végzése, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6401": {
+   "label": "Házimunka végzése, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6402": {
+   "label": "Házimunka végzése, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6403": {
+   "label": "Házimunka végzése, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6404": {
+   "label": "Házimunka végzése, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6408": {
+   "label": "Házimunka végzése, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6500": {
+   "label": "A háztartás tárgyainak ápolása, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6501": {
+   "label": "A háztartás tárgyainak ápolása, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6502": {
+   "label": "A háztartás tárgyainak ápolása, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6503": {
+   "label": "A háztartás tárgyainak ápolása, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6504": {
+   "label": "A háztartás tárgyainak ápolása, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d6508": {
+   "label": "A háztartás tárgyainak ápolása, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7100": {
+   "label": "Alapszintű személyközi interakciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7101": {
+   "label": "Alapszintű személyközi interakciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7102": {
+   "label": "Alapszintű személyközi interakciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7103": {
+   "label": "Alapszintű személyközi interakciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7104": {
+   "label": "Alapszintű személyközi interakciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7108": {
+   "label": "Alapszintű személyközi interakciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7200": {
+   "label": "Összetett személyközi interakciók, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7201": {
+   "label": "Összetett személyközi interakciók, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7202": {
+   "label": "Összetett személyközi interakciók, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7203": {
+   "label": "Összetett személyközi interakciók, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7204": {
+   "label": "Összetett személyközi interakciók, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7208": {
+   "label": "Összetett személyközi interakciók, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7300": {
+   "label": "Viszonyulás idegenekhez, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7301": {
+   "label": "Viszonyulás idegenekhez, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7302": {
+   "label": "Viszonyulás idegenekhez, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7303": {
+   "label": "Viszonyulás idegenekhez, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7304": {
+   "label": "Viszonyulás idegenekhez, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7308": {
+   "label": "Viszonyulás idegenekhez, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7600": {
+   "label": "Családi kapcsolatok, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7601": {
+   "label": "Családi kapcsolatok, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7602": {
+   "label": "Családi kapcsolatok, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7603": {
+   "label": "Családi kapcsolatok, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7604": {
+   "label": "Családi kapcsolatok, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7608": {
+   "label": "Családi kapcsolatok, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7700": {
+   "label": "Intim kapcsolatok, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7701": {
+   "label": "Intim kapcsolatok, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7702": {
+   "label": "Intim kapcsolatok, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7703": {
+   "label": "Intim kapcsolatok, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7704": {
+   "label": "Intim kapcsolatok, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d7708": {
+   "label": "Intim kapcsolatok, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8150": {
+   "label": "Iskola előtti oktatás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8151": {
+   "label": "Iskola előtti oktatás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8152": {
+   "label": "Iskola előtti oktatás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8153": {
+   "label": "Iskola előtti oktatás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8154": {
+   "label": "Iskola előtti oktatás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8158": {
+   "label": "Iskola előtti oktatás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8200": {
+   "label": "Iskolai oktatás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8201": {
+   "label": "Iskolai oktatás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8202": {
+   "label": "Iskolai oktatás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8203": {
+   "label": "Iskolai oktatás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8204": {
+   "label": "Iskolai oktatás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8208": {
+   "label": "Iskolai oktatás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8250": {
+   "label": "Szakképzés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8251": {
+   "label": "Szakképzés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8252": {
+   "label": "Szakképzés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8253": {
+   "label": "Szakképzés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8254": {
+   "label": "Szakképzés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8258": {
+   "label": "Szakképzés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8400": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8401": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8402": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8403": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8404": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8408": {
+   "label": "Tanonckodás (felkészülés a munkavállalásra), K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8450": {
+   "label": "Állás megszerzése, megtartása és kilépés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8451": {
+   "label": "Állás megszerzése, megtartása és kilépés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8452": {
+   "label": "Állás megszerzése, megtartása és kilépés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8453": {
+   "label": "Állás megszerzése, megtartása és kilépés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8454": {
+   "label": "Állás megszerzése, megtartása és kilépés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8458": {
+   "label": "Állás megszerzése, megtartása és kilépés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8500": {
+   "label": "Pénzkereső foglalkozás, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8501": {
+   "label": "Pénzkereső foglalkozás, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8502": {
+   "label": "Pénzkereső foglalkozás, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8503": {
+   "label": "Pénzkereső foglalkozás, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8504": {
+   "label": "Pénzkereső foglalkozás, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8508": {
+   "label": "Pénzkereső foglalkozás, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8700": {
+   "label": "Gazdasági önállóság, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8701": {
+   "label": "Gazdasági önállóság, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8702": {
+   "label": "Gazdasági önállóság, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8703": {
+   "label": "Gazdasági önállóság, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8704": {
+   "label": "Gazdasági önállóság, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d8708": {
+   "label": "Gazdasági önállóság, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9100": {
+   "label": "Közösségi élet, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9101": {
+   "label": "Közösségi élet, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9102": {
+   "label": "Közösségi élet, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9103": {
+   "label": "Közösségi élet, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9104": {
+   "label": "Közösségi élet, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9108": {
+   "label": "Közösségi élet, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9200": {
+   "label": "Rekreáció és pihenés, NINCS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9201": {
+   "label": "Rekreáció és pihenés, ENYHE probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9202": {
+   "label": "Rekreáció és pihenés, MÉRSÉKELT probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9203": {
+   "label": "Rekreáció és pihenés, SÚLYOS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9204": {
+   "label": "Rekreáció és pihenés, TOTÁLIS probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  },
+  "d9208": {
+   "label": "Rekreáció és pihenés, K.M.N. probléma",
+   "besorolas": "I",
+   "ervKezd": "20040101",
+   "ervVege": "29991231"
+  }
+ },
+ "coverageNote": {
+  "hu": "A SÚLYOSSÁGI FOKOZAT A KÓD RÉSZE: a b1100 nincs problémát, a b1103 súlyos problémát jelent UGYANARRA a funkcióra. A kód utolsó jegye tehát nem alkategória, hanem MÉRTÉK — összevonva értelmetlen."
+ }
+}

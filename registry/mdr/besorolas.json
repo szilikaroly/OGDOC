@@ -1,0 +1,123 @@
+{
+  "megnevezes": "MDR — besorolás és műszaki dokumentáció",
+  "note": "AZ MDR-DÖNTÉST NEM LEHET MEGÚSZNI, és nem is a fejlesztés hozza meg. Ez a nyilvántartás azt készíti elő, amit el kell dönteni: a besorolási kérdéseket (MDR 2017/745, VIII. melléklet), és a műszaki dokumentáció tételeit (II–III. melléklet). A gép a listát tartja karban és megmondja, mi hiányzik — a BESOROLÁST szabályozási szakértő és a gyártó mondja ki, aláírással.",
+  "besorolasiKerdesek": [
+    {
+      "id": "mdr.q1",
+      "kerdes": "A szoftver önálló rendeltetéssel bír, vagy egy eszköz tartozéka?",
+      "miert": "Az önálló rendeltetésű szoftver maga is eszköz lehet; a tartozék a főeszköz osztályát követi."
+    },
+    {
+      "id": "mdr.q2",
+      "kerdes": "Diagnosztikai vagy terápiás célú információt szolgáltat?",
+      "miert": "A 11. szabály belépője. A puszta tárolás, archiválás, kommunikáció és egyszerű keresés NEM ez."
+    },
+    {
+      "id": "mdr.q3",
+      "kerdes": "A szolgáltatott információ döntést alapoz meg diagnózis vagy terápia céljából?",
+      "miert": "Ha igen: legalább IIa. Ez az a pont, ahol a CTG-értelmezés és a kockázati kalkulátor különválik a puszta dokumentációtól."
+    },
+    {
+      "id": "mdr.q4",
+      "kerdes": "A döntés halált vagy visszafordíthatatlan állapotromlást okozhat, ha téves?",
+      "miert": "Ha igen: III. osztály."
+    },
+    {
+      "id": "mdr.q5",
+      "kerdes": "Súlyos állapotromlást vagy sebészi beavatkozást okozhat?",
+      "miert": "Ha igen: IIb."
+    },
+    {
+      "id": "mdr.q6",
+      "kerdes": "Élettani folyamat monitorozására szolgál, és a paraméterváltozás azonnali veszélyt jelenthet?",
+      "miert": "A 10. szabály; a CTG-monitorozás ide eshet."
+    },
+    {
+      "id": "mdr.q7",
+      "kerdes": "Ki a gyártó a jogi értelemben — az intézmény vagy a fejlesztő?",
+      "miert": "Az intézményen belül gyártott és használt eszközre az 5. cikk (5) mentessége vonatkozhat, SZIGORÚ feltételekkel — de csak akkor, ha nincs egyenértékű CE-jelölt eszköz a piacon."
+    },
+    {
+      "id": "mdr.q8",
+      "kerdes": "Kerül-e az eszköz az intézményen KÍVÜLRE (más intézmény, forgalomba hozatal)?",
+      "miert": "Az 5. cikk (5) mentessége az intézményen belüli használatra szól. Kilépés esetén teljes megfelelőségértékelés kell."
+    }
+  ],
+  "muszakiDokumentacio": [
+    {
+      "id": "td.leiras",
+      "tetel": "Eszközleírás és specifikáció, változatok és tartozékok",
+      "mellklet": "II.1"
+    },
+    {
+      "id": "td.cimke",
+      "tetel": "Címkézés és használati útmutató",
+      "mellklet": "II.2"
+    },
+    {
+      "id": "td.tervezes",
+      "tetel": "Tervezési és gyártási információ",
+      "mellklet": "II.3"
+    },
+    {
+      "id": "td.gsp",
+      "tetel": "Általános biztonságossági és teljesítménykövetelmények (I. melléklet) — tételes megfeleltetés",
+      "mellklet": "II.4"
+    },
+    {
+      "id": "td.kockazat",
+      "tetel": "Kockázatkezelés — a haszon/kockázat elemzés és a kockázatcsökkentés",
+      "mellklet": "II.5"
+    },
+    {
+      "id": "td.igazolas",
+      "tetel": "Termékellenőrzés és -validálás; a szoftver verifikációja és validálása",
+      "mellklet": "II.6.1"
+    },
+    {
+      "id": "td.klinikai",
+      "tetel": "Klinikai értékelés és a klinikai értékelési terv",
+      "mellklet": "II.6.1(d) / XIV"
+    },
+    {
+      "id": "td.pmcf",
+      "tetel": "Forgalomba hozatal utáni klinikai követés (PMCF) terve",
+      "mellklet": "XIV.B"
+    },
+    {
+      "id": "td.pms",
+      "tetel": "Forgalomba hozatal utáni felügyeleti terv és időszakos biztonságossági jelentés",
+      "mellklet": "III"
+    },
+    {
+      "id": "td.uda",
+      "tetel": "UDI-hozzárendelés",
+      "mellklet": "II.1(b)"
+    },
+    {
+      "id": "td.qms",
+      "tetel": "Minőségirányítási rendszer (ISO 13485)",
+      "mellklet": "9. cikk"
+    },
+    {
+      "id": "td.szoftver",
+      "tetel": "Szoftver-életciklus folyamat (IEC 62304) és a szoftverbiztonsági osztály",
+      "mellklet": "I.17"
+    },
+    {
+      "id": "td.kiberbiztonsag",
+      "tetel": "Kiberbiztonsági követelmények és a hálózati környezet",
+      "mellklet": "I.17.4"
+    },
+    {
+      "id": "td.hasznalhatosag",
+      "tetel": "Használhatósági mérnöki folyamat (IEC 62366)",
+      "mellklet": "I.5"
+    }
+  ],
+  "besorolas": null,
+  "gyarto": null,
+  "cikk5_5_mentesseg": null,
+  "valaszok": {},
+  "dokumentacioAllapot": {}
+}

@@ -1,0 +1,127 @@
+{
+  "id": "kockazat.cmqcc.verzes",
+  "label": {
+    "hu": "CMQCC szülés körüli vérzés — kockázati tényezők",
+    "en": "CMQCC obstetric hemorrhage — risk factors"
+  },
+  "verification": "assumed",
+  "verificationNote": {
+    "hu": "A TÉNYEZŐK ÉS A BESOROLÁSUK ELSŐDLEGES FORRÁSBÓL NINCS VISSZAELLENŐRIZVE. Amíg ez így van, a rendszer NEM ad alacsony/közepes/magas szintet: felsorolja a fennálló tényezőket, és megnevezi, mit nem tud. Egy „alacsony kockázat” besorolás rossz táblából rosszabb, mint a besorolás hiánya — mert megnyugtat. A hitelesítés a 6. lépés mintája szerint megy: név, dátum, elsődleges forrás; utána a `verification` „primary” lesz, és a szint megszülethet.",
+    "en": "Factor set and their tiers are not verified against the primary source; no level is produced until they are."
+  },
+  "source": {
+    "cite": "California Maternal Quality Care Collaborative (CMQCC): Improving Health Care Response to Obstetric Hemorrhage, Version 3.0 — Obstetric Hemorrhage Risk Factor Assessment",
+    "standard": "CMQCC OB Hemorrhage Toolkit V3.0",
+    "url": "https://www.cmqcc.org/resources-toolkits/toolkits/ob-hemorrhage-toolkit"
+  },
+  "note": {
+    "hu": "A szabály ADAT, nem kód: egy tényező felvételéhez, átsorolásához vagy elhagyásához nem kell kódot írni. A `mikor` azt mondja meg, mi számít fennállónak — a hiányzó válasz SEHOL nem „nem áll fenn”."
+  },
+  "szintek": {
+    "alacsony": { "hu": "alacsony", "en": "low" },
+    "kozepes": { "hu": "közepes", "en": "medium" },
+    "magas": { "hu": "magas", "en": "high" }
+  },
+  "tenyezok": [
+    {
+      "id": "previa",
+      "variable": "hx.repro.currentPregnancy.previa",
+      "label": { "hu": "Placenta praevia", "en": "Placenta previa" },
+      "szint": "magas",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "A lepény a méhszájat fedi: a szülés körüli vérzés kockázata nagyságrenddel nagyobb, és a szülésmódot is meghatározza."
+      }
+    },
+    {
+      "id": "accreta",
+      "variable": "hx.repro.currentPregnancy.accreta",
+      "label": { "hu": "Placenta accreta gyanúja", "en": "Suspected placenta accreta" },
+      "szint": "magas",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "A beszűrődő lepény a legsúlyosabb vérzési forgatókönyv; felkészült csapatot és vérkészítményt kíván, ELŐRE."
+      }
+    },
+    {
+      "id": "bleedingDisorder",
+      "variable": "hx.sys.bleedingDisorder",
+      "label": { "hu": "Ismert véralvadási zavar", "en": "Known bleeding disorder" },
+      "szint": "magas",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "A vérzés nem áll el magától, és a szokásos uterotonikus lépcső nem elég."
+      }
+    },
+    {
+      "id": "priorPph",
+      "variable": "hx.repro.prevBirth.pph",
+      "label": { "hu": "Korábbi szülés utáni vérzés", "en": "Prior postpartum hemorrhage" },
+      "szint": "kozepes",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "A megismétlődés kockázata jelentős — ez a tétel az anamnézis legdirektebb vérzési bemenete."
+      }
+    },
+    {
+      "id": "priorCs",
+      "variable": "hx.repro.prevBirth.cs",
+      "label": { "hu": "Korábbi császármetszés vagy méhműtét", "en": "Prior cesarean or uterine surgery" },
+      "szint": "kozepes",
+      "mikor": { "gte": 1 },
+      "miert": {
+        "hu": "A hegesedés a lepénytapadási rendellenességek és a műtéti vérzés kockázatát is emeli."
+      }
+    },
+    {
+      "id": "multiple",
+      "variable": "ctx.multiple",
+      "label": { "hu": "Ikerterhesség", "en": "Multiple gestation" },
+      "szint": "kozepes",
+      "mikor": { "notIn": ["no"] },
+      "miert": {
+        "hu": "A túlfeszült méh rosszabbul húzódik össze — atóniás vérzés kockázata."
+      }
+    },
+    {
+      "id": "grandMultipara",
+      "variable": "ctx.parity.para",
+      "label": { "hu": "Négynél több korábbi szülés", "en": "More than four prior births" },
+      "szint": "kozepes",
+      "mikor": { "gt": 4 },
+      "miert": {
+        "hu": "A sokszor szült méh izomzata kevésbé hatékonyan zárja el az érágakat."
+      }
+    },
+    {
+      "id": "myoma",
+      "variable": "hx.sys.myoma",
+      "label": { "hu": "Nagy myoma", "en": "Large fibroids" },
+      "szint": "kozepes",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "Az elhelyezkedéstől függően akadályozza a méh összehúzódását. A MÉRET mérendő (`us.myoma.figo`, `04` modul) — a „nagy” leírás nem adat."
+      }
+    },
+    {
+      "id": "anemia",
+      "variable": "hx.sys.anemia",
+      "label": { "hu": "Vérszegénység", "en": "Anemia" },
+      "szint": "kozepes",
+      "mikor": { "eq": "pos" },
+      "miert": {
+        "hu": "Nem a vérzést teszi valószínűbbé, hanem a tűréshatárt szűkíti: ugyanaz a vérveszteség hamarabb válik életveszélyessé."
+      }
+    },
+    {
+      "id": "obesity",
+      "variable": "anthro.bmi",
+      "label": { "hu": "Testtömegindex ≥ 40", "en": "BMI ≥ 40" },
+      "szint": "kozepes",
+      "mikor": { "gte": 40 },
+      "miert": {
+        "hu": "A műtéti és a vérzési kockázatot is emeli, és a vérveszteség becslését is nehezíti."
+      }
+    }
+  ]
+}

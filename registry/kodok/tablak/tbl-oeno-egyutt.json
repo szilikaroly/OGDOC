@@ -1,0 +1,1269 @@
+{
+ "id": "tbl.oeno.egyutt",
+ "label": {
+  "hu": "99985 mellett elszámolható eljárások (5. melléklet)"
+ },
+ "version": "9/2012 NEFMI, hatályos 2026-01-01",
+ "validFrom": "2026-01-01",
+ "coverage": "full",
+ "source": {
+  "cite": "9/2012. (II. 28.) NEFMI rendelet az Egészségbiztosítási Alap terhére finanszírozható járóbeteg-szakellátási tevékenységekről (hatályos 2026.01.01.)",
+  "standard": "9/2012 NEFMI"
+ },
+ "rows": {
+  "12221": {
+   "label": "Fluorescein angiographia (FLAG)"
+  },
+  "12222": {
+   "label": "Fluoroangiographia iridis"
+  },
+  "12232": {
+   "label": "Elektroretinographia"
+  },
+  "12257": {
+   "label": "Excimer laser terápiás alkalmazása"
+  },
+  "12342": {
+   "label": "Vestibularis elektronystagmographia"
+  },
+  "12349": {
+   "label": "Otoneurológiai vizsgálat, teljes körű"
+  },
+  "13305": {
+   "label": "Kombinált alsó húgyúti funkcionális vizsgálat (cystometria + nyomás-áramlás vizsgálat)"
+  },
+  "13332": {
+   "label": "Húgycső nyomásprofil"
+  },
+  "13590": {
+   "label": "Amnioscopia"
+  },
+  "14030": {
+   "label": "Biopsia glandulae thyreoideae percutanea"
+  },
+  "14031": {
+   "label": "Biopsia glandulae thyreoideae percutanea, UH vezérelt"
+  },
+  "14230": {
+   "label": "Biopsia pharyngis"
+  },
+  "14250": {
+   "label": "Biopsia medullae ossealis sterni"
+  },
+  "14251": {
+   "label": "Biopsia medullae ossealis crista ossis ilei"
+  },
+  "14261": {
+   "label": "Biopsia lymphoglandulae, UH vezérelt"
+  },
+  "14310": {
+   "label": "Tüdő percutan transthoracalis tűbiopsiája"
+  },
+  "14631": {
+   "label": "Biopsia prostatae per rectum seu percutanea, UH vezérléssel vagy anélkül"
+  },
+  "14730": {
+   "label": "Cervix biopszia"
+  },
+  "14782": {
+   "label": "Chorion biopsia, transabdominalis, UH vezérelt"
+  },
+  "14820": {
+   "label": "Biopsia mammae percutanea"
+  },
+  "14821": {
+   "label": "Biopsia mammae percutanea, UH vezérelt"
+  },
+  "14826": {
+   "label": "Aspiratios citológiai mintavétel emlőből, 2D röntgen vezérelt"
+  },
+  "15310": {
+   "label": "Külső fül sebészi biopszia"
+  },
+  "15320": {
+   "label": "Fül feltárásos biopszia"
+  },
+  "15370": {
+   "label": "Orrüreg nyálkahártya biopszia"
+  },
+  "15730": {
+   "label": "Vulva feltárásos biopszia"
+  },
+  "15740": {
+   "label": "Női gát műtéti biopszia"
+  },
+  "15860": {
+   "label": "Biopsia lymphoglandulae superficialis intraop."
+  },
+  "15870": {
+   "label": "Biopsia vasorum perif."
+  },
+  "16185": {
+   "label": "Sinuscopia frontalis percutanea"
+  },
+  "16200": {
+   "label": "Bronchoscopia"
+  },
+  "16202": {
+   "label": "Autofluorescens bronchoscopia"
+  },
+  "16206": {
+   "label": "Bronchoscopon keresztül anyagvétel a nyirokcsomókból cytológiai vizsgálatra Wang tűvel"
+  },
+  "16300": {
+   "label": "Oesophagoscopia"
+  },
+  "16303": {
+   "label": "Endoszkópos intubáció"
+  },
+  "16310": {
+   "label": "Oesophagoscopia per gastrostomiam"
+  },
+  "16320": {
+   "label": "Oesophagogastroscopia"
+  },
+  "16330": {
+   "label": "Gastroscopia"
+  },
+  "16361": {
+   "label": "Endoscopos sphincterotomia"
+  },
+  "16362": {
+   "label": "Endoscopos nasobiliaris drénezés"
+  },
+  "16363": {
+   "label": "Endoscopos kőextractio"
+  },
+  "16400": {
+   "label": "Jejunoscopia (proximális enteroscopia)"
+  },
+  "16410": {
+   "label": "Colonoscopia"
+  },
+  "16420": {
+   "label": "Rectosigmoideoscopia (flexibilis)"
+  },
+  "16522": {
+   "label": "Cystoscopia flexibilis eszközzel"
+  },
+  "16900": {
+   "label": "Bronchoscopia tracheostomán át"
+  },
+  "17010": {
+   "label": "Epicután allergia próba"
+  },
+  "17040": {
+   "label": "Intradermalis antigén próba, késői reakció"
+  },
+  "17041": {
+   "label": "Intracutan allergia próba, bakteriális antigénekkel"
+  },
+  "17071": {
+   "label": "Légúti aspecifikus bronchiális provokáció"
+  },
+  "17090": {
+   "label": "Alimentaris allergiateszt"
+  },
+  "18441": {
+   "label": "Thoracocentesis diagnosticus"
+  },
+  "18511": {
+   "label": "Punctio et/seu aspiratio ovarii/folliculi, UH vezérelt"
+  },
+  "18521": {
+   "label": "Douglas punctio, UH vezérelt"
+  },
+  "18530": {
+   "label": "Ascites punctio"
+  },
+  "18531": {
+   "label": "Haspunkció, UH vezérelt"
+  },
+  "18540": {
+   "label": "Punctio et/seu aspiratio articulationis"
+  },
+  "18591": {
+   "label": "Punctio et/seu aspiratio mammae"
+  },
+  "32451": {
+   "label": "Enterographia selectiva"
+  },
+  "32510": {
+   "label": "Urographia"
+  },
+  "32660": {
+   "label": "Endoscopos retrográd cholangiopancreatographia (ERCP)"
+  },
+  "32820": {
+   "label": "Galaktográfia"
+  },
+  "33071": {
+   "label": "Arteriographia direkt punkcióval"
+  },
+  "33300": {
+   "label": "Aortographia abdominalis"
+  },
+  "33340": {
+   "label": "Szelektív arteriographia - első ág, egy irány"
+  },
+  "33353": {
+   "label": "Embolizáció/sclerotisatio - szelektív"
+  },
+  "33360": {
+   "label": "Embolizáció/sclerotisatio - szuperszelektív - egy ág"
+  },
+  "33450": {
+   "label": "UH vezérelt célzott biopszia (testüregi)"
+  },
+  "33560": {
+   "label": "Szelektív venographia - első ág, egy irány"
+  },
+  "33650": {
+   "label": "Port behelyezés kemoterápiához arteriába, percutan"
+  },
+  "33660": {
+   "label": "Kemoterápia-szuperszelektív + embolizáció/első ág"
+  },
+  "33860": {
+   "label": "Kemoterápia-szuperszelektív"
+  },
+  "35243": {
+   "label": "Adrenerg receptor szcintigráfia I-131 MIBG-vel"
+  },
+  "39110": {
+   "label": "Retina és chorioidea elváltozás laser destrukciója"
+  },
+  "39120": {
+   "label": "Retina és chorioidea adhaesio képzés laserrel"
+  },
+  "39122": {
+   "label": "Laser iridotomia"
+  },
+  "39123": {
+   "label": "Laser capsulotomia"
+  },
+  "50370": {
+   "label": "Percutan spinalis gyökroncsolás kémiai szerekkel"
+  },
+  "50400": {
+   "label": "Excisio nervi intercostalis"
+  },
+  "50401": {
+   "label": "Trigeminus ág exhairesise"
+  },
+  "50403": {
+   "label": "Trigeminus ág kémiai szerrel történő roncsolása"
+  },
+  "50406": {
+   "label": "Periferiás neurotomia, idegexcisio"
+  },
+  "50410": {
+   "label": "Neurinoma eltávolítása perifériás idegből"
+  },
+  "50420": {
+   "label": "Epineuralis idegvarrat (mikrosebészet)"
+  },
+  "50421": {
+   "label": "Perineuralis idegvarrat (mikrosebészet)"
+  },
+  "50422": {
+   "label": "Sutura epi et perineuralis nervi"
+  },
+  "50432": {
+   "label": "Carpal tunnel felszabadítás"
+  },
+  "50435": {
+   "label": "Egyéb Tunnel syndromák műtétei"
+  },
+  "50450": {
+   "label": "Transpositio nervi periferialis"
+  },
+  "50520": {
+   "label": "Injectio in nervus seu ganglion (para)sympathicus"
+  },
+  "50521": {
+   "label": "Ganglion coeliacum roncsolás műtéti úton"
+  },
+  "50600": {
+   "label": "Incisio in regio thyreoideae (drain, exploratio)"
+  },
+  "50660": {
+   "label": "Exstirpatio cystae colli medialis"
+  },
+  "50832": {
+   "label": "Ductus nasolacrimalis kő, idegentest eltávolítás"
+  },
+  "50840": {
+   "label": "Incisio sacci lacrimalis"
+  },
+  "50841": {
+   "label": "Membranotomia canaliculi lacrimalis"
+  },
+  "50900": {
+   "label": "Chalazion drainage"
+  },
+  "50901": {
+   "label": "Hordeolum drainage"
+  },
+  "50902": {
+   "label": "Incisio palpebrae"
+  },
+  "50910": {
+   "label": "Resectio palpebrae"
+  },
+  "50911": {
+   "label": "Excisio cutis palpebrae"
+  },
+  "50913": {
+   "label": "Epilatio pilorum pp. cryochir. seu electr."
+  },
+  "50921": {
+   "label": "Szemrés helyreállítás"
+  },
+  "50930": {
+   "label": "Ectropium ellenes műtét"
+  },
+  "50932": {
+   "label": "Alsó szemhéj ectropium-ellenes műtétje"
+  },
+  "50940": {
+   "label": "Plastica palpebrae"
+  },
+  "50941": {
+   "label": "Plastica palpebrae sec. Blaskovics"
+  },
+  "50943": {
+   "label": "Plastica palpebrae gradualis"
+  },
+  "50951": {
+   "label": "Blepharorraphia lateralis"
+  },
+  "50990": {
+   "label": "Exstirpatio laesionis palpebrae plasticamque"
+  },
+  "51100": {
+   "label": "Idegentest eltávolítás a kötőhártyából incisióval"
+  },
+  "51120": {
+   "label": "Excisio laesionis conjunctivae"
+  },
+  "51200": {
+   "label": "Abrasio corneae"
+  },
+  "51220": {
+   "label": "Pterygium excisio"
+  },
+  "51337": {
+   "label": "Gonioplastica c. laser"
+  },
+  "51410": {
+   "label": "Idegentest eltávolítás szemlencséből (incisio, mágnes)"
+  },
+  "51476": {
+   "label": "Pneumaticus retinopexia"
+  },
+  "51510": {
+   "label": "Extr. corp. al. intraoc. cum magnetem"
+  },
+  "51590": {
+   "label": "Cyclophotocoagulatio"
+  },
+  "51601": {
+   "label": "Orbita drainage"
+  },
+  "51650": {
+   "label": "Szemgödri implant. behelyezés"
+  },
+  "51660": {
+   "label": "Szemgödri implant. eltávolítás"
+  },
+  "51800": {
+   "label": "Külsőfül bemetszése"
+  },
+  "51810": {
+   "label": "Külsőfül elváltozás porcot nem érintő kimetszése"
+  },
+  "51812": {
+   "label": "Periauricularis congenitalis fistula eltávolítása"
+  },
+  "51830": {
+   "label": "Külsőfül varrása"
+  },
+  "51840": {
+   "label": "Külsőfül alaki korrekciója"
+  },
+  "52001": {
+   "label": "Myringotomia et grommet insertio"
+  },
+  "52110": {
+   "label": "Incisio intranasalis"
+  },
+  "52121": {
+   "label": "Polypectomia, ethmoidectomia nélkül az orrüregből"
+  },
+  "52122": {
+   "label": "Kimetszés az orrból vagy az orr bőréből"
+  },
+  "52131": {
+   "label": "Orr partialis resectioja (porcot is érintő)"
+  },
+  "52160": {
+   "label": "Repositio fracturae nasi aperta"
+  },
+  "52170": {
+   "label": "Orrkorrekció"
+  },
+  "52500": {
+   "label": "Excisio laesionis linguae"
+  },
+  "52541": {
+   "label": "Sutura linguae"
+  },
+  "52580": {
+   "label": "Frenulotomia linguae"
+  },
+  "52590": {
+   "label": "Incisio linguae"
+  },
+  "52600": {
+   "label": "Nyálmirigy vagy nyálvezeték bemetszése"
+  },
+  "52710": {
+   "label": "Szájpad incisioja (drainage, fenestratio)"
+  },
+  "52720": {
+   "label": "Szájpadi elváltozás kimetszése"
+  },
+  "52760": {
+   "label": "Resectio uvulae"
+  },
+  "53777": {
+   "label": "Pacemaker (ideiglenes) beültetés"
+  },
+  "53810": {
+   "label": "Arteriectomia a. temporalis"
+  },
+  "53840": {
+   "label": "Thrombectomia venae"
+  },
+  "53841": {
+   "label": "Crossectomia fem."
+  },
+  "53848": {
+   "label": "Perforans ligatura + tágult vénák eltávolítása"
+  },
+  "53879": {
+   "label": "Ligatura arteriae"
+  },
+  "53920": {
+   "label": "Anastomosis arterio-venosus sec. Cimino"
+  },
+  "53921": {
+   "label": "Anastomosis arterio-venosus proximalis sec. Cimino"
+  },
+  "53922": {
+   "label": "Anastomosis arterio-venosus extr. infer. sec. Cimino"
+  },
+  "53930": {
+   "label": "Ligatura venae"
+  },
+  "53931": {
+   "label": "Sutura laesionis traumaticus vasculorum"
+  },
+  "53956": {
+   "label": "Angioplastica katéteres (Kensey, ROTACS stb.)"
+  },
+  "53959": {
+   "label": "Intravascularis UH (IVUS)"
+  },
+  "53994": {
+   "label": "Peritoneo-venosus shunt átmosás"
+  },
+  "54010": {
+   "label": "Lymphadenectomia superficialis"
+  },
+  "54011": {
+   "label": "Excisio hygromae"
+  },
+  "54020": {
+   "label": "Lymphadenectomia regionalis"
+  },
+  "54283": {
+   "label": "Dilatatio cardiae pneumaticus"
+  },
+  "54490": {
+   "label": "Endoscopos polypectomia a felső tápcsatornában"
+  },
+  "54523": {
+   "label": "Polypectomia colontos per colonoscopiam"
+  },
+  "54683": {
+   "label": "Desinvaginatio"
+  },
+  "54693": {
+   "label": "Polypectomia sigmae, sigmoidoscopos"
+  },
+  "54820": {
+   "label": "Proctotomia interna"
+  },
+  "54821": {
+   "label": "Polypectomia recti per rectoscopiam"
+  },
+  "54862": {
+   "label": "Sutura recti"
+  },
+  "54866": {
+   "label": "Exstirpatio fistulae internae recti"
+  },
+  "54871": {
+   "label": "Incisio perirectalis"
+  },
+  "54872": {
+   "label": "Exstirpatio fistulae externae recti"
+  },
+  "54901": {
+   "label": "Oncotomia perianalis"
+  },
+  "54911": {
+   "label": "Exstirpatio fistulae ani"
+  },
+  "54912": {
+   "label": "Desquamatio fistulae ani"
+  },
+  "54913": {
+   "label": "Exstirpatio fistulae ani sec Hippokrates"
+  },
+  "54919": {
+   "label": "Sebészi polypectomia anusból"
+  },
+  "54920": {
+   "label": "Exscisio fissurae ani"
+  },
+  "54921": {
+   "label": "Kryo-fissurectomia analis"
+  },
+  "54991": {
+   "label": "Thrombectomia analis"
+  },
+  "54992": {
+   "label": "Ignipunctio nodi haemorrhoidealis"
+  },
+  "54994": {
+   "label": "Excisio mucosae prolabatae ani"
+  },
+  "54996": {
+   "label": "Excisio condylomae perianalis"
+  },
+  "55185": {
+   "label": "Cholelith eltávolítás duodenoscopia során"
+  },
+  "55300": {
+   "label": "Hernioplastica inguinofemoralis"
+  },
+  "55340": {
+   "label": "Hernioplastica umbilicalis"
+  },
+  "55400": {
+   "label": "Incisio parietis abdominis"
+  },
+  "55420": {
+   "label": "Excisio parietis abdominis"
+  },
+  "55700": {
+   "label": "Húgyhólyagkő endoszkópos eltávolítása"
+  },
+  "55705": {
+   "label": "Mechanikus lithotrypsia (húgyúti kő)"
+  },
+  "55810": {
+   "label": "Meatotomia urethrae"
+  },
+  "55850": {
+   "label": "Húgycsőtágítás"
+  },
+  "55981": {
+   "label": "Ureter strictura tágítása ballonkatéterrel"
+  },
+  "55983": {
+   "label": "Ureter strictura katéteres tágítása"
+  },
+  "55986": {
+   "label": "Ureterkatéter - dupla J - eltávolítás"
+  },
+  "56010": {
+   "label": "Prostata transurethralis biopszia"
+  },
+  "56100": {
+   "label": "Scrotum incisio"
+  },
+  "56120": {
+   "label": "Excisio laesionis scrotalis"
+  },
+  "56130": {
+   "label": "Scrotum és tunica vaginalis reconstructio"
+  },
+  "56340": {
+   "label": "Detorquatio testis"
+  },
+  "56341": {
+   "label": "Funiculus varrat"
+  },
+  "56350": {
+   "label": "Vasotomia"
+  },
+  "56400": {
+   "label": "Circumcisio"
+  },
+  "56401": {
+   "label": "Frenulotomia penis"
+  },
+  "56402": {
+   "label": "Incisio dorsalis preputii"
+  },
+  "56403": {
+   "label": "Phimotomia"
+  },
+  "56404": {
+   "label": "Meatotomia"
+  },
+  "56410": {
+   "label": "Excisio laesionis penis"
+  },
+  "56671": {
+   "label": "Chromopertubatio"
+  },
+  "56723": {
+   "label": "Méhpolyp eltávolítás"
+  },
+  "56812": {
+   "label": "Septum uteri kiirtás (hysteroscop)"
+  },
+  "56814": {
+   "label": "Synechiolysis (hysteroscop)"
+  },
+  "56815": {
+   "label": "Endometrium resectio (hysteroscop)"
+  },
+  "56901": {
+   "label": "Abrasio cervicis"
+  },
+  "57021": {
+   "label": "Hymen incisio"
+  },
+  "57022": {
+   "label": "Excisio polypus vaginalis"
+  },
+  "57023": {
+   "label": "Excisio septi vaginalis"
+  },
+  "57065": {
+   "label": "Synechiolysis vaginalis"
+  },
+  "57101": {
+   "label": "Gát drainálása"
+  },
+  "57130": {
+   "label": "Clitoris műtét"
+  },
+  "57582": {
+   "label": "Másodlagosan gyógyuló episiotomia ellátása"
+  },
+  "57590": {
+   "label": "Evacuatio haematomae perinealis s. vulvae"
+  },
+  "57802": {
+   "label": "Sequestrotomia"
+  },
+  "57803": {
+   "label": "Sequestrectomia"
+  },
+  "57900": {
+   "label": "Percutan tűzés"
+  },
+  "58011": {
+   "label": "Capsulotomia articulationis"
+  },
+  "58090": {
+   "label": "Capsulographia articulationis manus"
+  },
+  "58096": {
+   "label": "Ízületi áttűzés, időleges"
+  },
+  "58200": {
+   "label": "Incisio aponeurosis manus"
+  },
+  "58201": {
+   "label": "Kéz lágyrészének feltárása"
+  },
+  "58202": {
+   "label": "Incisio digiti"
+  },
+  "58205": {
+   "label": "Ujjbegy csonkolás"
+  },
+  "58212": {
+   "label": "Retinaculotomia manus"
+  },
+  "58221": {
+   "label": "Ganglion manus exstirpatio (kivéve kézháti)"
+  },
+  "58224": {
+   "label": "Kézháti ganglion exstirpatioja"
+  },
+  "58240": {
+   "label": "Feszítő ín varrata kézen"
+  },
+  "58241": {
+   "label": "Flexor ín varrat kézen"
+  },
+  "58245": {
+   "label": "Pull out wire eltávolítás"
+  },
+  "58247": {
+   "label": "Flexor ín reinsertio kézen"
+  },
+  "58264": {
+   "label": "Szigetlebeny-plasztika kézen"
+  },
+  "58300": {
+   "label": "Fasciotomia subcutanea"
+  },
+  "58301": {
+   "label": "Fasciotomia peroperativa"
+  },
+  "58303": {
+   "label": "Tenotomia"
+  },
+  "58304": {
+   "label": "Bursotomia"
+  },
+  "58305": {
+   "label": "Idegentest eltávolítás végtagi lágyrészből"
+  },
+  "58319": {
+   "label": "Myotenotomia"
+  },
+  "58321": {
+   "label": "Ínsérülés ellátása"
+  },
+  "58325": {
+   "label": "Térdtáji ganglion exstirpatio"
+  },
+  "58326": {
+   "label": "Lágyrésztumor exstirpatio - intralaesionalis"
+  },
+  "58327": {
+   "label": "Lágyrésztumor exstirpatio - marginalis"
+  },
+  "58328": {
+   "label": "Lágyrésztumor exstirpatio - széles"
+  },
+  "58331": {
+   "label": "Sesam csont eltávolítás"
+  },
+  "58332": {
+   "label": "Ínhüvely exstirpatio tenosynovectomia"
+  },
+  "58340": {
+   "label": "Bursa olecrani exstirpatio"
+  },
+  "58341": {
+   "label": "Bursa praepatellaris exstirpatio"
+  },
+  "58343": {
+   "label": "Lábháti ganglion exstirpatio"
+  },
+  "58344": {
+   "label": "Bokatáji ganglion exstirpatio"
+  },
+  "58345": {
+   "label": "Dupuytren plantaris excisio"
+  },
+  "58350": {
+   "label": "Izomvarrat"
+  },
+  "58351": {
+   "label": "Ínvarrat"
+  },
+  "58352": {
+   "label": "Fasciavarrat"
+  },
+  "58353": {
+   "label": "Szalagvarrat"
+  },
+  "58360": {
+   "label": "Izomreconstructio"
+  },
+  "58361": {
+   "label": "Ínreconstructio"
+  },
+  "58362": {
+   "label": "Fascia reconstructio"
+  },
+  "58365": {
+   "label": "Ínreinsertio"
+  },
+  "58400": {
+   "label": "Amputatio digiti manus"
+  },
+  "58401": {
+   "label": "Amputatio digitorum manus"
+  },
+  "58402": {
+   "label": "Amputatio digiti manus secondarius"
+  },
+  "58403": {
+   "label": "Revisio amputationis digiti manus"
+  },
+  "58405": {
+   "label": "Amputatio digiti post amputationem traumaticam"
+  },
+  "58410": {
+   "label": "Amputatio pollicis post amputationem traumaticam"
+  },
+  "58411": {
+   "label": "Amputatio pollicis"
+  },
+  "58412": {
+   "label": "Amputatio pollicis secundarius"
+  },
+  "58450": {
+   "label": "Amputatio digiti pedis"
+  },
+  "58451": {
+   "label": "Exarticulatio interphalangealis digiti pedis"
+  },
+  "58501": {
+   "label": "Másodlagos csonkzárás"
+  },
+  "58502": {
+   "label": "Csonk korrekció"
+  },
+  "58510": {
+   "label": "Reamputatio kézujjon"
+  },
+  "58600": {
+   "label": "Excisio laesionis mammae"
+  },
+  "58602": {
+   "label": "Excisio sectoris mammae"
+  },
+  "58691": {
+   "label": "Excisio gynecomastiae"
+  },
+  "58692": {
+   "label": "Excisio mammae ectopicae"
+  },
+  "58700": {
+   "label": "Aspiratio mammae therapeuticus"
+  },
+  "58710": {
+   "label": "Mastotomia"
+  },
+  "58722": {
+   "label": "Mellbimbó plasztika"
+  },
+  "58752": {
+   "label": "Emlő bőrének plasztikája"
+  },
+  "58810": {
+   "label": "Incisio sinus pilonidalis inflammatus"
+  },
+  "58820": {
+   "label": "Incisio et drainage cutis et/seu subcutis"
+  },
+  "58821": {
+   "label": "Excochleatio subcutanea"
+  },
+  "58822": {
+   "label": "Carbunculus incisio"
+  },
+  "58840": {
+   "label": "Bőrfüggelék kimetszése"
+  },
+  "58841": {
+   "label": "Bőrbeni és bőr alatti sipoly kimetszése"
+  },
+  "58842": {
+   "label": "Hegkimetszés"
+  },
+  "58844": {
+   "label": "Bőrelváltozás kimetszése"
+  },
+  "58851": {
+   "label": "Bőrelváltozás radikális kimetszése"
+  },
+  "58880": {
+   "label": "Bőr kimetszése átültetéshez"
+  },
+  "58901": {
+   "label": "Resutura cutis"
+  },
+  "58902": {
+   "label": "Primer halasztott varrat"
+  },
+  "58903": {
+   "label": "Sutura cutis secundaria"
+  },
+  "58920": {
+   "label": "Teljes vastagságú bőrátültetés Wolf-Krause"
+  },
+  "58921": {
+   "label": "Félvastag bőrátültetés"
+  },
+  "58923": {
+   "label": "Thiersch lebeny, hámlebeny"
+  },
+  "58924": {
+   "label": "Plastica cutis sec. Reverdin"
+  },
+  "58927": {
+   "label": "Bőrátültetés, szabad"
+  },
+  "58931": {
+   "label": "V-Y-plasztika"
+  },
+  "58932": {
+   "label": "Bőrforgatásos bőrpótlás"
+  },
+  "58933": {
+   "label": "Karéjos bőreltolás Imre szerint"
+  },
+  "58934": {
+   "label": "Z-plasztika"
+  },
+  "58970": {
+   "label": "Lebeny vagy nyeles lebeny revisio"
+  },
+  "58985": {
+   "label": "Ajak- és külső szájplasztika"
+  },
+  "59030": {
+   "label": "Keratotomia, desquamatio"
+  },
+  "59100": {
+   "label": "Cauterisatio conjuctivae, corneae, sclerae"
+  },
+  "59110": {
+   "label": "Cauterisatio nasi"
+  },
+  "59120": {
+   "label": "Cauterisatio condylomae perianalis"
+  },
+  "59123": {
+   "label": "Cauterisatio condylomae vaginalis"
+  },
+  "59125": {
+   "label": "Cauterisatio condylomae penis"
+  },
+  "59126": {
+   "label": "Cauterisatio condylomae urethrae"
+  },
+  "59130": {
+   "label": "Cauterisatio cutis"
+  },
+  "59200": {
+   "label": "Elektrocoagulatio intranasalis"
+  },
+  "59210": {
+   "label": "Elektrocoagulatio cystoscopica"
+  },
+  "59220": {
+   "label": "Elektrocoagulatio cutis"
+  },
+  "59491": {
+   "label": "Kryoplastica portionis"
+  },
+  "59541": {
+   "label": "Epekőoldás endoscopia során bevezetett katéteren át"
+  },
+  "59710": {
+   "label": "Sclerotizáló injekció az alsó végtag vénáiba"
+  },
+  "59750": {
+   "label": "Sclerotizáló injekció a vulva vénás tágulataiba"
+  },
+  "59760": {
+   "label": "Sclerotizáló injekció érbe"
+  },
+  "59761": {
+   "label": "Sclerotizáló injekció haemangiomába"
+  },
+  "59780": {
+   "label": "Sclerotisatio hydrokele"
+  },
+  "59809": {
+   "label": "Sterilisatio (férfi)"
+  },
+  "64076": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, 1E teljes vérből"
+  },
+  "64125": {
+   "label": "Vörösvérsejt koncentrátum, zárt rendszerben mosott, reszuszpendált"
+  },
+  "66150": {
+   "label": "Trombocita koncentrátum, 1E teljes vérből, saját plazmában reszuszpendált"
+  },
+  "66290": {
+   "label": "Vörösvérsejt koncentrátum határréteg szegény, reszuszpendált"
+  },
+  "66336": {
+   "label": "Plazma friss, fagyasztott, sejtszegény"
+  },
+  "66337": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, közegcserélt 1E teljes vérből"
+  },
+  "66338": {
+   "label": "Trombocita koncentrátum, 1E gépi aferezisből, saját plazmában"
+  },
+  "66339": {
+   "label": "Trombocita koncentrátum, 1E gépi aferezisből, közegcserélt"
+  },
+  "66347": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, szűrt, 1E teljes vérből"
+  },
+  "66348": {
+   "label": "Vörösvérsejt koncentrátum, 1E gépi aferezis, adenin tartalmú oldatban reszuszpendált"
+  },
+  "66988": {
+   "label": "Plazma friss, fagyasztott"
+  },
+  "66992": {
+   "label": "Vörösvérsejt koncentrátum, zárt rendszerben szűrt, mosott, reszuszpendált"
+  },
+  "66993": {
+   "label": "Vörösvérsejt koncentrátum, fagyasztott, -196 °C, felolvasztott"
+  },
+  "69400": {
+   "label": "Fehérvérsejt koncentrátum, 1E gépi aferezisből"
+  },
+  "69401": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, szűrt, közegcserélt 1E teljes vérből"
+  },
+  "69403": {
+   "label": "Trombocita koncentrátum, fagyasztott, felolvasztott, szűrt, közegcserélt, 1E gépi aferezisből, -80 °C"
+  },
+  "69972": {
+   "label": "Vörösvérsejt koncentrátum, zárt rendszerben, szűrt, adenin tartalmú oldatban reszuszpendált"
+  },
+  "81010": {
+   "label": "Idegentest eltávolítás conjunctivából"
+  },
+  "81070": {
+   "label": "Bronchoscopos idegentest eltávolítás"
+  },
+  "81100": {
+   "label": "Idegentest eltávolítás szájból, meso v. nasopharynxból"
+  },
+  "81111": {
+   "label": "Idegentest eltávolítás oesophagoscopia során"
+  },
+  "81360": {
+   "label": "Percutan epicystostomia behelyezése"
+  },
+  "81500": {
+   "label": "Cysta, hygroma és abscessus leszívás"
+  },
+  "81501": {
+   "label": "Cysta, hygroma és abscessus leszívás, UH vezérelt"
+  },
+  "81502": {
+   "label": "UH vezérelt pajzsmirigy punkció"
+  },
+  "81520": {
+   "label": "Punctio corneae"
+  },
+  "81550": {
+   "label": "Thoracocentesis therapeuticus"
+  },
+  "81551": {
+   "label": "UH vezérelt thoracocentesis therapeuticus"
+  },
+  "81552": {
+   "label": "Aspiratio mammae"
+  },
+  "81553": {
+   "label": "Aspiratio mammae UH vezérelt"
+  },
+  "81554": {
+   "label": "Ascites terápiás célzatú lebocsátása"
+  },
+  "81581": {
+   "label": "UH vezérelt májbiopsia"
+  },
+  "81591": {
+   "label": "Pancreas pseudocysta punctio UH vezérelt"
+  },
+  "81642": {
+   "label": "Aspiratio ovarii transvaginalis UH vezérelt"
+  },
+  "81691": {
+   "label": "UH vezérelt letokolt testüregi folyadék leszívása"
+  },
+  "81695": {
+   "label": "UH vezérelt folyadékgyülem drenázs, felületi, direkt punkciós drenázzsal"
+  },
+  "81790": {
+   "label": "Mellűri szívó-öblítő drain percutan behelyezése"
+  },
+  "81863": {
+   "label": "Molluscum eltávolítása (több mint 6 db egyidőben)"
+  },
+  "81870": {
+   "label": "A testfelszín kezelése Dithranollal"
+  },
+  "82201": {
+   "label": "Endoszkópos tágítás szondasorral (kivéve oesophag.)"
+  },
+  "83410": {
+   "label": "Aranyeres csomók gyűrűzése"
+  },
+  "83411": {
+   "label": "Aranyér gyűrűzés egyidejű kryokezeléssel"
+  },
+  "85011": {
+   "label": "Orrvérzés ellátása réteges tamponáddal"
+  },
+  "85020": {
+   "label": "Rectalis vérzés csillapítása tamponálással"
+  },
+  "85200": {
+   "label": "Resuscitatio"
+  },
+  "85701": {
+   "label": "Epiduralis kanül behelyezés"
+  },
+  "85702": {
+   "label": "Epiduralis kanül behelyezés áthúzással"
+  },
+  "85706": {
+   "label": "Injectio extraduralis in canalis spinalis"
+  },
+  "85710": {
+   "label": "Perifériás ideg percutan blokkolása vagy roncsolása"
+  },
+  "85712": {
+   "label": "Pharmacologiai neurectomia I. botulinum toxinnal"
+  },
+  "85714": {
+   "label": "Pharmacologiai neurectomia III. botulinum toxinnal"
+  },
+  "85720": {
+   "label": "Injectio bulbum oculi"
+  },
+  "85790": {
+   "label": "Infiltratio sec. Lange"
+  },
+  "85792": {
+   "label": "Ganglion blokád"
+  },
+  "85793": {
+   "label": "Infiltratio paravertebralis"
+  },
+  "85861": {
+   "label": "Injectio in cutis pro hyposensibilisationem"
+  },
+  "85881": {
+   "label": "Infúzió adása"
+  },
+  "85933": {
+   "label": "Naloxan adása opiát mérgezett betegnek"
+  },
+  "86230": {
+   "label": "UV-roncsolás (felületes elváltozás)"
+  },
+  "86621": {
+   "label": "Intravesicalis transurethralis elektroterápia"
+  },
+  "86631": {
+   "label": "Funkcionális elektroterápia motoros tünetekre"
+  },
+  "88011": {
+   "label": "Autotranszfúzió vérvétele"
+  },
+  "88141": {
+   "label": "IX. faktor készítmény adása"
+  },
+  "88200": {
+   "label": "Sectio venae, vérlebocsátás"
+  },
+  "88300": {
+   "label": "Arteria katéterezés vagy kanülálás"
+  },
+  "88341": {
+   "label": "Centrális véna katéterezése v. subclavia útján"
+  },
+  "88342": {
+   "label": "Centrális véna katéterezése v. jugularis útján"
+  },
+  "88343": {
+   "label": "Centrális véna katéterezése sebészi feltárásból"
+  },
+  "88344": {
+   "label": "Centrális véna tartós katéterezése Hickman katéterrel (feltárásos)"
+  },
+  "88741": {
+   "label": "Infúzió centrális vénába"
+  },
+  "88917": {
+   "label": "Ideg vagy ganglion vezetéses érzéstelenítés"
+  },
+  "88918": {
+   "label": "Trunc. symp. mellkasi szakasz vagy ggl. solaris blokád"
+  },
+  "88919": {
+   "label": "Retrobulbaris infiltrációs érzéstelenítés"
+  },
+  "88933": {
+   "label": "Sacralis neurolysis"
+  },
+  "91230": {
+   "label": "Infúziós pumpás gyógyszeradagolás"
+  },
+  "92233": {
+   "label": "Immunterápia daganatellenes kemoterápiával komb."
+  },
+  "92235": {
+   "label": "Immuno-chemotherapia intravesicalis"
+  },
+  "66350": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, szűrt, közegcserélt 2 E teljes vérből"
+  },
+  "66351": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, szűrt, közegcserélt 4 E teljes vérből"
+  },
+  "66352": {
+   "label": "Trombocita koncentrátum, zárt rendszerben, poolozott, közegcserélt, 4 E teljes vérből"
+  },
+  "66353": {
+   "label": "Trombocita koncentrátum, 5 E, gépi aferezisből, saját plazmában"
+  },
+  "66354": {
+   "label": "Trombocita koncentrátum, 10 E, gépi aferezisből, saját plazmában"
+  },
+  "66355": {
+   "label": "Trombocita koncentrátum, 5 E, gépi aferezisből, közegcserélt"
+  },
+  "66356": {
+   "label": "Trombocita koncentrátum, 10 E, gépi aferezisből, közegcserélt"
+  },
+  "66357": {
+   "label": "Trombocita koncentrátum, fagyasztott, felolvasztott, szűrt, közegcserélt 10 E, gépi aferezisből -80 °C"
+  },
+  "66358": {
+   "label": "Fehérvérsejt koncentrátum, 20 E, gépi aferezisből"
+  },
+  "16207": {
+   "label": "Endobronchiális ultrahang vezérelt transbronchiális tűbiopszia (EBUS TBNA)"
+  },
+  "87040": {
+   "label": "Port behelyezés tartós parenterális táplálás céljából"
+  },
+  "42750": {
+   "label": "Colonoscopia (szűrő jellegű)"
+  },
+  "87050": {
+   "label": "Tartós katéter behelyezése visszatérő folyadékgyülem lecsapolásához"
+  }
+ }
+}

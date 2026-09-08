@@ -1,0 +1,211 @@
+{
+  "megnevezes": "Fedésdöntések — mely mezők fedik ugyanazt",
+  "note": "A `tools/dupla-mezok.ts` gépileg keresi a jelölteket; ez a lista mondja ki, mi lett velük. A JELÖLT NEM ÍTÉLET: két mező lehet jogosan hasonló, és lehet valódi duplikátum — a különbséget ember dönti el, de a döntésnek nyoma kell legyen, különben a következő olvasó újra elkezdi.\n\nA `kulon` ítélet is INDOKLÁST kíván: a hasonlóság magától nem tűnik el. A `fedes` pedig FELOLDÁST — egy elismert, de kezeletlen fedés rosszabb a fel nem ismertnél, mert a tudás megvan, és mégsem történik semmi.",
+  "dontesek": [
+    {
+      "a": "labour.qbl",
+      "b": "op.intra.qbl",
+      "itelet": "fedes",
+      "miert": "UGYANAZ A VÉRZÉS, KÉT MEZŐBEN, KÉT KÜSZÖBBEL. A vajúdó nő, aki császármetszésre kerül, mindkettőbe veszít vért: a `labour.qbl` kritikus határa 300 mL (WHO/FIGO/ICM 2025), az `op.intra.qbl`-é 1000 mL. Vagyis 400 mL vajúdás közben kritikus, 700 mL a műtét alatt nem — és az 1100 mL összesent senki nem számolta ki. A szülés utáni vérzés az anyai halálozás vezető oka, és a késedelem a legjobban dokumentált hozzájáruló tényezője: ez a fedés ott van, ahol a legdrágább. Mindkét mező MEGMARAD (a dokumentáció szempontjából számít, hol veszítette), és fölébük áll az összeg, ami a stádiumot vezérli. A hiányzó szakasz NEM NULLA: az összeg olyankor alsó becslés.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08",
+      "feloldas": "osszegzo",
+      "osszegzoMezo": "labour.qbl.total"
+    },
+    {
+      "a": "psy.epds.q10",
+      "b": "psy.phq9.q9",
+      "itelet": "fedes",
+      "miert": "KÉT KÉRDŐÍV, EGY KÉRDÉS: mindkettő az önkárosítás gondolatára kérdez, és mindkettő dokumentáltan kritikus tétel — pozitív válasz az összpontszámtól függetlenül teendőt jelent. Külön mezőkben három baj lehet: az egyik pozitív és a másikat fel sem tették; a régi pozitív és az új nulla (a pozitív nem avul el magától — újraértékelés kell hozzá, nem újabb kérdőív); és a legrosszabb, hogy a FEL NEM TETT kérdés nullaként viselkedik. A `core/fedes/feloldas.ts` `onkarositas()` függvénye áll a kettő fölött, és a fel nem tett kérdés külön érték.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08",
+      "feloldas": "kozosKuszob"
+    },
+    {
+      "a": "ctx.multiple",
+      "b": "hx.eeszt.multiple",
+      "itelet": "fedes",
+      "miert": "Mindkettő a többes terhesség tényét hordozza: az egyik a jelen eset kontextusa, a másik az EESZT-ből importált rizikókód. Ha eltérnek, az NEM két adat, hanem ellentmondás — és ma semmi nem veti össze őket. NYITOTT: a feloldás az importált rizikókódok általános kérdése (26. modul), és külön kimondást kíván, hogy az import felülírhatja-e a kontextust, vagy csak jelezhet.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08",
+      "feloldas": "nyitott"
+    },
+    {
+      "a": "hx.eeszt.chronicDisease",
+      "b": "hx.sys.asthma",
+      "itelet": "fedes",
+      "miert": "Az EESZT `krónikus betegség` rizikókódja fedésben van a konkrét kórképmezőkkel: aki asztmás, annál a rizikókód is igaz. Két helyen tárolva a kettő elcsúszhat. NYITOTT — ugyanaz az importált-rizikókód kérdés, mint a többes terhességnél.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08",
+      "feloldas": "nyitott"
+    },
+    {
+      "a": "vitals.bp.diastolic",
+      "b": "vitals.bp.systolic",
+      "itelet": "kulon",
+      "miert": "Egyetlen mérés két értéke. Együtt kell rögzülniük, de nem ugyanaz a szám: a szisztolés és a diasztolés érték külön küszöböt hordoz, és a praeeclampsia megítélésénél mindkettő önállóan dönt.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.origin.birthWeight",
+      "b": "nb.birthWeight",
+      "itelet": "kulon",
+      "miert": "KÉT KÜLÖNBÖZŐ EMBER születési súlya: az egyik a BETEG saját születési súlya (anamnesztikus, a saját méhen belüli fejlődéséről szól), a másik az ÁLTALA SZÜLT újszülötté. A 29. modul már kimondta, hogy az újszülött külön beteg — ez a pár pontosan azt a határt jelöli, és összevonva a legrosszabb fajta hiba születne.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "vitals.pulse",
+      "b": "nb.apgar.pulse",
+      "itelet": "kulon",
+      "miert": "Az anya pulzusa és az újszülött Apgar-pontszámának szívfrekvencia-tétele. Két beteg, két mérés, két értelmezés — az Apgar-tétel ráadásul nem frekvencia, hanem pontérték.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "nb.nicuAdmit",
+      "b": "out.icuAdmit",
+      "itelet": "kulon",
+      "miert": "Újszülött intenzív osztályos felvétel és FELNŐTT intenzív felvétel. Két beteg, két osztály; az összevonás a 29. modul kétbeteges szerkezetét rontaná el.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "status.fert.tanner.breast",
+      "b": "pedgyn.tanner.pubic",
+      "itelet": "kulon",
+      "miert": "Ugyanaz a Tanner-skála, KÉT KÜLÖNBÖZŐ testtájékon: az emlő- és a szeméremszőrzet-stádium egymástól eltérhet, és az eltérésük maga is klinikai jel (például izolált thelarche vagy adrenarche esetén).",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "img.hsg.tube.left",
+      "b": "img.hsg.tube.right",
+      "itelet": "kulon",
+      "miert": "Bal és jobb petevezeték. Az oldaliság a lelet lényege: az egyoldali elzáródás más teendőt jelent, mint a kétoldali.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "status.fert.galactorrhoea.side",
+      "b": "us.breast.side",
+      "itelet": "kulon",
+      "miert": "Mindkettő oldaliságot rögzít, de MÁS leleten: az egyik a galactorrhoea oldala fizikális vizsgálatnál, a másik az ultrahangos emlőlelet oldala. A közös kódlista (bal/jobb/mindkettő) nem fedés, hanem közös nyelvtan.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "lab.urine.blood",
+      "b": "lab.urine.protein",
+      "itelet": "kulon",
+      "miert": "Ugyanannak a vizelet-gyorstesztnek két külön paramétere. A közös kódlista a teszt fokozatait tükrözi.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.sys.dm1",
+      "b": "hx.sys.dm2",
+      "itelet": "kulon",
+      "miert": "Az 1-es és a 2-es típusú cukorbetegség két külön kórkép. A 33. modul kimondta, miért nem olvaszthatók egy mezőbe: a terhességi kockázati ablak, a kezelés és a szülés utáni teendő is más.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "psy.epds.q8",
+      "b": "psy.phq9.q2",
+      "itelet": "kulon",
+      "miert": "Mindkettő nyomott hangulatra kérdez, DE az EPDS a szülés utáni hét napra, a PHQ-9 a megelőző két hétre, eltérő válaszskálával. A tételek nem cserélhetők fel, és az összpontszámuk sem közös — ellentétben a KRITIKUS önkárosítás-tétellel, ahol a teendő azonos, és ezért ott feloldás kellett.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "ekg.narrative",
+      "b": "us.narrative",
+      "itelet": "kulon",
+      "miert": "Két külön lelet szabad szöveges kiegészítése. A közös utótag a leletszerkezet közös nyelvtana, nem közös tartalom.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "onc.preg.sharedDecision",
+      "b": "plan.delivery.sharedDecision",
+      "itelet": "kulon",
+      "miert": "Két külön megosztott döntéshozatali esemény: az egyik a terhesség alatti onkológiai kezelésről, a másik a szülés módjáról. Külön időpont, külön résztvevők, külön dokumentáció — ha egy mező lenne, a második felülírná az elsőt.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.repro.currentPregnancy.preeclampsia",
+      "b": "hx.repro.currentPregnancy.previa",
+      "itelet": "kulon",
+      "miert": "A jelen terhesség két külön szövődménye. A közös kódlista (igen/nem/nem tudom) a háromállású mezők közös nyelvtana.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "audit.prenatal.confirmed",
+      "b": "audit.us.confirmed",
+      "itelet": "kulon",
+      "miert": "Az audithurok három párja három KÜLÖN döntést vet össze a kimenetellel (prenatális szűrés, ultrahangos megítélés, műtét utáni szövettan). Azonos szerkezet, más tartalom — az összevonásuk éppen a hurok lényegét szüntetné meg.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "audit.prenatal.confirmed",
+      "b": "audit.postop.confirmed",
+      "itelet": "kulon",
+      "miert": "Ugyanaz, mint az előző pár: azonos szerkezet, más döntés.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "audit.us.confirmed",
+      "b": "audit.postop.confirmed",
+      "itelet": "kulon",
+      "miert": "Ugyanaz, mint az előző pár: azonos szerkezet, más döntés.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.eeszt.age",
+      "b": "hx.eeszt.bmi",
+      "itelet": "kulon",
+      "miert": "Az EESZT rizikókód-készlet külön tételei (életkor, testtömegindex szerinti kockázat). Azonos szerkezet, más kockázati tényező.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.eeszt.age",
+      "b": "hx.eeszt.parity",
+      "itelet": "kulon",
+      "miert": "Ugyanaz: külön EESZT-rizikókódok.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.eeszt.bmi",
+      "b": "hx.eeszt.parity",
+      "itelet": "kulon",
+      "miert": "Ugyanaz: külön EESZT-rizikókódok.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "hx.eeszt.multiple",
+      "b": "hx.eeszt.prevPreterm",
+      "itelet": "kulon",
+      "miert": "Ugyanaz: külön EESZT-rizikókódok.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    },
+    {
+      "a": "status.fert.fg.upperBack",
+      "b": "status.fert.fg.upperLip",
+      "itelet": "kulon",
+      "miert": "A Ferriman–Gallwey pontszám két külön testtájéka. A skála lényege, hogy tájékonként külön pontoz.",
+      "ki": "Demó Adatgazda",
+      "mikor": "2026-09-08"
+    }
+  ]
+}

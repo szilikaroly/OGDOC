@@ -1,0 +1,78 @@
+[
+  {
+    "version": 1,
+    "status": "active",
+    "id": "patient.age",
+    "label": {
+      "hu": "Életkor",
+      "en": "Age"
+    },
+    "module": "admin",
+    "datatype": "quantity",
+    "unit": "a",
+    "domain": {
+      "min": 0,
+      "max": 120
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.age",
+      "explain": {
+        "hu": "A születési dátumból a vizsgálat időpontjára."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Betöltött életév a vizsgálat időpontjában."
+      },
+      "whyItMatters": {
+        "hu": "Nem tárolt adat, hanem levezetett: a születési dátum a forrás. Így nem avul el."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "patient.birthDate",
+    "label": {
+      "hu": "Születési dátum",
+      "en": "Date of birth"
+    },
+    "module": "admin",
+    "datatype": "date",
+    "phi": true,
+    "documentation": {
+      "definition": {
+        "hu": "A beteg születési dátuma."
+      },
+      "whyItMatters": {
+        "hu": "A kor minden korfüggő számítás bemenete, és a magzati kockázatoké is."
+      },
+      "pitfalls": {
+        "hu": "Beteg-azonosításra alkalmas: az exportba csak évre kerekítve mehet, a lekérdezőbe sehogy."
+      }
+    }
+  },
+  {
+    "id": "patient.taj",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "TAJ-szám",
+      "en": "Social security number"
+    },
+    "module": "admin",
+    "datatype": "text",
+    "phi": true,
+    "audit": true,
+    "provenanceAllowed": [
+      "clinician",
+      "imported"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Társadalombiztosítási azonosító jel. Közvetlen azonosító: az exportból és a lekérdezőből kimarad."
+      }
+    }
+  }
+]

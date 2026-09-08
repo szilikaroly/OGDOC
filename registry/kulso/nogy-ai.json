@@ -1,0 +1,212 @@
+{
+  "id": "kulso.nogyai",
+  "label": {
+    "hu": "Nőgyógyászati AI-asszisztensek és osztályos működést támogató tárak",
+    "en": "Gynaecology AI assistants and ward-operations repositories"
+  },
+  "kiado": {
+    "nev": "vegyes, nyilvános GitHub-tárak (che0816, kuri54, Eric43, Kalyx1111, productofbigbang, opencodeiiita, Isaac-aiai)",
+    "url": "https://github.com/topics/gynecology"
+  },
+  "miertSzamit": {
+    "hu": "Hét tár, és NEM ugyanaz a fajta: két klinikai képosztályozó, egy teljes diagnosztikai keretrendszer közleménnyel, két laikusoknak szóló csevegő asszisztens, egy PCOS-követő alkalmazás és egy osztályos működést támogató ügynök. Egy listában felsorolva mindegyik „nőgyógyászati AI”-nak látszik — a rendszer szempontjából viszont más-más kapun mennének át, és az egyiken egyik sem."
+  },
+  "beszerzes": {
+    "allapot": "beszerzett",
+    "megkiserelve": "2026-09-08",
+    "amitTudunk": "mind a hét tár klónozva, a licencfájlok ellenőrizve",
+    "amitNemTudunk": "a betanított súlyok eredete és a betanító adatok felhasználási feltételei tárarént eltérően dokumentáltak"
+  },
+  "licenc": {
+    "ismert": false,
+    "megjegyzes": {
+      "hu": "TÉTELENKÉNT ELTÉR: két MIT, egy Apache-2.0, egy GPL (copyleft), három licenc NÉLKÜL."
+    }
+  },
+  "note": {
+    "hu": "A HÁROM FAJTA, AMIT NEM SZABAD EGY LISTÁBAN TARTANI.\n\n1. KLINIKAI DÖNTÉST TÁMOGATÓ MODELL (GynAIe citológiai szűrés, MFM_AI ultrahang-osztályozás, SmartGyne triázs és diagnózis). Ezek a 28. modul AI-kapuján mennének át: licenc, bemenet, címke, validálás, MDR, bizonytalanság, verzió, klinikai haszon. Ma egyik sem jut túl rajta.\n\n2. LAIKUSNAK SZÓLÓ TÁJÉKOZTATÓ ASSZISZTENS (GynoCare_AI, Gynecological-Health-Assistant, Fem-care). Ezek NEM döntéstámogatók, és nem is annak készültek — a GynoCare README-je maga kezdi azzal, hogy „NOT a medical diagnosis”. A rendszerben a 31. modul betegtájékoztatójának a rokonai, nem a 28.-é: ott a kérdés nem az MDR-besorolás, hanem hogy KI a szerző, ki hagyta jóvá, és mikor jár le. Egy csevegő asszisztensnek egyik sincs.\n\n   ÉS EGY KÜLÖN FIGYELMEZTETÉS: a Gynecological-Health-Assistant tudásbázisa WIKIPÉDIÁRÓL LEKAPART szöveg. Ez két okból nem használható: a Wikipédia CC BY-SA (megosztás azonos feltételekkel — a származék licence kötött), és klinikailag nem az a forrás, amiből ellátási tanács születik. A rendszer betegtájékoztatóinál a szerző NEVESÍTETT személy, felülvizsgálati dátummal — egy lekapart korpusznak nincs se szerzője, se lejárata.\n\n3. MŰKÖDÉST TÁMOGATÓ ÜGYNÖK (obnexus). Ez a harmadik fajta, és a rendszerben nincs is még helye: ágykezelés, betegáthelyezés, elbocsátás-tervezés, erőforrás-beosztás. NEM klinikai döntés — de az adatbázisba ÍR, és a természetes nyelvű felület pontosan azt a réteget kerüli meg, ahol a rendszer kapui vannak (kiadható-e az ágy, marad-e sürgősségi tartalék). Amit a tárból átvettünk: SEMMIT (nincs licence). Amit a tár ADOTT: a működési területek FELSOROLÁSA, ami kimutatta, hogy a rendszerben nem volt sem ágykezelés, sem műtőbeosztás — csak NEAK-jelentés és WHO-ellenőrzőlista. Ebből lett a `core/fekvo/agy.ts` és a `core/op/muto.ts`."
+  },
+  "tetelek": [
+    {
+      "id": "nogyai.smartgyne",
+      "tipus": "kalkulator",
+      "cim": "che0816/SmartGyne — nőgyógyászati diagnosztikai keretrendszer (TopWORDS, tudásgráf, triázs, diagnózis)",
+      "cimForrasa": "forras",
+      "terulet": "nőgyógyászati diagnosztika",
+      "mihezKotodik": [
+        "code.dx.primary"
+      ],
+      "mitAdnaHozza": {
+        "hu": "A leginkább kidolgozott tétel: elektronikus kórlapokból nyer ki orvosi kifejezéseket (TopWORDS), tudásgráfot épít, és két modellt ad — triázst és diagnózist. Közlemény kíséri. A módszertana (félig strukturált kórlapszövegből gépi jellemzőtábla) a rendszer 26. moduljának előéleti importjához is szól, nem csak a diagnózishoz."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "MIT"
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "SmartGyne — négy modul forráskódja (TopWORDS_Series, Knowledge Graph, Triage Module, Diagnosis Module)",
+        "szerzok": "che0816 és mtsai"
+      }
+    },
+    {
+      "id": "nogyai.gynaie",
+      "tipus": "kalkulator",
+      "cim": "kuri54/GynAIe — citológiai szűrést támogató képmodell",
+      "cimForrasa": "forras",
+      "terulet": "citológia",
+      "mihezKotodik": [
+        "status.gyn.cytology"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Betanított képosztályozó citológiai kenetekhez, KÖZÖLT TELJESÍTMÉNYADATOKKAL (külön teljesítmény-oldal a tárban) — ez a ritkább eset: a legtöbb tár csak modellt ad, mérést nem. A 12. modul citológiai leletéhez és a méhnyakszűrési szabályhoz kötődne."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "Apache-2.0"
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "GynAIe — modell, néző és teljesítményoldal",
+        "szerzok": "kuri54"
+      }
+    },
+    {
+      "id": "nogyai.mfmai",
+      "tipus": "kalkulator",
+      "cim": "Eric43/MFM_AI — szülészeti ultrahangkép-osztályozás",
+      "cimForrasa": "forras",
+      "terulet": "magzati ultrahang",
+      "mihezKotodik": [
+        "us.hc",
+        "us.ac"
+      ],
+      "mitAdnaHozza": {
+        "hu": "Ultrahangkép-osztályozó modellek és a hozzájuk tartozó ADATKÉSZLETEK, közlésre szánt módszertannal. Az egyik kevés tár, ami az adatot is közli."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "GPL-3.0",
+        "megjegyzes": {
+          "hu": "COPYLEFT — származékos mű nem kerülhet a terjesztett, MIT-licencű műbe. Csak helyi telepítés (`registry/kulso/helyi/`, gitignorált, az exportcsomagból kizárva). Ugyanaz a helyzet, mint a PRBPERIsk és a naomifridman FHR-tár esetében."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "MFM_AI — jegyzetfüzetek, kód és adatkészletek",
+        "szerzok": "Eric43",
+        "helyiTabla": "registry/kulso/helyi/mfm-ai/"
+      }
+    },
+    {
+      "id": "nogyai.gynocare",
+      "tipus": "protokoll",
+      "cim": "Kalyx1111/GynoCare_AI — laikusoknak szóló tájékoztató asszisztens",
+      "cimForrasa": "forras",
+      "terulet": "betegtájékoztatás",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "NEM döntéstámogató, és nem is annak készült: a README saját magától kezdi azzal, hogy nem diagnózis, és orvoshoz irányít. A rendszerben a 31. modul betegtájékoztatójának rokona — ott viszont a kérdés nem az MDR-besorolás, hanem hogy KI a szerző, ki hagyta jóvá, és mikor jár le. Egy csevegő asszisztensnek egyik sincs, és ezt nem lehet utólag ráaggatni."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": true,
+        "azonosito": "MIT"
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "GynoCare AI v1.0 — telepítési és használati útmutató, alkalmazás"
+      }
+    },
+    {
+      "id": "nogyai.wikichat",
+      "tipus": "protokoll",
+      "cim": "productofbigbang/Gynecological-Health-Assistant — Wikipédia-alapú csevegő",
+      "cimForrasa": "forras",
+      "terulet": "betegtájékoztatás",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "SEMMIT — és a tanulság a fontos. A tudásbázisa Wikipédiáról LEKAPART szöveg (`scrapper.py`, `wikipedia_gynecology_data.json`). Két okból nem használható: a Wikipédia CC BY-SA, tehát a származék licence kötött; és klinikailag nem az a forrás, amiből ellátási tanács születik. A rendszer betegtájékoztatóinál a szerző NEVESÍTETT személy, felülvizsgálati dátummal — egy lekapart korpusznak se szerzője, se lejárata nincs."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL a táron — és a benne lévő adat is idegen jogú (Wikipédia, CC BY-SA). Kettős akadály."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "a tár licence hiányzik, a tartalom pedig CC BY-SA alatti lekapart szöveg",
+        "amitTudunk": "a kaparó szkript és a korpusz szerkezete",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "nogyai.femcare",
+      "tipus": "protokoll",
+      "cim": "opencodeiiita/Fem-care — PCOS-tünetkövetés és wellness-asszisztens",
+      "cimForrasa": "forras",
+      "terulet": "betegoldali követés",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "Betegoldali tünetkövetés és vizualizáció PCOS-ben. A README maga mondja ki, hogy „actionable wellness guidance rather than clinical diagnosis” — ez a helyes önbesorolás, és pontosan ezért NEM a 28. modul kapuján menne át. A rendszerben a beteg által rögzített adat (`provenance: patient`) útját mutatja, nem klinikai döntést."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a felépítés és a követett tünetkör",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    },
+    {
+      "id": "nogyai.obnexus",
+      "tipus": "protokoll",
+      "cim": "Isaac-aiai/obnexus-project — szülészeti osztályos működést támogató AI-ügynök",
+      "cimForrasa": "forras",
+      "terulet": "osztályos működés",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "HARMADIK FAJTA: nem klinikai döntés, hanem MŰKÖDÉS — ágykezelés, betegáthelyezés, elbocsátás-tervezés, erőforrás-beosztás, magas kockázatú betegek követése. Természetes nyelvű felülettel ír az adatbázisba, és épp ez a kockázata: a nyelvi réteg megkerüli azt, ahol a kapuk vannak (kiadható-e az ágy, marad-e sürgősségi tartalék).\n\nAMIT A TÁRBÓL ÁTVETTÜNK: SEMMIT — nincs licence. AMIT A TÁR ADOTT: a működési területek felsorolása, ami kimutatta, hogy a rendszerben NEM VOLT sem ágykezelés, sem műtőbeosztás — csak NEAK-jelentés (`core/fekvo`) és WHO-ellenőrzőlista (`core/op`). Ebből lett a `core/fekvo/agy.ts` és a `core/op/muto.ts`, és a kettő nem az ügynök logikáját követi: a kapu marad kapu, a nyelvi felület pedig azon MEGY ÁT, nem mellette."
+      },
+      "allapot": "nem-beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "NINCS LICENCFÁJL — minden jog fenntartva, semmi nem vehető át."
+        }
+      },
+      "beszerzes": {
+        "allapot": "nem-beszerzett",
+        "megkiserelve": "2026-09-08",
+        "akadaly": "licenc hiánya",
+        "amitTudunk": "a megcélzott működési területek és a felület szerkezete",
+        "amitNemTudunk": "semmi, ami átvehető lenne"
+      }
+    }
+  ]
+}

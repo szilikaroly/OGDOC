@@ -1,0 +1,25 @@
+{
+  "megnevezes": "Analit-csoportok — ugyanaz a mérés, több mezőben",
+  "note": "A CSOPORT AZT MONDJA KI, HOGY KÉT MEZŐ UGYANAZT MÉRI.\n\nNem LOINC-azonosságról van szó: az éhomi vércukor és az OGTT nulla perces értéke KÜLÖNBÖZŐ LOINC-kódot visel (1558-6 és 14771-0), és klinikailag mégis ugyanaz a minta, ugyanabban az egységben. A gépi azonosítás ezért nem elég — a csoportot ki kell mondani.\n\nAmit a validáló ellenőriz: a csoport tagjai ugyanabban a kontextusban ugyanazt a kritikus küszöböt mondják-e. Ha nem, és a különbségnek nincs KIMONDOTT oka, az hiba.",
+  "csoportok": [
+    {
+      "id": "analit.glukoz.ehomi",
+      "megnevezes": "Éhomi vércukor (rutin és OGTT nulla perc)",
+      "egyseg": "mmol/L",
+      "tagok": [
+        "lab.glucose.fasting",
+        "lab.ogtt.0"
+      ],
+      "kontextusok": [
+        "nonpregnant",
+        "pregnancy.t1",
+        "pregnancy.t2",
+        "pregnancy.t3"
+      ],
+      "eltéresOka": {
+        "nonpregnant": "Terhességen kívül a rutin éhomi vércukor kritikus határa 7,0 mmol/L (cukorbetegség diagnosztikus küszöbe), az OGTT nulla perces értéke viszont terhességi szűrésre szolgál, és ott az 5,1-es küszöb marad érvényben — az OGTT-t terhességen kívül más javallattal végzik. A KÜLÖNBSÉG SZÁNDÉKOS, és ezért van kiírva."
+      },
+      "forras": "WHO: Diagnostic criteria and classification of hyperglycaemia first detected in pregnancy (2013); IADPSG consensus 2010"
+    }
+  ]
+}

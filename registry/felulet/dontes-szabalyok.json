@@ -1,0 +1,449 @@
+{
+  "id": "felulet.dontes.szabalyok",
+  "label": {
+    "hu": "A felülettérkép szabályai — döntési katalógus",
+    "en": "UI map rules — decision catalogue"
+  },
+  "note": {
+    "hu": "A 3. lépés (docs/13-18-lepes.md) nem 326 döntés, hanem 38: a 326 érintett mező mögött 38 szabály áll. Ez a katalógus a szabályok NORMATÍV MAGJÁT rögzíti — azt az egy mondatot, amit aláírnak. Ha ez a mondat megváltozik, a rá adott aláírás elavul, és újra kell dönteni. A `javaslat` NEM döntés: gépi javaslat, hogy az ülés áttekintés legyen, ne üres lap.",
+    "en": "38 rules behind the 326 fields. The `lenyeg` is what gets signed; changing it invalidates the signature."
+  },
+  "szerepek": {
+    "klinikus": "klinikai vezető",
+    "dpo": "adatvédelmi tisztviselő",
+    "fejlesztes": "fejlesztés",
+    "labor": "laboratóriumi szakorvos"
+  },
+  "szabalyok": [
+    {
+      "rule": "special",
+      "cim": "Különleges adat (GDPR 9. cikk)",
+      "lenyeg": "Különleges adat csak kifejezett, célhoz kötött hozzájárulással rögzíthető, és soha nem folyhat be csendben egy számításba.",
+      "javaslat": "atalakitva",
+      "mit": "Külön jelöléssel vesszük át; a számítás bemenete nem lehet, és exportba nem kerül.",
+      "kell": [
+        "dpo",
+        "klinikus"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "safetySensitive",
+      "cim": "A beteg biztonságát veszélyeztető adat",
+      "lenyeg": "Van adat, amit a `phi` jelölés nem véd meg: külön láthatósági szabály kell rá, mert egy nyomtatott dokumentumon megjelenve veszélyeztetheti a beteget.",
+      "javaslat": "atalakitva",
+      "mit": "Külön láthatósági szabállyal vesszük át; a dokumentumon való megjelenést önálló döntés engedi.",
+      "kell": [
+        "dpo",
+        "klinikus"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "insecureChannel",
+      "cim": "Különleges adat védtelen csatornán",
+      "lenyeg": "A különleges adat továbbítási módja nem a felület legördülőjének kérdése: a választás lehet a betegé, a csatorna biztonsága nem az.",
+      "javaslat": "nem",
+      "mit": "A csatornaválasztó mezőt nem vesszük át; a továbbítás módját szabályzat dönti el.",
+      "kell": [
+        "dpo"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "research",
+      "cim": "Kutatási adatgyűjtés a klinikai lapon",
+      "lenyeg": "Kutatási célú adat érvényes, visszavonható beleegyezés nélkül nem rögzíthető.",
+      "javaslat": "atalakitva",
+      "mit": "A `ctx.consentState` kapuja mögé kerül; visszavonáskor a gyűjtés leáll.",
+      "kell": [
+        "dpo"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "consentGate",
+      "cim": "Beleegyezés-kapu magán a számításon",
+      "lenyeg": "Nem az adat rögzítése, hanem maga a SZÁMÍTÁS beleegyezéshez kötött: tanácsadás és beleegyezés nélkül a szűrési kockázat nem számolható ki és nem közölhető.",
+      "javaslat": "atalakitva",
+      "mit": "A kapu a kalkulátor előtt zár, nem a mező előtt.",
+      "kell": [
+        "dpo",
+        "klinikus"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "incidentalMaternal",
+      "cim": "Magzati címke alatt anyai lelet",
+      "lenyeg": "A vizsgálat olyat talál, amit nem kerestek, és nem is arról, akiről a lap szól; a mellékleletek közlésére a beleegyezésnek külön ki kell terjednie.",
+      "javaslat": "atalakitva",
+      "mit": "Anyai alanyú leletként rögzül, külön beleegyezési tétellel.",
+      "kell": [
+        "dpo",
+        "klinikus"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "unitDuplicate",
+      "cim": "Párhuzamos mértékegység",
+      "lenyeg": "Az egység az ÉRTÉKHEZ tartozik és a megjelenítés váltja át; több párhuzamos mező többféle igazságot tud tárolni ugyanarról.",
+      "javaslat": "atalakitva",
+      "mit": "Egy változó UCUM-egységgel; a párhuzamos mezők megjelenítéssé válnak.",
+      "kell": [
+        "fejlesztes",
+        "klinikus"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "unitMismatch",
+      "cim": "Az egység nem az, amiben a küszöb ki van mondva",
+      "lenyeg": "A szám önmagában helyes lehet, a rá alkalmazott küszöb mégis téves — és a tévedés csendes, mert a mező neve stimmel.",
+      "javaslat": "atalakitva",
+      "mit": "Érték + UCUM-egység; a döntési határ a kimondott egységében fut.",
+      "kell": [
+        "fejlesztes",
+        "klinikus"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "handTotal",
+      "cim": "Kézzel beírt végösszeg",
+      "lenyeg": "A bejelölt összetevők mellé beírt végösszeg ellentmondhat nekik, és a pontszám alapján születik a döntés.",
+      "javaslat": "atalakitva",
+      "mit": "Az összeg levezetett; csak az összetevők vihetők be.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "allNegative",
+      "cim": "Egyetlen pipa több állítás helyett",
+      "lenyeg": "Egy jelölőnégyzet nem állíthat negatívumot olyan tételekről, amelyekről külön-külön nem nyilatkoztak.",
+      "javaslat": "atalakitva",
+      "mit": "Tételenkénti háromállapotú válasz; az „összes negatív” kitöltési segéd marad, nem tárolt állítás.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "subjectAmbiguous",
+      "cim": "Kinek az adata?",
+      "lenyeg": "Egy leletnél az alany a lelet fele; az alany nem a képernyő elrendezéséből derül ki.",
+      "javaslat": "atalakitva",
+      "mit": "Alany szerint hatókörözve (`scopedBy`); alany nélküli mérés nem rögzíthető.",
+      "kell": [
+        "klinikus",
+        "fejlesztes"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "pairedSubjects",
+      "cim": "Egy sorban két alany értéke",
+      "lenyeg": "Két alany értéke egy sorban a felületen kényelmes, az adatmodellben nem átvehető: egy lekérdezés nem tudja megmondani, kinek az értékét nézi.",
+      "javaslat": "atalakitva",
+      "mit": "Két változó, alany szerinti példánnyal.",
+      "kell": [
+        "klinikus",
+        "fejlesztes"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "synonymDuplicate",
+      "cim": "Ugyanaz az adat két néven",
+      "lenyeg": "Két mező ugyanarról a mérésről két különböző számot tud tárolni, és nem lesz eldönthető, melyik a mért.",
+      "javaslat": "atalakitva",
+      "mit": "Egy fogalom, szinonimákkal; a második mező nem önálló tárolóhely.",
+      "kell": [
+        "klinikus",
+        "fejlesztes"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "labelSuspect",
+      "cim": "Gyanús mezőcímke",
+      "lenyeg": "A felirat más lapról származhat, és ezen a lapon értelmezhetetlen.",
+      "javaslat": "nem",
+      "mit": "A címkét nem vesszük át; a helyes megnevezés szakmai forrásból jön.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "valueSetSuspect",
+      "cim": "Hibás értékkészlet gyanúja",
+      "lenyeg": "A mező legördülője más mező készletét mutatja — átvéve a betegre nézve ellentétes állítást is tehet.",
+      "javaslat": "nem",
+      "mit": "Az értékkészletet nem vesszük át; a helyes kódlista szakmai forrásból jön.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "orderTracking",
+      "cim": "Megrendelve ≠ eredmény",
+      "lenyeg": "A kintlévő lelet nem üres mező, hanem tartozás: az üres mező azt üzeni, nincs mit tudni, a „megrendelve, eredmény nincs” azt, hogy van, csak még nem tudjuk.",
+      "javaslat": "atalakitva",
+      "mit": "Megrendelve · eredmény · nincs eredmény külön állapot; a kintlévőség feladatot generál.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "noResultState",
+      "cim": "A „nincs eredmény” önálló állapot",
+      "lenyeg": "A „nincs eredmény” nem üres mező és nem negatív lelet: külön oka van, és az ok maga is információ.",
+      "javaslat": "atalakitva",
+      "mit": "Megnevezett okkal rögzül, önálló állapotként.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "refusalState",
+      "cim": "Elutasítás mint önálló állapot",
+      "lenyeg": "Az elutasított vizsgálat üresen hagyott mezőként mulasztásnak látszik, holott dokumentált betegdöntés, ami az ellátás teljességét igazolja.",
+      "javaslat": "atalakitva",
+      "mit": "Hatodik lelet-állapotként rögzül, a felajánlás tényével együtt.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "uncertainSignificance",
+      "cim": "Bizonytalan jelentőségű eltérés (VUS)",
+      "lenyeg": "A VUS nem enyhébb kóros és nem majdnem normális, hanem MÁS: kórosként döntést alapoznak rá, normálisként a későbbi újraértékelés vész el.",
+      "javaslat": "atalakitva",
+      "mit": "Harmadik eredménykategóriaként rögzül, újraértékelésre megjelölve.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "screeningOnly",
+      "cim": "Szűrés, nem diagnózis",
+      "lenyeg": "Az „alacsony kockázat” nem negatív lelet, és ennek a leleten ott kell lennie — enélkül a szűrés eredménye diagnózisnak látszik.",
+      "javaslat": "atalakitva",
+      "mit": "A lelet magával hordja a szűrés korlátját.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "boundaryNote",
+      "cim": "Határérték-figyelmeztetés",
+      "lenyeg": "A 0% és a 100% nem bizonyosság, hanem a számítás határértéke; a szám korlátja ott áll, ahol a szám.",
+      "javaslat": "atalakitva",
+      "mit": "A korlát a számmal együtt jelenik meg, nem lábjegyzetben.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "criticalCategory",
+      "cim": "Kategória, nem szám",
+      "lenyeg": "Az érték fokozatai súlyosbodó klinikai állapotot jelölnek, és a legsúlyosabb fokozat sürgős döntést kívánhat — numerikus mező mellé rejtve elveszne.",
+      "javaslat": "atalakitva",
+      "mit": "Kódolt kategória; a legsúlyosabb fokozat sürgősségi jelzést ad.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "invalidates",
+      "cim": "Az eredményt érvénytelenítő adat",
+      "lenyeg": "Ez a jelölés megváltoztatja vagy érvényteleníti az eredmény jelentését; címkeként rögzítve látszik, de nem véd.",
+      "javaslat": "atalakitva",
+      "mit": "Az eredménnyel EGYÜTT jelenik meg, és kapuként viselkedik.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "safetyPrecheck",
+      "cim": "Biztonsági előellenőrzés három állapottal",
+      "lenyeg": "A bejelöletlen négyzet nem különbözteti meg a „nem normális”-t a „nem néztük meg”-től; a „nem ellenőrizve” külön érték, és nem hagyható el.",
+      "javaslat": "atalakitva",
+      "mit": "Rendben · nincs rendben · nem ellenőrizve; a harmadik állapot kötelező.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "contraindication",
+      "cim": "Kontraindikáció-kapu",
+      "lenyeg": "Az ellenjavallat a kezelés feltétele, nem adminisztratív pipa: bejelöletlenül a kezelés nem indítható.",
+      "javaslat": "atalakitva",
+      "mit": "Hard-stop a kezelés előtt, indoklással.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "irreversible",
+      "cim": "Visszafordíthatatlan lépés",
+      "lenyeg": "A kapunak a lépés ELŐTT kell zárnia; utólagos dokumentálás nem pótolja a hiányzó feltételt.",
+      "javaslat": "atalakitva",
+      "mit": "A kapu a beavatkozás előtt fut le.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "traceable",
+      "cim": "Nyomonkövetési követelmény",
+      "lenyeg": "Gyártási tétel szintjén vissza kell lennie kereshetőnek, ki melyik készítményt kapta; a megőrzési ideje eltér a leletétől.",
+      "javaslat": "atalakitva",
+      "mit": "Tételszám kötelező mező, saját megőrzési idővel.",
+      "kell": [
+        "klinikus",
+        "dpo"
+      ],
+      "felelos": "dpo"
+    },
+    {
+      "rule": "crossEpisode",
+      "cim": "Epizódok közötti hivatkozás",
+      "lenyeg": "A beavatkozás megelőzi azt az epizódot, amelyben a hatása jelentkezik; összekapcsolás nélkül láthatatlan ott, ahol számít.",
+      "javaslat": "atalakitva",
+      "mit": "Epizódok közötti hivatkozásként vesszük át, nem másolatként.",
+      "kell": [
+        "klinikus",
+        "fejlesztes"
+      ],
+      "felelos": "fejlesztes"
+    },
+    {
+      "rule": "surgicallyAbsent",
+      "cim": "Műtéti előzmény mint szervállapot",
+      "lenyeg": "A műtéti előzmény miatt hiányzó szerv nem „nem ábrázolható” és nem „nincs adat”, hanem önálló szervállapot.",
+      "javaslat": "atalakitva",
+      "mit": "A beavatkozási adatból vezetjük le, nem ezen a lapon keletkezik.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "outcomeAudit",
+      "cim": "Audit-hurok: állítás és kimenetel",
+      "lenyeg": "A méhen belül mondott állítást a megszületett igazsággal kell szembesíteni; a rendszer egyiket sem írhatja felül a másikkal.",
+      "javaslat": "atalakitva",
+      "mit": "Mindkét állítás megmarad, a szembesítés külön adat.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "modelBacked",
+      "cim": "Modellhez kötött mező",
+      "lenyeg": "A mező értéke publikált modellből származik; hivatkozás nélkül a modell nem futhat, és a bemeneti csoport hiányos szám csak olyan modellhez elég, amelyik nem létezik.",
+      "javaslat": "atalakitva",
+      "mit": "A modell megnevezve és hivatkozva, hiánytalan bemeneti csoporttal (`calc.verified`).",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "versionedClassification",
+      "cim": "Verziózott osztályozás",
+      "lenyeg": "A besorolás megnevezése és verziója nélkül két intézmény ugyanazon kategóriája nem ugyanaz, és egy retrospektív stádium csendben mást jelent.",
+      "javaslat": "atalakitva",
+      "mit": "`codeSystem` + `version` kötelező a kategória mellé.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "lotCritical",
+      "cim": "Kapu a számításon: reagenstétel",
+      "lenyeg": "A MoM a reagenskészlet mediánsorához tartozik; más gyártó mediánsorával számolva csendben rossz — ugyanaz a szám, más jelentéssel.",
+      "javaslat": "atalakitva",
+      "mit": "Gyártó és tételszám nélkül a MoM nem számolható ki.",
+      "kell": [
+        "labor"
+      ],
+      "felelos": "labor"
+    },
+    {
+      "rule": "assayBound",
+      "cim": "Vizsgálathoz kötött érték",
+      "lenyeg": "A teljesítmény és a referencia a megnevezett gyártóhoz, platformhoz vagy reagenshez tartozik; megnevezés nélkül az érték nem hasonlítható össze és nem ellenőrizhető vissza.",
+      "javaslat": "atalakitva",
+      "mit": "A vizsgálat megnevezése az érték része.",
+      "kell": [
+        "labor"
+      ],
+      "felelos": "labor"
+    },
+    {
+      "rule": "contextualThreshold",
+      "cim": "Kontextusfüggő referencia",
+      "lenyeg": "A küszöb nem a változóhoz tartozik, hanem a változó ÉS a kontextus párjához; kontextus nélkül nincs referenciatartomány, és nem az általános sáv az alapértelmezés.",
+      "javaslat": "atalakitva",
+      "mit": "A referencia a kontextussal együtt kerül be; kontextus nélkül a rendszer nem értékel.",
+      "kell": [
+        "labor",
+        "klinikus"
+      ],
+      "felelos": "labor"
+    },
+    {
+      "rule": "operatorGate",
+      "cim": "Kompetencia-kapu",
+      "lenyeg": "A `calc.verified` a KÉPLETRŐL szól, ez a VIZSGÁLÓRÓL: egy helyes képlet rossz méréssel ugyanúgy rossz számot ad.",
+      "javaslat": "atalakitva",
+      "mit": "Akkreditált vizsgálóhoz kötve; engedélyszám nélkül a számítás nem fut.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "inputSelector",
+      "cim": "Bemenetválasztó",
+      "lenyeg": "Egy implicit bemenet visszamenőleg nem rekonstruálható: meg kell nevezni, melyik mért érték megy be a számításba.",
+      "javaslat": "atalakitva",
+      "mit": "Megnevezett, választott érték; nem „a legutolsó” és nem átlag.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    },
+    {
+      "rule": "ageForRisk",
+      "cim": "Életkor-kapu",
+      "lenyeg": "A kockázatszámításhoz nem a várandós mai életkora tartozik; ha a rendszer a rosszat használja, a kockázat némán téved — épp a megnyugtató irányba.",
+      "javaslat": "atalakitva",
+      "mit": "A kockázatszámítás életkora külön változó, megnevezett forrással.",
+      "kell": [
+        "klinikus"
+      ],
+      "felelos": "klinikus"
+    }
+  ]
+}

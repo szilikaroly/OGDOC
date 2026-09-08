@@ -1,0 +1,9 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A publikált görbék hitelesítése fetalis medicina szakorvos aláírását kívánja, FMF-engedélyszámmal — mert a magzati biometriánál a MÉRÉSI TECHNIKA is a hitelesítés tárgya. Amíg a lista üres, a betöltött publikált görbék `assumed` szinten állnak, és percentilist nem adnak. A helyi tábla (`ng.local.us-ac`) nem ide tartozik: az nem publikált görbe, a fedezete a `derivedFrom`. Munkalap: `npm run normogram`.",
+  "szerepek": {
+    "fetalis": "fetalis medicina szakorvos, FMF-engedélyszámmal — a magzati biometria és Doppler",
+    "neonatologus": "neonatológus — a születési súly- és testméret-görbék",
+    "szuleszet": "szülész-nőgyógyász szakorvos — a méhnyak- és magzatvíz-görbék"
+  },
+  "hitelesitesek": []
+}

@@ -1,0 +1,727 @@
+[
+  {
+    "id": "doc.zarojelentes",
+    "label": {
+      "hu": "Zárójelentés",
+      "en": "Discharge summary"
+    },
+    "module": "zarojelentes",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "patient.birthDate",
+      "ctx.now"
+    ],
+    "optional": [
+      "ctx.ga",
+      "anthro.bmi",
+      "nb.apgar.total"
+    ],
+    "signature": {
+      "author": true,
+      "countersign": true
+    },
+    "retention": {
+      "period": "P50Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — zárójelentés, legalább 50 év",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "A fekvőbeteg-ellátás lezáró dokumentuma."
+      },
+      "pitfalls": {
+        "hu": "A leghosszabb megőrzési idejű dokumentum. Ellenjegyzést igényel, és kitöltetlen sablonhelyet nem tartalmazhat — ahol adat hiányzik, ott az hiányként jelenik meg, nem üres mezőként."
+      }
+    }
+  },
+  {
+    "id": "doc.ambulans-lap",
+    "label": {
+      "hu": "Ambuláns lap",
+      "en": "Outpatient record"
+    },
+    "module": "zarojelentes",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "ctx.ga",
+      "vitals.bp.systolic",
+      "vitals.bp.diastolic"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onClose"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "A járóbeteg-ellátási esemény dokumentuma."
+      },
+      "pitfalls": {
+        "hu": "A leggyakoribb dokumentum. A lezárás automatikus beküldést indít, ezért a lezárás előtti hiányellenőrzés itt a legfontosabb."
+      }
+    }
+  },
+  {
+    "id": "doc.gyogyszerfelires",
+    "label": {
+      "hu": "Gyógyszerfelírás",
+      "en": "Prescription"
+    },
+    "module": "gyogyszereles",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "patient.birthDate"
+    ],
+    "optional": [
+      "ctx.ga",
+      "hx.sys.asthma",
+      "rule.carboprost.blocked"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "erecept",
+      "when": "onIssue"
+    },
+    "patientCopy": false,
+    "documentation": {
+      "definition": {
+        "hu": "Gyógyszerrendelés, elektronikus recept formájában."
+      },
+      "pitfalls": {
+        "hu": "A hard-stop kontraindikáció-kapuk ITT hatnak. Kapuzott szer felírása indoklás nélkül nem folytatható, és az indoklás a dokumentum része. Terhességi hét nélkül a trimeszterfüggő tiltások nem értékelhetők ki."
+      }
+    }
+  },
+  {
+    "id": "doc.vizsgalati-lap",
+    "label": {
+      "hu": "Vizsgálati lap",
+      "en": "Examination record"
+    },
+    "module": "vizsgalatok",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "vitals.bp.systolic",
+      "vitals.pulse",
+      "lab.plt",
+      "lab.cr",
+      "lab.ast",
+      "ekg.qt"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "Diagnosztikus vizsgálat lelete."
+      },
+      "pitfalls": {
+        "hu": "A képalkotó FELVÉTEL és a LELET megőrzési ideje eltér egymástól. A lelet ebben a dokumentumban él; a felvétel a PACS-ban, saját megőrzéssel."
+      }
+    }
+  },
+  {
+    "id": "doc.terhesgondozasi-lap",
+    "label": {
+      "hu": "Terhesgondozási lap",
+      "en": "Antenatal care record"
+    },
+    "module": "ellatas-tervezes",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.lmp",
+      "ctx.ga",
+      "ctx.edd"
+    ],
+    "optional": [
+      "anthro.bmi",
+      "anthro.weight.current",
+      "vitals.bp.systolic",
+      "vitals.bp.diastolic",
+      "status.obs.fundalHeight",
+      "us.efw",
+      "ctx.gaSource",
+      "ctx.multiple",
+      "ctx.conception",
+      "ctx.parity.gravida",
+      "ctx.parity.para"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onClose"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "A várandósgondozás folyamatos dokumentuma, vizitenként bővülve."
+      },
+      "pitfalls": {
+        "hu": "NEM egyszeri dokumentum: a terhesség egészén át bővül, és a beteg példánya (kismamakönyv) minden viziten frissül. A gesztációs kor forrását (`gaSource`) fel kell tüntetni — IVF-nél a transzfer dátuma, egyébként a korai CRL."
+      }
+    }
+  },
+  {
+    "id": "doc.terhessegi-kockazat",
+    "label": {
+      "hu": "Terhességi kockázatértékelés",
+      "en": "Pregnancy risk assessment"
+    },
+    "module": "ellatas-tervezes",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.ga"
+    ],
+    "optional": [
+      "anthro.bmi",
+      "vitals.bp.systolic",
+      "lab.plt",
+      "lab.cr",
+      "lab.ast",
+      "hx.sys.asthma",
+      "vitals.shockIndex"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "A várandósság kockázati besorolása és annak indoklása."
+      },
+      "pitfalls": {
+        "hu": "A besorolás mellett KÖTELEZŐ megjeleníteni, mely tényezők emelték — és azt is, mely score nem volt számolható, mert hiányzott a bemenete. Egy kockázatértékelés, ami elhallgatja a hiányzó adatot, hamis megnyugtatás."
+      }
+    }
+  },
+  {
+    "id": "doc.beutalo",
+    "label": {
+      "hu": "Beutaló",
+      "en": "Referral"
+    },
+    "module": "ellatas-tervezes",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "patient.birthDate",
+      "ctx.now"
+    ],
+    "optional": [
+      "ctx.ga"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "ebeutalo",
+      "when": "onIssue"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "Beutalás szakellátásba vagy diagnosztikába."
+      },
+      "pitfalls": {
+        "hu": "A beutaló indoklása strukturált: a kiváltó lelet azonosítója rákerül. A `10-click-open.md` javaslatmotorja ebből generálja a beutaló-javaslatot."
+      }
+    }
+  },
+  {
+    "id": "doc.javaslat",
+    "label": {
+      "hu": "Diétás vagy szakorvosi javaslat",
+      "en": "Dietary or specialist recommendation"
+    },
+    "module": "dieta",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "anthro.bmi",
+      "ctx.ga",
+      "lab.plt"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onIssue"
+    },
+    "patientCopy": true,
+    "documentation": {
+      "definition": {
+        "hu": "A betegnek adott, írásos szakmai javaslat."
+      },
+      "pitfalls": {
+        "hu": "A beteg kezébe kerülő tájékoztatás. A megfogalmazásokat klinikusnak kell jóváhagynia, és a 25. modul verziózásán kell átmennie."
+      }
+    }
+  },
+  {
+    "id": "doc.epikrizis",
+    "label": {
+      "hu": "Epikrízis",
+      "en": "Clinical summary"
+    },
+    "module": "epikrizis",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "ctx.ga",
+      "anthro.bmi",
+      "vitals.bp.systolic",
+      "lab.plt"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": false,
+    "expects": [],
+    "documentation": {
+      "definition": {
+        "hu": "A rögzített adatból generált narratív klinikai összefoglaló."
+      },
+      "pitfalls": {
+        "hu": "A K26 döntéssel ez ELLÁTÁSI DOKUMENTÁCIÓ, nem belső munkaanyag — tehát beküldendő és megőrzendő. Következmény: a narratíva nem tartalmazhat olyan állítást, ami nincs a rögzített adatban, mert most már jogilag is a dokumentáció része. Nincs nyelvi modell a folyamatban: determinisztikus sablongenerálás."
+      }
+    }
+  },
+  {
+    "id": "doc.partogram",
+    "label": {
+      "hu": "Partogram",
+      "en": "Partogram"
+    },
+    "module": "szuloszoba",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.ga"
+    ],
+    "optional": [
+      "exam.cervix.dilation",
+      "exam.cervix.effacement",
+      "exam.cervix.station",
+      "vitals.bp.systolic",
+      "vitals.bp.diastolic",
+      "vitals.pulse",
+      "score.bishop.total"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onClose"
+    },
+    "patientCopy": true,
+    "expects": [],
+    "documentation": {
+      "definition": {
+        "hu": "A vajúdás grafikus és táblázatos időbeli dokumentuma."
+      },
+      "pitfalls": {
+        "hu": "A K26 döntéssel ELLÁTÁSI DOKUMENTÁCIÓ. Nem egyszeri dokumentum: IDŐSOR, ami a vajúdás alatt folyamatosan bővül, és a beküldés a lezáráskor történik, nem bejegyzésenként. Az idősornak túl kell élnie az oldalbetöltést — ez volt az örökölt rendszer legfőbb hibája."
+      }
+    }
+  },
+  {
+    "id": "doc.muteti-terv",
+    "label": {
+      "hu": "Műtéti terv",
+      "en": "Surgical plan"
+    },
+    "module": "muto",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "anthro.bmi",
+      "lab.plt",
+      "lab.cr",
+      "hx.sys.asthma",
+      "ctx.ga"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": true,
+    "expects": [
+      "doc.aneszt-terv"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A tervezett beavatkozás, indikációja és a betegbeleegyezés alapja."
+      },
+      "pitfalls": {
+        "hu": "Sürgős műtétnél NEM készül előzetesen. A rendszer ezt hiányként jelzi, de a műtéti leírás rögzítését nem blokkolja — a dokumentálás megtagadása sürgős ellátásban ártalmas."
+      }
+    }
+  },
+  {
+    "id": "doc.aneszt-terv",
+    "label": {
+      "hu": "Aneszteziológiai terv",
+      "en": "Anaesthesia plan"
+    },
+    "module": "muto",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "anthro.bmi",
+      "anthro.weight.current",
+      "hx.sys.asthma",
+      "lab.plt",
+      "ekg.qtc.fridericia"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": false,
+    "expects": [],
+    "documentation": {
+      "definition": {
+        "hu": "Az aneszteziológiai kivizsgálás és a tervezett érzéstelenítés."
+      },
+      "pitfalls": {
+        "hu": "Az ASA-besorolás, a légútbiztosítás megítélése és az éhgyomri állapot itt rögzül. A megnyúlt QTc és az asztma innen kerül a szer-választásba — ezek a mezők a klinikai modulokból jönnek, nem újra beírva."
+      }
+    }
+  },
+  {
+    "id": "doc.muteti-zaro",
+    "label": {
+      "hu": "Műtéti záró (műtéti leírás)",
+      "en": "Operative report"
+    },
+    "module": "muto",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "ctx.ga",
+      "lab.plt",
+      "nb.apgar.total"
+    ],
+    "signature": {
+      "author": true,
+      "countersign": true
+    },
+    "retention": {
+      "period": "P30Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (1) — egészségügyi dokumentáció, legalább 30 év az adatfelvételtől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": {
+      "kind": "egeszsegugyi-dokumentum",
+      "when": "onSign"
+    },
+    "patientCopy": true,
+    "expects": [
+      "doc.muteti-terv",
+      "doc.aneszt-terv"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az elvégzett beavatkozás strukturált leírása."
+      },
+      "pitfalls": {
+        "hu": "A WHO checklist mindhárom fázisa kitöltetlenül BLOKKOLJA a lezárást — ez klinikai kapu, a modulban. A hiányzó műtéti vagy aneszteziológiai terv viszont csak JELZÉS: sürgős császármetszésnél nincs előzetes terv, és ettől a leírás rögzítését nem szabad megtagadni. Az elvégzett beavatkozásból automatikusan képződik OENO-kódajánlás."
+      }
+    }
+  },
+  {
+    "id": "doc.kepalkoto-felvetel",
+    "label": {
+      "hu": "Képalkotó felvétel",
+      "en": "Diagnostic image"
+    },
+    "module": "vizsgalatok",
+    "careRecord": true,
+    "requires": [
+      "patient.taj",
+      "ctx.now"
+    ],
+    "optional": [
+      "us.bpd",
+      "us.hc",
+      "us.ac",
+      "us.fl"
+    ],
+    "signature": {
+      "author": true
+    },
+    "retention": {
+      "period": "P10Y",
+      "from": "recordClose",
+      "source": "1997. évi XLVII. tv. (Eüak.) 30. § (2) — képalkotó felvétel, 10 év a készítéstől",
+      "verification": "secondary",
+      "verifiedNote": "Egybehangzó másodlagos forrásokból megerősítve (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat). Az ELSŐDLEGES jogszabályszöveg összevetése még hátravan — addig automatikus törlés nem indul.",
+      "extendableFor": [
+        "gyógykezelés",
+        "tudományos kutatás"
+      ],
+      "patientRequest": {
+        "noticeBeforeDeletion": true,
+        "extendable": true
+      }
+    },
+    "eeszt": null,
+    "patientCopy": true,
+    "expects": [
+      "doc.vizsgalati-lap"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A képalkotó diagnosztikai eljárással készült felvétel (a PACS-ban)."
+      },
+      "pitfalls": {
+        "hu": "A FELVÉTEL megőrzési ideje 10 év, a róla készült LELETÉ 30 — ez a leggyakrabban összemosott pár. A felvétel a PACS-ban él, a lelet a vizsgálati lapon; a kettő külön megőrzési politikát kíván, és a mentési rend (ld. megfeleles/13-uzemeltetes.md) is ehhez igazodik. Maga a felvétel nem az EESZT-be megy — a lelet igen."
+      }
+    }
+  }
+]

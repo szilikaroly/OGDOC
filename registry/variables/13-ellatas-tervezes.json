@@ -1,0 +1,769 @@
+[
+  {
+    "id": "plan.delivery.intendedMode",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tervezett szülésmód"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "vaginal",
+        "label_hu": "Hüvelyi szülés"
+      },
+      {
+        "code": "tolac",
+        "label_hu": "Hüvelyi szülés császármetszés után (TOLAC)"
+      },
+      {
+        "code": "electiveCs",
+        "label_hu": "Elektív ismételt császármetszés"
+      },
+      {
+        "code": "primaryCs",
+        "label_hu": "Elsődleges császármetszés (javallattal)"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még nincs eldöntve",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A megbeszélt, dokumentált szülésmód-terv."
+      },
+      "pitfalls": {
+        "hu": "A „még nincs eldöntve” ÖNÁLLÓ, ÉRVÉNYES érték, nem hiányzó adat. A terv felülvizsgálható: a mező sorozat, és minden változtatás megmarad az előzménnyel együtt."
+      },
+      "whyItMatters": {
+        "hu": "A terv rögzítése nem kötelezettségvállalás. A szülés alatt megváltozhat; a dokumentált szándék attól még számít, mert ehhez képest értelmezhető minden eltérés."
+      }
+    }
+  },
+  {
+    "id": "plan.delivery.patientPreference",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A beteg preferenciája a szülésmódról"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "vaginal",
+        "label_hu": "Hüvelyi szülést szeretne"
+      },
+      {
+        "code": "cs",
+        "label_hu": "Császármetszést szeretne"
+      },
+      {
+        "code": "noPreference",
+        "label_hu": "Nincs határozott preferenciája"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még gondolkodik",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Amit a beteg maga szeretne — a szakmai javaslattól függetlenül rögzítve."
+      },
+      "pitfalls": {
+        "hu": "Ezt a mezőt NEM szabad a szakmai javaslattal kitölteni. Ha a beteg preferenciája megegyezik a javaslattal, az adat; ha eltér, az a legfontosabb adat az egész tervben."
+      },
+      "whyItMatters": {
+        "hu": "A megosztott döntéshozatal utólagos felülvizsgálatakor ez az egyetlen mező, ami megmutatja, hogy a beteg hangja megjelent-e a döntésben."
+      }
+    }
+  },
+  {
+    "id": "plan.delivery.sharedDecision",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megosztott döntéshozatal megtörtént"
+    },
+    "module": "plan",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Megtörtént-e a szülésmódról szóló tájékoztató beszélgetés."
+      },
+      "pitfalls": {
+        "hu": "A pipa ÖNMAGÁBAN nem nyitja meg a kaput: a megbeszélt lehetőségek felsorolása (`plan.delivery.optionsDiscussed`) is kell. Az egyetlen felkínált út melletti beleegyezés nem döntés."
+      },
+      "whyItMatters": {
+        "hu": "Ugyanaz a kapu, mint a terhesség alatti daganatnál (12. modul) — a rendszer nem a döntést kényszeríti ki, hanem a beszélgetést."
+      }
+    }
+  },
+  {
+    "id": "plan.delivery.optionsDiscussed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A szülés módjánál megbeszélt lehetőségek"
+    },
+    "module": "plan",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Mely szülésmódok kerültek szóba, és milyen kockázatokkal."
+      },
+      "pitfalls": {
+        "hu": "SZÁNDÉKOSAN szabad szöveg. Egy kódlista itt előre eldöntené, mi a felkínálható — és a modul lényege éppen az, hogy ez esetenként más."
+      },
+      "whyItMatters": {
+        "hu": "Ez a mező különbözteti meg a beleegyezést a döntéstől. Ha csak egy út szerepel benne, a beteg beleegyezett valamibe, de nem választott."
+      }
+    }
+  },
+  {
+    "id": "plan.delivery.rationale",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A szülésmód-döntés indoklása"
+    },
+    "module": "plan",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Miért ez a terv — a szakmai és a beteg-oldali szempontok együtt."
+      },
+      "whyItMatters": {
+        "hu": "Egy későbbi felülvizsgálatban ez az, ami a leginkább számít: nem az, hogy mi lett a döntés, hanem hogy mi alapján."
+      }
+    }
+  },
+  {
+    "id": "plan.institution.tolacCapable",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az intézmény TOLAC-feltételei adottak"
+    },
+    "module": "plan",
+    "datatype": "tristate",
+    "documentation": {
+      "definition": {
+        "hu": "24 órás aneszteziológiai háttér és azonnali császármetszés lehetősége."
+      },
+      "pitfalls": {
+        "hu": "A „nem tudjuk” NEM jelenti azt, hogy adottak. A TOLAC felajánlása feltételek nélkül nem javallat, hanem kockázat áthárítása."
+      },
+      "whyItMatters": {
+        "hu": "A méhrepedés ritka, de perceken múlik. A feltétel intézményi tulajdonság, nem a betegé — mégis a beteg viseli a következményét."
+      }
+    },
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Adottak"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem adottak"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plan.birth.painRelief",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tervezett fájdalomcsillapítás"
+    },
+    "module": "plan",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Gyógyszermentes"
+      },
+      {
+        "code": "nonPharm",
+        "label_hu": "Nem gyógyszeres módszerek (mozgás, víz, masszázs)"
+      },
+      {
+        "code": "n2o",
+        "label_hu": "Nitrogén-oxidul"
+      },
+      {
+        "code": "opioid",
+        "label_hu": "Opioid"
+      },
+      {
+        "code": "epidural",
+        "label_hu": "Epidurális érzéstelenítés"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még nem döntött",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Amit a beteg a szülési tervben megjelölt."
+      },
+      "pitfalls": {
+        "hu": "A születési terv SZÁNDÉK, nem szerződés. A szülés alatti eltérés nem a terv megszegése; a terv attól még értelmes, mert megmutatja, mi fontos a betegnek."
+      }
+    }
+  },
+  {
+    "id": "plan.birth.companion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kísérő a szülésnél"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "partner",
+        "label_hu": "Partner"
+      },
+      {
+        "code": "relative",
+        "label_hu": "Más hozzátartozó"
+      },
+      {
+        "code": "doula",
+        "label_hu": "Dúla"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nem kér kísérőt"
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki lehet jelen a szülésnél a beteg kérése szerint."
+      },
+      "whyItMatters": {
+        "hu": "A folyamatos támogató jelenlét a szülés kimenetelét bizonyítottan javítja — kevesebb műtéti befejezés, rövidebb szülés, jobb élmény."
+      }
+    }
+  },
+  {
+    "id": "plan.birth.position",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kívánt szülési testhelyzet"
+    },
+    "module": "plan",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "free",
+        "label_hu": "Szabad testhelyzetválasztás"
+      },
+      {
+        "code": "upright",
+        "label_hu": "Függőleges (álló, guggoló, térdelő)"
+      },
+      {
+        "code": "sideLying",
+        "label_hu": "Oldalfekvő"
+      },
+      {
+        "code": "supine",
+        "label_hu": "Hanyatt"
+      },
+      {
+        "code": "water",
+        "label_hu": "Vízben"
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Amit a beteg a szülési tervben megjelölt."
+      }
+    }
+  },
+  {
+    "id": "plan.birth.skinToSkin",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bőr-bőr kontaktus kérése"
+    },
+    "module": "plan",
+    "datatype": "bool",
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Kéri-e a beteg az azonnali bőr-bőr kontaktust."
+      },
+      "whyItMatters": {
+        "hu": "A korai bőr-bőr kontaktus a szoptatás elindulását és a hőháztartást is javítja; császármetszésnél is megvalósítható, ha előre tervezik."
+      }
+    }
+  },
+  {
+    "id": "plan.birth.cordClamping",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Köldökzsinór-ellátás terve"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "delayed",
+        "label_hu": "Késleltetett lefogás (legalább 1 perc)"
+      },
+      {
+        "code": "immediate",
+        "label_hu": "Azonnali lefogás"
+      },
+      {
+        "code": "milking",
+        "label_hu": "Köldökzsinór-fejés"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A tervezett köldökzsinór-ellátás."
+      },
+      "pitfalls": {
+        "hu": "Az azonnali lefogás ma KIVÉTEL, nem alapeset: külön javallatot kíván (pl. újraélesztés igénye), és a terv ezt rögzítse."
+      }
+    }
+  },
+  {
+    "id": "plan.contraception.method",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tervezett szülés utáni fogamzásgátlás"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem tervez"
+      },
+      {
+        "code": "lam",
+        "label_hu": "Laktációs amenorrhoea (LAM)"
+      },
+      {
+        "code": "pop",
+        "label_hu": "Csak gesztagént tartalmazó tabletta"
+      },
+      {
+        "code": "coc",
+        "label_hu": "Kombinált hormonális"
+      },
+      {
+        "code": "implant",
+        "label_hu": "Implantátum"
+      },
+      {
+        "code": "iud.cu",
+        "label_hu": "Réztartalmú méhen belüli eszköz"
+      },
+      {
+        "code": "iud.lng",
+        "label_hu": "Levonorgesztrelt tartalmazó méhen belüli eszköz"
+      },
+      {
+        "code": "barrier",
+        "label_hu": "Barrier"
+      },
+      {
+        "code": "sterilisation",
+        "label_hu": "Sterilizáció"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még nem döntött",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A szülés utáni fogamzásgátlás megbeszélt módszere."
+      },
+      "pitfalls": {
+        "hu": "A kombinált hormonális készítmény a szülés utáni első hetekben a thromboembolia kockázata miatt, szoptatás mellett a tejtermelés miatt korlátozott. A módszer és az IDŐZÍTÉS együtt értelmes, külön nem."
+      },
+      "whyItMatters": {
+        "hu": "A szülés utáni fogamzásgátlás megbeszélésének legjobb ideje a terhesség, nem a hatnapos gyermekágy — az elbocsátáskor felajánlott döntés nem döntés."
+      }
+    }
+  },
+  {
+    "id": "plan.contraception.timing",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A fogamzásgátlás tervezett indítása"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "immediate",
+        "label_hu": "Közvetlenül a szülés után (48 órán belül)"
+      },
+      {
+        "code": "week3",
+        "label_hu": "3. hét után"
+      },
+      {
+        "code": "week6",
+        "label_hu": "6. hét után"
+      },
+      {
+        "code": "later",
+        "label_hu": "Később"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kezdődjön a választott módszer."
+      },
+      "whyItMatters": {
+        "hu": "A méhen belüli eszköz a szülés utáni 48 órán belül vagy a 4. hét után helyezhető fel; a köztes időszakban a kilökődés kockázata magasabb. Az időzítés tehát nem kényelmi kérdés."
+      }
+    }
+  },
+  {
+    "id": "plan.bf.intention",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szoptatási szándék"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "exclusive",
+        "label_hu": "Kizárólagos szoptatást tervez"
+      },
+      {
+        "code": "mixed",
+        "label_hu": "Vegyes táplálást tervez"
+      },
+      {
+        "code": "formula",
+        "label_hu": "Tápszeres táplálást tervez"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még nem döntött",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "standards": {
+      "ichom": "PCB087"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Amit a beteg a terhesség alatt tervez."
+      },
+      "pitfalls": {
+        "hu": "A szándék rögzítése NEM elvárás közlése. A tápszeres táplálás választása érvényes döntés, és a mező nem szolgálhat a rábeszélés eszközeként."
+      },
+      "whyItMatters": {
+        "hu": "ICHOM PCB-mutató: a szándék és a tényleges kimenetel különbsége az ellátás minőségét méri, nem a betegét."
+      }
+    }
+  },
+  {
+    "id": "plan.bf.previousExperience",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi szoptatási tapasztalat"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem volt korábbi szoptatás"
+      },
+      {
+        "code": "successful",
+        "label_hu": "Problémamentes"
+      },
+      {
+        "code": "difficult",
+        "label_hu": "Nehézségekkel járt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unable",
+        "label_hu": "Nem sikerült",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan alakult a szoptatás a korábbi gyermekeknél."
+      },
+      "whyItMatters": {
+        "hu": "A korábbi nehézség a legerősebb előrejelzője a mostaninak — és egyben az egyetlen olyan rizikófaktor, amit a terhesség alatti felkészítéssel érdemben lehet befolyásolni."
+      }
+    }
+  },
+  {
+    "id": "plan.consult.requested",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kért konzíliumok"
+    },
+    "module": "plan",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "seniorObstetric",
+        "label_hu": "Szülész szakorvosi (senior)"
+      },
+      {
+        "code": "cardiology",
+        "label_hu": "Terhes-kardiológia"
+      },
+      {
+        "code": "diabetology",
+        "label_hu": "Diabetológia"
+      },
+      {
+        "code": "psychiatry",
+        "label_hu": "Pszichiátria"
+      },
+      {
+        "code": "genetics",
+        "label_hu": "Klinikai genetika"
+      },
+      {
+        "code": "dietetics",
+        "label_hu": "Dietetika"
+      },
+      {
+        "code": "anaesthesiology",
+        "label_hu": "Aneszteziológia"
+      },
+      {
+        "code": "haematology",
+        "label_hu": "Haematológia"
+      },
+      {
+        "code": "neonatology",
+        "label_hu": "Neonatológia"
+      },
+      {
+        "code": "oncology",
+        "label_hu": "Onkológia"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mely konzíliumok kérése történt meg."
+      },
+      "pitfalls": {
+        "hu": "A rendszer JAVALLATOT állít fel, nem konzíliumot kér. A javallat és a megkérés két külön esemény, és a különbség pont az, ami minőségi mutatóként mérhető."
+      }
+    }
+  },
+  {
+    "id": "plan.consult.declined",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elutasított konzílium-javallat indoklása"
+    },
+    "module": "plan",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Ha egy automatikus konzílium-javallat nem valósul meg, itt az indok."
+      },
+      "whyItMatters": {
+        "hu": "A javallat elutasítása legitim klinikai döntés — de INDOKLÁS NÉLKÜL nem különböztethető meg attól, hogy egyszerűen elsikkadt."
+      }
+    }
+  },
+  {
+    "id": "plan.emergency.given",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Sürgősségi terv átadva"
+    },
+    "module": "plan",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Megkapta-e a beteg írásban, mikor kell azonnal jelentkeznie."
+      },
+      "whyItMatters": {
+        "hu": "A vörös zászlók felismerése a betegen múlik, amikor nincs ott az ellátó. A nyomtatott, saját nyelvű sürgősségi terv az egyetlen olyan eleme a tervnek, ami akkor hat, amikor a rendszer nem elérhető."
+      }
+    }
+  },
+  {
+    "id": "plan.emergency.language",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A sürgősségi terv nyelve"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "hu",
+        "label_hu": "Magyar"
+      },
+      {
+        "code": "en",
+        "label_hu": "Angol"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      },
+      {
+        "code": "notUnderstood",
+        "label_hu": "A beteg nyelvén nem állt rendelkezésre",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen nyelven kapta meg a beteg a sürgősségi tervet."
+      },
+      "pitfalls": {
+        "hu": "A „nem állt rendelkezésre a beteg nyelvén” vörös zászló: a tájékoztatás formálisan megtörtént, tartalmilag nem."
+      }
+    }
+  },
+  {
+    "id": "plan.nextVisit.at",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Következő vizit időpontja"
+    },
+    "module": "plan",
+    "datatype": "date",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A ténylegesen megbeszélt következő időpont."
+      },
+      "pitfalls": {
+        "hu": "Ez a MEGBESZÉLT időpont, nem a protokoll szerint esedékes. A kettő eltérése önmagában adat — a vizitrendtől való eltérés indoklása a `plan.nextVisit.rationale` mezőbe kerül."
+      }
+    }
+  },
+  {
+    "id": "plan.nextVisit.rationale",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Eltérés a vizitrendtől — indoklás"
+    },
+    "module": "plan",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Miért tér el a megbeszélt időpont a protokoll szerintitől."
+      },
+      "whyItMatters": {
+        "hu": "A vizitrend generált, a valóság nem. Az eltérés indoklás nélkül nem különböztethető meg a mulasztástól."
+      }
+    }
+  },
+  {
+    "id": "plan.protocolVersion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A gondozási protokoll verziója"
+    },
+    "module": "plan",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Melyik gondozási protokoll szerint készült a vizitrend."
+      },
+      "pitfalls": {
+        "hu": "Verzió nélkül egy retrospektív adat nem értelmezhető: nem derül ki, hogy egy „kihagyott” vizit a mai rend szerint hiányzik-e, vagy az akkori szerint nem is volt esedékes."
+      },
+      "whyItMatters": {
+        "hu": "Ugyanaz a probléma, mint a FIGO-stádiumoknál (12. modul): a szabály maga változik, nem csak az adat."
+      }
+    }
+  },
+  {
+    "id": "plan.reviewedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A terv felülvizsgálatának ideje"
+    },
+    "module": "plan",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor nézték át utoljára a tervet egészében."
+      },
+      "whyItMatters": {
+        "hu": "A terv romlandó: a 12. héten készült vizitrend a 32. hétre új rizikófaktorokkal szembesül. A felülvizsgálat dátuma nélkül nem tudható, hogy a terv aktuális-e vagy csak régi."
+      }
+    }
+  }
+]

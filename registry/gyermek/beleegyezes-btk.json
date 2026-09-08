@@ -1,0 +1,36 @@
+{
+ "id": "btk.beleegyezes",
+ "megnevezes": "Beleegyezési korhatár és büntethetőség — a magyar Btk. korviszony-mátrixa",
+ "modul": 29,
+ "verzio": "2026-09",
+ "forras": "Előadásdia: „Szexuális erőszak fogalma a magyar jogban” (2026). AZ EREDETI JOGSZABÁLYSZÖVEG NINCS ELLENŐRIZVE.",
+ "hivatkozas": "2012. évi C. törvény a Büntető Törvénykönyvről, 197–198. §",
+ "alairas": null,
+ "note": "EZ NEM JOGI TANÁCS, ÉS A TÁBLA ALÁÍRATLAN.\n\nA mátrix egy előadásdiáról származik, nem a hatályos jogszabályszöveg gépi feldolgozásából. Amíg jogász alá nem írja, a rendszer a besorolást KÖZLI, de nem következtet belőle: a `jogiBesorolas` tájékoztató, a klinikai teendőt nem ez dönti el.\n\nA KÉT DOLOG NEM UGYANAZ, ÉS EZ A LEGFONTOSABB SOR:\n\n  BÜNTETHETŐSÉG    a Btk. kérdése, és a korviszonytól függ. A 12–14 éves és a 14–18 éves fél közti cselekmény például NEM BÜNTETENDŐ.\n\n  JELZÉSI KÖTELEZETTSÉG  a gyermekvédelmi törvény (1997. évi XXXI. tv. 17. §) kérdése, és a VESZÉLYEZTETETTSÉG GYANÚJÁTÓL függ — nem attól, hogy bűncselekmény történt-e.\n\nA kettő összekeverése konkrét kárt okoz: aki a „nem büntetendő” cellát látja, azt hiheti, hogy nincs teendő. A jelzési kötelezettség ettől függetlenül fennállhat, és a mulasztás visszamenőleg nem pótolható. A modul ezért MINDIG külön mondja ki a kettőt.\n\nA 14 ÉV ALATTI GYERMEK NEM ADHAT ÉRVÉNYES BELEEGYEZÉST szexuális cselekménybe. Ez akkor is így van, ha az adott korviszony a Btk. szerint nem büntetendő — a beleegyezés hiánya és a büntethetőség hiánya két külön állítás.",
+ "korsavok": [
+  { "id": "sav.12a", "megnevezes": "12 év alatt", "min": 0, "maxKizarolag": 12 },
+  { "id": "sav.12_14", "megnevezes": "12–14 év között", "min": 12, "maxKizarolag": 14 },
+  { "id": "sav.14_18", "megnevezes": "14–18 év között", "min": 14, "maxKizarolag": 18 },
+  { "id": "sav.18f", "megnevezes": "18 év felett", "min": 18, "maxKizarolag": null }
+ ],
+ "besorolasok": {
+  "szexualisEroszak": "Szexuális erőszak (Btk. 197. §).",
+  "szexualisVisszaeles": "Szexuális visszaélés (Btk. 198. §).",
+  "csakMinositett": "Csak minősített esetekben büntetendő (pl. hatalmi vagy befolyási viszony, gondozói kapcsolat).",
+  "nemBuntetendo": "A Btk. szerint nem büntetendő. EZ NEM AZT JELENTI, HOGY NINCS TEENDŐ: a jelzési kötelezettség a veszélyeztetettség gyanújától függ, nem a büntethetőségtől.",
+  "nincsFelelosseg": "Nincs büntetőjogi felelősség (az idősebb fél a 14. életévét nem töltötte be, tehát nem büntethető). A gyermekvédelmi teendő ettől független és fennállhat."
+ },
+ "matrix": [
+  { "fiatalabb": "sav.12a",   "idosebb": "sav.12a",   "besorolas": "nincsFelelosseg" },
+  { "fiatalabb": "sav.12a",   "idosebb": "sav.12_14", "besorolas": "nincsFelelosseg" },
+  { "fiatalabb": "sav.12a",   "idosebb": "sav.14_18", "besorolas": "szexualisEroszak" },
+  { "fiatalabb": "sav.12a",   "idosebb": "sav.18f",   "besorolas": "szexualisEroszak" },
+  { "fiatalabb": "sav.12_14", "idosebb": "sav.12_14", "besorolas": "nincsFelelosseg" },
+  { "fiatalabb": "sav.12_14", "idosebb": "sav.14_18", "besorolas": "nemBuntetendo" },
+  { "fiatalabb": "sav.12_14", "idosebb": "sav.18f",   "besorolas": "szexualisVisszaeles" },
+  { "fiatalabb": "sav.14_18", "idosebb": "sav.14_18", "besorolas": "nemBuntetendo" },
+  { "fiatalabb": "sav.14_18", "idosebb": "sav.18f",   "besorolas": "csakMinositett" },
+  { "fiatalabb": "sav.18f",   "idosebb": "sav.18f",   "besorolas": "nemBuntetendo" }
+ ],
+ "beleegyezesiKorhatar": 14
+}

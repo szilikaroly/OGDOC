@@ -1,0 +1,7984 @@
+{
+ "source": "ICHOM Pregnancy & Childbirth Standard Set v5.0 (2025)",
+ "importedAt": "2026-09-01",
+ "count": 145,
+ "variables": [
+  {
+   "id": "admin.patient_id",
+   "version": 1,
+   "label": {
+    "en": "Patient ID",
+    "hu": null
+   },
+   "module": "admin",
+   "datatype": "quantity",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "On all forms"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "administrative or clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Indicate the patient's medical record number",
+    "supporting_en": "This number will not be shared with ICHOM. In the case patient-level data is submitted to ICHOM for benchmarking or research purposes, a separate ICHOM Patient Identifier will be created and cross-linking between the ICHOM Patient Identifier and the medical record number will only be known at the treating institution.",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB000",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": true,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.yearofbirth",
+   "version": 1,
+   "label": {
+    "en": "Year of Birth",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Year of birth",
+    "supporting_en": null,
+    "displayed_en": "In what year were you born?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB001",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.sex",
+   "version": 1,
+   "label": {
+    "en": "Sex",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Male"
+    },
+    {
+     "code": 2,
+     "label_en": "Female"
+    },
+    {
+     "code": 3,
+     "label_en": "Other"
+    },
+    {
+     "code": 999,
+     "label_en": "Undisclosed"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The patient's sex at birth",
+    "supporting_en": "For statistical purposes, the following category codes, labels and definitions are preferred:\n\nCODE 1 Male: Persons who have male or predominantly masculine biological characteristics, or male sex assigned at birth.\nCODE 2 Female: Persons who have female or predominantly feminine biological characteristics, or female sex assigned at birth.\nCODE 3 Other: Persons who have mixed or non-binary biological characteristics (if known), or a non-binary sex assigned at birth\n\nThe value meaning of 'Other' has been assigned to Code 3 for this value domain, which replaces 'Intersex or indeterminate' for the superseded value domain Sex code N. Terms such as 'indeterminate,' 'intersex', 'non-binary', and 'unspecified' are variously used to describe the 'Other' category of sex. The label 'Other' is used because a more descriptive term has not been widely agreed within the general community.\n\nSex refers to the chromosomal, gonadal and anatomical characteristics associated with biological sex. Where there is an inconsistency between anatomical and chromosomal characteristics, sex is based on anatomical characteristics.",
+    "displayed_en": "Please indicate your sex at birth.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB002",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.gender",
+   "version": 1,
+   "label": {
+    "en": "Gender Identity",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Boy/Man"
+    },
+    {
+     "code": 2,
+     "label_en": "Girl/Woman"
+    },
+    {
+     "code": 3,
+     "label_en": "Non-Binary"
+    },
+    {
+     "code": 4,
+     "label_en": "Trans man/Transgender Man/FTM"
+    },
+    {
+     "code": 5,
+     "label_en": "Trans woman/Transgender woman/MTF"
+    },
+    {
+     "code": 6,
+     "label_en": "None of these describe me"
+    },
+    {
+     "code": 999,
+     "label_en": "Prefer not to answer"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The patient's gender identity",
+    "supporting_en": "This measure should be recorded if appropriate and legal based on local standards in the particular geographic region, and should be self-reported by the patient. This is an optional question but ICHOM encourages that this information is collected. This data will help to support combating health disparities based on gender identity but all patient data regarding gender identity will be kept confidential. The patient’s response will then be coded based on LOINC’s standards. All patients may choose not to answer as well.",
+    "displayed_en": "Do you think of yourself as … ?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB003",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.educationlevel",
+   "version": 1,
+   "label": {
+    "en": "Level of Education",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Primary"
+    },
+    {
+     "code": 2,
+     "label_en": "Secondary"
+    },
+    {
+     "code": 3,
+     "label_en": "Tertiary"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Highest level of education completed based on local standard definitions of education levels",
+    "supporting_en": "This measure may vary based on local standards for education levels so please consult the International Standard Classification to select what level most closely relates to your education experience.  Please follow this link here: http://uis.unesco.org/sites/default/files/documents/international-standard-classification-of-education-isced-2011-en.pdf",
+    "displayed_en": "Please indicate your highest level of schooling.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB004",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.ethnicity",
+   "version": 1,
+   "label": {
+    "en": "Ethnicity",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "The cultural ethnicity of the person that they most closely identify with",
+    "supporting_en": "This measure should be recorded based on local standards in the particular geographic region and should be self-reported by the patient. This is an optional question but ICHOM encourages that this information is collected and is as racially and ethnically inclusive as possible. This data will help to support combating health disparities based on ethnicity but all patient data regarding race and ethnicity will be kept confidential. The patient’s response will then be coded based on LOINC’s standards. All patients may choose not to answer as well.",
+    "displayed_en": "Please indicate the ethnicity that you identify with",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB005",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.race",
+   "version": 1,
+   "label": {
+    "en": "Race",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "The biological race of the person",
+    "supporting_en": "This measure should be recorded based on local standards in the particular geographic region and should be self-reported by the patient. This is an optional question but ICHOM encourages that this information is collected and is as racially and ethnically inclusive as possible. This data will help to support combating health disparities based on race but all patient data regarding race and ethnicity will be kept confidential. The patient’s response will then be coded based on LOINC’s standards. All patients may choose not to answer as well.",
+    "displayed_en": "Please indicate the biological race that you identify with.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB006",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.mspss_q1",
+   "version": 1,
+   "label": {
+    "en": "MSPSS_Item2",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Very Strongly Disagree"
+    },
+    {
+     "code": 2,
+     "label_en": "Strongly Disagree"
+    },
+    {
+     "code": 3,
+     "label_en": "Mildly Disagree"
+    },
+    {
+     "code": 4,
+     "label_en": "Neutral"
+    },
+    {
+     "code": 5,
+     "label_en": "Mildly Agree"
+    },
+    {
+     "code": 6,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 7,
+     "label_en": "Very Strongly Agree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Multidimensional Scale of Perceived Social Support - Significant Other",
+    "supporting_en": null,
+    "displayed_en": "There is a special person with whom I can share joys and sorrows.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB007",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.mspss_q2",
+   "version": 1,
+   "label": {
+    "en": "MSPSS_Item7",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Very Strongly Disagree"
+    },
+    {
+     "code": 2,
+     "label_en": "Strongly Disagree"
+    },
+    {
+     "code": 3,
+     "label_en": "Mildly Disagree"
+    },
+    {
+     "code": 4,
+     "label_en": "Neutral"
+    },
+    {
+     "code": 5,
+     "label_en": "Mildly Agree"
+    },
+    {
+     "code": 6,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 7,
+     "label_en": "Very Strongly Agree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Multidimensional Scale of Perceived Social Support - Friends",
+    "supporting_en": null,
+    "displayed_en": "I can count on my friends when things go wrong.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB008",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "demog.mspss_q3",
+   "version": 1,
+   "label": {
+    "en": "MSPSS_Item4",
+    "hu": null
+   },
+   "module": "demog",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Very Strongly Disagree"
+    },
+    {
+     "code": 2,
+     "label_en": "Strongly Disagree"
+    },
+    {
+     "code": 3,
+     "label_en": "Mildly Disagree"
+    },
+    {
+     "code": 4,
+     "label_en": "Neutral"
+    },
+    {
+     "code": 5,
+     "label_en": "Mildly Agree"
+    },
+    {
+     "code": 6,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 7,
+     "label_en": "Very Strongly Agree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Multidimensional Scale of Perceived Social Support - Family",
+    "supporting_en": null,
+    "displayed_en": "I get the emotional help & support I need from my family.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB009",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.parity",
+   "version": 1,
+   "label": {
+    "en": "Parity",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Have you given birth before? This includes both vaginal births and Cesarean sections (operations to remove your baby from your abdomen). Please do not count miscarriages or births that happened before 20 weeks (5 months) of pregnancy.",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB010",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.obhx",
+   "version": 1,
+   "label": {
+    "en": "Obstetric history",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded-multi",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "This is my first pregnancy"
+    },
+    {
+     "code": 1,
+     "label_en": "A baby born early, more than 3 weeks before the due date"
+    },
+    {
+     "code": 2,
+     "label_en": "Bleeding so much during pregnancy, birth, or after giving birth that you needed to be given blood"
+    },
+    {
+     "code": 3,
+     "label_en": "A cesarean section (operation to remove your baby through your abdomen)"
+    },
+    {
+     "code": 4,
+     "label_en": "Loss of a pregnancy after 20 weeks (5 months) of pregnancy"
+    },
+    {
+     "code": 5,
+     "label_en": "Loss of a pregnancy before 20 weeks (5 months) of pregnancy (miscarriage)"
+    },
+    {
+     "code": 6,
+     "label_en": "Pregnancy outside the uterine cavity (also known as Ectopic Pregnancy)"
+    },
+    {
+     "code": 7,
+     "label_en": "Pregnancy-related diabetes (i.e. gestational diabetes)"
+    },
+    {
+     "code": 8,
+     "label_en": "Pregnancy-related hypertension (i.e., preeclampsia, eclampsia, gestational hypertension)"
+    },
+    {
+     "code": 9,
+     "label_en": "Assisted Reproductive Therapy (i.e., IVF (in-vitro fertilisation) and ICSI (intracytoplasmic sperm injection)                                                                                                                           10 = Other"
+    }
+   ],
+   "documentation": {
+    "definition_en": "If you have been pregnant before, have you experienced any of the following in previous pregnancies? Please mark all that apply.",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB011",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.comorbidities_pcb",
+   "version": 1,
+   "label": {
+    "en": "Comorbidities",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded-multi",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "no other diseases"
+    },
+    {
+     "code": 1,
+     "label_en": "Heart Disease (Angina, heart attack, or HF)"
+    },
+    {
+     "code": 2,
+     "label_en": "High Blood Pressure"
+    },
+    {
+     "code": 3,
+     "label_en": "Atrial Fibrillation or Flutter"
+    },
+    {
+     "code": 4,
+     "label_en": "Chronic Pulmonary Disease (Asthma, Chronic Bronchitis, COPD, Emphysema)"
+    },
+    {
+     "code": 5,
+     "label_en": "Type 1 Diabetes Mellitus"
+    },
+    {
+     "code": 6,
+     "label_en": "Type 2 Diabetes Mellitus"
+    },
+    {
+     "code": 7,
+     "label_en": "Peripheral Artery Disease"
+    },
+    {
+     "code": 8,
+     "label_en": "Presence/History of eating Disorder (e.g., Bulimia, Anorexia,etc)"
+    },
+    {
+     "code": 9,
+     "label_en": "Obesity"
+    },
+    {
+     "code": 10,
+     "label_en": "Stroke"
+    },
+    {
+     "code": 11,
+     "label_en": "Ulcer or stomach disease"
+    },
+    {
+     "code": 12,
+     "label_en": "Renal Insufficiency (Including Kidney Disease)"
+    },
+    {
+     "code": 13,
+     "label_en": "Liver Disease"
+    },
+    {
+     "code": 14,
+     "label_en": "Anemia or other blood disease"
+    },
+    {
+     "code": 15,
+     "label_en": "Cancer/Other Cancer in last 5 years"
+    },
+    {
+     "code": 16,
+     "label_en": "HIV/Immunodeficiency"
+    },
+    {
+     "code": 17,
+     "label_en": "Presence/History of Depression"
+    },
+    {
+     "code": 18,
+     "label_en": "Presence/History of Anxiety or Neurosis"
+    },
+    {
+     "code": 19,
+     "label_en": "Presence/History of Psychotic Mental Illness (e.g., Schizophrenia)"
+    },
+    {
+     "code": 20,
+     "label_en": "Substance Use"
+    },
+    {
+     "code": 21,
+     "label_en": "Osteoarthritis, degenerative arthritis"
+    },
+    {
+     "code": 22,
+     "label_en": "Rheumatoid Arthritis"
+    },
+    {
+     "code": 23,
+     "label_en": "Periodontal Disease"
+    },
+    {
+     "code": 24,
+     "label_en": "Epilepsy"
+    },
+    {
+     "code": 25,
+     "label_en": "Sickle Cell Disease"
+    },
+    {
+     "code": 26,
+     "label_en": "Thyroid Disease (e.g., hyper- or hypothyroidism, goiter, etc)                                                                                                                                                                                                  27 = Malaria                                                                                                                                                                                                                                                                                           28 = Tuberculosis                                                                                                                                                                                                                                                                                  29 = Malnutrition"
+    },
+    {
+     "code": 888,
+     "label_en": "Other Medical Problems"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Indicate which comorbidities the patient is living with. Select all that apply.",
+    "supporting_en": "Include ALL conditions that apply.",
+    "displayed_en": "Indicate which comorbidities the patient is living with. Select all that apply.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB012",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.pcb_pharmatx",
+   "version": 1,
+   "label": {
+    "en": "Pharmacological Treatment Drug",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded-multi",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Insulin therapy"
+    },
+    {
+     "code": 2,
+     "label_en": "Statins (e.g. atorvastatin, rosuvastatin, etc.)"
+    },
+    {
+     "code": 3,
+     "label_en": "SGLT2 Inhibitors"
+    },
+    {
+     "code": 4,
+     "label_en": "Metformin"
+    },
+    {
+     "code": 5,
+     "label_en": "Sulfonylurea"
+    },
+    {
+     "code": 6,
+     "label_en": "GLP1 Agonists"
+    },
+    {
+     "code": 7,
+     "label_en": "Antiplatelet agents (e.g. Aspirin, ASA,"
+    },
+    {
+     "code": 8,
+     "label_en": "Novel oral anticoagulant (NOAC)"
+    },
+    {
+     "code": 9,
+     "label_en": "Isosorbide Dinitrate"
+    },
+    {
+     "code": 10,
+     "label_en": "Angiotensin Receptor"
+    },
+    {
+     "code": 11,
+     "label_en": "Beta-blockers (e.g. metoprolol,"
+    },
+    {
+     "code": 12,
+     "label_en": "Vitamin K Antagonists (e.g."
+    },
+    {
+     "code": 13,
+     "label_en": "Mineralocorticoid Receptor"
+    },
+    {
+     "code": 14,
+     "label_en": "Angiotensin II Receptor"
+    },
+    {
+     "code": 15,
+     "label_en": "ACE Inhibitors (e.g. enalapril,"
+    },
+    {
+     "code": 16,
+     "label_en": "Loop diuretics (e.g. furosemide)"
+    },
+    {
+     "code": 17,
+     "label_en": "Anorectics"
+    },
+    {
+     "code": 18,
+     "label_en": "Lipase Inhibitors"
+    },
+    {
+     "code": 19,
+     "label_en": "Low Molecular Molecular Weight Heparin (LMWH) (I.e, Enoxaparin)"
+    },
+    {
+     "code": 20,
+     "label_en": "Antiemetics"
+    },
+    {
+     "code": 21,
+     "label_en": "Antiepileptics"
+    },
+    {
+     "code": 22,
+     "label_en": "Thyroid Agents"
+    },
+    {
+     "code": 23,
+     "label_en": "Antithyroid Agents                                                                                                                                                                                                                                                                       24 = Antiretrovirals                                                                                                                                                                                                                                                                               25 = Antimalarials                                                                                                                                                                                                                                                                                 26 = Semaglutide (ex. Ozempic)"
+    },
+    {
+     "code": 888,
+     "label_en": "Other"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Please indicate which of the following pharmacological treatments the patient is receiving.",
+    "supporting_en": null,
+    "displayed_en": "Please indicate which of the following pharmacological treatments the patient is receiving.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB013",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.multgest",
+   "version": 1,
+   "label": {
+    "en": "Multiple gestations",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "One baby"
+    },
+    {
+     "code": 2,
+     "label_en": "Two babies (twins)"
+    },
+    {
+     "code": 3,
+     "label_en": "Three or more babies (triplets or higher)"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Are you pregnant with:",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB014",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.heightvalue",
+   "version": 1,
+   "label": {
+    "en": "Body height",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "quantity",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "The height of a person, measured in the indicated units",
+    "supporting_en": "\"The measurement protocol described below are those recommended by the International Society for the Advancement of Kinanthropometry as described by Norton et al. (1996), and the World Health Organization (WHO Expert Committee 1995), which was adapted from Lohman et al. (1988).\n\nMeasurement protocol:\n\nHeight measurements can be based on recumbent length or standing height. In general, length measurements are recommended for children under 2 years of age and height measurements for others.\n\nThe measurement of height requires a vertical metric rule, a horizontal headboard, and a non-compressible flat even surface on which the subject stands. The equipment may be fixed or portable, and should be described and reported.\n\nThe graduations on the metric rule should be at 0.1 cm intervals, and the metric rule should have the capacity to measure up to at least 210 cm.\n\nMeasurement intervals and labels should be clearly readable under all conditions of use of the instrument.\n\nApparatus that allows height to be measured while the subject stands on a platform scale is not recommended.\n\nAdults and children who can stand:\n\nThe subject should be measured without shoes (i.e. is barefoot or wears thin socks) and wears little clothing so that the positioning of the body can be seen. Anything that may affect or interfere with the measurement should be noted on the data collection form (e.g. hairstyles and accessories, or physical problems). The subject stands with weight distributed evenly on both feet, heels together, and the head positioned so that the line of vision is at right angles to the body. The correct position for the head is in the Frankfort horizontal plan (Norton et al. 1996). The arms hang freely by the sides. The head, back, buttocks and heels are positioned vertically so that the buttocks and the heels are in contact with the vertical board. To obtain a consistent measure, the subject is asked to inhale deeply and stretch to their fullest height. The measurer applies gentle upward pressure through the mastoid processes to maintain a fully erect position when the measurement is taken. Ensure that the head remains positioned so that the line of vision is at right angles to the body, and the heels remain in contact with the base board.\n\nThe movable headboard is brought onto the top of the head with sufficient pressure to compress the hair.\n\nThe measurement is recorded to the nearest 0.1 cm. Take a repeat measurement. If the two measurements disagree by more than 0.5 cm, then take a third measurement. All raw measurements should be recorded on the data collection form. If practical, it is preferable to enter the raw data into the database as this enables intra-observer and, where relevant, inter-observer errors to be assessed. The subject's measured height is subsequently calculated as the mean of the two observations, or the mean of the two closest measurements if a third is taken, and recorded on the form. If only a mean value is entered into the database then the data collection forms should be retained.\n\nIt may be necessary to round the mean value to the nearest 0.1 cm. If so, rounding should be to the nearest even digit to reduce systematic over reporting (Armitage & Berry 1994). For example, a mean value of 172.25 cm would be rounded to 172.2 cm, while a mean value of 172.35 cm would be rounded to 172.4 cm.\n\nInfants:\n\nFor the measurement of supine length of children up to and including 2 years of age, two observers are required. One observer positions the head correctly while the other ensures the remaining position is correct and brings the measuring board in contact with the feet. The subject lies in a supine position on a recumbent length table or measuring board. The crown of the head must touch the stationary, vertical headboard. The subject's head is held with the line of vision aligned perpendicular to the plane of the measuring surface. The shoulders and buttocks must be flat against the table top, with the shoulders and hips aligned at right angles to the long axis of the body. The legs must be extended at the hips and knees and lie flat against the table top and the arms rest against the sides of the trunk. The measurer must ensure that the legs remain flat on the table and must shift the movable board against the heels. In infants care has to be taken to extend the legs gently. In some older children two observers may also be required.\n\nIn general, length or height is measured and reported to the nearest 0.1 cm. For any child, the length measurement is approximately 0.5–1.5 cm greater than the height measurement. It is therefore recommended that when a length measurement is applied to a height-based reference for children over 24 months of age (or over 85 cm if age is not known), 1.0 cm be subtracted before the length measurement is compared with the reference. It is also recommended that as a matter of procedure and data recording accuracy, the date be recorded when the change is made from supine to standing height measure.\n\nValidation and quality control measures:\n\nAll equipment, whether fixed or portable should be checked prior to each measurement session to ensure that both the headboard and floor (or footboard) are at 90 degrees to the vertical rule. With some types of portable anthropometer it is necessary to check the correct alignment of the headboard, during each measurement, by means of a spirit level. Within- and, if relevant, between-observer variability should be reported. They can be assessed by the same (within-) or different (between-) observers repeating the measurement of height, on the same subjects, under standard conditions after a short time interval. The standard deviation of replicate measurements (technical error of measurement (Pederson & Gore 1996)) between observers should not exceed 5 mm and be less than 5 mm within observers.\n\nExtreme values at the lower and upper end of the distribution of measured height should be checked both during data collection and after data entry. Individuals should not be excluded on the basis of true biological difference. Last digit preference, and preference or avoidance of certain values, should be analysed in the total sample and (if relevant) by observer, survey site and over time if the survey period is long.\"",
+    "displayed_en": "Please indicate your body height.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB015",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.heightunit",
+   "version": 1,
+   "label": {
+    "en": "Body height units",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "centimeters"
+    },
+    {
+     "code": 2,
+     "label_en": "inches"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Unts of body height",
+    "supporting_en": null,
+    "displayed_en": "Please indicate what units of measurement (centimeters or inches) that you recorded your height in.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB016",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.weightvalue_pregncb",
+   "version": 1,
+   "label": {
+    "en": "Body weight",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "quantity",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "How much did you weigh IMMEDIATELY before your pregnancy?",
+    "supporting_en": "Indicate weight in kilograms or pounds. Also indicate units of weight. Height and weight are used to calculate BMI.",
+    "displayed_en": "How much did you weigh IMMEDIATELY before your pregnancy?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB017",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.weightunit",
+   "version": 1,
+   "label": {
+    "en": "Body weight units",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "kilograms"
+    },
+    {
+     "code": 2,
+     "label_en": "lbs"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Units of body weight",
+    "supporting_en": null,
+    "displayed_en": "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB018",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.bmivalue_pcb",
+   "version": 1,
+   "label": {
+    "en": "Body mass index",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "BMI <18.5 (Underweight)"
+    },
+    {
+     "code": 1,
+     "label_en": "BMI 18.6-24.9"
+    },
+    {
+     "code": 2,
+     "label_en": "BMI 25-29.9 (overweight)"
+    },
+    {
+     "code": 3,
+     "label_en": "BMI 30-34.9 (Obesity Class I)"
+    },
+    {
+     "code": 4,
+     "label_en": "BMI 35-39.9 (Obesity Class II)"
+    },
+    {
+     "code": 5,
+     "label_en": "BMI >40 (Obesity Class III)"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Body mass index",
+    "supporting_en": "Height and weight are used to calculate BMI. BMI calculated as kg/m2. Please refer to local BMI guidelines to interpret this value as it may differ based on geographical and ethnic variability",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB019",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.subusetob_pcb",
+   "version": 1,
+   "label": {
+    "en": "Tobacco Use",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    },
+    {
+     "code": 999,
+     "label_en": "Unknown"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you use Tobacco?",
+    "supporting_en": "Tobacco use may include smoked tobacco (i.e., cigarettes, cigars, pipes etc.) or  smokeless tobacco (i.e., snuff, chewing tobacco, and dipping tobacco etc.)",
+    "displayed_en": "Do you use Tobacco?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB020",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.subusealc_pcb",
+   "version": 1,
+   "label": {
+    "en": "Alcohol Use",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    },
+    {
+     "code": 999,
+     "label_en": "Unknown"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you use Alcohol?",
+    "supporting_en": "Includes any alcohol at any quantity",
+    "displayed_en": "Do you use Alcohol?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB021",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.subusedrug_pcb",
+   "version": 1,
+   "label": {
+    "en": "Other Drug Use",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    },
+    {
+     "code": 999,
+     "label_en": "Unknown"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you use other drugs?",
+    "supporting_en": "Other drugs might include vapes, other depressants, stimulants, opiates, or hallucinogens.",
+    "displayed_en": "Do you use other drugs?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB022",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "hx.conanomaly",
+   "version": 1,
+   "label": {
+    "en": "Congenital anomaly",
+    "hu": null
+   },
+   "module": "hx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Diagnosis of a neonate with any of the following within 28 days of birth:\nAnencephaly, Spina bifida occulta, Meningo(myelo)cele, Hydrocephaly/holoprosencephaly without neural tube defect, Encephalocele, Neuromuscular abnormalities, Transposition of the great arteries, Tetralogy of Fallot, Hypoplastic left heart, Coarctation of the aorta, Complex cardiac malformation, Choanal atresia, Congenital malformation trachea, Lung hypoplasia, Hydro/Chylothorax, Congenital diaphragmatic hernia, Extrophia vesicase, Bilateral renal agenesis, Gastroschisis, Omphalocele, Trisomy 13, Trisomy 18, Trisomy 21, Congenital malignancy, Other",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB023",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "tx.factype",
+   "version": 1,
+   "label": {
+    "en": "Facility type",
+    "hu": null
+   },
+   "module": "tx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Birth at home or birth center"
+    },
+    {
+     "code": 1,
+     "label_en": "Birth at a hospital with a level 1 or 2 NICU"
+    },
+    {
+     "code": 2,
+     "label_en": "Birth at a hospital with a level 3 NICU or higher"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Indicate where the birth took place:",
+    "supporting_en": "Using local NICU level definitions",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB024",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "tx.devtype",
+   "version": 1,
+   "label": {
+    "en": "Route of delivery",
+    "hu": null
+   },
+   "module": "tx",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Spontaneous vaginal delivery"
+    },
+    {
+     "code": 1,
+     "label_en": "Forceps or vacuum vaginal delivery"
+    },
+    {
+     "code": 2,
+     "label_en": "Delivery by cesarean section"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Indicate the route of birth:",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB025",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.maternaldeath",
+   "version": 1,
+   "label": {
+    "en": "Maternal death",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Death of a female from any cause related to or aggravated by pregnancy or its management (excluding accidental or incidental causes) during pregnancy and childbirth or within 42 days of pregnancy termination, irrespective of site or duration of the pregnancy",
+    "supporting_en": "Note: this outcome should be tracked by all providers but will not be used for comparisons between providers or provider organizations",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB026",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.stillbirth",
+   "version": 1,
+   "label": {
+    "en": "Stillbirth",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Pregnancy loss at or after 28+ 0 weeks gestation of a birth weight of greater or equal to 1000 grams",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB027",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.neodeath",
+   "version": 1,
+   "label": {
+    "en": "Neonatal death",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Death of  a live born neonate up to 28 days of life",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB028",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.icuadmit",
+   "version": 1,
+   "label": {
+    "en": "Maternal need for intensive care",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Admission to an ICU or a unit that provides 24-hour medical supervision and is able to provide mechanical ventilation or continuous vasoactive drug support at any point during pregnancy through 42 days postpartum for pregnancy or childbirth related complications.",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB029",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.mlos",
+   "version": 1,
+   "label": {
+    "en": "Maternal length of stay",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Number of consecutive days in the hospital from delivery to discharge",
+    "supporting_en": "Recorded as date of delivery and date of discharge",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB030",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.readmit_pregncb",
+   "version": 1,
+   "label": {
+    "en": "Late maternal complication",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Admission to a hospital within the first 42 days postpartum for childbirth related complications.*",
+    "supporting_en": "*Excludes initial hospitalization for childbirth",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB031",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "outcome.trans",
+   "version": 1,
+   "label": {
+    "en": "Transfusion",
+    "hu": null
+   },
+   "module": "outcome",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Any transfusion of red blood cells within the first 42 days postpartum",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB032",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "neo.spreterm",
+   "version": 1,
+   "label": {
+    "en": "Spontaneous pre-term birth",
+    "hu": null
+   },
+   "module": "neo",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Live birth at <37+ 0 weeks gestation occurring after spontaneous labor or rupture of membranes",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB033",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "neo.ipreterm",
+   "version": 1,
+   "label": {
+    "en": "Iatrogenic pre-term birth",
+    "hu": null
+   },
+   "module": "neo",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Cesarean or labor induction before <37 weeks + 0 gestation excluding those occurring after spontaneous labor or rupture of membranes",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB034",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "neo.nlos",
+   "version": 1,
+   "label": {
+    "en": "Neonate length of stay",
+    "hu": null
+   },
+   "module": "neo",
+   "datatype": "date",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Number of consecutive days in hospital from birth through 28 days of life",
+    "supporting_en": "Recorded as date of birth and date of discharge",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB035",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "neo.birthinj",
+   "version": 1,
+   "label": {
+    "en": "Birth injury",
+    "hu": null
+   },
+   "module": "neo",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Subdural and cerebral hemorrhage, massive epicranial subaponeurotic hemorrhage, other injuries to skeleton due to birth trauma, injury to spine and spinal cord due to birth trauma, injury to brachial plexus due to birth trauma, other cranial and peripheral nerve injuries due to birth trauma in single liveborn neonates",
+    "supporting_en": "Record of ICD 10 codes P10 - P14",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB036",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.hr_hsqol_pcb",
+   "version": 1,
+   "label": {
+    "en": "Health-related Quality of Life/Self-Reported Health Status",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded-multi",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "clinical"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "EQ-5D-5L"
+    },
+    {
+     "code": 2,
+     "label_en": "WHODAS V2.0-12"
+    },
+    {
+     "code": 3,
+     "label_en": "VR-12"
+    },
+    {
+     "code": 4,
+     "label_en": "PROMIS GH-10"
+    }
+   ],
+   "documentation": {
+    "definition_en": "What Health-Related Quality of Life tool are you using?",
+    "supporting_en": null,
+    "displayed_en": "What Health-Related Quality of Life tool are you using?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB037",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.eq5d5l",
+   "version": 1,
+   "label": {
+    "en": "EuroQoL-5D-5L (EQ-5D-5L)",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "unknown",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If \"1 = EQ5D5L\"' to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "Please contact license holder for the questionnaire. If you wish to participate in the ICHOM benchmarking program and have secured a licence to use the tool, ICHOM will provide you with the technical specifications on how to collect the data.",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB038",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q01",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "This questionnaire asks about difficulties due to health conditions. Health conditions include diseases or illnesses, other health problems that may be short or long lasting, injuries, mental or emotional problems, and problems with alcohol or drugs.\n\nThink back over the past 30 days and answer these questions, thinking about how much difficulty you had doing the following activities. For each question, please select only one response. In the past 30 days, how much difficulty did you have in:\n\nS1: Standing for long periods such as 30 minutes?",
+    "supporting_en": null,
+    "displayed_en": "This questionnaire asks about difficulties due to health conditions. Health conditions include diseases or illnesses, other health problems that may be short or long lasting, injuries, mental or emotional problems, and problems with alcohol or drugs.\n\nThink back over the past 30 days and answer these questions, thinking about how much difficulty you had doing the following activities. For each question, please select only one response. In the past 30 days, how much difficulty did you have in:\n\nS1: Standing for long periods such as 30 minutes?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB039",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q02",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S2: Taking care of your household responsibilities?",
+    "supporting_en": null,
+    "displayed_en": "S2: Taking care of your household responsibilities?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB040",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q03",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S3: Learning a new task, for example, learning how to get to a new place?",
+    "supporting_en": null,
+    "displayed_en": "S3: Learning a new task, for example, learning how to get to a new place?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB041",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q04",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S4: How much of a problem did you have joining in community activities (for example, festivities, religious or other activities) in the same way as anyone else can?",
+    "supporting_en": null,
+    "displayed_en": "S4: How much of a problem did you have joining in community activities (for example, festivities, religious or other activities) in the same way as anyone else can?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB042",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q05",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S5: How much have you been emotionally affected by your health problems?",
+    "supporting_en": null,
+    "displayed_en": "S5: How much have you been emotionally affected by your health problems?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB043",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q06",
+   "version": 1,
+   "label": {
+    "en": "Question 6 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S6: Concentrating on doing something for ten minutes?",
+    "supporting_en": null,
+    "displayed_en": "S6: Concentrating on doing something for ten minutes?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB044",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q07",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S7: Walking a long distance such as a kilometer [or equivalent]?",
+    "supporting_en": null,
+    "displayed_en": "S7: Walking a long distance such as a kilometer [or equivalent]?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB045",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q08",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S8: Washing your whole body?",
+    "supporting_en": null,
+    "displayed_en": "S8: Washing your whole body?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB046",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q09",
+   "version": 1,
+   "label": {
+    "en": "Question 9 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S9: Getting dressed?",
+    "supporting_en": null,
+    "displayed_en": "S9: Getting dressed?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB047",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q10",
+   "version": 1,
+   "label": {
+    "en": "Question 10 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S10: Dealing with people you do not know?",
+    "supporting_en": null,
+    "displayed_en": "S10: Dealing with people you do not know?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB048",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q11",
+   "version": 1,
+   "label": {
+    "en": "Question 11 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S11: Maintaining a friendship",
+    "supporting_en": null,
+    "displayed_en": "S11: Maintaining a friendship",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB049",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.whodas_q12",
+   "version": 1,
+   "label": {
+    "en": "Question 12 of WHODAS 2.0",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"2 = WHODAS V2.0-12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "None"
+    },
+    {
+     "code": 1,
+     "label_en": "Mild"
+    },
+    {
+     "code": 2,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 3,
+     "label_en": "Severe"
+    },
+    {
+     "code": 4,
+     "label_en": "Extreme or cannot do"
+    }
+   ],
+   "documentation": {
+    "definition_en": "S12: Your day-to-day work?",
+    "supporting_en": null,
+    "displayed_en": "S12: Your day-to-day work?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB050",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.gh1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 2,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 4,
+     "label_en": "Fair"
+    },
+    {
+     "code": 5,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, would you say your health is:",
+    "supporting_en": "The Working Group recommends the EQ-5D, but understands that some organisations may prefer to use alternative tools to assess Health-Related Quality of Life. The following tools are also acceptable for use: PROMIS Global 10, VR-12 or WHODAS 2.0",
+    "displayed_en": "In general, would you say your health is:",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB051",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.pf2",
+   "version": 1,
+   "label": {
+    "en": "Question 2a of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Yes, limited a lot"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, limited a little"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not limited at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?\na. Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+    "supporting_en": null,
+    "displayed_en": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?\na. Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB052",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.pf4",
+   "version": 1,
+   "label": {
+    "en": "Question 2b of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Yes, limited a lot"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, limited a little"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not limited at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "b. Climbing several flights of stairs",
+    "supporting_en": null,
+    "displayed_en": "b. Climbing several flights of stairs",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB053",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.vrp2",
+   "version": 1,
+   "label": {
+    "en": "Question 3a of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "No, none of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, a little of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "Yes, all of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?\na. Accomplished less than you would like",
+    "supporting_en": null,
+    "displayed_en": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?\na. Accomplished less than you would like",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB054",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.vrp3",
+   "version": 1,
+   "label": {
+    "en": "Question 3b of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "No, none of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, a little of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "Yes, all of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "b. Were limited in the kind of work or other activities",
+    "supporting_en": null,
+    "displayed_en": "b. Were limited in the kind of work or other activities",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB055",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.vre2",
+   "version": 1,
+   "label": {
+    "en": "Question 4a of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "No, none of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, a little of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "Yes, all of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)?\na. Accomplished less than you would like",
+    "supporting_en": null,
+    "displayed_en": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)?\na. Accomplished less than you would like",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB056",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.vre3",
+   "version": 1,
+   "label": {
+    "en": "Question 4b of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "No, none of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, a little of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "Yes, all of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "b. Didn't do work or other activities as carefully as usual",
+    "supporting_en": null,
+    "displayed_en": "b. Didn't do work or other activities as carefully as usual",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB057",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bp2",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all"
+    },
+    {
+     "code": 2,
+     "label_en": "A little bit"
+    },
+    {
+     "code": 3,
+     "label_en": "Moderately"
+    },
+    {
+     "code": 4,
+     "label_en": "Quite a bit"
+    },
+    {
+     "code": 5,
+     "label_en": "Extremely"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past 4 weeks, how much did pain interfere with you normal work (including both work outside the home and housework)?",
+    "supporting_en": null,
+    "displayed_en": "During the past 4 weeks, how much did pain interfere with you normal work (including both work outside the home and housework)?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB058",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh3",
+   "version": 1,
+   "label": {
+    "en": "Question 6a of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "All of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Most of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "A good bit of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Some of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "A little of the time"
+    },
+    {
+     "code": 6,
+     "label_en": "None of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "These questions are about how you feel and how things have been with you during the past 4 weeks. For each question, please give the one answer that comes closest to the way you have been feeling. \nHow much of the time during the past 4 weeks:\na. Have you felt calm and peaceful?",
+    "supporting_en": null,
+    "displayed_en": "These questions are about how you feel and how things have been with you during the past 4 weeks. For each question, please give the one answer that comes closest to the way you have been feeling. \nHow much of the time during the past 4 weeks:\na. Have you felt calm and peaceful?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB059",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.vt2",
+   "version": 1,
+   "label": {
+    "en": "Question 6b of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "All of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Most of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "A good bit of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Some of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "A little of the time"
+    },
+    {
+     "code": 6,
+     "label_en": "None of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "b. Did you have a lot of energy?",
+    "supporting_en": null,
+    "displayed_en": "b. Did you have a lot of energy?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB060",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh4",
+   "version": 1,
+   "label": {
+    "en": "Question 6c of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "All of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Most of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "A good bit of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "Some of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "A little of the time"
+    },
+    {
+     "code": 6,
+     "label_en": "None of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "c. Have you felt downhearted and blue?",
+    "supporting_en": null,
+    "displayed_en": "c. Have you felt downhearted and blue?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB061",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.sf2",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "All of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Most of the time"
+    },
+    {
+     "code": 3,
+     "label_en": "Some of the time"
+    },
+    {
+     "code": 4,
+     "label_en": "A little of the time"
+    },
+    {
+     "code": 5,
+     "label_en": "None of the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?",
+    "supporting_en": null,
+    "displayed_en": "During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB062",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.cp1",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Much better"
+    },
+    {
+     "code": 2,
+     "label_en": "Slightly better"
+    },
+    {
+     "code": 3,
+     "label_en": "About the same"
+    },
+    {
+     "code": 4,
+     "label_en": "Slightly worse"
+    },
+    {
+     "code": 5,
+     "label_en": "Much worse"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Now, we'd like to ask you some questions about how your health may have changed.\nCompared to one year ago, how would you rate your physical health in general now?",
+    "supporting_en": null,
+    "displayed_en": "Now, we'd like to ask you some questions about how your health may have changed.\nCompared to one year ago, how would you rate your physical health in general now?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB063",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ce1",
+   "version": 1,
+   "label": {
+    "en": "Question 9 of VR-12",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"3 = VR12\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Much better"
+    },
+    {
+     "code": 2,
+     "label_en": "Slightly better"
+    },
+    {
+     "code": 3,
+     "label_en": "About the same"
+    },
+    {
+     "code": 4,
+     "label_en": "Slightly worse"
+    },
+    {
+     "code": 5,
+     "label_en": "Much worse"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Compared to one year ago, how would you rate your emotional health (such as feeling anxious, depressed, or irritable) in general now?",
+    "supporting_en": null,
+    "displayed_en": "Compared to one year ago, how would you rate your emotional health (such as feeling anxious, depressed, or irritable) in general now?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB064",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q01",
+   "version": 1,
+   "label": {
+    "en": "Global01",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Please respond to each question or statement by marking one box per row: In general, would you say your health is:",
+    "supporting_en": "The Working Group recommends the EQ-5D, but understands that some organisations may prefer to use alternative tools to assess Health-Related Quality of Life. The following tools are also acceptable for use: PROMIS Global 10, VR-12 or SF-12.",
+    "displayed_en": "In general, would you say your health is:",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB065",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q02",
+   "version": 1,
+   "label": {
+    "en": "Global02",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, would you say your quality of life is:",
+    "supporting_en": "none",
+    "displayed_en": "In general, would you say your quality of life is:",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB066",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q03",
+   "version": 1,
+   "label": {
+    "en": "Global03",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, how would you rate your physical health?",
+    "supporting_en": "none",
+    "displayed_en": "In general, how would you rate your physical health?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB067",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q04",
+   "version": 1,
+   "label": {
+    "en": "Global04",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, how would you rate your mental health, including your mood and your ability to think?",
+    "supporting_en": "none",
+    "displayed_en": "In general, how would you rate your mental health, including your mood and your ability to think?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB068",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q05",
+   "version": 1,
+   "label": {
+    "en": "Global05",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, how would you rate your satisfaction with your social activities and relationships?",
+    "supporting_en": "none",
+    "displayed_en": "In general, how would you rate your satisfaction with you social activities and relationships?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB069",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q09r",
+   "version": 1,
+   "label": {
+    "en": "Global09r",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Excellent"
+    },
+    {
+     "code": 4,
+     "label_en": "Very good"
+    },
+    {
+     "code": 3,
+     "label_en": "Good"
+    },
+    {
+     "code": 2,
+     "label_en": "Fair"
+    },
+    {
+     "code": 1,
+     "label_en": "Poor"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In general, please rate how well you carry out your usual social activities and roles. (This includes activities at home, at work and in your community, and responsibilities as a parent, child, spouse, employee, friend, etc.)",
+    "supporting_en": "none",
+    "displayed_en": "In general, rate how well you carry out your usual social activities at home, at work and in your community, and responsibilities as a parent, child, spouse, employee, friend, etc.)",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB070",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q06",
+   "version": 1,
+   "label": {
+    "en": "Global06",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Completely"
+    },
+    {
+     "code": 4,
+     "label_en": "Mostly"
+    },
+    {
+     "code": 3,
+     "label_en": "Moderately"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 1,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "To what extent are you able to carry out your everyday physical activities such as walking, climbing stairs, carrying groceries, or moving a chair?",
+    "supporting_en": "none",
+    "displayed_en": "To what extent are you able to carry out your everyday physical activities such as walking, climbing stairs, carrying groceries, or moving a chair?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB071",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q10r",
+   "version": 1,
+   "label": {
+    "en": "Global10r",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "Never"
+    },
+    {
+     "code": 4,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 2,
+     "label_en": "Often"
+    },
+    {
+     "code": 1,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+    "supporting_en": "none",
+    "displayed_en": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB072",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q08r",
+   "version": 1,
+   "label": {
+    "en": "Global08r",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 5,
+     "label_en": "None"
+    },
+    {
+     "code": 4,
+     "label_en": "Mild"
+    },
+    {
+     "code": 3,
+     "label_en": "Moderate"
+    },
+    {
+     "code": 2,
+     "label_en": "Severe"
+    },
+    {
+     "code": 1,
+     "label_en": "Very severe"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In the past 7 days, how would you rate your fatigue on average?",
+    "supporting_en": "none",
+    "displayed_en": "In the past 7 days, how would you rate your fatigue on average?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB073",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_10_q07r",
+   "version": 1,
+   "label": {
+    "en": "Global07r",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "If answered \"4 = PROMIS GH-10\" to HR-HSQoL",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": null,
+   "documentation": {
+    "definition_en": "In the past 7 days, how would you rate your pain on average?",
+    "supporting_en": "Indicate pain level on a scale of 0-10, where 0 = No pain, and 10 = Worst imaginable pain",
+    "displayed_en": "In the past 7 days, how would you rate your pain on average?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB074",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.incontscreen",
+   "version": 1,
+   "label": {
+    "en": "Incontinence screening question",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Yes, I leaked urine"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, I leaked stool or passed gas by accident"
+    },
+    {
+     "code": 3,
+     "label_en": "No, I did not leak urine, leak stool, or pass gas by accident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "In the past month, have you leaked urine, leaked stool or passed gas by accident?",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB075",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ui01",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of the ICIQ-SF",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"1= Yes, I leaked urine\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "never"
+    },
+    {
+     "code": 1,
+     "label_en": "about once a week or less often"
+    },
+    {
+     "code": 2,
+     "label_en": "two or three times a week"
+    },
+    {
+     "code": 3,
+     "label_en": "about once a day"
+    },
+    {
+     "code": 4,
+     "label_en": "several time a day"
+    },
+    {
+     "code": 5,
+     "label_en": "all the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How often do you leak urine?",
+    "supporting_en": null,
+    "displayed_en": "How often do you leak urine?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB076",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ui02",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of the ICIQ-SF",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"1= Yes, I leaked urine\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "none"
+    },
+    {
+     "code": 2,
+     "label_en": "a small amount"
+    },
+    {
+     "code": 4,
+     "label_en": "a moderate amount"
+    },
+    {
+     "code": 6,
+     "label_en": "a large amount"
+    }
+   ],
+   "documentation": {
+    "definition_en": "We would like to know how much urine you think leaks. How much urine do you usually leak (whether you wear protection or not)?",
+    "supporting_en": null,
+    "displayed_en": "We would like to know how much urine you think leaks. How much urine do you usually leak (whether you wear protection or not)?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB077",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ui03",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of the ICIQ-SF",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"1= Yes, I leaked urine\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "not at all"
+    },
+    {
+     "code": 1,
+     "label_en": "1"
+    },
+    {
+     "code": 2,
+     "label_en": "2"
+    },
+    {
+     "code": 3,
+     "label_en": "3"
+    },
+    {
+     "code": 4,
+     "label_en": "4"
+    },
+    {
+     "code": 5,
+     "label_en": "5"
+    },
+    {
+     "code": 6,
+     "label_en": "6"
+    },
+    {
+     "code": 7,
+     "label_en": "7"
+    },
+    {
+     "code": 8,
+     "label_en": "8"
+    },
+    {
+     "code": 9,
+     "label_en": "9"
+    },
+    {
+     "code": 10,
+     "label_en": "a great deal"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Overall, how much does leaking urine interfere with your everyday life? Please select a number between 0 (not at all) and 10 (a great deal).",
+    "supporting_en": null,
+    "displayed_en": "Overall, how much does leaking urine interfere with your everyday life? Please select a number between 0 (not at all) and 10 (a great deal).",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB078",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ui04",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of the ICIQ-SF",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"1= Yes, I leaked urine\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never - urine does not leak"
+    },
+    {
+     "code": 1,
+     "label_en": "Leaks before you can get to the toilet"
+    },
+    {
+     "code": 2,
+     "label_en": "Leaks when you cough or sneeze"
+    },
+    {
+     "code": 3,
+     "label_en": "Leaks when you are asleep"
+    },
+    {
+     "code": 4,
+     "label_en": "Leaks when you are physically active/exercising"
+    },
+    {
+     "code": 5,
+     "label_en": "Leaks when you have finished urinating and are dressed"
+    },
+    {
+     "code": 6,
+     "label_en": "Leaks for no obvious reason"
+    },
+    {
+     "code": 7,
+     "label_en": "Leaks all the time"
+    }
+   ],
+   "documentation": {
+    "definition_en": "When does urine leak?(Please tick all that apply to you).",
+    "supporting_en": null,
+    "displayed_en": "When does urine leak?(Please tick all that apply to you).",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB079",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.rfis_q1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of the Revised Fecal Incontinence Scale",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 2,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Often or Usually"
+    },
+    {
+     "code": 4,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you leak, have accidents or lose control with solid stool?",
+    "supporting_en": null,
+    "displayed_en": "Do you leak, have accidents or lose control with solid stool?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB080",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.rfis_q2",
+   "version": 1,
+   "label": {
+    "en": "Question 2of the Revised Fecal Incontinence Scale",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 2,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Often or Usually"
+    },
+    {
+     "code": 4,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you leak, have accidents or lose control with liquid stool?",
+    "supporting_en": null,
+    "displayed_en": "Do you leak, have accidents or lose control with liquid stool?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB081",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.rfis_q3",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of the Revised Fecal Incontinence Scale",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 2,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Often or Usually"
+    },
+    {
+     "code": 4,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you leak stool if you don’t get to the toilet in time?",
+    "supporting_en": null,
+    "displayed_en": "Do you leak stool if you don’t get to the toilet in time?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB082",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.rfis_q4",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of the Revised Fecal Incontinence Scale",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 2,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Often or Usually"
+    },
+    {
+     "code": 4,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Does stool leak so that you have to change your underwear?",
+    "supporting_en": null,
+    "displayed_en": "Does stool leak so that you have to change your underwear?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB083",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.rfis_q5",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of the Revised Fecal Incontinence Scale",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Rarely"
+    },
+    {
+     "code": 2,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Often or Usually"
+    },
+    {
+     "code": 4,
+     "label_en": "Always"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Does bowel or stool leakage cause you to alter your lifestyle?",
+    "supporting_en": null,
+    "displayed_en": "Does bowel or stool leakage cause you to alter your lifestyle?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB084",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.ai03",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of Wexner",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "*If answered \"2= Yes, I leaked stool or passed gas by accident\" on INCONTSCREEN",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Never"
+    },
+    {
+     "code": 1,
+     "label_en": "Less than once per month"
+    },
+    {
+     "code": 2,
+     "label_en": "Less than once/week & greater than once/month"
+    },
+    {
+     "code": 3,
+     "label_en": "Less than once/day & greater than once/month"
+    },
+    {
+     "code": 4,
+     "label_en": "Once a day or more than once a day"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How often does the gas escape without your knowledge or control?",
+    "supporting_en": null,
+    "displayed_en": "How often does the gas escape without your knowledge or control?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB085",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.promis_sffac102",
+   "version": 1,
+   "label": {
+    "en": "Pain with intercourse",
+    "hu": null
+   },
+   "module": "prom",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Have not had pain in the past 30 days"
+    },
+    {
+     "code": 1,
+     "label_en": "Not at all"
+    },
+    {
+     "code": 2,
+     "label_en": "A little bit"
+    },
+    {
+     "code": 3,
+     "label_en": "Somewhat"
+    },
+    {
+     "code": 4,
+     "label_en": "Quite a bit"
+    },
+    {
+     "code": 5,
+     "label_en": "Very much"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How much has pain, from any part of your body, affected your satisfaction with your sex life?",
+    "supporting_en": null,
+    "displayed_en": "How much has pain, from any part of your body, affected your satisfaction with your sex life?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB086",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bfintent",
+   "version": 1,
+   "label": {
+    "en": "Intension to breast feed",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Do you plan to breastfeed your baby when he or she is born?",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB087",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bfconfid",
+   "version": 1,
+   "label": {
+    "en": "Confidence with breast feeding*",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 1 on BFINTENT in 3rd trimester OR  1 or 2 on BFSUCCESS at birth, 42 days postpartum, or 6 months postpartum",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Somewhat confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How confident do you feel about breast feeding?",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB088",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bfsuccess",
+   "version": 1,
+   "label": {
+    "en": "Success with breastfeeding",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "My baby has received only breast milk in the past 7 days."
+    },
+    {
+     "code": 2,
+     "label_en": "My baby has received a combination of breast milk, formula, or water in the past 7 days."
+    },
+    {
+     "code": 3,
+     "label_en": "My baby has received only formula, water, or other liquids but not breast milk in the past 7 days."
+    }
+   ],
+   "documentation": {
+    "definition_en": "Please indicate how you are feeding your baby:",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB089",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses01",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always determine that my baby is getting enough milk.",
+    "supporting_en": null,
+    "displayed_en": "I can always determine that my baby is getting enough milk.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB090",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses02",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always successfully cope with breastfeeding like I have with other challenging tasks.",
+    "supporting_en": null,
+    "displayed_en": "I can always successfully cope with breastfeeding like I have with other challenging tasks.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB091",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses03",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always breastfeed my baby without using formula as a supplement.",
+    "supporting_en": null,
+    "displayed_en": "I can always breastfeed my baby without using formula as a supplement.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB092",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses04",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always ensure that my baby is properly latched on for the whole feeding.",
+    "supporting_en": null,
+    "displayed_en": "I can always ensure that my baby is properly latched on for the whole feeding.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB093",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses05",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always manage the breastfeeding situation to my satisfaction.",
+    "supporting_en": null,
+    "displayed_en": "I can always manage the breastfeeding situation to my satisfaction.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB094",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses06",
+   "version": 1,
+   "label": {
+    "en": "Question 6 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always manage to breastfeed even if my baby is crying.",
+    "supporting_en": null,
+    "displayed_en": "I can always manage to breastfeed even if my baby is crying.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB095",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses07",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always keep wanting to breastfeed.",
+    "supporting_en": null,
+    "displayed_en": "I can always keep wanting to breastfeed.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB096",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses08",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always comfortably breastfeed with my family members present.",
+    "supporting_en": null,
+    "displayed_en": "I can always comfortably breastfeed with my family members present.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB097",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses09",
+   "version": 1,
+   "label": {
+    "en": "Question 9 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always be satisfied with my breastfeeding experience.",
+    "supporting_en": null,
+    "displayed_en": "I can always be satisfied with my breastfeeding experience.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB098",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses10",
+   "version": 1,
+   "label": {
+    "en": "Question 10 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always deal with the fact that breastfeeding can be time-consuming.",
+    "supporting_en": null,
+    "displayed_en": "I can always deal with the fact that breastfeeding can be time-consuming.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB099",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses11",
+   "version": 1,
+   "label": {
+    "en": "Question 11 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always finish feeding my baby on one breast before switching to the other breast.",
+    "supporting_en": null,
+    "displayed_en": "I can always finish feeding my baby on one breast before switching to the other breast.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB100",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses12",
+   "version": 1,
+   "label": {
+    "en": "Question 12 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always continue to breastfeed my baby for every feeding.",
+    "supporting_en": null,
+    "displayed_en": "I can always continue to breastfeed my baby for every feeding.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB101",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses13",
+   "version": 1,
+   "label": {
+    "en": "Question 13 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always manage to keep up with my baby's breastfeeding demands.",
+    "supporting_en": null,
+    "displayed_en": "I can always manage to keep up with my baby's breastfeeding demands.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB102",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.bf.bses14",
+   "version": 1,
+   "label": {
+    "en": "Question 14 of BSES-SF",
+    "hu": null
+   },
+   "module": "prom.bf",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 3 or lower on BFCONFID",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Sometimes confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I can always tell when my baby is finished breastfeeding.",
+    "supporting_en": null,
+    "displayed_en": "I can always tell when my baby is finished breastfeeding.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB103",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.roleconf",
+   "version": 1,
+   "label": {
+    "en": "Confidence in role",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 1,
+     "label_en": "Not at all confident"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very confident"
+    },
+    {
+     "code": 3,
+     "label_en": "Somewhat confident"
+    },
+    {
+     "code": 4,
+     "label_en": "Confident"
+    },
+    {
+     "code": 5,
+     "label_en": "Very confident"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How confident do you feel about looking after your baby?",
+    "supporting_en": "Add \"when he or she is born\" for entry to prenatal care questionnaire",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB104",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "These questions are about your feelings for your child in the first few weeks. Some adjectives are listed below which describe some of the feelings mothers have towards their baby IN THE FIRST WEEK after the birth* / in the FIRST FEW WEEKS after the birth**. Please make a tick against each word in the box that best describes how you feel NOW* / felt in the FIRST FEW WEEKS**",
+    "supporting_en": "*delete if administering tool in post-partum period, **delete if administering tool at birth",
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB105",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs2",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Resentful",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB106",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs3",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Neutral or felt nothing",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB107",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs4",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Joyful",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB108",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs5",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Dislike",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB109",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs6",
+   "version": 1,
+   "label": {
+    "en": "Question 6 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Protective",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB110",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs7",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Disappointed",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB111",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.role.mibs8",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of MIBS",
+    "hu": null
+   },
+   "module": "prom.role",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Birth",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very much"
+    },
+    {
+     "code": 1,
+     "label_en": "A lot"
+    },
+    {
+     "code": 2,
+     "label_en": "A little"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Aggressive",
+    "supporting_en": null,
+    "displayed_en": null,
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB112",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.wq_q1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of Whooley Questions",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past month, have you often been bothered by feeling down, depressed or hopeless?",
+    "supporting_en": "“Yes” to one (or both) questions indicates need for further evaluation (I.e., administer the EPDS). “No” to both questions indicates a negative for depression screening.",
+    "displayed_en": "During the past month, have you often been bothered by feeling down, depressed or hopeless?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB113",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.wq_q2",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of Whooley Questions",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "Entry to prenatal care",
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "During the past month, have you often been bothered by little interest or pleasure in doing things?",
+    "supporting_en": "“Yes” to one (or both) questions indicates need for further evaluation (I.e., administer the EPDS). “No” to both questions indicates a negative for depression screening.",
+    "displayed_en": "During the past month, have you often been bothered by little interest or pleasure in doing things?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB114",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds_3a_q1",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very often"
+    },
+    {
+     "code": 3,
+     "label_en": "No, never"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have blamed myself unnecessarily when things when wrong",
+    "supporting_en": null,
+    "displayed_en": "I have blamed myself unnecessarily when things when wrong",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB115",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds_3a_q2",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No, not at all"
+    },
+    {
+     "code": 1,
+     "label_en": "Hardly ever"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, very often"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have been anxious or worried for no good reason",
+    "supporting_en": null,
+    "displayed_en": "I have been anxious or worried for no good reason",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB116",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds_3a_q3",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, quite a lot"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, sometimes"
+    },
+    {
+     "code": 2,
+     "label_en": "No, not much"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have felt scared or panicky for no very good reason",
+    "supporting_en": null,
+    "displayed_en": "I have felt scared or panicky for no very good reason",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB117",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "As much as I always could"
+    },
+    {
+     "code": 1,
+     "label_en": "Not quite so much now"
+    },
+    {
+     "code": 2,
+     "label_en": "Definitely not so much now"
+    },
+    {
+     "code": 3,
+     "label_en": "Not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "As you are pregnant or have recently had a baby, we would like to know how you are feeling. Please check the answer that comes closest to how you have felt IN THE PAST 7 DAYS, not just how you feel today.    \n\nIn the past 7 days:\n\nI have been able to see the funny side of things",
+    "supporting_en": null,
+    "displayed_en": "As you are pregnant or have recently had a baby, we would like to know how you are feeling. Please check the answer that comes closest to how you have felt IN THE PAST 7 DAYS, not just how you feel today.    \n\nIn the past 7 days:\n\nI have been able to see the funny side of things",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB118",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds2",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "As much as I ever did"
+    },
+    {
+     "code": 1,
+     "label_en": "Rather less than I used to"
+    },
+    {
+     "code": 2,
+     "label_en": "Definitely less than I used to"
+    },
+    {
+     "code": 3,
+     "label_en": "Hardly at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have looked forward with enjoyment to things",
+    "supporting_en": null,
+    "displayed_en": "I have looked forward with enjoyment to things",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB119",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds3",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, some of the time"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very often"
+    },
+    {
+     "code": 3,
+     "label_en": "No, never"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have blamed myself unnecessarily when things when wrong",
+    "supporting_en": null,
+    "displayed_en": "I have blamed myself unnecessarily when things when wrong",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB120",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds4",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No, not at all"
+    },
+    {
+     "code": 1,
+     "label_en": "Hardly ever"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes, sometimes"
+    },
+    {
+     "code": 3,
+     "label_en": "Yes, very often"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have been anxious or worried for no good reason",
+    "supporting_en": null,
+    "displayed_en": "I have been anxious or worried for no good reason",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB121",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds5",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, quite a lot"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, sometimes"
+    },
+    {
+     "code": 2,
+     "label_en": "No, not much"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have felt scared or panicky for no very good reason",
+    "supporting_en": null,
+    "displayed_en": "I have felt scared or panicky for no very good reason",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB122",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds6",
+   "version": 1,
+   "label": {
+    "en": "Question 6 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time I haven't been able to cope at all"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, sometimes I haven't been coping as well as usual"
+    },
+    {
+     "code": 2,
+     "label_en": "No, most of the time I have coped quite well"
+    },
+    {
+     "code": 3,
+     "label_en": "No, I have been coping as well as ever"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Things have been getting on top of me",
+    "supporting_en": null,
+    "displayed_en": "Things have been getting on top of me",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB123",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds7",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, quite often"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very often"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have been so unhappy that I have difficulty sleeping",
+    "supporting_en": null,
+    "displayed_en": "I have been so unhappy that I have difficulty sleeping",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB124",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds8",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, quite often"
+    },
+    {
+     "code": 2,
+     "label_en": "Not very often"
+    },
+    {
+     "code": 3,
+     "label_en": "No, not at all"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have felt sad or miserable",
+    "supporting_en": null,
+    "displayed_en": "I have felt sad or miserable",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB125",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds9",
+   "version": 1,
+   "label": {
+    "en": "Question 9 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, most of the time"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes, quite often"
+    },
+    {
+     "code": 2,
+     "label_en": "Only occasionally"
+    },
+    {
+     "code": 3,
+     "label_en": "No, never"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I have been so unhappy that I have been crying",
+    "supporting_en": null,
+    "displayed_en": "I have been so unhappy that I have been crying",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB126",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.mh.epds10",
+   "version": 1,
+   "label": {
+    "en": "Question 10 of the EPDS",
+    "hu": null
+   },
+   "module": "prom.mh",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All patients scoring a 6 or higher on the EPDS-3A or answering \"1 = yes\" to WQ_Q1 or WQ_Q2",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Yes, quite often"
+    },
+    {
+     "code": 1,
+     "label_en": "Sometimes"
+    },
+    {
+     "code": 2,
+     "label_en": "Hardly ever"
+    },
+    {
+     "code": 3,
+     "label_en": "Never"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The thought of harming myself has occurred to me",
+    "supporting_en": null,
+    "displayed_en": "The thought of harming myself has occurred to me",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB127",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.sat.caresat1",
+   "version": 1,
+   "label": {
+    "en": "Satisfaction with care",
+    "hu": null
+   },
+   "module": "prom.sat",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very unsatisfied"
+    },
+    {
+     "code": 1,
+     "label_en": "Unsatisfied"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither satisfied nor dissatisfied"
+    },
+    {
+     "code": 3,
+     "label_en": "Satisfied"
+    },
+    {
+     "code": 4,
+     "label_en": "Very satisfied"
+    }
+   ],
+   "documentation": {
+    "definition_en": "How satisfied are you with the results of your care during your pregnancy?*",
+    "supporting_en": "* change to \"during your labor and the birth of your baby\" or \"in the months after your baby was born\" when presenting at the 42 days postpartum, 6 months postpartum and 6 months postpartum",
+    "displayed_en": "How satisfied are you with the results of your care during your pregnancy?*",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB128",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.sat.sdm_pain",
+   "version": 1,
+   "label": {
+    "en": "Shared Decision Making - Pain",
+    "hu": null
+   },
+   "module": "prom.sat",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Did you discuss your wishes and the options for pain relief during childbirth with your healthcare provider (and about the advantages and disadvantages of the options)?",
+    "supporting_en": null,
+    "displayed_en": "Did you discuss your wishes and the options for pain relief during childbirth with your healthcare provider (and about the advantages and disadvantages of the options)?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB129",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.sat.sdm_satisfaction",
+   "version": 1,
+   "label": {
+    "en": "Shared Decision Making - Satisfaction",
+    "hu": null
+   },
+   "module": "prom.sat",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "Very Dissatisfied"
+    },
+    {
+     "code": 1,
+     "label_en": "Dissatisfied"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither satisfied nor dissatisfied"
+    },
+    {
+     "code": 3,
+     "label_en": "Satisfied"
+    },
+    {
+     "code": 4,
+     "label_en": "Very Satisfied"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Were you satisfied with the different pain relief options available when needed?",
+    "supporting_en": null,
+    "displayed_en": "Were you satisfied with the different pain relief options available when needed?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB130",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.resp.hcr1",
+   "version": 1,
+   "label": {
+    "en": "Information and role in care 1",
+    "hu": null
+   },
+   "module": "prom.resp",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "42 days postpartum,",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "To some extent"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Thinking about your care during your pregnancy*...\nWere you given information about your choices for maternity care?",
+    "supporting_en": "* change to \"during your labor and the birth of your baby\" or \"in the months after your baby was born\" when presenting at the 42 days postpartum, 6 months postpartum and 6 months postpartum",
+    "displayed_en": "Thinking about your care during your pregnancy*...\nWere you given information about your choices for maternity care?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB131",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.resp.hcr2",
+   "version": 1,
+   "label": {
+    "en": "Information and role in care 2",
+    "hu": null
+   },
+   "module": "prom.resp",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "To some extent"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Were you given enough information to help you decide about your care?",
+    "supporting_en": null,
+    "displayed_en": "Were you given enough information to help you decide about your care?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB132",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.resp.hcr3",
+   "version": 1,
+   "label": {
+    "en": "Information and role in care 3",
+    "hu": null
+   },
+   "module": "prom.resp",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "To some extent"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Were you given information at the right time to help you decide about your care?",
+    "supporting_en": null,
+    "displayed_en": "Were you given information at the right time to help you decide about your care?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB133",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.resp.hcr4",
+   "version": 1,
+   "label": {
+    "en": "Confidence in providers",
+    "hu": null
+   },
+   "module": "prom.resp",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "3rd trimester",
+    "42 days postpartum",
+    "6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 0,
+     "label_en": "No"
+    },
+    {
+     "code": 1,
+     "label_en": "To some extent"
+    },
+    {
+     "code": 2,
+     "label_en": "Yes"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Did you have confidence and trust in the staff caring for you?",
+    "supporting_en": null,
+    "displayed_en": "Did you have confidence and trust in the staff caring for you?",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB134",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r1",
+   "version": 1,
+   "label": {
+    "en": "Question 1 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "Please respond to the following statements:\n\nI came through childbirth virtually unscathed.",
+    "supporting_en": null,
+    "displayed_en": "Please respond to the following statements:\n\nI came through childbirth virtually unscathed.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB135",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r2",
+   "version": 1,
+   "label": {
+    "en": "Question 2 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I thought my labour was excessively long.",
+    "supporting_en": null,
+    "displayed_en": "I thought my labour was excessively long.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB136",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r3",
+   "version": 1,
+   "label": {
+    "en": "Question 3 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The delivery room staff encouraged me to take decisions about how I wanted my birth to progress.",
+    "supporting_en": null,
+    "displayed_en": "The delivery room staff encouraged me to take decisions about how I wanted my birth to progress.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB137",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r4",
+   "version": 1,
+   "label": {
+    "en": "Question 4 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I felt very anxious during my labour and birth.",
+    "supporting_en": null,
+    "displayed_en": "I felt very anxious during my labour and birth.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB138",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r5",
+   "version": 1,
+   "label": {
+    "en": "Question 5 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I felt well supported by staff during my labour and birth.",
+    "supporting_en": null,
+    "displayed_en": "I felt well supported by staff during my labour and birth.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB139",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r6",
+   "version": 1,
+   "label": {
+    "en": "Question 6 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The staff communicated well with me during labour.",
+    "supporting_en": null,
+    "displayed_en": "The staff communicated well with me during labour.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB140",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r7",
+   "version": 1,
+   "label": {
+    "en": "Question 7 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I found giving birth a distressing experience.",
+    "supporting_en": null,
+    "displayed_en": "I found giving birth a distressing experience.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB141",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r8",
+   "version": 1,
+   "label": {
+    "en": "Question 8 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I felt out of control during my birth experience.",
+    "supporting_en": null,
+    "displayed_en": "I felt out of control during my birth experience.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB142",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r9",
+   "version": 1,
+   "label": {
+    "en": "Question 9 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "I was not distressed at all during labour.",
+    "supporting_en": null,
+    "displayed_en": "I was not distressed at all during labour.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB143",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  },
+  {
+   "id": "prom.birth.bss_r10",
+   "version": 1,
+   "label": {
+    "en": "Question 10 of the BSS-R",
+    "hu": null
+   },
+   "module": "prom.birth",
+   "datatype": "coded",
+   "unit": null,
+   "cardinality": "one",
+   "timing": [
+    "42 days postpartum OR 6 months postpartum"
+   ],
+   "inclusion": "All Patients",
+   "provenance": [
+    "patient-reported"
+   ],
+   "valueSet": [
+    {
+     "code": 4,
+     "label_en": "Strongly Agree"
+    },
+    {
+     "code": 3,
+     "label_en": "Agree"
+    },
+    {
+     "code": 2,
+     "label_en": "Neither Agree or Disagree"
+    },
+    {
+     "code": 1,
+     "label_en": "Disagree"
+    },
+    {
+     "code": 0,
+     "label_en": "Strongly Disagree"
+    }
+   ],
+   "documentation": {
+    "definition_en": "The delivery room was clean and hygienic.",
+    "supporting_en": null,
+    "displayed_en": "The delivery room was clean and hygienic.",
+    "hu": null
+   },
+   "standards": {
+    "ichom_pcb_v5": "PCB144",
+    "loinc": null,
+    "snomed": null
+   },
+   "derivation": null,
+   "consumers": [],
+   "phi": false,
+   "status": "seed-imported"
+  }
+ ]
+}

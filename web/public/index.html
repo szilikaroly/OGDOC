@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OGDOC — webes csontváz</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>OGDOC <span class="sub" data-i18n="app.subtitle">webes réteg</span></h1>
+  <p class="warn" id="kapuSor" data-i18n="auth.gateLoading">Loading gate status…</p>
+
+  <!--
+    A BEJELENTKEZETT FELHASZNÁLÓ, ÉS AMI A JOGÁT ADJA.
+    Nem elég a nevét kiírni: a jogot a MEGBÍZÁS adja, és annak van hatóköre és
+    ideje. Ha csak a szerepkör látszana, a felhasználó nem tudná megmondani,
+    miért lát vagy miért nem lát valamit.
+  -->
+  <div class="langbar" id="enSor" hidden>
+    <b id="enNev">—</b>
+    <span class="hint" id="enJog"></span>
+    <button id="adminGomb" data-i18n="auth.admin" hidden>Admin</button>
+    <button id="kilepGomb" data-i18n="auth.signOut">Sign out</button>
+  </div>
+
+  <div class="langbar">
+    <label for="lang" data-i18n="app.lang">Nyelv</label>
+    <select id="lang">
+      <option value="hu" data-i18n="app.langHu">Magyar</option>
+      <option value="en" data-i18n="app.langEn">Angol</option>
+    </select>
+    <span class="hint">
+      <span data-i18n="app.case">Eset</span>: <b id="caseId">—</b> ·
+      <span data-i18n="app.entries">bejegyzés</span>: <b id="entries">0</b> ·
+      <span data-i18n="app.basis">jogalap</span>: <b id="basis">—</b>
+    </span>
+  </div>
+  <p class="warn" id="langWarn" hidden></p>
+  <!-- A jogosultsági elutasítás INDOKLÁSSAL jelenik meg, nem hibakóddal. -->
+  <p class="warn" id="denied" hidden></p>
+</header>
+
+<main hidden>
+  <section id="form" aria-label="Űrlap" data-i18n-label="form.title">
+    <h2><span data-i18n="form.title">Űrlap</span> <span class="hint" data-i18n="form.generated">a regiszterből generálva</span></h2>
+    <p class="effort" id="effort"></p>
+    <div id="sections"></div>
+  </section>
+
+  <aside>
+    <section id="suggestions" hidden>
+      <h2 data-i18n="form.suggestion">Előtöltési javaslatok</h2>
+      <div id="suggestionList"></div>
+    </section>
+
+    <section id="confirmBox" hidden>
+      <h2 data-i18n="form.confirmPending">Megerősítésre vár</h2>
+      <p class="hint" data-i18n="form.confirmNote">A beteg adta meg a felvételkor. Döntés megerősítés nélkül nem épülhet rá.</p>
+      <div id="confirmList"></div>
+    </section>
+
+    <section id="adviceBox" hidden>
+      <h2 data-i18n="out.clinician">Javaslatok a klinikusnak</h2>
+      <div id="adviceList"></div>
+    </section>
+
+    <section id="patientBox" hidden>
+      <h2 data-i18n="out.patientTitle">A betegnek szóló tájékoztató</h2>
+      <p class="hint" data-i18n="out.patientNote">Generált szöveg — a normális leletről is.</p>
+      <div id="patientList"></div>
+    </section>
+
+    <section id="calcs">
+      <h2 data-i18n="calc.title">Kalkulátorok</h2>
+      <p class="hint" data-i18n="calc.note">Hiányzó bemenetnél nem nullát mutat, hanem megmondja, mi hiányzik.</p>
+      <div id="calcList"></div>
+    </section>
+
+    <section id="docPanel" hidden>
+      <h2 data-i18n="doc.title">Meződokumentáció</h2>
+      <pre id="doc"></pre>
+    </section>
+  </aside>
+
+  <!--
+    A DPO TÖRLÉSI PANELJE.
+    Csak adatvédelmi tisztviselőnek jelenik meg, és a sorrend a lényeg:
+    ELŐNÉZET → mi teljesíthető helyette → csak azután végrehajtás.
+  -->
+  <section id="dpo" hidden>
+    <h2 data-i18n="dpo.title">Törlési rendelkezés</h2>
+    <p class="hint" data-i18n="dpo.intro">A törlés visszafordíthatatlan. Előbb nézd meg, mi történne.</p>
+    <div class="langbar">
+      <button id="dpoPreview" type="button" data-i18n="dpo.preview">Mi történne?</button>
+      <button id="dpoRevoke" type="button" data-i18n="dpo.revoke">Kutatási hozzájárulás visszavonása</button>
+    </div>
+    <div id="dpoOut"></div>
+  </section>
+</main>
+
+<script type="module" src="/app.js"></script>
+
+<!-- ── BEJELENTKEZÉS ─────────────────────────────────────────────────── -->
+<div id="belepoTakaro" class="takaro" hidden>
+  <form id="belepoUrlap" class="belepo">
+    <h2 data-i18n="auth.signIn">Sign in</h2>
+    <p class="warn" id="belepoKapu"></p>
+    <label><span data-i18n="auth.username">Username</span> <input name="felhasznalonev" autocomplete="username" required></label>
+    <label><span data-i18n="auth.password">Password</span> <input name="jelszo" type="password" autocomplete="current-password" required></label>
+    <p class="warn" id="belepoHiba" hidden></p>
+    <button type="submit" data-i18n="auth.signInButton">Sign in</button>
+  </form>
+
+  <form id="csereUrlap" class="belepo" hidden>
+    <h2 data-i18n="auth.mustChange">Password change required</h2>
+    <p class="warn" data-i18n="auth.mustChangeWhy"></p>
+    <label><span data-i18n="auth.currentPassword">Current password</span> <input name="regi" type="password" autocomplete="current-password" required></label>
+    <label><span data-i18n="auth.newPassword">New password</span> <input name="uj" type="password" autocomplete="new-password" required minlength="12"></label>
+    <p class="warn" id="csereHiba" hidden></p>
+    <button type="submit" data-i18n="auth.change">Change</button>
+  </form>
+</div>
+
+<!-- ── ADMIN PANEL ──────────────────────────────────────────────────── -->
+<div id="adminTakaro" class="takaro" hidden>
+  <div class="admin">
+    <div class="adminFej">
+      <h2 data-i18n="admin.title">Administration</h2>
+      <button id="adminZar" data-i18n="admin.close">Close</button>
+    </div>
+    <p class="warn" data-i18n="admin.intro"></p>
+    <div id="adminTest"></div>
+  </div>
+</div>
+</body>
+</html>

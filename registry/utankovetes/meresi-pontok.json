@@ -1,0 +1,38 @@
+[
+  {
+    "id": "entry",
+    "label": { "hu": "Gondozásba vétel" },
+    "ichomTiming": "Entry to prenatal care",
+    "anchor": { "kind": "gaWeeks", "var": "ctx.ga" },
+    "from": 0,
+    "to": 14,
+    "note": { "hu": "A kiindulási mérés: demográfia, anamnézis, PROM-alapvonal. Az ablak felső határa a szokásos gondozásba vételi idő; ennél későbbi belépésnél a pont ELMULASZTOTT, nem eltűnt." }
+  },
+  {
+    "id": "t3",
+    "label": { "hu": "III. trimeszter" },
+    "ichomTiming": "3rd trimester",
+    "anchor": { "kind": "gaWeeks", "var": "ctx.ga" },
+    "from": 28,
+    "to": 40,
+    "note": { "hu": "A dohányzás, alkohol- és drogfogyasztás ISMÉTELT felvétele, valamint a PROM-ok. Az ismétlés a lényeg: a kiindulási válasz a terhesség alatt megváltozhat." }
+  },
+  {
+    "id": "pp42",
+    "label": { "hu": "42. nap a szülés után" },
+    "ichomTiming": "42 days postpartum",
+    "anchor": { "kind": "daysSince", "var": "nb.birth.at" },
+    "from": 42,
+    "to": 70,
+    "note": { "hu": "A FŐ KIMENETELI MÉRÉS — anyai és újszülött. Az ICHOM 113 tételt kér ehhez a ponthoz; ez a modul elfogadási kritériumának a helye." }
+  },
+  {
+    "id": "pp6m",
+    "label": { "hu": "6 hónap a szülés után" },
+    "ichomTiming": "6 months postpartum",
+    "anchor": { "kind": "daysSince", "var": "nb.birth.at" },
+    "from": 180,
+    "to": 240,
+    "note": { "hu": "Szoptatás, mentális egészség, szerepátmenet. A leggyakrabban elmaradó mérési pont — és épp az, ami a hosszú távú kimenetelről szól." }
+  }
+]

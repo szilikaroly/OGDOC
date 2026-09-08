@@ -1,0 +1,1693 @@
+[
+  {
+    "id": "demog.birthYear",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Születési év",
+      "en": "Year of birth"
+    },
+    "module": "demog",
+    "datatype": "quantity",
+    "domain": {
+      "min": 1900,
+      "max": 2100
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.birthYear",
+      "explain": {
+        "hu": "A születési dátumból, kizárólag az évet."
+      }
+    },
+    "standards": {
+      "ichom": "PCB001"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A beteg születési éve."
+      },
+      "whyItMatters": {
+        "hu": "A DURVÁBB ÉRTÉKET SZÁMOLJUK KI, NEM A FINOMABBAT EXPORTÁLJUK. Az ICHOM a születési ÉVET kéri; a születési DÁTUM `phi` jelölésű és az exportból kimarad. A levezetett év nem azonosít, tehát exportálható."
+      },
+      "pitfalls": {
+        "hu": "Ez a de-identifikálás legolcsóbb formája: nem elrejtünk valamit, hanem eleve kevesebbet számolunk ki. Ahol ez megtehető, ott a maszkolás felesleges kockázat."
+      }
+    }
+  },
+  {
+    "id": "nb.birth.at",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A születés időpontja"
+    },
+    "module": "nb",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor született a gyermek."
+      },
+      "whyItMatters": {
+        "hu": "EZ AZ UTÁNKÖVETÉS HORGONYA. A 42. napos és a 6 hónapos ICHOM mérési pont ehhez képest esedékes; enélkül egyik sem számolható — és a rendszer ilyenkor nem mondja azt, hogy „nem esedékes”."
+      }
+    }
+  },
+  {
+    "id": "nb.ga.atBirth",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gesztációs kor a születéskor"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "wk",
+    "domain": {
+      "min": 20,
+      "max": 45
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hányadik terhességi héten született a gyermek."
+      },
+      "pitfalls": {
+        "hu": "A koraszülés besorolása (< 37 hét) ebből dől el, nem a születési súlyból: a növekedési elmaradás és a koraszülés két külön dolog, és összekeverésük a leggyakoribb hiba a kimeneteli statisztikákban."
+      }
+    }
+  },
+  {
+    "id": "nb.preterm.type",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Koraszülés típusa"
+    },
+    "module": "nb",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem koraszülés (≥ 37 hét)"
+      },
+      {
+        "code": "spontaneous",
+        "label_hu": "Spontán koraszülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "iatrogenic",
+        "label_hu": "Iatrogén (orvosi javallatú) koraszülés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "standards": {
+      "ichom": "PCB033"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Spontán indult-e a koraszülés, vagy orvosi döntés előzte meg."
+      },
+      "whyItMatters": {
+        "hu": "Az ICHOM külön kérdezi a spontán (PCB033) és az iatrogén (PCB034) koraszülést, mert a kettő MÁS minőségi mutató: az iatrogén arány az ellátói döntéseket méri, a spontán a populációt."
+      }
+    }
+  },
+  {
+    "id": "nb.birthWeight",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Születési súly"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 200,
+      "max": 7000,
+      "plausible": [
+        500,
+        5500
+      ]
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A gyermek súlya születéskor."
+      },
+      "whyItMatters": {
+        "hu": "Az újszülöttkori gyógyszeradagok (NRP-epinephrin, volumenbolus, dextróz gél) mind SÚLYALAPÚAK: enélkül egyik sem számolható."
+      }
+    }
+  },
+  {
+    "id": "nb.birthWeight.percentile",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Születési súly percentilis"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "%",
+    "domain": {
+      "min": 0,
+      "max": 100
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A születési súly percentilise a gesztációs korhoz képest."
+      },
+      "pitfalls": {
+        "hu": "RÖGZÍTETT érték, nem számított: a rendszer normogramjai `assumed` szintűek, ezért percentilist NEM adnak (ld. a 13. fejlesztői fejezetet). Ha a klinikus máshonnan tudja, ide beírhatja — de a forrása nem a rendszer."
+      }
+    }
+  },
+  {
+    "id": "nb.apgar.at1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Apgar 1 percnél"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám az első percben."
+      },
+      "pitfalls": {
+        "hu": "Ez a RÖGZÍTETT végérték. A `nb.apgar.*` összetevő-mezők EGY pillanat pontozását szolgálják; a három kanonikus időpont (1, 5, 10 perc) külön mező, mert a dokumentációba és az exportba mind a három bekerül."
+      }
+    }
+  },
+  {
+    "id": "nb.apgar.at5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Apgar 5 percnél"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám az ötödik percben."
+      },
+      "whyItMatters": {
+        "hu": "Az 5 perces érték a leggyakrabban idézett kimeneteli mutató — de önmagában NEM alkalmas az asphyxia diagnózisára, és nem jósol egyéni kimenetelt."
+      }
+    }
+  },
+  {
+    "id": "nb.apgar.at10",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Apgar 10 percnél"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám a tizedik percben."
+      },
+      "pitfalls": {
+        "hu": "A 10 perces érték CSAK akkor rögzítendő, ha az 5 perces 7 alatt volt — az üresen hagyása ilyenkor nem hiány. Ha viszont az 5 perces alacsony volt és a 10 perces hiányzik, az valódi hiány."
+      }
+    }
+  },
+  {
+    "id": "nb.cordPh",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Köldökzsinór-artéria pH"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 6.5,
+      "max": 7.8,
+      "plausible": [
+        6.8,
+        7.5
+      ]
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az arteria umbilicalis vérgáz pH-ja."
+      },
+      "pitfalls": {
+        "hu": "ARTÉRIÁS mintáról van szó. A vénás minta magasabb pH-t ad, és a kettő összekeverése a leggyakoribb hiba: vénás értéket artériásként olvasva egy asphyxia elkerülheti a figyelmet."
+      }
+    }
+  },
+  {
+    "id": "nb.cordBe",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Köldökzsinór-artéria bázisfelesleg"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "mmol/L",
+    "domain": {
+      "min": -30,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Base excess az arteria umbilicalis mintában."
+      }
+    }
+  },
+  {
+    "id": "nb.nicuAdmit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Újszülött intenzív ellátás"
+    },
+    "module": "nb",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szükség volt-e NIC-osztályos felvételre."
+      }
+    }
+  },
+  {
+    "id": "nb.nlos",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Újszülött ápolási ideje"
+    },
+    "module": "nb",
+    "datatype": "quantity",
+    "unit": "d",
+    "domain": {
+      "min": 0,
+      "max": 365
+    },
+    "standards": {
+      "ichom": "PCB035"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány napot töltött az újszülött az intézményben."
+      }
+    }
+  },
+  {
+    "id": "nb.birthInjury",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Születési sérülés"
+    },
+    "module": "nb",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "brachialPlexus",
+        "label_hu": "Plexus brachialis sérülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "fracture.clavicle",
+        "label_hu": "Kulcscsonttörés"
+      },
+      {
+        "code": "fracture.other",
+        "label_hu": "Egyéb csonttörés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "cephalhaematoma",
+        "label_hu": "Cephalhaematoma"
+      },
+      {
+        "code": "subgaleal",
+        "label_hu": "Subgalealis vérzés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "facialNerve",
+        "label_hu": "Arcideg-bénulás"
+      },
+      {
+        "code": "laceration",
+        "label_hu": "Bőrsérülés (pl. császármetszésnél)"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "standards": {
+      "ichom": "PCB036"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szüléssel összefüggő újszülöttkori sérülés."
+      },
+      "pitfalls": {
+        "hu": "A „nincs” ÖNÁLLÓ, rögzítendő érték. Az üresen hagyott mező nem azt jelenti, hogy nem volt sérülés — csak azt, hogy nem néztük meg."
+      }
+    }
+  },
+  {
+    "id": "nb.oxygenDep",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Oxigénfüggőség"
+    },
+    "module": "nb",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szorult-e az újszülött tartós oxigénpótlásra."
+      }
+    }
+  },
+  {
+    "id": "out.maternal.death",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Anyai halál"
+    },
+    "module": "out",
+    "datatype": "date",
+    "standards": {
+      "ichom": "PCB026"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az anyai halál dátuma, ha bekövetkezett."
+      },
+      "pitfalls": {
+        "hu": "A MEZŐ ÜRESSÉGE NEM JELENTI, HOGY NEM TÖRTÉNT. A 42 napon belüli anyai halál nagy része az intézményen KÍVÜL következik be, és csak akkor kerül be, ha valaki utánanéz."
+      }
+    }
+  },
+  {
+    "id": "out.stillbirth",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Halvaszületés"
+    },
+    "module": "out",
+    "datatype": "date",
+    "standards": {
+      "ichom": "PCB027"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A halvaszületés dátuma, ha bekövetkezett."
+      }
+    }
+  },
+  {
+    "id": "out.neo.death",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Újszülöttkori halál"
+    },
+    "module": "out",
+    "datatype": "date",
+    "standards": {
+      "ichom": "PCB028"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az újszülöttkori halál dátuma, ha bekövetkezett."
+      }
+    }
+  },
+  {
+    "id": "out.icuAdmit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Anyai intenzív ellátás"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "standards": {
+      "ichom": "PCB029"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Szükség volt-e anyai intenzív osztályos ellátásra."
+      },
+      "whyItMatters": {
+        "hu": "Az „anyai közel-elkerült esemény” (maternal near miss) egyik legjobban mérhető közelítése — és ritkasága miatt csak intézmények összehasonlításában értelmezhető."
+      }
+    }
+  },
+  {
+    "id": "out.mlos",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Anyai ápolási idő"
+    },
+    "module": "out",
+    "datatype": "quantity",
+    "unit": "d",
+    "domain": {
+      "min": 0,
+      "max": 365
+    },
+    "standards": {
+      "ichom": "PCB030"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány napot töltött az anya az intézményben."
+      }
+    }
+  },
+  {
+    "id": "out.readmit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Késői anyai szövődmény vagy újrafelvétel"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "standards": {
+      "ichom": "PCB031"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Történt-e a szülés után 42 napon belül újrafelvétel vagy szövődmény."
+      },
+      "pitfalls": {
+        "hu": "MÁS INTÉZMÉNYBEN történt újrafelvételről az ellátó gyakran nem tud. A „nem” válasz ezért csak akkor érvényes, ha valaki ténylegesen megkérdezte a beteget — enélkül `unk`."
+      }
+    }
+  },
+  {
+    "id": "out.readmit.reason",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az újrafelvétel oka"
+    },
+    "module": "out",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Miért került sor újrafelvételre."
+      }
+    }
+  },
+  {
+    "id": "out.transfusion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Transzfúzió"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "standards": {
+      "ichom": "PCB032"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Kapott-e az anya vérkészítményt."
+      }
+    }
+  },
+  {
+    "id": "out.transfusion.units",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Transzfundált egységek száma"
+    },
+    "module": "out",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 60
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány egység vörösvérsejt-koncentrátum."
+      },
+      "whyItMatters": {
+        "hu": "A NÉGY vagy több egység a súlyos szülés utáni vérzés nemzetközileg használt küszöbe — a transzfúzió ténye önmagában ehhez kevés."
+      }
+    }
+  },
+  {
+    "id": "out.conAnomaly",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Veleszületett rendellenesség"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "standards": {
+      "ichom": "PCB023"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Igazolódott-e veleszületett rendellenesség."
+      },
+      "pitfalls": {
+        "hu": "A 42. napig NEM derül ki minden: a szívfejlődési rendellenességek egy része hetekkel később jelentkezik. A negatív érték itt „eddig nem derült ki”, nem „nincs”."
+      }
+    }
+  },
+  {
+    "id": "out.facilityType",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az ellátó intézmény típusa"
+    },
+    "module": "out",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "tertiary",
+        "label_hu": "Progresszív (III. szintű) centrum"
+      },
+      {
+        "code": "secondary",
+        "label_hu": "II. szintű kórház"
+      },
+      {
+        "code": "primary",
+        "label_hu": "I. szintű kórház"
+      },
+      {
+        "code": "birthCentre",
+        "label_hu": "Születésház"
+      },
+      {
+        "code": "home",
+        "label_hu": "Otthonszülés"
+      }
+    ],
+    "standards": {
+      "ichom": "PCB024"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hol történt a szülés."
+      },
+      "whyItMatters": {
+        "hu": "KOCKÁZATI KIIGAZÍTÁS nélkül a kimeneteli mutatók összehasonlítása félrevezető: a III. szintű centrum rosszabb nyers számai a beutalt esetek súlyosságát tükrözik, nem az ellátás minőségét."
+      }
+    }
+  },
+  {
+    "id": "fu.consentToContact",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hozzájárul az utánkövetéshez"
+    },
+    "module": "fu",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Vállalja-e a beteg a szülés utáni megkeresést."
+      },
+      "pitfalls": {
+        "hu": "A hozzájárulás HIÁNYA nem elutasítás. Aki nem nyilatkozott, azt nem szabad sem megkeresni, sem elveszettnek tekinteni: az utánkövetési statisztikában külön kategória."
+      }
+    }
+  },
+  {
+    "id": "fu.contactChannel",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A megkeresés csatornája"
+    },
+    "module": "fu",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "inPerson",
+        "label_hu": "Személyes megjelenés"
+      },
+      {
+        "code": "phone",
+        "label_hu": "Telefon"
+      },
+      {
+        "code": "email",
+        "label_hu": "E-mail"
+      },
+      {
+        "code": "portal",
+        "label_hu": "Beteg-portál"
+      },
+      {
+        "code": "post",
+        "label_hu": "Posta"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan próbáltuk elérni a beteget."
+      },
+      "pitfalls": {
+        "hu": "A RENDSZER NEM KÜLD ÜZENETET. A mező azt rögzíti, mi történt — a küldés a webes fázis feladata (ld. a modul nyitott kérdését)."
+      }
+    }
+  },
+  {
+    "id": "fu.contactAttempts",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megkeresési kísérletek száma"
+    },
+    "module": "fu",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 50
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hányszor próbáltuk elérni a beteget."
+      },
+      "whyItMatters": {
+        "hu": "Ez különbözteti meg az ELÉRHETETLEN beteget attól, akit meg sem próbáltunk elérni. A kettő ugyanúgy néz ki a hiányzó adatban, de nem ugyanaz a mulasztás."
+      }
+    }
+  },
+  {
+    "id": "fu.outcome",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az utánkövetés kimenetele"
+    },
+    "module": "fu",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "returned",
+        "label_hu": "Megjelent / válaszolt"
+      },
+      {
+        "code": "notReached",
+        "label_hu": "Nem sikerült elérni",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "declined",
+        "label_hu": "Elutasította a részvételt"
+      },
+      {
+        "code": "lost",
+        "label_hu": "Elveszett az utánkövetésből",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "deceased",
+        "label_hu": "Elhunyt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notAttempted",
+        "label_hu": "Nem volt megkeresés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mi lett a mérési pont megkeresésének az eredménye."
+      },
+      "whyItMatters": {
+        "hu": "EZ A NEVEZŐ. Ha a kimeneteli mutatókat csak a visszatérő betegekből számoljuk, a mutató az intézményt hízelgi: aki rosszul járt, gyakrabban nem jön vissza. E mező nélkül a torzítás mértéke nem is becsülhető."
+      }
+    }
+  },
+  {
+    "id": "neo.glucose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Újszülött vércukor"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "mmol/L",
+    "domain": {
+      "min": 0,
+      "max": 30,
+      "plausible": [
+        0.5,
+        15
+      ]
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az újszülött vércukorértéke."
+      },
+      "pitfalls": {
+        "hu": "AZ ÉLETKOR DÖNTI EL, MI KÓROS: az első 4 órában más a beavatkozási küszöb, mint a 4–24. órában, és megint más 24 óra után. Egyetlen szám önmagában nem értelmezhető."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.substance",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az anyai opioid-expozíció típusa"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem volt expozíció"
+      },
+      {
+        "code": "heroin",
+        "label_hu": "Heroin / rövid hatású opioid"
+      },
+      {
+        "code": "buprenorphine",
+        "label_hu": "Buprenorfin"
+      },
+      {
+        "code": "methadone",
+        "label_hu": "Metadon"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb / több szer"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen opioidnak volt kitéve a magzat."
+      },
+      "whyItMatters": {
+        "hu": "EZ DÖNTI EL A MEGFIGYELÉSI IDŐ HOSSZÁT. A tünetek kezdete rövid hatású szereknél 24–48 óra, metadonnál 48–72 óra, akár 5–7 nap. A korábbi elbocsátás a tüneteket az otthonba tolja."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.esc.feeding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "ESC — eszik legalább 30 mL-t etetésenként"
+    },
+    "module": "neo",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Eat-Sleep-Console funkcionális értékelés első kérdése."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.esc.sleeping",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "ESC — alszik legalább 1 órát zavarás nélkül"
+    },
+    "module": "neo",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Eat-Sleep-Console funkcionális értékelés második kérdése."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.esc.consoling",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "ESC — megnyugtatható 10 percen belül"
+    },
+    "module": "neo",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Eat-Sleep-Console funkcionális értékelés harmadik kérdése."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.finnegan",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Finnegan-pontszám"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 45
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A neonatális megvonási tünetegyüttes pontozása."
+      },
+      "pitfalls": {
+        "hu": "A FINNEGAN MÁSODIK, nem első: az ESC funkcionális értékelés előbb jön. A Finnegan tételeinek jó része nem specifikus (tüsszentés, izzadás), és a pontszám alapján indított gyógyszeres kezelés hosszabb kórházi tartózkodáshoz vezet."
+      }
+    }
+  },
+  {
+    "id": "neo.nows.pharmacotherapy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Farmakoterápia indult"
+    },
+    "module": "neo",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Kapott-e az újszülött gyógyszeres kezelést a megvonásra."
+      },
+      "whyItMatters": {
+        "hu": "Az ESC-NOW vizsgálat (NEJM 2023;388:2326, N=1305) szerint az ESC-alapú megközelítés mellett a farmakoterápia relatív kockázata 0,44, az ápolási idő 6,7 nappal rövidebb — a mutató ezért önmagában is minőségi jelzés."
+      }
+    }
+  },
+  {
+    "id": "neo.latch.latch",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH — mellrefogás"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH-skála első tétele (L)."
+      },
+      "pitfalls": {
+        "hu": "A pontértékek MÖGÖTTI leírás (mit jelent a 0, az 1 és a 2) licencköteles, és nincs betöltve — ezért a kódlista címkéi szándékosan üresek. Saját megfogalmazású leírással a pontozás nem LATCH."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ]
+  },
+  {
+    "id": "neo.latch.audible",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH — hallható nyelés"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH-skála második tétele (A)."
+      },
+      "pitfalls": {
+        "hu": "A pontértékek MÖGÖTTI leírás (mit jelent a 0, az 1 és a 2) licencköteles, és nincs betöltve — ezért a kódlista címkéi szándékosan üresek. Saját megfogalmazású leírással a pontozás nem LATCH."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ]
+  },
+  {
+    "id": "neo.latch.nipple",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH — mellbimbó típusa"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH-skála harmadik tétele (T)."
+      },
+      "pitfalls": {
+        "hu": "A pontértékek MÖGÖTTI leírás (mit jelent a 0, az 1 és a 2) licencköteles, és nincs betöltve — ezért a kódlista címkéi szándékosan üresek. Saját megfogalmazású leírással a pontozás nem LATCH."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ]
+  },
+  {
+    "id": "neo.latch.comfort",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH — kényelem"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH-skála negyedik tétele (C)."
+      },
+      "pitfalls": {
+        "hu": "A pontértékek MÖGÖTTI leírás (mit jelent a 0, az 1 és a 2) licencköteles, és nincs betöltve — ezért a kódlista címkéi szándékosan üresek. Saját megfogalmazású leírással a pontozás nem LATCH."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ]
+  },
+  {
+    "id": "neo.latch.hold",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH — segítségigény a tartáshoz"
+    },
+    "module": "neo",
+    "datatype": "coded",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH-skála ötödik tétele (H)."
+      },
+      "pitfalls": {
+        "hu": "A pontértékek MÖGÖTTI leírás (mit jelent a 0, az 1 és a 2) licencköteles, és nincs betöltve — ezért a kódlista címkéi szándékosan üresek. Saját megfogalmazású leírással a pontozás nem LATCH."
+      }
+    },
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ]
+  },
+  {
+    "id": "neo.latch.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "LATCH összpontszám"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A LATCH szoptatási értékelő skála összpontszáma."
+      },
+      "pitfalls": {
+        "hu": "A skála NEM VEHETŐ FEL, amíg a validált tételszöveg licence hiányzik: saját megfogalmazású kérdésekkel a skála nem LATCH, és a vágóértékei sem érvényesek rá. Ezt a kérdőívtörzs kapuja kényszeríti ki."
+      }
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.latch.total",
+      "explain": {
+        "hu": "Az öt LATCH-tétel összege."
+      }
+    }
+  },
+  {
+    "id": "neo.nrp.epi.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "NRP — epinephrin adag (IV/IO)"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "mg",
+    "domain": {
+      "min": 0,
+      "max": 0.2
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.nrp.epi.iv",
+      "explain": {
+        "hu": "A születési súlyból, 0,02 mg/ttkg."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az újraélesztés során adandó epinephrin egyszeri adagja."
+      },
+      "pitfalls": {
+        "hu": "AZ ADAG MELLETT A TÉRFOGAT SZÁMÍT: 1:10 000 hígításnál 0,2 mL/ttkg. A hígítás elrontása nagyságrendi tévedés, és a számított milligramm önmagában nem véd meg tőle."
+      },
+      "whyItMatters": {
+        "hu": "Súly nélkül NINCS szám — és ez a helyes viselkedés: egy „átlagos újszülöttre” becsült adag újraélesztés közben nem segítség."
+      }
+    }
+  },
+  {
+    "id": "neo.nrp.volume.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "NRP — volumenbolus"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 100
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.nrp.volume",
+      "explain": {
+        "hu": "A születési súlyból, 10 mL/ttkg."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az újraélesztés során adandó fiziológiás sóoldat bolus."
+      },
+      "pitfalls": {
+        "hu": "A javallat SZŰK: igazolt vagy alaposan feltételezett vérvesztés, rossz perfúzióval. Volumenhiány nélkül adva a bolus árt."
+      }
+    }
+  },
+  {
+    "id": "neo.dextroseGel.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "40% dextróz gél adag"
+    },
+    "module": "neo",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.neo.dextroseGel",
+      "explain": {
+        "hu": "A születési súlyból, 0,5 mL/ttkg."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A buccalisan adandó 40%-os dextróz gél adagja hypoglykaemiában."
+      },
+      "pitfalls": {
+        "hu": "A gél a SZOPTATÁS MELLETT adandó, nem helyette. A beavatkozási küszöb életkorfüggő, ezért egyetlen vércukorérték önmagában nem javallat."
+      }
+    }
+  },
+  {
+    "id": "out.birth.outcome",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A szülés kimenetele"
+    },
+    "module": "out",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "liveBirth",
+        "label_hu": "Élveszületés"
+      },
+      {
+        "code": "stillbirth",
+        "label_hu": "Halvaszületés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Élve vagy halva született-e a gyermek."
+      },
+      "whyItMatters": {
+        "hu": "EGY DÁTUMMEZŐ NEM TUD NEMET MONDANI. A halvaszületés dátuma üresen hagyva ugyanúgy néz ki, mint az, hogy nem néztük meg — ez a mező mondja ki a nemleges tényt."
+      }
+    }
+  },
+  {
+    "id": "out.maternal.alive",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az anya él a 42. napon"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Ellenőrizve, hogy az anya életben van-e a szülés utáni 42. napon."
+      },
+      "pitfalls": {
+        "hu": "A „nem tudom” itt a leggyakoribb helyes válasz: a 42 napon belüli anyai halál nagy része az intézményen KÍVÜL következik be. A mező azt rögzíti, hogy valaki UTÁNANÉZETT — nem azt, hogy nem jött hír."
+      }
+    }
+  },
+  {
+    "id": "out.neonate.alive",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az újszülött él a 42. napon"
+    },
+    "module": "out",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Ellenőrizve, hogy az újszülött életben van-e a 42. napon."
+      },
+      "pitfalls": {
+        "hu": "Ugyanaz, mint az anyai állapotnál: az üres mező nem nemleges válasz, hanem elmaradt ellenőrzés."
+      }
+    }
+  },
+  {
+    "id": "audit.prenatal.confirmed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A prenatális diagnózis megerősítve?"
+    },
+    "short": {
+      "hu": "Prenatális dg. megerősítve"
+    },
+    "module": "utankovetes",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "confirmed",
+        "label_hu": "Megerősítve — a referencia ugyanazt mondta"
+      },
+      {
+        "code": "refuted",
+        "label_hu": "Cáfolva — a referencia mást mondott"
+      },
+      {
+        "code": "indeterminate",
+        "label_hu": "A referencia NEM tudott dönteni"
+      },
+      {
+        "code": "noReference",
+        "label_hu": "Nem történt referenciavizsgálat",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A méhen belül kimondott diagnózis szembesítése a megszületés utáni igazsággal (újszülöttvizsgálat, képalkotás, genetika, szövettan)."
+      },
+      "whyItMatters": {
+        "hu": "EZ A MEZŐ ZÁRJA BE A RENDSZER LEGFONTOSABB KÖRÉT. Enélkül minden normogram, minden kockázati szám és minden modell csak addig ér valamit, amíg valaki elhiszi: ebben az intézményben, ezen a populáción soha nem mérhető vissza. NÉGY VÁLASZ, NEM KETTŐ, ÉS EZ NEM FINOMKODÁS. A „megerősítve? igen/nem” kérdés a CÁFOLATOT és az ELDÖNTHETETLENSÉGET ugyanabba a rekeszbe teszi — pedig az egyik azt jelenti, hogy a rendszer tévedett, a másik azt, hogy a referencia nem tudott válaszolni. A kettő összemosása RENDSZERESEN torzítja a mért teljesítményt: a felületes endometriosis szövettani igazolása közismerten megbízhatatlan, tehát minden ilyen eset „tévedés”-ként állna be, és az ultrahang rosszabbnak látszana, mint amilyen. Az ötödik állapot a HIÁNYZÓ válasz, és annak nincs kódja: a hiányzó adat sehol nem „nem”."
+      },
+      "howToMeasure": {
+        "hu": "A postnatalis referencia megnevezésével együtt rögzítendő. Hallomásból tudott kimenetelre modellt validálni nem lehet — a forrás megbízhatóságát az érték `provenance` mezője hordozza."
+      }
+    }
+  },
+  {
+    "id": "audit.us.confirmed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "UH diagnózis megerősítve"
+    },
+    "short": {
+      "hu": "UH dg. megerősítve"
+    },
+    "module": "utankovetes",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "confirmed",
+        "label_hu": "Megerősítve — a referencia ugyanazt mondta"
+      },
+      {
+        "code": "refuted",
+        "label_hu": "Cáfolva — a referencia mást mondott"
+      },
+      {
+        "code": "indeterminate",
+        "label_hu": "A referencia NEM tudott dönteni"
+      },
+      {
+        "code": "noReference",
+        "label_hu": "Nem történt referenciavizsgálat",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Az ultrahangos megítélés szembesítése a műtéti vagy szövettani lelettel."
+      },
+      "whyItMatters": {
+        "hu": "ENÉLKÜL AZ IOTA-, AZ RMI- ÉS A PUL-MODELL TELJESÍTMÉNYE EBBEN AZ INTÉZMÉNYBEN SOHA NEM MÉRHETŐ VISSZA. NÉGY VÁLASZ, NEM KETTŐ, ÉS EZ NEM FINOMKODÁS. A „megerősítve? igen/nem” kérdés a CÁFOLATOT és az ELDÖNTHETETLENSÉGET ugyanabba a rekeszbe teszi — pedig az egyik azt jelenti, hogy a rendszer tévedett, a másik azt, hogy a referencia nem tudott válaszolni. A kettő összemosása RENDSZERESEN torzítja a mért teljesítményt: a felületes endometriosis szövettani igazolása közismerten megbízhatatlan, tehát minden ilyen eset „tévedés”-ként állna be, és az ultrahang rosszabbnak látszana, mint amilyen. Az ötödik állapot a HIÁNYZÓ válasz, és annak nincs kódja: a hiányzó adat sehol nem „nem”."
+      },
+      "howToMeasure": {
+        "hu": "A referencia (műtéti lelet vagy szövettan) megnevezésével együtt."
+      }
+    }
+  },
+  {
+    "id": "audit.postop.confirmed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Műtét utáni diagnózis megerősítve"
+    },
+    "short": {
+      "hu": "Műtét utáni dg. megerősítve"
+    },
+    "module": "utankovetes",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "confirmed",
+        "label_hu": "Megerősítve — a referencia ugyanazt mondta"
+      },
+      {
+        "code": "refuted",
+        "label_hu": "Cáfolva — a referencia mást mondott"
+      },
+      {
+        "code": "indeterminate",
+        "label_hu": "A referencia NEM tudott dönteni"
+      },
+      {
+        "code": "noReference",
+        "label_hu": "Nem történt referenciavizsgálat",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A műtét közben látott kép szembesítése a szövettani lelettel."
+      },
+      "whyItMatters": {
+        "hu": "HÁROM ÁLLÍTÁS, NEM KETTŐ: amit az ultrahang mondott, amit a sebész látott, és amit a szövettan kimondott. A rendszer egyiket sem írhatja felül a másikkal — aki csak egyet tárol, az a másik kettőt hallgatja el. NÉGY VÁLASZ, NEM KETTŐ, ÉS EZ NEM FINOMKODÁS. A „megerősítve? igen/nem” kérdés a CÁFOLATOT és az ELDÖNTHETETLENSÉGET ugyanabba a rekeszbe teszi — pedig az egyik azt jelenti, hogy a rendszer tévedett, a másik azt, hogy a referencia nem tudott válaszolni. A kettő összemosása RENDSZERESEN torzítja a mért teljesítményt: a felületes endometriosis szövettani igazolása közismerten megbízhatatlan, tehát minden ilyen eset „tévedés”-ként állna be, és az ultrahang rosszabbnak látszana, mint amilyen. Az ötödik állapot a HIÁNYZÓ válasz, és annak nincs kódja: a hiányzó adat sehol nem „nem”."
+      },
+      "howToMeasure": {
+        "hu": "A szövettani lelet megnevezésével együtt."
+      }
+    }
+  }
+]

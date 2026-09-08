@@ -1,0 +1,210 @@
+{
+  "megnevezes": "Éves jelentési adatkörök",
+  "modul": 20,
+  "note": "A JELENTÉS AGGREGÁTUM, ÉS AZ AGGREGÁTUM ELREJTI, MIBŐL KÉSZÜLT.\n\nEgy begépelt évi szám olyan állítás, amit senki nem tud visszaellenőrizni — és a jelentések éppen azért veszélyesek, mert évekig hivatkoznak rájuk. Ezért itt minden tételnek meg kell mondania, SZÁMOLHATÓ-e a rekordból. Ami számolható, azt a rendszer számolja; ami nem, azt megnevezetten kézzel adják meg — és a kettő nem néz ki egyformán.\n\nÉS A NULLA KÉT DOLGOT JELENTHET: nem történt, vagy nem számolták. A rendszernek ezt szét kell választania, különben a „0 intézeten kívüli szülés” ugyanúgy néz ki akkor is, ha senki nem nézte meg.",
+  "adatkorok": [
+    {
+      "id": "jel.teruleti",
+      "megnevezes": "Területi védőnő által évente egyszer jelentendő adatok köre",
+      "ev": 2025,
+      "kitolti": "területi védőnő",
+      "teljes": true,
+      "tetelek": [
+        {
+          "id": "a",
+          "jel": "a)",
+          "szoveg": "Az év folyamán nyilvántartott várandós anyák száma",
+          "szamolhato": true,
+          "forras": "gondozási nyilvántartás"
+        },
+        {
+          "id": "b",
+          "jel": "b)",
+          "szoveg": "Ebből fokozott gondozást igénylők száma (egészségi, környezeti, egészségi és környezeti ok)",
+          "szamolhato": true,
+          "forras": "gondozási besorolás",
+          "megjegyzes": "A HÁROM OK KÜLÖN KATEGÓRIA. Egyetlen összesített számban a „miért” elvész, pedig a beavatkozás iránya abból következik."
+        },
+        {
+          "id": "c",
+          "jel": "c)",
+          "szoveg": "Gondozott családok száma",
+          "szamolhato": true,
+          "forras": "gondozási nyilvántartás"
+        },
+        {
+          "id": "d",
+          "jel": "d)",
+          "szoveg": "Védőnői ellátást nem igénylő családok száma",
+          "szamolhato": false,
+          "megjegyzes": "NEM SZÁMOLHATÓ a rekordból: aki nem igényel ellátást, arról nincs rekord. Ez a tétel szerkezetéből következően kézi becslés."
+        },
+        {
+          "id": "e",
+          "jel": "e)",
+          "szoveg": "Védőnői látogatást nem igénylő családok száma",
+          "szamolhato": false,
+          "megjegyzes": "Ugyanaz: a hiány nem számolható abból, ami nincs."
+        },
+        {
+          "id": "f",
+          "jel": "f)",
+          "szoveg": "Intézeten kívüli szülések száma összesen",
+          "szamolhato": true,
+          "forras": "szülés helye"
+        },
+        {
+          "id": "g",
+          "jel": "g)",
+          "szoveg": "Intézeten kívül – nem tervezett – szülések száma",
+          "szamolhato": true,
+          "forras": "szülés helye + tervezettség",
+          "megjegyzes": "A g) a f) RÉSZHALMAZA. Ha g) > f), az adatbeviteli hiba, nem ritka eset."
+        },
+        {
+          "id": "h",
+          "jel": "h)",
+          "szoveg": "Tervezett otthonszülések száma",
+          "szamolhato": true,
+          "forras": "szülés helye + tervezettség",
+          "megjegyzes": "A g) és h) együtt nem feltétlenül adja ki f)-et: intézeten kívüli szülés lehet nem otthon is."
+        },
+        {
+          "id": "i",
+          "jel": "i)",
+          "szoveg": "Kissúlyú újszülöttek száma összesen",
+          "szamolhato": true,
+          "forras": "nb.birthWeight",
+          "megjegyzes": "A KÜSZÖB KIMONDANDÓ: 2500 g alatt. Enélkül két jelentés ugyanazt a nevet adja két különböző számnak."
+        },
+        {
+          "id": "j",
+          "jel": "j)",
+          "szoveg": "Késői magzati halálozások (halvaszületések) száma összesen",
+          "szamolhato": true,
+          "forras": "kimenetel",
+          "megjegyzes": "A HALVASZÜLETÉS DEFINÍCIÓJA gesztációs korhoz és/vagy súlyhoz kötött, és országonként eltér — a küszöböt ki kell mondani."
+        },
+        {
+          "id": "k",
+          "jel": "k)",
+          "szoveg": "0-6 nap közötti veszteség",
+          "szamolhato": true,
+          "forras": "kimenetel + életkor"
+        },
+        {
+          "id": "l",
+          "jel": "l)",
+          "szoveg": "Csecsemőhalálozások (0-1 év) száma összesen",
+          "szamolhato": false,
+          "megjegyzes": "A rendszer az első év végéig csak akkor tudja, ha a gyerek nála maradt. Elköltözés vagy más ellátóhoz kerülés esetén NEM számolható — és ezt jobb kimondani, mint alulbecsülni."
+        }
+      ]
+    },
+    {
+      "id": "jel.varmegyei",
+      "megnevezes": "Vármegyei Kormányhivatal Népegészségügyi Főosztálya által évente egyszer jelentendő adatok köre",
+      "ev": 2025,
+      "kitolti": "vármegyei kormányhivatal NFO",
+      "teljes": false,
+      "teljesMegjegyzes": "KIVONAT, NEM TELJES ŰRLAP. A tételszámozás 62-ről 132-re ugrik: az 1–61. és 63–131. tétel nincs a kapott dokumentumban. A rendszernek ezt tudnia kell, különben a jelentés teljesnek látszik — és egy hiányos jelentés, ami teljesnek látszik, rosszabb, mint a hiánya.",
+      "tetelek": [
+        {
+          "id": "62",
+          "jel": "62.",
+          "szoveg": "Begyűjtött anyatej mennyisége Anyatejgyűjtő állomásokról (L)",
+          "szamolhato": false,
+          "megjegyzes": "Nem a mi rekordunkból jön."
+        },
+        {
+          "id": "132",
+          "jel": "132.",
+          "szoveg": "Tanácsadók száma összesen",
+          "szamolhato": false
+        },
+        {
+          "id": "133",
+          "jel": "133.",
+          "szoveg": "Orvosi rendelővel közös helyiségben lévők száma",
+          "szamolhato": false
+        },
+        {
+          "id": "134",
+          "jel": "134.",
+          "szoveg": "Kormányhivatali vezető védőnői állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "135",
+          "jel": "135.",
+          "szoveg": "Kormányhivatali vezető védőnői betöltött állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "136",
+          "jel": "136.",
+          "szoveg": "Területi védőnői állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "137",
+          "jel": "137.",
+          "szoveg": "Területi védőnői betöltött állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "138",
+          "jel": "138.",
+          "szoveg": "Iskola-egészségügyi feladatot főállásban ellátó védőnői állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "139",
+          "jel": "139.",
+          "szoveg": "Iskola-egészségügyi betöltött állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "140",
+          "jel": "140.",
+          "szoveg": "Családvédelmi szolgálat állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "141",
+          "jel": "141.",
+          "szoveg": "Családvédelmi szolgálat betöltött állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "142",
+          "jel": "142.",
+          "szoveg": "Kórházi védőnői állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "143",
+          "jel": "143.",
+          "szoveg": "Kórházi védőnői betöltött állások száma",
+          "szamolhato": false
+        },
+        {
+          "id": "144",
+          "jel": "144.",
+          "szoveg": "Összes védőnői állás száma",
+          "szamolhato": true,
+          "forras": "a 134–142. összege",
+          "megjegyzes": "SZÁMOLHATÓ A TÖBBI TÉTELBŐL — és ha a begépelt érték nem egyezik az összeggel, az hiba."
+        },
+        {
+          "id": "145",
+          "jel": "145.",
+          "szoveg": "Betöltött állások száma összesen",
+          "szamolhato": true,
+          "forras": "a 135–143. összege",
+          "megjegyzes": "Ugyanígy. És a betöltött szám SOSEM lehet nagyobb az állások számánál."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "megnevezes": "Területi védőnői körzet és értesítés",
+  "modul": 30,
+  "note": "A KÖRZETI VÉDŐNŐ NEM AZ ESETHEZ TARTOZIK, HANEM A LAKCÍMHEZ. A rendszer ellátási kapcsolat fogalma esetalapú: cselekvő + eset + időablak. A területi védőnő ettől eltér — a körzet a lakcímből következik, és a gyerek akkor is az övé, ha még sosem találkoztak.\n\nEzért az értesítés nem udvariassági kérdés: a hazaadás után a védőnőnek MEGADOTT HATÁRIDŐN BELÜL fel kell keresnie az újszülöttet, és ha nem tudja, hogy megszületett, nem tud jönni. A kimaradt első látogatás a gyermekvédelem legkorábbi jelzője — és a rendszernek ezt nem szabad azzal elrontania, hogy nem szólt.",
+  "kereso": {
+    "megnevezes": "NNK területi védőnő-kereső",
+    "url": "https://apex-prod.nnk.gov.hu/ords/vedono_ws/r/védőnő-kereső/vedono_kereso",
+    "hasznalat": null,
+    "megjegyzes": "Nyilvános kereső. Hogy a rendszer GÉPI úton kérdezi-e le, azt szervezeti és adatvédelmi döntés dönti el: a lekérdezés a beteg LAKCÍMÉT viszi ki egy külső szolgáltatáshoz. Amíg ez nincs kimondva, a körzet kézzel rögzítendő — a kapu ettől még ugyanaz."
+  },
+  "ertesitesek": [
+    {
+      "id": "ert.varando",
+      "mikor": "varandosGondozasKezdete",
+      "kotelezo": false,
+      "miert": "Előre szólni a legjobb: a védőnő a várandósgondozásban is szerepet kap, és a kapcsolat a szülés előtt épül ki."
+    },
+    {
+      "id": "ert.szuletes",
+      "mikor": "szuletes",
+      "kotelezo": false,
+      "miert": "A születés ténye — ha az intézmény és a körzet ismert, ez már küldhető."
+    },
+    {
+      "id": "ert.hazaadas",
+      "mikor": "hazaadas",
+      "kotelezo": true,
+      "oraKeslekedes": 0,
+      "miert": "KÖTELEZŐ ÉS AZONNALI. A hazaadás után a védőnőnek határidőn belül fel kell keresnie az újszülöttet; ha nem tudja, hogy hazaengedték, nem tud jönni."
+    }
+  ],
+  "korzetek": []
+}

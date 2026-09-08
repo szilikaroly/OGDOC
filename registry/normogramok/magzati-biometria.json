@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ng.chitty.ac",
+    "parameter": "us.ac",
+    "by": "ctx.ga",
+    "unit": "mm",
+    "population": "egyes magzat, brit populáció",
+    "source": {
+      "cite": "Chitty LS, Altman DG, Henderson A, Campbell S. Charts of fetal size: 3. Abdominal measurements. Br J Obstet Gynaecol 1994;101(2):125-131",
+      "pmid": "8305386"
+    },
+    "verification": "assumed",
+    "rows": [
+      { "x": 20, "mean": 150, "sd": 11 },
+      { "x": 24, "mean": 195, "sd": 14 },
+      { "x": 28, "mean": 240, "sd": 17 },
+      { "x": 32, "mean": 285, "sd": 21 },
+      { "x": 36, "mean": 325, "sd": 25 },
+      { "x": 40, "mean": 355, "sd": 28 }
+    ]
+  }
+]

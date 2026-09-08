@@ -1,0 +1,242 @@
+{
+  "megnevezes": "ExAssist — vizsgálati protokollok",
+  "modul": 28,
+  "protokollok": [
+    {
+      "id": "ex.ujszulott",
+      "megnevezes": "Újszülött-vizsgálat",
+      "szint": "minimum",
+      "forras": null,
+      "hitelesitve": false,
+      "miert": "A kimaradó tétel klasszikus mulasztás: a csípőficam, a here leszállása, a vörös reflex és a femoralis pulzus a négy legtöbbet felrótt kihagyás.",
+      "tetelek": [
+        {
+          "id": "csipo",
+          "megnevezes": "Csípő — Ortolani és Barlow",
+          "kotelezo": true
+        },
+        {
+          "id": "vorosReflex",
+          "megnevezes": "Vörös reflex mindkét szemen",
+          "kotelezo": true
+        },
+        {
+          "id": "femoralis",
+          "megnevezes": "Femoralis pulzus kétoldalt",
+          "kotelezo": true
+        },
+        {
+          "id": "here",
+          "megnevezes": "Herék leszállása (fiú újszülöttnél)",
+          "kotelezo": true
+        },
+        {
+          "id": "szajpad",
+          "megnevezes": "Szájpad — tapintással is",
+          "kotelezo": true
+        },
+        {
+          "id": "gerinc",
+          "megnevezes": "Gerinc és sacralis régió",
+          "kotelezo": true
+        },
+        {
+          "id": "bor",
+          "megnevezes": "Bőr, sárgaság, elváltozások",
+          "kotelezo": true
+        },
+        {
+          "id": "tonus",
+          "megnevezes": "Izomtónus és mozgásminta",
+          "kotelezo": true
+        }
+      ]
+    },
+    {
+      "id": "ex.uh.szuleszeti",
+      "megnevezes": "Szülészeti ultrahang (II–III. trimeszter)",
+      "szint": "minimum",
+      "forras": null,
+      "hitelesitve": false,
+      "miert": "A leletben az üres hely és a „megnéztem, ép” ma megkülönböztethetetlen.",
+      "tetelek": [
+        {
+          "id": "szivmukodes",
+          "megnevezes": "Magzati szívműködés",
+          "kotelezo": true
+        },
+        {
+          "id": "fekves",
+          "megnevezes": "Fekvés és tartás",
+          "kotelezo": true
+        },
+        {
+          "id": "biometria",
+          "megnevezes": "Biometria (BPD, HC, AC, FL)",
+          "kotelezo": true
+        },
+        {
+          "id": "magzatviz",
+          "megnevezes": "Magzatvíz mennyisége",
+          "kotelezo": true
+        },
+        {
+          "id": "placenta",
+          "megnevezes": "Lepény helyzete és szerkezete",
+          "kotelezo": true
+        },
+        {
+          "id": "koldokzsinor",
+          "megnevezes": "Köldökzsinór tapadása",
+          "kotelezo": false
+        },
+        {
+          "id": "doppler",
+          "megnevezes": "Köldökartéria Doppler",
+          "kotelezo": false
+        },
+        {
+          "id": "cervix",
+          "megnevezes": "Cervixhossz",
+          "kotelezo": false
+        }
+      ]
+    },
+    {
+      "id": "ex.ctg",
+      "megnevezes": "CTG / NST",
+      "szint": "minimum",
+      "forras": null,
+      "hitelesitve": false,
+      "miert": "A jelminőség a megítélés előfeltétele; anyai pulzus-tévesztésnél a görbe megnyugtatónak látszik halott magzatnál is.",
+      "tetelek": [
+        {
+          "id": "jelminoseg",
+          "megnevezes": "Jelminőség és jelvesztés aránya",
+          "kotelezo": true
+        },
+        {
+          "id": "anyaiPulzus",
+          "megnevezes": "Anyai pulzus elkülönítve a magzatitól",
+          "kotelezo": true
+        },
+        {
+          "id": "alapfrekvencia",
+          "megnevezes": "Alapfrekvencia",
+          "kotelezo": true
+        },
+        {
+          "id": "variabilitas",
+          "megnevezes": "Variabilitás",
+          "kotelezo": true
+        },
+        {
+          "id": "acceleracio",
+          "megnevezes": "Akcelerációk",
+          "kotelezo": true
+        },
+        {
+          "id": "decelaracio",
+          "megnevezes": "Decelerációk és típusuk",
+          "kotelezo": true
+        },
+        {
+          "id": "kontrakcio",
+          "megnevezes": "Kontrakciós tevékenység",
+          "kotelezo": true
+        },
+        {
+          "id": "hossz",
+          "megnevezes": "Regisztrálás hossza",
+          "kotelezo": true
+        }
+      ]
+    },
+    {
+      "id": "ex.kolposzkopia",
+      "megnevezes": "Kolposzkópia",
+      "szint": "minimum",
+      "forras": null,
+      "hitelesitve": false,
+      "miert": "Az adekvátság megítélése nélkül a negatív lelet nem értelmezhető.",
+      "tetelek": [
+        {
+          "id": "adekvat",
+          "megnevezes": "A vizsgálat adekvát-e (transzformációs zóna látható)",
+          "kotelezo": true
+        },
+        {
+          "id": "tzTipus",
+          "megnevezes": "Transzformációs zóna típusa (1/2/3)",
+          "kotelezo": true
+        },
+        {
+          "id": "ecetsav",
+          "megnevezes": "Ecetsavas reakció",
+          "kotelezo": true
+        },
+        {
+          "id": "jodproba",
+          "megnevezes": "Jódpróba (Schiller)",
+          "kotelezo": true
+        },
+        {
+          "id": "errajzolat",
+          "megnevezes": "Érrajzolat",
+          "kotelezo": true
+        },
+        {
+          "id": "kiterjedes",
+          "megnevezes": "Az elváltozás kiterjedése és lokalizációja",
+          "kotelezo": false
+        },
+        {
+          "id": "biopszia",
+          "megnevezes": "Történt-e biopszia, honnan",
+          "kotelezo": true
+        }
+      ]
+    },
+    {
+      "id": "ex.fizikalis.szuleszeti",
+      "megnevezes": "Fizikális szülészeti vizsgálat",
+      "szint": "minimum",
+      "forras": null,
+      "hitelesitve": false,
+      "tetelek": [
+        {
+          "id": "fundus",
+          "megnevezes": "Méhmagasság",
+          "kotelezo": true
+        },
+        {
+          "id": "leopold",
+          "megnevezes": "Leopold-fogások — fekvés és tartás",
+          "kotelezo": true
+        },
+        {
+          "id": "szivhang",
+          "megnevezes": "Magzati szívhang",
+          "kotelezo": true
+        },
+        {
+          "id": "kontrakcio",
+          "megnevezes": "Kontrakciók",
+          "kotelezo": true
+        },
+        {
+          "id": "odema",
+          "megnevezes": "Ödéma",
+          "kotelezo": false
+        },
+        {
+          "id": "belso",
+          "megnevezes": "Belső vizsgálat (ha javallt)",
+          "kotelezo": false
+        }
+      ]
+    }
+  ],
+  "intezmenyi": [],
+  "egyeni": []
+}

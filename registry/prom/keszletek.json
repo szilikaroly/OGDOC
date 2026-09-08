@@ -1,0 +1,33 @@
+[
+  {
+    "id": "set.entry",
+    "point": "entry",
+    "label": { "hu": "Gondozásba vételkor felveendő készletek" },
+    "instruments": ["inst.eq5d5l", "inst.whodas12", "inst.epds", "inst.whooley", "inst.mspss"],
+    "note": { "hu": "A KIINDULÁSI mérés. Enélkül a későbbi értékek nem értelmezhetők: a 42. napi életminőség önmagában nem mond semmit, csak a kiinduláshoz képest." }
+  },
+  {
+    "id": "set.t3",
+    "point": "t3",
+    "label": { "hu": "III. trimeszterben felveendő készletek" },
+    "instruments": ["inst.eq5d5l", "inst.epds", "inst.bses.sf"],
+    "note": { "hu": "A szoptatási önhatékonyság MÉG A SZÜLÉS ELŐTT mérendő: ez az utolsó pont, ahol a támogatás megelőző, nem utólagos." }
+  },
+  {
+    "id": "set.pp42",
+    "point": "pp42",
+    "label": { "hu": "42. napon felveendő készletek" },
+    "instruments": [
+      "inst.eq5d5l", "inst.whodas12", "inst.epds", "inst.mibs",
+      "inst.bses.sf", "inst.bssr"
+    ],
+    "note": { "hu": "A FŐ MÉRÉSI PONT. Itt kerül fel a szülési élmény (BSS-R) és az anya-csecsemő kötődés (MIBS) is." }
+  },
+  {
+    "id": "set.pp6m",
+    "point": "pp6m",
+    "label": { "hu": "6 hónapos mérési pont készletei" },
+    "instruments": ["inst.eq5d5l", "inst.whodas12", "inst.epds", "inst.mibs", "inst.mspss"],
+    "note": { "hu": "A hosszú távú kimenetel: életminőség, funkcionalitás, mentális egészség, kötődés és társas támogatás." }
+  }
+]

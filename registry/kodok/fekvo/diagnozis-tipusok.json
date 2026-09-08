@@ -1,0 +1,37 @@
+{
+  "id": "fekvo.diagnozisTipusok",
+  "label": { "hu": "Fekvőbeteg-jelentés: diagnózis típusjelek" },
+  "source": {
+    "cite": "10/2012. (II. 28.) NEFMI rendelet 6-7. §; NEAK Fekvőbeteg jelentés technikai útmutató (2026. május), 1. sz. melléklet",
+    "standard": "10/2012 NEFMI"
+  },
+  "note": {
+    "hu": "A típusjel nem címke: MEGSZÁMLÁLHATÓ kötelezettség. A rendelet megmondja, melyikből hány lehet, és melyik mikor kötelező. A rendszer ezt ellenőrzi — és NEM tölti ki: a hiányzó fődiagnózist nem találja ki."
+  },
+  "tipusok": [
+    { "jel": "0", "nev": "Beutaló iránydiagnózis", "max": 1,
+      "kotelezoHa": "beutalóval érkezett", "cite": "6. § (1)" },
+    { "jel": "1", "nev": "Ápolást indokoló fődiagnózis alapjául szolgáló betegség (alapbetegség)",
+      "min": 1, "max": 1, "kotelezoHa": "mindig", "cite": "6. § (3)" },
+    { "jel": "2", "nev": "Áthelyezést indokoló diagnózis", "max": 1,
+      "kotelezoHa": "áthelyezés történt", "cite": "6. § (7)" },
+    { "jel": "3", "nev": "Ápolást indokoló fődiagnózis",
+      "min": 1, "max": 1, "kotelezoHa": "mindig", "cite": "6. § (2)" },
+    { "jel": "4", "nev": "Az ápolást indokoló fődiagnózis szövődménye", "cite": "6. § (4) a)" },
+    { "jel": "C", "nev": "Nosocomiális eredetű fertőzés a kezelés következtében", "cite": "6. § (4) b)" },
+    { "jel": "D", "nev": "Egyéb, nem nosocomiális fertőzés a kezelés következtében", "cite": "6. § (4) c)" },
+    { "jel": "5", "nev": "Kísérő megbetegedés", "cite": "6. § (5)" },
+    { "jel": "V", "nev": "Az ellátás igénybevételi oka (Z-kód)",
+      "kotelezoHa": "szülés első ellátása; a 2. mellékletben nevesített esetek",
+      "cite": "6. § (8); 11. melléklet I. 1.4." },
+    { "jel": "E", "nev": "Sérülés, mérgezés külső oka",
+      "kotelezoHa": "a diagnózisok közt S, T, V, W, X vagy Y kezdetű kód szerepel",
+      "cite": "6. § (9)" },
+    { "jel": "M", "nev": "Morfológiai kód",
+      "kotelezoHa": "daganatos diagnózis, kórszövettannal igazolva", "cite": "6. § (10)" },
+    { "jel": "K", "nev": "Kiegészítő minősítés",
+      "kotelezoHa": "fődiagnózisként † jelű BNO — kötelező a * jelű párja", "cite": "7. § b)" },
+    { "jel": "F", "nev": "Funkcionális állapot (FNO)",
+      "megjegyzes": "a beteg FELVÉTELKORI státusza szerint", "cite": "5. § (3)" }
+  ]
+}

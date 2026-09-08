@@ -1,0 +1,10242 @@
+{
+ "id": "usmec.2024",
+ "megnevezes": "U.S. Medical Eligibility Criteria for Contraceptive Use (U.S. MEC), 2024 — összefoglaló tábla",
+ "verzio": "2024",
+ "forras": "CDC, Summary Chart of U.S. Medical Eligibility Criteria for Contraceptive Use (MMWR RR-73(4), 2024)",
+ "hivatkozas": "https://www.cdc.gov/contraception/hcp/usmec/",
+ "note": "KÖZKINCS: az Egyesült Államok szövetségi kormányzati munkája (CDC, MMWR RR-73(4), 2024).\n\nA MÁTRIX NEM SZABÁLYTÁBLA, HANEM KERESŐ. Nincs sorrend és nincs első találat: a feltétel és a módszer metszete adja a kategóriát.\n\nA KEZDÉS ÉS A FOLYTATÁS KÉT KÜLÖN OSZLOP. A tábla minden módszernél I (initiation) és C (continuation) oszlopot tart. Ezért `kat` minden módszernél `{k, f}` pár, akkor is, ha a kettő egyenlő. Egyetlen számra összevonva pont az veszne el, ami a legtöbbet mondja: HIV-fertőzés nem beállított beteg + réz-IUD = kezdés 2, FOLYTATÁS 1 — a folytatási oszlop nélkül a rendszer egy működő IUD eltávolítását javasolná.\n\nA `honnan` MEZŐ AZT MONDJA MEG, HONNAN VAN AZ ÉRTÉK:\n  sajat    — a módszer saját cellájából\n  chc      — a közös CHC-oszlopból (tabletta, tapasz, gyűrű EGY cella). Ilyenkor a három módszer közti KÜLÖNBSÉG NEM LEVEZETHETŐ ebből a forrásból; nem az következik belőle, hogy nincs különbség.\n  orokolt  — a szülősor függőlegesen összevont cellájából (pl. a „b. HIV infection” hormonális oszlopai átnyúlnak az „i.” és „ii.” alsorokra).\n\nAZ „NA” NEM HIÁNY, ÉS NEM IS „1”. Terhességben a hormonális módszerek NA = nem értelmezhető (a fogamzásgátlás céltalan, nem veszélyes), a réz-IUD viszont 4 (a behelyezés ártalmas). A kettőt egy „nincs besorolás” alá vonni a veszélyeset tüntetné el.\n\nA „2/4” ALAKÚ ÉRTÉK VAGYLAGOS: a forrás lábjegyzete dönti el, melyik érvényes. Egyetlen számra kerekíteni találgatás lenne.\n\nAMI NINCS A TÁBLÁBAN, ARRÓL NEM KÖVETKEZIK, HOGY SZABAD: ez az összefoglaló lap a teljes ajánlás részhalmaza.",
+ "modszerek": {
+  "cu_iud": "Réz-IUD",
+  "lng_iud": "LNG-IUD",
+  "implant": "Implantátum",
+  "dmpa": "DMPA (depó medroxiprogeszteron-acetát)",
+  "pop": "Progesztogén-tabletta (POP)",
+  "coc": "Kombinált tabletta (COC)",
+  "patch": "Tapasz",
+  "ring": "Hüvelygyűrű"
+ },
+ "chcTagok": [
+  "coc",
+  "patch",
+  "ring"
+ ],
+ "kategoriak": {
+  "1": "Nincs korlátozás — a módszer használható.",
+  "2": "Az előnyök általában felülmúlják az elméleti vagy igazolt kockázatot.",
+  "3": "Az elméleti vagy igazolt kockázat rendszerint felülmúlja az előnyöket. A módszer csak akkor jön szóba, ha nincs elfogadhatóbb alternatíva, és szakorvosi megítélés mellett.",
+  "4": "Elfogadhatatlan egészségi kockázat — a módszer NEM használható.",
+  "NA": "Nem értelmezhető: a módszer ebben a helyzetben nem alkalmazandó. NEM azonos az „1”-gyel, és nem is hiányzó adat."
+ },
+ "korfuggo": {
+  "feltetel": "Age",
+  "modszerenkent": {
+   "cu_iud": [
+    {
+     "kor": "menarche–<20",
+     "kat": 2
+    },
+    {
+     "kor": "≥20",
+     "kat": 1
+    }
+   ],
+   "lng_iud": [
+    {
+     "kor": "menarche–<20",
+     "kat": 2
+    },
+    {
+     "kor": "≥20",
+     "kat": 1
+    }
+   ],
+   "implant": [
+    {
+     "kor": "menarche–<18",
+     "kat": 1
+    },
+    {
+     "kor": "18–45",
+     "kat": 1
+    },
+    {
+     "kor": ">45",
+     "kat": 1
+    }
+   ],
+   "dmpa": [
+    {
+     "kor": "menarche–<18",
+     "kat": 2
+    },
+    {
+     "kor": "18–45",
+     "kat": 1
+    },
+    {
+     "kor": ">45",
+     "kat": 2
+    }
+   ],
+   "pop": [
+    {
+     "kor": "menarche–<18",
+     "kat": 1
+    },
+    {
+     "kor": "18–45",
+     "kat": 1
+    },
+    {
+     "kor": ">45",
+     "kat": 1
+    }
+   ],
+   "chc": [
+    {
+     "kor": "menarche–<40",
+     "kat": 1
+    },
+    {
+     "kor": "≥40",
+     "kat": 2
+    }
+   ]
+  }
+ },
+ "szovegesSorok": [
+  {
+   "feltetel": "Antiretrovirals (ARVs) used for prevention (PrEP) or treatment of HIV‡",
+   "szoveg": "All other ARVs are 1 or 2 for all methods",
+   "oldal": 2
+  }
+ ],
+ "sorok": [
+  {
+   "feltetel": "Anatomical abnormalities",
+   "alfeltetel": "a. Distorted uterine cavity",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Anatomical abnormalities",
+   "alfeltetel": "b. Other abnormalities",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Anemia, iron-deficiency",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Benign ovarian tumors",
+   "alfeltetel": "(including cysts)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breast disease",
+   "alfeltetel": "a. Undiagnosed mass",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breast disease",
+   "alfeltetel": "b. Benign breast disease",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breast disease",
+   "alfeltetel": "c. Family history of cancer",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breast disease",
+   "alfeltetel": "d. Breast cancer‡ / i. Current",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "implant": {
+     "k": "4",
+     "f": "4"
+    },
+    "dmpa": {
+     "k": "4",
+     "f": "4"
+    },
+    "pop": {
+     "k": "4",
+     "f": "4"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breast disease",
+   "alfeltetel": "d. Breast cancer‡ / ii. Past and no evidence of current disease for 5 years",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "3",
+     "f": "3"
+    },
+    "implant": {
+     "k": "3",
+     "f": "3"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "3",
+     "f": "3"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "a. <21 days postpartum",
+   "kat": {
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "b. 21 to <30 days postpartum / i. With other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "b. 21 to <30 days postpartum / ii. Without other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "c. 30-42 days postpartum / i. With other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "c. 30-42 days postpartum / ii. Without other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Breastfeeding",
+   "alfeltetel": "d. >42 days postpartum",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cervical cancer",
+   "alfeltetel": "Awaiting treatment",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cervical ectropion",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cervical intraepithelial neoplasia",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Chronic kidney disease‡",
+   "alfeltetel": "a. Current nephrotic syndrome",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2/4",
+     "f": "2/4"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "pop": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Chronic kidney disease‡",
+   "alfeltetel": "b. Hemodialysis",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2/4",
+     "f": "2/4"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "pop": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Chronic kidney disease‡",
+   "alfeltetel": "c. Peritoneal dialysis",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2/4",
+     "f": "2/4"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "pop": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cirrhosis",
+   "alfeltetel": "a. Compensated (normal liver function)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cirrhosis",
+   "alfeltetel": "b. Decompensated‡ (impaired liver function)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Cystic fibrosis‡",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "a. Current or history of DVT/PVE, receiving anticoagulant therapy (therapeutic dose)",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "b. History of DVT/PE, receiving anticoagulant therapy (prophylactic dose) / i. Higher risk for recurrent DVT/PE",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "b. History of DVT/PE, receiving anticoagulant therapy (prophylactic dose) / ii. Lower risk for recurrent DVT/PE",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "c. History of DVT/PE, not receiving anticoagulant therapy / i. Higher risk for recurrent DVT/PE",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "c. History of DVT/PE, not receiving anticoagulant therapy / ii. Lower risk for recurrent DVT/PE",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Deep venous thrombosis (DVT)/Pulmonary embolism (PE)‡",
+   "alfeltetel": "d. Family history (first-degree relatives)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Depressive disorders",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Diabetes",
+   "alfeltetel": "a. History of gestational disease",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Diabetes",
+   "alfeltetel": "b. Nonvascular disease / i. Non-insulin dependent",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Diabetes",
+   "alfeltetel": "b. Nonvascular disease / ii. Insulin dependent‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Diabetes",
+   "alfeltetel": "c. Nephropathy, retinopathy, or neuropathy‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "patch": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "ring": {
+     "k": "3/4",
+     "f": "3/4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Diabetes",
+   "alfeltetel": "d. Other vascular disease or diabetes of >20 years’ duration‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "patch": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "ring": {
+     "k": "3/4",
+     "f": "3/4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Dysmenorrhea",
+   "alfeltetel": "Severe",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Endometrial cancer‡",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Endometrial hyperplasia",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Endometriosis",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Epilepsy‡",
+   "alfeltetel": "(see also Drug Interactions)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gallbladder disease",
+   "alfeltetel": "a. Asymptomatic",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gallbladder disease",
+   "alfeltetel": "b. Symptomatic / i. Current",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gallbladder disease",
+   "alfeltetel": "b. Symptomatic / ii. Treated by cholecystectomy",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gallbladder disease",
+   "alfeltetel": "b. Symptomatic / iii. Medically treated",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "a. Suspected GTD (immediate postevacuation) / i. Uterine size first trimester",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "a. Suspected GTD (immediate postevacuation) / ii. Uterine size second trimester",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "b. Confirmed GTD / i. Undectectable or non-pregnant β-hCG levels",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "b. Confirmed GTD / ii. Decreasing ß-hCG levels",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "b. Confirmed GTD / iii. Persistently elevated ß-hCG levels or malignant disease, with no evidence or suspicion of intrauterine disease",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Gestational trophoblastic disease (GTD)‡",
+   "alfeltetel": "b. Confirmed GTD / iv. Persistently elevated ß-hCG levels or malignant disease, with evidence or suspicion of intrauterine disease",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Headaches",
+   "alfeltetel": "a. Nonmigraine (mild or severe)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Headaches",
+   "alfeltetel": "b. Migraine / i. Without aura (includes menstrual migraine)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "Headaches",
+   "alfeltetel": "b. Migraine / ii. With aura",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of bariatric surgery‡",
+   "alfeltetel": "a. Restrictive procedures",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of bariatric surgery‡",
+   "alfeltetel": "b. Malabsorptive procedures",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "3",
+     "f": "3"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "sajat"
+    ],
+    "patch": [
+     "sajat"
+    ],
+    "ring": [
+     "sajat"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of cholestasis",
+   "alfeltetel": "a. Pregnancy related",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of cholestasis",
+   "alfeltetel": "b. Past COC related",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of high blood pressure during pregnancy",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "History of pelvic surgery",
+   "alfeltetel": "(see also Postpartum [including cesarean delivery])",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "HIV",
+   "alfeltetel": "a. High risk for HIV",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "HIV",
+   "alfeltetel": "b. HIV infection",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 1
+  },
+  {
+   "feltetel": "HIV",
+   "alfeltetel": "b. HIV infection / i. Clinically well receiving ARV therapy",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "coc": [
+     "orokolt",
+     "chc"
+    ],
+    "patch": [
+     "orokolt",
+     "chc"
+    ],
+    "ring": [
+     "orokolt",
+     "chc"
+    ],
+    "dmpa": [
+     "orokolt"
+    ],
+    "implant": [
+     "orokolt"
+    ],
+    "pop": [
+     "orokolt"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*",
+    "dmpa": "*",
+    "implant": "*",
+    "pop": "*"
+   },
+   "jegyzet": "If on ARV, see also Drug Interactions.",
+   "oldal": 1
+  },
+  {
+   "feltetel": "HIV",
+   "alfeltetel": "b. HIV infection / ii. Not clinically well or not receiving ARV therapy‡",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "coc": [
+     "orokolt",
+     "chc"
+    ],
+    "patch": [
+     "orokolt",
+     "chc"
+    ],
+    "ring": [
+     "orokolt",
+     "chc"
+    ],
+    "dmpa": [
+     "orokolt"
+    ],
+    "implant": [
+     "orokolt"
+    ],
+    "pop": [
+     "orokolt"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*",
+    "dmpa": "*",
+    "implant": "*",
+    "pop": "*"
+   },
+   "jegyzet": "If on ARV, see also Drug Interactions.",
+   "oldal": 1
+  },
+  {
+   "feltetel": "Hypertension",
+   "alfeltetel": "a. Adequately controlled hypertension",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Hypertension",
+   "alfeltetel": "b. Elevated blood pressure levels (properly taken measurements) / i. Systolic 140-159 or diastolic 90-99",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Hypertension",
+   "alfeltetel": "b. Elevated blood pressure levels (properly taken measurements) / ii. Systolic ≥160 or diastolic ≥100‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Hypertension",
+   "alfeltetel": "c. Vascular disease",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Inflammatory bowel disease",
+   "alfeltetel": "(ulcerative colitis or Crohn’s disease)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "patch": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "ring": {
+     "k": "2/3",
+     "f": "2/3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Ischemic heart disease‡",
+   "alfeltetel": "Current and history of",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "3"
+    },
+    "implant": {
+     "k": "2",
+     "f": "3"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "3"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Liver tumors",
+   "alfeltetel": "a. Benign / i. Focal nodular hyperplasia",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Liver tumors",
+   "alfeltetel": "a. Benign / ii. Hepatocellular adenoma‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Liver tumors",
+   "alfeltetel": "b. Malignant‡ (hepatocellular carcinoma)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "3",
+     "f": "3"
+    },
+    "implant": {
+     "k": "3",
+     "f": "3"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "3",
+     "f": "3"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Malaria",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Multiple risk factors for atherosclerotic cardiovascular disease",
+   "alfeltetel": "(e .g., older age, smoking, diabetes, hypertension, low HDL, high LDL, or high triglyceride levels)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "patch": {
+     "k": "3/4",
+     "f": "3/4"
+    },
+    "ring": {
+     "k": "3/4",
+     "f": "3/4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Multiple sclerosis",
+   "alfeltetel": "a. Without prolonged immobility",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Multiple sclerosis",
+   "alfeltetel": "b. With prolonged immobility",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Obesity",
+   "alfeltetel": "a. Body mass index (BMI) ≥30 kg/m2",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Obesity",
+   "alfeltetel": "b. Menarche to <18 years and BMI ≥30 kg/m2",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Ovarian cancer‡",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Parity",
+   "alfeltetel": "a. Nulliparous",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Parity",
+   "alfeltetel": "b. Parous",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Past ectopic pregnancy",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Pelvic inflammatory disease",
+   "alfeltetel": "a. Current",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Pelvic inflammatory disease",
+   "alfeltetel": "b. Past / i. With subsequent pregnancy",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Pelvic inflammatory disease",
+   "alfeltetel": "b. Past / ii. Without subsequent pregnancy",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Peripartum cardiomyopathy‡",
+   "alfeltetel": "a. Normal or mildly impaired cardiac function / i. <6 months",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Peripartum cardiomyopathy‡",
+   "alfeltetel": "a. Normal or mildly impaired cardiac function / ii. ≥6 months",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Peripartum cardiomyopathy‡",
+   "alfeltetel": "b. M oderately or severely impaired cardiac function",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "a. First trimester abortion / i. Procedural (surgical)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "a. First trimester abortion / ii. Medication",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1/2",
+     "f": "1/2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "a. First trimester abortion / iii. Spontaneous abortion with no intervention",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "b. Second trimester abortion / i. Procedural (surgical)",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "b. Second trimester abortion / ii. Medication",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "b. Second trimester abortion / iii. Spontaneous abortion with no intervention",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postabortion (spontaneous or induced)",
+   "alfeltetel": "c. Immediate postseptic abortion",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (nonbreastfeeding)",
+   "alfeltetel": "a. <21 days",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (nonbreastfeeding)",
+   "alfeltetel": "b. 21 days to 42 days / i. With other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (nonbreastfeeding)",
+   "alfeltetel": "b. 21 days to 42 days / ii. Without other risk factors for VTE",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (nonbreastfeeding)",
+   "alfeltetel": "c. >42 days",
+   "kat": {
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (including cesarean delivery, breastfeeding, or nonbreastfeeding)",
+   "alfeltetel": "a. <10 minutes after delivery of the placenta",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (including cesarean delivery, breastfeeding, or nonbreastfeeding)",
+   "alfeltetel": "b. 10 minutes after delivery of the placenta to <4 weeks",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (including cesarean delivery, breastfeeding, or nonbreastfeeding)",
+   "alfeltetel": "c. ≥4 weeks",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Postpartum (including cesarean delivery, breastfeeding, or nonbreastfeeding)",
+   "alfeltetel": "d. Postpartum sepsis",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Pregnancy",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "4"
+    },
+    "implant": {
+     "k": "NA",
+     "f": "NA"
+    },
+    "dmpa": {
+     "k": "NA",
+     "f": "NA"
+    },
+    "pop": {
+     "k": "NA",
+     "f": "NA"
+    },
+    "coc": {
+     "k": "NA",
+     "f": "NA"
+    },
+    "patch": {
+     "k": "NA",
+     "f": "NA"
+    },
+    "ring": {
+     "k": "NA",
+     "f": "NA"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Rheumatoid arthritis",
+   "alfeltetel": "a. Not on immunosuppressive therapy",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Rheumatoid arthritis",
+   "alfeltetel": "b. On immunosuppressive therapy",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "dmpa": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Schistosomiasis",
+   "alfeltetel": "a. Uncomplicated",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Schistosomiasis",
+   "alfeltetel": "b. Fibrosis of the liver‡ (if severe, see also Cirrhosis)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Sexually transmitted infections (STIs)",
+   "alfeltetel": "a. Current purulent cervicitis or chlamydial infection or gonococcal infection",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Sexually transmitted infections (STIs)",
+   "alfeltetel": "b. Vaginitis (including Trichomonas vaginalis and bacterial vaginosis)",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Sexually transmitted infections (STIs)",
+   "alfeltetel": "c. Other factors related to STIs",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Sickle cell disease‡",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "dmpa": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Smoking",
+   "alfeltetel": "a. Age <35",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Smoking",
+   "alfeltetel": "b. Age ≥35, <15 cigarettes/day",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Smoking",
+   "alfeltetel": "c. Age ≥35, ≥15 cigarettes/day",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Solid organ transplantation‡",
+   "alfeltetel": "a. No graft failure",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "dmpa": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Solid organ transplantation‡",
+   "alfeltetel": "b. Graft failure",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2/3",
+     "f": "2/3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "dmpa": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Stroke‡",
+   "alfeltetel": "History of cerebrovascular accident",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "3"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "3"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Superficial venous disorders",
+   "alfeltetel": "a. Varicose veins",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Superficial venous disorders",
+   "alfeltetel": "b. Superficial venous thrombosis (acute or history)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Surgery",
+   "alfeltetel": "a. Minor surgery without immobilization",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Surgery",
+   "alfeltetel": "b. Major surgery / i. Without prolonged immobilization",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Surgery",
+   "alfeltetel": "b. Major surgery / ii. With prolonged immobilization",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Systemic lupus erythematosus‡",
+   "alfeltetel": "a. Positive (or unknown) antiphospholipid antibodies",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Systemic lupus erythematosus‡",
+   "alfeltetel": "b. Severe thrombocytopenia",
+   "kat": {
+    "cu_iud": {
+     "k": "3",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Systemic lupus erythematosus‡",
+   "alfeltetel": "c. Immunosuppressive therapy",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Systemic lupus erythematosus‡",
+   "alfeltetel": "d. None of the above",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Thalassemia",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Thrombophilia‡",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Thyroid disorders",
+   "alfeltetel": "Simple goiter, hyperthyroid, or hypothyroid",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Tuberculosis‡ (see also Drug Interactions)",
+   "alfeltetel": "a. Nonpelvic",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Tuberculosis‡ (see also Drug Interactions)",
+   "alfeltetel": "b. Pelvic",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "3"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "3"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Unexplained vaginal bleeding",
+   "alfeltetel": "( suspicious for serious condition) before evaluation",
+   "kat": {
+    "cu_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "4",
+     "f": "2"
+    },
+    "implant": {
+     "k": "3",
+     "f": "3"
+    },
+    "dmpa": {
+     "k": "3",
+     "f": "3"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Uterine fibroids",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Valvular heart disease",
+   "alfeltetel": "a. Uncomplicated",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Valvular heart disease",
+   "alfeltetel": "b. Complicated‡",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "4",
+     "f": "4"
+    },
+    "patch": {
+     "k": "4",
+     "f": "4"
+    },
+    "ring": {
+     "k": "4",
+     "f": "4"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Vaginal bleeding patterns",
+   "alfeltetel": "a. Irregular pattern without heavy bleeding",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Vaginal bleeding patterns",
+   "alfeltetel": "b. Heavy or prolonged bleeding",
+   "kat": {
+    "cu_iud": {
+     "k": "2",
+     "f": "2"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "2"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Viral hepatitis",
+   "alfeltetel": "a. Acute or flare",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3/4",
+     "f": "2"
+    },
+    "patch": {
+     "k": "3/4",
+     "f": "2"
+    },
+    "ring": {
+     "k": "3/4",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Viral hepatitis",
+   "alfeltetel": "b. Chronic",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Antiretrovirals (ARVs) used for prevention (PrEP) or treatment of HIV‡",
+   "alfeltetel": "Fosamprenavir (FPV)",
+   "kat": {
+    "cu_iud": {
+     "k": "1/2",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1/2",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "2",
+     "f": "2"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "cu_iud": "*",
+    "lng_iud": "*",
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Anticonvulsant therapy",
+   "alfeltetel": "a. Certain anticonvulsants (phenytoin, carbamazepine, barbiturates, primidone, topiramate, oxcarbazepine)",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "3",
+     "f": "3"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Anticonvulsant therapy",
+   "alfeltetel": "b. Lamotrigine",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Antimicrobial therapy",
+   "alfeltetel": "a. Broad-spectrum antibiotics",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Antimicrobial therapy",
+   "alfeltetel": "b. Antifungals",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Antimicrobial therapy",
+   "alfeltetel": "c. Antiparasitics",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "Antimicrobial therapy",
+   "alfeltetel": "d. Rifampin or rifabutin therapy",
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "3",
+     "f": "3"
+    },
+    "coc": {
+     "k": "3",
+     "f": "3"
+    },
+    "patch": {
+     "k": "3",
+     "f": "3"
+    },
+    "ring": {
+     "k": "3",
+     "f": "3"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {
+    "implant": "*",
+    "dmpa": "*",
+    "pop": "*",
+    "coc": "*",
+    "patch": "*",
+    "ring": "*"
+   },
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "SSRIs",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "1",
+     "f": "1"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "1",
+     "f": "1"
+    },
+    "coc": {
+     "k": "1",
+     "f": "1"
+    },
+    "patch": {
+     "k": "1",
+     "f": "1"
+    },
+    "ring": {
+     "k": "1",
+     "f": "1"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  },
+  {
+   "feltetel": "St. John’s wort",
+   "alfeltetel": null,
+   "kat": {
+    "cu_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "lng_iud": {
+     "k": "1",
+     "f": "1"
+    },
+    "implant": {
+     "k": "2",
+     "f": "2"
+    },
+    "dmpa": {
+     "k": "1",
+     "f": "1"
+    },
+    "pop": {
+     "k": "2",
+     "f": "2"
+    },
+    "coc": {
+     "k": "2",
+     "f": "2"
+    },
+    "patch": {
+     "k": "2",
+     "f": "2"
+    },
+    "ring": {
+     "k": "2",
+     "f": "2"
+    }
+   },
+   "honnan": {
+    "cu_iud": [
+     "sajat"
+    ],
+    "lng_iud": [
+     "sajat"
+    ],
+    "implant": [
+     "sajat"
+    ],
+    "dmpa": [
+     "sajat"
+    ],
+    "pop": [
+     "sajat"
+    ],
+    "coc": [
+     "chc"
+    ],
+    "patch": [
+     "chc"
+    ],
+    "ring": [
+     "chc"
+    ]
+   },
+   "jelek": {},
+   "jegyzet": null,
+   "oldal": 2
+  }
+ ]
+}

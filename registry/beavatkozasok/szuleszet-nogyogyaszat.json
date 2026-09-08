@@ -1,0 +1,786 @@
+[
+  {
+    "id": "proc.cs.elective",
+    "label": {
+      "hu": "Tervezett császármetszés"
+    },
+    "synonyms": [
+      "elektív sectio",
+      "tervezett sectio"
+    ],
+    "steps": [
+      "behatolás",
+      "hasüreg megnyitása",
+      "uterotomia",
+      "a magzat kiemelése",
+      "a lepény eltávolítása",
+      "a méh zárása",
+      "hasfal zárása"
+    ],
+    "opens": [
+      "op.cs.uterotomy",
+      "op.cs.prevScar",
+      "op.cs.placenta",
+      "op.cs.adhesions",
+      "op.intra.deliveryAt"
+    ],
+    "template": "cs",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A leggyakoribb szülészeti műtét. A sablon azért külön, mert a következő terhesség szempontjából döntő adatokat (uterotomia típusa, heg állapota) csak itt lehet rögzíteni."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "57410",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Császármetszés - cervicalis, transversalis"
+      },
+      "alternatives": [
+        {
+          "code": "57400",
+          "label": "Császármetszés - corporalis, longitudinalis",
+          "when": {
+            "hu": "ha a uterotomia testi, hosszanti metszéssel készült"
+          }
+        },
+        {
+          "code": "57420",
+          "label": "Császármetszés - extraperitonealis",
+          "when": {
+            "hu": "extraperitonealis behatolás esetén"
+          }
+        },
+        {
+          "code": "57421",
+          "label": "Császármetszés sterilizálással",
+          "when": {
+            "hu": "ha egy ülésben sterilizálás is történt"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.cs.emergency",
+    "label": {
+      "hu": "Sürgős császármetszés"
+    },
+    "synonyms": [
+      "akut sectio",
+      "emergency sectio"
+    ],
+    "opens": [
+      "op.cs.uterotomy",
+      "op.cs.prevScar",
+      "op.cs.placenta",
+      "op.cs.adhesions",
+      "op.intra.deliveryAt",
+      "op.pre.urgency"
+    ],
+    "template": "cs",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Ugyanaz a beavatkozás, más sürgősségi kategóriával — a döntés–kiemelés idő minőségi mutató."
+      },
+      "pitfalls": {
+        "hu": "A KÓD AZONOS a tervezettel: az OENO nem különbözteti meg a sürgősséget. A megkülönböztetés az `op.pre.urgency` mezőben él, és a minőségi mutatók onnan számolnak — nem a kódból."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "57410",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Császármetszés - cervicalis, transversalis"
+      },
+      "alternatives": [
+        {
+          "code": "57400",
+          "label": "Császármetszés - corporalis, longitudinalis",
+          "when": {
+            "hu": "ha a uterotomia testi, hosszanti metszéssel készült"
+          }
+        },
+        {
+          "code": "57420",
+          "label": "Császármetszés - extraperitonealis",
+          "when": {
+            "hu": "extraperitonealis behatolás esetén"
+          }
+        },
+        {
+          "code": "57421",
+          "label": "Császármetszés sterilizálással",
+          "when": {
+            "hu": "ha egy ülésben sterilizálás is történt"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.cs.hysterectomy",
+    "label": {
+      "hu": "Császármetszés méheltávolítással"
+    },
+    "opens": [
+      "op.cs.uterotomy",
+      "op.cs.prevScar",
+      "op.cs.placenta",
+      "op.cs.adhesions",
+      "op.intra.deliveryAt"
+    ],
+    "template": "cs",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Az életmentő peripartum hysterectomia. Külön kód, mert a kimenetel és a következő terhesség szempontjából alapvetően más beavatkozás."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "57410",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Császármetszés - cervicalis, transversalis"
+      },
+      "also": [
+        {
+          "code": "56830",
+          "label": "Hysterectomia - hasi",
+          "why": {
+            "hu": "A méheltávolítás a törzsben ÖNÁLLÓ beavatkozás: a császármetszés kódja mellé kerül, nem helyette. Egy kód nem tudná elmondani, hogy két műtét történt."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.vacuum",
+    "label": {
+      "hu": "Vákuum-extrakció"
+    },
+    "synonyms": [
+      "szívóharang"
+    ],
+    "template": "obs",
+    "oeno": {
+      "system": "mut",
+      "code": "57280",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Fej vacuum-extractio"
+      }
+    }
+  },
+  {
+    "id": "proc.forceps",
+    "label": {
+      "hu": "Fogóműtét"
+    },
+    "template": "obs",
+    "oeno": null,
+    "codeFamily": {
+      "system": "mut",
+      "version": "MUT 2026-02",
+      "candidates": [
+        {
+          "code": "57200",
+          "label": "Kimeneti fogó műtét, episiotomia nélkül"
+        },
+        {
+          "code": "57210",
+          "label": "Kimeneti fogó műtét, episiotomiaval"
+        },
+        {
+          "code": "57220",
+          "label": "Üregi fogó műtét"
+        },
+        {
+          "code": "57240",
+          "label": "Magzati fej forgatása, fogóval"
+        },
+        {
+          "code": "57260",
+          "label": "Fogó alkalmazása a hátul jövő fejre"
+        }
+      ],
+      "why": {
+        "hu": "A törzsben NINCS gyűjtőkód a fogóműtétre: a kód a magzati fej állásától (kimeneti vagy üregi) és az episiotomiától függ. A rendszer ezért nem választ — felsorolja, ami szóba jön."
+      }
+    }
+  },
+  {
+    "id": "proc.perineal.repair",
+    "label": {
+      "hu": "Gátsérülés ellátása"
+    },
+    "opens": [
+      "labour.perinealTrauma"
+    ],
+    "template": "obs",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A III. és IV. fokú sérülés ellátása külön szakértelmet kíván, és a kimenetel a sebész tapasztalatától is függ."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "57581",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Gátsérülés ellátása - szülés után"
+      },
+      "alternatives": [
+        {
+          "code": "57160",
+          "label": "Vulva és gát helyreállítása (trauma stb.)",
+          "when": {
+            "hu": "ha nem szülés utáni gátsérülés ellátása történt"
+          }
+        },
+        {
+          "code": "57162",
+          "label": "Perineorrhaphia",
+          "when": {
+            "hu": "önálló perineorrhaphia esetén"
+          }
+        },
+        {
+          "code": "57580",
+          "label": "Resutura dehiscentiae episiotomiae",
+          "when": {
+            "hu": "szétvált episiotomia újravarrása esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.cerclage",
+    "label": {
+      "hu": "Méhszáj-körülöltés (cerclage)"
+    },
+    "synonyms": [
+      "cerclage",
+      "Shirodkar",
+      "McDonald"
+    ],
+    "template": "obs",
+    "oeno": {
+      "system": "mut",
+      "code": "56742",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Cerclage colli uteri"
+      }
+    }
+  },
+  {
+    "id": "proc.curettage",
+    "label": {
+      "hu": "Méhűri kaparás"
+    },
+    "synonyms": [
+      "abrasio",
+      "curettage"
+    ],
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56899",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Curettage uteri"
+      },
+      "alternatives": [
+        {
+          "code": "56905",
+          "label": "Curettage-incomplett abortus után",
+          "when": {
+            "hu": "incomplett abortus után"
+          }
+        },
+        {
+          "code": "56904",
+          "label": "Curettage uteri propter subinvolutionem",
+          "when": {
+            "hu": "subinvolutio miatt"
+          }
+        },
+        {
+          "code": "56906",
+          "label": "Frakcionált curettage",
+          "when": {
+            "hu": "frakcionált, diagnosztikus kaparás esetén"
+          }
+        },
+        {
+          "code": "56903",
+          "label": "Missed ab. befejezése",
+          "when": {
+            "hu": "missed abortion befejezésekor"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.hysteroscopy.diagnostic",
+    "label": {
+      "hu": "Diagnosztikus hiszteroszkópia"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "oeno",
+      "code": "16600",
+      "version": "9/2012 NEFMI, hatályos 2026-01-01",
+      "label": {
+        "hu": "Hysteroscopia"
+      }
+    }
+  },
+  {
+    "id": "proc.hysteroscopy.operative",
+    "label": {
+      "hu": "Műtéti hiszteroszkópia"
+    },
+    "template": "gyn",
+    "oeno": null,
+    "codeFamily": {
+      "system": "mut",
+      "version": "MUT 2026-02",
+      "candidates": [
+        {
+          "code": "56812",
+          "label": "Septum uteri kiirtás (hysteroscop)"
+        },
+        {
+          "code": "56814",
+          "label": "Synechiolysis (hysteroscop)"
+        },
+        {
+          "code": "56815",
+          "label": "Endometrium resectio (hysteroscop)"
+        },
+        {
+          "code": "5681A",
+          "label": "Resectio myomae hysteroscopica"
+        },
+        {
+          "code": "5681B",
+          "label": "Enucleatio myomae uteri hysteroscopica"
+        },
+        {
+          "code": "5681G",
+          "label": "Endometrium ablatio hurokkal"
+        },
+        {
+          "code": "5681E",
+          "label": "Resectio septi uteri hysteroscopica"
+        }
+      ],
+      "why": {
+        "hu": "A műtéti hiszteroszkópiára NINCS gyűjtőkód: a törzs aszerint kódol, MI történt a méhűrben (septum, synechia, endometrium, myoma). A rendszer ezért felsorol, nem választ."
+      }
+    }
+  },
+  {
+    "id": "proc.laparoscopy.diagnostic",
+    "label": {
+      "hu": "Diagnosztikus laparoszkópia"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "16940",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Laparoscopia"
+      },
+      "alternatives": [
+        {
+          "code": "16941",
+          "label": "Laparoscopia hydrotubatioval",
+          "when": {
+            "hu": "ha hydrotubatio is történt"
+          }
+        },
+        {
+          "code": "56672",
+          "label": "Chromopertubatio laparoscopica",
+          "when": {
+            "hu": "ha chromopertubatio történt"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.laparoscopy.ectopic",
+    "label": {
+      "hu": "Méhen kívüli terhesség laparoszkópos ellátása"
+    },
+    "template": "gyn",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Sürgős beavatkozás; a petevezeték megtartása és eltávolítása külön rögzítendő a következő terhesség tanácsadásához."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "57435",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Extrauterin garaviditas laparoscopos műtéte"
+      },
+      "alternatives": [
+        {
+          "code": "57442",
+          "label": "Laparoscopos embryo aspiratio, salpingotomiából",
+          "when": {
+            "hu": "salpingotomiából végzett embryo aspiratio esetén"
+          }
+        },
+        {
+          "code": "57503",
+          "label": "Méhen kívüli terhességbe adott inj., laparoscopos",
+          "when": {
+            "hu": "ha csak gyógyszeres injekció történt a terhességbe"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.laparoscopy.cystectomy",
+    "label": {
+      "hu": "Petefészek-ciszta laparoszkópos eltávolítása"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56515",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Cystectomia ovarii / parovarialis laparoscopica unilat."
+      },
+      "alternatives": [
+        {
+          "code": "56516",
+          "label": "Cystectomia ovarii / parovarialis laparoscopica bilat.",
+          "when": {
+            "hu": "kétoldali cystectomia esetén"
+          }
+        },
+        {
+          "code": "55435",
+          "label": "Ablatio endometriomae ovarii laparoscopica unilat.",
+          "when": {
+            "hu": "endometrioma esetén, egyoldali"
+          }
+        },
+        {
+          "code": "55436",
+          "label": "Ablatio endometriomae ovarii laparoscopica bilat.",
+          "when": {
+            "hu": "endometrioma esetén, kétoldali"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.adnexectomy",
+    "label": {
+      "hu": "Függelék eltávolítása"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "5666C",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Adnexectomia laparoscopica"
+      },
+      "alternatives": [
+        {
+          "code": "56531",
+          "label": "Salpingo-oophoprectomia laparoscopica unilateralis",
+          "when": {
+            "hu": "egyoldali salpingo-oophorectomia esetén"
+          }
+        },
+        {
+          "code": "56552",
+          "label": "Salpingo-oophorectomia bilateralis laparoscopica",
+          "when": {
+            "hu": "kétoldali salpingo-oophorectomia esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.myomectomy",
+    "label": {
+      "hu": "Myoma eltávolítása"
+    },
+    "template": "gyn",
+    "documentation": {
+      "pitfalls": {
+        "hu": "A méhfal megnyitásával járó myomaeltávolítás után a KÖVETKEZŐ terhességben méhrepedés-kockázat áll fenn — ezt a műtéti leírásban rögzíteni kell, mert a következő szülés vezetését meghatározza."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "56810",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Myoma enucleatio"
+      },
+      "alternatives": [
+        {
+          "code": "56816",
+          "label": "Enucleatio myomae uteri laparoscopica",
+          "when": {
+            "hu": "laparoszkópos enucleatio esetén"
+          }
+        },
+        {
+          "code": "5681B",
+          "label": "Enucleatio myomae uteri hysteroscopica",
+          "when": {
+            "hu": "hiszteroszkópos enucleatio esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.hysterectomy.abdominal",
+    "label": {
+      "hu": "Hasi méheltávolítás"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56830",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Hysterectomia - hasi"
+      },
+      "alternatives": [
+        {
+          "code": "56850",
+          "label": "Hysterectomia radicalis-hasi (kiterjesztett)",
+          "when": {
+            "hu": "radikális (kiterjesztett) hasi méheltávolítás esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.hysterectomy.vaginal",
+    "label": {
+      "hu": "Hüvelyi méheltávolítás"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56840",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Hysterectomia - hüvelyi"
+      },
+      "alternatives": [
+        {
+          "code": "56860",
+          "label": "Hysterectomia radicalis-hüvelyi (kiterjesztett)",
+          "when": {
+            "hu": "radikális (kiterjesztett) hüvelyi méheltávolítás esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.hysterectomy.laparoscopic",
+    "label": {
+      "hu": "Laparoszkópos méheltávolítás"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56803",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Hysterectomia laparoscopica"
+      },
+      "alternatives": [
+        {
+          "code": "56821",
+          "label": "Hysterectomia subtotalis laparoscopica.",
+          "when": {
+            "hu": "subtotalis laparoszkópos méheltávolítás esetén"
+          }
+        },
+        {
+          "code": "56831",
+          "label": "Laparoscopos assziszt. vaginalis hysterectomia",
+          "when": {
+            "hu": "laparoszkóppal asszisztált hüvelyi méheltávolítás (LAVH) esetén"
+          }
+        },
+        {
+          "code": "56833",
+          "label": "Hysterectomia totalis laparoscopica sec. Reich",
+          "when": {
+            "hu": "totalis laparoszkópos méheltávolítás (Reich) esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.conization",
+    "label": {
+      "hu": "Méhnyak-konizáció"
+    },
+    "template": "gyn",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A méhnyak-elváltozás kezelése és egyben szövettani mintavétel."
+      },
+      "pitfalls": {
+        "hu": "A konizáció után a KÖVETKEZŐ terhességben nagyobb a koraszülés kockázata — az adat a terhesgondozásban is kell, nem csak az onkológiai követésben."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "56710",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Conisatio portionis uteri (éles kés, hideg kés konizáció)"
+      }
+    }
+  },
+  {
+    "id": "proc.leep",
+    "label": {
+      "hu": "LLETZ / hurokkimetszés"
+    },
+    "synonyms": [
+      "LEEP",
+      "LLETZ",
+      "hurokexcízió"
+    ],
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "56722",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Elektrocoagulatio portionis uteri (LEEP vagy LEETZ)"
+      }
+    }
+  },
+  {
+    "id": "proc.bartholin",
+    "label": {
+      "hu": "Bartholin-ciszta marsupialisatiója"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "57110",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Marsupialisatio glandulae Bartholini"
+      }
+    }
+  },
+  {
+    "id": "proc.iud.insertion",
+    "label": {
+      "hu": "Méhen belüli eszköz behelyezése"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "oeno",
+      "code": "46530",
+      "version": "9/2012 NEFMI, hatályos 2026-01-01",
+      "label": {
+        "hu": "Intrauterin fogamzásgátló eszköz felhelyezése"
+      }
+    }
+  },
+  {
+    "id": "proc.oocyte.retrieval",
+    "label": {
+      "hu": "Petesejt-leszívás"
+    },
+    "template": "gyn",
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Az IVF-ciklus része; a `24` modul köti be."
+      }
+    },
+    "oeno": {
+      "system": "mut",
+      "code": "14703",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Aspiratio ovarii p.fertilisationem artef.USG.dir."
+      },
+      "alternatives": [
+        {
+          "code": "16944",
+          "label": "Laparoscopos pete aspiratio",
+          "when": {
+            "hu": "laparoszkópos pete aspiratio esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.embryo.transfer",
+    "label": {
+      "hu": "Embrió-beültetés"
+    },
+    "template": "gyn",
+    "oeno": {
+      "system": "mut",
+      "code": "92722",
+      "version": "MUT 2026-02",
+      "label": {
+        "hu": "Embryotransfer friss embrióval"
+      },
+      "alternatives": [
+        {
+          "code": "92723",
+          "label": "Embryotransfer fagyasztott embrióval",
+          "when": {
+            "hu": "fagyasztott embrió visszahelyezése esetén"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "proc.other",
+    "label": {
+      "hu": "Egyéb beavatkozás"
+    },
+    "oeno": null,
+    "template": "other",
+    "documentation": {
+      "pitfalls": {
+        "hu": "A kód SZÁNDÉKOSAN hiányzik: az „egyéb” beavatkozás kódját a kódoló szakember állapítja meg. Az „egyéb” választás gyakorisága önmagában minőségi mutató — ha elszabadul, a törzs hiányos."
+      }
+    }
+  }
+]

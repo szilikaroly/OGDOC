@@ -1,0 +1,119 @@
+{
+  "id": "ett.dosszie",
+  "label": { "hu": "Kutatásetikai (ETT) beadvány — a dosszié tételei" },
+  "note": "A BEADVÁNY MINDEN ÁLLÍTÁSA ÁLLÍTÁS EGY BIZOTTSÁGNAK. Az itt felsorolt tételek nem emlékeztetők, hanem mondatok, amiket a kérelem kimond a rendszerről — és amit kimondunk, azt bizonyítani kell tudni. Ezért minden tétel mellett ott áll, MELYIK élő rendszerállapot fedezi. Ami nincs fedezve, arra a kérelem nem állíthat semmit: az nem hiányos beadvány, hanem VALÓTLAN ÁLLÍTÁS. A `szervezeti` tételeket a gép nem tudja és nem is akarja ellenőrizni (befogadó nyilatkozat, biztosítás, finanszírozás) — azok a kutatásvezetőé; a lista attól még számon tartja őket. Forrás: docs/megfeleles/10-ett.md 2. és 6. pont.",
+  "tetelek": [
+    {
+      "id": "ett.t1",
+      "cim": { "hu": "Kutatási terv (protokoll)" },
+      "allitas": { "hu": "A vizsgálati terv előre rögzített, időbélyegzett, és a lekérdező kikényszeríti, hogy a hipotézisvizsgáló elemzés e szerint fusson." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["elemzesi-terv"]
+    },
+    {
+      "id": "ett.t2",
+      "cim": { "hu": "Vizsgálatvezető és kutatócsoport, kompetenciaigazolással" },
+      "allitas": { "hu": "A kutatócsoport tagjai és kompetenciájuk nyilvántartva." },
+      "fajta": "szervezeti",
+      "blokkolo": true,
+      "bizonyitek": []
+    },
+    {
+      "id": "ett.t3",
+      "cim": { "hu": "Intézményi befogadó nyilatkozat" },
+      "allitas": { "hu": "Az intézmény befogadta a kutatást." },
+      "fajta": "szervezeti",
+      "blokkolo": true,
+      "bizonyitek": []
+    },
+    {
+      "id": "ett.t4",
+      "cim": { "hu": "Betegtájékoztató és beleegyező nyilatkozat" },
+      "allitas": { "hu": "A beleegyezés rétegzett; a visszavonás kétágú, és a beteg ELŐRE látja, mi marad meg utána." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["beleegyezes-keret", "torles-visszavonas"]
+    },
+    {
+      "id": "ett.t5",
+      "cim": { "hu": "Adatkezelési tájékoztató" },
+      "allitas": { "hu": "Az adatkezelés minden vitatott pontja eldöntött, aláírt döntéssel — nem fejlesztői mérlegelés." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["dontes-alairasok"]
+    },
+    {
+      "id": "ett.t6",
+      "cim": { "hu": "DPIA (adatvédelmi hatásvizsgálat) vagy annak állása" },
+      "allitas": { "hu": "A hatásvizsgálat elkészült, és a benne szereplő kockázatkezelés a rendszerben meg is valósul." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["dontes-alairasok", "hitelesites", "kulcstar-hsm"]
+    },
+    {
+      "id": "ett.t7",
+      "cim": { "hu": "Biobanki működés leírása, ha van mintagyűjtés" },
+      "allitas": { "hu": "A minta útja végig nyomonkövethető, és a lánc épsége kulcs nélkül is ellenőrizhető." },
+      "fajta": "rendszer",
+      "blokkolo": false,
+      "bizonyitek": ["titkositas", "auditnaplo"]
+    },
+    {
+      "id": "ett.t8",
+      "cim": { "hu": "Adatbiztonsági leírás" },
+      "allitas": { "hu": "Az adathoz csak arra jogosult fér hozzá; minden hozzáférés naplózott, a napló nem módosítható, a tárolt adat titkosított." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["hitelesites", "jogosultsag", "auditnaplo", "titkositas", "phi-kizaras"]
+    },
+    {
+      "id": "ett.t9",
+      "cim": { "hu": "Finanszírozás, összeférhetetlenségi nyilatkozatok" },
+      "allitas": { "hu": "A finanszírozás és az összeférhetetlenség nyilatkozatokban rögzítve." },
+      "fajta": "szervezeti",
+      "blokkolo": true,
+      "bizonyitek": []
+    },
+    {
+      "id": "ett.t10",
+      "cim": { "hu": "Biztosítás, ha beavatkozással jár" },
+      "allitas": { "hu": "A vizsgálat biztosítási fedezete rendezett." },
+      "fajta": "szervezeti",
+      "blokkolo": false,
+      "bizonyitek": []
+    },
+    {
+      "id": "ett.t11",
+      "cim": { "hu": "Adatkezelési és publikációs terv — megőrzés és hozzáférés" },
+      "allitas": { "hu": "A kutatási adat megőrzési ideje jogszabályhelyhez kötött és visszaellenőrzött; a törlés csak a megőrzési idő letelte után indul." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["megorzes-alairasok"]
+    },
+    {
+      "id": "ett.j1",
+      "cim": { "hu": "Működés közbeni jelentés — beleegyezések és visszavonások száma" },
+      "allitas": { "hu": "A visszavonások száma és hatása bármikor kimutatható." },
+      "fajta": "rendszer",
+      "blokkolo": false,
+      "bizonyitek": ["torles-visszavonas", "auditnaplo"]
+    },
+    {
+      "id": "ett.j2",
+      "cim": { "hu": "Működés közbeni jelentés — a mérőeszközök jogszerű használata" },
+      "allitas": { "hu": "A kutatásban használt kérdőívek magyar tételszövege licencelt, a fordítás validált." },
+      "fajta": "rendszer",
+      "blokkolo": true,
+      "bizonyitek": ["meroeszkoz-licenc"]
+    },
+    {
+      "id": "ett.j3",
+      "cim": { "hu": "Működés közbeni jelentés — a döntéstámogatás állapota" },
+      "allitas": { "hu": "A rendszer által adott minden szám hitelesített forrásból származik, vagy kapu mögött áll és nem jelenik meg." },
+      "fajta": "rendszer",
+      "blokkolo": false,
+      "bizonyitek": ["szamitasi-kapuk"]
+    }
+  ]
+}

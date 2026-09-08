@@ -1,0 +1,1481 @@
+[
+  {
+    "id": "psy.epds.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q1 — Nevetés, humor érzékelése"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 1. tétele: nevetés, humor érzékelése."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q10",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q10 — Önkárosítás gondolata"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 10. tétele: önkárosítás gondolata."
+      },
+      "pitfalls": {
+        "hu": "A tétel önkárosításra kérdez, nem öngyilkossági szándékra. A pozitív válasz nem diagnózis és nem is jelenti önmagában a közvetlen veszélyt — de a MEGKÉRDEZÉST kiváltja, és azt nem lehet a következő vizitre halasztani."
+      },
+      "whyItMatters": {
+        "hu": "EZ A KRITIKUS TÉTEL. Bármely pozitív válasz vörös zászló, az ÖSSZPONTSZÁMTÓL FÜGGETLENÜL: egy 6 pontos EPDS pozitív 10. tétellel azonnali pszichiátriai konzultációt indokol. Ez nem küszöb, hanem kapu — a rendszer nem engedi elnyomni az „összpontszám a normál tartományban” üzenettel."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q2 — Örömteli várakozás"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 2. tétele: örömteli várakozás."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q3 — Önvád szükségtelenül"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 3. tétele: önvád szükségtelenül."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q4",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q4 — Szorongás, aggodalom ok nélkül"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 4. tétele: szorongás, aggodalom ok nélkül."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q5 — Félelem, pánik ok nélkül"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 5. tétele: félelem, pánik ok nélkül."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q6",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q6 — Túlterheltség érzése"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 6. tétele: túlterheltség érzése."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q7",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q7 — Alvászavar szomorúság miatt"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 7. tétele: alvászavar szomorúság miatt."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q8",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q8 — Szomorúság, nyomott hangulat"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 8. tétele: szomorúság, nyomott hangulat."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.q9",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS Q9 — Sírás"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az Edinburgh-i szülés utáni depresszió-skála 9. tétele: sírás."
+      }
+    }
+  },
+  {
+    "id": "psy.epds.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS összpontszám"
+    },
+    "module": "psy",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 30
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.epds.total",
+      "explain": {
+        "hu": "A tíz tétel összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A tíz tétel pontszámának összege."
+      },
+      "pitfalls": {
+        "hu": "RÉSZLEGES KITÖLTÉSBŐL NINCS ÖSSZPONTSZÁM: a tízből kilenc tétel nem „majdnem teljes EPDS”. A validált vágóérték a teljes skálára vonatkozik, az arányosítás nem validált eljárás."
+      },
+      "whyItMatters": {
+        "hu": "A vágóérték IDŐSZAKFÜGGŐ: az antepartum és a postnatalis küszöb eltér, és a rendszer a `ctx.pathway`-ből tudja, melyiket használja."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.affection",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS — Gyengédség"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Alig"
+      },
+      {
+        "code": 2,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 3,
+        "label_hu": "Nagyon"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az anya-csecsemő kötődés érzelmi tétele: gyengédség."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.joy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS — Öröm a babával"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Alig"
+      },
+      {
+        "code": 2,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 3,
+        "label_hu": "Nagyon"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az anya-csecsemő kötődés érzelmi tétele: öröm a babával."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.neutrality",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS — Közömbösség"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Alig"
+      },
+      {
+        "code": 2,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 3,
+        "label_hu": "Nagyon"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az anya-csecsemő kötődés érzelmi tétele: közömbösség."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.protective",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS — Óvó érzés"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Alig"
+      },
+      {
+        "code": 2,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 3,
+        "label_hu": "Nagyon"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az anya-csecsemő kötődés érzelmi tétele: óvó érzés."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.resentment",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS — Ellenérzés"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Alig"
+      },
+      {
+        "code": 2,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 3,
+        "label_hu": "Nagyon"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az anya-csecsemő kötődés érzelmi tétele: ellenérzés."
+      }
+    }
+  },
+  {
+    "id": "psy.mibs.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS összpontszám"
+    },
+    "module": "psy",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 15
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.mibs.total",
+      "explain": {
+        "hu": "Az öt tétel összege, a fordított tételek átfordítva."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az öt tétel pontszámának összege."
+      },
+      "pitfalls": {
+        "hu": "A KÖTŐDÉSI ZAVAR ÉS A DEPRESSZIÓ KÜLÖN DOLOG, bár együtt járhat: a depresszió kezelése önmagában nem oldja meg a kötődési nehézséget, és fordítva. A két eszközt együtt kell olvasni, nem egymás helyett."
+      }
+    }
+  },
+  {
+    "id": "psy.mspss.family",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MSPSS — Család"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem jellemző"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Inkább nem"
+      },
+      {
+        "code": 4,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 5,
+        "label_hu": "Inkább igen"
+      },
+      {
+        "code": 6,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 7,
+        "label_hu": "Teljesen jellemző"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az észlelt társas támogatás mértéke: család."
+      }
+    }
+  },
+  {
+    "id": "psy.mspss.friends",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MSPSS — Barátok"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem jellemző"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Inkább nem"
+      },
+      {
+        "code": 4,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 5,
+        "label_hu": "Inkább igen"
+      },
+      {
+        "code": 6,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 7,
+        "label_hu": "Teljesen jellemző"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az észlelt társas támogatás mértéke: barátok."
+      }
+    }
+  },
+  {
+    "id": "psy.mspss.significantOther",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MSPSS — Partner, közeli személy"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem jellemző"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Inkább nem"
+      },
+      {
+        "code": 4,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 5,
+        "label_hu": "Inkább igen"
+      },
+      {
+        "code": 6,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 7,
+        "label_hu": "Teljesen jellemző"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az észlelt társas támogatás mértéke: partner, közeli személy."
+      }
+    }
+  },
+  {
+    "id": "psy.mspss.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MSPSS összpontszám"
+    },
+    "module": "psy",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 3,
+      "max": 21
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.mspss.total",
+      "explain": {
+        "hu": "A három tétel összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A három tétel összege."
+      },
+      "whyItMatters": {
+        "hu": "Az alacsony észlelt társas támogatás a perinatális depresszió egyik legerősebb módosítható kockázati tényezője — és az egyetlen, amin az ellátás szervezésével közvetlenül lehet segíteni."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q1 — Örömtelenség"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 1. tétele: örömtelenség."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q2 — Nyomott hangulat"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 2. tétele: nyomott hangulat."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q3 — Alvászavar"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 3. tétele: alvászavar."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q4",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q4 — Fáradtság"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 4. tétele: fáradtság."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q5 — Étvágyváltozás"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 5. tétele: étvágyváltozás."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q6",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q6 — Önértékelési zavar"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 6. tétele: önértékelési zavar."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q7",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q7 — Koncentrációs nehézség"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 7. tétele: koncentrációs nehézség."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q8",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q8 — Pszichomotoros változás"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 8. tétele: pszichomotoros változás."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.q9",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 Q9 — Önkárosítás gondolata"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Néhány napon"
+      },
+      {
+        "code": 2,
+        "label_hu": "A napok több mint felén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Szinte minden nap"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A PHQ-9 9. tétele: önkárosítás gondolata."
+      },
+      "whyItMatters": {
+        "hu": "A PHQ-9 KRITIKUS TÉTELE, ugyanazzal a logikával, mint az EPDS 10. tétele: pozitív válasz az összpontszámtól függetlenül teendőt jelent."
+      }
+    }
+  },
+  {
+    "id": "psy.phq9.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PHQ-9 összpontszám"
+    },
+    "module": "psy",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 27
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.phq9.total",
+      "explain": {
+        "hu": "A kilenc tétel összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A kilenc tétel pontszámának összege."
+      }
+    }
+  },
+  {
+    "id": "psy.ppp.admissionConsidered",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hospitalizáció mérlegelve"
+    },
+    "module": "psy",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Megtörtént-e a felvétel mérlegelése és dokumentálása magas kockázat mellett."
+      },
+      "whyItMatters": {
+        "hu": "Magas PPP-kockázatnál a felvétel MÉRLEGELÉSÉNEK meg kell történnie és látszania kell. A rendszer nem dönt a klinikus helyett — azt kényszeríti ki, hogy a döntés megszülessen és nyoma legyen."
+      }
+    }
+  },
+  {
+    "id": "psy.ppp.plan",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Perinatális mentális ellátási terv"
+    },
+    "module": "psy",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Mi történik, ha a beteg állapota romlik: kihez fordul, hol veszik fel."
+      },
+      "whyItMatters": {
+        "hu": "A magas kockázatú betegnek ÍRÁSOS tervvel kell hazamennie, benne a konkrét elérhetőségekkel. Az általános „forduljon orvoshoz” tanács hajnali háromkor, alvásmegvonva nem működik."
+      }
+    }
+  },
+  {
+    "id": "psy.ppp.risk",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Postpartum pszichózis kockázata"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "high",
+        "label_hu": "Magas — hospitalizáció mérlegelendő",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "elevated",
+        "label_hu": "Emelt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "baseline",
+        "label_hu": "Alap populációs kockázat"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem megítélhető — hiányzó anamnézis",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kockázati tényezők együttes, KVALITATÍV megítélése."
+      },
+      "pitfalls": {
+        "hu": "A BESOROLÁS KVALITATÍV, ÉS AZ IS MARAD. A rizikófaktorok publikált esélyhányadosai külön vizsgálatokból származnak; ezek ÖSSZESZORZÁSA nem ad érvényes együttes kockázatot, mert a faktorok nem függetlenek és a kohorszok nem összemérhetők. A rendszer ezért felsorolja a tényezőket a saját forrásukkal, és nem gyárt belőlük egyetlen számot."
+      },
+      "whyItMatters": {
+        "hu": "A postpartum pszichózis a legveszélyesebb perinatális pszichiátriai állapot: mintegy 5% szuicid és 4% infanticid kockázattal jár, és tipikusan az első két hétben jelentkezik. Magas kockázatnál a hospitalizáció mérlegelése nem opció, hanem alapértelmezés."
+      }
+    }
+  },
+  {
+    "id": "psy.social.finances",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Anyagi helyzet"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "adequate",
+        "label_hu": "Nem okoz gondot"
+      },
+      {
+        "code": "tight",
+        "label_hu": "Szűkös"
+      },
+      {
+        "code": "insufficient",
+        "label_hu": "Nem elegendő",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notDisclosed",
+        "label_hu": "Nem kíván nyilatkozni",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Okoz-e a beteg számára gondot a mindennapi kiadások fedezése."
+      }
+    }
+  },
+  {
+    "id": "psy.social.housing",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Lakhatás"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "stable",
+        "label_hu": "Rendezett"
+      },
+      {
+        "code": "crowded",
+        "label_hu": "Zsúfolt"
+      },
+      {
+        "code": "temporary",
+        "label_hu": "Ideiglenes, bizonytalan",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "homeless",
+        "label_hu": "Hajléktalan",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen a beteg lakhatási helyzete."
+      },
+      "whyItMatters": {
+        "hu": "A lakhatási bizonytalanság a koraszülés és a szoptatás megszakadásának önálló kockázati tényezője, és szociális intézkedést kér, nem orvosit."
+      }
+    }
+  },
+  {
+    "id": "psy.social.partnership",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Párkapcsolati helyzet"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "supportive",
+        "label_hu": "Támogató kapcsolat"
+      },
+      {
+        "code": "strained",
+        "label_hu": "Feszült kapcsolat"
+      },
+      {
+        "code": "single",
+        "label_hu": "Egyedülálló"
+      },
+      {
+        "code": "separated",
+        "label_hu": "Nemrég szakított"
+      },
+      {
+        "code": "notDisclosed",
+        "label_hu": "Nem kíván nyilatkozni",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen a beteg párkapcsolati helyzete."
+      }
+    }
+  },
+  {
+    "id": "psy.social.support.contact",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kire számíthat"
+    },
+    "module": "psy",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Ki az a konkrét személy, akire a beteg szülés után számíthat."
+      },
+      "whyItMatters": {
+        "hu": "Nem általános kérdés: a KONKRÉT név és elérhetőség az, ami a gyermekágyban használható. A „van támogatása” bejegyzés nem az."
+      }
+    }
+  },
+  {
+    "id": "psy.social.workStress",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Munkahelyi terhelés"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem dolgozik"
+      },
+      {
+        "code": "low",
+        "label_hu": "Alacsony"
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Közepes"
+      },
+      {
+        "code": "high",
+        "label_hu": "Magas",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "nightShift",
+        "label_hu": "Éjszakai műszak",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen mértékű megterhelést jelent a munka."
+      },
+      "whyItMatters": {
+        "hu": "Az éjszakai műszak és a nagy fizikai terhelés a koraszülés kockázatával függ össze, és a 21. foglalkozás-egészségügyi modul bemenete."
+      }
+    }
+  },
+  {
+    "id": "psy.violence.screened",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bántalmazás szűrése megtörtént"
+    },
+    "module": "psy",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Feltettük-e a bántalmazásra vonatkozó kérdést, négyszemközt."
+      },
+      "pitfalls": {
+        "hu": "A kérdés CSAK NÉGYSZEMKÖZT tehető fel, kísérő nélkül. A rögzítés módja önmagában is kockázat: ha a beteg hozzáférést ad a kísérőnek a dokumentációhoz, a bejegyzés veszélybe sodorhatja. A hozzáférés-korlátozás itt betegbiztonság, nem adminisztráció."
+      },
+      "whyItMatters": {
+        "hu": "A szűrés MEGTÖRTÉNTE önálló, rögzítendő tény — a válasz hiánya és a kérdés fel nem tevése két különböző dolog."
+      }
+    }
+  },
+  {
+    "id": "psy.whooley.helpQuestion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Segítségkérési kérdés"
+    },
+    "module": "psy",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Szeretne-e a beteg segítséget ehhez."
+      },
+      "whyItMatters": {
+        "hu": "A NICE által javasolt harmadik kérdés: a szűrés pozitivitása és a segítség IGÉNYE két különböző dolog, és a beteg saját válasza meghatározza, mit ajánlunk fel."
+      }
+    }
+  },
+  {
+    "id": "psy.whooley.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Whooley Q1 — Nyomott hangulat az elmúlt hónapban"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Igen"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kétkérdéses depresszió-gyorsszűrés 1. kérdése."
+      }
+    }
+  },
+  {
+    "id": "psy.whooley.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Whooley Q2 — Örömtelenség az elmúlt hónapban"
+    },
+    "module": "psy",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "Nem"
+      },
+      {
+        "code": 1,
+        "label_hu": "Igen"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kétkérdéses depresszió-gyorsszűrés 2. kérdése."
+      }
+    }
+  },
+  {
+    "id": "psy.whooley.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Whooley összpontszám"
+    },
+    "module": "psy",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 2
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.whooley.total",
+      "explain": {
+        "hu": "A két kérdés összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A két kérdés összege."
+      },
+      "whyItMatters": {
+        "hu": "Bármelyik igenlő válasz további vizsgálatot (EPDS vagy PHQ-9) indokol. A gyorsszűrés NEM diagnózis, és önmagában kezelést sem indít."
+      }
+    }
+  }
+]

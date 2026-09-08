@@ -1,0 +1,24 @@
+{
+  "megnevezes": "Műtőkészlet és sürgősségi tartalék — DEMÓ, SZINTETIKUS",
+  "modul": 11,
+  "note": "A SÜRGŐSSÉGI TARTALÉK SZERVEZETI DÖNTÉS, ÉS ALÁÍRÁSRA VÁR.\n\nA szám azt mondja meg, hány sürgősségre alkalmas műtőnek kell MINDIG szabadon maradnia. Nem műszaki paraméter: az egy műtős és a három műtős osztályon más a helyes válasz, és a döntésnek következménye van mindkét irányban — túl nagy tartaléknál elektív műtétek maradnak el, túl kicsinél a K1 határidő nem tartható.\n\nAMÍG NINCS ALÁÍRVA, ELEKTÍV FOGLALÁS NEM INDUL. Ez szándékos: egy alá nem írt tartalék az első zsúfolt napon elfogy, és utólag senki nem tudja megmondani, ki döntött így.",
+  "mutok": [
+    {
+      "id": "muto.1",
+      "megnevezes": "Szülészeti műtő (a szülőszoba mellett)",
+      "surgosAlkalmas": true
+    },
+    {
+      "id": "muto.2",
+      "megnevezes": "Nőgyógyászati műtő",
+      "surgosAlkalmas": true
+    },
+    {
+      "id": "muto.3",
+      "megnevezes": "Egynapos sebészeti műtő",
+      "surgosAlkalmas": false
+    }
+  ],
+  "surgossegiTartalek": 1,
+  "hitelesitesek": []
+}

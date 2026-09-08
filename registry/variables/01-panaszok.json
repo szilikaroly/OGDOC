@@ -1,0 +1,2177 @@
+[
+  {
+    "id": "compl.active",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Aktív panaszok"
+    },
+    "module": "complaints",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "compl.bleeding.amenorrhea.primary",
+        "label_hu": "A menstruáció meg sem indult",
+        "opens": [
+          "status.fert.tanner.breast",
+          "us.gyn",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.bleeding.amenorrhea.secondary",
+        "label_hu": "Elmaradt menstruáció",
+        "opens": [
+          "lab.hcg",
+          "lab.tsh",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.bleeding.heavy",
+        "label_hu": "Erős menstruációs vérzés",
+        "opens": [
+          "lab.hgb",
+          "us.gyn",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.bleeding.intermenstrual",
+        "label_hu": "Ciklusok közti vérzés",
+        "opens": [
+          "us.gyn",
+          "status.gyn.portio",
+          "status.gyn.cytology",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.bleeding.oligomenorrhea",
+        "label_hu": "Ritka menstruáció",
+        "opens": [
+          "us.gyn",
+          "lab.tsh",
+          "status.fert.fg.total",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.bleeding.postcoital",
+        "label_hu": "Közösülés utáni vérzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.gyn.portio",
+          "status.gyn.portio.contactBleeding",
+          "status.gyn.cytology",
+          "status.gyn.hpv"
+        ]
+      },
+      {
+        "code": "compl.bleeding.postmenopausal",
+        "label_hu": "Vérzés a változókor után",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.gyn",
+          "us.gyn.finding",
+          "status.gyn.portio"
+        ]
+      },
+      {
+        "code": "compl.bleeding.vaginal",
+        "label_hu": "Hüvelyi vérzés terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.fetal.viability",
+          "us.gyn",
+          "lab.hgb",
+          "status.obs.fhr",
+          "ctg.category"
+        ]
+      },
+      {
+        "code": "compl.breast.discharge",
+        "label_hu": "Váladékozás az emlőbimbóból",
+        "opens": [
+          "status.fert.galactorrhoea",
+          "status.fert.galactorrhoea.character",
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.breast.lump",
+        "label_hu": "Csomó az emlőben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.breast",
+          "us.breast.finding",
+          "us.breast.side"
+        ]
+      },
+      {
+        "code": "compl.breast.pain",
+        "label_hu": "Emlőfájdalom",
+        "opens": [
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.breast.skinChange",
+        "label_hu": "Bőrelváltozás az emlőn",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.breast",
+          "us.breast.finding"
+        ]
+      },
+      {
+        "code": "compl.discharge.increased",
+        "label_hu": "Fokozott hüvelyi folyás",
+        "opens": [
+          "status.gyn.speculum",
+          "status.gyn.fluor.character",
+          "status.gyn.ph",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.discharge.malodorous",
+        "label_hu": "Bűzös hüvelyi folyás",
+        "opens": [
+          "status.gyn.fluor.odor",
+          "status.gyn.ph",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.edema.generalized",
+        "label_hu": "Kiterjedt vizenyő",
+        "opens": [
+          "status.internal.edema",
+          "vitals.bp.systolic",
+          "lab.urine.protein"
+        ]
+      },
+      {
+        "code": "compl.fert.infertility",
+        "label_hu": "Nem jön létre terhesség",
+        "opens": [
+          "status.fert.partner.semenAnalysis",
+          "us.gyn",
+          "lab.tsh",
+          "status.fert.fg.total"
+        ]
+      },
+      {
+        "code": "compl.fert.recurrentLoss",
+        "label_hu": "Ismétlődő terhességvesztés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.gyn",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.fetal.noMovement",
+        "label_hu": "Nem érzett magzatmozgás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.fetal.viability",
+          "ctg.category",
+          "status.obs.fhr"
+        ]
+      },
+      {
+        "code": "compl.fetal.reducedMovement",
+        "label_hu": "Csökkent magzatmozgás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ctg.category",
+          "status.obs.fhr",
+          "us.afi"
+        ]
+      },
+      {
+        "code": "compl.gen.acne",
+        "label_hu": "Pattanásosság",
+        "opens": [
+          "status.fert.fg.total",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.gen.bloating",
+        "label_hu": "Puffadás, haspuffadás",
+        "opens": [
+          "us.gyn",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.gen.chestPain",
+        "label_hu": "Mellkasi fájdalom",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ekg.qt",
+          "vitals.bp.systolic",
+          "vitals.spo2",
+          "lab.dimer",
+          "status.internal.lungs"
+        ]
+      },
+      {
+        "code": "compl.gen.constipation",
+        "label_hu": "Székrekedés"
+      },
+      {
+        "code": "compl.gen.diarrhea",
+        "label_hu": "Hasmenés",
+        "opens": [
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.gen.fatigue",
+        "label_hu": "Fáradékonyság",
+        "opens": [
+          "lab.hgb",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.gen.fever",
+        "label_hu": "Láz",
+        "opens": [
+          "vitals.temp",
+          "lab.crp",
+          "lab.wbc"
+        ]
+      },
+      {
+        "code": "compl.gen.hairLoss",
+        "label_hu": "Hajhullás",
+        "opens": [
+          "lab.tsh",
+          "lab.hgb",
+          "status.endo.virilization"
+        ]
+      },
+      {
+        "code": "compl.gen.headache",
+        "label_hu": "Fejfájás",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.bp.diastolic"
+        ]
+      },
+      {
+        "code": "compl.gen.hirsutism",
+        "label_hu": "Fokozott szőrnövekedés",
+        "opens": [
+          "status.fert.fg.total",
+          "status.endo.virilization",
+          "us.gyn",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.gen.legSwelling",
+        "label_hu": "Egyoldali lábdagadás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "lab.dimer",
+          "status.internal.perfusion",
+          "status.internal.varicosity"
+        ]
+      },
+      {
+        "code": "compl.gen.nausea",
+        "label_hu": "Hányinger",
+        "opens": [
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.gen.palpitations",
+        "label_hu": "Szívdobogásérzés",
+        "opens": [
+          "vitals.pulse",
+          "ekg.qt",
+          "lab.tsh",
+          "lab.hgb"
+        ]
+      },
+      {
+        "code": "compl.gen.rash",
+        "label_hu": "Bőrkiütés",
+        "opens": [
+          "status.internal.skin"
+        ]
+      },
+      {
+        "code": "compl.gen.syncope",
+        "label_hu": "Ájulás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "ekg.qt",
+          "lab.hgb",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.gen.visualDisturbance",
+        "label_hu": "Látászavar",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "lab.urine.protein",
+          "status.endo.eyeSigns"
+        ]
+      },
+      {
+        "code": "compl.gen.vomiting",
+        "label_hu": "Hányás",
+        "opens": [
+          "lab.hcg",
+          "lab.cr"
+        ]
+      },
+      {
+        "code": "compl.gen.weightGain",
+        "label_hu": "Hízás",
+        "opens": [
+          "anthro.weight.current",
+          "anthro.bmi",
+          "lab.tsh",
+          "status.endo.fatDistribution",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.gen.weightLoss",
+        "label_hu": "Fogyás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "anthro.weight.current",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.gyn.prolapse",
+        "label_hu": "Kidomborodás érzése a hüvelyben",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.meno.hotFlush",
+        "label_hu": "Hőhullámok"
+      },
+      {
+        "code": "compl.meno.vaginalDryness",
+        "label_hu": "Hüvelyszárazság",
+        "opens": [
+          "status.gyn.speculum",
+          "status.gyn.vulva"
+        ]
+      },
+      {
+        "code": "compl.neuro.headache.visual",
+        "label_hu": "Fejfájás látászavarral",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.bp.diastolic",
+          "lab.urine.protein",
+          "lab.plt",
+          "lab.ast",
+          "lab.cr"
+        ]
+      },
+      {
+        "code": "compl.obs.backPain",
+        "label_hu": "Deréktáji fájdalom terhességben",
+        "opens": [
+          "status.obs.contractions.freq",
+          "lab.urine.nitrite",
+          "vitals.temp"
+        ]
+      },
+      {
+        "code": "compl.obs.contractions",
+        "label_hu": "Összehúzódások",
+        "opens": [
+          "status.obs.contractions.freq",
+          "status.obs.contractions.duration",
+          "exam.cervix.dilation",
+          "exam.cervix.effacement",
+          "ctg.category"
+        ]
+      },
+      {
+        "code": "compl.obs.dizziness",
+        "label_hu": "Szédülés, ájulásérzés terhességben",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "lab.hgb"
+        ]
+      },
+      {
+        "code": "compl.obs.fever",
+        "label_hu": "Láz terhességben",
+        "opens": [
+          "vitals.temp",
+          "status.obs.fhr",
+          "lab.crp",
+          "lab.wbc",
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.obs.fluidLeak",
+        "label_hu": "Folyadékszivárgás, burokrepedés gyanúja",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.obs.membranes",
+          "status.obs.amnioticFluid",
+          "vitals.temp",
+          "ctg.category",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.obs.hyperemesis",
+        "label_hu": "Makacs terhességi hányás",
+        "opens": [
+          "anthro.weight.current",
+          "lab.cr",
+          "lab.urine.protein",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.obs.itching",
+        "label_hu": "Viszketés terhességben",
+        "opens": [
+          "lab.ast",
+          "status.internal.skin"
+        ]
+      },
+      {
+        "code": "compl.obs.pelvicPressure",
+        "label_hu": "Medencei nyomásérzés",
+        "opens": [
+          "exam.cervix.dilation",
+          "exam.cervix.effacement",
+          "status.obs.engagement"
+        ]
+      },
+      {
+        "code": "compl.obs.seizure",
+        "label_hu": "Görcsroham terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.consciousness",
+          "lab.plt",
+          "lab.ast",
+          "lab.cr",
+          "lab.urine.protein"
+        ]
+      },
+      {
+        "code": "compl.obs.trauma",
+        "label_hu": "Hasi sérülés terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ctg.category",
+          "status.obs.fhr",
+          "us.fetal.viability",
+          "lab.hgb",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.diffuse",
+        "label_hu": "Kiterjedt hasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.llq",
+        "label_hu": "Bal alhasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.rlq",
+        "label_hu": "Jobb alhasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.suprapubic",
+        "label_hu": "Szeméremcsont feletti fájdalom",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte",
+          "us.gyn",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.pain.chronicPelvic",
+        "label_hu": "Krónikus kismedencei fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pain.dysmenorrhea",
+        "label_hu": "Menstruációs görcsök",
+        "opens": [
+          "us.gyn",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.pain.dyspareunia.deep",
+        "label_hu": "Mély közösülési fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "status.gyn.douglas",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pain.dyspareunia.superficial",
+        "label_hu": "Felszíni közösülési fájdalom",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.speculum",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.pain.epigastric",
+        "label_hu": "Epigasztriális fájdalom",
+        "opens": [
+          "vitals.bp.systolic",
+          "lab.ast",
+          "lab.plt",
+          "lab.urine.protein",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.flank",
+        "label_hu": "Vesetáji fájdalom",
+        "opens": [
+          "lab.urine.blood",
+          "lab.urine.nitrite",
+          "vitals.temp",
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.pp.bleeding",
+        "label_hu": "Fokozott gyermekágyi vérzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "lab.hgb",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pp.breastPain",
+        "label_hu": "Emlőfájdalom szoptatás alatt",
+        "opens": [
+          "vitals.temp",
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.pp.fever",
+        "label_hu": "Gyermekágyi láz",
+        "opens": [
+          "vitals.temp",
+          "lab.crp",
+          "lab.wbc",
+          "status.internal.abdomen",
+          "lab.urine.nitrite"
+        ]
+      },
+      {
+        "code": "compl.pp.mood",
+        "label_hu": "Hangulatzavar a szülés után",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.pp.urinaryRetention",
+        "label_hu": "Vizelési képtelenség szülés után",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pp.woundPain",
+        "label_hu": "Műtéti seb vagy gátseb fájdalma",
+        "opens": [
+          "vitals.temp",
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.psy.anxiety",
+        "label_hu": "Szorongás"
+      },
+      {
+        "code": "compl.psy.depressedMood",
+        "label_hu": "Nyomott hangulat"
+      },
+      {
+        "code": "compl.psy.sleepDisturbance",
+        "label_hu": "Alvászavar"
+      },
+      {
+        "code": "compl.psy.suicidalThoughts",
+        "label_hu": "Önbántó gondolatok",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.psy.violence",
+        "label_hu": "Bántalmazás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.resp.dyspnea",
+        "label_hu": "Nehézlégzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.spo2",
+          "vitals.rr",
+          "status.internal.lungs",
+          "status.cardio.nyha",
+          "lab.dimer",
+          "ekg.qt"
+        ]
+      },
+      {
+        "code": "compl.uro.dysuria",
+        "label_hu": "Fájdalmas vizelés",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte",
+          "lab.urine.blood"
+        ]
+      },
+      {
+        "code": "compl.uro.frequency",
+        "label_hu": "Gyakori vizelés",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.uro.incontinence.stress",
+        "label_hu": "Vizeletvesztés terhelésre",
+        "opens": [
+          "status.gyn.vulva"
+        ]
+      },
+      {
+        "code": "compl.uro.incontinence.urge",
+        "label_hu": "Vizeletvesztés sürgető inger mellett",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.uro.retention",
+        "label_hu": "Vizelési képtelenség",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.vulva.itching",
+        "label_hu": "Külső nemi szervek viszketése",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.vulva.lump",
+        "label_hu": "Csomó a külső nemi szerveken",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion"
+        ]
+      },
+      {
+        "code": "compl.vulva.ulcer",
+        "label_hu": "Fekély a külső nemi szerveken",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "A jelen ellátás során rögzített panaszok listája a panaszszótárból."
+      },
+      "pitfalls": {
+        "hu": "Az értékkészletet a PANASZSZÓTÁR adja (`registry/complaints/`), és a `tools/gen-complaint-roster.ts` írja ide. Kézzel szerkesztve a következő ellenőrzés elbukik — a szótárat kell bővíteni, nem ezt a listát."
+      },
+      "whyItMatters": {
+        "hu": "EZ A NÉVSOR: minden panasz-jellemző (mikor kezdődött, milyen jellegű, hova sugárzik) ehhez a listához kötve él. Amíg egy panasz nincs itt, hozzá nem rögzíthető részlet — így nem állhat a rekordban olyan panasz jellemzője, amit senki nem állított."
+      }
+    }
+  },
+  {
+    "id": "compl.chief",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vezető panasz"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "compl.bleeding.amenorrhea.primary",
+        "label_hu": "A menstruáció meg sem indult",
+        "opens": [
+          "status.fert.tanner.breast",
+          "us.gyn",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.bleeding.amenorrhea.secondary",
+        "label_hu": "Elmaradt menstruáció",
+        "opens": [
+          "lab.hcg",
+          "lab.tsh",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.bleeding.heavy",
+        "label_hu": "Erős menstruációs vérzés",
+        "opens": [
+          "lab.hgb",
+          "us.gyn",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.bleeding.intermenstrual",
+        "label_hu": "Ciklusok közti vérzés",
+        "opens": [
+          "us.gyn",
+          "status.gyn.portio",
+          "status.gyn.cytology",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.bleeding.oligomenorrhea",
+        "label_hu": "Ritka menstruáció",
+        "opens": [
+          "us.gyn",
+          "lab.tsh",
+          "status.fert.fg.total",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.bleeding.postcoital",
+        "label_hu": "Közösülés utáni vérzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.gyn.portio",
+          "status.gyn.portio.contactBleeding",
+          "status.gyn.cytology",
+          "status.gyn.hpv"
+        ]
+      },
+      {
+        "code": "compl.bleeding.postmenopausal",
+        "label_hu": "Vérzés a változókor után",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.gyn",
+          "us.gyn.finding",
+          "status.gyn.portio"
+        ]
+      },
+      {
+        "code": "compl.bleeding.vaginal",
+        "label_hu": "Hüvelyi vérzés terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.fetal.viability",
+          "us.gyn",
+          "lab.hgb",
+          "status.obs.fhr",
+          "ctg.category"
+        ]
+      },
+      {
+        "code": "compl.breast.discharge",
+        "label_hu": "Váladékozás az emlőbimbóból",
+        "opens": [
+          "status.fert.galactorrhoea",
+          "status.fert.galactorrhoea.character",
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.breast.lump",
+        "label_hu": "Csomó az emlőben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.breast",
+          "us.breast.finding",
+          "us.breast.side"
+        ]
+      },
+      {
+        "code": "compl.breast.pain",
+        "label_hu": "Emlőfájdalom",
+        "opens": [
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.breast.skinChange",
+        "label_hu": "Bőrelváltozás az emlőn",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.breast",
+          "us.breast.finding"
+        ]
+      },
+      {
+        "code": "compl.discharge.increased",
+        "label_hu": "Fokozott hüvelyi folyás",
+        "opens": [
+          "status.gyn.speculum",
+          "status.gyn.fluor.character",
+          "status.gyn.ph",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.discharge.malodorous",
+        "label_hu": "Bűzös hüvelyi folyás",
+        "opens": [
+          "status.gyn.fluor.odor",
+          "status.gyn.ph",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.edema.generalized",
+        "label_hu": "Kiterjedt vizenyő",
+        "opens": [
+          "status.internal.edema",
+          "vitals.bp.systolic",
+          "lab.urine.protein"
+        ]
+      },
+      {
+        "code": "compl.fert.infertility",
+        "label_hu": "Nem jön létre terhesség",
+        "opens": [
+          "status.fert.partner.semenAnalysis",
+          "us.gyn",
+          "lab.tsh",
+          "status.fert.fg.total"
+        ]
+      },
+      {
+        "code": "compl.fert.recurrentLoss",
+        "label_hu": "Ismétlődő terhességvesztés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.gyn",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.fetal.noMovement",
+        "label_hu": "Nem érzett magzatmozgás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "us.fetal.viability",
+          "ctg.category",
+          "status.obs.fhr"
+        ]
+      },
+      {
+        "code": "compl.fetal.reducedMovement",
+        "label_hu": "Csökkent magzatmozgás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ctg.category",
+          "status.obs.fhr",
+          "us.afi"
+        ]
+      },
+      {
+        "code": "compl.gen.acne",
+        "label_hu": "Pattanásosság",
+        "opens": [
+          "status.fert.fg.total",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.gen.bloating",
+        "label_hu": "Puffadás, haspuffadás",
+        "opens": [
+          "us.gyn",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.gen.chestPain",
+        "label_hu": "Mellkasi fájdalom",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ekg.qt",
+          "vitals.bp.systolic",
+          "vitals.spo2",
+          "lab.dimer",
+          "status.internal.lungs"
+        ]
+      },
+      {
+        "code": "compl.gen.constipation",
+        "label_hu": "Székrekedés"
+      },
+      {
+        "code": "compl.gen.diarrhea",
+        "label_hu": "Hasmenés",
+        "opens": [
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.gen.fatigue",
+        "label_hu": "Fáradékonyság",
+        "opens": [
+          "lab.hgb",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.gen.fever",
+        "label_hu": "Láz",
+        "opens": [
+          "vitals.temp",
+          "lab.crp",
+          "lab.wbc"
+        ]
+      },
+      {
+        "code": "compl.gen.hairLoss",
+        "label_hu": "Hajhullás",
+        "opens": [
+          "lab.tsh",
+          "lab.hgb",
+          "status.endo.virilization"
+        ]
+      },
+      {
+        "code": "compl.gen.headache",
+        "label_hu": "Fejfájás",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.bp.diastolic"
+        ]
+      },
+      {
+        "code": "compl.gen.hirsutism",
+        "label_hu": "Fokozott szőrnövekedés",
+        "opens": [
+          "status.fert.fg.total",
+          "status.endo.virilization",
+          "us.gyn",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.gen.legSwelling",
+        "label_hu": "Egyoldali lábdagadás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "lab.dimer",
+          "status.internal.perfusion",
+          "status.internal.varicosity"
+        ]
+      },
+      {
+        "code": "compl.gen.nausea",
+        "label_hu": "Hányinger",
+        "opens": [
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.gen.palpitations",
+        "label_hu": "Szívdobogásérzés",
+        "opens": [
+          "vitals.pulse",
+          "ekg.qt",
+          "lab.tsh",
+          "lab.hgb"
+        ]
+      },
+      {
+        "code": "compl.gen.rash",
+        "label_hu": "Bőrkiütés",
+        "opens": [
+          "status.internal.skin"
+        ]
+      },
+      {
+        "code": "compl.gen.syncope",
+        "label_hu": "Ájulás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "ekg.qt",
+          "lab.hgb",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.gen.visualDisturbance",
+        "label_hu": "Látászavar",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "lab.urine.protein",
+          "status.endo.eyeSigns"
+        ]
+      },
+      {
+        "code": "compl.gen.vomiting",
+        "label_hu": "Hányás",
+        "opens": [
+          "lab.hcg",
+          "lab.cr"
+        ]
+      },
+      {
+        "code": "compl.gen.weightGain",
+        "label_hu": "Hízás",
+        "opens": [
+          "anthro.weight.current",
+          "anthro.bmi",
+          "lab.tsh",
+          "status.endo.fatDistribution",
+          "status.endo.acanthosis"
+        ]
+      },
+      {
+        "code": "compl.gen.weightLoss",
+        "label_hu": "Fogyás",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "anthro.weight.current",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.gyn.prolapse",
+        "label_hu": "Kidomborodás érzése a hüvelyben",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.meno.hotFlush",
+        "label_hu": "Hőhullámok"
+      },
+      {
+        "code": "compl.meno.vaginalDryness",
+        "label_hu": "Hüvelyszárazság",
+        "opens": [
+          "status.gyn.speculum",
+          "status.gyn.vulva"
+        ]
+      },
+      {
+        "code": "compl.neuro.headache.visual",
+        "label_hu": "Fejfájás látászavarral",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.bp.diastolic",
+          "lab.urine.protein",
+          "lab.plt",
+          "lab.ast",
+          "lab.cr"
+        ]
+      },
+      {
+        "code": "compl.obs.backPain",
+        "label_hu": "Deréktáji fájdalom terhességben",
+        "opens": [
+          "status.obs.contractions.freq",
+          "lab.urine.nitrite",
+          "vitals.temp"
+        ]
+      },
+      {
+        "code": "compl.obs.contractions",
+        "label_hu": "Összehúzódások",
+        "opens": [
+          "status.obs.contractions.freq",
+          "status.obs.contractions.duration",
+          "exam.cervix.dilation",
+          "exam.cervix.effacement",
+          "ctg.category"
+        ]
+      },
+      {
+        "code": "compl.obs.dizziness",
+        "label_hu": "Szédülés, ájulásérzés terhességben",
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "lab.hgb"
+        ]
+      },
+      {
+        "code": "compl.obs.fever",
+        "label_hu": "Láz terhességben",
+        "opens": [
+          "vitals.temp",
+          "status.obs.fhr",
+          "lab.crp",
+          "lab.wbc",
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.obs.fluidLeak",
+        "label_hu": "Folyadékszivárgás, burokrepedés gyanúja",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.obs.membranes",
+          "status.obs.amnioticFluid",
+          "vitals.temp",
+          "ctg.category",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.obs.hyperemesis",
+        "label_hu": "Makacs terhességi hányás",
+        "opens": [
+          "anthro.weight.current",
+          "lab.cr",
+          "lab.urine.protein",
+          "lab.tsh"
+        ]
+      },
+      {
+        "code": "compl.obs.itching",
+        "label_hu": "Viszketés terhességben",
+        "opens": [
+          "lab.ast",
+          "status.internal.skin"
+        ]
+      },
+      {
+        "code": "compl.obs.pelvicPressure",
+        "label_hu": "Medencei nyomásérzés",
+        "opens": [
+          "exam.cervix.dilation",
+          "exam.cervix.effacement",
+          "status.obs.engagement"
+        ]
+      },
+      {
+        "code": "compl.obs.seizure",
+        "label_hu": "Görcsroham terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.consciousness",
+          "lab.plt",
+          "lab.ast",
+          "lab.cr",
+          "lab.urine.protein"
+        ]
+      },
+      {
+        "code": "compl.obs.trauma",
+        "label_hu": "Hasi sérülés terhességben",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "ctg.category",
+          "status.obs.fhr",
+          "us.fetal.viability",
+          "lab.hgb",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.diffuse",
+        "label_hu": "Kiterjedt hasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.llq",
+        "label_hu": "Bal alhasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.rlq",
+        "label_hu": "Jobb alhasi fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn",
+          "lab.hcg",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.abdomen.suprapubic",
+        "label_hu": "Szeméremcsont feletti fájdalom",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte",
+          "us.gyn",
+          "lab.hcg"
+        ]
+      },
+      {
+        "code": "compl.pain.chronicPelvic",
+        "label_hu": "Krónikus kismedencei fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pain.dysmenorrhea",
+        "label_hu": "Menstruációs görcsök",
+        "opens": [
+          "us.gyn",
+          "status.gyn.bimanual"
+        ]
+      },
+      {
+        "code": "compl.pain.dyspareunia.deep",
+        "label_hu": "Mély közösülési fájdalom",
+        "opens": [
+          "status.gyn.bimanual",
+          "status.gyn.douglas",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pain.dyspareunia.superficial",
+        "label_hu": "Felszíni közösülési fájdalom",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.speculum",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.pain.epigastric",
+        "label_hu": "Epigasztriális fájdalom",
+        "opens": [
+          "vitals.bp.systolic",
+          "lab.ast",
+          "lab.plt",
+          "lab.urine.protein",
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pain.flank",
+        "label_hu": "Vesetáji fájdalom",
+        "opens": [
+          "lab.urine.blood",
+          "lab.urine.nitrite",
+          "vitals.temp",
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.pp.bleeding",
+        "label_hu": "Fokozott gyermekágyi vérzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.bp.systolic",
+          "vitals.pulse",
+          "lab.hgb",
+          "us.gyn"
+        ]
+      },
+      {
+        "code": "compl.pp.breastPain",
+        "label_hu": "Emlőfájdalom szoptatás alatt",
+        "opens": [
+          "vitals.temp",
+          "us.breast"
+        ]
+      },
+      {
+        "code": "compl.pp.fever",
+        "label_hu": "Gyermekágyi láz",
+        "opens": [
+          "vitals.temp",
+          "lab.crp",
+          "lab.wbc",
+          "status.internal.abdomen",
+          "lab.urine.nitrite"
+        ]
+      },
+      {
+        "code": "compl.pp.mood",
+        "label_hu": "Hangulatzavar a szülés után",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.pp.urinaryRetention",
+        "label_hu": "Vizelési képtelenség szülés után",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.pp.woundPain",
+        "label_hu": "Műtéti seb vagy gátseb fájdalma",
+        "opens": [
+          "vitals.temp",
+          "lab.crp"
+        ]
+      },
+      {
+        "code": "compl.psy.anxiety",
+        "label_hu": "Szorongás"
+      },
+      {
+        "code": "compl.psy.depressedMood",
+        "label_hu": "Nyomott hangulat"
+      },
+      {
+        "code": "compl.psy.sleepDisturbance",
+        "label_hu": "Alvászavar"
+      },
+      {
+        "code": "compl.psy.suicidalThoughts",
+        "label_hu": "Önbántó gondolatok",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.psy.violence",
+        "label_hu": "Bántalmazás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "compl.resp.dyspnea",
+        "label_hu": "Nehézlégzés",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "vitals.spo2",
+          "vitals.rr",
+          "status.internal.lungs",
+          "status.cardio.nyha",
+          "lab.dimer",
+          "ekg.qt"
+        ]
+      },
+      {
+        "code": "compl.uro.dysuria",
+        "label_hu": "Fájdalmas vizelés",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte",
+          "lab.urine.blood"
+        ]
+      },
+      {
+        "code": "compl.uro.frequency",
+        "label_hu": "Gyakori vizelés",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.uro.incontinence.stress",
+        "label_hu": "Vizeletvesztés terhelésre",
+        "opens": [
+          "status.gyn.vulva"
+        ]
+      },
+      {
+        "code": "compl.uro.incontinence.urge",
+        "label_hu": "Vizeletvesztés sürgető inger mellett",
+        "opens": [
+          "lab.urine.nitrite",
+          "lab.urine.leukocyte"
+        ]
+      },
+      {
+        "code": "compl.uro.retention",
+        "label_hu": "Vizelési képtelenség",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.internal.abdomen"
+        ]
+      },
+      {
+        "code": "compl.vulva.itching",
+        "label_hu": "Külső nemi szervek viszketése",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion",
+          "lab.swab.vaginal"
+        ]
+      },
+      {
+        "code": "compl.vulva.lump",
+        "label_hu": "Csomó a külső nemi szerveken",
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion"
+        ]
+      },
+      {
+        "code": "compl.vulva.ulcer",
+        "label_hu": "Fekély a külső nemi szerveken",
+        "flags": [
+          "redflag"
+        ],
+        "opens": [
+          "status.gyn.vulva",
+          "status.gyn.vulva.lesion"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az aktív panaszok közül az, ami miatt a beteg felkereste az ellátást."
+      },
+      "whyItMatters": {
+        "hu": "A zárójelentés és az epikrízis „felvétel oka” bekezdésének magja, és a tüneti BNO-kód forrása, ha végleges diagnózis nincs."
+      }
+    }
+  },
+  {
+    "id": "compl.q.course",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Alakulás a kezdet óta"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "improving",
+        "label_hu": "Javul"
+      },
+      {
+        "code": "stable",
+        "label_hu": "Változatlan"
+      },
+      {
+        "code": "worsening",
+        "label_hu": "Romlik",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "fluctuating",
+        "label_hu": "Változó"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Javult, változatlan vagy romlik a panasz."
+      },
+      "whyItMatters": {
+        "hu": "A ROMLÓ tendencia a felvétel melletti legerősebb egyszerű érv, és a hazabocsátás elleni legerősebb. A statikus pillanatkép ezt nem mutatja meg — ezért kell külön kérdezni."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.firstEpisode",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Első alkalom"
+    },
+    "module": "complaints",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen, ez az első"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem, volt már ilyen"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e már korábban ilyen panasza."
+      },
+      "whyItMatters": {
+        "hu": "Az ismétlődő, korábban kivizsgált panasz más utat kér, mint az első epizód — és a korábbi lelet előkeresése gyakran több információt ad, mint egy újabb vizsgálat."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.impact",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Hatása a napi életre"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem akadályozza"
+      },
+      {
+        "code": "mild",
+        "label_hu": "Enyhén — mindent meg tud csinálni"
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Korlátozza a szokásos tevékenységben"
+      },
+      {
+        "code": "severe",
+        "label_hu": "Munkaképtelen, ágyhoz kötött",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire akadályozza a panasz a mindennapokban."
+      },
+      "whyItMatters": {
+        "hu": "A működésre gyakorolt hatás gyakran többet mond a súlyosságról, mint a 0–10 skála, és a beteg számára is ez a valódi tét. A `16` betegelégedettségi és a `15` utánkövetési modul ezt méri újra."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.onset",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kezdet időpontja"
+    },
+    "module": "complaints",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kezdődött ez a panasz."
+      },
+      "whyItMatters": {
+        "hu": "A panasz KORA a legtöbb sürgősségi döntés bemenete: a hirtelen kezdetű, órás nagyságrendű hasi fájdalom más kivizsgálást kér, mint a hetek óta tartó. Dátum, nem szöveg — így számolható és rendezhető."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.onsetType",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kezdet jellege"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "sudden",
+        "label_hu": "Hirtelen, percek alatt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "acute",
+        "label_hu": "Gyorsan, órák alatt"
+      },
+      {
+        "code": "gradual",
+        "label_hu": "Fokozatosan, napok alatt"
+      },
+      {
+        "code": "recurrent",
+        "label_hu": "Ismétlődően, korábban is volt"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem tudja megmondani",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan indult a panasz."
+      },
+      "pitfalls": {
+        "hu": "A „hirtelen” szót a beteg gyakran „váratlanul” értelemben használja, nem „percek alatt” értelemben. Rá kell kérdezni, mit csinált akkor, amikor elkezdődött — ez pontosabb választ ad, mint a szó maga."
+      },
+      "whyItMatters": {
+        "hu": "A VILLÁMCSAPÁSSZERŰ kezdet önmagában vörös zászló: a percek alatt maximumát elérő fejfájás subarachnoidealis vérzés, a hirtelen hasi fájdalom petefészek-csavarodás vagy megrepedt ectopia gyanúját veti fel."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.provoke",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mi váltja ki vagy erősíti"
+    },
+    "module": "complaints",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "movement",
+        "label_hu": "Mozgás"
+      },
+      {
+        "code": "food",
+        "label_hu": "Étkezés"
+      },
+      {
+        "code": "empty",
+        "label_hu": "Éhgyomor"
+      },
+      {
+        "code": "urination",
+        "label_hu": "Vizelés"
+      },
+      {
+        "code": "defecation",
+        "label_hu": "Székletürítés"
+      },
+      {
+        "code": "intercourse",
+        "label_hu": "Közösülés"
+      },
+      {
+        "code": "menses",
+        "label_hu": "Menstruáció"
+      },
+      {
+        "code": "stress",
+        "label_hu": "Feszültség, stressz"
+      },
+      {
+        "code": "position",
+        "label_hu": "Testhelyzet-változtatás"
+      },
+      {
+        "code": "breathing",
+        "label_hu": "Mély belégzés"
+      },
+      {
+        "code": "nothing",
+        "label_hu": "Semmi, folyamatosan fennáll"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mitől lesz rosszabb a panasz."
+      },
+      "whyItMatters": {
+        "hu": "A közösüléshez és a menstruációhoz kötött fájdalom (dyspareunia, dysmenorrhoea) az endometriosis vezető tünete — az átlagos diagnosztikus késés hét év felett van, és a kérdés fel nem tevése ennek a fő oka."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.quality",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A panasz jellege"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "sharp",
+        "label_hu": "Szúró, éles"
+      },
+      {
+        "code": "burning",
+        "label_hu": "Égő"
+      },
+      {
+        "code": "cramping",
+        "label_hu": "Görcsös"
+      },
+      {
+        "code": "dull",
+        "label_hu": "Tompa, sajgó"
+      },
+      {
+        "code": "pressure",
+        "label_hu": "Nyomó, szorító"
+      },
+      {
+        "code": "tearing",
+        "label_hu": "Hasító",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "colicky",
+        "label_hu": "Kólikás, hullámzó"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen jellegű a panasz."
+      },
+      "whyItMatters": {
+        "hu": "A görcsös, hullámzó jelleg üreges szerv (bél, húgyvezeték, méh) eredetre utal, a tompa, állandó a hashártya izgalmára. A HASÍTÓ jelleg az aorta-dissectio klasszikus leírása."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.radiation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Sugárzás"
+    },
+    "module": "complaints",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem sugárzik"
+      },
+      {
+        "code": "back",
+        "label_hu": "Hátba"
+      },
+      {
+        "code": "shoulder",
+        "label_hu": "Vállba",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "groin",
+        "label_hu": "Lágyékba, combba"
+      },
+      {
+        "code": "chest",
+        "label_hu": "Mellkasba"
+      },
+      {
+        "code": "jaw",
+        "label_hu": "Állkapocsba"
+      },
+      {
+        "code": "arm",
+        "label_hu": "Karba"
+      },
+      {
+        "code": "perineum",
+        "label_hu": "Gátra, végbél felé"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hova sugárzik ki a panasz."
+      },
+      "whyItMatters": {
+        "hu": "A VÁLLBA sugárzó hasi fájdalom (Kehr-jel) rekeszizgalmat jelez — hasűri vérzés vagy szabad levegő gyanúja. Fogamzóképes nőnél ez a megrepedt méhen kívüli terhesség egyik legjellemzőbb, mégis leggyakrabban félreértelmezett jele."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.relieve",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mi enyhíti"
+    },
+    "module": "complaints",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "rest",
+        "label_hu": "Pihenés"
+      },
+      {
+        "code": "position",
+        "label_hu": "Bizonyos testhelyzet"
+      },
+      {
+        "code": "heat",
+        "label_hu": "Meleg"
+      },
+      {
+        "code": "analgesic",
+        "label_hu": "Fájdalomcsillapító"
+      },
+      {
+        "code": "food",
+        "label_hu": "Étkezés"
+      },
+      {
+        "code": "defecation",
+        "label_hu": "Székletürítés"
+      },
+      {
+        "code": "nothing",
+        "label_hu": "Semmi",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mitől lesz jobb a panasz."
+      },
+      "pitfalls": {
+        "hu": "Ha fájdalomcsillapító enyhíti, rögzíteni kell, MELYIK és mennyi: a beteg által otthon szedett gyógyszer a `06` modulba tartozik, és elfedheti a fizikális leletet."
+      },
+      "whyItMatters": {
+        "hu": "Az a fájdalom, amin SEMMI nem segít — beleértve a szokásos fájdalomcsillapítót —, önmagában komolyabb okra utal."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.severity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Erősség (0–10)"
+    },
+    "module": "complaints",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 10,
+      "step": 1
+    },
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "A panasz erőssége a beteg saját megítélése szerint, nullától tízig."
+      },
+      "howToMeasure": {
+        "hu": "„Ha a 0 az, hogy semmit nem érez, a 10 pedig a legrosszabb, amit el tud képzelni — most hol van?”"
+      },
+      "pitfalls": {
+        "hu": "A skála nem hasonlítható össze betegek között, és nem alkalmas a „valóban fáj-e neki” eldöntésére. Aki a 8-at kevesli, a mérőeszközt érti félre, nem a beteget."
+      },
+      "whyItMatters": {
+        "hu": "A beteg SAJÁT megítélése; nem az ellátóé. Az érték eredete ezért `patient`, és a lényege nem az abszolút szám, hanem a VÁLTOZÁSA: a kezelés hatását és a romlást ugyanazon a skálán követve látjuk."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.q.timing",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Időbeli lefolyás"
+    },
+    "module": "complaints",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "constant",
+        "label_hu": "Állandó"
+      },
+      {
+        "code": "intermittent",
+        "label_hu": "Jön-megy"
+      },
+      {
+        "code": "wavelike",
+        "label_hu": "Hullámzó, rohamokban"
+      },
+      {
+        "code": "cyclic",
+        "label_hu": "A ciklushoz kötött"
+      },
+      {
+        "code": "nocturnal",
+        "label_hu": "Éjszaka rosszabb",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan alakul a panasz az idő során."
+      },
+      "whyItMatters": {
+        "hu": "A ciklushoz kötött panasz nőgyógyászati eredetre irányítja a kivizsgálást; az éjszaka ébresztő fájdalom szervi okot valószínűsít a funkcionálissal szemben."
+      }
+    },
+    "scopedBy": {
+      "dimension": "complaint",
+      "roster": "compl.active"
+    }
+  },
+  {
+    "id": "compl.verbatim",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A beteg saját szavai"
+    },
+    "module": "complaints",
+    "datatype": "text",
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "A panasz szó szerinti, szerkesztetlen megfogalmazása, ahogyan a beteg elmondta."
+      },
+      "pitfalls": {
+        "hu": "Szerkesztetlen: nem stilizáljuk, nem fordítjuk szaknyelvre. Beteg-azonosító adat kerülhet bele (név, munkahely) — az exportnál ezért szűrni kell, ezért nem is kereshető szabadon a kutatói felületen."
+      },
+      "whyItMatters": {
+        "hu": "A kódolt tétel a gépnek szól, ez az ORVOSNAK. A „szúr a hasam alul jobb oldalt” megfogalmazásban benne van a jelleg, a lokalizáció és a beteg értelmezése is — ezt egyetlen kód sem adja vissza. A kettő EGYÜTT van: a kódolás nem helyettesíti az idézetet, az idézet nem helyettesíti a kódot."
+      }
+    }
+  },
+  {
+    "id": "sym.chestPainDyspnea",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mellkasi fájdalom vagy nehézlégzés",
+      "en": "Chest pain or dyspnoea"
+    },
+    "module": "complaints",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg mellkasi fájdalmat vagy nehézlégzést jelez."
+      },
+      "whyItMatters": {
+        "hu": "A fullPIERS legerősebb egyedi prediktora, és önálló vörös zászló."
+      }
+    }
+  }
+]

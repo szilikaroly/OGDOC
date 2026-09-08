@@ -1,0 +1,1186 @@
+[
+  {
+    "id": "labour.amniotic",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzatvíz"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A lefolyó magzatvíz jellege."
+      },
+      "whyItMatters": {
+        "hu": "TÜKÖR: az érték a `04` modul `status.obs.amnioticFluid` mezőjében él. Ugyanaz a lelet a felvételi státusz és a szülőszobai lap felületén is megjelenik — de EGY adat, egy kódlistával és egy javaslatkészlettel."
+      }
+    },
+    "aliasOf": "status.obs.amnioticFluid"
+  },
+  {
+    "id": "labour.bleedingStartedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A vérzés kezdete"
+    },
+    "module": "labour",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kezdődött a jelentős vérzés."
+      },
+      "whyItMatters": {
+        "hu": "A tranexámsav három órás ablakának nullpontja, és a CMQCC stádiumváltás időzítésének alapja."
+      }
+    }
+  },
+  {
+    "id": "labour.caput",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Caput succedaneum"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 3
+    },
+    "aliasOf": "status.obs.caput",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A vezérpont feletti duzzanat."
+      }
+    }
+  },
+  {
+    "id": "labour.cervix",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhszáj-tágulat"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "cm",
+    "domain": {
+      "min": 0,
+      "max": 10,
+      "step": 0.5
+    },
+    "aliasOf": "exam.cervix.dilation",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A méhszáj tágassága."
+      },
+      "whyItMatters": {
+        "hu": "TÜKÖR: az érték a `04` modul `exam.cervix.dilation` mezőjében él. Az IPRACS ismert hibája, hogy a Bishop-score egyszerre három helyen szerepelt — itt egy adat van, több felületi helyen."
+      }
+    }
+  },
+  {
+    "id": "labour.companion",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kísérő jelen van"
+    },
+    "module": "labour",
+    "datatype": "bool",
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Van-e a vajúdó mellett választott kísérője."
+      },
+      "whyItMatters": {
+        "hu": "A WHO Labour Care Guide önálló monitorozott eleme: a folyamatos támogatás rövidebb vajúdással, kevesebb fájdalomcsillapítással és kevesebb műtétes befejezéssel jár. Ez az egyik legjobb költség-haszon arányú beavatkozás a szülészetben — és a leggyakrabban elhagyott."
+      }
+    }
+  },
+  {
+    "id": "labour.contractionDuration",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontrakció időtartama"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "s",
+    "domain": {
+      "min": 0,
+      "max": 240
+    },
+    "aliasOf": "status.obs.contractions.duration",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Egy összehúzódás hossza."
+      }
+    }
+  },
+  {
+    "id": "labour.contractions",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kontrakciók száma"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "/(10.min)",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "aliasOf": "status.obs.contractions.freq",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hány összehúzódás 10 perc alatt."
+      }
+    }
+  },
+  {
+    "id": "labour.deliveryMode",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szülés módja"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "spontaneous",
+        "label_hu": "Spontán hüvelyi"
+      },
+      {
+        "code": "vacuum",
+        "label_hu": "Vákuum-extrakció"
+      },
+      {
+        "code": "forceps",
+        "label_hu": "Fogóműtét"
+      },
+      {
+        "code": "breechVaginal",
+        "label_hu": "Hüvelyi farfekvéses"
+      },
+      {
+        "code": "csElective",
+        "label_hu": "Tervezett császármetszés"
+      },
+      {
+        "code": "csIntrapartum",
+        "label_hu": "Vajúdás alatti császármetszés"
+      },
+      {
+        "code": "csEmergency",
+        "label_hu": "Sürgős császármetszés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan született meg a magzat."
+      },
+      "whyItMatters": {
+        "hu": "A `15` kimeneteli és a `17` kódolási modul egyik legfontosabb bemenete, és a minőségi mutatók (Robson-csoportok) alapja."
+      }
+    },
+    "standards": {
+      "ichom": "PCB025"
+    }
+  },
+  {
+    "id": "labour.descent",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fejbeszállás (ötödökben)"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 5
+    },
+    "aliasOf": "status.obs.engagement",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hány ötöde tapintható a koponyának a medencebemenet felett."
+      }
+    }
+  },
+  {
+    "id": "labour.fhr.accel",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Akcelerációk"
+    },
+    "module": "labour",
+    "datatype": "bool",
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Vannak-e a magzati szívfrekvencia gyorsulásai."
+      },
+      "whyItMatters": {
+        "hu": "Az akceleráció jelenléte megnyugtató jel, a hiánya önmagában NEM kóros — a magzat alvási ciklusa 40 percig is tarthat."
+      }
+    }
+  },
+  {
+    "id": "labour.fhr.baseline",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magzati alapszívfrekvencia"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "/min",
+    "domain": {
+      "min": 50,
+      "max": 240
+    },
+    "aliasOf": "status.obs.fhr",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A magzat alapvonala percenkénti ütésszámban."
+      }
+    }
+  },
+  {
+    "id": "labour.fhr.decel",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Decelerációk"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "early",
+        "label_hu": "Korai"
+      },
+      {
+        "code": "variable",
+        "label_hu": "Változó"
+      },
+      {
+        "code": "late",
+        "label_hu": "Késői",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "prolonged",
+        "label_hu": "Elhúzódó (2–10 perc)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "recurrentVariable",
+        "label_hu": "Ismétlődő változó",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "recurrentLate",
+        "label_hu": "Ismétlődő késői",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Milyen típusú lassulások láthatók."
+      },
+      "pitfalls": {
+        "hu": "Az „ismétlődő” azt jelenti, hogy a kontrakciók több mint felét kíséri. Ez a szám dönti el a NICHD-besorolást, nem a deceleráció megléte önmagában."
+      },
+      "whyItMatters": {
+        "hu": "A KÉSŐI deceleráció lepényi elégtelenségre utal, a változó a köldökzsinór összenyomódására — a kettő teendője más."
+      }
+    }
+  },
+  {
+    "id": "labour.fhr.method",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Monitorozás módja"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "intermittent",
+        "label_hu": "Időszakos hallgatózás"
+      },
+      {
+        "code": "continuous",
+        "label_hu": "Folyamatos CTG"
+      },
+      {
+        "code": "internal",
+        "label_hu": "Belső elektróda"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nincs monitorozás",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan történik a magzati szívhang követése."
+      },
+      "whyItMatters": {
+        "hu": "Az IDŐSZAKOS hallgatózásból variabilitás és decelerációtípus NEM ítélhető meg — a NICHD-besorolás ilyenkor nem alkalmazható. Alacsony kockázatú vajúdásban az időszakos hallgatózás az AJÁNLOTT módszer: a folyamatos CTG rutinszerű alkalmazása több császármetszéssel jár, kimutatható magzati haszon nélkül."
+      }
+    }
+  },
+  {
+    "id": "labour.fhr.variability",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Variabilitás"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "absent",
+        "label_hu": "Hiányzó (< 1/perc)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "minimal",
+        "label_hu": "Minimális (≤ 5/perc)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Mérsékelt (6–25/perc)"
+      },
+      {
+        "code": "marked",
+        "label_hu": "Kifejezett (> 25/perc)"
+      },
+      {
+        "code": "sinusoidal",
+        "label_hu": "Sinusoidalis mintázat",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az alapvonal ütésről ütésre való ingadozása."
+      },
+      "pitfalls": {
+        "hu": "EZ KLINIKUSI MEGÍTÉLÉS, ÉS AZ IS MARAD. A gépi variabilitás-becslés megbízhatatlan, a sinusoidalis mintázat felismerése pedig tapasztalatot kíván — a modul nyitott kérdése kifejezetten kimondja, hogy ezt nem szabad automatizálni."
+      },
+      "whyItMatters": {
+        "hu": "A NICHD besorolás legfontosabb eleme: a MÉRSÉKELT variabilitás jelenléte gyakorlatilag kizárja az aktuális magzati acidózist, a hiánya viszont a III. kategória feltétele."
+      }
+    }
+  },
+  {
+    "id": "labour.hour",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Eltelt óra"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "h",
+    "domain": {
+      "min": 0,
+      "max": 100
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.labour.hours",
+      "explain": {
+        "hu": "A vizsgálat ideje mínusz a vajúdás kezdete."
+      }
+    },
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A vajúdás kezdete óta eltelt idő."
+      },
+      "whyItMatters": {
+        "hu": "A partogram X-tengelye. Levezetett, nem beírt — a kézzel karbantartott óraszám a partogram klasszikus hibaforrása."
+      }
+    }
+  },
+  {
+    "id": "labour.mgso4.startedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magnézium-szulfát kezdete"
+    },
+    "module": "labour",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor indult a magnézium-szulfát-kezelés."
+      },
+      "whyItMatters": {
+        "hu": "Az eclampsia megelőzésének standardja. A kezdet időpontja a telítő és a fenntartó adag időzítéséhez és a szintméréshez kell."
+      }
+    }
+  },
+  {
+    "id": "labour.moulding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Koponyacsont-egymásra csúszás"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 3
+    },
+    "aliasOf": "status.obs.moulding",
+    "validity": null,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A varratok menti egymásra csúszás mértéke."
+      }
+    }
+  },
+  {
+    "id": "labour.oxytocin",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Oxitocin-infúzió fut"
+    },
+    "module": "labour",
+    "datatype": "bool",
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Kap-e a vajúdó oxitocint."
+      },
+      "whyItMatters": {
+        "hu": "A tachysystolia (10 perc alatt több mint öt kontrakció) melletti oxitocin a magzati állapotromlás egyik megelőzhető oka — a kettőt együtt kell nézni."
+      }
+    }
+  },
+  {
+    "id": "labour.perinealTrauma",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gátsérülés"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "firstDegree",
+        "label_hu": "I. fokú"
+      },
+      {
+        "code": "secondDegree",
+        "label_hu": "II. fokú"
+      },
+      {
+        "code": "thirdA",
+        "label_hu": "III/a fokú",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "thirdB",
+        "label_hu": "III/b fokú",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "thirdC",
+        "label_hu": "III/c fokú",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "fourthDegree",
+        "label_hu": "IV. fokú",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "episiotomy",
+        "label_hu": "Gátmetszés"
+      },
+      {
+        "code": "cervicalTear",
+        "label_hu": "Méhnyakrepedés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen sérülés keletkezett a szülés során."
+      },
+      "pitfalls": {
+        "hu": "A FEL NEM ISMERT III. fokú sérülés a leggyakoribb elmulasztott szülészeti diagnózis — a rutin végbélvizsgálat minden hüvelyi szülés után a felismerés feltétele."
+      },
+      "whyItMatters": {
+        "hu": "A III. és IV. fokú sérülés (OASI) hosszú távú széklettartási zavart okozhat, és a felismerése a szülés utáni ellátás minőségi mutatója."
+      }
+    }
+  },
+  {
+    "id": "labour.posture",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testhelyzet"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "upright",
+        "label_hu": "Függőleges (áll, jár, ül)"
+      },
+      {
+        "code": "lateral",
+        "label_hu": "Oldalfekvés"
+      },
+      {
+        "code": "supine",
+        "label_hu": "Hanyatt fekvés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "allFours",
+        "label_hu": "Négykézláb"
+      },
+      {
+        "code": "squatting",
+        "label_hu": "Guggolás"
+      },
+      {
+        "code": "waterBirth",
+        "label_hu": "Vízben"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Milyen testhelyzetben van a vajúdó."
+      },
+      "whyItMatters": {
+        "hu": "A HANYATT FEKVÉS a vena cava kompressziója miatt kerülendő, és a kitolási szakban hosszabb szüléssel jár. A mozgás szabadsága a WHO LCG monitorozott eleme."
+      }
+    }
+  },
+  {
+    "id": "labour.qbl",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mennyiségi vérvesztés (kumulatív)"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 10000,
+      "critical": [
+        null,
+        300
+      ]
+    },
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A mért vérvesztés összesen, a szülés kezdetétől."
+      },
+      "howToMeasure": {
+        "hu": "MÉRT, nem becsült: a törlők tömegkülönbsége és a szívóedény térfogata. A vizuális becslés a valós vérvesztést rendszeresen ALÁBECSÜLI, és minél nagyobb a vérzés, annál jobban."
+      },
+      "pitfalls": {
+        "hu": "KUMULATÍV érték: a rekordba az ÖSSZES eddigi vérvesztés kerül, nem az utolsó mérés. Az inkrementális rögzítés a partogram és a stádium számításának klasszikus hibaforrása."
+      },
+      "whyItMatters": {
+        "hu": "A CMQCC vérzési stádium bemenete. A WHO/FIGO/ICM 2025 ajánlása a beavatkozási küszöböt 300 mL-re hozta le — a korábbi 500 mL-es határ mellett a kezelés rendszeresen későn indult."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "labour.qbl.total",
+    "label": {
+      "hu": "Teljes mennyiségi vérvesztés (szülés + műtét)"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 15000,
+      "critical": [
+        null,
+        300
+      ]
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.qbl.total",
+      "explain": {
+        "hu": "A szülés alatti kumulatív és a műtét alatt mért vérvesztés összege."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A beteg TELJES mért vérvesztése, szakaszoktól függetlenül."
+      },
+      "whyItMatters": {
+        "hu": "EZ VEZÉRLI A CMQCC-STÁDIUMOT. Korábban a stádium csak a szülés alatti értéket látta, a műtétit nem — pedig a császármetszésre kerülő vajúdó nő mindkettőbe veszít vért."
+      },
+      "pitfalls": {
+        "hu": "EGY FEDÉS FELOLDÁSA. A `labour.qbl` küszöbe 300 mL (WHO/FIGO/ICM 2025), az `op.intra.qbl`-é 1000 mL volt: 400 mL vajúdás közben kritikus, 700 mL műtét alatt nem, és az 1100 mL összesent senki nem számolta. A HIÁNYZÓ SZAKASZ NEM NULLA: ha a beteg vajúdott, de a szülészeti érték hiányzik, ez az összeg alsó becslés — a `verzesOsszeg()` ezt kimondja, a puszta szám nem tudja."
+      }
+    }
+  },
+  {
+    "id": "labour.stage",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vajúdási szak"
+    },
+    "module": "labour",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "latent",
+        "label_hu": "Látens szak"
+      },
+      {
+        "code": "active",
+        "label_hu": "Aktív első szak"
+      },
+      {
+        "code": "second",
+        "label_hu": "Kitolási szak"
+      },
+      {
+        "code": "third",
+        "label_hu": "Lepényi szak"
+      },
+      {
+        "code": "fourth",
+        "label_hu": "Negyedik szak (a szülést követő 2 óra)"
+      }
+    ],
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szülés melyik szakában tart a beteg."
+      },
+      "whyItMatters": {
+        "hu": "A WHO Labour Care Guide szerint az aktív szak 5 cm-től számítandó, nem 4-től — a korábbi küszöb mellett a látens szakban lévő nők jelentős részét „elhúzódónak” minősítették."
+      }
+    }
+  },
+  {
+    "id": "labour.startedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vajúdás kezdete"
+    },
+    "module": "labour",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor indult meg a vajúdás."
+      },
+      "pitfalls": {
+        "hu": "A BETEG BESZÁMOLÓJA szerinti kezdet és az AKTÍV szak kezdete nem ugyanaz. A partogram az aktív szakot rajzolja; a kettő összekeverése hamis elhúzódást mutat, és fölösleges beavatkozáshoz vezet."
+      },
+      "whyItMatters": {
+        "hu": "A partogram X-tengelyének nullpontja, és minden időalapú küszöb (elhúzódó szak, burokrepedés óta eltelt idő) ehhez mérve értelmezendő."
+      }
+    }
+  },
+  {
+    "id": "labour.txa.givenAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tranexámsav beadása"
+    },
+    "module": "labour",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kapta a beteg a tranexámsavat."
+      },
+      "whyItMatters": {
+        "hu": "A HÁROM ÓRÁS ABLAK: a vérzés kezdetétől számított három órán belül adva csökkenti a halálozást, azon túl a haszon eltűnik. A beadás időpontja ezért önálló, rögzítendő adat — nem elég, hogy megkapta."
+      }
+    }
+  },
+  {
+    "id": "labour.urine",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vizeletmennyiség"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 3000
+    },
+    "cardinality": "series",
+    "validity": {
+      "labour": "PT4H"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A rögzített óradiurézis."
+      },
+      "whyItMatters": {
+        "hu": "A magnézium-szulfát-kezelés melletti figyelés része, és a keringési állapot egyszerű jelzője: a csökkenő óradiurézis megelőzi a vérnyomásesést."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "nb.apgar.activity",
+    "label": {
+      "hu": "Apgar — Izomtónus (Activity)"
+    },
+    "module": "szuloszoba",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám izomtónus (activity) tétele (tónus)."
+      },
+      "whyItMatters": {
+        "hu": "Az öt tétel összege az Apgar-pontszám. Tételenként rögzítjük, nem összegként — így visszakereshető, mi indokolta az értéket."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "nb.apgar.appearance",
+    "label": {
+      "hu": "Apgar — Szín (Appearance)"
+    },
+    "module": "szuloszoba",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám szín (appearance) tétele (bőrszín, cyanosis)."
+      },
+      "whyItMatters": {
+        "hu": "Az öt tétel összege az Apgar-pontszám. Tételenként rögzítjük, nem összegként — így visszakereshető, mi indokolta az értéket."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "nb.apgar.grimace",
+    "label": {
+      "hu": "Apgar — Reflexingerlékenység (Grimace)"
+    },
+    "module": "szuloszoba",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám reflexingerlékenység (grimace) tétele (reflexválasz)."
+      },
+      "whyItMatters": {
+        "hu": "Az öt tétel összege az Apgar-pontszám. Tételenként rögzítjük, nem összegként — így visszakereshető, mi indokolta az értéket."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "nb.apgar.pulse",
+    "label": {
+      "hu": "Apgar — Pulzus (Pulse)"
+    },
+    "module": "szuloszoba",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám pulzus (pulse) tétele (szívfrekvencia)."
+      },
+      "whyItMatters": {
+        "hu": "Az öt tétel összege az Apgar-pontszám. Tételenként rögzítjük, nem összegként — így visszakereshető, mi indokolta az értéket."
+      }
+    }
+  },
+  {
+    "version": 1,
+    "status": "active",
+    "id": "nb.apgar.respiration",
+    "label": {
+      "hu": "Apgar — Légzés (Respiration)"
+    },
+    "module": "szuloszoba",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az Apgar-pontszám légzés (respiration) tétele (légzési erőfeszítés)."
+      },
+      "whyItMatters": {
+        "hu": "Az öt tétel összege az Apgar-pontszám. Tételenként rögzítjük, nem összegként — így visszakereshető, mi indokolta az értéket."
+      }
+    }
+  },
+  {
+    "id": "nb.apgar.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Apgar-összpontszám"
+    },
+    "module": "szuloszoba",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.apgar"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az öt Apgar-tétel összege."
+      },
+      "whyItMatters": {
+        "hu": "Az újszülött adaptációjának standard leírása az 1., 5. és 10. percben."
+      },
+      "pitfalls": {
+        "hu": "NEM az asphyxia mérőszáma és egyetlen újszülöttön nem jósol kimenetelt — az AAP/ACOG állásfoglalás ezt kifejezetten kimondja."
+      }
+    }
+  },
+  {
+    "id": "score.cmqcc.stage",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "CMQCC vérzési stádium"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "{stádium}",
+    "domain": {
+      "min": 0,
+      "max": 3
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.cmqcc.stage"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szülés utáni vérzés stádiuma."
+      },
+      "whyItMatters": {
+        "hu": "A stádium a beavatkozási protokollt választja ki, nem csak leír."
+      }
+    }
+  },
+  {
+    "id": "score.isth.dic",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "ISTH terhességi DIC-pontszám"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 60
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.isth.dic.pregnancy"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terhességre módosított DIC-pontszám."
+      },
+      "whyItMatters": {
+        "hu": "26 pont felett terhességi DIC — célzott pótlás és hematológiai konzílium."
+      }
+    }
+  },
+  {
+    "id": "score.meows",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MEOWS-pontszám"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "{trigger}",
+    "domain": {
+      "min": 0,
+      "max": 6
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.meows"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A tartományon kívüli vitális paraméterek száma."
+      },
+      "whyItMatters": {
+        "hu": "Kettő vagy több kiváltó paraméter sürgős orvosi értékelést jelent."
+      }
+    }
+  },
+  {
+    "id": "score.omqsofa",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "omqSOFA-pontszám"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "domain": {
+      "min": 0,
+      "max": 4
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.omqsofa"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A négy szepszis-kritériumból hány teljesül."
+      },
+      "whyItMatters": {
+        "hu": "Két pont felett szepszis-protokoll indul."
+      }
+    }
+  },
+  {
+    "id": "score.cmqcc.ob.sepsis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "CMQCC szülészeti szepszis — élettani szűrő"
+    },
+    "module": "labour",
+    "datatype": "quantity",
+    "unit": "{trigger}",
+    "domain": {
+      "min": 0,
+      "max": 4
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.cmqcc.ob.sepsis.screen"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A négy élettani szepszis-kritériumból hány teljesül. A küszöbök a `registry/szepszis/` regiszterből jönnek, nem a kódból."
+      },
+      "whyItMatters": {
+        "hu": "A szülészeti szepszis a vezető megelőzhető anyai halálokok egyike, és a felismerés majdnem mindig ugyanott bukik el: a terhes nő élettani értékei magukban is olyanok, mint egy kezdődő szepszisé. Ez a szűrő a szülészeti élettant ismerő küszöbökkel dolgozik — az omqSOFA MELLETT, nem helyette."
+      },
+      "pitfalls": {
+        "hu": "A SZÁM NEM DIAGNÓZIS, és három dolog nélkül félrevezet. (1) Ismeretlen terhességi állapotnál nem értelmezhető, és a rendszer nem esik vissza a nem terhes sávra. (2) Vajúdás alatt a fehérvérsejtszám NEM ÉRTÉKELHETŐ — nem „normális”, hanem kiesik a szűrésből. (3) A szűrőpozitív eredmény után a következő lépés EMBERI DÖNTÉS: van-e gyanítható fertőzéses góc. A teljes utat és az órához kötött ellátási csomagot a `core/szepszis/` motor viszi. A küszöbök hitelesítésre várnak, ezért a kalkulátor teljes bemenettel sem ad eredményt."
+      }
+    }
+  }
+]

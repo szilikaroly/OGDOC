@@ -1,0 +1,781 @@
+[
+  {
+    "id": "rx.oxytocin",
+    "label": {
+      "hu": "Oxitocin"
+    },
+    "synonyms": [
+      "Syntocinon",
+      "oxytocin"
+    ],
+    "atc": "H01BB02",
+    "class": {
+      "hu": "uterotonikum"
+    },
+    "indications": [
+      "pph",
+      "inductionCervical"
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      },
+      "note": {
+        "hu": "Szoptatás alatt biztonságosnak tekintett."
+      }
+    },
+    "doseUnit": "[IU]",
+    "documentation": {
+      "definition": {
+        "hu": "Az elsőként választandó uterotonikum szülés utáni vérzésben és szülésindításban."
+      },
+      "whyItMatters": {
+        "hu": "A szülés utáni vérzés megelőzésének és kezelésének első vonalbeli szere; a harmadik szak aktív vezetésének része."
+      },
+      "pitfalls": {
+        "hu": "NAGY DÓZISBAN ÉS GYORS BEADÁSKOR vérnyomásesést és szívfrekvencia-emelkedést okoz; hosszan, hígítás nélkül adva antidiuretikus hatása miatt vízmérgezéshez (hyponatraemiához) vezethet."
+      }
+    }
+  },
+  {
+    "id": "rx.carboprost",
+    "label": {
+      "hu": "Carboprost"
+    },
+    "synonyms": [
+      "Hemabate",
+      "carboprost tromethamine",
+      "15-metil-PGF2α"
+    ],
+    "atc": "G02AD05",
+    "class": {
+      "hu": "prosztaglandin F2α analóg"
+    },
+    "indications": [
+      "pph"
+    ],
+    "gates": [
+      {
+        "id": "gate.carboprost.asthma",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "hx.sys.asthma",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "ASZTMA — a carboprost ABSZOLÚT KONTRAINDIKÁLT: súlyos hörgőgörcsöt válthat ki. Válasszon másik uterotonikumot."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 183: Postpartum Hemorrhage (2017); a készítmény alkalmazási előírása",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.oxytocin",
+          "rx.misoprostol",
+          "rx.methylergometrine",
+          "rx.tranexamic"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L3",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "ug",
+    "documentation": {
+      "definition": {
+        "hu": "Másodvonalbeli uterotonikum atóniás szülés utáni vérzésben."
+      },
+      "whyItMatters": {
+        "hu": "EZ A RENDSZER ELFOGADÁSI KRITÉRIUMÁNAK PÉLDÁJA: az anamnézisben, a felvételkor bejelölt asztma a szülőszobán, hetekkel később, más felhasználónál állítja meg a rendelést."
+      },
+      "pitfalls": {
+        "hu": "A hörgőgörcs a szülőszobán, vérző beteg mellett kezelhetetlen helyzetet teremt. Ezért abszolút kapu, nem figyelmeztetés."
+      }
+    }
+  },
+  {
+    "id": "rx.methylergometrine",
+    "label": {
+      "hu": "Methylergometrin"
+    },
+    "synonyms": [
+      "Methergin",
+      "methylergonovin",
+      "metilergometrin"
+    ],
+    "atc": "G02AB01",
+    "class": {
+      "hu": "ergot-alkaloid"
+    },
+    "indications": [
+      "pph"
+    ],
+    "gates": [
+      {
+        "id": "gate.methylergometrine.htn",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "hx.sys.htn",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "MAGAS VÉRNYOMÁS — az ergot-származék súlyos vérnyomás-emelkedést, agyvérzést okozhat. Válasszon másik uterotonikumot."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 183: Postpartum Hemorrhage (2017)",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.oxytocin",
+          "rx.misoprostol",
+          "rx.tranexamic"
+        ]
+      },
+      {
+        "id": "gate.methylergometrine.preeclampsia",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "hx.repro.currentPregnancy.preeclampsia",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "PRAEECLAMPSIA — ergot-származék adása ellenjavallt: a vérnyomás-emelkedés eclampsiát vagy agyvérzést provokálhat."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 222: Gestational Hypertension and Preeclampsia (2020)",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.oxytocin",
+          "rx.misoprostol",
+          "rx.tranexamic"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L3",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      },
+      "note": {
+        "hu": "Csökkentheti a tejtermelést; rövid, néhány napos alkalmazás mellett általában elfogadott."
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Ergot-származék uterotonikum atóniás vérzésben."
+      },
+      "pitfalls": {
+        "hu": "A vérnyomásra vonatkozó kapu KÉT külön adatra néz: a korábbi hypertoniára és a jelen terhesség praeeclampsiájára. A kettő nem ugyanaz, és a normotenzív előzmény nem zárja ki a mostani praeeclampsiát."
+      }
+    }
+  },
+  {
+    "id": "rx.misoprostol",
+    "label": {
+      "hu": "Misoprostol"
+    },
+    "synonyms": [
+      "Cytotec",
+      "Misodel"
+    ],
+    "atc": "G02AD06",
+    "class": {
+      "hu": "prosztaglandin E1 analóg"
+    },
+    "indications": [
+      "pph",
+      "inductionCervical"
+    ],
+    "gates": [
+      {
+        "id": "gate.misoprostol.pregnancyOngoing",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "ctx.pregnant",
+            "op": "eq",
+            "value": "pos"
+          },
+          {
+            "var": "hx.repro.prevBirth.cs",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "KORÁBBI CSÁSZÁRMETSZÉS ÉS FUTÓ TERHESSÉG — a misoprostollal végzett szülésindítás hegesedett méhen MÉHREPEDÉS kockázatát hordozza."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 205: Vaginal Birth After Cesarean Delivery (2019)",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.oxytocin",
+          "rx.dinoprostone"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L3",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "ug",
+    "documentation": {
+      "definition": {
+        "hu": "Prosztaglandin-analóg vérzéscsillapításra és méhszáj-érlelésre."
+      },
+      "pitfalls": {
+        "hu": "Hőstabil és olcsó, ezért erőforrás-szegény környezetben az oxitocin alternatívája — de a láz és a hidegrázás gyakori mellékhatása, és a szülés utáni lázas állapot értelmezését megnehezíti."
+      }
+    }
+  },
+  {
+    "id": "rx.tranexamic",
+    "label": {
+      "hu": "Tranexámsav"
+    },
+    "synonyms": [
+      "Exacyl",
+      "tranexamic acid",
+      "TXA"
+    ],
+    "atc": "B02AA02",
+    "class": {
+      "hu": "antifibrinolitikum"
+    },
+    "indications": [
+      "pph"
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "g",
+    "documentation": {
+      "definition": {
+        "hu": "Antifibrinolitikum szülés utáni vérzésben."
+      },
+      "whyItMatters": {
+        "hu": "A WOMAN-vizsgálat szerint a szülés utáni vérzés kezdetétől számított HÁROM ÓRÁN BELÜL adva csökkenti a vérzés miatti anyai halálozást; három órán túl adva a haszon eltűnik."
+      },
+      "pitfalls": {
+        "hu": "AZ IDŐZÍTÉS a hatóanyag: a késve adott tranexámsav nem hatástalan, hanem haszontalan. Ezért a rendelés mellett a vérzés kezdetének időpontja is rögzítendő."
+      }
+    }
+  },
+  {
+    "id": "rx.dinoprostone",
+    "label": {
+      "hu": "Dinoproszton"
+    },
+    "synonyms": [
+      "Propess",
+      "Prostin"
+    ],
+    "atc": "G02AD02",
+    "class": {
+      "hu": "prosztaglandin E2 analóg"
+    },
+    "indications": [
+      "inductionCervical"
+    ],
+    "gates": [
+      {
+        "id": "gate.dinoprostone.previousCs",
+        "severity": "relative",
+        "when": [
+          {
+            "var": "hx.repro.prevBirth.cs",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "Korábbi császármetszés: a prosztaglandinnal végzett érlelés a méhrepedés kockázatát emeli. Mérlegelendő, és fokozott figyelést kér."
+        },
+        "source": {
+          "cite": "NICE NG207: Inducing labour (2021)",
+          "standard": "NICE"
+        },
+        "alternatives": [
+          "rx.oxytocin"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L3",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Méhszáj-érlelésre használt prosztaglandin."
+      }
+    }
+  },
+  {
+    "id": "rx.methyldopa",
+    "label": {
+      "hu": "Metildopa"
+    },
+    "synonyms": [
+      "Dopegyt"
+    ],
+    "atc": "C02AB01",
+    "class": {
+      "hu": "központi hatású vérnyomáscsökkentő"
+    },
+    "indications": [
+      "hypertension"
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Terhességben évtizedek óta használt, jól ismert biztonságú vérnyomáscsökkentő."
+      },
+      "pitfalls": {
+        "hu": "Lassan hat, és depressziós hangulatzavart okozhat — gyermekágyban ezért gyakran váltják más szerre."
+      }
+    }
+  },
+  {
+    "id": "rx.nifedipine",
+    "label": {
+      "hu": "Nifedipin"
+    },
+    "synonyms": [
+      "Cordaflex",
+      "Adalat"
+    ],
+    "atc": "C08CA05",
+    "class": {
+      "hu": "kalciumcsatorna-blokkoló"
+    },
+    "indications": [
+      "hypertension",
+      "tocolysis"
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Terhességben használható vérnyomáscsökkentő, egyben tokolitikum."
+      }
+    }
+  },
+  {
+    "id": "rx.labetalol",
+    "label": {
+      "hu": "Labetalol"
+    },
+    "atc": "C07AG01",
+    "class": {
+      "hu": "alfa- és béta-blokkoló"
+    },
+    "indications": [
+      "hypertension"
+    ],
+    "gates": [
+      {
+        "id": "gate.labetalol.asthma",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "hx.sys.asthma",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "ASZTMA — a béta-blokkoló hörgőgörcsöt válthat ki. Válasszon másik vérnyomáscsökkentőt."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 222 (2020); a készítmény alkalmazási előírása",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.nifedipine",
+          "rx.methyldopa"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Terhességi hypertonia és súlyos vérnyomás-emelkedés első vonalbeli szere."
+      }
+    }
+  },
+  {
+    "id": "rx.ramipril",
+    "label": {
+      "hu": "Ramipril"
+    },
+    "synonyms": [
+      "Tritace",
+      "Amprilan"
+    ],
+    "atc": "C09AA05",
+    "class": {
+      "hu": "ACE-gátló"
+    },
+    "indications": [
+      "hypertension"
+    ],
+    "gates": [
+      {
+        "id": "gate.ramipril.pregnancy",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "ctx.pregnant",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "TERHESSÉG — az ACE-gátló a II. és III. trimeszterben magzati vesekárosodást, magzatvíz-hiányt és koponyacsont-fejlődési zavart okoz. Azonnali csere szükséges."
+        },
+        "source": {
+          "cite": "EMA/FDA termékinformáció; ACOG Practice Bulletin No. 203: Chronic Hypertension in Pregnancy (2019)",
+          "standard": "ACOG"
+        },
+        "alternatives": [
+          "rx.methyldopa",
+          "rx.nifedipine",
+          "rx.labetalol"
+        ]
+      }
+    ],
+    "transformInPregnancy": {
+      "to": [
+        "rx.methyldopa",
+        "rx.nifedipine",
+        "rx.labetalol"
+      ],
+      "reason": {
+        "hu": "ACE-gátló terhességben kontraindikált — a magzati vesefejlődést károsítja. A csere a terhesség megállapításakor azonnal esedékes, nem a következő kontrollon."
+      },
+      "source": {
+        "cite": "ACOG Practice Bulletin No. 203 (2019)",
+        "standard": "ACOG"
+      }
+    },
+    "lactation": {
+      "hale": "L3",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "ACE-gátló vérnyomáscsökkentő."
+      },
+      "whyItMatters": {
+        "hu": "A `MEDDB` átalakítási motor mintapéldája: a beírt név terhességben kontraindikált szert azonosít, és a rendszer megnevezi, mire cserélhető."
+      }
+    }
+  },
+  {
+    "id": "rx.magnesiumSulfate",
+    "label": {
+      "hu": "Magnézium-szulfát"
+    },
+    "synonyms": [
+      "MgSO4",
+      "magnézium szulfát"
+    ],
+    "atc": "B05XA05",
+    "class": {
+      "hu": "görcsgátló"
+    },
+    "indications": [
+      "seizureProphylaxis",
+      "tocolysis"
+    ],
+    "gates": [
+      {
+        "id": "gate.mgso4.renal",
+        "severity": "relative",
+        "when": [
+          {
+            "var": "hx.sys.renal",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "VESEBETEGSÉG — a magnézium a vesén ürül; beszűkült vesefunkciónál halmozódik. Dóziscsökkentés és szintellenőrzés szükséges."
+        },
+        "source": {
+          "cite": "ACOG Practice Bulletin No. 222 (2020)",
+          "standard": "ACOG"
+        }
+      }
+    ],
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "g",
+    "documentation": {
+      "definition": {
+        "hu": "Az eclampsiás görcs megelőzésének és kezelésének elsőként választandó szere."
+      },
+      "whyItMatters": {
+        "hu": "A Magpie-vizsgálat óta a praeeclampsia görcsmegelőzésének standardja; a diazepamnál és a fenitoinnál is hatásosabb."
+      },
+      "pitfalls": {
+        "hu": "A KLINIKAI FIGYELÉS (patellareflex, légzésszám, óradiurézis) elsőbbséget élvez a szintméréssel szemben: a mérés lassabb, mint a mérgezés. Antidótum: kalcium-glükonát, ami a szülőszobán elérhető kell legyen."
+      }
+    }
+  },
+  {
+    "id": "rx.enoxaparin",
+    "label": {
+      "hu": "Enoxaparin"
+    },
+    "synonyms": [
+      "Clexane",
+      "LMWH"
+    ],
+    "atc": "B01AB05",
+    "class": {
+      "hu": "kis molekulatömegű heparin"
+    },
+    "indications": [
+      "thromboprophylaxis"
+    ],
+    "gates": [
+      {
+        "id": "gate.enoxaparin.plt",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "lab.plt",
+            "op": "lt",
+            "value": 50
+          }
+        ],
+        "message": {
+          "hu": "SÚLYOS THROMBOCYTOPENIA (< 50 ×10⁹/L) — az antikoaguláns adása vérzésveszélyt jelent. Hematológiai megítélés szükséges."
+        },
+        "source": {
+          "cite": "RCOG Green-top Guideline No. 37a (2015)",
+          "standard": "RCOG"
+        }
+      },
+      {
+        "id": "gate.enoxaparin.bleeding",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "hx.sys.bleedingDisorder",
+            "op": "eq",
+            "value": "pos"
+          }
+        ],
+        "message": {
+          "hu": "ISMERT VÉRALVADÁSI ZAVAR — az antikoaguláns profilaxis külön hematológiai mérlegelést kér."
+        },
+        "source": {
+          "cite": "RCOG Green-top Guideline No. 37a (2015)",
+          "standard": "RCOG"
+        }
+      }
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      },
+      "note": {
+        "hu": "Nagy molekula, a tejbe gyakorlatilag nem jut át."
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Terhességi és gyermekágyi thrombosis-megelőzés szere."
+      },
+      "whyItMatters": {
+        "hu": "A tüdőembólia a közvetlen anyai halálozás vezető oka; a rizikóalapú profilaxis a legjobban dokumentált megelőző beavatkozások egyike."
+      },
+      "pitfalls": {
+        "hu": "A DÓZIS TESTSÚLYFÜGGŐ: 35 feletti testtömegindexnél a standard 40 mg napi egyszeri adag ALULDOZÍROZ. A neuraxiális érzéstelenítés előtt időbeli távolság szükséges az utolsó adagtól."
+      }
+    }
+  },
+  {
+    "id": "rx.betamethasone",
+    "label": {
+      "hu": "Betametazon"
+    },
+    "synonyms": [
+      "Diprophos",
+      "betamethasone"
+    ],
+    "atc": "H02AB01",
+    "class": {
+      "hu": "kortikoszteroid"
+    },
+    "indications": [
+      "lungMaturation"
+    ],
+    "lactation": {
+      "hale": "L2",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Magzati tüdőérlelés koraszülés fenyegetésekor."
+      },
+      "whyItMatters": {
+        "hu": "A koraszülöttkori légzési nehezítettség, agykamrai vérzés és újszülöttkori halálozás csökkentésének legjobb bizonyítékú beavatkozása."
+      },
+      "pitfalls": {
+        "hu": "Az anyai VÉRCUKROT megemeli: cukorbeteg és terhességi cukorbeteg anyánál a beadás után szoros vércukor-figyelés szükséges, és az inzulinigény átmenetileg jelentősen nő."
+      }
+    }
+  },
+  {
+    "id": "rx.ibuprofen",
+    "label": {
+      "hu": "Ibuprofén"
+    },
+    "synonyms": [
+      "Advil",
+      "Nurofen",
+      "Algoflex"
+    ],
+    "atc": "M01AE01",
+    "class": {
+      "hu": "nem szteroid gyulladáscsökkentő"
+    },
+    "indications": [
+      "analgesia"
+    ],
+    "gates": [
+      {
+        "id": "gate.nsaid.thirdTrimester",
+        "severity": "absolute",
+        "when": [
+          {
+            "var": "ctx.pregnant",
+            "op": "eq",
+            "value": "pos"
+          },
+          {
+            "var": "ctx.ga",
+            "op": "gte",
+            "value": 30
+          }
+        ],
+        "message": {
+          "hu": "HARMADIK TRIMESZTER — a nem szteroid gyulladáscsökkentő a magzati ductus arteriosus korai záródását okozhatja, és rontja a magzati vesefunkciót."
+        },
+        "source": {
+          "cite": "FDA Drug Safety Communication (2020); ACOG Practice Advisory (2020)",
+          "standard": "FDA/ACOG"
+        },
+        "alternatives": [
+          "rx.paracetamol"
+        ]
+      }
+    ],
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      },
+      "rid": 0.6,
+      "note": {
+        "hu": "A szoptatás alatt elsőként választandó gyulladáscsökkentő: rendkívül alacsony relatív csecsemődózis."
+      }
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "Fájdalom- és lázcsillapító, gyulladáscsökkentő."
+      },
+      "pitfalls": {
+        "hu": "A 20. hét után az FDA figyelmeztetése szerint a magzatvíz-mennyiség csökkenését okozhatja; a 30. hét után a ductus miatt kerülendő."
+      }
+    }
+  },
+  {
+    "id": "rx.paracetamol",
+    "label": {
+      "hu": "Paracetamol"
+    },
+    "synonyms": [
+      "Panadol",
+      "Rubophen",
+      "acetaminophen"
+    ],
+    "atc": "N02BE01",
+    "class": {
+      "hu": "fájdalom- és lázcsillapító"
+    },
+    "indications": [
+      "analgesia"
+    ],
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      },
+      "rid": 8.8
+    },
+    "doseUnit": "mg",
+    "documentation": {
+      "definition": {
+        "hu": "A terhesség alatt elsőként választandó fájdalom- és lázcsillapító."
+      }
+    }
+  }
+]

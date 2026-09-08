@@ -1,0 +1,38 @@
+[
+  {
+    "id": "modul.pelda.mennyiseg",
+    "version": 1,
+    "status": "draft",
+    "label": { "hu": "Példa mennyiség", "en": "Example quantity" },
+    "module": "modul",
+    "datatype": "quantity",
+    "unit": "mm[Hg]",
+    "domain": { "min": 0, "max": 300, "plausible": [60, 200], "critical": [null, 180] },
+    "cardinality": "series",
+    "validity": { "ambulatory": "P7D", "labour": "PT4H" },
+    "standards": { "loinc": null, "snomed": null },
+    "documentation": {
+      "definition": { "hu": "KÖTELEZŐ: mit jelent ez a mező, egy mondatban." },
+      "howToMeasure": { "hu": "Hogyan kell mérni — ha a mérés módja befolyásolja az értéket." },
+      "pitfalls": { "hu": "Mi a leggyakoribb hiba ennél a mezőnél." },
+      "whyItMatters": { "hu": "Mi függ tőle — melyik döntés, melyik score." }
+    }
+  },
+  {
+    "id": "modul.pelda.kerdes",
+    "version": 1,
+    "status": "draft",
+    "label": { "hu": "Példa anamnesztikus kérdés" },
+    "module": "modul",
+    "datatype": "tristate",
+    "valueSet": [
+      { "code": "pos", "label_hu": "Igen" },
+      { "code": "neg", "label_hu": "Nem" },
+      { "code": "unk", "label_hu": "Nem tudom", "flags": ["unknown"] }
+    ],
+    "documentation": {
+      "definition": { "hu": "Anamnesztikus kérdés — MINDIG tristate, soha nem bool." },
+      "pitfalls": { "hu": "A „nem tudom\" önálló információ: azt jelenti, megkérdeztük és nem derült ki." }
+    }
+  }
+]

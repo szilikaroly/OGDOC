@@ -1,0 +1,80 @@
+{
+  "id": "riasztas.eszkalacio",
+  "label": { "hu": "Riasztástípusok, címzettek és eszkalációs rend" },
+  "note": "SZÁNDÉKOSAN CÍMZETT NÉLKÜL. A rendszer több száz helyen tud vörös zászlót emelni — és MA EGYETLEN RIASZTÁSNAK SINCS CÍMZETTJE. Ez a 15. lépés, és nem fejlesztési feladat: a kód készen áll, de azt, hogy KINEK SZÓL és KI A KÖVETKEZŐ SZINT, csak a szervezet tudja megmondani. Amíg nincs kitöltve, a riasztás NEM ADHATÓ KI — nem óvatosságból: a válaszút nélküli riasztás rosszabb a semminél. Aki naponta háromszor kap figyelmeztetést, amire nincs kihez fordulnia, két hét alatt megtanulja elkattintani, és akkor az igazit is elkattintja. A LÁNC UTOLSÓ SZINTJE NEM MUTATHAT TOVÁBB: valakinek az utolsónak kell lennie, különben a ki nem vett riasztás körbejár. Munkalap: `npm run riasztas`.",
+  "szerepek": {
+    "osztalyvezeto": "szülészeti osztályvezető — a riasztási rend gazdája",
+    "ugyeletes": "ügyeletes orvos",
+    "szulesznő": "vezető szülésznő",
+    "intenzives": "intenzív terápiás szakorvos",
+    "laborvezeto": "laboratóriumvezető",
+    "pszichiater": "konzultáns pszichiáter",
+    "gyermekgyogyasz": "neonatológus / gyermekgyógyász"
+  },
+  "tipusok": [
+    {
+      "id": "riaszt.szepszis",
+      "megnevezes": "Szülészeti szepszis — protokoll indítása",
+      "forras": "core/szepszis/",
+      "sulyossag": "azonnali",
+      "mitJelent": "Szűrőpozitív élettani kép gyanított fertőzéses góccal és szervi elégtelenséggel. Az órához kötött csomag ettől a pillanattól ketyeg.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.kritikus-labor",
+      "megnevezes": "Kritikus laboreredmény",
+      "forras": "core/lab/",
+      "sulyossag": "azonnali",
+      "mitJelent": "Olyan laborérték, ami azonnali klinikai döntést kíván, függetlenül attól, ki rendelte és ki nézi meg.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.meows",
+      "megnevezes": "MEOWS-küszöb átlépése",
+      "forras": "calc.meows",
+      "sulyossag": "sürgős",
+      "mitJelent": "A vitálparaméterek együttese küszöböt lép át. Az őrzés fokozása és orvosi értékelés esedékes.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.magzati",
+      "megnevezes": "Kóros magzati szívhang-mintázat (NICHD III. kategória)",
+      "forras": "core/scores/nichd.ts",
+      "sulyossag": "azonnali",
+      "mitJelent": "III. kategóriájú CTG: azonnali beavatkozást kívánhat.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.verzes",
+      "megnevezes": "Szülészeti vérzés — stádiumváltás",
+      "forras": "core/scores/verzes.ts",
+      "sulyossag": "azonnali",
+      "mitJelent": "A CMQCC vérzési stádium emelkedett; a stádiumhoz kötött válasz esedékes.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.panasz-vorosz",
+      "megnevezes": "Panaszszótári vörös zászló",
+      "forras": "registry/complaints/",
+      "sulyossag": "surgos",
+      "mitJelent": "A beteg által elmondott panasz olyan, ami mögött sürgős ok állhat — a szótár ezt megnevezi, nem a klinikus emlékezetére bízza.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.kerdoiv-kritikus",
+      "megnevezes": "Kérdőív kritikus tétele (pl. önbántalmazási gondolat)",
+      "forras": "core/kerdoiv/",
+      "sulyossag": "azonnali",
+      "mitJelent": "Az összpontszámtól FÜGGETLEN vörös zászló. Egy alacsony pontszámú EPDS pozitív 10. tétellel azonnali teendő, és ezt a sávbesorolás nem nyomhatja el.",
+      "lanc": []
+    },
+    {
+      "id": "riaszt.gyermek-safeguarding",
+      "megnevezes": "Gyermeknőgyógyászati gyermekvédelmi mérlegelés",
+      "forras": "core/gyermek/pedgyn.ts",
+      "sulyossag": "azonnali",
+      "mitJelent": "A rendszer EGYETLEN helye, ahol a MEG NEM KÉRDEZÉS maga a hiba. A mérlegelés elmaradása is riasztást ér.",
+      "lanc": []
+    }
+  ]
+}

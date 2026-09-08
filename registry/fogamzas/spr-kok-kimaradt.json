@@ -1,0 +1,55 @@
+{
+  "id": "spr.kok.kimaradt",
+  "megnevezes": "Késett vagy kimaradt kombinált orális fogamzásgátló tabletta",
+  "verzio": "US SPR 2024",
+  "forras": "U.S. Selected Practice Recommendations for Contraceptive Use (US SPR), CDC — 2024. Az Egyesült Államok szövetségi kormányzati munkája: KÖZKINCS.",
+  "hivatkozas": "https://www.cdc.gov/contraception/hcp/usspr/",
+  "vars": [
+    "orak",
+    "hetHanyadik",
+    "vedtelenKozosules5Napon"
+  ],
+  "szabalyok": [
+    {
+      "kat": "lateEgy",
+      "ha": "orak < 24",
+      "miert": "Egy hormonos tabletta KÉSETT (kevesebb mint 24 óra telt el a bevétel esedékessége óta).",
+      "teendo": "A késett tablettát mielőbb be kell venni; a többit a szokott időben folytatni (akkor is, ha ez azt jelenti, hogy egy napon két tabletta jön). További fogamzásgátló védelem NEM szükséges.",
+      "megjegyzes": "Sürgősségi fogamzásgátlás rendszerint nem szükséges, de mérlegelhető (az ulipristál-acetát KIVÉTELÉVEL), ha a ciklus korábbi szakaszában vagy az előző ciklus utolsó hormonos hetében is maradt ki tabletta."
+    },
+    {
+      "kat": "kimaradtEgy",
+      "ha": "orak >= 24 && orak < 48",
+      "miert": "EGY hormonos tabletta KIMARADT (24–48 óra telt el az esedékesség óta).",
+      "teendo": "A kimaradt tablettát mielőbb be kell venni; a többit a szokott időben folytatni. További fogamzásgátló védelem NEM szükséges.",
+      "megjegyzes": "Sürgősségi fogamzásgátlás rendszerint nem szükséges, de mérlegelhető (UPA kivételével), ha korábban is maradt ki tabletta."
+    },
+    {
+      "kat": "kimaradtTobb.elsoHet.vedtelen",
+      "ha": "orak >= 48 && hetHanyadik == 1 && vedtelenKozosules5Napon == 1",
+      "miert": "KETTŐ VAGY TÖBB egymást követő tabletta kimaradt (≥48 óra) az ELSŐ hormonos héten, és az elmúlt 5 napban védekezés nélküli közösülés történt.",
+      "teendo": "A legutóbbi kimaradt tablettát mielőbb be kell venni (a többi kimaradtat el kell dobni); a szedést a szokott időben folytatni. Tartózkodás vagy barrier módszer, amíg 7 egymást követő napon át hormonos tabletta nem került bevételre.",
+      "megjegyzes": "SÜRGŐSSÉGI FOGAMZÁSGÁTLÁS MÉRLEGELENDŐ (az ulipristál-acetát KIVÉTELÉVEL)."
+    },
+    {
+      "kat": "kimaradtTobb.utolsoHet",
+      "ha": "orak >= 48 && hetHanyadik >= 3",
+      "miert": "KETTŐ VAGY TÖBB egymást követő tabletta kimaradt (≥48 óra) az UTOLSÓ hormonos héten (28 napos csomagnál a 15–21. nap).",
+      "teendo": "A legutóbbi kimaradt tablettát mielőbb bevenni, a többi kimaradtat eldobni. A HORMONMENTES SZAKASZT KI KELL HAGYNI: a jelenlegi csomag hormonos tablettáit befejezni, és másnap új csomagot kezdeni. Ha új csomag azonnal nem kezdhető: tartózkodás vagy barrier módszer, amíg az új csomagból 7 egymást követő napon át tabletta nem került bevételre.",
+      "megjegyzes": "Sürgősségi fogamzásgátlás mérlegelhető (UPA kivételével), ha a körülmények indokolják."
+    },
+    {
+      "kat": "kimaradtTobb",
+      "ha": "orak >= 48",
+      "miert": "KETTŐ VAGY TÖBB egymást követő tabletta kimaradt (≥48 óra).",
+      "teendo": "A legutóbbi kimaradt tablettát mielőbb bevenni (a többi kimaradtat eldobni); a szedést a szokott időben folytatni. Tartózkodás vagy barrier módszer, amíg 7 egymást követő napon át hormonos tabletta nem került bevételre.",
+      "megjegyzes": "Sürgősségi fogamzásgátlás mérlegelhető (UPA kivételével)."
+    }
+  ],
+  "eloirasok": [
+    "Az `orak` mező azt méri, HÁNY ÓRA telt el attól, amikor a tablettát be kellett volna venni — nem azt, hány tabletta maradt ki.",
+    "A 24 órás és a 48 órás határ a két döntési pont. 24 óra alatt „késett”, 24–48 óra között „egy kimaradt”, 48 órától „kettő vagy több”.",
+    "A `hetHanyadik` a HORMONOS tabletták hetét jelöli (1, 2, 3), nem a naptári hetet.",
+    "A sürgősségi fogamzásgátlásnál az ULIPRISTÁL-ACETÁT MINDENÜTT KIVÉTEL: a folytatódó hormonszedés csökkenti a hatását."
+  ]
+}

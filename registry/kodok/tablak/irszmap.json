@@ -1,0 +1,26 @@
+{
+  "id": "tbl.irszmap",
+  "label": { "hu": "Irányítószám → település" },
+  "version": "2026-minta",
+  "validFrom": "2026-01-01",
+  "coverage": "subset",
+  "coverageNote": {
+    "hu": "SZÁNDÉKOS RÉSZHALMAZ: tíz tétel a teljes, ~3300 soros törzsből. A teljes tábla az EESZT-ingest útján kerül be (letöltés → eeszt_ingest.py → beágyazott JSON). Addig a hiányzó irányítószám NEM hibás adat — csak nincs a betöltött részhalmazban, és a rendszer ezt ki is mondja."
+  },
+  "source": {
+    "cite": "Magyar Posta irányítószám-jegyzék (minta-részhalmaz, kézzel átvezetve)",
+    "standard": "HU irányítószám"
+  },
+  "rows": {
+    "1011": { "label": "Budapest I. kerület", "megye": "Budapest" },
+    "1052": { "label": "Budapest V. kerület", "megye": "Budapest" },
+    "1085": { "label": "Budapest VIII. kerület", "megye": "Budapest" },
+    "3525": { "label": "Miskolc", "megye": "Borsod-Abaúj-Zemplén" },
+    "4032": { "label": "Debrecen", "megye": "Hajdú-Bihar" },
+    "6720": { "label": "Szeged", "megye": "Csongrád-Csanád" },
+    "7621": { "label": "Pécs", "megye": "Baranya" },
+    "8000": { "label": "Székesfehérvár", "megye": "Fejér" },
+    "9021": { "label": "Győr", "megye": "Győr-Moson-Sopron" },
+    "9700": { "label": "Szombathely", "megye": "Vas" }
+  }
+}

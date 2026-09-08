@@ -1,0 +1,393 @@
+{
+ "id": "tbl.oeno.tele",
+ "label": {
+  "hu": "Telemedicinában elszámolható eljárások (6. melléklet)"
+ },
+ "version": "9/2012 NEFMI, hatályos 2026-01-01",
+ "validFrom": "2026-01-01",
+ "coverage": "full",
+ "source": {
+  "cite": "9/2012. (II. 28.) NEFMI rendelet az Egészségbiztosítási Alap terhére finanszírozható járóbeteg-szakellátási tevékenységekről (hatályos 2026.01.01.)",
+  "standard": "9/2012 NEFMI"
+ },
+ "rows": {
+  "82151": {
+   "label": "Kontraktúra nyújtása"
+  },
+  "84791": {
+   "label": "Húzókezelés kézzel vagy készülékkel"
+  },
+  "85511": {
+   "label": "Víz alatti torna medencében, medencéből segítve"
+  },
+  "85512": {
+   "label": "Víz alatti torna kádban"
+  },
+  "85513": {
+   "label": "Víz alatti torna, csoportos"
+  },
+  "85520": {
+   "label": "Víz alatti torna, egyéni, segítség nélkül"
+  },
+  "85521": {
+   "label": "Víz alatti torna medencében, kívülről segítve"
+  },
+  "85530": {
+   "label": "Örvényfürdő"
+  },
+  "86020": {
+   "label": "Meleg pakolások"
+  },
+  "86041": {
+   "label": "Rövidhullám kezelés"
+  },
+  "86042": {
+   "label": "Mikrohullám kezelés"
+  },
+  "86043": {
+   "label": "Ultranagyfrekvenciás kezelés"
+  },
+  "86044": {
+   "label": "Középfrekvenciás kezelés"
+  },
+  "86050": {
+   "label": "Infravörös melegítéses helyi kezelés - Sollux"
+  },
+  "86120": {
+   "label": "Helyi hűtés"
+  },
+  "86121": {
+   "label": "Kryotherapia localis"
+  },
+  "86202": {
+   "label": "Kezelés monochromatikus polarizált fénnyel (Evolite, Bioptron)"
+  },
+  "86210": {
+   "label": "Fototerápia UV fénnyel"
+  },
+  "86211": {
+   "label": "PUVA-kezelés"
+  },
+  "86240": {
+   "label": "Szinkron Balneofototerápiás kezelés (SBP)"
+  },
+  "86311": {
+   "label": "Négyrekeszes galvan kezelés"
+  },
+  "86312": {
+   "label": "Stabil galvan kezelés"
+  },
+  "86313": {
+   "label": "Kowarschik galvan kezelés"
+  },
+  "86314": {
+   "label": "Bourgignon galvan kezelés"
+  },
+  "86315": {
+   "label": "Bergonnier galvan kezelés"
+  },
+  "86316": {
+   "label": "Iontophoresis kezelés"
+  },
+  "86317": {
+   "label": "Kalcium elektrostasis kezelés"
+  },
+  "86318": {
+   "label": "Diadynamic-interferencia kezelés"
+  },
+  "86319": {
+   "label": "Szelektív ingeráram kezelés"
+  },
+  "86630": {
+   "label": "Vázizom stimulator"
+  },
+  "86631": {
+   "label": "Funkcionális elektroterápia motoros tünetekre"
+  },
+  "86632": {
+   "label": "Funkcionális elektroterápia plexus brachialis ellátási területén"
+  },
+  "86633": {
+   "label": "Funkcionális elektroterápia nervus facialis területén"
+  },
+  "86634": {
+   "label": "TENS"
+  },
+  "86635": {
+   "label": "Számítógép vezérelt tens functio"
+  },
+  "86911": {
+   "label": "Ultrahang kezelés"
+  },
+  "86912": {
+   "label": "Víz alatti ultrahang kezelés"
+  },
+  "86921": {
+   "label": "Magnetoterápia"
+  },
+  "88860": {
+   "label": "Értorna érszövődmények megelőzésére"
+  },
+  "88870": {
+   "label": "Keringésjavító fizioterápia"
+  },
+  "93493": {
+   "label": "Gyógyászati segédeszköz használatának betanítása"
+  },
+  "94003": {
+   "label": "Facialis torna"
+  },
+  "94280": {
+   "label": "Extrapyramidalis neuroterápia és oktatása"
+  },
+  "94281": {
+   "label": "Szenzoros-aktivációs terápia"
+  },
+  "94331": {
+   "label": "Fejlődési rendellenesség miatti gyógytorna"
+  },
+  "94400": {
+   "label": "Járásgyakorlat segédeszköz nélkül"
+  },
+  "94404": {
+   "label": "Járásgyakorlat járógéppel"
+  },
+  "94405": {
+   "label": "Járáselőkészítő gyakorlatok"
+  },
+  "94406": {
+   "label": "Járáskészség fejlesztése"
+  },
+  "94407": {
+   "label": "Ügyességfejlesztő gyakorlatok"
+  },
+  "94408": {
+   "label": "Manipulációs készség fejlesztése"
+  },
+  "94409": {
+   "label": "Koordinációs gyakorlatok az ergoterápiában"
+  },
+  "94410": {
+   "label": "Irányított járásgyakorlatok segédeszközzel"
+  },
+  "94411": {
+   "label": "Amputáltak gyógytornája"
+  },
+  "94501": {
+   "label": "Funkcionális sérüléskezelés (korai)"
+  },
+  "94503": {
+   "label": "Neurofiziológiai kondicionáló gyógytorna"
+  },
+  "94504": {
+   "label": "Testtájankénti egyéni gyógytorna"
+  },
+  "94530": {
+   "label": "Izomerősítő gyakorlatok"
+  },
+  "94550": {
+   "label": "Gyógytorna relaxációs technikával"
+  },
+  "94601": {
+   "label": "Passzív kimozgatás egy testtájon"
+  },
+  "94602": {
+   "label": "Passzív kimozgatás több végtagon"
+  },
+  "94603": {
+   "label": "Szertorna"
+  },
+  "94610": {
+   "label": "Gyakorlatok ellenállással szemben"
+  },
+  "94616": {
+   "label": "Csecsemők és kisgyermekek Dévény-módszerrel történő kezelése"
+  },
+  "94618": {
+   "label": "Szopási problémás csecsemők és beszédproblémás kisgyermekek Dévény- módszerrel történő nyak-, koponya-, arc,- szájkezelése"
+  },
+  "94630": {
+   "label": "Ízületi mozgások gyakorlása"
+  },
+  "94631": {
+   "label": "Izokinetikus gyakorlás készülékkel"
+  },
+  "94640": {
+   "label": "Ízület mobilizálás"
+  },
+  "94650": {
+   "label": "Gerinc mobilizálás"
+  },
+  "94651": {
+   "label": "Scoliosis torna"
+  },
+  "94652": {
+   "label": "Scheuermann gyógytorna"
+  },
+  "94701": {
+   "label": "Egyéni torna"
+  },
+  "94702": {
+   "label": "Csoportos torna"
+  },
+  "94711": {
+   "label": "Manuálterápiás kezelés"
+  },
+  "94712": {
+   "label": "Masszázs, kézzel"
+  },
+  "94713": {
+   "label": "Masszázs, géppel"
+  },
+  "94715": {
+   "label": "Funkcionális kezelés az ortopédiai manuálterápiás (OMT) rendszerben"
+  },
+  "94722": {
+   "label": "Mellkasi gyógytorna, légzőtorna"
+  },
+  "94730": {
+   "label": "Cardiovascularis gyógytorna"
+  },
+  "94740": {
+   "label": "Lymphoedema kezelés: pólya és masszázs, 1 végtag"
+  },
+  "94741": {
+   "label": "Csecsemő, ödémás arc kezelése speciális fogásrendszerrel"
+  },
+  "94744": {
+   "label": "Lymphoedema kezelés: speciális fogásrendszerrel"
+  },
+  "94746": {
+   "label": "Lymphoedema kezelés pneumatikus készülékkel"
+  },
+  "94747": {
+   "label": "Krónikus oedéma gépi kompressziós kezelés"
+  },
+  "94750": {
+   "label": "Terhesség alatti torna"
+  },
+  "94880": {
+   "label": "Medencefürdő"
+  },
+  "94881": {
+   "label": "Kádfürdő"
+  },
+  "94882": {
+   "label": "Szénsavfürdő"
+  },
+  "94883": {
+   "label": "Súlyfürdő, nyaki függesztéssel"
+  },
+  "94884": {
+   "label": "Súlyfürdő, hónalj függesztéssel"
+  },
+  "94885": {
+   "label": "Súlyfürdő, hónalj függesztéssel és terheléssel"
+  },
+  "94889": {
+   "label": "Skót zuhany"
+  },
+  "95290": {
+   "label": "Foglalkozás terápia (csoportos)"
+  },
+  "95291": {
+   "label": "Foglalkozás terápia egyéni"
+  },
+  "95320": {
+   "label": "Rehabilitációs oktatás"
+  },
+  "95530": {
+   "label": "Önellátásra oktatás (napi tevékenységek gyakorlása)"
+  },
+  "95610": {
+   "label": "Ergoterápia, manuális gyakorlás"
+  },
+  "95620": {
+   "label": "Ergoterápia, kreatív terápia"
+  },
+  "95630": {
+   "label": "Ergoterápia, konstruktív terápia - műhelygyakorlat"
+  },
+  "95640": {
+   "label": "Ergoterápia, önellátó funkciók begyakorlása"
+  },
+  "95650": {
+   "label": "Ergoterápia, írás tanítása"
+  },
+  "95660": {
+   "label": "Ergoterápia, manuális segédeszközök adaptációja (evés, ivás, konyhai munka)"
+  },
+  "95680": {
+   "label": "Ergoterápia, iskolai korrepetálás gyermekek számára"
+  },
+  "95690": {
+   "label": "Ergoterápia, szabadidős tevékenységek szervezése"
+  },
+  "95700": {
+   "label": "Ergoterápia, felkészítés otthoni életre - tanácsadás"
+  },
+  "95710": {
+   "label": "Közlekedésképesség fejlesztése kerekesszékkel (10 perc)"
+  },
+  "95720": {
+   "label": "Közlekedésképesség fejlesztése kerekesszéken kívül (10 perc)"
+  },
+  "95730": {
+   "label": "Közlekedésképesség fejlesztése kerékpárral (10 perc)"
+  },
+  "95740": {
+   "label": "Közlekedésképesség fejlesztése modell személygépkocsival (10 perc)"
+  },
+  "95750": {
+   "label": "Közlekedésképesség fejlesztése, gépkocsivezetés (30 perc)"
+  },
+  "95760": {
+   "label": "Közlekedésképesség fejlesztése, tömegközlekedés (60 perc)"
+  },
+  "95770": {
+   "label": "Közlekedésképesség fejlesztése modell személygépkocsival (30 perc)"
+  },
+  "95780": {
+   "label": "Számítógépes edzéstervezés sérülésspecifikusan"
+  },
+  "95820": {
+   "label": "Konduktív pedagógiai kéztorna"
+  },
+  "95830": {
+   "label": "Konduktív pedagógiai csoportos torna (betegenként)"
+  },
+  "95840": {
+   "label": "Járáspróba futószőnyegen"
+  },
+  "95860": {
+   "label": "Csonkedzés pneumatikus ballonnal"
+  },
+  "95890": {
+   "label": "Járásgyakorlás guruló mankóval"
+  },
+  "95930": {
+   "label": "Járástanítás pneumatikus protézissel"
+  },
+  "95950": {
+   "label": "Művégtag felvételének tanítása"
+  },
+  "95970": {
+   "label": "Dupla alsóvégtag amputált járástanítása"
+  },
+  "95990": {
+   "label": "Kerekesszék használatának tanítása"
+  },
+  "95993": {
+   "label": "Izomrehabilitáció tornáztató géppel"
+  },
+  "96016": {
+   "label": "Egész testre kiterjedő komplex habilitációs kezelés (idegfejlődési zavar, sérülés esetén) legalább 60 perc"
+  },
+  "96017": {
+   "label": "Egész testre kiterjedő komplex habilitációs kezelés (idegfejlődési zavar, sérülés esetén) legalább 60-90 perc között"
+  },
+  "96018": {
+   "label": "Egész testre kiterjedő komplex habilitációs kezelés (idegfejlődési zavar, sérülés esetén) több, mint 90 perc"
+  }
+ }
+}

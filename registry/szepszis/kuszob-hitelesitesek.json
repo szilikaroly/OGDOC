@@ -1,0 +1,9 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A szepszisküszöböket a szülészeti osztályvezető és egy intenzíves veti össze az elsődleges forrással (CMQCC Obstetric Sepsis Toolkit) — tételesen, küszöbönként. Amíg nincs aláírás, a protokoll `verification` mezője nem lehet `primary`, a `blocksAlerting: false` pedig építési hiba: a riasztás kapuját ALÁÍRÁS nyitja, nem jelölés. Az `osszevetettKuszobok` felsorolja, MELYIK küszöböt vetették össze (`sep.crit.rr>24` alakban); ami kimarad, arra az aláírás nem terjed ki. Munkalap: `npm run szepszis`.",
+  "szerepek": {
+    "szuleszet": "szülészeti osztályvezető — a küszöbök és az intézményi választás",
+    "intenzives": "intenzív terápiás szakorvos — a szervi elégtelenség küszöbei és az órához kötött csomag",
+    "mikrobiologus": "klinikai mikrobiológus — a hemokultúra és az antibiotikum sorrendje"
+  },
+  "hitelesitesek": []
+}

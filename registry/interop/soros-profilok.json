@@ -1,0 +1,92 @@
+{
+ "megnevezes": "Soros eszközprofilok (RS-232 / RS-485)",
+ "modul": 8,
+ "note": "CSAK AZ INTERFÉSZ. A mag nem nyit portot: a soros átvitel a telepítés dolga (platform-, jogosultság- és kábelezésfüggő). Amit a mag ad, az a szerződés — a `SorosMeghajto` implementációt a gazda adja.\n\nA PROFIL AZ ESZKÖZHÖZ TARTOZIK, NEM A PORTHOZ. Ha a `COM3`-hoz kötnénk, egy átdugott kábel után a rendszer a mérleg számait vérgázként olvasná: ugyanaz a szám, más mértékegység, semmi jelzés. Ezért minden profilban ott az eszközazonosság — és ha az `null` (az eszköz nem közli), az ÉRVÉNYES válasz, de akkor a kötés emberi megerősítést kíván.\n\nA VÁRT GYAKORISÁGOT KI KELL MONDANI. A `null` (eseményvezérelt) érvényes; a HIÁNYA nem. Enélkül a némaság nem megkülönböztethető a „most nincs beteg”-től, és egy kihúzott kábel csendben marad — a fagyasztó-hőmérőnél épp ez a különbség dönti el, hogy észrevesszük-e a kitérést.\n\nMINDEN MEZŐHÖZ KELL MÉRTÉKEGYSÉG. A soros vonal nem küld egységet: ha itt sincs, a szám nem adat.\n\nA SOROS VONAL KÉTFÉLE ADATOT HOZ. A `beteg` profil egy emberen végzett mérés: KELL hozzá kötés. A `kornyezet` profil egy ESZKÖZ állapota (fagyasztó, szoba, szekrény): NEM SZABAD hozzá kötés, és a leképezés NEM mehet a beteg-változóregiszterbe. Az első változatban a fagyasztó-hőmérő a `vitals.temp` beteg-változóra mutatott, aminek az értelmezési tartománya 30–43 °C — egy −80 °C-os leolvasás ott soha nem lett volna érvényes érték. A profil úgy nézett ki, mintha működne, és egyetlen mérést sem tudott volna átvenni.\n\nKÖRNYEZETI PROFILNÁL AZ ESZKÖZAZONOSÍTÓ KÖTELEZŐ. Betegmérésnél a `null` megengedett, mert a kötés emberi megerősítést kíván; környezeti mérésnél nincs kötés, tehát ez az ellenőrző lépés hiányzik.\n\nA VESSZŐ NEM LEHET EGYSZERRE MEZŐELVÁLASZTÓ ÉS TIZEDESJEL. Az alapértelmezett elválasztók (`|`, `;`, tabulátor) SZÁNDÉKOSAN nem tartalmaznak vesszőt: a korábbi változat elválasztónak vette, ezért a `WT=72,4` két mezőre hasadt, és az első `72` lett — ÉRVÉNYES ÉRTÉKKÉNT, jelzés nélkül. Súlynál apróság; ugyanezen az úton egy 5,0 mg/dL kreatininből 5 lesz. Ha egy eszköz vesszővel választ el, a `tizedesjel` kötelezően `\".\"`.",
+ "profilok": [
+  {
+   "id": "soros.merleg.seca",
+   "fajta": "beteg",
+   "megnevezes": "Betegmérleg (magasságmérővel)",
+   "gyarto": "seca",
+   "tipus": "703/704 vagy egyenértékű",
+   "eszkozAzonosito": null,
+   "keretezes": {
+    "fajta": "soremeles",
+    "lezaro": "\r\n"
+   },
+   "mezok": [
+    {
+     "forras": "WT",
+     "valtozo": "anthro.weight.current",
+     "egyseg": "kg"
+    },
+    {
+     "forras": "HT",
+     "valtozo": "anthro.height",
+     "egyseg": "cm"
+    }
+   ],
+   "vartGyakorisagMp": null,
+   "bizonyossag": "measured",
+   "leiras": "Eseményvezérelt: akkor küld, ha valaki rááll. A hallgatás normális, és ez ki van mondva. Az eszköz nem közöl azonosítót, ezért a kötés emberi megerősítést kíván. A `szorzo` nélkül a grammban küldő változat 3450 kg-ot adna — a mértékegység itt nem formaság.",
+   "hianyzik": [
+    "AZ ESZKÖZ NEM KÖZÖL AZONOSÍTÓT (`eszkozAzonosito: null`), ezért a kötést minden esetben egy embernek kell megerősítenie. Ez nem hiba, hanem kimondott korlát — de a munkafolyamatot (ki, mikor, hol erősíti meg) még nem tervezte meg senki."
+   ]
+  },
+  {
+   "id": "soros.ctg.monitor",
+   "fajta": "beteg",
+   "megnevezes": "Magzati monitor (CTG)",
+   "gyarto": "általános",
+   "tipus": "RS-232, gyártóspecifikus",
+   "eszkozAzonosito": null,
+   "keretezes": {
+    "fajta": "hataroljelek",
+    "kezdo": 2,
+    "zaro": 3
+   },
+   "mezok": [
+    {
+     "forras": "0",
+     "valtozo": "vitals.pulse",
+     "egyseg": "/min"
+    }
+   ],
+   "vartGyakorisagMp": 4,
+   "bizonyossag": "measured",
+   "leiras": "Folyamatos, másodperces nagyságrendű küldés. A NÉGY MÁSODPERCES várt gyakoriság azért fontos, mert a szülőszobán a monitor elnémulása és a „a beteg lekerült a monitorról” ugyanúgy néz ki — és a kettő nem ugyanaz. FIGYELEM: ez a profil egyelőre EGYETLEN mezőt képez le; a magzati szívfrekvenciának és az uterus-aktivitásnak nincs saját változója a regiszterben, tehát a CTG-adat NEM vehető át teljesen. A hiány a hiányjegyzékben szerepel.",
+   "hianyzik": [
+    "A MAGZATI SZÍVFREKVENCIÁNAK nincs saját változója a regiszterben. Jelenleg a profil a `vitals.pulse`-ra képez le, ami az ANYA pulzusa — a kettő ugyanabban a nagyságrendben mozog (110–160 vs. 60–100), tehát egy téves leképezés nem adna érvénytelen értéket, csak rossz adatot. Amíg nincs saját változó, a CTG-adat NEM vehető át.",
+    "AZ UTERUS-AKTIVITÁSNAK (tokodinamometria) sincs változója. Enélkül a CTG-besorolás bemenete hiányos: a decelerációt a kontrakcióhoz kell időzíteni, és a kontrakció nélkül a késői és a változó deceleráció nem különböztethető meg.",
+    "A gyártóspecifikus keretformátum: az RS-232-es CTG-kimenet gyártónként eltér, és a mezőkiosztás nélkül a keret nem bontható."
+   ]
+  },
+  {
+   "id": "soros.fagyaszto.homero",
+   "fajta": "kornyezet",
+   "celEszkoz": "FRZ-01",
+   "megnevezes": "Fagyasztó-hőmérséklet adatgyűjtő",
+   "gyarto": "általános",
+   "tipus": "RS-485 buszon, több egység",
+   "eszkozAzonosito": "FRZ-01",
+   "keretezes": {
+    "fajta": "soremeles",
+    "lezaro": "\n"
+   },
+   "mezok": [
+    {
+     "forras": "T",
+     "valtozo": "tarolo.homerseklet",
+     "egyseg": "Cel"
+    }
+   ],
+   "vartGyakorisagMp": 300,
+   "bizonyossag": "measured",
+   "leiras": "AZ ISBER TÁROLÁSI KÖVETELMÉNYE ehhez a csatornához kötődik. Öt percenként mér; ha nem szólal meg, az a fagyasztó vagy a gyűjtő hibája — és a minta minősége múlik rajta. KÖRNYEZETI profil: a mért dolog a FAGYASZTÓ állapota, nem egy emberé. Ezért nincs és nem is lehet betegkötése, és a leképezés nem a beteg-változóregiszterbe megy. Korábban a `vitals.temp` beteg-változóra mutatott (30–43 °C) — egy −80 °C-os leolvasás ott soha nem lett volna érvényes, tehát a profil egyetlen mérést sem tudott volna átvenni, miközben úgy nézett ki, mintha működne. RS-485 buszon több egység van, ezért az eszközazonosító itt KÖTELEZŐ: nélküle a 2. fagyasztó adata csendben az 1.-höz kerülne, és környezeti mérésnél nincs az a kötési lépés, amelyben egy ember ezt észrevehetné.",
+   "hianyzik": [
+    "A KÖRNYEZETI MÉRÉSNEK NINCS TÁROLÓHELYE. A `tarolo.homerseklet` szándékosan nem a beteg-változóregiszterben van (a fagyasztó állapota nem betegadat), de saját idősoros tárolót sem kapott még. Amíg nincs, a mérés megérkezik és eldobódik — az ISBER-követelmény pedig épp a MEGŐRZÖTT görbét kívánja.",
+    "A KITÉRÉS KÜSZÖBE ÉS CÍMZETTJE: hány fok, mennyi ideig, és KI kap riasztást. Küszöb nélkül a mérés adat, de nem őrzi a mintát; címzett nélkül a riasztás nem jut el senkihez."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A kapu mögötti kalkulátorok konstansait közleményenként KLINIKAI SZAKÉRTŐ veti össze az elsődleges forrással — nem egy ember mind a hétre. Az aláírás tételes: az `osszevetettKonstansok` felsorolja, MELYIK számot vetették össze, és ami kimarad, arra az aláírás nem terjed ki. Munkalap: `npm run kalkulator`.",
+  "szerepek": {
+    "nefrologus": "nefrológus — eGFR, kreatinin-clearance",
+    "fetalis": "fetalis medicina szakorvos — magzati súlybecslés",
+    "dietetikus": "dietetikus — terhességi energiaszükséglet",
+    "hematologus": "hematológus — terhességi DIC-pontszám",
+    "szuleszet": "szülész-nőgyógyász szakorvos — CMQCC vérzés és szepszis"
+  },
+  "hitelesitesek": []
+}

@@ -1,0 +1,749 @@
+[
+  {
+    "id": "rule.carboprost.blocked",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Carboprost tiltva",
+      "en": "Carboprost contraindicated"
+    },
+    "module": "rules",
+    "datatype": "bool",
+    "derivation": {
+      "kind": "prefill",
+      "from": [
+        {
+          "source": "hx.sys.asthma",
+          "policy": "implies",
+          "value": true
+        }
+      ],
+      "notify": true
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Igaz, ha az anamnézisben asztma szerepel."
+      },
+      "whyItMatters": {
+        "hu": "Ez a kapu állítja meg a carboprost rendelését a szülőszobán — az adat a felvételkor kerül be, a döntés hetekkel később születik."
+      }
+    }
+  },
+  {
+    "id": "rx.active",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Rendelt készítmények"
+    },
+    "module": "rx",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "rx.betamethasone",
+        "label_hu": "Betametazon"
+      },
+      {
+        "code": "rx.calciumCarbonate",
+        "label_hu": "Kalcium-karbonát"
+      },
+      {
+        "code": "rx.carboprost",
+        "label_hu": "Carboprost"
+      },
+      {
+        "code": "rx.cyanocobalamin",
+        "label_hu": "B12-vitamin"
+      },
+      {
+        "code": "rx.dha",
+        "label_hu": "Omega-3 (DHA)"
+      },
+      {
+        "code": "rx.dinoprostone",
+        "label_hu": "Dinoproszton"
+      },
+      {
+        "code": "rx.enoxaparin",
+        "label_hu": "Enoxaparin"
+      },
+      {
+        "code": "rx.folicAcid",
+        "label_hu": "Folsav"
+      },
+      {
+        "code": "rx.ibuprofen",
+        "label_hu": "Ibuprofén"
+      },
+      {
+        "code": "rx.ironSulfate",
+        "label_hu": "Vas-szulfát"
+      },
+      {
+        "code": "rx.labetalol",
+        "label_hu": "Labetalol"
+      },
+      {
+        "code": "rx.magnesiumSulfate",
+        "label_hu": "Magnézium-szulfát"
+      },
+      {
+        "code": "rx.methyldopa",
+        "label_hu": "Metildopa"
+      },
+      {
+        "code": "rx.methylergometrine",
+        "label_hu": "Methylergometrin"
+      },
+      {
+        "code": "rx.misoprostol",
+        "label_hu": "Misoprostol"
+      },
+      {
+        "code": "rx.nifedipine",
+        "label_hu": "Nifedipin"
+      },
+      {
+        "code": "rx.oxytocin",
+        "label_hu": "Oxitocin"
+      },
+      {
+        "code": "rx.paracetamol",
+        "label_hu": "Paracetamol"
+      },
+      {
+        "code": "rx.potassiumIodide",
+        "label_hu": "Kálium-jodid"
+      },
+      {
+        "code": "rx.prenatalMultivitamin",
+        "label_hu": "Terhes-multivitamin"
+      },
+      {
+        "code": "rx.ramipril",
+        "label_hu": "Ramipril"
+      },
+      {
+        "code": "rx.tranexamic",
+        "label_hu": "Tranexámsav"
+      },
+      {
+        "code": "rx.vitaminD3",
+        "label_hu": "D3-vitamin"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A jelen ellátás során rendelt vagy szedett készítmények listája a gyógyszertörzsből."
+      },
+      "pitfalls": {
+        "hu": "Az értékkészletet a GYÓGYSZERTÖRZS adja (`registry/gyogyszerek/`), és a `tools/gen-drug-roster.ts` írja ide. Kézzel szerkesztve a következő ellenőrzés elbukik."
+      },
+      "whyItMatters": {
+        "hu": "EZ A NÉVSOR: minden adagolási jellemző ehhez a listához kötve él. Amíg egy készítmény nincs itt, hozzá adag nem rögzíthető — így nem állhat a rekordban adagolás anélkül, hogy tudnánk, MIRE vonatkozik."
+      }
+    }
+  },
+  {
+    "id": "rx.allergy.other",
+    "version": 1,
+    "status": "superseded",
+    "label": {
+      "hu": "Egyéb ismert gyógyszerallergia"
+    },
+    "module": "rx",
+    "datatype": "text",
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen más készítményre volt korábban reakció."
+      },
+      "pitfalls": {
+        "hu": "FELVÁLTVA: az utódja a(z) `allergy.list`. A szabad szöveges „egyéb allergia” helyét az `allergen.egyeb` tétel veszi át, a részletezést pedig a reakció- és súlyossági mező allergénenként. Szabad szövegben az allergia nem kereshető és nem is ellenőrizhető — egy kapunak nincs mit néznie rajta. A mező NEM törlődik: a korábban rögzített értékek maradnak, és visszaolvashatók."
+      }
+    }
+  },
+  {
+    "id": "rx.allergy.penicillin",
+    "version": 1,
+    "status": "superseded",
+    "label": {
+      "hu": "Penicillin-allergia"
+    },
+    "module": "rx",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert-e penicillin-túlérzékenység."
+      },
+      "pitfalls": {
+        "hu": "FELVÁLTVA: az utódja a(z) `allergy.list`. A penicillin-allergia mostantól az EGYETLEN allergia-entitás egy tétele (`allergen.penicillin`). Külön tristate mezőként azért nem maradhat, mert a rendszer többi rétege nem tudta, hogy létezik: a diétás lap és a műtői ellenőrzőlista más mezőt nézett. A mező NEM törlődik: a korábban rögzített értékek maradnak, és visszaolvashatók."
+      },
+      "whyItMatters": {
+        "hu": "Az antibiotikum-szelektáló ezen az egy adaton fordul meg. A „nem tudom” itt ÖNÁLLÓ válasz: nem ugyanaz, mint a nem allergiás, és más alternatívát indokol."
+      }
+    }
+  },
+  {
+    "id": "rx.allergy.reaction",
+    "version": 1,
+    "status": "superseded",
+    "label": {
+      "hu": "Az allergiás reakció jellege"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "anaphylaxis",
+        "label_hu": "Anafilaxia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "urticaria",
+        "label_hu": "Csalánkiütés, viszketés"
+      },
+      {
+        "code": "rash",
+        "label_hu": "Kiütés"
+      },
+      {
+        "code": "giUpset",
+        "label_hu": "Gyomor-bél panasz"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem tudja",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mi történt a korábbi expozíciókor."
+      },
+      "whyItMatters": {
+        "hu": "Az anafilaxia és a gyomorrontás nem ugyanaz: az utóbbi nem allergia, és nem indokolja a másodvonalbeli szer választását."
+      },
+      "pitfalls": {
+        "hu": "FELVÁLTVA: az utódja a(z) `allergy.reaction`. A reakció mostantól ALLERGÉNENKÉNT külön rögzül. Egyetlen mezőben, aki penicillinre csalánkiütést és latexre anafilaxiát kapott, csak az egyiket tudta megőrizni — és a megmaradó a rossz irányba is tévedhetett. A mező NEM törlődik: a korábban rögzített értékek maradnak, és visszaolvashatók."
+      }
+    }
+  },
+  {
+    "id": "rx.crcl",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kreatinin-clearance"
+    },
+    "module": "rx",
+    "datatype": "quantity",
+    "unit": "mL/min",
+    "domain": {
+      "min": 0,
+      "max": 300
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.crcl",
+      "explain": {
+        "hu": "Cockcroft–Gault a korból, a testsúlyból és a szérum kreatininből."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A gyógyszeradagoláshoz használt becsült kreatinin-clearance."
+      },
+      "whyItMatters": {
+        "hu": "A dózismódosítás ehhez igazodik, nem az eGFR-hez: a törzskönyvi ajánlások túlnyomó része Cockcroft–Gault szerinti értékkel készült."
+      }
+    }
+  },
+  {
+    "id": "rx.dose.amount",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Adag"
+    },
+    "module": "rx",
+    "datatype": "quantity",
+    "unitFrom": "rx.dose.unit",
+    "domain": {
+      "min": 0,
+      "max": 100000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az egyszeri adag mennyisége."
+      },
+      "whyItMatters": {
+        "hu": "A mennyiség és az egység együtt jelent adagot. Ezért a motor az egységet az `rx.dose.unit` mezőből veszi, és ha az üres, az adagot el sem fogadja — az egység nélküli adagolási bejegyzés a gyógyszerelési hibák klasszikus forrása."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.dose.unit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Adagolási egység"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "mg",
+        "label_hu": "mg"
+      },
+      {
+        "code": "ug",
+        "label_hu": "µg"
+      },
+      {
+        "code": "g",
+        "label_hu": "g"
+      },
+      {
+        "code": "mL",
+        "label_hu": "ml"
+      },
+      {
+        "code": "[IU]",
+        "label_hu": "NE"
+      },
+      {
+        "code": "{tbl}",
+        "label_hu": "tabletta"
+      },
+      {
+        "code": "{drop}",
+        "label_hu": "csepp"
+      },
+      {
+        "code": "{puff}",
+        "label_hu": "belégzés"
+      },
+      {
+        "code": "mg/kg",
+        "label_hu": "mg/testsúlykilogramm"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen egységben adjuk meg az adagot."
+      },
+      "whyItMatters": {
+        "hu": "Az egység ÖNÁLLÓ mező, mert az adag önmagában nem adat: az „500” nem jelent semmit, az „500 mg” és az „500 ml” pedig két különböző dolog. A motor ebből a mezőből bélyegzi az egységet az adagra, és egység nélkül az adag nem is rögzíthető."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.frequency",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Adagolás gyakorisága"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "once",
+        "label_hu": "Egyszeri adag"
+      },
+      {
+        "code": "qd",
+        "label_hu": "Naponta egyszer"
+      },
+      {
+        "code": "bid",
+        "label_hu": "Naponta kétszer"
+      },
+      {
+        "code": "tid",
+        "label_hu": "Naponta háromszor"
+      },
+      {
+        "code": "qid",
+        "label_hu": "Naponta négyszer"
+      },
+      {
+        "code": "q4h",
+        "label_hu": "4 óránként"
+      },
+      {
+        "code": "q6h",
+        "label_hu": "6 óránként"
+      },
+      {
+        "code": "q8h",
+        "label_hu": "8 óránként"
+      },
+      {
+        "code": "q12h",
+        "label_hu": "12 óránként"
+      },
+      {
+        "code": "prn",
+        "label_hu": "Szükség szerint"
+      },
+      {
+        "code": "cont",
+        "label_hu": "Folyamatos infúzióban"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen gyakran kapja a beteg."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.indication",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A gyógyszerelés indikációja"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pph",
+        "label_hu": "Szülés utáni vérzés"
+      },
+      {
+        "code": "inductionCervical",
+        "label_hu": "Méhszáj-érlelés, szülésindítás"
+      },
+      {
+        "code": "tocolysis",
+        "label_hu": "Koraszülés gátlása"
+      },
+      {
+        "code": "lungMaturation",
+        "label_hu": "Magzati tüdőérlelés"
+      },
+      {
+        "code": "seizureProphylaxis",
+        "label_hu": "Görcsmegelőzés (praeeclampsia)"
+      },
+      {
+        "code": "hypertension",
+        "label_hu": "Magas vérnyomás"
+      },
+      {
+        "code": "thromboprophylaxis",
+        "label_hu": "Thrombosis-megelőzés"
+      },
+      {
+        "code": "infection",
+        "label_hu": "Fertőzés kezelése"
+      },
+      {
+        "code": "antibioticProphylaxis",
+        "label_hu": "Antibiotikus profilaxis"
+      },
+      {
+        "code": "analgesia",
+        "label_hu": "Fájdalomcsillapítás"
+      },
+      {
+        "code": "nausea",
+        "label_hu": "Hányinger, hányás"
+      },
+      {
+        "code": "supplementation",
+        "label_hu": "Pótlás, szupplementáció"
+      },
+      {
+        "code": "thyroid",
+        "label_hu": "Pajzsmirigy-kezelés"
+      },
+      {
+        "code": "diabetes",
+        "label_hu": "Cukorbetegség kezelése"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Miért kapja a beteg ezt a szert."
+      },
+      "whyItMatters": {
+        "hu": "Az indikáció nélküli rendelés nem auditálható, és a zárójelentésből hiányzik a legfontosabb mondat: miért kapta."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.lmwh.dailyDose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Javasolt profilaktikus enoxaparin-adag"
+    },
+    "module": "rx",
+    "datatype": "quantity",
+    "unit": "mg",
+    "domain": {
+      "min": 0,
+      "max": 300
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.lmwh.prophylaxis",
+      "explain": {
+        "hu": "RCOG GTG 37a testsúlysávok szerint."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A testsúlysáv szerinti napi profilaktikus adag."
+      },
+      "whyItMatters": {
+        "hu": "A standard 40 mg napi adag 90 kg felett ALULDOZÍROZ — ez a thrombosisprofilaxis leggyakoribb csendes hibája elhízott terhesnél."
+      }
+    }
+  },
+  {
+    "id": "rx.override.gate",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megkerült kapu"
+    },
+    "module": "rx",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Melyik kontraindikáció-kaput kerülte meg a rendelés."
+      },
+      "whyItMatters": {
+        "hu": "A kapu NEM megkerülhetetlen — van klinikai helyzet, ahol a kockázat vállalható. De a megkerülésnek NYOMA van: melyik kapu, ki, mikor, miért. Enélkül a kapu vagy megbénítja az ellátást, vagy pipálható formalitássá válik; mindkettő rosszabb, mint a rögzített döntés."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.override.reason",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A megkerülés indoklása"
+    },
+    "module": "rx",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Miért vállalható a kockázat ebben a helyzetben."
+      },
+      "whyItMatters": {
+        "hu": "AZ INDOKLÁS NÉLKÜL A RENDELÉS NEM FOLYTATHATÓ, és az indoklás bekerül a dokumentációba, a zárójelentésbe és az auditnaplóba. Ez a modul elfogadási kritériumának második fele."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.route",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Beadási mód"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "po",
+        "label_hu": "Szájon át"
+      },
+      {
+        "code": "iv",
+        "label_hu": "Intravénásan"
+      },
+      {
+        "code": "im",
+        "label_hu": "Intramuszkulárisan"
+      },
+      {
+        "code": "sc",
+        "label_hu": "Bőr alá"
+      },
+      {
+        "code": "pv",
+        "label_hu": "Hüvelybe"
+      },
+      {
+        "code": "pr",
+        "label_hu": "Végbélbe"
+      },
+      {
+        "code": "top",
+        "label_hu": "Helyileg"
+      },
+      {
+        "code": "inh",
+        "label_hu": "Belégzéssel"
+      },
+      {
+        "code": "id",
+        "label_hu": "Méhűrbe / intramyometrialisan"
+      },
+      {
+        "code": "ed",
+        "label_hu": "Epiduralisan"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan kapja a beteg a készítményt."
+      },
+      "pitfalls": {
+        "hu": "A beadási mód nem kozmetikai részlet: a misoprostol hüvelyi és szájon át adott adagja más, a carboprost pedig intramyometrialisan más kockázatot hordoz, mint izomba adva."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.start",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kezdés"
+    },
+    "module": "rx",
+    "datatype": "date",
+    "documentation": {
+      "definition": {
+        "hu": "Mikortól kapja a beteg."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.status",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Rendelés állapota"
+    },
+    "module": "rx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "proposed",
+        "label_hu": "Javasolt, még nem indult"
+      },
+      {
+        "code": "active",
+        "label_hu": "Fut"
+      },
+      {
+        "code": "held",
+        "label_hu": "Felfüggesztve"
+      },
+      {
+        "code": "stopped",
+        "label_hu": "Leállítva"
+      },
+      {
+        "code": "completed",
+        "label_hu": "Befejezve"
+      },
+      {
+        "code": "homeMedication",
+        "label_hu": "Otthoni szedés (nem mi rendeltük)"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hol tart a rendelés."
+      },
+      "whyItMatters": {
+        "hu": "Az OTTHONI SZEDÉS külön állapot, nem rendelés: a beteg által hozott készítmény ugyanúgy kölcsönhat és ugyanúgy elfedhet leletet, de nem a mi rendelésünk — a zárójelentésben és a felelősségi kérdésekben ez különbség."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  },
+  {
+    "id": "rx.stop",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Befejezés"
+    },
+    "module": "rx",
+    "datatype": "date",
+    "documentation": {
+      "definition": {
+        "hu": "Meddig kapja a beteg."
+      },
+      "whyItMatters": {
+        "hu": "A LEZÁRATLAN rendelés a gyógyszerelési hibák másik klasszikus forrása: az antibiotikum, amit senki nem állított le, hetekig fut tovább. Az üres befejezés ezért nem hiányzó adat, hanem nyitott teendő."
+      }
+    },
+    "scopedBy": {
+      "dimension": "prescription",
+      "roster": "rx.active"
+    }
+  }
+]

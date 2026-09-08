@@ -1,0 +1,105 @@
+{
+  "megnevezes": "OGDOC pilot — egy osztály, valódi adattal",
+  "lepes": 16,
+  "osztaly": null,
+  "vezeto": null,
+  "kezdet": null,
+  "hetek": 2,
+  "elofeltetelek": [
+    {
+      "id": "tarolo",
+      "lepes": 1,
+      "megnevezes": "Tartós, jogosultsághoz kötött, auditált tároló",
+      "bizonyitek": [
+        "auditnaplo",
+        "titkositas",
+        "jogosultsag",
+        "kulcstar-hsm"
+      ],
+      "miert": "Ami a pilot alatt elveszik vagy naplózatlanul kimegy, azt utólag nem lehet visszacsinálni. Ez a lépés egyetlen visszafordíthatatlan előfeltétele."
+    },
+    {
+      "id": "adatvedelmi-dontesek",
+      "lepes": 3,
+      "megnevezes": "Adatvédelmi döntések (jogalap, beleegyezés, törlés)",
+      "bizonyitek": [
+        "beleegyezes-keret",
+        "torles-visszavonas",
+        "phi-kizaras",
+        "dontes-alairasok"
+      ],
+      "miert": "A jogalap utólag nem pótolható: a beleegyezés nélkül felvett adat nem lesz visszamenőleg jogszerű attól, hogy később megkérdezik a beteget."
+    },
+    {
+      "id": "szamitasi-hitelesites",
+      "lepes": "6–8",
+      "megnevezes": "Labor-referenciák, normogramok és kalkulátorok hitelesítése",
+      "bizonyitek": [
+        "szamitasi-kapuk"
+      ],
+      "miert": "Hitelesítetlen küszöbön a rendszer ROSSZAT mond — és a klinikus, aki egyszer rossz számot kapott tőle, többé nem hisz a jónak sem."
+    },
+    {
+      "id": "megorzes",
+      "lepes": 10,
+      "megnevezes": "Megőrzési idők aláírt rendje",
+      "bizonyitek": [
+        "megorzes-alairasok"
+      ],
+      "miert": "A megőrzés a felvétel PILLANATÁBAN kezdődik. Ha a pilot alatt felvett adatra nincs megőrzési horgony, az idő már akkor sem számolható, amikor később rendezik."
+    },
+    {
+      "id": "riasztasi-rend",
+      "lepes": 15,
+      "megnevezes": "Riasztási rend: címzettek és eszkalációs lánc",
+      "bizonyitek": [
+        "riasztasi-rend"
+      ],
+      "miert": "Címzett nélkül a riasztás nem kiadható. Egy pilot, amiben a rendszer nem szólal meg, nem a rendszert méri, hanem az adatbevitelt."
+    }
+  ],
+  "kimondatlan": [
+    {
+      "id": "hitelesites",
+      "megnevezes": "Hitelesítés — a „ki vagy te” kérdés",
+      "bizonyitek": [
+        "hitelesites"
+      ],
+      "miert": "A terv öt előfeltételt sorol, és a hitelesítés nincs köztük. Mind az öt teljesülhet úgy, hogy a rendszer VALÓDI ADATON MÉGSEM FUTHAT: a cselekvő kilétét egyetlen ellenőrizetlen kérésfejléc állítja, és a jogosultsági réteg arról dönt, akinek a kérés mondja magát. Ez nem a felsorolás pontatlansága — ez az az előfeltétel, ami a másik ötnél hangosabban hiányzik."
+    },
+    {
+      "id": "naplo-horgony",
+      "megnevezes": "Naplóhorgony — a levágott vég kimutatása",
+      "bizonyitek": [
+        "naplo-horgony"
+      ],
+      "miert": "A pilot első elfogadási kritériuma („nem veszített adatot”) horgony nélkül nem MÉRHETŐ: a levágott végű napló hiánytalan láncnak látszik. Az előfeltétel nem az épség, hanem az épség BIZONYÍTHATÓSÁGA."
+    }
+  ],
+  "zarasi": [
+    {
+      "id": "nincs-adatvesztes",
+      "kriterium": "A rendszer nem veszített adatot.",
+      "forras": "rendszer",
+      "meres": "Minden pilot-eset naplójára horgonnyal igazolt épség (core/pilot/horgony.ts, adatvesztesMerleg).",
+      "megjegyzes": "Horgony nélkül a rendszer nem azt állítja, hogy nem veszett adat, hanem hogy nem tudja. A hiányzó mérés nem „nem veszett”.",
+      "meresFugg": "naplo-horgony"
+    },
+    {
+      "id": "nem-kerultek-ki",
+      "kriterium": "A klinikusok nem kerülték ki a rendszert.",
+      "forras": "vegyes",
+      "nevezo": "Az osztályon a pilot alatt ellátott esetek száma — a rendszeren KÍVÜLRŐL.",
+      "meres": "A rendszerben rögzített esetek száma osztva az osztályon ténylegesen ellátott esetek számával.",
+      "megjegyzes": "A rendszer csak a SZÁMLÁLÓT ismeri. Kikerülési bejegyzés hiánya nem bizonyíték: aki kikerüli a rendszert, épp azt nem hagyja benne nyomon. A nevezőt az osztálynak kell adnia, és a mérés e nélkül értelmetlen, nem csak pontatlan."
+    },
+    {
+      "id": "egy-dokumentalt-eset",
+      "kriterium": "Van legalább egy dokumentált eset, ahol a rendszer olyat mondott, amit a klinikus egyébként nem vett volna észre.",
+      "forras": "szervezet",
+      "fugg": "riasztasi-rend",
+      "meres": "Klinikusi nyilatkozat egy megnevezett esetről, a kiadott riasztás azonosítójával.",
+      "megjegyzes": "Ezt gép nem igazolhatja: azt, hogy mit vett volna észre, csak a klinikus tudja. A rendszer annyit tud hozzátenni, hogy MEGSZÓLALT-E egyáltalán — és amíg egyetlen riasztástípus sem kiadható, ez a kritérium nem teljesíthetetlen, hanem ELÉRHETETLEN."
+    }
+  ]
+}

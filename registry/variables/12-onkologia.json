@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "onc.fertility.discussed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fertilitásmegőrzés megbeszélve"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "yes",
+        "label_hu": "Igen, dokumentáltan"
+      },
+      {
+        "code": "notApplicable",
+        "label_hu": "Nem releváns",
+        "flags": [
+          "notApplicable"
+        ]
+      },
+      {
+        "code": "no",
+        "label_hu": "Nem került szóba",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "declined",
+        "label_hu": "A beteg nem kérte"
+      }
+    ],
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Szóba került-e a termékenység megőrzése a kezelés előtt."
+      },
+      "whyItMatters": {
+        "hu": "AZ IDŐABLAK SZŰK ÉS NEM NYÍLIK ÚJRA: a petesejt- vagy embriófagyasztás a kezelés MEGKEZDÉSE ELŐTT lehetséges. A „nem került szóba” ezért vörös zászló, nem semleges válasz — a fiatal daganatos betegek termékenységi tanácsadásának elmaradása a leggyakrabban felrótt mulasztás."
+      }
+    }
+  },
+  {
+    "id": "onc.fertility.method",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fertilitásmegőrzés módja"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "oocyte",
+        "label_hu": "Petesejt-fagyasztás"
+      },
+      {
+        "code": "embryo",
+        "label_hu": "Embrió-fagyasztás"
+      },
+      {
+        "code": "ovarianTissue",
+        "label_hu": "Ovariumszövet-fagyasztás"
+      },
+      {
+        "code": "gnrh",
+        "label_hu": "GnRH-agonista ovariumvédelem"
+      },
+      {
+        "code": "transposition",
+        "label_hu": "Ovarium-transzpozíció sugárkezelés előtt"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nem történt"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen eljárás történt."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.figo.cervix",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "FIGO-stádium — méhnyak"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "codeSystem": {
+      "id": "figo-cervix",
+      "version": "2018",
+      "source": "FIGO Committee on Gynecologic Oncology: Revised FIGO staging for carcinoma of the cervix uteri (2018)",
+      "validFrom": "2018-10-01"
+    },
+    "valueSet": [
+      {
+        "code": "IA1",
+        "label_hu": "IA1 — mikroszkopikus, ≤ 3 mm mélység"
+      },
+      {
+        "code": "IA2",
+        "label_hu": "IA2 — mikroszkopikus, 3–5 mm mélység"
+      },
+      {
+        "code": "IB1",
+        "label_hu": "IB1 — ≤ 2 cm"
+      },
+      {
+        "code": "IB2",
+        "label_hu": "IB2 — 2–4 cm"
+      },
+      {
+        "code": "IB3",
+        "label_hu": "IB3 — > 4 cm"
+      },
+      {
+        "code": "IIA1",
+        "label_hu": "IIA1 — hüvely felső kétharmada, ≤ 4 cm"
+      },
+      {
+        "code": "IIA2",
+        "label_hu": "IIA2 — hüvely felső kétharmada, > 4 cm"
+      },
+      {
+        "code": "IIB",
+        "label_hu": "IIB — parametrium érintett"
+      },
+      {
+        "code": "IIIA",
+        "label_hu": "IIIA — hüvely alsó harmada"
+      },
+      {
+        "code": "IIIB",
+        "label_hu": "IIIB — medencefal vagy hydronephrosis"
+      },
+      {
+        "code": "IIIC1",
+        "label_hu": "IIIC1 — kismedencei nyirokcsomó-áttét",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IIIC2",
+        "label_hu": "IIIC2 — paraaortikus nyirokcsomó-áttét",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IVA",
+        "label_hu": "IVA — hólyag vagy végbél nyálkahártyája",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IVB",
+        "label_hu": "IVB — távoli áttét",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "valueSetVersions": [
+      {
+        "version": "2009",
+        "validFrom": "2009-01-01",
+        "validTo": "2018-09-30",
+        "note": {
+          "hu": "A 2009-es rendszer NEM ismerte a nyirokcsomó-státuszt: a IIIC kategória 2018-ban jött létre. A 2009-es „IB1” küszöbe 4 cm volt, a 2018-asé 2 cm — UGYANAZ A JELÖLÉS, MÁS TARTALOM."
+        },
+        "items": [
+          {
+            "code": "IA1",
+            "label_hu": "IA1 — mikroszkopikus, ≤ 3 mm mélység (2009)"
+          },
+          {
+            "code": "IA2",
+            "label_hu": "IA2 — mikroszkopikus, 3–5 mm mélység (2009)"
+          },
+          {
+            "code": "IB1",
+            "label_hu": "IB1 — ≤ 4 cm (2009 szerint)"
+          },
+          {
+            "code": "IB2",
+            "label_hu": "IB2 — > 4 cm (2009 szerint)"
+          },
+          {
+            "code": "IIA1",
+            "label_hu": "IIA1 — ≤ 4 cm (2009)"
+          },
+          {
+            "code": "IIA2",
+            "label_hu": "IIA2 — > 4 cm (2009)"
+          },
+          {
+            "code": "IIB",
+            "label_hu": "IIB — parametrium érintett (2009)"
+          },
+          {
+            "code": "IIIA",
+            "label_hu": "IIIA — hüvely alsó harmada (2009)"
+          },
+          {
+            "code": "IIIB",
+            "label_hu": "IIIB — medencefal vagy hydronephrosis (2009)"
+          },
+          {
+            "code": "IVA",
+            "label_hu": "IVA — szomszédos szerv (2009)"
+          },
+          {
+            "code": "IVB",
+            "label_hu": "IVB — távoli áttét (2009)"
+          }
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A méhnyakrák FIGO-stádiuma."
+      },
+      "pitfalls": {
+        "hu": "A RÉGI ÉRTÉK A SAJÁT VERZIÓJA SZERINT HELYES — nem hibás adat, hanem más rendszerben rögzült. A rendszer ezért a rögzítéskori listából olvassa a címkét, és jelzi, ha a kód azóta megszűnt vagy mást jelent."
+      },
+      "whyItMatters": {
+        "hu": "A cervix-rendszer 2018-ban lényegesen változott: bekerült a nyirokcsomó-státusz (IIIC), és a stádiumbesorolásba beépült a képalkotás és a szövettan. Egy 2015-ös „IB” és egy 2020-as „IB” nem ugyanaz az információ."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.figo.endometrium",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "FIGO-stádium — méhtest"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "codeSystem": {
+      "id": "figo-endometrium",
+      "version": "2023",
+      "source": "Berek JS et al. FIGO staging of endometrial cancer: 2023. Int J Gynaecol Obstet 2023;162(2):383-394",
+      "validFrom": "2023-06-01"
+    },
+    "valueSet": [
+      {
+        "code": "IA1",
+        "label_hu": "IA1 — nem myoinvazív, POLE-mutált vagy jó prognózisú"
+      },
+      {
+        "code": "IA2",
+        "label_hu": "IA2 — < 50% myometrium-invázió, alacsony grádus"
+      },
+      {
+        "code": "IA3",
+        "label_hu": "IA3 — méhre és petefészekre korlátozott, alacsony grádus"
+      },
+      {
+        "code": "IB",
+        "label_hu": "IB — ≥ 50% myometrium-invázió, alacsony grádus"
+      },
+      {
+        "code": "IC",
+        "label_hu": "IC — agresszív szövettan, myometrium-invázió nélkül"
+      },
+      {
+        "code": "IIA",
+        "label_hu": "IIA — méhnyak stromájának érintettsége"
+      },
+      {
+        "code": "IIB",
+        "label_hu": "IIB — jelentős nyirokér-invázió"
+      },
+      {
+        "code": "IIC",
+        "label_hu": "IIC — agresszív szövettan myometrium-invázióval"
+      },
+      {
+        "code": "IIIA",
+        "label_hu": "IIIA — savós hártya vagy függelék",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IIIB",
+        "label_hu": "IIIB — hüvely vagy parametrium",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IIIC1",
+        "label_hu": "IIIC1 — kismedencei nyirokcsomó",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IIIC2",
+        "label_hu": "IIIC2 — paraaortikus nyirokcsomó",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IVA",
+        "label_hu": "IVA — hólyag vagy bél nyálkahártyája",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IVB",
+        "label_hu": "IVB — hasi áttét a kismedencén kívül",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "IVC",
+        "label_hu": "IVC — távoli áttét",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "valueSetVersions": [
+      {
+        "version": "2009",
+        "validFrom": "2009-01-01",
+        "validTo": "2023-05-31",
+        "note": {
+          "hu": "A 2009-es rendszer TISZTÁN ANATÓMIAI volt: molekuláris besorolás nem szerepelt benne, és az „IA” egyszerűen < 50% myometrium-inváziót jelentett. A 2023-as „IA1” ehhez képest MÁS FOGALOM."
+        },
+        "items": [
+          {
+            "code": "IA",
+            "label_hu": "IA — < 50% myometrium-invázió (2009)"
+          },
+          {
+            "code": "IB",
+            "label_hu": "IB — ≥ 50% myometrium-invázió (2009)"
+          },
+          {
+            "code": "II",
+            "label_hu": "II — méhnyak stromája (2009)"
+          },
+          {
+            "code": "IIIA",
+            "label_hu": "IIIA — savós hártya vagy függelék (2009)"
+          },
+          {
+            "code": "IIIB",
+            "label_hu": "IIIB — hüvely vagy parametrium (2009)"
+          },
+          {
+            "code": "IIIC1",
+            "label_hu": "IIIC1 — kismedencei nyirokcsomó (2009)"
+          },
+          {
+            "code": "IIIC2",
+            "label_hu": "IIIC2 — paraaortikus nyirokcsomó (2009)"
+          },
+          {
+            "code": "IVA",
+            "label_hu": "IVA — hólyag vagy bél (2009)"
+          },
+          {
+            "code": "IVB",
+            "label_hu": "IVB — távoli áttét (2009)"
+          }
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A méhtestrák FIGO-stádiuma."
+      },
+      "pitfalls": {
+        "hu": "Emiatt a 2023-as és a 2009-es stádium NEM ÖSSZEHASONLÍTHATÓ, és egy retrospektív adatsor két rendszer keverékéből nem elemezhető anélkül, hogy a verzió minden soron ott lenne."
+      },
+      "whyItMatters": {
+        "hu": "A 2023-as rendszer a MOLEKULÁRIS besorolást is beépítette: a POLE-mutált daganat stádiuma lefelé, a p53-abnormális felfelé módosul. Ez az első FIGO-rendszer, ahol a stádium nem pusztán anatómiai."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.germline",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Csíravonalas mutáció"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem igazolódott"
+      },
+      {
+        "code": "brca1",
+        "label_hu": "BRCA1",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "brca2",
+        "label_hu": "BRCA2",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "lynch",
+        "label_hu": "Lynch-szindróma",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb patogén variáns",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "vus",
+        "label_hu": "Bizonytalan jelentőségű variáns",
+        "flags": [
+          "unknown"
+        ]
+      },
+      {
+        "code": "notTested",
+        "label_hu": "Nem történt vizsgálat",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Örökletes daganathajlam igazolt-e."
+      },
+      "pitfalls": {
+        "hu": "A BIZONYTALAN JELENTŐSÉGŰ VARIÁNS (VUS) nem pozitív lelet, és nem alapozhat meg kockázatcsökkentő műtétet. A leggyakoribb félreértés a genetikai leletek körül."
+      },
+      "whyItMatters": {
+        "hu": "Következménye van a BETEGRE (kezelésválasztás, kockázatcsökkentő műtét) és a CSALÁDRA (kaszkád-vizsgálat) is. A tanácsadás és a variánsértékelés a 23. modulé; itt a lelet rögzül."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.grade",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Differenciáltság"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "G1 — jól differenciált"
+      },
+      {
+        "code": 2,
+        "label_hu": "G2 — közepesen"
+      },
+      {
+        "code": 3,
+        "label_hu": "G3 — rosszul differenciált",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "x",
+        "label_hu": "GX — nem megítélhető",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A daganat szöveti érettsége."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.histology",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szövettani típus"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "scc",
+        "label_hu": "Laphámrák"
+      },
+      {
+        "code": "adeno",
+        "label_hu": "Adenocarcinoma"
+      },
+      {
+        "code": "adenosquamous",
+        "label_hu": "Adenosquamosus"
+      },
+      {
+        "code": "clearCell",
+        "label_hu": "Világossejtes",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "serous",
+        "label_hu": "Serosus",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "mucinous",
+        "label_hu": "Mucinosus"
+      },
+      {
+        "code": "endometrioid",
+        "label_hu": "Endometrioid"
+      },
+      {
+        "code": "carcinosarcoma",
+        "label_hu": "Carcinosarcoma",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "sarcoma",
+        "label_hu": "Sarcoma",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "neuroendocrine",
+        "label_hu": "Neuroendokrin",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "codeSystem": {
+      "id": "who-tumour-female-genital",
+      "version": "5th ed. (2020)",
+      "source": "WHO Classification of Tumours: Female Genital Tumours, 5th edition (2020)"
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A daganat szövettani besorolása."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.molecular",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Molekuláris besorolás"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pole",
+        "label_hu": "POLE-mutált — kedvező prognózis"
+      },
+      {
+        "code": "mmrd",
+        "label_hu": "MMR-deficiens / MSI-magas"
+      },
+      {
+        "code": "p53abn",
+        "label_hu": "p53-abnormális — kedvezőtlen prognózis",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "nsmp",
+        "label_hu": "Nem specifikus molekuláris profil"
+      },
+      {
+        "code": "notDone",
+        "label_hu": "Nem történt meghatározás",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A méhtestrák molekuláris alcsoportja."
+      },
+      "whyItMatters": {
+        "hu": "A 2023-as FIGO-rendszer BEÉPÍTETTE a stádiumba: a POLE-mutált daganat stádiuma lefelé, a p53-abnormális felfelé módosul. Enélkül a 2023-as stádium nem is állapítható meg — a „nem történt” válasz ezért nem formalitás, hanem a stádium korlátja."
+      }
+    }
+  },
+  {
+    "id": "onc.gyn.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Daganat lokalizációja"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "cervix",
+        "label_hu": "Méhnyak"
+      },
+      {
+        "code": "endometrium",
+        "label_hu": "Méhtest"
+      },
+      {
+        "code": "ovary",
+        "label_hu": "Petefészek"
+      },
+      {
+        "code": "tube",
+        "label_hu": "Petevezeték"
+      },
+      {
+        "code": "peritoneum",
+        "label_hu": "Hashártya"
+      },
+      {
+        "code": "vulva",
+        "label_hu": "Szeméremtest"
+      },
+      {
+        "code": "vagina",
+        "label_hu": "Hüvely"
+      },
+      {
+        "code": "breast",
+        "label_hu": "Emlő"
+      },
+      {
+        "code": "gtd",
+        "label_hu": "Trophoblast-betegség"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Melyik szerv daganatáról van szó."
+      },
+      "whyItMatters": {
+        "hu": "A LOKALIZÁCIÓ DÖNTI EL, MELYIK STÁDIUMRENDSZER érvényes: a FIGO lokalizációnként külön rendszert használ, és ezek külön is frissülnek."
+      }
+    }
+  },
+  {
+    "id": "onc.mdt.date",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Onkoteam időpontja"
+    },
+    "module": "onc",
+    "datatype": "date",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor tárgyalta a csapat az esetet."
+      }
+    }
+  },
+  {
+    "id": "onc.mdt.presented",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Onkoteam elé került"
+    },
+    "module": "onc",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Megtárgyalta-e az esetet a multidiszciplináris onkológiai csapat."
+      },
+      "whyItMatters": {
+        "hu": "A daganatos ellátás minőségi alapkövetelménye. A terhesség alatti daganatnál a csapatba a szülész és a neonatológus is beletartozik — enélkül a döntés a magzatra vonatkozó részt nem fedi le."
+      }
+    }
+  },
+  {
+    "id": "onc.preg.decision.options",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az onkológiai döntésnél megbeszélt lehetőségek"
+    },
+    "module": "onc",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen kezelési utak kerültek szóba, és mi szólt mellettük-ellenük."
+      },
+      "whyItMatters": {
+        "hu": "A megosztott döntéshozatal attól megosztott, hogy a beteg TÖBB lehetőséget ismert meg. Az egyetlen felkínált út melletti beleegyezés nem döntés."
+      }
+    }
+  },
+  {
+    "id": "onc.preg.decision.outcome",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A közös döntés"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "continueDelay",
+        "label_hu": "A terhesség folytatása, a kezelés halasztásával"
+      },
+      {
+        "code": "continueTreat",
+        "label_hu": "A terhesség folytatása, kezeléssel"
+      },
+      {
+        "code": "deliverEarly",
+        "label_hu": "Korai szülésbefejezés, majd kezelés"
+      },
+      {
+        "code": "terminate",
+        "label_hu": "A terhesség megszakítása"
+      },
+      {
+        "code": "undecided",
+        "label_hu": "Még nem döntött",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "audit": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mi mellett döntött a beteg a csapattal együtt."
+      },
+      "whyItMatters": {
+        "hu": "A döntés rögzítése nem adminisztráció: a következő ellátó ebből tudja meg, mi az, amit a beteg már végiggondolt, és mi az, amit nem kell újra elölről kezdeni vele."
+      }
+    }
+  },
+  {
+    "id": "onc.preg.gaAtDiagnosis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gesztációs kor a diagnóziskor"
+    },
+    "module": "onc",
+    "datatype": "quantity",
+    "unit": "wk",
+    "domain": {
+      "min": 0,
+      "max": 45
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hányadik terhességi héten állították fel a diagnózist."
+      },
+      "whyItMatters": {
+        "hu": "EZ DÖNTI EL, MI ADHATÓ. Az I. trimeszterben a kemoterápia kontraindikált (szervfejlődés), a II–III.-ban több szer adható. A gesztációs kor a kezelési terv legfontosabb bemenete — nem a stádium mellett, hanem vele egyenrangúan."
+      }
+    }
+  },
+  {
+    "id": "onc.preg.placentaExamined",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhlepény szövettani vizsgálata"
+    },
+    "module": "onc",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Megtörtént-e a lepény szövettani vizsgálata a szülés után."
+      },
+      "whyItMatters": {
+        "hu": "A LEPÉNY-ÁTTÉT ritka, de melanoma és leukaemia esetén előfordul, és a MAGZATOT is érintheti. A vizsgálat a szülés után már nem pótolható — ezért kell külön kérni, nem a rutinra bízni."
+      }
+    }
+  },
+  {
+    "id": "onc.preg.sharedDecision",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megosztott döntéshozatal dokumentálva"
+    },
+    "module": "onc",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Megtörtént-e és rögzült-e a beteggel közös döntéshozatal."
+      },
+      "pitfalls": {
+        "hu": "A tájékozott beleegyezés aláírása NEM ugyanaz: az egy beavatkozásra szól. Itt a KEZELÉSI ÚT megválasztásáról van szó, több lehetőség között, és a beteg értékrendje része a döntésnek."
+      },
+      "whyItMatters": {
+        "hu": "A MODUL ELFOGADÁSI KRITÉRIUMA. A terhesség alatti daganatkezelésben a terhesség folytatásának vagy befejezésének kérdése nem orvosi döntés: a beteg dönt, tájékozottan. A rendszer ezt nem tudja meghozni helyette — azt tudja kikényszeríteni, hogy a beszélgetés MEGTÖRTÉNJEN és nyoma legyen."
+      }
+    }
+  },
+  {
+    "id": "onc.response.recist",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Válaszértékelés (RECIST 1.1)"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "cr",
+        "label_hu": "Teljes válasz"
+      },
+      {
+        "code": "pr",
+        "label_hu": "Részleges válasz"
+      },
+      {
+        "code": "sd",
+        "label_hu": "Stabil betegség"
+      },
+      {
+        "code": "pd",
+        "label_hu": "Progresszió",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ne",
+        "label_hu": "Nem értékelhető",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "recist",
+      "version": "1.1",
+      "source": "Eisenhauer EA et al. New response evaluation criteria in solid tumours: revised RECIST guideline (version 1.1). Eur J Cancer 2009;45(2):228-247"
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A képalkotó válaszértékelés eredménye."
+      },
+      "pitfalls": {
+        "hu": "A besorolást a KLINIKUS állapítja meg — a rendszer NEM számítja ki, mert a célléziók léziónkénti nyilvántartása (kiindulási és aktuális átmérő) még nincs meg. A RECIST emellett KUTATÁSI eszköz: a klinikai döntés nem csak a mérhető elváltozások méretén múlik. Az „értékelhető” és a „mérhető” elváltozás megkülönböztetése a besorolás leggyakoribb hibaforrása."
+      }
+    }
+  },
+  {
+    "id": "onc.tx.cycle",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ciklusszám"
+    },
+    "module": "onc",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 60
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hányadik kezelési ciklus."
+      }
+    }
+  },
+  {
+    "id": "onc.tx.modality",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kezelési modalitás"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "surgery",
+        "label_hu": "Műtét"
+      },
+      {
+        "code": "chemo",
+        "label_hu": "Kemoterápia"
+      },
+      {
+        "code": "radio",
+        "label_hu": "Sugárterápia"
+      },
+      {
+        "code": "targeted",
+        "label_hu": "Célzott terápia"
+      },
+      {
+        "code": "immuno",
+        "label_hu": "Immunterápia"
+      },
+      {
+        "code": "hormonal",
+        "label_hu": "Hormonterápia"
+      },
+      {
+        "code": "supportive",
+        "label_hu": "Szupportív ellátás"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nincs aktív kezelés"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen kezelés történt vagy tervezett."
+      }
+    }
+  },
+  {
+    "id": "onc.tx.protocol",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Protokoll"
+    },
+    "module": "onc",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kemoterápiás vagy egyéb kezelési protokoll megnevezése."
+      }
+    }
+  },
+  {
+    "id": "onc.tx.toxicity.grade",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Toxicitás foka (CTCAE)"
+    },
+    "module": "onc",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 — nincs"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 — enyhe"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — közepes"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — súlyos",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": 4,
+        "label_hu": "4 — életveszélyes",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": 5,
+        "label_hu": "5 — halálos kimenetel",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "ctcae",
+      "version": "5.0",
+      "source": "NCI Common Terminology Criteria for Adverse Events v5.0 (2017)"
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A legsúlyosabb észlelt mellékhatás foka."
+      }
+    }
+  }
+]

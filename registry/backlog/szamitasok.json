@@ -1,0 +1,739 @@
+{
+  "megnevezes": "Klinikai számítás-hátralék — csoportosítva, kimenet szerint",
+  "note": "A KIMENET FAJTÁJA MDR-KÉRDÉS, NEM STÍLUS.\n\nA lista minden tétele megkapja, hogy MIT ÍR KI:\n\n  valoszinuseg — számot ad arra, hogy valami bekövetkezik. Az EU MDR (2017/745) szerint ez a legvalószínűbben orvostechnikai eszköz, és a 11. szabály hatálya alá eshet.\n  besorolas    — kategóriát ad (O-RADS 4, MEC 3, FIGO IIB). Más megítélés, DE NEM MENTESSÉG.\n  pontszam     — összeadott pontérték, küszöbökkel.\n\nEz a megkülönböztetés azért van a hátralékban és nem a megvalósításban, mert a besorolás a fejlesztés ELŐTT dönt: egy valószínűséget kiíró modul műszaki dokumentációt, klinikai értékelést és minőségirányítást kíván, és ezt utólag ráaggatni nem lehet. A 29. modul MDR-kérdéssora ezt már felteszi.\n\nAZ ÁLLAPOT NEM ÍGÉRET. A `terv` annyit jelent, hogy a tétel FEL VAN VÉVE — nem azt, hogy készül. A `adatHianyzik` a legkonkrétabb: ott a motor megvan, és egyetlen adatfájl hiányzik.",
+  "kimenetek": {
+    "valoszinuseg": "Valószínűséget ír ki. MDR: a legszigorúbb megítélés; a 11. szabály hatálya alá eshet.",
+    "besorolas": "Kategóriát ad. Más megítélés, de nem mentesség.",
+    "pontszam": "Pontösszeg küszöbökkel."
+  },
+  "tetelek": [
+    {
+      "id": "bl.a1.0",
+      "megnevezes": "Shepard / Warsof / Merz becsült magzati súly",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "Shepard 1982; Warsof 1977; Merz 1988",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.1",
+      "megnevezes": "Ikersúly-diszkordancia",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "a két magzat becsült súlyának százalékos különbsége",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.2",
+      "megnevezes": "Megfigyelt/várt tüdő-fej arány (o/e LHR)",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "Jani et al. UOG 2007 — congenitalis rekeszsérv",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.3",
+      "megnevezes": "Quintero-stádium",
+      "csoport": "A1 biometria",
+      "kimenet": "besorolas",
+      "forras": "Quintero et al. J Perinatol 1999 — ikertranszfúziós szindróma",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.4",
+      "megnevezes": "Delphi-konszenzus FGR-definíció",
+      "csoport": "A1 biometria",
+      "kimenet": "besorolas",
+      "forras": "Gordijn et al. UOG 2016",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.5",
+      "megnevezes": "WHO magzati növekedési standard",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "WHO Fetal Growth Charts (Kiserud 2017)",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.6",
+      "megnevezes": "ACM-PSV MoM",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "Mari et al. NEJM 2000 — magzati vérszegénység",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a1.7",
+      "megnevezes": "Kleihauer–Betke",
+      "csoport": "A1 biometria",
+      "kimenet": "pontszam",
+      "forras": "a magzati-anyai transzfúzió mennyisége",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a2.0",
+      "megnevezes": "HELLP — Tennessee és Mississippi osztályozás",
+      "csoport": "A2 praeeclampsia / GDM",
+      "kimenet": "besorolas",
+      "forras": "Sibai 1990; Martin 1991",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a2.1",
+      "megnevezes": "ISSHP / ACOG súlyossági jellemzők",
+      "csoport": "A2 praeeclampsia / GDM",
+      "kimenet": "besorolas",
+      "forras": "ISSHP 2018; ACOG PB 222",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a2.2",
+      "megnevezes": "Carpenter–Coustan és NDDG GDM-küszöbök",
+      "csoport": "A2 praeeclampsia / GDM",
+      "kimenet": "besorolas",
+      "forras": "Carpenter–Coustan 1982; NDDG 1979",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a2.3",
+      "megnevezes": "Trimeszterspecifikus TSH",
+      "csoport": "A2 praeeclampsia / GDM",
+      "kimenet": "besorolas",
+      "forras": "ATA 2017 — a 33. modul már kimondta a hiányt",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a2.4",
+      "megnevezes": "fullPIERS / miniPIERS",
+      "csoport": "A2 praeeclampsia / GDM",
+      "kimenet": "valoszinuseg",
+      "forras": "von Dadelszen et al. Lancet 2011",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.0",
+      "megnevezes": "OASIS-osztályozás",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "besorolas",
+      "forras": "RCOG GTG 29 — gátsérülés",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.1",
+      "megnevezes": "Kumulatív becsült vérvesztés (cEBL)",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "a 35. modul fedésfeloldása már megnyitotta",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.2",
+      "megnevezes": "Rule of 30",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "besorolas",
+      "forras": "a masszív vérzés felismerése",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.3",
+      "megnevezes": "MEOWS",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "módosított kora szülészeti figyelmeztető pontszám",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.4",
+      "megnevezes": "Bateman-komorbiditási index",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "Bateman et al. Anesthesiology 2013",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.5",
+      "megnevezes": "Sepsis in Obstetrics Score (SOS)",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "Albright et al. AJOG 2014",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.6",
+      "megnevezes": "omqSOFA",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "a rendszerben MEGVAN",
+      "allapot": "megvan"
+    },
+    {
+      "id": "bl.a3.7",
+      "megnevezes": "Placenta accreta spektrum UH-pontszám",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "pontszam",
+      "forras": "Jauniaux / Collins UOG",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a3.8",
+      "megnevezes": "Antenatális szteroid-ablak",
+      "csoport": "A3 szülés, vérzés",
+      "kimenet": "besorolas",
+      "forras": "ACOG / RCOG — az ablak elmulasztása nem pótolható",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a4.0",
+      "megnevezes": "NICHD háromfokú CTG",
+      "csoport": "A4 CTG, thrombosis",
+      "kimenet": "besorolas",
+      "forras": "NICHD 2008",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a4.1",
+      "megnevezes": "FIGO 2015 CTG",
+      "csoport": "A4 CTG, thrombosis",
+      "kimenet": "besorolas",
+      "forras": "a rendszerben MEGVAN (core/ctg/figo.ts)",
+      "allapot": "megvan"
+    },
+    {
+      "id": "bl.a4.2",
+      "megnevezes": "Wells / YEARS",
+      "csoport": "A4 CTG, thrombosis",
+      "kimenet": "valoszinuseg",
+      "forras": "tüdőembólia valószínűsége terhességben",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a4.3",
+      "megnevezes": "ZAHARA",
+      "csoport": "A4 CTG, thrombosis",
+      "kimenet": "pontszam",
+      "forras": "szívbetegség terhességben",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a4.4",
+      "megnevezes": "ACOG / ASH VTE-kockázat",
+      "csoport": "A4 CTG, thrombosis",
+      "kimenet": "besorolas",
+      "forras": "thromboprofilaxis javallata",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a5.0",
+      "megnevezes": "New Ballard",
+      "csoport": "A5 újszülött",
+      "kimenet": "pontszam",
+      "forras": "gesztációs kor becslése",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a5.1",
+      "megnevezes": "Sarnat / TOBY",
+      "csoport": "A5 újszülött",
+      "kimenet": "besorolas",
+      "forras": "hypoxiás-ischaemiás encephalopathia",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a5.2",
+      "megnevezes": "Finnegan",
+      "csoport": "A5 újszülött",
+      "kimenet": "pontszam",
+      "forras": "újszülöttkori megvonási tünetegyüttes",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.0",
+      "megnevezes": "RMI I–IV",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "pontszam",
+      "forras": "malignitási index",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.1",
+      "megnevezes": "CPH-I",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "valoszinuseg",
+      "forras": "Copenhagen Index",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.2",
+      "megnevezes": "IOTA benignus leírók",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "IOTA simple rules",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.3",
+      "megnevezes": "IETA / MUSA",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "endometrium és myometrium leírók",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.4",
+      "megnevezes": "Endometrium-vastagság küszöbök",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "postmenopauzális vérzés",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.5",
+      "megnevezes": "FIGO myoma-osztályozás",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "FIGO 2011",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.6",
+      "megnevezes": "CONUTA / ASRM MAC",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "Müller-cső-rendellenességek",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.7",
+      "megnevezes": "FIGO stádiumok",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "nőgyógyászati daganatok",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.8",
+      "megnevezes": "ESGO rizikócsoportok + ProMisE",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "endometriumcarcinoma molekuláris besorolás",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.9",
+      "megnevezes": "Sedlis / Peters / Mayo",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "adjuváns kezelés javallata",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.10",
+      "megnevezes": "Swede-score",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "pontszam",
+      "forras": "kolposzkópia",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.11",
+      "megnevezes": "Fagotti",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "pontszam",
+      "forras": "laparoszkópos reszekálhatóság",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a6.12",
+      "megnevezes": "Bethesda / IFCPC",
+      "csoport": "A6 ultrahang és onkológia",
+      "kimenet": "besorolas",
+      "forras": "citológia és kolposzkópia — RÉSZBEN megvan",
+      "allapot": "reszben"
+    },
+    {
+      "id": "bl.a7.0",
+      "megnevezes": "Amsterdam II / Bethesda / NCCN",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "Lynch-szindróma",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.1",
+      "megnevezes": "Bologna + POSEIDON",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "gyenge petefészek-válasz",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.2",
+      "megnevezes": "OHSS-küszöbök",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "hiperstimulációs szindróma",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.3",
+      "megnevezes": "WHO 6. spermiogram + Kruger",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "WHO 2021",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.4",
+      "megnevezes": "M4 / M6",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "valoszinuseg",
+      "forras": "ismeretlen lokalizációjú terhesség",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.5",
+      "megnevezes": "hCG-zóna",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "discriminatory zone",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.6",
+      "megnevezes": "CED",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "pontszam",
+      "forras": "kumulatív élveszületési arány",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.7",
+      "megnevezes": "rASRM",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "pontszam",
+      "forras": "endometriosis stádium",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.8",
+      "megnevezes": "EFI",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "pontszam",
+      "forras": "endometriosis fertilitási index",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.9",
+      "megnevezes": "#Enzian",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "mély endometriosis",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a7.10",
+      "megnevezes": "AAGL 2021",
+      "csoport": "A7 genetika, reprodukció",
+      "kimenet": "besorolas",
+      "forras": "endometriosis osztályozás",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.0",
+      "megnevezes": "PALM-COEIN",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "besorolas",
+      "forras": "FIGO AUB-osztályozás",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.1",
+      "megnevezes": "ISTH-BAT",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "vérzési hajlam",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.2",
+      "megnevezes": "Baden–Walker",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "besorolas",
+      "forras": "süllyedés",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.3",
+      "megnevezes": "St Mark's",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "széklet-inkontinencia",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.4",
+      "megnevezes": "Sandvik",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "vizelet-inkontinencia súlyossága",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.5",
+      "megnevezes": "UDI-6 / IIQ-7 / PFDI-20",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "LICENCKÖTELES lehet — a 12. modul kapuja",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.6",
+      "megnevezes": "STRAW+10",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "besorolas",
+      "forras": "menopauza-stádium",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.7",
+      "megnevezes": "Kupperman / Greene",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "LICENCKÖTELES lehet",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.8",
+      "megnevezes": "Hőhullám-napló",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "gyakoriság és súlyosság",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.9",
+      "megnevezes": "T- és Z-score",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "csontsűrűség",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.10",
+      "megnevezes": "Hay–Ison",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "besorolas",
+      "forras": "bakteriális vaginosis",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a8.11",
+      "megnevezes": "VVC-index",
+      "csoport": "A8 vérzés, uroginekológia, menopauza",
+      "kimenet": "pontszam",
+      "forras": "vulvovaginalis candidiasis",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.0",
+      "megnevezes": "US SPR 2024",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "besorolas",
+      "forras": "KÉSZ (registry/fogamzas/) — közkincs",
+      "allapot": "megvan"
+    },
+    {
+      "id": "bl.a9.1",
+      "megnevezes": "US MEC 2024",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "besorolas",
+      "forras": "a summary chart PDF megérkezett; az importáló a következő lépés",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.2",
+      "megnevezes": "Pearl-index tábla",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "pontszam",
+      "forras": "módszerenkénti hatékonyság",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.3",
+      "megnevezes": "Sürgősségi fogamzásgátlás BMI-küszöb",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "besorolas",
+      "forras": "levonorgesztrel hatékonysága",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.4",
+      "megnevezes": "NIPT PPV",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "valoszinuseg",
+      "forras": "a pozitív prediktív érték prevalenciafüggő",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.5",
+      "megnevezes": "FMF likelihood ratio-k",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "valoszinuseg",
+      "forras": "Fetal Medicine Foundation",
+      "allapot": "terv"
+    },
+    {
+      "id": "bl.a9.6",
+      "megnevezes": "PHQ-9 / T-ACE / HITS / AAS",
+      "csoport": "A9 fogamzásgátlás, szűrés",
+      "kimenet": "pontszam",
+      "forras": "RÉSZBEN megvan — a PHQ-9 és az EPDS igen",
+      "allapot": "reszben"
+    },
+    {
+      "id": "bl.b.0",
+      "megnevezes": "CDC US MEC mátrix",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "besorolas",
+      "forras": "a summary chart megérkezett; az importáló a következő lépés",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.1",
+      "megnevezes": "Fenton LMS",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "pontszam",
+      "forras": "koraszülött növekedési görbe",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.2",
+      "megnevezes": "AFI / DVP normogram",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "pontszam",
+      "forras": "magzatvízmennyiség",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.3",
+      "megnevezes": "Cervixhossz-normogram",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "pontszam",
+      "forras": "koraszülés-kockázat",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.4",
+      "megnevezes": "NT-percentilis",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "pontszam",
+      "forras": "nyaki átlátszóság",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.5",
+      "megnevezes": "AAP 2022 bilirubin-küszöbök",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "besorolas",
+      "forras": "újszülöttkori sárgaság",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.6",
+      "megnevezes": "Liley / Queenan",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "besorolas",
+      "forras": "magzati haemolysis",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.7",
+      "megnevezes": "ASCCP 2019 kockázati táblák",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "besorolas",
+      "forras": "szabadon elérhetők az NLM-nél",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.8",
+      "megnevezes": "MFMU VBAC 2021",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "hüvelyi szülés császármetszés után",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.9",
+      "megnevezes": "OPIS / McLernon",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "IVF kumulatív élveszületés",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.10",
+      "megnevezes": "PREMM5",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "Lynch-szindróma valószínűsége",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.11",
+      "megnevezes": "NICHD kalkulátor",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.12",
+      "megnevezes": "QUiPP v2",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "koraszülés valószínűsége",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.13",
+      "megnevezes": "Gail / BCRAT",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "emlőrák-kockázat",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.14",
+      "megnevezes": "Kaiser EOS",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "korai újszülöttkori szepszis",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.15",
+      "megnevezes": "Négyes teszt",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "szérum-szűrés",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.16",
+      "megnevezes": "KELIM",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "pontszam",
+      "forras": "CA-125 eliminációs ráta",
+      "allapot": "adatHianyzik"
+    },
+    {
+      "id": "bl.b.17",
+      "megnevezes": "IOTA LR2",
+      "csoport": "B — motor kész, adat kell",
+      "kimenet": "valoszinuseg",
+      "forras": "LICENCKÖTELES — az ADNEX licenckapuja mögé",
+      "allapot": "adatHianyzik"
+    }
+  ]
+}

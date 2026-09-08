@@ -1,0 +1,2454 @@
+[
+  {
+    "id": "prom.eq5d.mobility",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — Mozgékonyság"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Nem okoz problémát"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhe probléma"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepes probléma"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyos probléma"
+      },
+      {
+        "code": 5,
+        "label_hu": "Képtelen rá / rendkívül súlyos"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.eq5d.selfCare",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — Önellátás"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Nem okoz problémát"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhe probléma"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepes probléma"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyos probléma"
+      },
+      {
+        "code": 5,
+        "label_hu": "Képtelen rá / rendkívül súlyos"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.eq5d.activities",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — Szokásos tevékenységek"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Nem okoz problémát"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhe probléma"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepes probléma"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyos probléma"
+      },
+      {
+        "code": 5,
+        "label_hu": "Képtelen rá / rendkívül súlyos"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.eq5d.pain",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — Fájdalom / rossz közérzet"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Nem okoz problémát"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhe probléma"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepes probléma"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyos probléma"
+      },
+      {
+        "code": 5,
+        "label_hu": "Képtelen rá / rendkívül súlyos"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.eq5d.anxiety",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — Szorongás / lehangoltság"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Nem okoz problémát"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhe probléma"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepes probléma"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyos probléma"
+      },
+      {
+        "code": 5,
+        "label_hu": "Képtelen rá / rendkívül súlyos"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.eq5d.vas",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L — egészségi állapot ma (VAS)"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 100
+    },
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját megítélése az aktuális egészségi állapotáról 0–100 skálán."
+      },
+      "whyItMatters": {
+        "hu": "A VAS az EGYETLEN EQ-5D-tétel, ami licencelt magyar értékkészlet nélkül is értelmezhető: a beteg saját skálája, nem populációs hasznosság."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 1. tétel: Koncentráció 10 percen át"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 2. tétel: Hosszabb távolság gyaloglása (1 km)"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 3. tétel: Teljes test megmosása"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q4",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 4. tétel: Öltözködés"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 5. tétel: Idegenekkel való kapcsolat"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q6",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 6. tétel: Barátságok fenntartása"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q7",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 7. tétel: Napi otthoni teendők"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q8",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 8. tétel: Munka vagy tanulás"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q9",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 9. tétel: Érzelmi érintettség az egészségi állapot miatt"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q10",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 10. tétel: Napi teendők időigénye"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q11",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 11. tétel: Kimaradt napok"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.q12",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 — 12. tétel: Csökkent teljesítményű napok"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Enyhén"
+      },
+      {
+        "code": 3,
+        "label_hu": "Közepesen"
+      },
+      {
+        "code": 4,
+        "label_hu": "Súlyosan"
+      },
+      {
+        "code": 5,
+        "label_hu": "Rendkívül súlyosan / képtelen rá"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 1. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 2. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 3. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q4",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 4. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 5. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q6",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 6. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q7",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 7. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q8",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 8. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q9",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 9. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q10",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 10. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q11",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 11. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q12",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 12. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q13",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 13. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bses.q14",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF — 14. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem vagyok biztos benne"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Néha"
+      },
+      {
+        "code": 4,
+        "label_hu": "Többnyire"
+      },
+      {
+        "code": 5,
+        "label_hu": "Mindig biztos vagyok benne"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 1. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 2. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 3. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q4",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 4. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q5",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 5. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q6",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 6. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q7",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 7. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q8",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 8. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q9",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 9. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.bssr.q10",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R — 10. tétel"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 0,
+        "label_hu": "0 pont"
+      },
+      {
+        "code": 1,
+        "label_hu": "1 pont"
+      },
+      {
+        "code": 2,
+        "label_hu": "2 pont"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 pont"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 pont"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját válasza."
+      },
+      "pitfalls": {
+        "hu": "A VALIDÁLT TÉTELSZÖVEG LICENCKÖTELES, és nincs betöltve — a címke itt csak azonosít, nem a kérdés szövege. Saját megfogalmazású kérdéssel a skála nem az, aminek nevezi magát."
+      }
+    }
+  },
+  {
+    "id": "prom.whodas.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHODAS 2.0-12 összpontszám"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.whodas.total",
+      "explain": {
+        "hu": "A tételek összege."
+      }
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A 12 tétel egyszerű összege (0–48)."
+      },
+      "pitfalls": {
+        "hu": "EGYSZERŰ ÖSSZEGZÉS. A WHODAS hivatalos, tételválasz-elméleti (IRT) pontozása MÁS számot ad, és nincs megvalósítva — a kettő nem cserélhető fel, és a nemzetközi összehasonlításnál ezt jelezni kell."
+      },
+      "whyItMatters": {
+        "hu": "A funkcionalitás a betegnek gyakran fontosabb, mint a laboreredmény: azt méri, mit tud csinálni, nem azt, mit mutat a lelet."
+      }
+    },
+    "domain": {
+      "min": 0,
+      "max": 48
+    }
+  },
+  {
+    "id": "prom.bses.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSES-SF összpontszám"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.bses.total",
+      "explain": {
+        "hu": "A tételek összege."
+      }
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A 14 tétel összege (14–70)."
+      },
+      "whyItMatters": {
+        "hu": "A szoptatási önhatékonyság a szoptatás folytatásának legerősebb módosítható előrejelzője — és a terhesség alatt mért érték alapján célzottan lehet támogatást adni."
+      }
+    },
+    "domain": {
+      "min": 14,
+      "max": 70
+    }
+  },
+  {
+    "id": "prom.bssr.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "BSS-R összpontszám"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "unit": "{pont}",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.bssr.total",
+      "explain": {
+        "hu": "A tételek összege."
+      }
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A 10 tétel összege (0–40)."
+      },
+      "pitfalls": {
+        "hu": "A BSS-R HÁROM ALSKÁLÁRA bomlik (az ellátás minősége, a nő személyes attribútumai, a szülés alatti stressz), de a hivatalos tétel-besorolás nincs betöltve, ezért a rendszer CSAK az összpontszámot adja. Az alskálák külön értelmezése enélkül nem megbízható."
+      }
+    },
+    "domain": {
+      "min": 0,
+      "max": 40
+    }
+  },
+  {
+    "id": "prom.eq5d.profile",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EQ-5D-5L profil"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.eq5d.profile",
+      "explain": {
+        "hu": "Az öt dimenzió szintjeiből képzett ötjegyű profil (pl. 21123)."
+      }
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Az öt dimenzió szintjeiből álló ötjegyű kód."
+      },
+      "pitfalls": {
+        "hu": "EZ KÓD, NEM MENNYISÉG. Minden jegye önálló jelentésű (a dimenziók szintjei), ezért átlagot vagy különbséget képezni belőle értelmetlen. HASZNOSSÁGI INDEXET a rendszer NEM ad: ahhoz országspecifikus, licencelt értékkészlet kell, és egy másik ország értékkészletével számolt index nem magyar adat."
+      }
+    },
+    "domain": {
+      "min": 11111,
+      "max": 55555
+    }
+  },
+  {
+    "id": "prom.sat.overall",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elégedettség az ellátással"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire volt elégedett a kapott ellátással."
+      },
+      "pitfalls": {
+        "hu": "AZ ELÉGEDETTSÉG NEM MINŐSÉG. Erősen függ az elvárástól, a személyzet kedvességétől és a kimeneteltől; önmagában nem az ellátás szakmai színvonalát méri. Együtt értelmezendő a válaszkészség-tételekkel és a klinikai kimenetellel."
+      }
+    }
+  },
+  {
+    "id": "prom.sat.painDecision",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megosztott döntés a fájdalomcsillapításról"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Bevonták-e a fájdalomcsillapítás megválasztásába."
+      },
+      "whyItMatters": {
+        "hu": "Az ICHOM ezt külön kérdezi, mert a szülés alatti fájdalomcsillapítás az a döntés, ahol a bevonás hiánya a leggyakrabban marad emlék."
+      }
+    }
+  },
+  {
+    "id": "prom.sat.painRelief",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elégedettség a fájdalomcsillapítással"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire volt elégedett a kapott fájdalomcsillapítással."
+      }
+    }
+  },
+  {
+    "id": "prom.resp.info",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megkapta a szükséges tájékoztatást"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Kapott-e elegendő és érthető tájékoztatást."
+      }
+    }
+  },
+  {
+    "id": "prom.resp.role",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Olyan szerepe volt az ellátásban, amilyet szeretett volna"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Annyira vonták-e be a döntésekbe, amennyire szerette volna."
+      },
+      "pitfalls": {
+        "hu": "A KÉRDÉS NEM AZ, HOGY SOKAT VONTÁK-E BE, hanem hogy ANNYIRA-e, amennyire szerette volna. Van, aki a döntést az ellátóra bízná — az ő esetében a túlzott bevonás is rossz válasz."
+      }
+    }
+  },
+  {
+    "id": "prom.resp.trust",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bízott az ellátóiban"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire bízott az ellátásában részt vevőkben."
+      }
+    }
+  },
+  {
+    "id": "prom.resp.respect",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tisztelettel bántak vele"
+    },
+    "module": "prom",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "Egyáltalán nem"
+      },
+      {
+        "code": 2,
+        "label_hu": "Kevéssé"
+      },
+      {
+        "code": 3,
+        "label_hu": "Részben"
+      },
+      {
+        "code": 4,
+        "label_hu": "Nagyrészt"
+      },
+      {
+        "code": 5,
+        "label_hu": "Teljes mértékben"
+      }
+    ],
+    "provenanceAllowed": [
+      "patient"
+    ],
+    "patientEntry": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire érezte úgy, hogy tisztelettel bántak vele."
+      },
+      "whyItMatters": {
+        "hu": "A tiszteletteljes bánásmód hiánya („obstetric violence”) önálló kimenetel, nem az elégedettség egy árnyalata — és a szülési élményt évekre meghatározza."
+      }
+    }
+  },
+  {
+    "id": "prom.instruments",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Felvett mérőeszközök"
+    },
+    "module": "prom",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "inst.eq5d5l",
+        "label_hu": "EQ-5D-5L"
+      },
+      {
+        "code": "inst.whodas12",
+        "label_hu": "WHODAS 2.0-12"
+      },
+      {
+        "code": "inst.bses.sf",
+        "label_hu": "BSES-SF"
+      },
+      {
+        "code": "inst.bssr",
+        "label_hu": "BSS-R"
+      },
+      {
+        "code": "inst.epds",
+        "label_hu": "EPDS"
+      },
+      {
+        "code": "inst.whooley",
+        "label_hu": "Whooley"
+      },
+      {
+        "code": "inst.mspss",
+        "label_hu": "MSPSS"
+      },
+      {
+        "code": "inst.mibs",
+        "label_hu": "MIBS"
+      },
+      {
+        "code": "inst.phq9",
+        "label_hu": "PHQ-9"
+      },
+      {
+        "code": "inst.latch",
+        "label_hu": "LATCH"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mely mérőeszközök kerültek felvételre ennél az esetnél."
+      },
+      "whyItMatters": {
+        "hu": "Ez a NÉVSOR: a klinikusi megjegyzés csak olyan eszközhöz rögzíthető, amit ténylegesen felvettek."
+      }
+    }
+  },
+  {
+    "id": "prom.clinicianNote",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Klinikusi megjegyzés a kérdőívhez"
+    },
+    "module": "prom",
+    "datatype": "text",
+    "scopedBy": {
+      "dimension": "instrument",
+      "roster": "prom.instruments"
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A klinikus észrevétele egy felvett kérdőívvel kapcsolatban."
+      },
+      "whyItMatters": {
+        "hu": "EZ AZ EGYETLEN HELY, ahol a klinikus a kérdőívhez hozzászólhat. A beteg válaszát nem írhatja felül — ha ellentmondást lát (pl. a kitöltés közben zavaró körülmény volt), azt IDE rögzíti, és a beteg válasza érintetlen marad."
+      },
+      "pitfalls": {
+        "hu": "Példányosított mező: eszközönként külön megjegyzés, és csak olyan eszközhöz, ami a névsorban szerepel."
+      }
+    }
+  },
+  {
+    "id": "prom.mh.epds.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "EPDS összpontszám (ICHOM)"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "aliasOf": "psy.epds.total",
+    "documentation": {
+      "definition": {
+        "hu": "Ugyanaz az adat, mint a(z) psy.epds.total — TÜKÖR, nem külön kitöltés."
+      },
+      "whyItMatters": {
+        "hu": "A modul elfogadási kritériuma: a 08. modul EPDS-e és a 16. modul EPDS-e UGYANAZ A VÁLTOZÓ. Két külön mező azt jelentené, hogy a beteg kétszer tölti ki ugyanazt, és a két érték előbb-utóbb eltérne."
+      }
+    },
+    "unit": "{pont}"
+  },
+  {
+    "id": "prom.mh.whooley.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Whooley összpontszám (ICHOM)"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "aliasOf": "psy.whooley.total",
+    "documentation": {
+      "definition": {
+        "hu": "Ugyanaz az adat, mint a(z) psy.whooley.total — TÜKÖR, nem külön kitöltés."
+      },
+      "whyItMatters": {
+        "hu": "A modul elfogadási kritériuma: a 08. modul EPDS-e és a 16. modul EPDS-e UGYANAZ A VÁLTOZÓ. Két külön mező azt jelentené, hogy a beteg kétszer tölti ki ugyanazt, és a két érték előbb-utóbb eltérne."
+      }
+    },
+    "unit": "{pont}"
+  },
+  {
+    "id": "prom.mh.mibs.total",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "MIBS összpontszám (ICHOM)"
+    },
+    "module": "prom",
+    "datatype": "quantity",
+    "aliasOf": "psy.mibs.total",
+    "documentation": {
+      "definition": {
+        "hu": "Ugyanaz az adat, mint a(z) psy.mibs.total — TÜKÖR, nem külön kitöltés."
+      },
+      "whyItMatters": {
+        "hu": "A modul elfogadási kritériuma: a 08. modul EPDS-e és a 16. modul EPDS-e UGYANAZ A VÁLTOZÓ. Két külön mező azt jelentené, hogy a beteg kétszer tölti ki ugyanazt, és a két érték előbb-utóbb eltérne."
+      }
+    },
+    "unit": "{pont}"
+  }
+]

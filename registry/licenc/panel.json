@@ -1,0 +1,88 @@
+{
+  "megnevezes": "Licencpanel — ami engedéllyel aktiválható",
+  "note": "EGY HELYEN minden, aminek a használatához ENGEDÉLY kell: mérőeszköz-licenc, AI-modell, adatkészlet, kódrendszer. Az aktiválás NEM jelölőnégyzet: megnevezett jogosultat, hatókört, lejáratot és bizonyítékot kíván. Ez ugyanaz a szerkezet, mint a rendszer többi kapujánál — a kapu ADATBÓL nyílik, nem szóból —, csak itt az adat maga a licenc.\n\nA lejárat teherhordó: a licenc az EGYETLEN olyan igazolás a rendszerben, ami magától elévül. A lejárt licenc ugyanúgy zár, mint a hiányzó.",
+  "elojelzesNap": 90,
+  "tetelek": [
+    {
+      "id": "lic.snomed",
+      "megnevezes": "SNOMED CT GPS",
+      "fajta": "kodrendszer",
+      "licenc": "CC BY-ND 4.0",
+      "mihezKell": "a fogalomkészlet terjesztése",
+      "megjegyzes": "Az AZONOSÍTÓK használhatók; az ÁTALAKÍTOTT tábla terjesztése tilos. Nem aktiválható — a korlát nem engedéllyel oldható fel."
+    },
+    {
+      "id": "lic.prbperisk",
+      "megnevezes": "PRBPERIsk együtthatók",
+      "fajta": "modell",
+      "licenc": "GPLv2",
+      "mihezKell": "a modell terjesztése az MIT-licencű műben",
+      "megjegyzes": "Helyben települ. Nem aktiválható a terjesztett fába."
+    },
+    {
+      "id": "lic.annocerv",
+      "megnevezes": "AnnoCerv kolposzkópos képkészlet",
+      "fajta": "adatkeszlet",
+      "licenc": "CC BY 4.0",
+      "mihezKell": "a képkészlet használata és a Swede-pontszámok",
+      "megjegyzes": "AKTIVÁLHATÓ: a CC BY 4.0 hivatkozás mellett engedi. Helyben települ, mérete miatt nem a repóban."
+    },
+    {
+      "id": "lic.eq5d",
+      "megnevezes": "EQ-5D-5L",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele és a validált magyar fordítás",
+      "megjegyzes": "AKTIVÁLHATÓ, ha az intézmény megszerzi az EuroQol-regisztrációt."
+    },
+    {
+      "id": "lic.whodas",
+      "megnevezes": "WHODAS 2.0",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    },
+    {
+      "id": "lic.bses",
+      "megnevezes": "BSES-SF",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    },
+    {
+      "id": "lic.mibs",
+      "megnevezes": "MIBS",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    },
+    {
+      "id": "lic.bssr",
+      "megnevezes": "BSS-R",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    },
+    {
+      "id": "lic.mspss",
+      "megnevezes": "MSPSS",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a kérdőív felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    },
+    {
+      "id": "lic.latch",
+      "megnevezes": "LATCH",
+      "fajta": "meroeszkoz",
+      "licenc": null,
+      "mihezKell": "a pontozás felvétele",
+      "megjegyzes": "AKTIVÁLHATÓ."
+    }
+  ],
+  "aktivalasok": []
+}

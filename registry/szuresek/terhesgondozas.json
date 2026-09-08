@@ -1,0 +1,280 @@
+[
+  {
+    "id": "scr.gdm.ogtt.standard",
+    "label": {
+      "hu": "Terhességi cukorbetegség szűrése (75 g OGTT)"
+    },
+    "what": [
+      "lab.ogtt.0",
+      "lab.ogtt.60",
+      "lab.ogtt.120"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 24,
+      "to": 28
+    },
+    "source": {
+      "cite": "WHO: Diagnostic criteria and classification of hyperglycaemia first detected in pregnancy (2013); IADPSG consensus 2010",
+      "standard": "WHO 2013 / IADPSG"
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A fel nem ismert terhességi cukorbetegség makrosomiához, vállelakadáshoz és újszülöttkori hypoglykaemiához vezet — a szűrés az egyik legjobb hatásfokú terhesgondozási beavatkozás."
+      },
+      "pitfalls": {
+        "hu": "A HÁROM érték együtt a vizsgálat: a rendszer csak akkor tekinti elvégzettnek, ha mindhárom rögzült. A csak 2 órás értéket rögzítő gyakorlat a GDM-esetek egy részét elveszíti."
+      }
+    }
+  },
+  {
+    "id": "scr.gdm.ogtt.early",
+    "label": {
+      "hu": "Korai OGTT korábbi terhességi cukorbetegség után"
+    },
+    "what": [
+      "lab.ogtt.0",
+      "lab.ogtt.60",
+      "lab.ogtt.120"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.repro.gdm",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 16,
+      "to": 18
+    },
+    "source": {
+      "cite": "NICE NG3: Diabetes in pregnancy (2015, updated 2020)",
+      "standard": "NICE NG3"
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Korábbi terhességi cukorbetegség után a szűrés a 16–18. hétre előrehozandó, és NEGATÍV eredmény esetén a 24–28. héten MEGISMÉTLENDŐ — a korai negatív lelet nem zárja le a kérdést."
+      }
+    }
+  },
+  {
+    "id": "scr.gbs",
+    "label": {
+      "hu": "B-csoportú streptococcus szűrés"
+    },
+    "what": [
+      "lab.gbs"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 35,
+      "to": 37
+    },
+    "source": {
+      "cite": "CDC: Prevention of Perinatal Group B Streptococcal Disease (MMWR 2010); ACOG Committee Opinion 797 (2020)",
+      "standard": "CDC / ACOG"
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az ablak azért szűk, mert a hordozás ingadozik: az öt hétnél régebbi tenyésztés eredménye a szülés idejére már nem megbízható."
+      }
+    }
+  },
+  {
+    "id": "scr.aneuploidy.combined",
+    "label": {
+      "hu": "Első trimeszteri kombinált szűrés"
+    },
+    "what": [
+      "us.nt"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 11,
+      "to": 14
+    },
+    "source": {
+      "cite": "Fetal Medicine Foundation: The 11–13+6 weeks scan (Nicolaides KH, 2004)",
+      "standard": "FMF"
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "AZ ABLAK NEM TOLHATÓ: a 14. hét után a nyaki átlátszóság nem mérhető szabványosan, és a kombinált szűrés elvégezhetetlenné válik. Az elmulasztott ablak vissza nem hozható — ezért jelenik meg `overdue` állapotban, nem tűnik el."
+      }
+    }
+  },
+  {
+    "id": "scr.preeclampsia.first",
+    "label": {
+      "hu": "Első trimeszteri praeeclampsia-szűrés"
+    },
+    "what": [
+      "us.uta.pi.left",
+      "us.uta.pi.right",
+      "vitals.bp.systolic"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 11,
+      "to": 14
+    },
+    "source": {
+      "cite": "ACOG/SMFM low-dose aspirin recommendation; FMF competing risks model (Wright D et al. 2015)",
+      "standard": "FMF / ACOG"
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A szűrés célja az aszpirin-profilaxis időben történő elindítása: a 16. hét ELŐTT megkezdett kis dózisú aszpirin csökkenti a koraszülési praeeclampsia előfordulását, a később megkezdett lényegesen kevésbé. Az ablak elmulasztása ezért nem pótolható."
+      }
+    }
+  },
+  {
+    "id": "scr.anatomy.secondTrimester",
+    "label": {
+      "hu": "Második trimeszteri részletes morfológiai vizsgálat"
+    },
+    "what": [
+      "us.ac",
+      "us.hc",
+      "us.fl"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 18,
+      "to": 22
+    },
+    "source": {
+      "cite": "ISUOG Practice Guidelines: performance of the routine mid-trimester fetal ultrasound scan (2022)",
+      "standard": "ISUOG"
+    }
+  },
+  {
+    "id": "scr.thyroid.pregnancy",
+    "label": {
+      "hu": "Pajzsmirigyfunkció ellenőrzése ismert betegség mellett"
+    },
+    "what": [
+      "lab.tsh"
+    ],
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.thyroid.hypo",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "window": {
+      "by": "ctx.ga",
+      "from": 4,
+      "to": 12
+    },
+    "repeatEvery": "P28D",
+    "source": {
+      "cite": "American Thyroid Association Guidelines for the Diagnosis and Management of Thyroid Disease During Pregnancy and the Postpartum (2017)",
+      "standard": "ATA 2017"
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Ismert hypothyreosis mellett a levotiroxin-dózis a terhesség megállapításakor azonnal emelendő (kb. 25–30%), és a TSH négyhetente ellenőrizendő a 20. hétig. Ez az az anamnézis-tétel, ami a leggyorsabban válik teendővé."
+      }
+    }
+  },
+  {
+    "id": "scr.cervical.cytology",
+    "label": {
+      "hu": "Méhnyakszűrés (citológia)"
+    },
+    "what": [
+      "status.gyn.cytology"
+    ],
+    "appliesWhen": [
+      {
+        "var": "patient.age",
+        "op": "gte",
+        "value": 25
+      }
+    ],
+    "window": {
+      "by": "patient.age",
+      "from": 25,
+      "to": 65
+    },
+    "repeatEvery": "P1095D",
+    "source": {
+      "cite": "Európai Bizottság ajánlása a rákszűrésről (2022/C 473/01); a hazai szervezett méhnyakszűrési program. A kilépési feltétel: USPSTF Screening for Cervical Cancer, Recommendation Statement (JAMA 2018) és az ACS frissítés — Perkins RB et al., CA Cancer J Clin 2025, doi:10.3322/caac.70041.",
+      "standard": "EU 2022 / USPSTF / ACS 2025"
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "A hazai program hívólevél-alapú, és a rendszer NEM helyettesíti: ez a jelzés az ellátónak szól, hogy a szűrési státusz a viziten szóba kerüljön. A `repeatEvery` a citológiai alapú program hároméves ütemét követi — HPV-alapú programban az ütem hosszabb, és ezt a szabályt akkor CSERÉLNI kell, nem felülbírálni. AZ AMERIKAI AJÁNLÁSOK NEM ÜLTETHETŐK ÁT: az USPSTF 21 éves kortól és más ütemmel szűr, a hazai és az EU-ajánlás 25-től. A kilépési feltétel viszont populációfüggetlen — az USPSTF és az ACS abban egyezik, hogy a lezárás nem az életkoron, hanem a dokumentált előzményen múlik. AZ ÖNMINTAVÉTEL a `status.gyn.hpv.collection` mezőben látszik: önmintavételes hüvelyi mintából CITOLÓGIA NEM készíthető, tehát KOTESZT SEM — a vételi mód ismerete nélkül egy negatív HPV-lelet tévesen kotesztként hosszabb időközt kapna."
+      },
+      "whyItMatters": {
+        "hu": "A méhnyakrák a legjobban szűrhető nőgyógyászati daganat, és a hazai program legnagyobb tartaléka nem a teszt érzékenysége, hanem az EL NEM ÉRT nők aránya."
+      }
+    },
+    "exit": {
+      "requires": [
+        {
+          "var": "hx.gyn.cervix.adequateScreening",
+          "op": "eq",
+          "value": "pos"
+        },
+        {
+          "var": "hx.gyn.cervix.cin2plus",
+          "op": "eq",
+          "value": "neg"
+        }
+      ],
+      "why": {
+        "hu": "A 65 éves korban való szűrés-befejezés feltétele a dokumentáltan megfelelő negatív szűrési előzmény ÉS a CIN2+ hiánya az előzményben. Kezelt magas fokú elváltozás után a szűrés legalább 25 évig folytatandó, az életkori határon túl is. Előzmény nélkül a szűrés nem zárható le: a soha nem szűrt idős nő a méhnyakrák-halálozás legnagyobb kockázatú csoportja."
+      }
+    }
+  }
+]

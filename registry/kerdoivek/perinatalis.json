@@ -1,0 +1,3412 @@
+[
+  {
+    "id": "inst.epds",
+    "abbrev": "EPDS",
+    "label": {
+      "hu": "Edinburgh-i szülés utáni depresszió-skála"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "Nevetés, humor érzékelése"
+        },
+        "variable": "psy.epds.q1",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "Örömteli várakozás"
+        },
+        "variable": "psy.epds.q2",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "q3",
+        "label": {
+          "hu": "Önvád szükségtelenül"
+        },
+        "variable": "psy.epds.q3",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "q4",
+        "label": {
+          "hu": "Szorongás, aggodalom ok nélkül"
+        },
+        "variable": "psy.epds.q4",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "q5",
+        "label": {
+          "hu": "Félelem, pánik ok nélkül"
+        },
+        "variable": "psy.epds.q5",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "q6",
+        "label": {
+          "hu": "Túlterheltség érzése"
+        },
+        "variable": "psy.epds.q6",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "id": "q7",
+        "label": {
+          "hu": "Alvászavar szomorúság miatt"
+        },
+        "variable": "psy.epds.q7",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "id": "q8",
+        "label": {
+          "hu": "Szomorúság, nyomott hangulat"
+        },
+        "variable": "psy.epds.q8",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "id": "q9",
+        "label": {
+          "hu": "Sírás"
+        },
+        "variable": "psy.epds.q9",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "id": "q10",
+        "label": {
+          "hu": "Önkárosítás gondolata"
+        },
+        "variable": "psy.epds.q10",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.epds.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "nem utal depresszióra"
+          },
+          "severity": "normal",
+          "max": 9
+        },
+        {
+          "label": {
+            "hu": "határérték — ismétlés két héten belül"
+          },
+          "severity": "watch",
+          "min": 10,
+          "max": 12
+        },
+        {
+          "label": {
+            "hu": "valószínű depresszió — kivizsgálás indokolt"
+          },
+          "severity": "redflag",
+          "min": 13
+        }
+      ],
+      "prenatal": [
+        {
+          "label": {
+            "hu": "nem utal depresszióra"
+          },
+          "severity": "normal",
+          "max": 9
+        },
+        {
+          "label": {
+            "hu": "határérték — ismétlés két héten belül"
+          },
+          "severity": "watch",
+          "min": 10,
+          "max": 11
+        },
+        {
+          "label": {
+            "hu": "valószínű depresszió — kivizsgálás indokolt"
+          },
+          "severity": "redflag",
+          "min": 12
+        }
+      ],
+      "pregnancy.pathology": [
+        {
+          "label": {
+            "hu": "nem utal depresszióra"
+          },
+          "severity": "normal",
+          "max": 9
+        },
+        {
+          "label": {
+            "hu": "határérték — ismétlés két héten belül"
+          },
+          "severity": "watch",
+          "min": 10,
+          "max": 11
+        },
+        {
+          "label": {
+            "hu": "valószínű depresszió — kivizsgálás indokolt"
+          },
+          "severity": "redflag",
+          "min": 12
+        }
+      ],
+      "postpartum": [
+        {
+          "label": {
+            "hu": "nem utal depresszióra"
+          },
+          "severity": "normal",
+          "max": 9
+        },
+        {
+          "label": {
+            "hu": "határérték — ismétlés két héten belül"
+          },
+          "severity": "watch",
+          "min": 10,
+          "max": 12
+        },
+        {
+          "label": {
+            "hu": "valószínű depresszió — kivizsgálás indokolt"
+          },
+          "severity": "redflag",
+          "min": 13
+        }
+      ]
+    },
+    "criticalItem": {
+      "id": "q10",
+      "minScore": 1,
+      "message": {
+        "hu": "A 10. tétel (önkárosítás gondolata) POZITÍV. Ez az összpontszámtól FÜGGETLENÜL azonnali megbeszélést és pszichiátriai konzultációt indokol. Egy alacsony összpontszám ezt nem írja felül."
+      }
+    },
+    "source": {
+      "cite": "Cox JL, Holden JM, Sagovsky R. Detection of postnatal depression: development of the 10-item Edinburgh Postnatal Depression Scale. Br J Psychiatry 1987;150:782-786",
+      "pmid": "3651732"
+    },
+    "translation": {
+      "status": "validated",
+      "source": {
+        "cite": "Töreki A et al. The Edinburgh Postnatal Depression Scale: translation and antepartum validation for a Hungarian sample. Midwifery 2013;29(4):308-315; postpartum validáció: Midwifery 2014;30(8):911-918",
+        "pmid": "24742635"
+      },
+      "note": {
+        "hu": "Magyar validáció ANTE- és POSTPARTUM külön — ez ritka és értékes. A vágóérték a két időszakban eltér, ezért a besorolás a `ctx.pathway`-ből dől el."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A validált magyar tételszöveg licencköteles, és nincs betöltve. Amíg nincs meg, az eszköz NEM vehető fel: saját megfogalmazású kérdésekkel a skála nem EPDS, és a magyar validáció vágóértékei sem érvényesek rá."
+      }
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A perinatális depresszió a leggyakoribb szülészeti szövődmények közé tartozik, és a szűrés az egyik legjobb hatásfokú beavatkozás a terhesgondozásban."
+      },
+      "pitfalls": {
+        "hu": "A SZŰRÉS ÖNMAGÁBAN NEM ELLÁTÁS: pozitív eredmény után elérhető ellátási útvonal kell, különben a szűrés kárt okoz — felismer egy problémát, amire nincs válasz."
+      }
+    }
+  },
+  {
+    "id": "inst.whooley",
+    "abbrev": "Whooley",
+    "label": {
+      "hu": "Whooley kétkérdéses depresszió-gyorsszűrés"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "Nyomott hangulat az elmúlt hónapban"
+        },
+        "variable": "psy.whooley.q1",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Igen"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "Örömtelenség az elmúlt hónapban"
+        },
+        "variable": "psy.whooley.q2",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Igen"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.whooley.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "negatív szűrés"
+          },
+          "severity": "normal",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "label": {
+            "hu": "pozitív szűrés — részletesebb eszköz indokolt"
+          },
+          "severity": "watch",
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    "source": {
+      "cite": "Whooley MA et al. Case-finding instruments for depression. J Gen Intern Med 1997;12(7):439-445",
+      "pmid": "9229283"
+    },
+    "translation": {
+      "status": "unvalidated",
+      "note": {
+        "hu": "Nincs tudomásunk hivatalos, validált magyar fordításról. A vele gyűjtött adat publikálhatósága ezért korlátozott — a klinikai használatot ez nem zárja ki, a kutatásit igen."
+      }
+    },
+    "itemText": {
+      "status": "public",
+      "note": {
+        "hu": "A két kérdés a közleményben szabadon idézhető formában szerepel, és széles körben, licenc nélkül használatos."
+      }
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "MAGAS ÉRZÉKENYSÉG, ALACSONY SPECIFICITÁS: a pozitív szűrések többségében nincs depresszió. A pozitivitás nem diagnózis, és önmagában kezelést nem indít."
+      }
+    }
+  },
+  {
+    "id": "inst.phq9",
+    "abbrev": "PHQ-9",
+    "label": {
+      "hu": "PHQ-9 depresszió-kérdőív"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "Örömtelenség"
+        },
+        "variable": "psy.phq9.q1",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "Nyomott hangulat"
+        },
+        "variable": "psy.phq9.q2",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "q3",
+        "label": {
+          "hu": "Alvászavar"
+        },
+        "variable": "psy.phq9.q3",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "q4",
+        "label": {
+          "hu": "Fáradtság"
+        },
+        "variable": "psy.phq9.q4",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "q5",
+        "label": {
+          "hu": "Étvágyváltozás"
+        },
+        "variable": "psy.phq9.q5",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "q6",
+        "label": {
+          "hu": "Önértékelési zavar"
+        },
+        "variable": "psy.phq9.q6",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "id": "q7",
+        "label": {
+          "hu": "Koncentrációs nehézség"
+        },
+        "variable": "psy.phq9.q7",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "id": "q8",
+        "label": {
+          "hu": "Pszichomotoros változás"
+        },
+        "variable": "psy.phq9.q8",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "id": "q9",
+        "label": {
+          "hu": "Önkárosítás gondolata"
+        },
+        "variable": "psy.phq9.q9",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "Egyáltalán nem"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "Néhány napon"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "A napok több mint felén"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "Szinte minden nap"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.phq9.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "minimális"
+          },
+          "severity": "normal",
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": {
+            "hu": "enyhe"
+          },
+          "severity": "watch",
+          "min": 5,
+          "max": 9
+        },
+        {
+          "label": {
+            "hu": "közepes"
+          },
+          "severity": "watch",
+          "min": 10,
+          "max": 14
+        },
+        {
+          "label": {
+            "hu": "közepesen súlyos"
+          },
+          "severity": "redflag",
+          "min": 15,
+          "max": 19
+        },
+        {
+          "label": {
+            "hu": "súlyos"
+          },
+          "severity": "redflag",
+          "min": 20,
+          "max": 27
+        }
+      ]
+    },
+    "criticalItem": {
+      "id": "q9",
+      "minScore": 1,
+      "message": {
+        "hu": "A 9. tétel (önkárosítás gondolata) POZITÍV — az összpontszámtól függetlenül megbeszélést indokol."
+      }
+    },
+    "source": {
+      "cite": "Kroenke K, Spitzer RL, Williams JB. The PHQ-9. J Gen Intern Med 2001;16(9):606-613",
+      "pmid": "11556941"
+    },
+    "translation": {
+      "status": "unvalidated",
+      "note": {
+        "hu": "Létezik magyar fordítás, de a perinatális populációra vonatkozó validációról nincs tudomásunk."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A magyar tételszöveg nincs betöltve."
+      }
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "PERINATÁLIS POPULÁCIÓBAN AZ EPDS AZ ELSŐKÉNT VÁLASZTANDÓ: a PHQ-9 szomatikus tételei (alvászavar, fáradtság, étvágyváltozás) terhességben és gyermekágyban élettani okból is pozitívak, és felnyomják az összpontszámot."
+      }
+    }
+  },
+  {
+    "id": "inst.mspss",
+    "abbrev": "MSPSS",
+    "label": {
+      "hu": "Észlelt társas támogatás (ICHOM rövid változat)"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "family",
+        "label": {
+          "hu": "Család"
+        },
+        "variable": "psy.mspss.family",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          },
+          {
+            "score": 6,
+            "label": {
+              "hu": "6 pont"
+            }
+          },
+          {
+            "score": 7,
+            "label": {
+              "hu": "7 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "friends",
+        "label": {
+          "hu": "Barátok"
+        },
+        "variable": "psy.mspss.friends",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          },
+          {
+            "score": 6,
+            "label": {
+              "hu": "6 pont"
+            }
+          },
+          {
+            "score": 7,
+            "label": {
+              "hu": "7 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "significantOther",
+        "label": {
+          "hu": "Partner, közeli személy"
+        },
+        "variable": "psy.mspss.significantOther",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          },
+          {
+            "score": 6,
+            "label": {
+              "hu": "6 pont"
+            }
+          },
+          {
+            "score": 7,
+            "label": {
+              "hu": "7 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.mspss.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "alacsony észlelt támogatás"
+          },
+          "severity": "redflag",
+          "min": 3,
+          "max": 8
+        },
+        {
+          "label": {
+            "hu": "közepes"
+          },
+          "severity": "watch",
+          "min": 9,
+          "max": 15
+        },
+        {
+          "label": {
+            "hu": "magas"
+          },
+          "severity": "normal",
+          "min": 16,
+          "max": 21
+        }
+      ]
+    },
+    "source": {
+      "cite": "Zimet GD et al. The Multidimensional Scale of Perceived Social Support. J Pers Assess 1988;52(1):30-41; ICHOM Pregnancy and Childbirth Standard Set (PCB007–009)"
+    },
+    "translation": {
+      "status": "unvalidated",
+      "note": {
+        "hu": "A rövidített, három tételes ICHOM-változat magyar validációjáról nincs tudomásunk."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed"
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Az alacsony észlelt társas támogatás a perinatális depresszió egyik legerősebb MÓDOSÍTHATÓ kockázati tényezője — és az egyetlen, amin az ellátás szervezésével közvetlenül lehet segíteni."
+      }
+    }
+  },
+  {
+    "id": "inst.mibs",
+    "abbrev": "MIBS",
+    "label": {
+      "hu": "Anya-csecsemő kötődési skála"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "affection",
+        "label": {
+          "hu": "Gyengédség"
+        },
+        "variable": "psy.mibs.affection",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "resentment",
+        "label": {
+          "hu": "Ellenérzés"
+        },
+        "variable": "psy.mibs.resentment",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "neutrality",
+        "label": {
+          "hu": "Közömbösség"
+        },
+        "variable": "psy.mibs.neutrality",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "protective",
+        "label": {
+          "hu": "Óvó érzés"
+        },
+        "variable": "psy.mibs.protective",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "joy",
+        "label": {
+          "hu": "Öröm a babával"
+        },
+        "variable": "psy.mibs.joy",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.mibs.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "nem utal kötődési nehézségre"
+          },
+          "severity": "normal",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": {
+            "hu": "enyhe kötődési nehézség"
+          },
+          "severity": "watch",
+          "min": 3,
+          "max": 5
+        },
+        {
+          "label": {
+            "hu": "kötődési nehézség — megbeszélés indokolt"
+          },
+          "severity": "redflag",
+          "min": 6,
+          "max": 15
+        }
+      ]
+    },
+    "source": {
+      "cite": "Taylor A, Atkins R, Kumar R et al. A new Mother-to-Infant Bonding Scale. Arch Womens Ment Health 2005;8(1):45-51; ICHOM PCB105–112",
+      "pmid": "15868385"
+    },
+    "translation": {
+      "status": "unvalidated"
+    },
+    "itemText": {
+      "status": "notLicensed"
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "A KÖTŐDÉSI NEHÉZSÉG NEM SZÜLŐI KUDARC, és a megfogalmazás számít: a szégyen az őszinte választ elnyomja, és az eszközt használhatatlanná teszi."
+      }
+    }
+  },
+  {
+    "id": "inst.latch",
+    "abbrev": "LATCH",
+    "label": {
+      "hu": "LATCH szoptatási értékelő skála"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "L",
+        "label": {
+          "hu": "Mellrefogás (Latch)"
+        },
+        "variable": "neo.latch.latch",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "A",
+        "label": {
+          "hu": "Hallható nyelés (Audible swallowing)"
+        },
+        "variable": "neo.latch.audible",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "T",
+        "label": {
+          "hu": "Mellbimbó típusa (Type of nipple)"
+        },
+        "variable": "neo.latch.nipple",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "C",
+        "label": {
+          "hu": "Kényelem — mell és mellbimbó (Comfort)"
+        },
+        "variable": "neo.latch.comfort",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "H",
+        "label": {
+          "hu": "Segítségigény a tartáshoz (Hold)"
+        },
+        "variable": "neo.latch.hold",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "cite": "Jensen D, Wallace S, Kelsay P. LATCH: a breastfeeding charting system and documentation tool. J Obstet Gynecol Neonatal Nurs 1994;23(1):27-32",
+      "pmid": "8176525"
+    },
+    "translation": {
+      "status": "none",
+      "note": {
+        "hu": "Validált magyar fordítás nincs. Saját fordítással gyűjtött adat publikálhatósága korlátozott, és a vágóértékek átvihetősége nem igazolt."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A tételszöveg és a pontozási leírás licencköteles, és nincs betöltve. Amíg nincs meg, az eszköz NEM vehető fel: saját megfogalmazású tételekkel a skála nem LATCH, és az „≤ 5 → IBCLC” vágóérték sem érvényes rá."
+      }
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A szoptatás korai nehézségei a legjobban befolyásolható kimenetel: időben adott szakszerű segítséggel a legtöbb probléma megoldható, néhány nap múlva viszont már nem."
+      },
+      "pitfalls": {
+        "hu": "AZ ÖSSZPONTSZÁM ELFEDI A TÉTELT. Egy 8 pontos összeg is jelenthet 0 pontos „kényelem” tételt — vagyis fájdalmas szoptatást, ami önmagában beavatkozást indokol."
+      }
+    },
+    "calc": "calc.latch.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "IBCLC-konzultáció javallt — a szoptatás támogatást igényel"
+          },
+          "severity": "redflag",
+          "max": 5
+        },
+        {
+          "label": {
+            "hu": "figyelendő — a 48. életóránál 6 vagy kevesebb vörös zászló"
+          },
+          "severity": "watch",
+          "min": 6,
+          "max": 7
+        },
+        {
+          "label": {
+            "hu": "jól halad"
+          },
+          "severity": "normal",
+          "min": 8
+        }
+      ]
+    }
+  },
+  {
+    "id": "inst.whodas12",
+    "abbrev": "WHODAS 2.0-12",
+    "label": {
+      "hu": "WHO fogyatékosság-értékelő kérdőív, 12 tételes"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "1. tétel"
+        },
+        "variable": "prom.whodas.q1",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "2. tétel"
+        },
+        "variable": "prom.whodas.q2",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "q3",
+        "label": {
+          "hu": "3. tétel"
+        },
+        "variable": "prom.whodas.q3",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "q4",
+        "label": {
+          "hu": "4. tétel"
+        },
+        "variable": "prom.whodas.q4",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "q5",
+        "label": {
+          "hu": "5. tétel"
+        },
+        "variable": "prom.whodas.q5",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "q6",
+        "label": {
+          "hu": "6. tétel"
+        },
+        "variable": "prom.whodas.q6",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "id": "q7",
+        "label": {
+          "hu": "7. tétel"
+        },
+        "variable": "prom.whodas.q7",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "id": "q8",
+        "label": {
+          "hu": "8. tétel"
+        },
+        "variable": "prom.whodas.q8",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "id": "q9",
+        "label": {
+          "hu": "9. tétel"
+        },
+        "variable": "prom.whodas.q9",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "id": "q10",
+        "label": {
+          "hu": "10. tétel"
+        },
+        "variable": "prom.whodas.q10",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "id": "q11",
+        "label": {
+          "hu": "11. tétel"
+        },
+        "variable": "prom.whodas.q11",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "id": "q12",
+        "label": {
+          "hu": "12. tétel"
+        },
+        "variable": "prom.whodas.q12",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.whodas.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "a rendszer NEM ad sávot — ld. a pontozási megjegyzést"
+          },
+          "severity": "normal",
+          "min": 0
+        }
+      ]
+    },
+    "source": {
+      "cite": "Üstün TB et al. Measuring Health and Disability: Manual for WHO Disability Assessment Schedule (WHODAS 2.0). WHO 2010"
+    },
+    "translation": {
+      "status": "none",
+      "note": {
+        "hu": "Hivatalos magyar WHODAS-változat létezik, de nincs betöltve. Amíg nincs, a vele gyűjtött adat publikálhatósága korlátozott."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A WHODAS 2.0 használata a WHO engedélyéhez kötött, és a validált magyar tételszöveg nincs betöltve. Enélkül az eszköz NEM vehető fel."
+      }
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A funkcionalitás gyakran fontosabb a betegnek, mint a laboreredmény: azt méri, mit tud csinálni, nem azt, mit mutat a lelet."
+      },
+      "pitfalls": {
+        "hu": "AZ EGYSZERŰ ÖSSZEGZÉS ÉS A HIVATALOS IRT-PONTOZÁS MÁS SZÁMOT AD. A rendszer az egyszerűt számolja, és ezt ki is mondja — a kettő nem cserélhető fel."
+      }
+    }
+  },
+  {
+    "id": "inst.eq5d5l",
+    "abbrev": "EQ-5D-5L",
+    "label": {
+      "hu": "EQ-5D-5L életminőség-kérdőív"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "mobility",
+        "label": {
+          "hu": "Mozgékonyság"
+        },
+        "variable": "prom.eq5d.mobility",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1. szint"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2. szint"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3. szint"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4. szint"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5. szint"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "selfCare",
+        "label": {
+          "hu": "Önellátás"
+        },
+        "variable": "prom.eq5d.selfCare",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1. szint"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2. szint"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3. szint"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4. szint"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5. szint"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "activities",
+        "label": {
+          "hu": "Szokásos tevékenységek"
+        },
+        "variable": "prom.eq5d.activities",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1. szint"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2. szint"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3. szint"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4. szint"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5. szint"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "pain",
+        "label": {
+          "hu": "Fájdalom / rossz közérzet"
+        },
+        "variable": "prom.eq5d.pain",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1. szint"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2. szint"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3. szint"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4. szint"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5. szint"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "anxiety",
+        "label": {
+          "hu": "Szorongás / lehangoltság"
+        },
+        "variable": "prom.eq5d.anxiety",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1. szint"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2. szint"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3. szint"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4. szint"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5. szint"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.eq5d.profile",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "a kimenet PROFIL, nem pontszám — sáv nem értelmezhető"
+          },
+          "severity": "normal",
+          "min": 0
+        }
+      ]
+    },
+    "source": {
+      "cite": "Herdman M et al. Development and preliminary testing of the new five-level version of EQ-5D (EQ-5D-5L). Qual Life Res 2011;20(10):1727-1736",
+      "pmid": "21479777"
+    },
+    "translation": {
+      "status": "none",
+      "note": {
+        "hu": "Hivatalos magyar EQ-5D-5L változat létezik az EuroQol Groupnál, de nincs betöltve."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "Az EQ-5D-5L használatához az EuroQol Group regisztrációja és licence szükséges. A magyar ÉRTÉKKÉSZLET (value set) külön licenc — enélkül a rendszer hasznossági indexet NEM ad, csak profilt."
+      }
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "A PROFIL NEM HASZNOSSÁGI ÉRTÉK, és egy másik ország értékkészletével számolt index nem magyar adat. A VAS az egyetlen tétel, ami licencelt értékkészlet nélkül is értelmezhető."
+      }
+    }
+  },
+  {
+    "id": "inst.bses.sf",
+    "abbrev": "BSES-SF",
+    "label": {
+      "hu": "Szoptatási önhatékonyság skála, rövid forma"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "1. tétel"
+        },
+        "variable": "prom.bses.q1",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "2. tétel"
+        },
+        "variable": "prom.bses.q2",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "q3",
+        "label": {
+          "hu": "3. tétel"
+        },
+        "variable": "prom.bses.q3",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "q4",
+        "label": {
+          "hu": "4. tétel"
+        },
+        "variable": "prom.bses.q4",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "q5",
+        "label": {
+          "hu": "5. tétel"
+        },
+        "variable": "prom.bses.q5",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "q6",
+        "label": {
+          "hu": "6. tétel"
+        },
+        "variable": "prom.bses.q6",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "id": "q7",
+        "label": {
+          "hu": "7. tétel"
+        },
+        "variable": "prom.bses.q7",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "id": "q8",
+        "label": {
+          "hu": "8. tétel"
+        },
+        "variable": "prom.bses.q8",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "id": "q9",
+        "label": {
+          "hu": "9. tétel"
+        },
+        "variable": "prom.bses.q9",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "id": "q10",
+        "label": {
+          "hu": "10. tétel"
+        },
+        "variable": "prom.bses.q10",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "id": "q11",
+        "label": {
+          "hu": "11. tétel"
+        },
+        "variable": "prom.bses.q11",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "id": "q12",
+        "label": {
+          "hu": "12. tétel"
+        },
+        "variable": "prom.bses.q12",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "id": "q13",
+        "label": {
+          "hu": "13. tétel"
+        },
+        "variable": "prom.bses.q13",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "id": "q14",
+        "label": {
+          "hu": "14. tétel"
+        },
+        "variable": "prom.bses.q14",
+        "options": [
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          },
+          {
+            "score": 5,
+            "label": {
+              "hu": "5 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.bses.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "a skálának nincs általánosan elfogadott vágóértéke"
+          },
+          "severity": "normal",
+          "min": 0
+        }
+      ]
+    },
+    "source": {
+      "cite": "Dennis CL. The breastfeeding self-efficacy scale: psychometric assessment of the short form. J Obstet Gynecol Neonatal Nurs 2003;32(6):734-744",
+      "pmid": "14649593"
+    },
+    "translation": {
+      "status": "none",
+      "note": {
+        "hu": "Validált magyar fordítás nincs betöltve."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A tételszöveg szerzői jogvédett, és nincs betöltve. Enélkül az eszköz NEM vehető fel."
+      }
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A szoptatási önhatékonyság a szoptatás folytatásának legerősebb MÓDOSÍTHATÓ előrejelzője: a terhesség alatt mért érték alapján célzottan lehet támogatást adni."
+      }
+    }
+  },
+  {
+    "id": "inst.bssr",
+    "abbrev": "BSS-R",
+    "label": {
+      "hu": "Szülési elégedettség skála, átdolgozott"
+    },
+    "items": [
+      {
+        "index": 1,
+        "id": "q1",
+        "label": {
+          "hu": "1. tétel"
+        },
+        "variable": "prom.bssr.q1",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "id": "q2",
+        "label": {
+          "hu": "2. tétel"
+        },
+        "variable": "prom.bssr.q2",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "id": "q3",
+        "label": {
+          "hu": "3. tétel"
+        },
+        "variable": "prom.bssr.q3",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "id": "q4",
+        "label": {
+          "hu": "4. tétel"
+        },
+        "variable": "prom.bssr.q4",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "id": "q5",
+        "label": {
+          "hu": "5. tétel"
+        },
+        "variable": "prom.bssr.q5",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "id": "q6",
+        "label": {
+          "hu": "6. tétel"
+        },
+        "variable": "prom.bssr.q6",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "id": "q7",
+        "label": {
+          "hu": "7. tétel"
+        },
+        "variable": "prom.bssr.q7",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "id": "q8",
+        "label": {
+          "hu": "8. tétel"
+        },
+        "variable": "prom.bssr.q8",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "id": "q9",
+        "label": {
+          "hu": "9. tétel"
+        },
+        "variable": "prom.bssr.q9",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "id": "q10",
+        "label": {
+          "hu": "10. tétel"
+        },
+        "variable": "prom.bssr.q10",
+        "options": [
+          {
+            "score": 0,
+            "label": {
+              "hu": "0 pont"
+            }
+          },
+          {
+            "score": 1,
+            "label": {
+              "hu": "1 pont"
+            }
+          },
+          {
+            "score": 2,
+            "label": {
+              "hu": "2 pont"
+            }
+          },
+          {
+            "score": 3,
+            "label": {
+              "hu": "3 pont"
+            }
+          },
+          {
+            "score": 4,
+            "label": {
+              "hu": "4 pont"
+            }
+          }
+        ]
+      }
+    ],
+    "calc": "calc.bssr.total",
+    "bands": {
+      "default": [
+        {
+          "label": {
+            "hu": "az alskálák besorolása nincs betöltve — csak összpontszám"
+          },
+          "severity": "normal",
+          "min": 0
+        }
+      ]
+    },
+    "source": {
+      "cite": "Hollins Martin CJ, Martin CR. Development and psychometric properties of the Birth Satisfaction Scale-Revised (BSS-R). Midwifery 2014;30(6):610-619",
+      "pmid": "23976427"
+    },
+    "translation": {
+      "status": "none",
+      "note": {
+        "hu": "Validált magyar fordítás nincs betöltve."
+      }
+    },
+    "itemText": {
+      "status": "notLicensed",
+      "note": {
+        "hu": "A BSS-R használata licencfeltételekhez kötött, és a validált magyar tételszöveg nincs betöltve."
+      }
+    },
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A szülési élmény önálló kimenetel, nem az elégedettség árnyalata: évekre meghatározza a következő terhességgel kapcsolatos döntéseket."
+      }
+    }
+  }
+]

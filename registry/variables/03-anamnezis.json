@@ -1,0 +1,4458 @@
+[
+  {
+    "id": "hx.eeszt.age",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Életkor szerinti kockázat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: életkor szerinti kockázat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.assisted",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Asszisztált reprodukció"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: asszisztált reprodukció."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.bmi",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Testtömegindex szerinti kockázat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: testtömegindex szerinti kockázat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.chronicDisease",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Krónikus betegség"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: krónikus betegség."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.infection",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fertőzés"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: fertőzés."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.multiple",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Többes terhesség (EESZT rizikókód)"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: többes terhesség."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.parity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Parity szerinti kockázat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: parity szerinti kockázat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.prevLoss",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi terhességvesztés"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: korábbi terhességvesztés."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.prevPreterm",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi koraszülés (EESZT rizikókód)"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: korábbi koraszülés."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.psych",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pszichiátriai kockázat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: pszichiátriai kockázat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.social",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szociális kockázat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: szociális kockázat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.eeszt.substance",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szerhasználat"
+    },
+    "module": "hx.eeszt",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hivatalos magyar várandós-rizikókód: szerhasználat."
+      },
+      "whyItMatters": {
+        "hu": "Az EESZT felé küldött kockázati besorolás tétele — a 12. dokumentumtípus (terhességi kockázatértékelés) ebből áll össze."
+      },
+      "pitfalls": {
+        "hu": "Ezek nagyrészt LEVEZETHETŐK a többi mezőből; a kézi kitöltés a 13. modul feladata lesz, hogy a besorolás indoklása látszódjon."
+      }
+    }
+  },
+  {
+    "id": "hx.family.ageAtDeath",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Életkor a halálozáskor"
+    },
+    "module": "hx.family",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "unit": "a",
+    "domain": {
+      "min": 0,
+      "max": 120
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány évesen hunyt el, ha elhunyt."
+      }
+    }
+  },
+  {
+    "id": "hx.family.ageAtOnset",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Életkor a diagnóziskor"
+    },
+    "module": "hx.family",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "unit": "a",
+    "domain": {
+      "min": 0,
+      "max": 110
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány évesen alakult ki a betegség."
+      },
+      "whyItMatters": {
+        "hu": "A korai kezdet — például 50 év alatti emlőrák — örökletes hajlamra utal, és a genetikai tanácsadás indikációja."
+      }
+    }
+  },
+  {
+    "id": "hx.family.dataSource",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az adat forrása"
+    },
+    "module": "hx.family",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "valueSet": [
+      {
+        "code": "patient",
+        "label_hu": "A beteg mondta"
+      },
+      {
+        "code": "family",
+        "label_hu": "Családtag mondta"
+      },
+      {
+        "code": "records",
+        "label_hu": "Orvosi dokumentációból"
+      },
+      {
+        "code": "genetic-report",
+        "label_hu": "Genetikai leletből"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Kitől származik az információ."
+      }
+    }
+  },
+  {
+    "id": "hx.family.diagnosisReliability",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A diagnózis megbízhatósága"
+    },
+    "module": "hx.family",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "valueSet": [
+      {
+        "code": "documented",
+        "label_hu": "Dokumentált — lelet látta"
+      },
+      {
+        "code": "reported",
+        "label_hu": "Elmondás alapján"
+      },
+      {
+        "code": "suspected",
+        "label_hu": "Csak gyanú"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire megbízható a családtag diagnózisa."
+      },
+      "whyItMatters": {
+        "hu": "Ez teszi a családfát genetikai bemenetté, nem anekdotává. Egy megerősített genetikai lelet VISSZAÍRJA a családfát: a megbízhatóság `reported`-ről `documented`-re vált."
+      }
+    }
+  },
+  {
+    "id": "hx.family.disease",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Betegség"
+    },
+    "module": "hx.family",
+    "datatype": "coded-multi",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "valueSet": [
+      {
+        "code": "cancer.breast",
+        "label_hu": "Emlőrák"
+      },
+      {
+        "code": "cancer.ovary",
+        "label_hu": "Petefészekrák"
+      },
+      {
+        "code": "cancer.colon",
+        "label_hu": "Vastagbélrák"
+      },
+      {
+        "code": "cancer.uterus",
+        "label_hu": "Méhtestrák"
+      },
+      {
+        "code": "dm",
+        "label_hu": "Cukorbetegség"
+      },
+      {
+        "code": "htn",
+        "label_hu": "Magas vérnyomás"
+      },
+      {
+        "code": "preeclampsia",
+        "label_hu": "Praeeclampsia"
+      },
+      {
+        "code": "vte",
+        "label_hu": "Thrombosis"
+      },
+      {
+        "code": "cardiac",
+        "label_hu": "Szívbetegség"
+      },
+      {
+        "code": "stroke",
+        "label_hu": "Stroke"
+      },
+      {
+        "code": "thyroid",
+        "label_hu": "Pajzsmirigy-betegség"
+      },
+      {
+        "code": "psych",
+        "label_hu": "Pszichiátriai betegség"
+      },
+      {
+        "code": "epilepsy",
+        "label_hu": "Epilepszia"
+      },
+      {
+        "code": "congenital",
+        "label_hu": "Veleszületett rendellenesség"
+      },
+      {
+        "code": "genetic",
+        "label_hu": "Ismert genetikai betegség"
+      },
+      {
+        "code": "hearing",
+        "label_hu": "Halláscsökkenés"
+      },
+      {
+        "code": "cf",
+        "label_hu": "Cisztás fibrózis"
+      },
+      {
+        "code": "hemoglobinopathy",
+        "label_hu": "Haemoglobinopathia"
+      },
+      {
+        "code": "muscular",
+        "label_hu": "Izombetegség"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A családtagnál fennálló betegség vagy betegségek."
+      }
+    }
+  },
+  {
+    "id": "hx.family.documentationGap",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Dokumentációs hiány"
+    },
+    "module": "hx.family",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "event",
+    "documentation": {
+      "definition": {
+        "hu": "Hiányzik-e a dokumentáció, amit érdemes lenne beszerezni."
+      },
+      "whyItMatters": {
+        "hu": "Ez a mező mondja meg, hol érdemes utánajárni — a családfa így nem statikus, hanem pontosítható."
+      }
+    }
+  },
+  {
+    "id": "hx.family.relation",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Rokonsági fok"
+    },
+    "module": "hx.family",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "valueSet": [
+      {
+        "code": "self",
+        "label_hu": "Saját"
+      },
+      {
+        "code": "mother",
+        "label_hu": "Anya"
+      },
+      {
+        "code": "father",
+        "label_hu": "Apa"
+      },
+      {
+        "code": "sister",
+        "label_hu": "Nővér/húg"
+      },
+      {
+        "code": "brother",
+        "label_hu": "Fivér"
+      },
+      {
+        "code": "child",
+        "label_hu": "Gyermek"
+      },
+      {
+        "code": "mother.mother",
+        "label_hu": "Anyai nagyanya"
+      },
+      {
+        "code": "mother.father",
+        "label_hu": "Anyai nagyapa"
+      },
+      {
+        "code": "mother.sister",
+        "label_hu": "Anyai nagynéni"
+      },
+      {
+        "code": "mother.brother",
+        "label_hu": "Anyai nagybácsi"
+      },
+      {
+        "code": "father.mother",
+        "label_hu": "Apai nagyanya"
+      },
+      {
+        "code": "father.father",
+        "label_hu": "Apai nagyapa"
+      },
+      {
+        "code": "father.sister",
+        "label_hu": "Apai nagynéni"
+      },
+      {
+        "code": "father.brother",
+        "label_hu": "Apai nagybácsi"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A családtag rokonsági foka a beteghez képest."
+      },
+      "whyItMatters": {
+        "hu": "A családfa a 23. genetikai modul legfontosabb bemenete."
+      },
+      "pitfalls": {
+        "hu": "Rokononként KÜLÖN rekord, nem lapos jelölőnégyzet-lista — három generáció, anyai és apai ág elkülönítve."
+      }
+    }
+  },
+  {
+    "id": "hx.life.alcohol",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Alkoholfogyasztás"
+    },
+    "module": "hx.life",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem fogyaszt"
+      },
+      {
+        "code": "occasional",
+        "label_hu": "Alkalmi"
+      },
+      {
+        "code": "regular",
+        "label_hu": "Rendszeres"
+      },
+      {
+        "code": "heavy",
+        "label_hu": "Nagy mennyiségű"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Alkoholfogyasztási szokás."
+      },
+      "whyItMatters": {
+        "hu": "Terhességben nincs ismert biztonságos mennyiség — a magzati alkohol-spektrum zavar megelőzhető."
+      }
+    },
+    "standards": {
+      "ichom": "PCB021"
+    }
+  },
+  {
+    "id": "hx.life.drugs",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kábítószer-használat"
+    },
+    "module": "hx.life",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Használ-e tiltott szert vagy nem orvosi célra gyógyszert."
+      },
+      "whyItMatters": {
+        "hu": "Az újszülött megvonási szindrómája (NOWS) miatt a szülőszobának tudnia kell róla; a 15. modul ESC-NOW értékelése ehhez kapcsolódik."
+      },
+      "pitfalls": {
+        "hu": "Bizalmi kérdés: a rögzítés célja az ellátás tervezése, nem a szankció. Ezt a kérdés feltevésekor ki kell mondani."
+      }
+    },
+    "standards": {
+      "ichom": "PCB022"
+    }
+  },
+  {
+    "id": "hx.life.smoking",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Dohányzás"
+    },
+    "module": "hx.life",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "never",
+        "label_hu": "Soha nem dohányzott"
+      },
+      {
+        "code": "former",
+        "label_hu": "Leszokott"
+      },
+      {
+        "code": "current",
+        "label_hu": "Jelenleg is dohányzik"
+      },
+      {
+        "code": "passive",
+        "label_hu": "Passzív dohányzás"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Dohányzási státusz."
+      },
+      "whyItMatters": {
+        "hu": "A koraszülés, a növekedési elmaradás és a lepényleválás kockázatát is emeli; a leszokás támogatása a terhesgondozás kötelező eleme."
+      }
+    },
+    "standards": {
+      "ichom": "PCB020"
+    }
+  },
+  {
+    "id": "hx.life.smoking.perDay",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Napi cigaretta"
+    },
+    "module": "hx.life",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 80
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány szál cigarettát szív naponta."
+      }
+    }
+  },
+  {
+    "id": "hx.origin.birthWeight",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Saját születési súly"
+    },
+    "module": "hx.origin",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "g",
+    "domain": {
+      "min": 300,
+      "max": 6500
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A beteg saját születési súlya."
+      },
+      "whyItMatters": {
+        "hu": "A DOHaD-elmélet szerint a beteg saját magzati fejlődése befolyásolja a felnőttkori anyagcsere- és keringési kockázatát — és a saját terhességének kimenetelét is."
+      }
+    }
+  },
+  {
+    "id": "hx.origin.maternalPreeclampsia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az anyja praeeclampsiás volt-e"
+    },
+    "module": "hx.origin",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beteg anyjának volt-e praeeclampsiája a vele való terhességben."
+      },
+      "whyItMatters": {
+        "hu": "Öröklődő hajlam: a NICE közepes kockázatú kategóriájának egyik tétele."
+      }
+    }
+  },
+  {
+    "id": "hx.origin.preterm",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Saját koraszülöttség"
+    },
+    "module": "hx.origin",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beteg maga koraszülött volt-e."
+      },
+      "whyItMatters": {
+        "hu": "Az anyai koraszülöttség a saját koraszülés kockázatát is emeli."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.anxiety",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szorongásos zavar"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Diagnosztizált szorongásos zavar."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.bipolar",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bipoláris zavar"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt bipoláris affektív zavar."
+      },
+      "whyItMatters": {
+        "hu": "A postpartum pszichózis legerősebb rizikófaktora — a szakirodalomban közölt esélyhányados nagyságrendje 35× körüli."
+      },
+      "pitfalls": {
+        "hu": "A 08. modul a kockázatot KVALITATÍVAN kezeli: felsorolja a rizikófaktorokat és a hozzájuk tartozó publikált OR-okat, kombinált szám nélkül. Külön OR-ok szorzása nem ad érvényes együttes kockázatot."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.depression",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Depresszió"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Kezelt vagy kezeletlen depresszió az anamnézisben."
+      },
+      "whyItMatters": {
+        "hu": "Az EPDS értelmezését és a postpartum depresszió kockázatát is befolyásolja."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.eatingDisorder",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Evészavar"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Anorexia, bulimia vagy más evészavar."
+      },
+      "whyItMatters": {
+        "hu": "A terhességi súlygyarapodás és a magzati növekedés követését befolyásolja."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.prevPPD",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi postpartum depresszió"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Korábbi szülés után kialakult depresszió."
+      }
+    }
+  },
+  {
+    "id": "hx.psy.prevPPP",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi postpartum pszichózis"
+    },
+    "module": "hx.psy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Korábbi szülés után kialakult pszichózis."
+      },
+      "whyItMatters": {
+        "hu": "Hospitalizációs terv és pszichiátriai konzílium indokolt még a szülés előtt."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.contraception",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fogamzásgátlás"
+    },
+    "module": "hx.repro",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem használt"
+      },
+      {
+        "code": "coc",
+        "label_hu": "Kombinált tabletta"
+      },
+      {
+        "code": "pop",
+        "label_hu": "Minitabletta"
+      },
+      {
+        "code": "iud.cu",
+        "label_hu": "Réz IUD"
+      },
+      {
+        "code": "iud.lng",
+        "label_hu": "Hormonos IUD"
+      },
+      {
+        "code": "implant",
+        "label_hu": "Implantátum"
+      },
+      {
+        "code": "injection",
+        "label_hu": "Injekció"
+      },
+      {
+        "code": "barrier",
+        "label_hu": "Barrier"
+      },
+      {
+        "code": "sterilisation",
+        "label_hu": "Sterilizáció"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen fogamzásgátlást használt legutóbb."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.currentPregnancy.accreta",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Placenta accreta gyanúja"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Beszűrődő lepény gyanúja vagy igazolása."
+      },
+      "whyItMatters": {
+        "hu": "Masszív vérzés kockázata; multidiszciplináris tervezés és vérbank-értesítés kell."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.currentPregnancy.preeclampsia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Praeeclampsia a jelen terhességben"
+    },
+    "module": "hx",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Fennáll-e praeeclampsia a most futó terhességben."
+      },
+      "whyItMatters": {
+        "hu": "A methylergonovin kapuja: praeeclampsiában és magas vérnyomásban az ergot-származék súlyos vérnyomás-emelkedést okozhat. A `hx.sys.htn` a KORÁBBI magas vérnyomás, ez pedig a JELEN terhesség állapota — a kettő külön adat, és a kapu mindkettőre néz."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.currentPregnancy.previa",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Placenta previa a jelen terhességben"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Elölfekvő lepény igazolva."
+      },
+      "whyItMatters": {
+        "hu": "Hüvelyi vizsgálat ELLENJAVALLT; tervezett császármetszés és vérkészítmény-előkészítés."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.cycleLength",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ciklushossz"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "d",
+    "domain": {
+      "min": 15,
+      "max": 90
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az átlagos ciklushossz napokban."
+      },
+      "whyItMatters": {
+        "hu": "A Naegele-szabály 28 napos ciklust feltételez; ettől eltérő hossznál a várható szülési időpont korrigálandó."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.gdm",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi terhességi cukorbetegség"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e GDM korábbi terhességben."
+      },
+      "whyItMatters": {
+        "hu": "KORAI OGTT válik esedékessé (16–18. hét), nem a szokásos 24–28. héten."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.intervention.curettage",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhűri beavatkozás"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e curettage vagy más méhűri beavatkozás terhesség után."
+      },
+      "whyItMatters": {
+        "hu": "Asherman-szindróma és placenta accreta kockázatát emeli."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.loss.ectopic",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhen kívüli terhesség"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e méhen kívüli terhesség."
+      },
+      "whyItMatters": {
+        "hu": "VÖRÖS ZÁSZLÓ: ismétlődés kockázata magas, és a korai terhesség lokalizációját ultrahanggal igazolni kell, mielőtt bármi mást feltételeznénk."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.loss.induced",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Művi terhességmegszakítás"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 15
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Művi úton befejezett terhességek száma."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.loss.missed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Nem fejlődő terhesség"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 15
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Missed abortion — a magzat elhalt, de a vetélés nem indult meg."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.loss.mola",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Molaterhesség"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e mola hydatidosa."
+      },
+      "whyItMatters": {
+        "hu": "VÖRÖS ZÁSZLÓ: hCG-követés és fogamzásgátlás kötelező a megadott ideig; a következő terhesség korai ultrahangot igényel."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.loss.spontaneous",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Spontán vetélés"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 15
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A 24. hét előtt spontán elveszett terhességek száma."
+      },
+      "whyItMatters": {
+        "hu": "Három vagy több ismétlődő vetélés kivizsgálási küszöb: thrombophilia, APS, kariotípus, méhüregi eltérés."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.menarche",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Menarche életkora"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "a",
+    "domain": {
+      "min": 8,
+      "max": 20
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány éves korában volt az első menstruáció."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.preeclampsia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi praeeclampsia"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e praeeclampsia korábbi terhességben."
+      },
+      "whyItMatters": {
+        "hu": "A NICE szerinti magas kockázatú kategória: kis dózisú acetilszalicilsav-profilaxis a 12. héttől indokolt."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.cs",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi császármetszés"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Korábbi császármetszések száma."
+      },
+      "whyItMatters": {
+        "hu": "A VBAC-esélyt, a placenta accreta kockázatát és a vérzési kockázatot is meghatározza."
+      },
+      "pitfalls": {
+        "hu": "Kettő vagy több császármetszés után a hüvelyi szülés megkísérlése külön mérlegelést kíván."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.pph",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi szülés utáni vérzés"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e jelentős postpartum vérzés."
+      },
+      "whyItMatters": {
+        "hu": "A CMQCC vérzési kockázatbecslés közvetlen bemenete."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.preterm",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi koraszülés (saját anamnézis)"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e 37. hét előtti szülés."
+      },
+      "whyItMatters": {
+        "hu": "Az ismétlődő koraszülés kockázata jelentős; progeszteron-profilaxis és cervixhossz-mérés indokolt lehet."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.recurringIndication",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ismétlődő császármetszési javallat"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A korábbi császármetszés oka fennáll-e most is (pl. szűk medence)."
+      },
+      "whyItMatters": {
+        "hu": "Ismétlődő javallat mellett a VBAC nem kísérelhető meg."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.shoulderDystocia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi vállelakadás"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e vállelakadás korábbi szülésnél."
+      },
+      "whyItMatters": {
+        "hu": "Ismétlődés kockázata jelentős; a szülésmód tervezésekor mérlegelendő."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.tear34",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi harmad- vagy negyedfokú gátrepedés"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e sphincter-érintettséggel járó gátsérülés."
+      },
+      "whyItMatters": {
+        "hu": "Ismétlődés kockázata; a szülésmód megosztott döntést kíván."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.vaginal",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi hüvelyi szülés"
+    },
+    "module": "hx.repro",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 20
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hüvelyi úton lezajlott szülések száma."
+      },
+      "whyItMatters": {
+        "hu": "A VBAC Grobman-modell egyik legerősebb pozitív prediktora."
+      }
+    }
+  },
+  {
+    "id": "hx.repro.prevBirth.vbac",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi sikeres VBAC"
+    },
+    "module": "hx.repro",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e császármetszés utáni sikeres hüvelyi szülés."
+      },
+      "whyItMatters": {
+        "hu": "A legerősebb prediktora a következő VBAC sikerének."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.b12",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "B12-vitamin"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: b12-vitamin."
+      },
+      "whyItMatters": {
+        "hu": "Vegán étrend és bariátriai műtét után kötelező."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.calcium",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kalcium"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: kalcium."
+      },
+      "whyItMatters": {
+        "hu": "Elégtelen bevitel esetén a praeeclampsia kockázatát is csökkentheti."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.dha",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Omega-3 (DHA)"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: omega-3 (dha)."
+      },
+      "whyItMatters": {
+        "hu": "A magzati idegrendszer fejlődéséhez."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.folate",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Folsav"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: folsav."
+      },
+      "whyItMatters": {
+        "hu": "A velőcsőzáródási rendellenesség megelőzésére — a fogamzás ELŐTT egy hónappal kell elkezdeni, nem a terhesség felismerésekor."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.folate.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Folsav napi dózisa"
+    },
+    "module": "hx.supp",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "unit": "ug",
+    "domain": {
+      "min": 0,
+      "max": 5000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A szedett folsav napi mennyisége."
+      },
+      "whyItMatters": {
+        "hu": "A standard dózis 400 µg; korábbi velőcsőzáródási rendellenesség, epilepszia-terápia vagy bariátriai műtét után NAGYOBB dózis indokolt."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.iodine",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Jód"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: jód."
+      },
+      "whyItMatters": {
+        "hu": "A magzati pajzsmirigy fejlődéséhez szükséges."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.iron",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vas"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: vas."
+      },
+      "whyItMatters": {
+        "hu": "Vashiányos vérszegénység megelőzése és kezelése."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.multivit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhesvitamin"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: terhesvitamin."
+      },
+      "whyItMatters": {
+        "hu": "Kombinált készítmény."
+      }
+    }
+  },
+  {
+    "id": "hx.supp.vitD",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "D-vitamin"
+    },
+    "module": "hx.supp",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Szedi-e: d-vitamin."
+      },
+      "whyItMatters": {
+        "hu": "Terhességben széles körben ajánlott pótlás."
+      }
+    }
+  },
+  {
+    "id": "hx.surg.anesthesiaProblem",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Aneszteziológiai probléma"
+    },
+    "module": "hx.surg",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Volt-e érzéstelenítéssel kapcsolatos probléma."
+      },
+      "whyItMatters": {
+        "hu": "Nehéz légútbiztosítás, malignus hyperthermia vagy elhúzódó ébredés — mindegyik megváltoztatja a következő érzéstelenítés tervét."
+      }
+    }
+  },
+  {
+    "id": "hx.surg.complication",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Volt-e szövődmény"
+    },
+    "module": "hx.surg",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "event",
+    "documentation": {
+      "definition": {
+        "hu": "Járt-e a műtét szövődménnyel."
+      },
+      "whyItMatters": {
+        "hu": "Az aneszteziológiai terv bemenete; korábbi nehéz intubáció vagy malignus hyperthermia életmentő információ."
+      }
+    }
+  },
+  {
+    "id": "hx.surg.spineIssue",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gerinc-elváltozás vagy műtét"
+    },
+    "module": "hx.surg",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "scoliosis",
+        "label_hu": "Scoliosis"
+      },
+      {
+        "code": "surgery",
+        "label_hu": "Gerincműtét volt"
+      },
+      {
+        "code": "hernia",
+        "label_hu": "Porckorongsérv"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Van-e a gerincen olyan eltérés, ami a regionális érzéstelenítést befolyásolja."
+      },
+      "whyItMatters": {
+        "hu": "A gátlásos érzéstelenítés (epidurális, spinális) kivitelezhetőségét dönti el — a szülőszobán ez a fájdalomcsillapítás alapkérdése."
+      }
+    }
+  },
+  {
+    "id": "hx.surg.type",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi műtét"
+    },
+    "module": "hx.surg",
+    "datatype": "coded",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "valueSet": [
+      {
+        "code": "cs",
+        "label_hu": "Császármetszés"
+      },
+      {
+        "code": "myomectomy",
+        "label_hu": "Myomaeltávolítás"
+      },
+      {
+        "code": "laparoscopy",
+        "label_hu": "Laparoszkópia"
+      },
+      {
+        "code": "laparotomy",
+        "label_hu": "Laparotómia"
+      },
+      {
+        "code": "hysteroscopy",
+        "label_hu": "Hiszteroszkópia"
+      },
+      {
+        "code": "conization",
+        "label_hu": "Konizáció"
+      },
+      {
+        "code": "appendectomy",
+        "label_hu": "Vakbélműtét"
+      },
+      {
+        "code": "cholecystectomy",
+        "label_hu": "Epeműtét"
+      },
+      {
+        "code": "bariatric",
+        "label_hu": "Bariátriai műtét"
+      },
+      {
+        "code": "cardiac",
+        "label_hu": "Szívműtét"
+      },
+      {
+        "code": "spine",
+        "label_hu": "Gerincműtét"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen műtéten esett át."
+      }
+    }
+  },
+  {
+    "id": "hx.surg.year",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A műtét éve"
+    },
+    "module": "hx.surg",
+    "datatype": "quantity",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "cardinality": "event",
+    "unit": "a",
+    "domain": {
+      "min": 1930,
+      "max": 2100
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Melyik évben történt."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.anemia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Krónikus vérszegénység"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Terhesség előtt fennálló anaemia."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.aps",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Antifoszfolipid szindróma"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt APS."
+      },
+      "whyItMatters": {
+        "hu": "Ismétlődő vetélés és placentáris elégtelenség oka; kezelése terhesség alatt kötelező."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.asthma",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Asztma / krónikus légúti betegség",
+      "en": "Asthma"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "derivation": {
+      "kind": "prefill",
+      "from": [
+        {
+          "source": "self.previousVisit",
+          "policy": "carryForward",
+          "maxAge": "P90D"
+        }
+      ],
+      "notify": true
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Ismert asztma vagy krónikus légúti betegség."
+      },
+      "whyItMatters": {
+        "hu": "A carboprost abszolút kontraindikációja — a szülőszobai hard-stop kapu ebből a mezőből aktiválódik."
+      },
+      "pitfalls": {
+        "hu": "A beteg tölti ki a betegfelvételkor. Az így rögzült érték eredete `patient` — a precedencia legalja —, ezért a klinikusi korrekció felülírja. Hard-stop kapu MEGERŐSÍTÉS NÉLKÜL nem épülhet rá."
+      }
+    },
+    "patientEntry": true,
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ]
+  },
+  {
+    "id": "hx.sys.autoimmune",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Autoimmun betegség"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "SLE, rheumatoid arthritis vagy más autoimmun kórkép."
+      },
+      "whyItMatters": {
+        "hu": "Az SLE terhességben fellángolhat, és a praeeclampsiától nehezen különíthető el."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.bariatric",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bariátriai műtét"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Gyomor- vagy bélátalakító fogyasztó műtét."
+      },
+      "whyItMatters": {
+        "hu": "Hat kötelező szupplementációt indít (vas, B12, folsav, D, kalcium), és a GDM-szűrés protokollját is módosítja — az OGTT dumping-szindrómát okozhat."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.bleedingDisorder",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vérzékenység"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert alvadási zavar, pl. von Willebrand."
+      },
+      "whyItMatters": {
+        "hu": "A szülés körüli vérzés kockázatát alapvetően megváltoztatja; haematológiai konzílium kell."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.cardiac.congenital",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Veleszületett szívhiba"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert congenitalis vitium, műtött vagy nem."
+      },
+      "whyItMatters": {
+        "hu": "A magzat szívhiba-kockázatát is emeli — célzott magzati echo indokolt."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.cardiac.mechValve",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mechanikus műbillentyű"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Beültetett mechanikus szívbillentyű."
+      },
+      "whyItMatters": {
+        "hu": "CARPREG II 3 pont, és a terhesség alatti antikoaguláció legnehezebb kérdése."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.cardiac.prevEvent",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi szívesemény vagy ritmuszavar"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Korábbi infarktus, szívelégtelenség, aritmia."
+      },
+      "whyItMatters": {
+        "hu": "A CARPREG II 3 pontos tétele."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.celiac",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Coeliakia"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt gluténérzékenység."
+      },
+      "whyItMatters": {
+        "hu": "Vashiány és tápanyaghiány forrása; a 07. diéta modul bemenete."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.dm1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "1-es típusú diabetes"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Inzulinfüggő cukorbetegség."
+      },
+      "whyItMatters": {
+        "hu": "A terhesség előtti glykaemiás kontroll a magzati fejlődési rendellenesség kockázatát dönti el."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.dm2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "2-es típusú diabetes"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Nem inzulinfüggő cukorbetegség."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.endometriosis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Endometriosis"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt endometriosis."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.epilepsy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Epilepszia"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert epilepszia."
+      },
+      "whyItMatters": {
+        "hu": "Az antiepileptikumok jelentős része teratogén — a terápia felülvizsgálata a fogamzás ELŐTT indokolt, nem utána."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.htn",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Magas vérnyomás"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert, terhesség előtt fennálló hypertonia."
+      },
+      "whyItMatters": {
+        "hu": "A krónikus hypertonia a praeeclampsia legerősebb egyedi rizikófaktora, és a methylergonovin kontraindikációja."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.ibd",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gyulladásos bélbetegség"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Crohn-betegség vagy colitis ulcerosa."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.liver",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Krónikus májbetegség"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert májbetegség."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.migraine",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Migrén"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert migrén, aurával vagy anélkül."
+      },
+      "whyItMatters": {
+        "hu": "Az aurás migrén a stroke kockázatát emeli, és befolyásolja a fogamzásgátlás választását."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.myoma",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Myoma"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert méhmyoma."
+      },
+      "whyItMatters": {
+        "hu": "Elhelyezkedéstől függően a szülésmódot és a vérzési kockázatot is befolyásolja."
+      },
+      "pitfalls": {
+        "hu": "A „nagy myoma” leírás helyett a méret MÉRENDŐ — a 04. modul `myoma.diameter_mm` mezője."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.osa",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Alvási apnoe"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt obstruktív alvási apnoe."
+      },
+      "whyItMatters": {
+        "hu": "Terhességben a praeeclampsia és a GDM kockázatát emeli."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.pcos",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "PCOS"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Policisztás ovárium szindróma."
+      },
+      "whyItMatters": {
+        "hu": "A terhességi diabetes és a praeeclampsia kockázatát is emeli."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.renal",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Krónikus vesebetegség"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert vesebetegség vagy csökkent vesefunkció."
+      },
+      "whyItMatters": {
+        "hu": "A praeeclampsia elkülönítését nehezíti, és a gyógyszerdózisokat befolyásolja."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.thrombophilia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ismert thrombophilia"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Laboratóriumilag igazolt alvadási hajlam."
+      },
+      "whyItMatters": {
+        "hu": "Az IPRACS szülőszobai FIX-kártyáján is megjelenik — ugyanaz a változó, tükrözve."
+      },
+      "pitfalls": {
+        "hu": "Nem minden „családban volt thrombosis” jelent thrombophiliát: itt IGAZOLT eltérés kell."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.thyroid.hyper",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pajzsmirigy-túlműködés"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert hyperthyreosis vagy Basedow-kór."
+      },
+      "whyItMatters": {
+        "hu": "A TRAK-szint a magzati pajzsmirigyet is érinti — mérése terhességben kötelező."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.thyroid.hypo",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Pajzsmirigy-alulműködés"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ismert hypothyreosis."
+      },
+      "whyItMatters": {
+        "hu": "Terhesség megállapításakor a levotiroxin-dózis azonnali emelése (kb. +25–30%); TSH-cél az I. trimeszterben < 2,5 mIU/L; TSH 4 hetente a 20. hétig."
+      },
+      "pitfalls": {
+        "hu": "Ez a v16 „terhességi vonal” mintapéldája: állítás + hozzá kötött, azonnali teendő."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.uterineAnomaly",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Méhfejlődési rendellenesség"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Uterus septus, bicornis, unicornis."
+      },
+      "whyItMatters": {
+        "hu": "Koraszülés, farfekvés és ismétlődő vetélés oka lehet."
+      }
+    }
+  },
+  {
+    "id": "hx.sys.vte",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Korábbi thrombosis vagy embólia"
+    },
+    "module": "hx.sys",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported",
+      "prefilled"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mélyvénás thrombosis vagy tüdőembólia az anamnézisben."
+      },
+      "whyItMatters": {
+        "hu": "A Caprini/RCOG VTE-kockázat legsúlyosabb tétele; thromboprofilaxist indokolhat."
+      }
+    }
+  },
+  {
+    "id": "hx.gyn.cervix.adequateScreening",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Dokumentáltan megfelelő méhnyakszűrési előzmény"
+    },
+    "module": "hx.gyn",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A megelőző 10 évben dokumentált, megfelelő negatív szűrési sorozat (citológiai programban három egymást követő negatív lelet, HPV-alapú programban két negatív teszt), a legutolsó a 65. életév betöltését megelőző 5 éven belül."
+      },
+      "whyItMatters": {
+        "hu": "EZ A KILÉPÉSI FELTÉTEL, NEM AZ ÉLETKOR. A 65 éves korban való szűrés-befejezés kizárólag megfelelő előzmény mellett indokolt; enélkül a szűrést folytatni kell. A soha nem szűrt idős nő a méhnyakrák-halálozás legnagyobb kockázatú csoportja, és pontosan ő az, aki életkor alapján kiesne a listáról."
+      },
+      "pitfalls": {
+        "hu": "A HIÁNYZÓ ELŐZMÉNY NEM MEGFELELŐ ELŐZMÉNY. Ha nincs adat, a válasz `unk`, és a szűrés NEM zárható le — nem azért, mert biztosan elmaradt, hanem mert nem tudjuk. A beteg emlékezete ÉRTÉKES bemenet — de a szűrés lezárásához nem elég: a kilépés DOKUMENTÁLT előzményt kíván, ezért a betegtől származó válasz `exitUnknown` állapotot hagy."
+      }
+    }
+  },
+  {
+    "id": "hx.gyn.cervix.cin2plus",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "CIN2+ / AIS / méhnyakrák az előzményben"
+    },
+    "module": "hx.gyn",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Kezelt vagy kezeletlen CIN2, CIN3, adenocarcinoma in situ vagy méhnyakrák a megelőző 25 évben."
+      },
+      "whyItMatters": {
+        "hu": "Kezelt magas fokú elváltozás után a kockázat ÉVTIZEDEKIG emelkedett marad: a szűrés a kezelést követő legalább 25 évig folytatandó, az életkori felső határon TÚL is."
+      },
+      "pitfalls": {
+        "hu": "A „kezelték, tehát rendben van” a leggyakoribb tévedés ezen a ponton. A kezelés nem zárja le a gondozást — meghosszabbítja. A beteg emlékezete ÉRTÉKES bemenet — a „kezeltek valamit a méhnyakamon” gyakran az egyetlen nyom. A szűrés lezárásához azonban dokumentáció kell."
+      }
+    }
+  },
+  {
+    "id": "hx.gyn.cervix.removed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A méhnyak eltávolításra került"
+    },
+    "module": "hx.gyn",
+    "datatype": "tristate",
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Teljes méheltávolítás a méhnyakkal együtt (nem szupracervikális)."
+      },
+      "whyItMatters": {
+        "hu": "Méhnyak nélkül a méhnyakszűrésnek nincs tárgya — DE csak akkor, ha nem volt CIN2+ az előzményben; ilyenkor hüvelyboltozati szűrés folytatandó."
+      },
+      "pitfalls": {
+        "hu": "A SZUPRACERVIKÁLIS méheltávolítás után a méhnyak MEGMARAD, és a szűrés változatlanul esedékes. A „méheltávolítás volt” önmagában ezért nem kilépési ok — azt kell tudni, hogy a méhnyak megvan-e. A beteg tudja, hogy volt-e méheltávolítása — azt viszont gyakran NEM, hogy a méhnyakat eltávolították-e. A műtéti leírás dönt."
+      }
+    }
+  },
+  {
+    "id": "allergy.list",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ismert allergiák"
+    },
+    "module": "allergy",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "allergen.penicillin",
+        "label_hu": "Penicillin és származékai"
+      },
+      {
+        "code": "allergen.cephalosporin",
+        "label_hu": "Cefalosporin"
+      },
+      {
+        "code": "allergen.sulfonamid",
+        "label_hu": "Szulfonamid"
+      },
+      {
+        "code": "allergen.nsaid",
+        "label_hu": "Nem szteroid gyulladáscsökkentő (NSAID)"
+      },
+      {
+        "code": "allergen.opioid",
+        "label_hu": "Opioid"
+      },
+      {
+        "code": "allergen.helyiErzestelenito",
+        "label_hu": "Helyi érzéstelenítő"
+      },
+      {
+        "code": "allergen.latex",
+        "label_hu": "Latex"
+      },
+      {
+        "code": "allergen.jodKontraszt",
+        "label_hu": "Jódos kontrasztanyag"
+      },
+      {
+        "code": "allergen.klorhexidin",
+        "label_hu": "Klórhexidin"
+      },
+      {
+        "code": "allergen.etel",
+        "label_hu": "Étel (a fajtát a diétás mező részletezi)"
+      },
+      {
+        "code": "allergen.egyeb",
+        "label_hu": "Egyéb (megnevezve)"
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "AZ EGYETLEN ALLERGIA-ENTITÁS. Minden réteg — gyógyszerrendelés, műtői ellenőrzőlista, diéta — ezt nézi."
+      },
+      "whyItMatters": {
+        "hu": "Az allergia korábban ÖT KÜLÖN MEZŐBEN élt, három modulban, nézetkapcsolat nélkül: aki az egyiket kitöltötte, nem tudta, hogy a másik réteg a másikat nézi. A tét itt halálos — egy penicillin-anafilaxia, ami a diétás lapon nem látszik, és a műtői ellenőrzőlistán sem."
+      },
+      "pitfalls": {
+        "hu": "AZ ÜRES LISTA NEM „NINCS ALLERGIÁJA”. A megkérdezett nemleges választ az `allergy.asked` mező rögzíti — a kettő megkülönböztetése nélkül a fel nem tett kérdés csendben „nincs allergiá”-vá válik. Az `allergen.etel` tétel a diétás modul részletezésére mutat: az ételallergia fajtáit ott soroljuk fel, itt csak a TÉNYE szerepel."
+      }
+    }
+  },
+  {
+    "id": "allergy.asked",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az allergiát megkérdezték"
+    },
+    "module": "allergy",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Feltették-e a kérdést. `pos` = megkérdezték, `neg` = nem kérdezték meg, `unk` = a beteg nem tudja."
+      },
+      "whyItMatters": {
+        "hu": "EZ VÁLASZTJA SZÉT a „megkérdeztük, nincs allergiája” és a „nem kérdeztük meg” esetet. A gyógyszerkiállítási kapu (32. modul) ezen a különbségen áll: a hiányzó allergiaadat nem „nincs allergiája”, és ezt nem lehet kockázatvállalással pótolni, mert meg lehet kérdezni."
+      }
+    }
+  },
+  {
+    "id": "allergy.reaction",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az allergiás reakció jellege"
+    },
+    "module": "allergy",
+    "datatype": "coded",
+    "scopedBy": {
+      "dimension": "allergen",
+      "roster": "allergy.list"
+    },
+    "valueSet": [
+      {
+        "code": "anaphylaxis",
+        "label_hu": "Anafilaxia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "angioedema",
+        "label_hu": "Angioödéma",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "bronchospasm",
+        "label_hu": "Hörgőgörcs",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "urticaria",
+        "label_hu": "Csalánkiütés"
+      },
+      {
+        "code": "rash",
+        "label_hu": "Bőrkiütés"
+      },
+      {
+        "code": "giUpset",
+        "label_hu": "Gyomor-bél panasz"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mi történt — ALLERGÉNENKÉNT külön."
+      },
+      "whyItMatters": {
+        "hu": "A reakció jellege dönti el, hogy elkerülésről vagy abszolút ellenjavallatról van szó. Egy gyomorrontás nem allergia; egy anafilaxia örökre kizárja a szert."
+      },
+      "pitfalls": {
+        "hu": "KORÁBBAN EGYETLEN mező volt az összes allergiára. Aki penicillinre csalánkiütést, latexre anafilaxiát kapott, annak a rendszer egyetlen reakciót tudott tárolni — és az a rossz irányba is tévedhetett."
+      }
+    }
+  },
+  {
+    "id": "allergy.severity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A reakció súlyossága"
+    },
+    "module": "allergy",
+    "datatype": "coded",
+    "scopedBy": {
+      "dimension": "allergen",
+      "roster": "allergy.list"
+    },
+    "valueSet": [
+      {
+        "code": "eletveszelyes",
+        "label_hu": "Életveszélyes (ellátást igényelt)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "sulyos",
+        "label_hu": "Súlyos",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "enyhe",
+        "label_hu": "Enyhe"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "patient",
+      "imported"
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire volt súlyos — allergénenként."
+      },
+      "whyItMatters": {
+        "hu": "A kiállítási kapu (32. modul) ezt nézi, amikor eldönti, vállalható-e a kockázat."
+      }
+    }
+  },
+  {
+    "id": "allergy.verified",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az allergia igazolt"
+    },
+    "module": "allergy",
+    "datatype": "coded",
+    "scopedBy": {
+      "dimension": "allergen",
+      "roster": "allergy.list"
+    },
+    "valueSet": [
+      {
+        "code": "igazolt",
+        "label_hu": "Vizsgálattal igazolt (bőrteszt, provokáció, specifikus IgE)"
+      },
+      {
+        "code": "anamnesztikus",
+        "label_hu": "Csak a beteg elmondása alapján"
+      },
+      {
+        "code": "cafolt",
+        "label_hu": "Kivizsgálva és CÁFOLT"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem ismert",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "provenanceAllowed": [
+      "clinician",
+      "imported"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Igazolt-e, és hogyan."
+      },
+      "whyItMatters": {
+        "hu": "A betegek jelentős részénél a bejegyzett penicillin-allergia kivizsgálva CÁFOLHATÓ — és a téves címke szűkebb, drágább és gyakran rosszabb antibiotikumválasztáshoz vezet. A `cafolt` érték ezért ÖNÁLLÓ állapot: a bejegyzés megmarad, de nem korlátoz."
+      },
+      "pitfalls": {
+        "hu": "A CÁFOLT ALLERGIÁT NEM TÖRÖLJÜK. Ha törölnénk, a következő felvételkor a beteg újra elmondaná, és újra bekerülne — a cáfolat tudása veszne el."
+      }
+    }
+  }
+]

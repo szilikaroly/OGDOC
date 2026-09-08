@@ -1,0 +1,46 @@
+{
+  "megnevezes": "Az audit-hurok: állítás és igazság párjai",
+  "lepes": 17,
+  "minimumEset": null,
+  "maxBizonytalanSav": null,
+  "maxEldonthetetlenArany": null,
+  "parok": [
+    {
+      "id": "par.prenatal",
+      "megnevezes": "Prenatális diagnózis ↔ postnatalis igazság",
+      "allitas": "A méhen belül kimondott diagnózis",
+      "igazsag": "Az újszülöttön megállapított diagnózis (vizsgálat, képalkotás, genetika, boncolás)",
+      "valtozo": "audit.prenatal.confirmed",
+      "referencia": "postnatalis",
+      "mit": [
+        "normogram",
+        "kockazat"
+      ],
+      "megjegyzes": "A referencia maga is lehet MÁSODKÉZBŐL való („információ a kezelőorvostól”). Hallomásból tudott kimenetelre modellt validálni nem lehet."
+    },
+    {
+      "id": "par.uh",
+      "megnevezes": "Ultrahangos megítélés ↔ műtéti/szövettani lelet",
+      "allitas": "Az ultrahangos diagnózis",
+      "igazsag": "A műtéti lelet, illetve a szövettan",
+      "valtozo": "audit.us.confirmed",
+      "referencia": "szovettan",
+      "mit": [
+        "calc.iota.adnex",
+        "calc.rmi",
+        "calc.pul"
+      ],
+      "megjegyzes": "Ez a pár méri vissza az IOTA-, az RMI- és a PUL-modell teljesítményét EBBEN az intézményben."
+    },
+    {
+      "id": "par.mutet",
+      "megnevezes": "Műtét közben látott kép ↔ szövettan",
+      "allitas": "A műtét utáni diagnózis",
+      "igazsag": "A szövettani lelet",
+      "valtozo": "audit.postop.confirmed",
+      "referencia": "szovettan",
+      "mit": [],
+      "megjegyzes": "A felületes endometriosis szövettani igazolása megbízhatatlan: itt az „eldönthetetlen” NEM ritka kivétel, hanem várható kimenet. Cáfolatként számolva az ultrahang és a sebész rosszabbnak látszana, mint amilyen."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A hitelesítés nem fejlesztői lépés: minden tétel egy laboratóriumi szakorvos aláírását kívánja, aki a sávokat összevetette az elsődleges táblával. Amíg a lista üres, mind a 32 referencia `assumed` marad, és a rendszer minden mérés mellé kiírja, hogy miért. Munkalap: `npm run labref`.",
+  "szerepek": {
+    "labor": "laboratóriumi szakorvos — a laborreferenciák",
+    "szuleszet": "szülész-nőgyógyász szakorvos — a klinikai küszöbök (vérnyomás, szepszis)",
+    "fetalis": "fetalis medicina szakorvos — a magzati normogramok"
+  },
+  "hitelesitesek": []
+}

@@ -1,0 +1,2822 @@
+{
+  "id": "ui.forras.nogyogyaszat",
+  "label": {
+    "hu": "A meglévő nőgyógyászati rendszer felülettérképe"
+  },
+  "source": {
+    "cite": "A jelenleg használt nőgyógyászati dokumentációs rendszer menüfája és adatlapjai (képernyőképes átvétel, 2026-09-03)"
+  },
+  "coverage": "partial",
+  "coverageNote": {
+    "hu": "A menüfa TELJES, és az adatlapokból huszonhét szerepel: a teljes anamnézis, az indikáció, a klinikai vizsgálat, mind a tizenegy ultrahanglap, mind a hét beavatkozás, a kért vizsgálatok, a laparoszkópia, a laparotómia és a hysteroszkópia. Ami még hiányzik: az „Összegzés”, a „Beteg adatok”, az „Ultrahang összefoglaló”, a „Vizsgálatok eredményei”, az „Összefoglalás”, a „Levelek”, a „Számlázás” és a „Kimenetel”."
+  },
+  "menu": [
+    {
+      "label": "Összegzés",
+      "path": [],
+      "module": 14
+    },
+    {
+      "label": "Beteg adatok",
+      "path": [],
+      "module": null
+    },
+    {
+      "label": "Anamnézis",
+      "path": [],
+      "module": 3
+    },
+    {
+      "label": "Nőgyógyászati anamnézis",
+      "path": [
+        "Anamnézis"
+      ],
+      "module": 3
+    },
+    {
+      "label": "Szülészeti anamnézis",
+      "path": [
+        "Anamnézis"
+      ],
+      "module": 3
+    },
+    {
+      "label": "Gyógyszerek",
+      "path": [
+        "Anamnézis"
+      ],
+      "module": 3
+    },
+    {
+      "label": "Családi anamnézis",
+      "path": [
+        "Anamnézis"
+      ],
+      "module": 3
+    },
+    {
+      "label": "Vizsgálat",
+      "path": [],
+      "module": 4
+    },
+    {
+      "label": "Indikáció",
+      "path": [
+        "Vizsgálat"
+      ],
+      "module": 2
+    },
+    {
+      "label": "Klinikai vizsgálat",
+      "path": [
+        "Vizsgálat"
+      ],
+      "module": 4
+    },
+    {
+      "label": "Ultrahang",
+      "path": [
+        "Vizsgálat"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Koraterhesség",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Méh",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Jobb petefészek",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Bal petefészek",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Szabad folyadék",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Medence vizsgálat",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Adnexumok elváltozásai",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Folliculus Keresés",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "HyCoSy",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Vesék / Húgyhólyag",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Ultrahang összefoglaló",
+      "path": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "module": 5
+    },
+    {
+      "label": "Beavatkozások",
+      "path": [
+        "Vizsgálat"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Cervicalis kenet",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Infekciók",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "IUCD felhelyezés",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Endometrium biopszia",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Implantátum",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Cysta Aspiráció",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "ERPC",
+      "path": [
+        "Vizsgálat",
+        "Beavatkozások"
+      ],
+      "module": 15
+    },
+    {
+      "label": "Kért vizsgálatok",
+      "path": [],
+      "module": 5
+    },
+    {
+      "label": "Laparoszkópia",
+      "path": [],
+      "module": 15
+    },
+    {
+      "label": "Laparotómia",
+      "path": [],
+      "module": 15
+    },
+    {
+      "label": "Hysteroszkópia",
+      "path": [],
+      "module": 15
+    },
+    {
+      "label": "Vizsgálatok eredményei",
+      "path": [],
+      "module": 5
+    },
+    {
+      "label": "Összefoglalás",
+      "path": [],
+      "module": 14
+    },
+    {
+      "label": "Levelek",
+      "path": [],
+      "module": 14
+    },
+    {
+      "label": "Számlázás",
+      "path": [],
+      "module": 25
+    },
+    {
+      "label": "Kimenetel",
+      "path": [],
+      "module": 24
+    }
+  ],
+  "forms": [
+    {
+      "id": "gyn.form.nogyogyaszatiAnamnezis",
+      "label": {
+        "hu": "Nőgyógyászati anamnézis"
+      },
+      "menuPath": [
+        "Anamnézis"
+      ],
+      "note": {
+        "hu": "A ciklushossz és a vérzés hossza „naptól napig” szerepel — TARTOMÁNY, nem egyetlen szám —, és ez helyes: egyetlen értékké lapítva éppen a szabálytalanság vész el, ami a klinikai kérdés. Két mező viszont nem vehető át. A „Hormonpótló kezelés” értékkészletében AROMATÁZ-GÁTLÓ áll, ami nem hormonpótlás, hanem az ellenkezője: ösztrogénmegvonás, emlőrák adjuváns kezelése. És az elsőfokú petefészek- illetve emlőrákos rokonok SZÁMA önmagában nem elég: az öröklődő daganatkockázati modellek a diagnóziskori ÉLETKORT is kérik, mert az egy 38 évesen és egy 78 évesen diagnosztizált rokon nem ugyanaz a kockázat."
+      },
+      "fields": [
+        {
+          "label": "Menarche (év)",
+          "variable": null
+        },
+        {
+          "label": "Postmenopausa (jelölőnégyzet) + menopausa (év)",
+          "variable": null
+        },
+        {
+          "label": "Utolsó menstruáció első napja",
+          "variable": null
+        },
+        {
+          "label": "Ciklushossz (naptól napig)",
+          "variable": null,
+          "rangeValued": true
+        },
+        {
+          "label": "Vérzés hossza (naptól napig)",
+          "variable": null,
+          "rangeValued": true
+        },
+        {
+          "label": "Védekezés (kevert orális fogamzásgátló · …)",
+          "variable": null
+        },
+        {
+          "label": "Összesen hány éve szed tablettát?",
+          "variable": null,
+          "note": "A SZEDÉS IDŐTARTAMA kockázati tényező (vénás thrombosis, és védőhatás a petefészek- és méhtestrákra). Év helyett kezdet- és végdátum kellene: az „összesen hány éve” mai nap szerinti szám, ami holnap már mást jelent."
+        },
+        {
+          "label": "Mióta van méhen belüli eszköz (dátum)",
+          "variable": null,
+          "crossFilled": true,
+          "note": "Ugyanez az eszköz az IUCD-felhelyezés lapján és a méh-ultrahangon is szerepel — három felületi hely, egy eszköz."
+        },
+        {
+          "label": "Az utolsó DepoProvera injekció (dátum)",
+          "variable": null,
+          "note": "A DEPÓ HATÁSA TÚLÉLI AZ UTOLSÓ INJEKCIÓT: a fogamzóképesség visszatérése hónapokat késhet, és a csontsűrűségre gyakorolt hatás az összes beadás számától függ. Egyetlen dátum ezt nem hordozza."
+        },
+        {
+          "label": "Rákszűrés (jelölőnégyzet) + Év + eredmény (nincs eredmény · …)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Első fokú ovarium carcinómás rokonok száma",
+          "variable": null,
+          "modelBacked": true,
+          "note": "AZ ÖRÖKLŐDŐ DAGANATKOCKÁZATI MODELLEK (BOADICEA, Tyrer-Cuzick, Manchester-pontszám) NEM PUSZTA LÉTSZÁMOT KÉRNEK: a rokonsági fok, a diagnóziskori életkor és az oldaliság mind bemenet. Egy szám önmagában olyan modellhez elég, amelyik nem létezik."
+        },
+        {
+          "label": "Első fokú emlőrákos rokonok száma",
+          "variable": null,
+          "modelBacked": true
+        },
+        {
+          "label": "Terhességek · Szülések · Vetélések · Méhen kívüli terhesség",
+          "variable": null,
+          "crossInstance": true,
+          "note": "A NÉGY SZÁM NEM FÜGGETLEN: a terhességszám a többi összege (plusz a folyamatban lévő). Kézzel beírva ellentmondhatnak egymásnak, és a szülészeti anamnézis lapján MÉG EGYSZER szerepelnek."
+        },
+        {
+          "label": "Terhesség megszakítás (szám)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Volt-e petefészek rákja?",
+          "variable": null,
+          "freeText": true,
+          "note": "EL/NEM kérdés szabad szövegben. A daganatos előzmény kódolt diagnózis és dátum — a „nem” és az „üres” pedig itt sem ugyanaz."
+        },
+        {
+          "label": "Volt-e emlőrákja?",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Nőgyógyászati műtétek: Műtét + Megjegyzés",
+          "variable": null,
+          "scoped": true,
+          "note": "Több műtét, egy mező. Eseménysorozat, dátummal és beavatkozási kóddal — a szabad szövegű felsorolásból a „mikor” hiányzik."
+        },
+        {
+          "label": "Korábbi nőgyógyászati betegségek: Betegségek + Megjegyzés",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Nemi betegségek (STD)",
+          "variable": null,
+          "freeText": true,
+          "special": "health",
+          "note": "A nemi úton terjedő fertőzés előzménye önmagában is olyan adat, aminek a láthatóságát külön szabályozni kell — nem elég `phi`-nek jelölni."
+        },
+        {
+          "label": "Hormonpótló kezelés (aromatáz-gátlók · …)",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "AZ AROMATÁZ-GÁTLÓ NEM HORMONPÓTLÁS, HANEM AZ ELLENKEZŐJE: ösztrogénmegvonás, emlőrák adjuváns kezelése. A két gyógyszercsoport egy értékkészletben a betegre nézve ellentétes állítást tesz — és ugyanez a hibás készlet az „Indikáció” lap HRT-mezőjében is visszaköszön."
+        },
+        {
+          "label": "Gyógyszeres kezelés (neoadjuváns kemoterápia FEC · …)",
+          "variable": null,
+          "freeText": true,
+          "note": "ONKOLÓGIAI KEZELÉSI PROTOKOLL SZABAD SZÖVEGBEN. A protokoll neve, a ciklusszám és a kumulatív dózis strukturált adat — a gonadotoxikus hatás és a termékenységmegőrzés kérdése ezen múlik."
+        },
+        {
+          "label": "További orvosi információ",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Testmagasság (cm) · Testsúly (kg)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Testömegindex (BMI)",
+          "variable": "anthro.bmi",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.szuleszetiAnamnezis",
+      "label": {
+        "hu": "Szülészeti anamnézis (nőgyógyászati környezetben)"
+      },
+      "menuPath": [
+        "Anamnézis"
+      ],
+      "note": {
+        "hu": "Terhességenként ÖT kimenetel-sor áll egymás alatt — a többes terhesség példány-dimenziója, most az anamnézisben. A lap alján viszont ugyanaz az adat MÉG EGYSZER szerepel, összesítve és terhességi kor szerint sávokba osztva: élő gyermekek, újszülöttkori halálozás, vetélés, terhességmegszakítás. Ezek a sorokból LEVEZETHETŐK, itt mégis kézzel írandók. Két igazság ugyanarról, és a sávosítás visszafordíthatatlan: a „16-27 hét” a pontos hétből előáll, fordítva soha."
+      },
+      "fields": [
+        {
+          "label": "Dátum + Év · Hely",
+          "variable": null
+        },
+        {
+          "label": "Magzatok száma",
+          "variable": null
+        },
+        {
+          "label": "Öt Kimenetel-sor: kimenetel + Terhességi kor (hét + nap) + Születési súly (g) + nem",
+          "variable": null,
+          "scoped": true,
+          "note": "ÖT MAGZAT-HELY egy terhességen belül. Ugyanaz a példány-dimenzió, mint a magzatredukciónál a kilenc hely — a felület számmal, mi `scopedBy` magzatpéldánnyal oldjuk meg."
+        },
+        {
+          "label": "Szülés típusa (sürgősségi császármetszés · …)",
+          "variable": null
+        },
+        {
+          "label": "Terhességi szövődmény · Fejlődési rendellenességek",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Korai idő előtti burokrepedés (igen · …) + Szülés előtt",
+          "variable": null
+        },
+        {
+          "label": "Fájdalom (ismeretlen · …) + Szülés előtt + Típus",
+          "variable": null
+        },
+        {
+          "label": "Vérzés (ismeretlen · …) + Szülés előtt + Típus (enyhe vérzés · …)",
+          "variable": null
+        },
+        {
+          "label": "Chorioamnionitis (ismeretlen · …)",
+          "variable": null
+        },
+        {
+          "label": "Cerclage (igen · …) + típus (preconceptionális transvaginalis cervicalis) + Terhességi kor",
+          "variable": null,
+          "crossEpisode": true
+        },
+        {
+          "label": "Tágulás (cm) a cerclage időpontjában + Látható membránok (ismeretlen · …)",
+          "variable": null
+        },
+        {
+          "label": "FHR a vetélést megelőzően (ismeretlen · …)",
+          "variable": null,
+          "note": "VOLT-E SZÍVMŰKÖDÉS A VESZTÉS ELŐTT: ez választja el az elhalt embriót az anembryonalis terhességtől, és az ismétlődő vetélés kivizsgálásának egyik sarokpontja. Az „ismeretlen” érték itt nélkülözhetetlen."
+        },
+        {
+          "label": "Élő gyermekek száma + ≥37 hét",
+          "variable": null,
+          "handTotal": true,
+          "note": "A LAP TETEJÉN ÁLLÓ SOROKBÓL LEVEZETHETŐ. Kézzel beírva a kettő elválik egymástól, és nem lesz eldönthető, melyik igaz."
+        },
+        {
+          "label": "Újszülött halálozás: <37 hét · ≥37 hét",
+          "variable": null,
+          "handTotal": true
+        },
+        {
+          "label": "Vetélés / Méhen belüli elhalás: <15 · 16-27 · 28-36 · ≥37 hét",
+          "variable": null,
+          "handTotal": true,
+          "note": "A SÁVOSÍTÁS VISSZAFORDÍTHATATLAN: a pontos terhességi hétből a sáv előáll, a sávból a hét soha. A sorok pontos hetet tartalmaznak — a sávot ezért levezetni kell, nem beírni."
+        },
+        {
+          "label": "Terhesség megszakítás: <15 · 16-27 hét",
+          "variable": null,
+          "handTotal": true
+        },
+        {
+          "label": "Méhen kívüli terhesség (szám)",
+          "variable": null,
+          "handTotal": true
+        },
+        {
+          "label": "Előzetes császármetszés (igen · …)",
+          "variable": null,
+          "crossEpisode": true,
+          "note": "A KORÁBBI CSÁSZÁRMETSZÉS a jelen terhességben diagnózist alapoz meg (a hegvonalba ágyazódott terhesség a koraterhesség lapon), és a következő szülés vezetését is meghatározza."
+        },
+        {
+          "label": "Utolsó szülés módja · Terhességek · Szülések",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.gyogyszerek",
+      "label": {
+        "hu": "Gyógyszerek"
+      },
+      "menuPath": [
+        "Anamnézis"
+      ],
+      "note": {
+        "hu": "Mezőről mezőre ugyanaz, mint a szülészeti oldal gyógyszerlapja: gyógyszertáblázat, allergiatáblázat, röntgenexpozíció. Két apróság mégis elárul valamit. A „Dietary Restriction” angolul maradt egy magyar képernyőn — a mező nem fordításból, hanem másolásból került ide. És a röntgenexpozíció egy GYÓGYSZERLAPON szerepel: nem gyógyszer, hanem sugárterhelés, aminek a kumulált dózisa a lényeg, nem az egyes esemény."
+      },
+      "fields": [
+        {
+          "label": "Gyógyszer neve (öt oszlopos táblázat) + Teljes neve",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Dózis · Adagolás · Dózis szerinti adagolás",
+          "variable": null,
+          "unitMismatch": true,
+          "note": "HÁROM MEZŐ UGYANARRA, EGYSÉG NÉLKÜL. A dózis szám + egység + gyakoriság; három szabad szövegű mezőben a gépi ellenőrzés (kölcsönhatás, terhességi kategória, maximális napi dózis) nem futtatható."
+        },
+        {
+          "label": "Kezdet (dátum) · Vége (dátum)",
+          "variable": null
+        },
+        {
+          "label": "Allergiák (öt oszlop) + Allergy + Reakció + Megjegyzés",
+          "variable": null,
+          "scoped": true,
+          "note": "A REAKCIÓ TERMÉSZETE (kiütés vagy anafilaxia) dönti el, hogy a szer adható-e valaha újra. Szabad szövegben ez nem kapu."
+        },
+        {
+          "label": "Röntgen expozíció + Dózis / Adagolás + Kezdet + Vége",
+          "variable": null,
+          "note": "SUGÁRTERHELÉS A GYÓGYSZERLAPON. Nem gyógyszer, és a klinikai kérdés nem az egyes vizsgálat, hanem a KUMULÁLT dózis — külön adat, külön összegzéssel."
+        },
+        {
+          "label": "Dietary Restriction",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "Angol címke magyar képernyőn: a mező nem fordításból, hanem másolásból került ide."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.csaladiAnamnezis",
+      "label": {
+        "hu": "Családi anamnézis"
+      },
+      "menuPath": [
+        "Anamnézis"
+      ],
+      "note": {
+        "hu": "A rokon daganatánál ott a „Menopausa után” jelölőnégyzet — és ez nem díszítés: a menopausa ELŐTT diagnosztizált petefészek- vagy emlőrák sokkal nagyobb súllyal esik latba az öröklődő kockázat megítélésében. A felület tehát pont azt kérdezi, amit a modell kér. A két „eseménytelen családi anamnézis” jelölőnégyzet viszont ugyanaz a régi csapda: egy pipa nem állíthat negatívumot tizennyolc tételről, amelyekről külön-külön nem nyilatkoztak."
+      },
+      "fields": [
+        {
+          "label": "Páciens: eseménytelen családi anamnézis (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true
+        },
+        {
+          "label": "Partner: eseménytelen családi anamnézis (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true
+        },
+        {
+          "label": "Vérrokonság (igen · …)",
+          "variable": null,
+          "note": "A KONSZANGVINITÁS a recesszív betegségek kockázatát alapjaiban változtatja meg — a genetikai tanácsadás bemenete, nem adminisztratív adat."
+        },
+        {
+          "label": "Rokon betegsége (páciens lánytestvére · …) + Születési idő",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Betegség (petefészekrák · …) + Év + Kor (év)",
+          "variable": null,
+          "modelBacked": true,
+          "note": "A DIAGNÓZISKORI ÉLETKOR a kockázati modell bemenete. A nőgyógyászati anamnézis lapján ugyanez az információ PUSZTA LÉTSZÁMKÉNT szerepel — ott a modell nem futtatható, itt igen."
+        },
+        {
+          "label": "Menopausa után (jelölőnégyzet)",
+          "variable": null,
+          "note": "AMIT A FELÜLET JÓL KÉRDEZ: a menopausa előtti daganat súlyosabb családi kockázat. Ezt átvesszük."
+        },
+        {
+          "label": "Meghalt (jelölőnégyzet)",
+          "variable": null
+        },
+        {
+          "label": "Páciens családjában — kilenc tétel (ismétlődő vetélés · orvosi indikációjú terhességmegszakítás · újszülött halálozás · diabetes mellitus · hypertonia · fejlődési rendellenességek · fogyatékosság · CF · haemoglobinopathia), mindegyik „ismeretlen” alapértékkel",
+          "variable": null,
+          "scoped": true,
+          "note": "A KILENC TÉTEL ALAPÉRTÉKE „ISMERETLEN” — ez pontosan a rendszer alapszabálya, a régi felületen megvalósítva."
+        },
+        {
+          "label": "Partner családjában — ugyanaz a kilenc tétel",
+          "variable": null,
+          "scoped": true,
+          "note": "EGY LISTA, KÉT ALANY: `scopedBy` alannyal egy készlet, nem két lemásolt mezőcsoport, amelyek külön avulnak el."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.indikacio",
+      "label": {
+        "hu": "Indikáció"
+      },
+      "menuPath": [
+        "Vizsgálat"
+      ],
+      "note": {
+        "hu": "Huszonhat jelölőnégyzetes indikáció, két külön blokkban — és a két blokk ÁTFED: a „Rákszűrés” és a „Petefészek rák szűrése”, az „Oligomenorrhoea / amenorrhoea” és az „Oligomenorrhoea” meg az „Amenorrhoea” ugyanazt a beteget két helyen jelöli. A legfontosabb mező viszont az alsó blokkban bújik meg: „A ciklus napja”. Egy endometrium vastagsága, egy tüszőméret vagy egy progeszteronszint a ciklusnap nélkül nem értelmezhető — ez a mérés körülménye, ami magát a referenciatartományt írja át."
+      },
+      "fields": [
+        {
+          "label": "Első indikációblokk: Rutin · Kóros állapot gyanúja · Fájdalom (+ onset, típus, lokalizáció) · Abnormális méh eredetű vérzés · Méh vizsgálat · Fertilitási kivizsgálás · Oligomenorrhoea/amenorrhoea · Rákszűrés · Oncológiai staging · Incontinencia / pelvicus fluor · Koraterhességi adatok · Kora terhességi követés",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Második indikációblokk: Kora terhességi vizsgálat · Medence táji fájdalom · Ovárium cysta gyanúja · Postmenopauzális vérzés · Irreguláris vérzés HRT-n · Tamoxifen therápia · Menorrhágia · Gyanús fibroidok · Oligomenorrhoea · Amenorrhoea · Infertilitás · Petefészek rák szűrése · Inkontinencia · Cervix hossza · Egyéb",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "A KÉT BLOKK ÁTFED: ugyanaz az indikáció két helyen jelölhető (Rákszűrés / Petefészek rák szűrése; Oligomenorrhoea kétszer). Az indikáció szerinti lekérdezés így szükségképpen alulszámol."
+        },
+        {
+          "label": "Népcsoport (dél-ázsiai (indiai, pakisztáni, bangladesi) · …)",
+          "variable": null,
+          "special": "ethnicity"
+        },
+        {
+          "label": "Vérzés jelentőssége + nap · Fájdalom jelentőssége + nap",
+          "variable": null
+        },
+        {
+          "label": "Nemi betegségek (STD): Chlamydia + Év · gonorrhoea + Év · bacteriális vaginosis + Év",
+          "variable": null,
+          "special": "health"
+        },
+        {
+          "label": "Dohányzás (nem ismert · …) + per nap + Dohányzott évek száma + mikor",
+          "variable": null,
+          "note": "NÉGY MEZŐ EGY FOGALOMRA, és a „nem ismert” érték helyes. A csomagév a négyből LEVEZETHETŐ — beírni nem kell."
+        },
+        {
+          "label": "Fogamzás módja (ovuláció indukció, IVF · …)",
+          "variable": null
+        },
+        {
+          "label": "72 órás tabletta használata ebben a ciklusban (igen · …)",
+          "variable": null,
+          "note": "AZ ESEMÉNY UTÁNI FOGAMZÁSGÁTLÁS ELTOLJA AZ OVULÁCIÓT, tehát a ciklusnapból számított terhességi kort érvényteleníti. A kormeghatározás bemenete, nem anamnesztikus érdekesség."
+        },
+        {
+          "label": "Korábbi műtétek (a császármetszés is számít) (igen · …) + leírás",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "IUD (korábban · …) · Mirena IUD (korábban · …)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Korábbi méhenkívüli terhesség (igen · …) + Dátum + Type + Treatment + Megjegyzés",
+          "variable": null,
+          "crossEpisode": true,
+          "note": "A KORÁBBI MÉHEN KÍVÜLI TERHESSÉG a jelen vizsgálat előzetes valószínűségét emeli meg — a koraterhesség lapon futó PUL-modell bemenete. A „Type” és a „Treatment” angol címke."
+        },
+        {
+          "label": "Korábbi vetélések száma + Részletei ismertek? (igen · …) + Év + Ellátás (gyógyszeres · …) + Megjegyzés",
+          "variable": null,
+          "scoped": true,
+          "note": "A „RÉSZLETEI ISMERTEK?” KÜLÖN MEZŐ — ez a proveniencia kimondása: a szám és a mögötte álló tudás nem ugyanaz."
+        },
+        {
+          "label": "Postmenopausa (jelölőnégyzet) + menopausa (év) + Mióta (év)",
+          "variable": null,
+          "crossFilled": true,
+          "note": "A MENOPAUZÁLIS ÁLLAPOT a petefészek-képlet malignitási kockázatának (RMI) egyik szorzója — az adnexum-lapon futó számításnak innen kellene vennie."
+        },
+        {
+          "label": "LMP · A ciklus napja",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A CIKLUSNAP MAGÁT A REFERENCIATARTOMÁNYT ÍRJA ÁT: az endometrium vastagsága, a tüszőméret, a progeszteron- és az LH/FSH-szint mind ciklusnaptól függ. A ciklusnap nélkül lelet nem értelmezhető, csak leírható — a mért értékkel EGYÜTT tárolandó."
+        },
+        {
+          "label": "Fogamzásgátlás · HRT (aromatáz-gátlók · …)",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "MÁSODSZOR ugyanaz a hibás értékkészlet: aromatáz-gátló a hormonpótlás mezőjében."
+        },
+        {
+          "label": "Korábbi sebészi beavatkozások (biopszia a cervixből · …)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Testsúly (kg) · Testömegindex (BMI)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.klinikaiVizsgalat",
+      "label": {
+        "hu": "Klinikai vizsgálat"
+      },
+      "menuPath": [
+        "Vizsgálat"
+      ],
+      "note": {
+        "hu": "A cervixkenet mezője a rendszer egyik legfontosabb tanulságát hordozza: „Cervix kenet levétele: SIKERTELEN — mert a cervix nem volt megjeleníthető”. Ez HARMADIK ÁLLAPOT: nem az, hogy megtörtént, és nem az, hogy elmaradt. Megkísérelték és nem sikerült, indoklással. Ugyanez a szerkezet a nőgyógyászati oldalon még háromszor visszatér (endometrium-biopszia, IUCD-felhelyezés, cystaaspiráció) — négy független előfordulás, tehát nem egyedi megoldás, hanem a szakma alapállapota. A „Douglas punkció” címke pedig ANATÓMIAI HELYET jelöl egy tapintási leletnél, holott a punkció beavatkozás; ugyanez a címke a szabad folyadék, a medence- és a laparoszkópiás lapon is így szerepel."
+      },
+      "fields": [
+        {
+          "label": "Pulzus (ütés/perc) · Vérnyomás (Hgmm) · Testhő (°C) · Légzés szám (per min)",
+          "variable": null
+        },
+        {
+          "label": "Has (abnormális · …)",
+          "variable": null
+        },
+        {
+          "label": "Fájdalom + helye + jelentőssége + Visszatérő + őrzés",
+          "variable": null,
+          "note": "AZ „ŐRZÉS” (défense) SÜRGŐSSÉGI JEL — a hasi katasztrófa elkülönítésének sarokpontja. Jelölőnégyzetként a hiánya nem különböztethető meg attól, hogy nem vizsgálták."
+        },
+        {
+          "label": "Masses + helye + Méret (cm × cm) + tender · fixált · smooth · hard",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "ANGOL CÍMKÉK MAGYAR KÉPERNYŐN egyetlen soron belül („Masses”, „tender”, „smooth”, „hard”), a „fixált” viszont magyar. Egy értékkészlet két nyelven — a lekérdezésben két külön érték."
+        },
+        {
+          "label": "Bélhangok",
+          "variable": null
+        },
+        {
+          "label": "Vulva (abnormális · …) + Lokalizáció + Sérülés + Lelettel kapcsolatban",
+          "variable": null
+        },
+        {
+          "label": "Speculumos vizsgálat: Vagina (abnormális · …) + Lokalizáció + Sérülés",
+          "variable": null
+        },
+        {
+          "label": "Váladékozás + Szín + Szaga + Mennyisége + Megjelenés",
+          "variable": null
+        },
+        {
+          "label": "Cervix (abnormális · …) + Lokalizáció + Sérülés + Pecsételő vérzés",
+          "variable": null,
+          "note": "A KONTAKTVÉRZÉS („pecsételő vérzés”) a cervixrák egyik figyelmeztető jele — jelölőnégyzetként a be nem jelölt mező nem jelenti, hogy megnézték és nem volt."
+        },
+        {
+          "label": "Cervix kenet levétele (sikertelen · …) + az indoklás",
+          "variable": null,
+          "attemptFailed": true
+        },
+        {
+          "label": "Mintavételi eszköz (folyékony citológiai ecset · …)",
+          "variable": null,
+          "assayBound": true,
+          "note": "A FOLYADÉKALAPÚ ÉS A HAGYOMÁNYOS KENET nem ugyanaz a vizsgálat: más az elégtelen minták aránya, és a HPV-tipizálás csak a folyadékalapúból végezhető el ugyanabból a mintából."
+        },
+        {
+          "label": "Cervix megjelenése (cervical ectropion · …)",
+          "variable": null
+        },
+        {
+          "label": "Kenet cytológiára (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Kezelés: ectropióra AgNitrát helyezve · cervix polyp eltávolítva · cervix biopszia leveve · cryocauterizálás elvégezve (négy jelölőnégyzet)",
+          "variable": null,
+          "note": "NÉGY BEAVATKOZÁS EGY JELÖLŐNÉGYZET-CSOPORTBAN, dátum, oldal és beavatkozási kód nélkül. Mindegyik önálló, kódolható és elszámolható esemény."
+        },
+        {
+          "label": "Bimanuális vizsgálat: Méh (retrovertált · …) + (mobile · …)",
+          "variable": null
+        },
+        {
+          "label": "Jobb adnexumok: tender · mobile · tömeg (mm) + (kemény) + (irregular)",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Bal adnexumok: ugyanaz a hat mező",
+          "variable": null,
+          "scoped": true,
+          "note": "EGY SABLON, KÉT OLDAL — nálunk `scopedBy` oldallal, nem két lemásolt mezőcsoport."
+        },
+        {
+          "label": "Douglas punkció (normális · …) + Csomó (cm)",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "A „DOUGLAS PUNKCIÓ” BEAVATKOZÁS NEVE, itt viszont ANATÓMIAI HELYET jelöl egy tapintási leletnél. Ugyanez a címke a szabad folyadék, a medencevizsgálat és a laparoszkópia lapján is így áll — négy helyen ugyanaz a fogalomzavar, tehát a leképezésben egyszer kell eldönteni, mit jelent."
+        },
+        {
+          "label": "Cervix felszíne (irregular · …) + Mobility + Tömeg (cm)",
+          "variable": null
+        },
+        {
+          "label": "További patológia · Egyéb",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.uhFejlec",
+      "label": {
+        "hu": "Ultrahang — közös fejléc (tíz lapon azonos)"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang"
+      ],
+      "note": {
+        "hu": "Ez a blokk a nőgyógyászati ultrahang MINDEN lapján megismétlődik, változatlanul: tíz példány ugyanabból. Két dolog viszont külön figyelmet érdemel. Az „Orvos adatai” csoportban ott a „Lánykori név” — a BEUTALÓ ORVOS leánykori neve értelmetlen; a blokkot a betegadatok lapról másolták át, és a másolás a mezőnevekben maradt nyomot. A másik egy jelölőnégyzet, aminek a CÍMKÉJE egy teljes lelet: „Ép emlők. Bv: rendes nagy uterus afv-ben, szabad környezet. Tkp: K: ép”. Egyetlen pipával három vizsgálat (emlő, bimanuális, speculum) eredményét állítja — olyan vizsgálatokét, amelyek külön-külön sehol nincsenek rögzítve, tehát külön-külön nem is cáfolhatók."
+      },
+      "fields": [
+        {
+          "label": "Dátum (kötelező, pirossal jelölve) + Idő + Osztály / Részleg",
+          "variable": null,
+          "required": true
+        },
+        {
+          "label": "Beutaló orvos(ok) — ötoszlopos táblázat",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Orvos adatai › „Lánykori név”",
+          "variable": null,
+          "subjectAmbiguous": true,
+          "note": "A BEUTALÓ ORVOS LEÁNYKORI NEVE. A blokkot a betegadatok lapról másolták; a mező azóta is ott áll, és aki kitölti, nem tudja, kiről."
+        },
+        {
+          "label": "Orvos adatai: Titulus · Név · Intézmény · Levelezési cím · Város · Irányítószám · Megye/Ország · Telefon (kettő) · Mobil · Fax · E-mail",
+          "variable": null,
+          "phi": true,
+          "crossFilled": true
+        },
+        {
+          "label": "Beutaló + Beutaló kód + Pecsétszám · Üdvözlés",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Értesítés választott módja (E-mail (pdf) · …)",
+          "variable": null,
+          "insecureChannel": true,
+          "note": "A SZÜLÉSZETI OLDALON UGYANEZ A MEZŐ ÁLL a cfDNS-lapon. Nem egy képernyő elszólása: a rendszer egészének értesítési alapbeállítása."
+        },
+        {
+          "label": "Beavatkozást végző (kötelező, pirossal jelölve) + Operator 2 + Felügyelet",
+          "variable": null,
+          "operatorGate": true,
+          "note": "A VÉGZŐ ÉS A FELÜGYELET PÁRJA a tanulóorvos-szupervízor viszonyt rögzíti. Ez nem adminisztráció: a lelet megítélhetősége és a minőségi visszamérés is ezen múlik."
+        },
+        {
+          "label": "UH berendezés (Medison X4 · …)",
+          "variable": null,
+          "measurementContext": true
+        },
+        {
+          "label": "transvaginalis · transabdominális (jelölőnégyzetek)",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A BEHATOLÁS ÚTJA MEGVÁLTOZTATJA, MI MÉRHETŐ: a hüvelyi fej felbontása nagyobb, a hasi vizsgálat viszont messzebbre lát. Egy „nem ábrázolható” lelet jelentése az úttól függ."
+        },
+        {
+          "label": "„Ép emlők. Bv: rendes nagy uterus afv-ben, szabad környezet. Tkp: K: ép” (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true,
+          "note": "EGY PIPA, HÁROM VIZSGÁLAT: emlőtapintás, bimanuális és speculumos vizsgálat eredménye egyszerre, klinikai rövidítésekkel, egyetlen jelölőnégyzet CÍMKÉJÉBEN. A három állítás külön-külön sehol nincs rögzítve, tehát külön-külön nem is cáfolható — és az emlővizsgálat ezen a képernyőn másutt elő sem fordul."
+        },
+        {
+          "label": "endometriumba kontraszt anyag juttatva + (saline infusion · …)",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A SÓOLDATOS ÜREGFELTÖLTÉS (SIS) MÁS VIZSGÁLAT: a nélküle mért endometriumvastagság és a feltöltés utáni kép nem összehasonlítható."
+        },
+        {
+          "label": "HyCoSy-val · antibiotikum profilaxisban (jelölőnégyzetek)",
+          "variable": null
+        },
+        {
+          "label": "Nézet (korlátozott · …)",
+          "variable": null,
+          "secondAttempt": true,
+          "note": "A VIZSGÁLAT KORLÁTOZOTTSÁGA a lelet része: a „korlátozott nézet” melletti negatív lelet nem ugyanaz, mint a teljes vizsgálaté."
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.koraterhesseg",
+      "label": {
+        "hu": "Ultrahang › Koraterhesség (PUL és méhen kívüli terhesség)"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Koraterhesség"
+      ],
+      "note": {
+        "hu": "Ez a rendszer legjobb képernyője, és érdemes kimondani, miért. A predikciós modell mellett OTT ÁLL A FORRÁS, teljes hivatkozással: Condous G és mtsai, Hum Reprod 2004;19(8):1900-10. Pontosan az a kapu, amit a mi rendszerünk `calc.verified` néven ír elő — a régi felület itt magától jól csinálja. És mellette ott a „Szubjektív benyomás” a „Valószínűség foka” mezővel, a modell százalékai MELLETT, nem helyettük: negyedik független előfordulása annak, hogy a modell a klinikus mellé áll, nem helyette. Ugyanitt viszont a methotrexát előtti „normál TVK, vese- és májfunkció” egyetlen jelölőnégyzet — sejtmérgező kezelés előtti biztonsági ellenőrzés, aminek három állapota kell legyen."
+      },
+      "fields": [
+        {
+          "label": "Terhességi teszt vizeletből (ismeretlen · …) + Dátum",
+          "variable": null
+        },
+        {
+          "label": "Terhességi dátumok (szülés várható ideje · …) + dátum",
+          "variable": null
+        },
+        {
+          "label": "Terminus menses alapján",
+          "variable": "ctx.edd",
+          "derived": true
+        },
+        {
+          "label": "Terhességi kor (hét + nap)",
+          "variable": null
+        },
+        {
+          "label": "Terhesség lokalizációja (a lokalizáció bizonytalan · …)",
+          "variable": null,
+          "noResultState": true,
+          "note": "A „BIZONYTALAN LOKALIZÁCIÓ” (PUL) ÖNÁLLÓ, MEGNEVEZETT ÁLLAPOT, nem hiányzó adat: azt mondja ki, hogy tudjuk, hogy terhes, és tudjuk, hogy nem tudjuk, hol. Ez a nem-diagnózis a további ellátás alapja."
+        },
+        {
+          "label": "Lokalizáció típusa (császármetszés hegvonalában · …)",
+          "variable": null,
+          "crossEpisode": true,
+          "note": "A HEGVONALBA ÁGYAZÓDOTT TERHESSÉG diagnózisa egy KORÁBBI EPIZÓD eseményén (a császármetszésen) áll. A hivatkozás nélkül a diagnózis nem alátámasztható."
+        },
+        {
+          "label": "Szerkezet · Méret (mm³) · Legnagyobb átmérő (mm) · Térfogat (ml)",
+          "variable": null
+        },
+        {
+          "label": "Petezsák (mm³ + Átlag) + Körvonal",
+          "variable": null
+        },
+        {
+          "label": "Subchor. haematoma látható (igen · …) + Méret + Lokalizáció (retroplacentaris · …)",
+          "variable": null
+        },
+        {
+          "label": "Szikhólyag (nem látható · …) + méret + Átlag + Körvonal",
+          "variable": null,
+          "note": "A „NEM LÁTHATÓ” ITT LELET, nem hiányzó adat: a szikhólyag hiánya adott petezsákméret mellett diagnosztikus kritérium."
+        },
+        {
+          "label": "Amnionzsák (mm³ + Átlag)",
+          "variable": null
+        },
+        {
+          "label": "Embrió (nem látható · …) · CRL (mm)",
+          "variable": null
+        },
+        {
+          "label": "Szívműködés (látható, bradycard · …) + Szívműködés frekvenciája (ütés/perc)",
+          "variable": null,
+          "criticalCategory": true,
+          "note": "EGY LEGÖRDÜLŐ KÉT ÁLLÍTÁST HORDOZ (van-e, és milyen), a szám mellette áll — ugyanaz a szerkezeti hiba, mint a szülészeti oldal rutin kivizsgálásán."
+        },
+        {
+          "label": "Hüvelyi vérzés (vérzés alvadék nélkül · …) + érzékenység",
+          "variable": null
+        },
+        {
+          "label": "Endometrium teljes vastagsága (mm)",
+          "variable": null,
+          "contextualThreshold": true
+        },
+        {
+          "label": "Endometrium szerkezete (cysticus, tamoxifen kezelésnek megfelelő kép · …)",
+          "variable": null,
+          "contextualThreshold": true,
+          "note": "A GYÓGYSZER ÁTÍRJA A NORMÁLISAT: tamoxifen mellett a cystás, megvastagodott endometrium várható kép. Az érték jelentése tehát a gyógyszerlistától függ — két modul közötti hivatkozás, nem szövegbuborék."
+        },
+        {
+          "label": "Szabad folyadék a Douglas üregben (mm³) + Térfogat (cm³)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Vérvétel szérum hCG és progeszteron szint meghatározására (jelölőnégyzet) + Időpont",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "ßhCG szint 0 órakor (IU/l) · Progeszteron szint 0 órakor (IU/l)",
+          "variable": null
+        },
+        {
+          "label": "48 órás mintavétel dátuma és ideje · ßhCG 48 óra múlva · Progeszteron 48 óra múlva",
+          "variable": null,
+          "prePost": true,
+          "note": "A KÉT IDŐPONT EGYÜTT A LELET: a hCG önmagában nem mond semmit, a 48 óra alatti VÁLTOZÁS mond. Az „Időpont” mező ezért nem adminisztráció — a 48 óra pontossága a számítás bemenete."
+        },
+        {
+          "label": "Változás (%) · hCG arány",
+          "variable": null,
+          "derived": true
+        },
+        {
+          "label": "Szubjekív benyomás (intrauterin terhesség · …) + Valószínűség foka (közepesen biztos · …)",
+          "variable": null,
+          "note": "A KLINIKUS BENYOMÁSA A MODELL SZÁZALÉKAI MELLETT ÁLL, saját bizonyossági fokkal. NEGYEDIK független előfordulása ugyanannak: a modell a klinikus MELLÉ áll, nem helyette (a PUL-modell, a gépi CTG-olvasat és a számított poszt-transzfúziós Hb után). A kettő eltérése maga is lelet."
+        },
+        {
+          "label": "Predikciós modell használata (jelölőnégyzet)",
+          "variable": null,
+          "consentGate": true,
+          "note": "A MODELL FUTTATÁSA KÜLÖN DÖNTÉS, nem automatizmus."
+        },
+        {
+          "label": "Valószínűsége egy: elhalt terhesség % · intrauterin terhesség % · ectopiás terhesség %",
+          "variable": null,
+          "modelBacked": true,
+          "note": "HÁROM KIMENETEL, EGY MODELL: a három százaléknak összegződnie kell. Külön mezőkbe írva a kettő elválhat."
+        },
+        {
+          "label": "Forrás: Condous G, Okaro E, Khalid A, Timmerman D, Lu C, Zhou Y, Van Huffel S, Bourne T. Hum Reprod. 2004 Aug;19(8):1900-10.",
+          "variable": null,
+          "modelBacked": true,
+          "note": "A FORRÁS OTT VAN A KÉPERNYŐN, TELJES HIVATKOZÁSSAL. Pontosan az a kapu, amit a rendszer `calc.verified` néven ír elő — és ellenpélda az adnexum-lapra, ahol a „Malignitás kockázata” mező mellett semmilyen modell nincs megnevezve. Ugyanaz a rendszer, két képernyő, két színvonal."
+        },
+        {
+          "label": "Várható kimenetel · Teendő 48 óra múlva (hCG meghatározás megismétlése · …)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "normál TVK, vese- és májfunkció (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "SEJTMÉRGEZŐ KEZELÉS ELŐTTI BIZTONSÁGI ELLENŐRZÉS. A methotrexát csontvelő-, vese- és májtoxikus; a bejelöletlen négyzet nem különbözteti meg a „nem normális”-t a „nem néztük meg”-től. Három állapot kell: rendben · nincs rendben · NEM ELLENŐRIZVE."
+        },
+        {
+          "label": "Methotrexate kezelés dátuma + Dózis / Adagolás (mg)",
+          "variable": null,
+          "irreversible": true,
+          "note": "A METHOTREXÁT ADÁSA UTÁN a terhesség vállalása hónapokig ellenjavallt, és a kezelés nem visszavonható. A kapunak ELŐTTE kell zárnia."
+        },
+        {
+          "label": "PUL kategória (PUL intrauterin terhesség lehetősége · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A PUL-KATEGÓRIÁK publikált besorolásból valók; a besorolás megnevezése nélkül két intézmény „PUL”-ja nem ugyanaz."
+        },
+        {
+          "label": "Chorionicitas (3-nál több, monochorionicitás · …)",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Méhen kívüli terhesség kezelése: Kezelés (konzervatív kezelés ellenjavallt · …) + Indoklás (felborult haemodynamikai egyensúly · …)",
+          "variable": null,
+          "contraindication": true,
+          "note": "AZ ELLENJAVALLAT INDOKLÁSSAL EGYÜTT — így helyes. A felborult keringés mellett a várakozó és a gyógyszeres kezelés is tilos: ez hard-stop, nem ajánlás."
+        },
+        {
+          "label": "Klinikai állapot (változatlan · …)",
+          "variable": null,
+          "scoped": true,
+          "note": "ISMÉTELT MEGFIGYELÉS: a PUL követése napokon át tartó sorozat, nem egyetlen állapot."
+        },
+        {
+          "label": "Ultrahang diagnózis · Ellátás összefoglalása · Az ultrahang-diagnózis megfelel: (ismeretlen lokalizációjú terhességnek · …)",
+          "variable": null,
+          "note": "A HÁROM MEZŐ HÁROM SZINTET KÜLÖNBÖZTET MEG: a látott kép, a tett ellátás, és az, hogy a kép melyik NEVESÍTETT kategóriába esik. Ez a hármas bontás jó, és átvesszük."
+        },
+        {
+          "label": "További teendők (visszautalva körzeti nőgyógyászhoz / háziorvoshoz · …)",
+          "variable": null
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.meh",
+      "label": {
+        "hu": "Ultrahang › Méh"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Méh"
+      ],
+      "note": {
+        "hu": "Három publikált, VERZIÓZOTT osztályozás fut egyetlen képernyőn: az IETA (endometrium színkódolt Doppler-pontszám 1-4, „domináns erek”), a FIGO myomatípusok 0-8, és a FIGO stádiumbeosztás (< 50% invázió = 1a). Mindhárom megnevezés nélkül két intézmény lelete nem hasonlítható össze. És a képernyőre RÁ VAN ÍRVA a küszöb: „...vastagsága egy postmenopausában lévő asszony számára kóros (≥ 8,0 mm)”. A kontextusfüggést jól mondja ki — de a beleégetett szám nem frissül a bizonyítékkal: vérzéssel jelentkező postmenopauzás nőnél a küszöb 4-5 mm. Ugyanaz a hiba, mint a szülészeti oldal képernyőjére írt „BMI normáltartomány 20-25”."
+      },
+      "fields": [
+        {
+          "label": "Méh (jelen van · … · totalis hysterectomia az előzményben)",
+          "variable": null,
+          "surgicallyAbsent": true,
+          "note": "A HATODIK SZERVÁLLAPOT MÁSODIK SZAKTERÜLETEN IS: a műtéti előzmény miatt hiányzó szerv nem „nem ábrázolható” és nem „nincs adat”."
+        },
+        {
+          "label": "dőlt helyzetben (jelölőnégyzet) + (sinistropositio · …)",
+          "variable": null
+        },
+        {
+          "label": "Mobilitás (teljesen mobilis · …)",
+          "variable": null,
+          "note": "A CSÖKKENT MOBILITÁS tapadásra, endometriosisra utal — a medencevizsgálat lapján ugyanez a mező külön szerepel."
+        },
+        {
+          "label": "Méretek: hosszanti · AP · haránt (mm) · Térfogat (cm³) · Méhüreg hossza (mm)",
+          "variable": null
+        },
+        {
+          "label": "Uterus rendellenességei (uterus subseptus · …) + Részletesen",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A MÜLLER-CSŐ RENDELLENESSÉGEK BESOROLÁSA verziózott (ESHRE/ESGE 2013, illetve az ASRM MAC 2021) — és a két rendszer ugyanazt az elváltozást MÁSKÉNT nevezi meg. A besorolás megnevezése nélkül a „subseptus” nem egyértelmű."
+        },
+        {
+          "label": "Endometrium ábrázolása · Világos él · Endometriális középvonal · Echogenitás és kitöltöttség · Endo-myometrialis junctio",
+          "variable": null
+        },
+        {
+          "label": "Endometrium teljes vastagsága (mm)",
+          "variable": null,
+          "contextualThreshold": true,
+          "note": "A KÜSZÖB A KONTEXTUSTÓL FÜGG: menopauza előtt a ciklusnaptól, menopauza után a vérzéstől és a hormonkezeléstől. Egy szám önmagában nem értékelhető."
+        },
+        {
+          "label": "„…vastagsága egy postmenopausában lévő asszony számára kóros (≥ 8,0 mm)” (a képernyőre írt szöveg)",
+          "variable": null,
+          "contextualThreshold": true,
+          "note": "BELEÉGETETT KÜSZÖB A FELÜLETEN. A kontextusfüggést jól mondja ki, de a szám nem frissül a bizonyítékkal: postmenopauzás VÉRZÉS mellett a küszöb 4-5 mm, tünetmentes esetben magasabb. A képernyőre írt határérték ugyanaz a hiba, mint a szülészeti oldal BMI-szövege."
+        },
+        {
+          "label": "Synechiae (igen · …)",
+          "variable": null
+        },
+        {
+          "label": "Intracavitalis folyadék (igen · …) + Folyadék a méh üregében (mm) + Echogenitás",
+          "variable": null
+        },
+        {
+          "label": "Colour Doppler score (3 (moderate flow) · …) + Ér kitöltöttség (multiple „dominant” vessels, multifocal · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "IETA-NOMENKLATÚRA (International Endometrial Tumor Analysis). A színkódolt Doppler-pontszám 1-4 és a „domináns ér” fogalma onnan való — a konszenzus megnevezése és éve nélkül a pontszám nem értelmezhető."
+        },
+        {
+          "label": "Focalis endometrialis pathológia + Méret (mm³)",
+          "variable": null
+        },
+        {
+          "label": "Endometrialis carcinoma: Myometrialis invasio (< 50% invasio (FIGO 1a) · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A FIGO STÁDIUMBEOSZTÁS VERZIÓZOTT, és a méhtestrák beosztását 2023-ban lényegesen átdolgozták (molekuláris alcsoportokkal). Egy „FIGO 1a” évszám nélkül két különböző dolgot jelenthet."
+        },
+        {
+          "label": "Cervikális érintettség (igen · …) · Tumor-serosa közötti legkisebb távolság (mm)",
+          "variable": null
+        },
+        {
+          "label": "IUD: Helyzet (dyslocalódott · …) + IUD típusa + Fundus-IUD (mm)",
+          "variable": null,
+          "crossFilled": true,
+          "note": "Ugyanez a három mező az IUCD-felhelyezés lapján is szerepel — egy eszköz, két beviteli hely."
+        },
+        {
+          "label": "Myometrium szerkezete + Elülső/Hátsó fal vastagsága (mm)",
+          "variable": null
+        },
+        {
+          "label": "Adenomyosis (jelölőnégyzet) + (mellső falban · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ ADENOMYOSIS ULTRAHANGOS JELEIT a MUSA-konszenzus nevezi meg (Morphological Uterus Sonographic Assessment). Jelölőnégyzetként a jelek nem visszakereshetők, és a be nem jelölt négyzet nem jelenti, hogy keresték."
+        },
+        {
+          "label": "Leiomyoma: Méret (mm³) + Térfogat (cm³)",
+          "variable": null,
+          "scoped": true,
+          "note": "TÖBB MYOMA, EGY LAP. Példányonkénti adat: minden góc külön méret, elhelyezkedés és FIGO-típus."
+        },
+        {
+          "label": "Leiomyoma lokalizáció (cervicalis, FIGO - 8 · <50% a méhüregben · nyéllel csatlakozik (FIGO 7-es típus) · endometriummal kapcsolt (FIGO type 3))",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "FIGO MYOMA-BESOROLÁS 0-8. Ez dönti el, hogy a góc hysteroszkóposan eltávolítható-e — tehát nem leíró adat, hanem a műtéti terv bemenete. A képernyőn három nyelven jelenik meg ugyanaz („FIGO - 8”, „FIGO 7-es típus”, „FIGO type 3”)."
+        },
+        {
+          "label": "Leiomyoma: Fekvés · Körvonal · Szerkezet + belső kalcifikációk · Vasculáris mintázat",
+          "variable": null
+        },
+        {
+          "label": "„A cervix vizsgálata negatív (normális).” (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true
+        },
+        {
+          "label": "Cervix hossza (mm) · Szerkezet",
+          "variable": null
+        },
+        {
+          "label": "Cervix patológia: Cervikális polyp · Cervix rák gyanúja · Endometrium cc. invázió gyanújele a cervixen · Fő vénák (jelölőnégyzetek + mm³)",
+          "variable": null
+        },
+        {
+          "label": "Doppler: Jobb és Bal arteria uterina · Subendometrialis áramlás · Endometrium · Endometrialis polyp · Cervix carcinoma — PI · RI · PSV · TAMX · EDF",
+          "variable": null,
+          "scoped": true,
+          "note": "HAT MÉRÉSI HELY, MINDEGYIK ÖT ÉRTÉKKEL. Példány-dimenzió: nem harminc mező, hanem egy mérési sablon hat helyre."
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.jobbPetefeszek",
+      "label": {
+        "hu": "Ultrahang › Jobb petefészek"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Jobb petefészek"
+      ],
+      "note": {
+        "hu": "A két petefészeklap MEZŐRŐL MEZŐRE azonos — nálunk egy sablon, `scopedBy` oldallal. Egyetlen mező töri meg a szimmetriát, és éppen az a legfontosabb: a „Total antral follicle count (L+R)” a KÉT PÉLDÁNYBÓL képződik. Ez a példányok KÖZÖTTI levezetés — az egyik oldal lapján megjelenő szám, ami a másik oldal adatát is használja. Kézzel írva a két lapon két különböző összeg állhat."
+      },
+      "fields": [
+        {
+          "label": "Mobilitás (csökkent mobilitású · …)",
+          "variable": null
+        },
+        {
+          "label": "Ábrázolhatóság (előzményben oophorectomia · …)",
+          "variable": null,
+          "surgicallyAbsent": true,
+          "note": "EGY LEGÖRDÜLŐ, HÁROM KÜLÖNBÖZŐ ÁLLAPOT: nem ábrázolható (technikai korlát), nincs (műtéti előzmény), és nem kerestük. A három következménye ellentétes."
+        },
+        {
+          "label": "Echogenitás · Szerkezet (normál élettani elváltozás · …)",
+          "variable": null
+        },
+        {
+          "label": "Külső kontúr (L alakú vagy szabálytalan · …)",
+          "variable": null
+        },
+        {
+          "label": "Méret (mm³) · Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Folliculus részletek (jelölőnégyzet)",
+          "variable": null
+        },
+        {
+          "label": "Domináns folliculus (mm³) + Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Antrális tüszőszám (3-6 mm)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ AFC A PETEFÉSZEK-TARTALÉK MÉRŐSZÁMA ÉS A PCOS EGYIK KRITÉRIUMA — a küszöb viszont VÁLTOZOTT: a Rotterdam-kritérium eredetileg ≥12 tüsző volt petefészkenként, a 2018-as nemzetközi ajánlásban ≥20, mert a készülékek felbontása javult. A szám a küszöb verziója nélkül nem értelmezhető, és a mérés a KÉSZÜLÉKHEZ is kötött."
+        },
+        {
+          "label": "Total antral follicle count (L + R)",
+          "variable": null,
+          "crossInstance": true,
+          "note": "PÉLDÁNYOK KÖZÖTTI LEVEZETÉS: a két petefészek AFC-jének összege, ami MINDKÉT lapon megjelenik. Kézzel írva két lapon két különböző összeg állhat ugyanarról a vizsgálatról."
+        },
+        {
+          "label": "Összes tüsző szám (minden méret)",
+          "variable": null
+        },
+        {
+          "label": "Folliculus eloszlás (perifériás elhelyezkedés · …) · Folliculus spectrum",
+          "variable": null,
+          "note": "A PERIFÉRIÁS TÜSZŐELOSZLÁS a polycystás megjelenés jellemzője — leíró jel, nem diagnózis."
+        },
+        {
+          "label": "Corpus Luteum (jelölőnégyzet) + (cystás · …)",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A SÁRGATEST A CIKLUSNAP FÜGGVÉNYE: második ciklusfélben élettani lelet, és a ciklusnap nélkül cystának látszik."
+        },
+        {
+          "label": "„Egyszerű follicularis cysta” (jelölőnégyzet) + mm³ + Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Doppler: PI · RI · PSV (cm/s) · TAMX (cm/s) · EDF",
+          "variable": null
+        },
+        {
+          "label": "Színkódolt Doppler (fokozott vascularisatio · …)",
+          "variable": null
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.balPetefeszek",
+      "label": {
+        "hu": "Ultrahang › Bal petefészek"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Bal petefészek"
+      ],
+      "note": {
+        "hu": "A két petefészeklap MEZŐRŐL MEZŐRE azonos — nálunk egy sablon, `scopedBy` oldallal. Egyetlen mező töri meg a szimmetriát, és éppen az a legfontosabb: a „Total antral follicle count (L+R)” a KÉT PÉLDÁNYBÓL képződik. Ez a példányok KÖZÖTTI levezetés — az egyik oldal lapján megjelenő szám, ami a másik oldal adatát is használja. Kézzel írva a két lapon két különböző összeg állhat."
+      },
+      "fields": [
+        {
+          "label": "Mobilitás (csökkent mobilitású · …)",
+          "variable": null
+        },
+        {
+          "label": "Ábrázolhatóság (előzményben oophorectomia · …)",
+          "variable": null,
+          "surgicallyAbsent": true,
+          "note": "EGY LEGÖRDÜLŐ, HÁROM KÜLÖNBÖZŐ ÁLLAPOT: nem ábrázolható (technikai korlát), nincs (műtéti előzmény), és nem kerestük. A három következménye ellentétes."
+        },
+        {
+          "label": "Echogenitás · Szerkezet (normál élettani elváltozás · …)",
+          "variable": null
+        },
+        {
+          "label": "Külső kontúr (L alakú vagy szabálytalan · …)",
+          "variable": null
+        },
+        {
+          "label": "Méret (mm³) · Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Folliculus részletek (jelölőnégyzet)",
+          "variable": null
+        },
+        {
+          "label": "Domináns folliculus (mm³) + Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Antrális tüszőszám (3-6 mm)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ AFC A PETEFÉSZEK-TARTALÉK MÉRŐSZÁMA ÉS A PCOS EGYIK KRITÉRIUMA — a küszöb viszont VÁLTOZOTT: a Rotterdam-kritérium eredetileg ≥12 tüsző volt petefészkenként, a 2018-as nemzetközi ajánlásban ≥20, mert a készülékek felbontása javult. A szám a küszöb verziója nélkül nem értelmezhető, és a mérés a KÉSZÜLÉKHEZ is kötött."
+        },
+        {
+          "label": "Total antral follicle count (L + R)",
+          "variable": null,
+          "crossInstance": true,
+          "note": "PÉLDÁNYOK KÖZÖTTI LEVEZETÉS: a két petefészek AFC-jének összege, ami MINDKÉT lapon megjelenik. Kézzel írva két lapon két különböző összeg állhat ugyanarról a vizsgálatról."
+        },
+        {
+          "label": "Összes tüsző szám (minden méret)",
+          "variable": null
+        },
+        {
+          "label": "Folliculus eloszlás (perifériás elhelyezkedés · …) · Folliculus spectrum",
+          "variable": null,
+          "note": "A PERIFÉRIÁS TÜSZŐELOSZLÁS a polycystás megjelenés jellemzője — leíró jel, nem diagnózis."
+        },
+        {
+          "label": "Corpus Luteum (jelölőnégyzet) + (cystás · …)",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A SÁRGATEST A CIKLUSNAP FÜGGVÉNYE: második ciklusfélben élettani lelet, és a ciklusnap nélkül cystának látszik."
+        },
+        {
+          "label": "„Egyszerű follicularis cysta” (jelölőnégyzet) + mm³ + Térfogat (cm³)",
+          "variable": null
+        },
+        {
+          "label": "Doppler: PI · RI · PSV (cm/s) · TAMX (cm/s) · EDF",
+          "variable": null
+        },
+        {
+          "label": "Színkódolt Doppler (fokozott vascularisatio · …)",
+          "variable": null
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.szabadFolyadek",
+      "label": {
+        "hu": "Ultrahang › Szabad folyadék"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Szabad folyadék"
+      ],
+      "note": {
+        "hu": "Egy mező miatt érdemes külön kiemelni ezt a lapot: „magzati ascites”. MAGZATI lelet egy NŐGYÓGYÁSZATI szabad folyadék lapon — és ugyanez a mező az adnexum-lapon is ott van. Nem elírás: a szülészeti és a nőgyógyászati modul közös mezőkészletet használ, és a közös készletből olyan mező is átcsúszott, aminek itt nincs alanya. A három „punkció” elnevezés pedig valójában a FAST-vizsgálat rekeszeit nevezi meg (Douglas, utero-vesicalis, Morrison-féle) — ezek anatómiai helyek, nem beavatkozások."
+      },
+      "fields": [
+        {
+          "label": "Szabad hasi folyadék (igen · …)",
+          "variable": null
+        },
+        {
+          "label": "Douglas punkció (mm³) + Térfogat (cm³)",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "A „PUNKCIÓ” SZÓ ITT ANATÓMIAI REKESZT JELÖL, nem beavatkozást — harmadszor ugyanaz a fogalomzavar."
+        },
+        {
+          "label": "Utero-vesical punkció (mm³) + Térfogat (cm³)",
+          "variable": null,
+          "labelSuspect": true
+        },
+        {
+          "label": "Morrison-féle punkció (mm³) + Térfogat (cm³)",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "A MORRISON-TASAK a máj és a jobb vese közötti rekesz — a hasi szabad folyadék keresésének (FAST) rekeszlistája. Nőgyógyászati lapon a hasűri vérzés kiterjedésének mérőszáma."
+        },
+        {
+          "label": "Megjelenés (fixált anechogén folyadék · …)",
+          "variable": null,
+          "note": "A FOLYADÉK MEGJELENÉSE ELKÜLÖNÍT: az anechogén szabad folyadék élettani is lehet, a visszhangdús vérre utal. A „fixált” pedig tapadást jelez — ez a lap alján külön mezőben is ott van."
+        },
+        {
+          "label": "Lelet összefüggései",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "magzati ascites (nincs · …) + (discrete · …)",
+          "variable": null,
+          "subjectAmbiguous": true,
+          "note": "MAGZATI LELET NŐGYÓGYÁSZATI LAPON. A szülészeti és a nőgyógyászati modul közös mezőkészletéből csúszott át; itt nincs alanya, akiről szólhatna. Ugyanez a mező az adnexum-lapon is ott áll."
+        },
+        {
+          "label": "Mennyiség (mm × mm) + Megjelenés",
+          "variable": null
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.medenceVizsgalat",
+      "label": {
+        "hu": "Ultrahang › Medence vizsgálat (fájdalomtérképezés)"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Medence vizsgálat"
+      ],
+      "note": {
+        "hu": "Hét anatómiai hely, mindegyik 0-10 skálán — ez a helyspecifikus nyomásérzékenység térképe, a mélyen infiltráló endometriosis ultrahangos felmérésének része (IDEA-konszenzus). Két dolgot kell hozzátenni. A 0-10 skála MÉRŐESZKÖZ: ugyanaz a szabály vonatkozik rá, mint a validált kérdőívekre — kinek a megítélése, milyen kérdés hangzott el. És a mobilitás négy helyen mért értéke a „sliding sign” rokona: a szervek egymáson való elmozdulásának hiánya tapadást jelez, amit máshol csak a műtét mutatna meg."
+      },
+      "fields": [
+        {
+          "label": "Fájdalom térképezése — Uterine cornu · Bal utero-sacralis ligamentum · Recto-sigmoidális · Douglas punkció · Cervix · Jobb utero-sacrális ligamentum · Hugyhólyag (0-10 skála helyenként)",
+          "variable": null,
+          "scoped": true,
+          "note": "HÉT HELY, EGY SKÁLA: példányonkénti mérés, nem hét külön mező. És a 0-10 skála MÉRŐESZKÖZ — a hozzá tartozó kérdés szövegét és a megítélő személyét ugyanúgy rögzíteni kell, mint a validált kérdőíveknél."
+        },
+        {
+          "label": "A skála oldalisága: „Bal utero-sacralis ligamentum” és „Jobb utero-sacrális ligamentum” — a többi hely oldal nélkül",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "A HÉT HELYBŐL KETTŐ OLDALAZOTT, a többi nem, és az egyik „sacralis”, a másik „sacrális”. Egy értékkészleten belül két írásmód két külön értéket jelent a lekérdezésben."
+        },
+        {
+          "label": "Mobilitás — Douglas punkció · Bal petefészek · Jobb petefészek · Méh",
+          "variable": null,
+          "scoped": true,
+          "note": "A SZERVEK EGYMÁSON VALÓ ELMOZDULÁSA („sliding sign”) tapadást és mélyen infiltráló endometriosist jelez. Dinamikus lelet: a vizsgálat KÖZBEN keletkezik, és állókép nem őrzi meg — a videó melléklet ezért nem kényelmi kérdés."
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.adnexum",
+      "label": {
+        "hu": "Ultrahang › Adnexumok elváltozásai"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Adnexumok elváltozásai"
+      ],
+      "note": {
+        "hu": "Ez a lap végig az IOTA-leírók készlete: laesiotípus, lókuszszám, papillaris növedék és magassága, hangárnyék, ascites, színkódolt Doppler-pontszám 1-4. Pontosan azok a bemenetek, amelyekből az IOTA „egyszerű szabályok” és az ADNEX-modell dolgozik. A lap alján ott is van a „Malignitás kockázata” mező — üresen, ÉS SEMMILYEN MODELL NINCS MEGNEVEZVE MELLETTE. Ugyanez a rendszer a koraterhesség lapon teljes irodalmi hivatkozást tesz ki a PUL-modell mellé. Egy rendszer, két képernyő, két színvonal — és a mi szabályunk szerint a hivatkozás nélküli modell nem futhat."
+      },
+      "fields": [
+        {
+          "label": "Lokalizáció (egyoldali · …) + Oldal (középen · …)",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Eredet (bizonytalan · …)",
+          "variable": null,
+          "noResultState": true,
+          "note": "A „BIZONYTALAN EREDET” ÖNÁLLÓ, ÉRDEMI ÁLLAPOT: az, hogy a képlet petefészekből vagy azon kívülről indul-e, a besorolás egyik sarokpontja. A bizonytalanság itt lelet, nem hiány."
+        },
+        {
+          "label": "Petefészek mérete (mm³) · Lézió mérete (mm³) · Térfogat (cm³) · Legnagyobb átmérő (mm)",
+          "variable": null
+        },
+        {
+          "label": "Érintésre vagy nyomásra fájdalmas (jelölőnégyzet)",
+          "variable": null
+        },
+        {
+          "label": "Laesio típusa (multilocularis-solid · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ IOTA ÖT ALAPTÍPUSA (unilocularis, unilocularis-solid, multilocularis, multilocularis-solid, solid). A besorolás megnevezése nélkül a szó nem az, aminek látszik."
+        },
+        {
+          "label": "Lókuszok száma (több mint 10 · …) · Legnagyobb szolid kompartment mérete (mm³)",
+          "variable": null
+        },
+        {
+          "label": "Szabálytalan belső cystafal (nincs · …)",
+          "variable": null
+        },
+        {
+          "label": "Papillaris növedék (több · …) + Papillarisatio magassága (mm) + áramlás",
+          "variable": null,
+          "note": "A PAPILLARIS NÖVEDÉK az IOTA egyik legerősebb rosszindulatúsági jele — a 3 mm-es magasság a definíció része, nem szabad leírás."
+        },
+        {
+          "label": "Hangárnyékok (nincs · …) · Metastasis (nincs · …)",
+          "variable": null
+        },
+        {
+          "label": "Magzati ascites (nincs · …)",
+          "variable": null,
+          "subjectAmbiguous": true,
+          "note": "MÁSODSZOR ugyanaz az átcsúszott magzati mező. Az IOTA-leírókban az ascites a BETEG hasűri folyadéka — a „magzati” jelző itt értelmezhetetlen, és a mező mégis ezt a nevet viseli."
+        },
+        {
+          "label": "Color-Doppler érték (2: minimális véráramlás · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ IOTA SZÍNKÓDOLT DOPPLER-PONTSZÁMA 1-4, és a „szabályok” bemenete. Puszta szövegként átvéve a modell nem futtatható."
+        },
+        {
+          "label": "Belső szerkezet · Septum (nem ábrázolható · …) + Inkomplett septum",
+          "variable": null
+        },
+        {
+          "label": "Echogenitás („ground glass” = „tejüveg-szerű megjelenés” · …)",
+          "variable": null,
+          "synonymDuplicate": true,
+          "note": "AZ ÉRTÉK MAGA HORDOZZA A KÉT NYELVET, egyenlőségjellel. A tejüveg-megjelenés az endometrioma jellemzője — kódolt érték kell legyen, nem kétnyelvű szöveg."
+        },
+        {
+          "label": "Jellemzés",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "PSV (cm/s) · TAMX (cm/s) · RI · PI",
+          "variable": null
+        },
+        {
+          "label": "CA125 (IU/ml)",
+          "variable": null,
+          "crossFilled": true,
+          "note": "LABORÉRTÉK EGY ULTRAHANGLAPON. Nem hiba: a malignitási kockázati index (RMI) a CA125-öt, az ultrahangos pontszámot ÉS a menopauzális állapotot szorozza össze — utóbbi az anamnézis lapon van. A számítás tehát HÁROM lapról szedi a bemenetét, és a hivatkozásoknak ezt követniük kell."
+        },
+        {
+          "label": "Az ultrahang képre alapozott diagnózis (valószínű benignus teratoma vagy dermoid cysta · …)",
+          "variable": null,
+          "note": "A VIZSGÁLÓ MINTAFELISMERÉSE — és az IOTA szerint ez a „subjective assessment” tapasztalt kézben a modelleknél sem rosszabb. A modell tehát itt is a klinikus MELLETT áll."
+        },
+        {
+          "label": "Malignitás kockázata",
+          "variable": null,
+          "modelBacked": true,
+          "note": "A MEZŐ A MODELL KIMENETE, DE SEMMILYEN MODELL NINCS MEGNEVEZVE MELLETTE. Ugyanez a rendszer a koraterhesség lapon teljes irodalmi hivatkozást tesz ki. A mi szabályunk szerint hivatkozás nélkül a számítás NEM FUT: melyik modell (IOTA egyszerű szabályok, ADNEX, RMI), melyik verzió, milyen küszöbbel."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.folliculometria",
+      "label": {
+        "hu": "Ultrahang › Folliculus Keresés"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Folliculus Keresés"
+      ],
+      "note": {
+        "hu": "Négy sor, mindegyik három oszloppal: bal, jobb és ÖSSZES. Az „összes” oszlop a másik kettőből képződik — az összesnél az összeadás, a legnagyobbnál a maximum, a legkisebbnél a minimum, az átlagnál pedig SÚLYOZOTT átlag, nem a két átlag átlaga. Ez utóbbi az a fajta hiba, amit kézzel számolva senki nem vesz észre. A ciklusnap itt nem kiegészítő adat: enélkül a tüszőméret nem értelmezhető, és a sorozatvizsgálat éppen a NÖVEKEDÉS ÜTEMÉRŐL szól."
+      },
+      "fields": [
+        {
+          "label": "Utolsó menstruáció",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Ciklus napja",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A TÜSZŐKÖVETÉS SOROZATVIZSGÁLAT: nem az egy méret számít, hanem a napi növekedés (kb. 2 mm/nap). A ciklusnap nélkül a sorozat nem áll össze."
+        },
+        {
+          "label": "Összes tüsző: bal · jobb · összes",
+          "variable": null,
+          "crossInstance": true
+        },
+        {
+          "label": "Átlag méret: bal · jobb · összes",
+          "variable": null,
+          "crossInstance": true,
+          "note": "AZ EGYESÍTETT ÁTLAG SÚLYOZOTT ÁTLAG, nem a két átlag átlaga. Kézzel számolva ez a hiba nem látszik — levezetve nem fordulhat elő."
+        },
+        {
+          "label": "Legnagyobb méret: bal · jobb · összes",
+          "variable": null,
+          "crossInstance": true
+        },
+        {
+          "label": "Legkisebb méret: bal · jobb · összes",
+          "variable": null,
+          "crossInstance": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.hycosy",
+      "label": {
+        "hu": "Ultrahang › HyCoSy"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "HyCoSy"
+      ],
+      "note": {
+        "hu": "A lap jól kérdez: indikáció, antibiotikum-profilaxis, kontrasztanyag és térfogata, komplikáció, eredmény, további teendők. Két hiányossága viszont szerkezeti. Az eredmény („right tube proximal block”) SZABAD SZÖVEG, holott oldalanként strukturált lelet: a bal és a jobb petevezeték átjárhatósága két külön állítás, és a termékenységi tanácsadás rajtuk múlik. A kontrasztanyag pedig orvostechnikai eszköz — a gyártási tétel nyomon követhetősége ugyanúgy követelmény, mint a vérkészítményeknél."
+      },
+      "fields": [
+        {
+          "label": "Dátum · Indikáció (elsődleges subfertilitás · …)",
+          "variable": null
+        },
+        {
+          "label": "antibiotikum profilaxis (jelölőnégyzet) + szer",
+          "variable": null,
+          "contraindication": true,
+          "note": "A PROFILAXIS A BEAVATKOZÁS FELTÉTELE fertőzésre hajlamos helyzetben (kismedencei gyulladás előzménye). Bejelöletlenül nem különböztethető meg, hogy nem kellett, vagy elmaradt. A képernyőn a címke elgépelve: „antibiotiikum”."
+        },
+        {
+          "label": "egyéb gyógyszerelés (jelölőnégyzet) + szer",
+          "variable": null
+        },
+        {
+          "label": "Kontraszt anyag (Exem foam · …) + Térfogat (ml)",
+          "variable": null,
+          "traceable": true,
+          "note": "ORVOSTECHNIKAI ESZKÖZ / KONTRASZTANYAG: a gyártási tétel szerinti nyomon követhetőség ugyanaz a követelmény, mint a vérkészítményeknél — az esetleges visszahívás ezen múlik."
+        },
+        {
+          "label": "Komplikáció (vagal reaction · …)",
+          "variable": null,
+          "note": "A VAGÁLIS REAKCIÓ a méhnyakon át végzett beavatkozások tipikus szövődménye — ugyanez a mező az IUCD-felhelyezés lapján is ott van, ugyanazzal az értékkel. Közös szövődménylista, nem lapszintű szöveg."
+        },
+        {
+          "label": "Eredmények (right tube proximal block · …)",
+          "variable": null,
+          "freeText": true,
+          "note": "OLDALANKÉNTI LELET SZABAD SZÖVEGBEN. A bal és a jobb petevezeték átjárhatósága KÉT KÜLÖN ÁLLÍTÁS, és a proximális elzáródás gyakran görcs, nem valódi elzáródás — a bizonytalanságnak is helye kell legyen. A laparoszkópia lapján ugyanez már oldalanként, strukturáltan szerepel."
+        },
+        {
+          "label": "További teendők · Részletek",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.vesekHugyholyag",
+      "label": {
+        "hu": "Ultrahang › Vesék / Húgyhólyag"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Ultrahang",
+        "Vesék / Húgyhólyag"
+      ],
+      "note": {
+        "hu": "A vese „nem ábrázolható” értéke itt ugyanazt a hármas állapotot kívánja, mint mindenütt: technikai korlát · műtéti hiány · veleszületett hiány (agenesia). A három következménye teljesen eltér, és a SOLITER VESE felismerése a nőgyógyászati műtét előtt életbevágó. A hydronephrosis fokozata pedig publikált beosztás (SFU) — a „Grade I” a beosztás megnevezése nélkül nem összehasonlítható."
+      },
+      "fields": [
+        {
+          "label": "Húgyhólyag: Méret (mm³) · Térfogat (ml) · Falvastagság (mm) · Rendellenességek",
+          "variable": null,
+          "measurementContext": true,
+          "note": "A HÓLYAGTÉRFOGAT MÉRÉSE A TELTSÉGTŐL FÜGG: a residuum csak vizelés UTÁN mérve residuum. A mérés körülménye az értékkel együtt tárolandó."
+        },
+        {
+          "label": "Bal vese (nem ábrázolható · …) + Méret (mm³) + Térfogat (ml)",
+          "variable": null,
+          "surgicallyAbsent": true,
+          "note": "HÁROM KÜLÖNBÖZŐ OK, EGY ÉRTÉK: technikai korlát, műtéti eltávolítás és veleszületett hiány. A SOLITER VESE felismerése kismedencei műtét előtt (ureter-sérülés kockázata) életbevágó — és a medencevesét éppen a Müller-cső rendellenességekkel EGYÜTT kell keresni, amiket a méh-lap rögzít."
+        },
+        {
+          "label": "Bal vese › Cysta (jelölőnégyzet) + Méret (mm³)",
+          "variable": null
+        },
+        {
+          "label": "Bal vese › Hydronephrosis (Grade I · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A HYDRONEPHROSIS FOKOZATA publikált beosztás (SFU, illetve az UTD-osztályozás). A „Grade I” a beosztás megnevezése nélkül nem összehasonlítható — és a magzati vesetágulat besorolása MÁS rendszer, pedig a szülészeti oldalon ugyanez a szó szerepel."
+        },
+        {
+          "label": "Jobb vese: ugyanaz a négy mező",
+          "variable": null,
+          "scoped": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.cervicalisKenet",
+      "label": {
+        "hu": "Beavatkozások › Cervicalis kenet"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "Cervicalis kenet"
+      ],
+      "note": {
+        "hu": "A blokk BETŰRE AZONOS a klinikai vizsgálat lapján állóval: ugyanaz a hét mező, két menüpont alatt. Nem mező szintű átfedés, hanem egy egész adatlap kettőzése — és utólag nem eldönthető, melyik példány a friss."
+      },
+      "fields": [
+        {
+          "label": "Indikáció (korábbi pozitív cytológia miatt · …)",
+          "variable": null
+        },
+        {
+          "label": "Cervix kenet levétele (sikertelen · …) + indoklás",
+          "variable": null,
+          "attemptFailed": true
+        },
+        {
+          "label": "Mintavételi eszköz · Cervix megjelenése",
+          "variable": null
+        },
+        {
+          "label": "Kenet cytológiára (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Kezelés: négy jelölőnégyzet (AgNitrát · polyp eltávolítás · biopszia · cryocauterizálás)",
+          "variable": null
+        },
+        {
+          "label": "A teljes blokk MÁSODIK példánya a klinikai vizsgálat lapján",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.infekciok",
+      "label": {
+        "hu": "Beavatkozások › Infekciók (fertőzések szűrése)"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "Infekciók"
+      ],
+      "note": {
+        "hu": "Hét jelölőnégyzet, mind MEGRENDELÉS — és sehol egy eredménymező. A szülészeti oldalon minden eredményblokk előtt „Megrendelve” ÉS „Eredmény” pár állt; itt csak a megrendelés fele van meg. Egy bejelölt négyzet így örökre azt üzeni, hogy kértük, és soha nem azt, hogy mi lett belőle. Az „Előzetes antibiotikum terápiában részesült” mező pedig ÉRVÉNYTELENÍTŐ adat: előzetes kezelés után a negatív tenyésztés nem negatív lelet."
+      },
+      "fields": [
+        {
+          "label": "Indikáció (bacterialis vaginosis szűrése · …)",
+          "variable": null
+        },
+        {
+          "label": "Hét mintavételi jelölőnégyzet: Vizelet (2. pohár vagy középsugár, MSU) · High vaginal swab · Endo-cervicális kenet · Húgycső kenet · Rectaális kenet · STI vizeleti infekció szűrés",
+          "variable": null,
+          "orderTracking": true,
+          "note": "CSAK MEGRENDELÉS, EREDMÉNYMEZŐ NÉLKÜL. A szülészeti oldal „Megrendelve · Eredmény” párjának itt csak az első fele van meg — a kintlévő lelet nyomon követhetetlen. A „Rectaális” címke elgépelve, a „High vaginal swab” pedig angolul maradt."
+        },
+        {
+          "label": "Előzetes antibiotikum terápiában részesült (jelölőnégyzet) + részletek",
+          "variable": null,
+          "invalidates": true,
+          "note": "ÉRVÉNYTELENÍTŐ ADAT: előzetes antibiotikum után a negatív tenyésztés nem negatív lelet, csak annyi, hogy a szer már hatott. Az eredménnyel EGYÜTT kell megjelennie, különben a „nincs kórokozó” megnyugtatónak látszik."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.iucdFelhelyezes",
+      "label": {
+        "hu": "Beavatkozások › IUCD felhelyezés"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "IUCD felhelyezés"
+      ],
+      "note": {
+        "hu": "Három szerkezeti tanulság egy lapon. A felhelyezés SIKERTELEN lehet, indoklással (cervix stenosis) — harmadik állapot. A „Méh” mező értékkészletében ott a „Subtotalis hysterectomia az előzményben”: ez biztonsági előellenőrzés, nem anamnesztikus érdekesség. És az eszköz (Mirena IUD) ORVOSTECHNIKAI ESZKÖZ, ami a betegben marad: a gyártási tétel, a lejárat és az egyedi eszközazonosító nyomon követhetősége jogszabályi követelmény, nem kényelmi kérdés."
+      },
+      "fields": [
+        {
+          "label": "Dátum",
+          "variable": null
+        },
+        {
+          "label": "Behelyezés előtti vizsgálat elvégezve (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true
+        },
+        {
+          "label": "Méh (Subtotalis hysterectomia az előzményben · …)",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "MŰTÉTI ELŐZMÉNY MINT BIZTONSÁGI KAPU: a megváltozott üregtani viszony a felhelyezés kockázatát (perforáció) alapvetően megváltoztatja."
+        },
+        {
+          "label": "Üreg méret (mm) · Becsült üreg mélység (mm)",
+          "variable": null
+        },
+        {
+          "label": "IUCD felhelyezés (sikertelen volt · …) + indoklás (cervix stenosis miatt · …)",
+          "variable": null,
+          "attemptFailed": true,
+          "note": "HARMADIK FÜGGETLEN ELŐFORDULÁSA a „megkísérelve és nem sikerült” állapotnak — a cervixkenet és az endometrium-biopszia után."
+        },
+        {
+          "label": "Eszköz típusa (Mirena IUD · …)",
+          "variable": null,
+          "traceable": true,
+          "note": "A BETEGBEN MARADÓ ORVOSTECHNIKAI ESZKÖZ: gyártási tétel, lejárat és egyedi eszközazonosító (UDI) szerint nyomon követhetőnek kell lennie, és a megőrzési ideje eltér a leletétől. Ugyanaz a követelmény, mint a vérkészítményeknél."
+        },
+        {
+          "label": "Komplikációk (vagális reakció · …)",
+          "variable": null
+        },
+        {
+          "label": "Behelyezés utáni vizsgálat elvégezve (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true
+        },
+        {
+          "label": "IUD: Helyzet · IUD típusa · Fundus-IUD (mm)",
+          "variable": null,
+          "crossFilled": true,
+          "note": "Ugyanez a három mező a méh-ultrahang lapon is szerepel."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.endometriumBiopszia",
+      "label": {
+        "hu": "Beavatkozások › Endometrium biopszia"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "Endometrium biopszia"
+      ],
+      "note": {
+        "hu": "A „Minta minősége: scanty sample consistant with atrophy” mező mondja ki azt, ami az egész rendszerre igaz: ELÉGTELEN MINTÁN A NEGATÍV NEM NEGATÍV. A kevés anyagot adó biopszia „nem mutat rosszindulatúságot” lelete nem zárja ki a rosszindulatúságot — csak annyit mond, hogy nem volt mit megnézni. Az alkalmasság ezért az eredménnyel EGYÜTT tárolandó, és a leleten is együtt kell megjelennie."
+      },
+      "fields": [
+        {
+          "label": "Dátum",
+          "variable": null
+        },
+        {
+          "label": "Endometrium biopszia elvégzése (sikertelen volt · …) + indoklás (beteg rossz állapota miatt · …)",
+          "variable": null,
+          "attemptFailed": true
+        },
+        {
+          "label": "Mintavételi eszköz (pipelle · …)",
+          "variable": null,
+          "assayBound": true
+        },
+        {
+          "label": "Minta minősége (scanty sample consistant with atrophy · …)",
+          "variable": null,
+          "sampleAdequacy": true,
+          "note": "AZ ELÉGTELEN MINTA NEGATÍV LELETE NEM NEGATÍV LELET. A postmenopauzás vérzés kivizsgálásában ez a különbség dönti el, hogy kell-e hysteroszkópia. A mező szövege ráadásul elgépelt angol („consistant”)."
+        },
+        {
+          "label": "Komplikáció (erős fájdalom a mintavétel alatt · …)",
+          "variable": null
+        },
+        {
+          "label": "Minta szövettanra küldve (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.implantatum",
+      "label": {
+        "hu": "Beavatkozások › Implantátum"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "Implantátum"
+      ],
+      "note": {
+        "hu": "A lap tetején egyetlen jelölőnégyzet áll ezzel a címkével: „A beteg megkapta a tájékoztatást a teljes vizsgálatra illetve annak kockázataira és beleegyezését adta.” Egy pipa a tájékoztatásról, a kockázatokról és a beleegyezésről EGYSZERRE — három különböző állítás, amelyek közül bármelyik hiányozhat. A dózismező pedig „100 micrograms” értéket mutat egy olyan készítménynél, amelynek szokásos depóadagja 3,6 mg: a szabad szövegű dózis a gyógyszerbiztonság leggyakoribb csendes hibája."
+      },
+      "fields": [
+        {
+          "label": "Dátum",
+          "variable": null
+        },
+        {
+          "label": "„A beteg megkapta a tájékoztatást a teljes vizsgálatra illetve annak kockázataira és beleegyezését adta.” (jelölőnégyzet)",
+          "variable": null,
+          "consentGate": true,
+          "note": "HÁROM ÁLLÍTÁS EGY PIPÁBAN: megtörtént-e a tájékoztatás, kiterjedt-e a kockázatokra, és megadta-e a beleegyezést. Bármelyik hiányozhat úgy, hogy a négyzet be van jelölve. A beleegyezésnek ráadásul időpontja, terjedelme és visszavonhatósága van — ezekből egy jelölőnégyzet egyet sem hordoz."
+        },
+        {
+          "label": "Előkészítés (Zoladex (GnRH analóg) · …)",
+          "variable": null
+        },
+        {
+          "label": "Dózis / Adagolás („100 micrograms”)",
+          "variable": null,
+          "unitMismatch": true,
+          "note": "SZABAD SZÖVEGŰ DÓZIS EGYSÉG NÉLKÜL. A gosereline szokásos depóadagja 3,6 mg (illetve 10,8 mg a háromhavi) — a „100 micrograms” nagyságrenddel tér el. Szám + egység + készítmény nélkül semmilyen dózisellenőrzés nem futtatható, és a hiba csendes marad."
+        },
+        {
+          "label": "Aszeptikus technika (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true
+        },
+        {
+          "label": "Helye (jobb fossa iliaca · …)",
+          "variable": null,
+          "scoped": true,
+          "note": "A BEÜLTETÉS HELYE az eltávolításhoz nélkülözhetetlen — a nem tapintható implantátum megkeresése a hely dokumentálásán múlik."
+        },
+        {
+          "label": "Lokális anaesthesia (jelölőnégyzet) + szer (marcaine · …)",
+          "variable": null
+        },
+        {
+          "label": "Varat (jelölőnégyzet)",
+          "variable": null
+        },
+        {
+          "label": "Következő implantátum (dátum)",
+          "variable": null,
+          "note": "A BEAVATKOZÁS KÖTELEZETTSÉGET TEREMT: a lejáró implantátum visszahívása nem a beteg emlékezetén múlik. Ez ütemezett feladat, nem dátummező — ugyanaz a szerkezet, mint a lejáró leletek nyomon követése."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.cystaAspiracio",
+      "label": {
+        "hu": "Beavatkozások › Cysta Aspiráció"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "Cysta Aspiráció"
+      ],
+      "note": {
+        "hu": "A „Mintavételek száma” mezőben „sikertelen” áll — SZÁMMEZŐBEN SZÖVEGES ÁLLAPOT. Ez a negyedik előfordulása a „megkísérelve és nem sikerült” állapotnak, és itt éppen azt mutatja meg, mi történik, ha nincs hova írni: a szám helyére kerül. A cystafolyadék citológiája pedig gyenge bizonyíték — a negatív lelet a rosszindulatúságot nem zárja ki, és ezt a mező mellett ki kell mondani, mert az „elküldve cytológiára” pipa megnyugtatónak látszik."
+      },
+      "fields": [
+        {
+          "label": "Dátum · Indikáció · B-módú megjelenés",
+          "variable": null
+        },
+        {
+          "label": "Mintavételek száma („sikertelen”)",
+          "variable": null,
+          "attemptFailed": true,
+          "note": "SZÁMMEZŐBEN SZÖVEGES ÁLLAPOT. Nem a felhasználó hibája: nincs hova írni, hogy megkísérelték és nem sikerült, ezért a szám helyére került. Ez pontosan az az eset, amiért a harmadik állapotnak saját helyet kell adni."
+        },
+        {
+          "label": "Tű méret (gauge) (14g · …)",
+          "variable": null,
+          "measurementContext": true
+        },
+        {
+          "label": "Minta térfogata (ml) · Folyadék megjelenése (színezett · …)",
+          "variable": null,
+          "note": "A FOLYADÉK JELLEGE ÖNMAGÁBAN LELET: a csokoládébarna az endometriomát, a tiszta savós a funkcionális cystát valószínűsíti."
+        },
+        {
+          "label": "Komplikációk · Után követési javaslatok",
+          "variable": null
+        },
+        {
+          "label": "A folyadék elküldve cytológiára (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true,
+          "note": "A CYSTAFOLYADÉK CITOLÓGIÁJA GYENGE BIZONYÍTÉK: a negatív eredmény a rosszindulatúságot NEM zárja ki. A pipa mellett ennek ott kell lennie, különben az „elküldve” megnyugtatónak látszik."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.erpc",
+      "label": {
+        "hu": "Beavatkozások › ERPC (vetélés utáni eltávolítás és helyreállítás)"
+      },
+      "menuPath": [
+        "Vizsgálat",
+        "Beavatkozások",
+        "ERPC"
+      ],
+      "note": {
+        "hu": "Ez a lap oldja meg a szülészeti oldalon nyitva maradt rejtélyt. Ott a thrombophilia-mezők értékkészletében állt egy „ccddee” jelölés, amiről kiderült, hogy RHESUS-genotípus, nem thrombophilia-genotípus. Itt van a helyén: „Rh(esus): negatív (ccddee)”. Az értékkészletet tehát INNEN másolták oda. A lap ugyanakkor egy hard-stop szerkezetet is hordoz: a „Vércsoport: ismeretlen”, az „Rh(esus): negatív” és az „Anti-D beadva: igen” három mező, amelyeknek együtt kell állniuk — ismeretlen vércsoport mellett beadott anti-D olyan ellentmondás, amit a rendszernek észre kell vennie."
+      },
+      "fields": [
+        {
+          "label": "Beavatkozást végző + Felügyelet",
+          "variable": null,
+          "operatorGate": true
+        },
+        {
+          "label": "Anaesthesia típusa (általános anaesthesia · …) + Anaesthesiológus",
+          "variable": null
+        },
+        {
+          "label": "Indikáció (üres pete – blighted ovum · …) · Terhességi kor (10 hetes · …)",
+          "variable": null
+        },
+        {
+          "label": "Méh állása (retroverted · …) · Méh mérete (10 hetes · …)",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "A MÉH MÉRETE TERHESSÉGI HÉTBEN kifejezve — a méh állása pedig angolul („retroverted”), miközben a méh-ultrahang lapon „retrovertált”. Egy fogalom, két írásmód, két lapon."
+        },
+        {
+          "label": "Cervix (nyitott · …) + Tágítva (Hagar 10 · …)",
+          "variable": null
+        },
+        {
+          "label": "Suctio curettage mérete (10 · …) + UH segítségével elvégezve (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "AZ ULTRAHANGOS VEZÉRLÉS a perforáció kockázatát csökkenti — bejelöletlenül nem különböztethető meg, hogy nem kellett, vagy elmaradt."
+        },
+        {
+          "label": "Leveve és elküldve szövettani vizsgálatra (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true,
+          "note": "A SZÖVETTAN ITT NEM FORMASÁG: a trophoblast-betegség (mola) kizárása ezen múlik, és a lap alján a „Kontroll: szövettanra vár” mező szó szerint kimondja a kintlévőséget."
+        },
+        {
+          "label": "Az üreg ellenőrizve éles curettel és üres (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true
+        },
+        {
+          "label": "Haemostasis ellenőrizve (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true
+        },
+        {
+          "label": "Oxytocin (Syntometrine · …)",
+          "variable": null,
+          "contraindication": true,
+          "note": "A SYNTOMETRINE ERGOMETRINT TARTALMAZ, ami magas vérnyomás és praeeclampsia mellett ELLENJAVALLT. A készítmény kiválasztása tehát kapu, nem szabad szöveg — ugyanaz a szerkezet, mint a carboprost és az asztma."
+        },
+        {
+          "label": "Vérveszteség (kevesebb mint 100 ml · …)",
+          "variable": null,
+          "unitMismatch": true,
+          "note": "SÁVOSÍTOTT VÉRVESZTESÉG SZÁM HELYETT. A becsült vérveszteség amúgy is rendszeresen alábecsült; sávosítva a minőségi visszamérés lehetetlenné válik."
+        },
+        {
+          "label": "Fájdalomcsillapítás · Antibiotikum · Otthonra gyógyszerei",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Vércsoport (ismeretlen · …)",
+          "variable": null
+        },
+        {
+          "label": "Rh(esus) (negatív (ccddee) · …)",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "ITT VAN A HELYÉN AZ A JELÖLÉS, ami a szülészeti oldal thrombophilia-mezőiben hibásan szerepelt. A „ccddee” Rhesus-genotípus — az értékkészletet innen másolták a thrombophilia-mezőkbe. A korábbi megállapítás ezzel forrásáig visszakövethető."
+        },
+        {
+          "label": "Anti-D beadva (igen · …)",
+          "variable": null,
+          "contraindication": true,
+          "traceable": true,
+          "note": "HÁROM MEZŐ, EGY SZABÁLY: Rh-negatív nőnél vetélés utáni beavatkozás esetén az anti-D adása kötelező, ISMERETLEN vércsoport mellett beadva viszont ellentmondás. A rendszernek a három mezőt EGYÜTT kell néznie. Az anti-D vérkészítmény: gyártási tétel szerint nyomon követendő."
+        },
+        {
+          "label": "Kontroll (szövettanra vár · …)",
+          "variable": null,
+          "orderTracking": true,
+          "note": "A KINTLÉVŐSÉG SZAVAKKAL KIMONDVA. Pontosan az az állapot, amire a „Megrendelve · Eredmény” pár való — itt szabad szövegbe szorult."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.kertVizsgalatok",
+      "label": {
+        "hu": "Kért vizsgálatok"
+      },
+      "menuPath": [],
+      "note": {
+        "hu": "Negyvenhárom jelölőnégyzet, csoportokba rendezve — és sehol egy eredménymező: ez tiszta megrendelőlap. Három dolgot kell hozzátenni. Az „Általános profilok” sor (Ovarium funkciók, Ovarium reservoár, Infertilitás, PCO/Hirsutismus, Menopauza) EGY PIPÁVAL TÖBB VIZSGÁLATOT rendel, de a rekordban nem marad nyoma, MELYEKET — a profil tartalma ráadásul intézményenként és időben is változik. Az endokrin tesztek többsége CIKLUSNAPHOZ kötött (LH/FSH a 2-5. napon, progeszteron a 21. körül): ciklusnap nélkül megrendelve az eredmény nem értelmezhető. És a HIV egyetlen jelölőnégyzet a többi szerológia között, holott a vizsgálathoz külön tájékoztatás és beleegyezés tartozik, az eredménynek pedig külön láthatósági szabálya kell legyen."
+      },
+      "fields": [
+        {
+          "label": "Hematológia: FBC · Vércsoport · Alvadási paraméterek · Electrophoresis",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Biokémia: U & E · LFT · Vércukor",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Endokrinológia: LH/FSH · Prolactin · Progesterone · Oestradiol · Anti-Müller hormon · Oestriol · Pajzsmirigy funkció · SHBG · 17-OHP · 24 órás steroid profil vizeletből · Kortisol",
+          "variable": null,
+          "measurementContext": true,
+          "note": "AZ ENDOKRIN TESZTEK TÖBBSÉGE CIKLUSNAPHOZ KÖTÖTT: az LH/FSH a 2-5. napon, a progeszteron a luteális fázis közepén értelmezhető. A megrendelés ciklusnap nélkül olyan eredményt hoz, amit nem lehet leolvasni. A ciklusnap az „Indikáció” lapon van — a megrendelésnek onnan kellene vennie."
+        },
+        {
+          "label": "Koraterhesség: ß-hCG · Progesteron · Rhesus állapot",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Immunológia: Antitestek",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "EGYETLEN TÉTEL KÉT KÜLÖN VILÁGRA: a vörösvérsejt-ellenanyagok (anti-D, anti-Kell) és az autoantitestek (antifoszfolipid, lupus antikoaguláns) nem ugyanaz a vizsgálat. Ugyanaz a kétértelműség, mint a szülészeti oldal „Anyai ellenanyagok” mezőjében."
+        },
+        {
+          "label": "Serologia: Rubeolla · Toxoplasmosis · Cytomegalovirus · Hepatitis B · Hepatitis C · Syphilis",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Serologia: HIV",
+          "variable": null,
+          "consentGate": true,
+          "safetySensitive": true,
+          "note": "A HIV-VIZSGÁLAT NEM EGY PIPA A TÖBBI KÖZÖTT: külön tájékoztatás és beleegyezés tartozik hozzá, az eredménynek pedig külön láthatósági szabálya kell legyen. Egy nyomtatott leleten megjelenve a beteget veszélyeztetheti."
+        },
+        {
+          "label": "Általános profilok: Ovarium Funkciók · Ovarium reservoár · Infertilitás · PCO/Hirsutismus · Menopauza · Tumour Markers · Koraterhesség · Ismétlődő vetélés",
+          "variable": null,
+          "valueSetSuspect": true,
+          "note": "A PROFIL NEM VIZSGÁLAT, HANEM CSOMAG. Egy pipa több tesztet rendel, de a rekordban nem marad nyoma, MELYEKET — és a csomag tartalma intézményenként és időben változik. Visszamenőleg így nem állapítható meg, mi volt megmérve. Nálunk a profil MEGRENDELŐ-SABLON: a rekordba a kibontott tételek kerülnek."
+        },
+        {
+          "label": "Egyéb · Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.laparoszkopia",
+      "label": {
+        "hu": "Laparoszkópia"
+      },
+      "menuPath": [],
+      "note": {
+        "hu": "A lap közepén ott az AFS-pontozótábla az endometriosisra: peritoneum, két petefészek, a hátsó Douglas-üreg elzáródása és a tapadások, mindegyik méret és kiterjedés szerint pontozva. Alatta egyetlen mező: „Total score” — KÉZZEL BEÍRVA a bejelölt pontértékek mellé. Ez a rendszer legtisztább levezetés-sértése: a pontszám az összetevőkből következik, és a stádium (I-IV) a pontszámból; kézzel írva a kettő szétválik, és a besorolás alapján születik a döntés. Ráadásul a tábla „AFS”-nek nevezi magát, holott az 1985-ös AFS-t 1997-ben rASRM néven dolgozták át — évszám nélkül nem tudni, melyik pontrendszer szerint készült a szám."
+      },
+      "fields": [
+        {
+          "label": "Követés · Dátum · Indikáció",
+          "variable": null
+        },
+        {
+          "label": "Sebész · Asszisztens · Anaesthetiológus",
+          "variable": null,
+          "operatorGate": true
+        },
+        {
+          "label": "Behatolás (a routine closed laparoscopy · …) · Pneumoperitoneum (Hgmm)",
+          "variable": null,
+          "measurementContext": true
+        },
+        {
+          "label": "Láthatóság (suboptimális · …) + indoklás (because of poor insufflation · …)",
+          "variable": null,
+          "secondAttempt": true,
+          "note": "A LÁTHATÓSÁG A LELET RÉSZE: a rossz rálátás melletti negatív lelet nem ugyanaz, mint a jó rálátásé. A laparoszkópia „nem láttam” lelete a diagnosztika végpontja — itt már nincs hova továbbküldeni."
+        },
+        {
+          "label": "10 mm és 5 mm portok száma + Elhelyezkedés / Location",
+          "variable": null,
+          "scoped": true,
+          "note": "A KÉT HELYMEZŐ közül az egyik magyarul, a másik angolul van címkézve, ugyanabban a sorban."
+        },
+        {
+          "label": "Normál medence (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true,
+          "note": "EGY PIPA A TELJES KISMEDENCÉRŐL: méh, két petefészek, két petevezeték, Douglas-üreg, peritoneum. Hét szerv állítása egyetlen négyzetben, holott a lap alján mindegyiknek külön lelete van."
+        },
+        {
+          "label": "Masses: Eredet · Méret (mm³) · Legnagyobb átmérő (mm) · Unilocular · Endometriomára utaló jelek · Dermoid cystára utaló jelek · Külső struktúra · Belső struktúra · Vegetáció",
+          "variable": null,
+          "scoped": true,
+          "note": "MŰTÉTI SZEMMEL LÁTOTT LEÍRÓK, amelyek az ULTRAHANGOS leírók (IOTA) párjai — a kettő összevetése az ultrahangos megítélés visszamérése. Ehhez viszont AZONOS értékkészlet kellene; itt más szavakkal ugyanaz."
+        },
+        {
+          "label": "Szabad medencei vagy hasi folyadék (jelen van · …) + Becsült mennyisége (ml) + Megjelenése",
+          "variable": null,
+          "crossFilled": true
+        },
+        {
+          "label": "Minta cytológiára elküldve (jelölőnégyzet)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Diagnosis based on appearances",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "Angol címke a magyar képernyőn — és ez a mező a MŰTÉTI szemrevételezés diagnózisa, aminek a szövettani lelettel való egybevetése az audit-hurok nőgyógyászati megfelelője."
+        },
+        {
+          "label": "Cysta Aspiráció: Levett térfogat (ml) · Folyadék karakterisztikája · Complications · A folyadék cytológiára küldve",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Ovarium cystectómia: Előzetes diagnózisa a cystának · Cysta eltávolítás (nem-teljesen · …) · Cysta vagy falának eltávolítása a hasból · Ovarium zárás · Haemostasis · Komplikációk",
+          "variable": null
+        },
+        {
+          "label": "Cysta ruptúra (occurred with significant spillage of the c… · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A MŰTÉT KÖZBENI CYSTAREPEDÉS STÁDIUMOT VÁLTOZTAT: rosszindulatú petefészekdaganatnál a tokrepedés FIGO IC1 stádiumot jelent, és megváltoztatja a kiegészítő kezelés indikációját. Nem szövődmény a sok közül — besorolást módosító tény."
+        },
+        {
+          "label": "Oopherectómia: indikáció · Használt technika · Nehézségek · Petefészek eltávolítása a hasüregből · Haemostasis · Átmosó folyadék cytológiára · Minta szövettanra · Komplikációk",
+          "variable": null
+        },
+        {
+          "label": "Endometrioma kezelése: Ovaricus mobilitás az operáció ELŐTT és POSTOP.",
+          "variable": null,
+          "prePost": true,
+          "note": "UGYANAZ A MEGÍTÉLÉS A BEAVATKOZÁS ELŐTT ÉS UTÁN — a műtét hatásának mérőszáma. Egyetlen mezőben tárolva éppen a változás vész el."
+        },
+        {
+          "label": "Salpingectómia · Fimbriális cysta eltávolítása · Peduncult fibroid eltávolítása — mindegyik ugyanazzal a hét mezővel",
+          "variable": null,
+          "scoped": true,
+          "note": "HÉT SEBÉSZI ALBLOKK, MEZŐRŐL MEZŐRE AZONOS szerkezettel (indikáció, technika, nehézségek, eltávolítás útja, haemostasis, minta, komplikáció, laparotómia). Egy beavatkozás-sablon, nem hét adatlap."
+        },
+        {
+          "label": "„Laparotómia elvégezve” (minden sebészi alblokkban külön)",
+          "variable": null,
+          "scoped": true,
+          "note": "A NYITOTT MŰTÉTRE VALÓ ÁTTÉRÉS a laparoszkópia legfontosabb minőségi mutatója, és itt HÉT külön helyen jelölhető. Egy beavatkozáshoz egy konverzió tartozik — hét mezőben hét különböző válasz állhat."
+        },
+        {
+          "label": "Tubális átjárhatóság: Jobb és Bal Fallop vezeték — Appearance / Megjelenés + Dye Teszt",
+          "variable": null,
+          "scoped": true,
+          "note": "A KÉT OLDAL AZONOS SABLONJA, de az egyik oldal címkéje angol („Appearance”), a másiké magyar („Megjelenés”) — ugyanabban a táblázatban. És a petevezeték a lapon három néven fut: „Fallop vezeték”, „petevezeték”, „Fallop-féle vezeték”."
+        },
+        {
+          "label": "AFS Klasszifikáció a tuba elzáródásra: distalis ampullaris átmérő · tubafal vastagság · nyálkahártyaredők · adhézió kiterjedés és típus — oldalanként",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "A SOROK OLDALCÍMKÉI KEVERTEK: „Bal / Right”, „Bal / Jobb”, „Filmszerű / Filmy”, „Denz / Dense” — ugyanabban a táblázatban két nyelven. A lekérdezésben ez két külön érték."
+        },
+        {
+          "label": "Prognosztikus klasszifikáció a végleges salpingostómiára (oldalanként) + Termékenységi prognózis (átlagos (25-50%) · …)",
+          "variable": null,
+          "modelBacked": true,
+          "note": "SÁVOS TERMÉKENYSÉGI ESÉLY MODELL MEGNEVEZÉSE NÉLKÜL. A beteg ez alapján dönt a műtét és a lombikprogram között — hivatkozás nélkül a szám nem futhat."
+        },
+        {
+          "label": "AFS (American Fertility Society) endometriosis-pontozótábla: peritoneum felszínes/mély × <1 cm / 1-3 cm / >3 cm; jobb és bal petefészek felszínes/mély; posterior culdesac obliteratio (partiális 4 · komplett 40); adhéziók filmszerű/denz × <1/3, 1/3-2/3, >2/3 elzárt",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ 1985-ÖS AFS-PONTRENDSZERT 1997-BEN rASRM NÉVEN DOLGOZTÁK ÁT. A tábla „AFS”-nek nevezi magát: évszám nélkül nem tudni, melyik változat szerint készült a pontszám — és a stádiumhatárok is eltérnek."
+        },
+        {
+          "label": "Total score (kézzel beírva a bejelölt pontértékek mellé)",
+          "variable": null,
+          "handTotal": true,
+          "note": "A RENDSZER LEGTISZTÁBB LEVEZETÉS-SÉRTÉSE: a pontszám az összetevőkből következik, a stádium (I-IV) a pontszámból, és a kezelési döntés a stádiumból. Kézzel beírva a lánc első szeme elszakad, és a hiba minden továbbiban öröklődik. Nálunk az összeg LEVEZETETT — beírni nem lehet."
+        },
+        {
+          "label": "Summary of findings",
+          "variable": null,
+          "labelSuspect": true,
+          "freeText": true
+        },
+        {
+          "label": "Endometriosis kezelése: Adekvált bél előkészítés · módszer · Adhesiolysis (elhelyezkedés, beavatkozás) · Endometriom csomók sebészi kezelése (elhelyezkedés, procedure)",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "A BÉL-ELŐKÉSZÍTÉS a mélyen infiltráló endometriosis műtétjének feltétele: bélsérülés esetén az előkészítés hiánya dönti el, hogy elvégezhető-e az elsődleges varrat. Bejelöletlenül nem különböztethető meg, hogy nem kellett, vagy elmaradt."
+        },
+        {
+          "label": "Méhen kívüli terhesség: Eredés (right fallopian tube + infundibularis) · Méret (mm) · Szerkezet · Haematoperitineum (ml) · Bal és Jobb petefészek · Contralateralis vezeték · Beavatkozás (segmental resection · …)",
+          "variable": null
+        },
+        {
+          "label": "ßhCG szintek figyelése és követése + Sorozatos ßhCG szintek (Dátum · szint · Teendő)",
+          "variable": null,
+          "orderTracking": true,
+          "scoped": true,
+          "note": "A MŰTÉT UTÁNI hCG-KÖVETÉS a maradék trophoblast kiszűrésére szolgál — sorozatos mérés, és nyitott kötelezettség: a beteg addig nem engedhető el, amíg a szint le nem megy. Ez ütemezett feladat, nem táblázat."
+        },
+        {
+          "label": "Követési megbeszélés (…early scan to check location a következő terhességben)",
+          "variable": null,
+          "crossEpisode": true,
+          "note": "A JELEN EPIZÓD TANÁCSA A KÖVETKEZŐ EPIZÓDRA SZÓL: a méhen kívüli terhesség után a következő terhességben korai lokalizáló ultrahang szükséges. Ennek a jövőbeli epizódban kell megjelennie — enélkül ott láthatatlan, ahol számít."
+        },
+        {
+          "label": "Adhéziók: AFS klasszifikáció oldalanként + Prognosztikus klasszifikáció + Fertilitási esélyek (átlagos (25-50%) · …)",
+          "variable": null,
+          "modelBacked": true
+        },
+        {
+          "label": "„Kattintson a példákért” (a pontozótáblák melletti hivatkozás)",
+          "variable": null,
+          "note": "A PONTOZÁS REFERENCIAKÉPEKHEZ VAN KÖTVE. Ez helyes — de azt is jelenti, hogy a pontszám a referenciaatlasz VERZIÓJÁHOZ tartozik: más példákkal más pontszám születik ugyanarra a látványra."
+        },
+        {
+          "label": "PID (Medecei gyulladásos betegség): Lelet + Megjegyzés",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "Elgépelés a címkében („Medecei” · „Medencei”), és a PID diagnózisa műtéti szemrevételezéssel a referenciamódszer — érdemi lelet, szabad szöveggel."
+        },
+        {
+          "label": "További leírás szervenként: Méh · Bal petefészek · Jobb petefészek · Douglas punkció · fossae ovarius · Bal és Jobb Fallop-féle vezeték",
+          "variable": null,
+          "scoped": true,
+          "note": "HÉT SZERV, MINDEGYIK „Lelet + Megjegyzés” párral. Ugyanaz a szervkatalógus-szerkezet, mint a magzati anatómiánál és a boncolásnál — és a „Douglas punkció” címke itt is anatómiai helyet jelöl."
+        },
+        {
+          "label": "A műtéti leleten alapuló diagnózisok · Beavatkozás összefoglalása · Postoperatív utasítások",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.laparotomia",
+      "label": {
+        "hu": "Laparotómia"
+      },
+      "menuPath": [],
+      "note": {
+        "hu": "Rövid lap, egyetlen mezője viszont a betegbiztonság legkeményebb ellenőrzési pontja: „Kenetek és eszközök rendben”. A visszamaradt műtéti eszköz vagy törlő az elkerülendő események („never event”) iskolapéldája, és a számolás KÉT ember egyeztetése — egyetlen jelölőnégyzet nem tudja, ki és mikor számolt, és nem tudja azt sem, hogy a szám nem stimmelt. Három állapot kell ide: rendben · NEM stimmel · nem történt meg a számolás."
+      },
+      "fields": [
+        {
+          "label": "Indikáció (complete the procedure laparoscopically for technical reasons · …)",
+          "variable": null,
+          "note": "A NYITOTT MŰTÉTRE VALÓ ÁTTÉRÉS INDOKA — a laparoszkópia lapján hét helyen jelölhető konverzió itt kap indoklást. A kettőnek ugyanarra az eseményre kell mutatnia."
+        },
+        {
+          "label": "Bemetszés (alsó transzverzális · …)",
+          "variable": null
+        },
+        {
+          "label": "Lelet (suspicious ovarian mass consistant with malignancy · …)",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Beavatkozás (total abdominal hysterectomy · …)",
+          "variable": null,
+          "note": "A BEAVATKOZÁS MEGNEVEZÉSE a kódolás bemenete: a fekvőbeteg beavatkozási törzs ötjegyű kódja ebből képződik, és ez határozza meg a HBCS-besorolást is."
+        },
+        {
+          "label": "Nehézségek (dense adhesions · …) · Bezárás",
+          "variable": null,
+          "freeText": true
+        },
+        {
+          "label": "Vérvesztés (ml)",
+          "variable": null
+        },
+        {
+          "label": "Kenetek és eszközök rendben (jelölőnégyzet)",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "A VISSZAMARADT TÖRLŐ VAGY ESZKÖZ az elkerülendő események iskolapéldája. A számolás KÉT ember egyeztetése, időponttal — egy jelölőnégyzet nem hordozza sem azt, ki számolt, sem azt, hogy a szám NEM stimmelt. Három állapot kell: rendben · nem stimmel · nem történt meg."
+        },
+        {
+          "label": "Drain (jelölőnégyzet) + leírás · Kathéter (jelölőnégyzet) + leírás",
+          "variable": null,
+          "traceable": true,
+          "note": "A BETEGBEN HAGYOTT ESZKÖZ eltávolítási kötelezettséget teremt — a katéter benn felejtése önálló szövődményforrás. Ütemezett feladat, nem szabad szöveg."
+        },
+        {
+          "label": "Operáció utáni javaslatok (három azonos sor)",
+          "variable": null,
+          "labelSuspect": true,
+          "note": "HÁROM AZONOS SZÖVEGŰ SOR EGYMÁS ALATT a képernyőn. Ismétlődő mező listaként — de a három sor egyenrangú, tehát nem derül ki, melyik a hatályos utasítás."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.hysteroszkopia",
+      "label": {
+        "hu": "Hysteroszkópia"
+      },
+      "menuPath": [],
+      "note": {
+        "hu": "Minden reszekciós blokkban ott a „Folyadék hiány (ml)” mező és mellette a „serum sodium checked” jelölőnégyzet. Ez nem adminisztráció: a hysteroszkópos öblítőfolyadék felszívódása hyponatraemiát és agyödémát okoz, és a folyadékdeficit MENNYISÉGI HATÁRÉRTÉK, aminél a műtétet abba kell hagyni (hypotoniás közegnél lényegesen alacsonyabb, mint izotóniásnál). A rendszerben ez nem egy szám a többi között, hanem riasztási küszöb, ami az öblítőközegtől függ — a közeget pedig ugyanezen a lapon rögzítik („Irrigációs közeg: isotoniás sóoldat”)."
+      },
+      "fields": [
+        {
+          "label": "Date · Indikáció · Asszisztens · Sebész · Aneszteziológus",
+          "variable": null,
+          "operatorGate": true
+        },
+        {
+          "label": "Anesztézia (epiduralis · …) · hysteroszkópia típusa (diagnosztikus · …)",
+          "variable": null
+        },
+        {
+          "label": "Hysteroszkópia (nm diagnostic hysteroscope · …) · Irrigációs közeg (isotoniás sóoldat · …)",
+          "variable": null,
+          "measurementContext": true,
+          "note": "AZ ÖBLÍTŐKÖZEG DÖNTI EL A FOLYADÉKDEFICIT RIASZTÁSI KÜSZÖBÉT: hypotoniás közegnél lényegesen alacsonyabb, mint izotóniásnál. A közeg és a deficit tehát EGYÜTT értelmezhető."
+        },
+        {
+          "label": "Láthatóság (suboptimális · …) + indoklás",
+          "variable": null,
+          "secondAttempt": true
+        },
+        {
+          "label": "Jelentkezett nehézségek (a vérzés Foley katéter behelyezését indokolta · …)",
+          "variable": null
+        },
+        {
+          "label": "Normál megjelenésű üreg és endometrium (jelölőnégyzet)",
+          "variable": null,
+          "allNegative": true
+        },
+        {
+          "label": "Endometrium kóros eltérése: Jelleg (lehetséges hyperplasia · …) + Megjelenés + Helye",
+          "variable": null,
+          "uncertainSignificance": true,
+          "note": "A „LEHETSÉGES HYPERPLASIA” SZEMREVÉTELEZÉSI BENYOMÁS, nem diagnózis: a hyperplasia és az atípia elkülönítése szövettani kérdés. A bizonytalanságot a lelet részeként kell megőrizni."
+        },
+        {
+          "label": "Fibroids › Leiomyoma: Legnagyobb átmérő (mm) · Fekvés (adjacent to the right ostia · …) · A méh üregének (aránya) · Eltávolításra alkalmas? (alul szabályozás után · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "crossFilled": true,
+          "note": "AZ „ELTÁVOLÍTHATÓSÁG” A FIGO-TÍPUSTÓL FÜGG, amit a méh-ultrahang lapon már rögzítettek. Ugyanaz a besorolás, két lapon, két szóhasználattal — a műtéti terv és az ultrahangos lelet összevetése így nem gépi."
+        },
+        {
+          "label": "cervix polyp › Polyp: Legnagyobb átmérő (mm) · Lokalizáció · Megjelenés (tamoxifen kapcsolt · …)",
+          "variable": null,
+          "contextualThreshold": true,
+          "note": "A TAMOXIFEN-KAPCSOLT ELVÁLTOZÁS megint a gyógyszerlistára mutat: a „normális” kép a szedett gyógyszertől függ."
+        },
+        {
+          "label": "Veleszületett elváltozások › Jelleg (subseptat Uterus · …)",
+          "variable": null,
+          "versionedClassification": true,
+          "crossFilled": true,
+          "note": "A méh-ultrahangon „uterus subseptus”, itt „subseptat Uterus”. Ugyanaz az elváltozás, két írásmód — és a hysteroszkópia a referenciamódszer, tehát éppen ez a két lelet volna összevetendő."
+        },
+        {
+          "label": "Intrauterin adhéziók (nem látható · …) + Elhelyezkedés + Eltávolítható?",
+          "variable": null,
+          "versionedClassification": true,
+          "note": "AZ INTRAUTERIN ÖSSZENÖVÉSEK (Asherman) SÚLYOSSÁGA publikált besorolás (ESGE, illetve az AFS 1988-as rendszere) — a termékenységi kilátás ebből következik. Szabad szövegként a besorolás elvész."
+        },
+        {
+          "label": "Ostium tubae (oldalanként): Oldaliság · Láthatóság · Pathológia · Telítetség · Beavatkozás (selektív kanüláció · …)",
+          "variable": null,
+          "scoped": true
+        },
+        {
+          "label": "Egyéb leletek: További patológia (fibrotic cavity following previous TCRE · …) + Sebészileg eltávolítható?",
+          "variable": null,
+          "crossEpisode": true,
+          "note": "A KORÁBBI MŰTÉT (TCRE) KÖVETKEZMÉNYE A MAI LELET. A hivatkozás a korábbi beavatkozás rekordjára nem kényelmi kérdés."
+        },
+        {
+          "label": "biopszia jellege › Minták: Hely + Megjegyzés",
+          "variable": null,
+          "scoped": true,
+          "orderTracking": true
+        },
+        {
+          "label": "IUCD / IUS felhelyezés eredménye (sikertelen volt · …) + indoklás",
+          "variable": null,
+          "attemptFailed": true,
+          "note": "ÖTÖDIK ELŐFORDULÁSA a „megkísérelve és nem sikerült” állapotnak — és az IUCD-blokk itt MÁSODSZOR szerepel, a saját menüpontja mellett."
+        },
+        {
+          "label": "Eszköz típusa (Mirena IUD · …) + Üreg mérete + Komplikációk + felhelyezés utáni vizsgálat + IUD helyzet/típus/Fundus-IUD",
+          "variable": null,
+          "crossFilled": true,
+          "traceable": true
+        },
+        {
+          "label": "A diagnózis a hysteroszkópia alapján (submucous fibroid amely nem eltávolítható · …)",
+          "variable": null
+        },
+        {
+          "label": "Sebészi beavatkozás elvégezve (Transcervikális fibroid resection (TCRF) · …)",
+          "variable": null
+        },
+        {
+          "label": "Endometrium resectio: Eltávolítás típusa (using rollerball diathermy · …) + Eltávolított szövet tömege (g) + Haemostasis + Komplikáció",
+          "variable": null
+        },
+        {
+          "label": "Folyadék hiány (ml) — minden reszekciós blokkban",
+          "variable": null,
+          "safetyPrecheck": true,
+          "note": "MENNYISÉGI RIASZTÁSI KÜSZÖB, NEM LELETADAT. Az öblítőfolyadék felszívódása hyponatraemiát és agyödémát okoz; a deficit határértékénél a műtétet abba kell hagyni, és a határérték az öblítőközegtől függ. A rendszerben ez küszöbfigyelés, nem szám a többi között — és a mező NÉGY blokkban külön szerepel, egy beavatkozásra vonatkozó EGY deficit helyett."
+        },
+        {
+          "label": "Postoperatív ellátás: normális instructiok · intrauterin kathéter a helyén · „szérum Na ellenőrizve” / „serum sodium checked” · Vízhajtó adása",
+          "variable": null,
+          "synonymDuplicate": true,
+          "note": "UGYANAZ A JELÖLŐNÉGYZET NÉGY BLOKKBAN, KÉT NYELVEN: az egyik blokkban „szérum Na ellenőrizve”, a másik háromban „serum sodium checked”. Egy ellenőrzés, négy hely, két írásmód."
+        },
+        {
+          "label": "Eltávolítás típusa (using a resectoscope · …) + fibroid száma + Eltávolított szövet tömege (g) + Becsült visszamaradt szövet (%)",
+          "variable": null,
+          "note": "A VISSZAMARADT SZÖVET BECSÜLT ARÁNYA dönti el, kell-e második ülés — a beteg tájékoztatása és a kontroll ütemezése ezen múlik."
+        },
+        {
+          "label": "Endometrium és fibroid resectio · Hysteroszkópos polypectómia — ugyanaz a nyolc mező újra",
+          "variable": null,
+          "scoped": true,
+          "note": "NÉGY REszEKCIÓS BLOKK, mezőről mezőre azonos szerkezettel. Egy beavatkozás-sablon, nem négy adatlap."
+        },
+        {
+          "label": "Postoperatív utasítások · Követés (3 hónap múlva jelentkezzen kontrollra · …)",
+          "variable": null,
+          "note": "A KONTROLL IDŐPONTJA KÖTELEZETTSÉG, nem szöveg: ütemezett feladatként kell megjelennie, különben a beteg emlékezetén múlik."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    },
+    {
+      "id": "gyn.form.kimenetel",
+      "label": {
+        "hu": "Kimenetel"
+      },
+      "menuPath": [
+        "Kimenetel"
+      ],
+      "note": {
+        "hu": "Tizenkét mező, és közülük kettő zárja be a nőgyógyászati kört: „Műtét utáni diagnózis megerősítve” és „UH diagnózis megerősítve”. Ez ugyanaz az audit-hurok, ami a szülészeti oldalon „A prenatális diagnózis megerősítve?” néven szerepel — csak itt HÁROM állítást szembesít egymással: amit az ultrahang mondott, amit a sebész látott, és amit a szövettan kimondott. A demóadat éppen a legtanulságosabb esetet mutatja: a szövettan „normális eredmények”, a műtét utáni diagnózis „Endometriosis”, az UH-diagnózis pedig „megerősítve: igen”. A felületes endometriosis szövettani igazolása közismerten megbízhatatlan — a három forrás eltérése tehát nem hiba, hanem maga a lelet, és a rendszernek meg kell tudnia őrizni mindhármat. Aki csak egyet tárol, az a másik kettőt hallgatja el."
+      },
+      "fields": [
+        {
+          "label": "Kezelés eldöntésének ideje",
+          "variable": null
+        },
+        {
+          "label": "Műtét dátuma · Kezelés helye",
+          "variable": null
+        },
+        {
+          "label": "MDT dátuma · MDT helye",
+          "variable": null,
+          "note": "A MULTIDISZCIPLINÁRIS ONKOTEAM ÜLÉSE önálló, dátumozott esemény, amelyen a döntés születik. A rendszerben nem mezőpár: a döntés hordozója, résztvevőkkel és indoklással — a daganatos ellátás minőségi mutatója, hogy a döntés MDT-n született-e."
+        },
+        {
+          "label": "Műtve (jelölőnégyzet) + Jelleg (Adnexectómia · …)",
+          "variable": null,
+          "note": "A BEAVATKOZÁS MEGNEVEZÉSE a kódolás bemenete — a fekvőbeteg beavatkozási törzs ötjegyű kódja innen képződik."
+        },
+        {
+          "label": "Szövettan (normális eredmények · …)",
+          "variable": null,
+          "orderTracking": true
+        },
+        {
+          "label": "Műtét utáni diagnózis megerősítve (Endometriosis · …)",
+          "variable": "audit.postop.confirmed",
+          "outcomeAudit": true,
+          "note": "A MŰTÉTI ÉS A SZÖVETTANI IGAZSÁG SZEMBESÍTÉSE. A demóadatban a szövettan „normális”, a műtét utáni diagnózis mégis „Endometriosis” — és ez klinikailag helyes lehet: a felületes endometriosis szövettani igazolása megbízhatatlan. A rendszer ezért nem választhat a kettő közül, és nem is írhatja felül az egyiket a másikkal."
+        },
+        {
+          "label": "UH diagnózis megerősítve (igen · …)",
+          "variable": "audit.us.confirmed",
+          "outcomeAudit": true,
+          "note": "AZ ULTRAHANGOS MEGÍTÉLÉS VISSZAMÉRÉSE a műtéti leleten. Ez a nőgyógyászati megfelelője annak, amit a szülészeti oldalon „A prenatális diagnózis megerősítve?” mező végez: enélkül az IOTA-, az RMI- és a PUL-modell teljesítménye ebben az intézményben soha nem mérhető vissza. Ezzel viszont minden ultrahangos lelet auditálhatóvá válik."
+        },
+        {
+          "label": "Folyamat (folyamatos követés ultrahanggal javasolt · …)",
+          "variable": null,
+          "note": "KÖVETÉSI KÖTELEZETTSÉG: ütemezett feladat, nem szabad szöveg — különben a következő vizsgálat a beteg emlékezetén múlik."
+        },
+        {
+          "label": "Megjegyzés",
+          "variable": null,
+          "freeText": true
+        }
+      ]
+    }
+  ],
+  "modulePrefixes": {
+    "1": [
+      "complaints"
+    ],
+    "2": [
+      "ctx"
+    ],
+    "3": [
+      "hx",
+      "hx.eeszt",
+      "hx.family",
+      "hx.life",
+      "hx.origin",
+      "hx.psy",
+      "hx.repro",
+      "hx.supp",
+      "hx.surg",
+      "hx.sys"
+    ],
+    "4": [
+      "anthro",
+      "exam.obs",
+      "score",
+      "status",
+      "vitals"
+    ],
+    "5": [
+      "ekg",
+      "imaging",
+      "lab",
+      "vizsgalatok"
+    ],
+    "6": [
+      "rules",
+      "rx"
+    ],
+    "7": [
+      "diet"
+    ],
+    "8": [
+      "psy"
+    ],
+    "9": [
+      "epi"
+    ],
+    "10": [
+      "labour",
+      "szuloszoba"
+    ],
+    "11": [
+      "op"
+    ],
+    "12": [
+      "onc"
+    ],
+    "13": [
+      "plan"
+    ],
+    "14": [
+      "disch"
+    ],
+    "15": [
+      "demog",
+      "fu",
+      "nb",
+      "neo",
+      "out"
+    ],
+    "16": [
+      "prom"
+    ],
+    "17": [
+      "addr",
+      "code"
+    ],
+    "25": [
+      "admin"
+    ]
+  },
+  "modulePrefixNote": {
+    "hu": "Ugyanaz a regiszterből származó leképezés, mint a szülészeti térképnél. A nőgyógyászati menüpontok többsége viszont a huszonhat szülészeti modulon KÍVÜL esik — a nulla változószám ezeknél nem hiányosság, hanem annak kimondása, hogy a nőgyógyászati változókészlet még nem készült el."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "fekvo.szulesKodolas",
+  "label": { "hu": "A szülés kódolásának szabályai a fekvőbeteg-jelentésben" },
+  "source": {
+    "cite": "10/2012. (II. 28.) NEFMI rendelet 11. melléklet I. rész (A szülés és az újszülöttek kódolásának és besorolásának szabályai)",
+    "standard": "10/2012 NEFMI"
+  },
+  "note": {
+    "hu": "Ez a KÓDOLÁS szabálya, nem a BESOROLÁSÉ. A rendelet megmondja, mit kötelező rögzíteni egy szüléshez; azt, hogy az eset melyik HBCS-csoportba esik, a 2. melléklet besorolási táblázata mondaná meg, ami nincs gépi alakban."
+  },
+  "szulesModKod": { "tol": "O8000", "ig": "O8492", "cite": "11. melléklet I. 1.2." },
+  "kimenetelKod": { "elotag": "Z37", "cite": "11. melléklet I. 1.4." },
+  "csaszarmetszes": {
+    "bnoElotag": "O82",
+    "beavatkozas": ["57400", "57410", "57420", "57421"],
+    "tobbesBno": ["O8420", "O8421", "O8422"]
+  },
+  "huvelyiSzulesVezetes": {
+    "beavatkozas": ["57270", "57271", "92600", "92604"],
+    "cite": "11. melléklet I. 3.2."
+  },
+  "patologiasTerhesseg": {
+    "minNapSzulesElott": 12,
+    "cite": "11. melléklet I. 3.3.2. és 4.2."
+  },
+  "besorolasiTenyezok": [
+    "patológiás terhesség",
+    "hüvelyi szülés",
+    "hüvelyi szülés műtéttel",
+    "császármetszés",
+    "nagy rizikójú szülés"
+  ]
+}

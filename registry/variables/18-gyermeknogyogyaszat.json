@@ -1,0 +1,1065 @@
+[
+ {
+  "id": "pedgyn.consent.who",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Ki adta a beleegyezést"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "parent",
+    "label_hu": "Törvényes képviselő"
+   },
+   {
+    "code": "both",
+    "label_hu": "Törvényes képviselő ÉS a kiskorú együtt"
+   },
+   {
+    "code": "minor",
+    "label_hu": "A kiskorú önállóan (belátási képesség alapján)"
+   },
+   {
+    "code": "emerg",
+    "label_hu": "Sürgős szükség — utólagos tájékoztatással"
+   },
+   {
+    "code": "none",
+    "label_hu": "NINCS rögzítve",
+    "flags": [
+     "redflag"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Ki egyezett bele a vizsgálatba, és milyen alapon."
+   },
+   "whyItMatters": {
+    "hu": "Kiskorúnál a beleegyezés nem alakiság: a felnőttellátásból átvett „aláírta” logika itt nem működik. A kiskorú véleményét a korához és belátási képességéhez mérten figyelembe kell venni — a törvényes képviselő beleegyezése ezt nem váltja ki."
+   },
+   "pitfalls": {
+    "hu": "A `none` érték NEM „elfelejtettük kitölteni”: azt jelenti, hogy a vizsgálat beleegyezés dokumentálása nélkül történt. Ezért piros zászló."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.minor.ownView",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "A kiskorú saját véleménye rögzítve"
+  },
+  "module": "pedgyn",
+  "datatype": "tristate",
+  "documentation": {
+   "definition": {
+    "hu": "Megkérdezték-e a kiskorút magát, és rögzítették-e a válaszát."
+   },
+   "whyItMatters": {
+    "hu": "Az önálló vélemény hiánya a leggyakoribb hiány a kiskorú-dokumentációban, és utólag pótolhatatlan."
+   }
+  },
+  "valueSet": [
+   {
+    "code": "pos",
+    "label_hu": "Igen — megkérdeztük, és rögzítettük"
+   },
+   {
+    "code": "neg",
+    "label_hu": "Nem"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem rögzített",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pedgyn.confidentiality.discussed",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Titoktartás megbeszélve a serdülővel"
+  },
+  "module": "pedgyn",
+  "datatype": "tristate",
+  "documentation": {
+   "definition": {
+    "hu": "Elhangzott-e, hogy mit tartunk bizalmasan, és mi az, amit nem tarthatunk annak."
+   },
+   "whyItMatters": {
+    "hu": "A serdülő attól függően mond igazat a szexuális aktivitásáról, a fogamzásgátlásról vagy a bántalmazásról, hogy tudja-e, ki fogja megtudni. A titoktartás HATÁRÁT is ki kell mondani — a bántalmazás gyanúja jelentési kötelezettséggel jár, és ezt előre kell közölni, nem utólag."
+   }
+  },
+  "valueSet": [
+   {
+    "code": "pos",
+    "label_hu": "Igen"
+   },
+   {
+    "code": "neg",
+    "label_hu": "Nem"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem rögzített",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pedgyn.chaperone",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Kísérő jelen volt a vizsgálatnál"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "parent",
+    "label_hu": "Szülő / törvényes képviselő"
+   },
+   {
+    "code": "staff",
+    "label_hu": "Egészségügyi dolgozó (chaperone)"
+   },
+   {
+    "code": "both",
+    "label_hu": "Mindkettő"
+   },
+   {
+    "code": "byRequest",
+    "label_hu": "A kiskorú kérésére NEM volt jelen szülő"
+   },
+   {
+    "code": "none",
+    "label_hu": "Senki"
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Ki volt jelen a genitális vizsgálat alatt."
+   },
+   "whyItMatters": {
+    "hu": "A kísérő jelenléte a kiskorút és a vizsgálót egyaránt védi. A `byRequest` külön érték, mert a serdülő kérése önmagában legitim, és rögzítendő."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.thelarche.age",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Thelarche (mellfejlődés kezdete) életkora"
+  },
+  "module": "pedgyn",
+  "datatype": "quantity",
+  "unit": "a",
+  "domain": {
+   "min": 4,
+   "max": 18
+  },
+  "documentation": {
+   "definition": {
+    "hu": "Az az életkor, amikor a mellfejlődés megindult."
+   },
+   "whyItMatters": {
+    "hu": "8 év alatt korai pubertás gyanúja, 13 év felett hiánya késői pubertásé. Mindkettő endokrin kivizsgálást indít."
+   },
+   "pitfalls": {
+    "hu": "A HIÁNYZÓ adat nem „normális időben történt”. Ha nem kérdeztük meg, a rendszer nem mond időzítést."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.pubarche.age",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Pubarche (szeméremszőrzet megjelenése) életkora"
+  },
+  "module": "pedgyn",
+  "datatype": "quantity",
+  "unit": "a",
+  "domain": {
+   "min": 4,
+   "max": 18
+  },
+  "documentation": {
+   "definition": {
+    "hu": "Az az életkor, amikor a szeméremszőrzet megjelent."
+   },
+   "whyItMatters": {
+    "hu": "Izolált korai pubarche adrenalis eredetre utalhat (pl. nem klasszikus CAH), és a `lab.17ohp` méréssel jár együtt."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.tanner.pubic",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Szeméremszőrzet Tanner-stádium"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": 1,
+    "label_hu": "PH1 — nincs terminális szőrzet"
+   },
+   {
+    "code": 2,
+    "label_hu": "PH2 — gyér, egyenes szőrzet a nagyajkakon"
+   },
+   {
+    "code": 3,
+    "label_hu": "PH3 — sötétebb, göndörödő, ritkás"
+   },
+   {
+    "code": 4,
+    "label_hu": "PH4 — felnőtt jellegű, kisebb területen"
+   },
+   {
+    "code": 5,
+    "label_hu": "PH5 — felnőtt mennyiség és eloszlás"
+   }
+  ],
+  "codeSystem": {
+   "id": "tanner",
+   "version": "1969",
+   "source": "Marshall WA, Tanner JM. Arch Dis Child 1969;44:291-303"
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A szeméremszőrzet fejlettsége a Tanner-beosztás szerint."
+   },
+   "whyItMatters": {
+    "hu": "Az emlő- és a szőrzetstádium SZÉTVÁLÁSA diagnosztikus: izolált pubarche adrenalis, izolált thelarche gonadalis tengelyre mutat."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.puberty.timing",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Pubertás időzítése"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "precocious",
+    "label_hu": "Korai (< 8 év)",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "normal",
+    "label_hu": "Időben"
+   },
+   {
+    "code": "delayed",
+    "label_hu": "Késői (13 évig nincs thelarche, vagy 15 évig nincs menarche)",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "unassessable",
+    "label_hu": "Nem megítélhető",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "derivation": {
+   "kind": "clinician",
+   "explain": {
+    "hu": "A thelarche/menarche életkorából ÉS a jelenlegi életkorból ítélve — de a rendszer nem számolja ki magától, mert a hiányzó adatból nem lehet „időben” besorolást csinálni."
+   }
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A pubertás menetének besorolása."
+   },
+   "pitfalls": {
+    "hu": "Az `unassessable` NEM ugyanaz, mint a `normal`. A rendszer soha nem sorolja be „időben”-nek azt, akiről nincs adat."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.exam.approach",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "A genitális vizsgálat módja"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "inspection",
+    "label_hu": "Megtekintés (béka-ülés / térd-mell helyzet)"
+   },
+   {
+    "code": "vulvoscopy",
+    "label_hu": "Vulvoszkópia / nagyítós megtekintés"
+   },
+   {
+    "code": "vaginoscopy",
+    "label_hu": "Vaginoszkópia — altatásban vagy szedálásban"
+   },
+   {
+    "code": "speculum",
+    "label_hu": "Tükrös feltárás"
+   },
+   {
+    "code": "declined",
+    "label_hu": "A gyermek elutasította — nem történt vizsgálat"
+   },
+   {
+    "code": "notNeeded",
+    "label_hu": "Nem volt indokolt",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Milyen módon történt a külső és belső nemi szervek vizsgálata."
+   },
+   "whyItMatters": {
+    "hu": "Prepubertás korban a TÜKRÖS FELTÁRÁS nem elfogadható rutin: fájdalmas, sérülést okoz, és a szűz hymen sérülhet. Ha vaginális látótér kell, az vaginoszkópia — altatásban."
+   },
+   "pitfalls": {
+    "hu": "A `declined` teljes értékű rögzítendő eredmény. A gyermek elutasítását nem szabad „nem történt vizsgálat” néven eltüntetni: ez klinikai és jogi adat egyaránt."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.vulva.finding",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Vulva lelet"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "norm",
+    "label_hu": "Eltérés nélkül"
+   },
+   {
+    "code": "erythema",
+    "label_hu": "Bőrpír / gyulladás"
+   },
+   {
+    "code": "adhesion",
+    "label_hu": "Kisajak-összenövés (synechia vulvae)"
+   },
+   {
+    "code": "lichen",
+    "label_hu": "Lichen sclerosus gyanúja"
+   },
+   {
+    "code": "lesion",
+    "label_hu": "Körülírt elváltozás"
+   },
+   {
+    "code": "trauma",
+    "label_hu": "Sérülés",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "notExamined",
+    "label_hu": "Nem vizsgálva",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "finding": {
+   "normal": "norm",
+   "impossible": "notExamined"
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A külső nemi szervek megtekintéses lelete."
+   },
+   "whyItMatters": {
+    "hu": "A prepubertás vulvovaginitis a leggyakoribb gyermeknőgyógyászati panasz, és az esetek túlnyomó részében nem specifikus — de a lichen sclerosus és a sérülés más utat nyit."
+   }
+  },
+  "patientText": {
+   "normal": {
+    "hu": "A külső nemi szervek vizsgálata eltérést nem mutatott."
+   },
+   "abnormal": {
+    "hu": "A külső nemi szervek vizsgálata eltérést mutatott; a további teendőkről a kezelőorvos tájékoztat."
+   },
+   "impossible": {
+    "hu": "A külső nemi szervek vizsgálatára nem került sor."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.discharge",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Hüvelyváladék"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "none",
+    "label_hu": "Nincs"
+   },
+   {
+    "code": "physiologic",
+    "label_hu": "Élettani (pubertás előtti ösztrogénhatás)"
+   },
+   {
+    "code": "purulent",
+    "label_hu": "Gennyes"
+   },
+   {
+    "code": "bloody",
+    "label_hu": "Véres",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "foul",
+    "label_hu": "Bűzös — idegentest gyanúja",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem tudja / nem emlékszik",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A hüvelyváladék jellege."
+   },
+   "whyItMatters": {
+    "hu": "A bűzös vagy véres váladék prepubertás korban IDEGENTESTET jelenthet, és vaginoszkópiát indokol — nem ismételt antibiotikumot."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.bleeding.prepubertal",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Genitális vérzés pubertás előtt"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "no",
+    "label_hu": "Nincs"
+   },
+   {
+    "code": "yes",
+    "label_hu": "Van",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "notAsked",
+    "label_hu": "Nem kérdeztük meg",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Volt-e genitális vérzés a pubertás megindulása előtt."
+   },
+   "whyItMatters": {
+    "hu": "A pubertás előtti genitális vérzés MINDIG kivizsgálandó. Differenciáldiagnózisa idegentest, trauma, lichen sclerosus, korai pubertás, ritkán hormontermelő daganat vagy sarcoma botryoides — és a bántalmazás lehetőségét is mérlegelni kell."
+   },
+   "pitfalls": {
+    "hu": "A `notAsked` külön érték, mert a meg nem kérdezett kérdés nem „nem volt vérzés”."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.foreignBody",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Hüvelyi idegentest"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "no",
+    "label_hu": "Nem igazolódott"
+   },
+   {
+    "code": "suspected",
+    "label_hu": "Gyanú"
+   },
+   {
+    "code": "confirmed",
+    "label_hu": "Igazolt"
+   },
+   {
+    "code": "notAssessed",
+    "label_hu": "Nem vizsgált",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Igazolódott-e hüvelyi idegentest."
+   },
+   "whyItMatters": {
+    "hu": "A visszatérő, kezelésre nem reagáló vulvovaginitis leggyakoribb elmulasztott oka."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.safeguarding.asked",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Bántalmazás lehetősége mérlegelve"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "yes",
+    "label_hu": "Igen — mérlegeltük"
+   },
+   {
+    "code": "notAsked",
+    "label_hu": "NEM mérlegeltük",
+    "flags": [
+     "redflag",
+     "unknown"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Történt-e mérlegelés arról, hogy a lelet mögött bántalmazás állhat-e."
+   },
+   "whyItMatters": {
+    "hu": "Ez a mező NEM a bántalmazás tényéről szól, hanem arról, hogy a kérdés felmerült-e. A gyermekvédelmi mulasztások túlnyomó része nem téves ítélet, hanem elmaradt mérlegelés."
+   },
+   "pitfalls": {
+    "hu": "Ez az egyetlen mező a rendszerben, ahol a MEG NEM KÉRDEZÉS önmagában piros zászló. Nem azért, mert bántalmazást feltételezünk, hanem mert a mérlegelés elmaradása visszamenőleg nem pótolható."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.safeguarding.concern",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Bántalmazás gyanúja"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "no",
+    "label_hu": "A mérlegelés nem vetett fel gyanút"
+   },
+   {
+    "code": "uncertain",
+    "label_hu": "Bizonytalan — további tisztázás szükséges"
+   },
+   {
+    "code": "yes",
+    "label_hu": "Igen",
+    "flags": [
+     "redflag"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A mérlegelés eredménye."
+   },
+   "whyItMatters": {
+    "hu": "A rendszer SEMMILYEN körülmények között nem állapít meg bántalmazást, és nem is zárja ki: a lelet és az elbeszélés viszonyát ember ítéli meg. Amit a rendszer tesz: rögzíti a mérlegelést, és megnevezi a következő lépést."
+   },
+   "pitfalls": {
+    "hu": "Az `uncertain` nem gyengébb változata a `no`-nak. Külön út tartozik hozzá: gyermekvédelmi konzultáció a beteg elengedése ELŐTT."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.trauma.mechanism",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "A sérülés elmondott mechanizmusa"
+  },
+  "module": "pedgyn",
+  "datatype": "text",
+  "documentation": {
+   "definition": {
+    "hu": "Ahogyan a sérülés keletkezését elmondták — SZÓ SZERINT, a gyermek szavaival, ha ő mondta el."
+   },
+   "whyItMatters": {
+    "hu": "A szó szerinti idézet jogilag és klinikailag is más súlyú, mint az átfogalmazás. Az „elesett” és a „nekiestem a bicikli vázának” nem ugyanaz."
+   },
+   "pitfalls": {
+    "hu": "Nem szabad összefoglalni. Az összefoglalás értelmezés, és az értelmezés utólag nem visszabontható."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.trauma.consistent",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "A lelet és az elmondott mechanizmus összeillik"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "yes",
+    "label_hu": "Összeillik"
+   },
+   {
+    "code": "uncertain",
+    "label_hu": "Bizonytalan"
+   },
+   {
+    "code": "no",
+    "label_hu": "NEM illik össze",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "notApplicable",
+    "label_hu": "Nincs sérülés",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A látott sérülés magyarázható-e az elmondott történettel."
+   },
+   "whyItMatters": {
+    "hu": "A gyermekbántalmazás felismerésének legerősebb egyetlen jelzője nem a sérülés fajtája, hanem az, hogy a történet illik-e hozzá."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.report.made",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Gyermekvédelmi jelzés megtörtént"
+  },
+  "module": "pedgyn",
+  "datatype": "tristate",
+  "documentation": {
+   "definition": {
+    "hu": "Megtörtént-e a jelzés a gyermekvédelmi jelzőrendszer felé."
+   },
+   "whyItMatters": {
+    "hu": "A jelzési kötelezettség nem a bizonyosságtól függ, hanem a gyanútól. A rendszer nem dönti el, hogy jelezni kell-e — azt rögzíti, megtörtént-e, és ha a gyanú fennáll, a jelzés hiánya látható marad."
+   }
+  },
+  "valueSet": [
+   {
+    "code": "pos",
+    "label_hu": "Megtörtént"
+   },
+   {
+    "code": "neg",
+    "label_hu": "Nem történt meg"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem rögzített",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pedgyn.mullerian.anomaly",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Müller-cső fejlődési rendellenesség"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "none",
+    "label_hu": "Nincs"
+   },
+   {
+    "code": "imperforateHymen",
+    "label_hu": "Hymen imperforatus"
+   },
+   {
+    "code": "vaginalSeptum",
+    "label_hu": "Hüvelyi septum"
+   },
+   {
+    "code": "agenesis",
+    "label_hu": "Hüvely-/méhaplasia (MRKH)"
+   },
+   {
+    "code": "uterineAnomaly",
+    "label_hu": "Méhfejlődési rendellenesség"
+   },
+   {
+    "code": "other",
+    "label_hu": "Egyéb"
+   },
+   {
+    "code": "notAssessed",
+    "label_hu": "Nem vizsgált",
+    "flags": [
+     "notApplicable"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Igazolt vagy gyanított Müller-cső eredetű fejlődési rendellenesség."
+   },
+   "whyItMatters": {
+    "hu": "Primer amenorrhoea ciklikus hasi fájdalommal együtt haematocolpost jelenthet: a hymen imperforatus egyszerű beavatkozással megoldható, felismerés nélkül viszont ismétlődő „megmagyarázhatatlan” hasi fájdalomként évekig eltarthat."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.dsd.suspected",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Nemi fejlődés eltérésének (DSD) gyanúja"
+  },
+  "module": "pedgyn",
+  "datatype": "tristate",
+  "documentation": {
+   "definition": {
+    "hu": "Felmerült-e a nemi fejlődés eltérésének gyanúja."
+   },
+   "whyItMatters": {
+    "hu": "A DSD ellátása MULTIDISZCIPLINÁRIS: gyermekendokrinológus, genetikus, sebész, pszichológus. Egyetlen szakma egyedül nem dönt, és a rendszer sem javasol nemi hovatartozásra vonatkozó lépést."
+   },
+   "pitfalls": {
+    "hu": "A rendszer itt szándékosan visszafogja magát: gyanút rögzít, konzíliumot javasol, besorolást nem ad."
+   }
+  },
+  "valueSet": [
+   {
+    "code": "pos",
+    "label_hu": "Igen"
+   },
+   {
+    "code": "neg",
+    "label_hu": "Nem"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem merült fel kérdésként",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pedgyn.dysmenorrhea.severity",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Dysmenorrhoea súlyossága"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "none",
+    "label_hu": "Nincs"
+   },
+   {
+    "code": "mild",
+    "label_hu": "Enyhe — nem befolyásolja a napi életet"
+   },
+   {
+    "code": "moderate",
+    "label_hu": "Közepes — fájdalomcsillapítóval kezelhető"
+   },
+   {
+    "code": "severe",
+    "label_hu": "Súlyos — iskolai hiányzást okoz",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem tudja / nem emlékszik",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A menstruációs fájdalom mértéke, a napi működés alapján."
+   },
+   "whyItMatters": {
+    "hu": "Az ISKOLAI HIÁNYZÁS az a küszöb, ami mérhető, és amit a serdülő maga is meg tud ítélni. A serdülőkori endometriosis diagnózisa átlagosan évekkel késik, mert a súlyos fájdalmat „a menstruációhoz tartozónak” tekintik."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.hpv.vaccine",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "HPV-oltás"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "complete",
+    "label_hu": "Teljes sorozat"
+   },
+   {
+    "code": "partial",
+    "label_hu": "Megkezdett, nem befejezett"
+   },
+   {
+    "code": "none",
+    "label_hu": "Nem kapott"
+   },
+   {
+    "code": "offered",
+    "label_hu": "Felajánlva, elutasítva"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem tudja / nem emlékszik",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A HPV elleni védőoltás állapota."
+   },
+   "whyItMatters": {
+    "hu": "A gyermeknőgyógyászati vizit az egyik utolsó alkalom, amikor az oltás még a szexuális aktivitás megkezdése előtt adható."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.contraception.discussed",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Fogamzásgátlás megbeszélve"
+  },
+  "module": "pedgyn",
+  "datatype": "tristate",
+  "documentation": {
+   "definition": {
+    "hu": "Szóba került-e a fogamzásgátlás."
+   },
+   "whyItMatters": {
+    "hu": "A serdülőnél a megbeszélés ténye és a titoktartás kerete együtt működik: a `pedgyn.confidentiality.discussed` nélkül ez a mező kevesebbet ér."
+   }
+  },
+  "valueSet": [
+   {
+    "code": "pos",
+    "label_hu": "Igen"
+   },
+   {
+    "code": "neg",
+    "label_hu": "Nem"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem rögzített",
+    "flags": [
+     "unknown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pedgyn.sti.confirmed",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Igazolt nemi úton terjedő fertőzés"
+  },
+  "module": "pedgyn",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "none",
+    "label_hu": "Nincs"
+   },
+   {
+    "code": "gonorrhoea",
+    "label_hu": "Gonorrhoea",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "chlamydia",
+    "label_hu": "Chlamydia trachomatis",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "syphilis",
+    "label_hu": "Syphilis",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "trichomonas",
+    "label_hu": "Trichomonas vaginalis",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "hiv",
+    "label_hu": "HIV",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "hpv",
+    "label_hu": "HPV (anogenitalis szemölcs)"
+   },
+   {
+    "code": "hsv",
+    "label_hu": "HSV (genitalis herpes)"
+   },
+   {
+    "code": "unk",
+    "label_hu": "Nem vizsgálták"
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Laboratóriumilag IGAZOLT nemi úton terjedő fertőzés. A klinikai gyanú nem elég: a gyermekvédelmi következmény miatt itt a megerősítő vizsgálat a mérce."
+   },
+   "whyItMatters": {
+    "hu": "Pubertás előtti korban az igazolt gonorrhoea, chlamydia, syphilis és trichomonas a szexuális bántalmazás egyik legerősebb ÖNÁLLÓ jele. Nem a panasz és nem a viselkedés — ez egy laboratóriumi lelet, ami a kérdés feltevését kötelezővé teszi."
+   },
+   "pitfalls": {
+    "hu": "A HPV és a HSV KIVÉTEL: mindkettő szerezhető perinatálisan, ezért csecsemő- és kisdedkorban nem sentinel lelet. Ha ezt a rendszer nem különböztetné meg, minden anyai HPV-átvitelből gyermekvédelmi riasztás lenne — és a hamis riasztás pontosan azt a bizalmat rombolja le, amire a valódi eseteknél szükség van. A `unk` NEM „nincs fertőzés”: azt jelenti, hogy nem nézték meg."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.partner.age",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "A partner életkora (év)"
+  },
+  "module": "pedgyn",
+  "datatype": "number",
+  "unit": "év",
+  "domain": {
+   "min": 0,
+   "max": 99
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A szexuális partner életkora, ha a beteg elmondta. Nem kikövetkeztetett érték."
+   },
+   "whyItMatters": {
+    "hu": "A magyar Btk. szerint a beleegyezési korhatár és a büntethetőség a KÉT ÉLETKOR VISZONYÁTÓL függ, nem a beteg életkorától egyedül. Ugyanaz a 13 éves beteg más jogi helyzetben van 16 éves és 19 éves partner mellett."
+   },
+   "pitfalls": {
+    "hu": "A hiányzó partnerkor NEM „nincs kockázat”. És a jogi besorolás NEM a klinikai teendő: a jelzési kötelezettség a veszélyeztetettség gyanújától függ, nem a büntethetőségtől — a „nem büntetendő” cella nem jelenti azt, hogy nincs teendő."
+   }
+  }
+ },
+ {
+  "id": "pedgyn.presentations.12m",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Genitális panasz miatti megjelenések száma (12 hónap)"
+  },
+  "module": "pedgyn",
+  "datatype": "number",
+  "unit": "alkalom",
+  "domain": {
+   "min": 0,
+   "max": 50
+  },
+  "documentation": {
+   "definition": {
+    "hu": "Hányszor jelent meg a gyermek genitális panasszal az elmúlt 12 hónapban — bármelyik ellátóhelyen."
+   },
+   "whyItMatters": {
+    "hu": "A MINTÁZAT a jel, nem az egyes alkalom. Az egyes megjelenések külön-külön magyarázhatók; a gyermekvédelmi mulasztások jelentős része abból ered, hogy senki nem nézte meg őket EGYBEN. Ez a mező azért van, hogy a rendszer meg tudja nézni."
+   },
+   "pitfalls": {
+    "hu": "Csak a saját intézmény adatait látjuk, tehát a szám ALULBECSÜL. Egy alacsony érték nem bizonyíték arra, hogy nem volt máshol."
+   }
+  }
+ }
+]

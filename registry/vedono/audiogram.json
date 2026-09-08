@@ -1,0 +1,78 @@
+{
+  "megnevezes": "Audiogram — szűrő tisztahang-küszöbaudiometria",
+  "modul": 30,
+  "forras": "Audiogram-adatlap: 11 frekvencia × jobb/bal fül (a csomag `audio excel.xlsx` sablonja).",
+  "frekvenciak": [
+    125,
+    250,
+    500,
+    750,
+    1000,
+    1500,
+    2000,
+    3000,
+    4000,
+    6000,
+    8000
+  ],
+  "beszedFrekvenciak": [
+    500,
+    1000,
+    2000,
+    4000
+  ],
+  "fulek": [
+    {
+      "kod": "jobb",
+      "label_hu": "Jobb",
+      "szin": "piros",
+      "jel": "O"
+    },
+    {
+      "kod": "bal",
+      "label_hu": "Bal",
+      "szin": "kék",
+      "jel": "X"
+    }
+  ],
+  "note": "A JELÖLÉS NEMZETKÖZI EGYEZMÉNY, nem ízlés: jobb fül PIROS KÖR, bal fül KÉK KERESZT, és a dB-tengely FELFELÉ NŐ a jobb hallás irányába (0 dB fent). Aki ezt megfordítja, olvashatatlan leletet csinál egy olyan ábrából, amit minden fül-orr-gégész első pillantásra ért.\n\nA SÁVHATÁROK ALÁÍRÁSRA VÁRNAK, mint a rendszer minden más küszöbe. Amíg nincs aláírás, az audiogram MEGRAJZOLHATÓ, de megítélést nem ad — a rajz leírás, a besorolás állítás.",
+  "savok": [
+    {
+      "id": "ep",
+      "tolDb": null,
+      "igDb": 25,
+      "label_hu": "ép hallás"
+    },
+    {
+      "id": "enyhe",
+      "tolDb": 26,
+      "igDb": 40,
+      "label_hu": "enyhe halláscsökkenés"
+    },
+    {
+      "id": "kozepes",
+      "tolDb": 41,
+      "igDb": 55,
+      "label_hu": "közepes halláscsökkenés"
+    },
+    {
+      "id": "kozepsulyos",
+      "tolDb": 56,
+      "igDb": 70,
+      "label_hu": "közepesen súlyos halláscsökkenés"
+    },
+    {
+      "id": "sulyos",
+      "tolDb": 71,
+      "igDb": 90,
+      "label_hu": "súlyos halláscsökkenés"
+    },
+    {
+      "id": "nagyfoku",
+      "tolDb": 91,
+      "igDb": null,
+      "label_hu": "nagyfokú halláscsökkenés"
+    }
+  ],
+  "hitelesitesek": []
+}

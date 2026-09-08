@@ -1,0 +1,7 @@
+{
+  "megnevezes": "Anya–gyermek összerendelés — jogalapok",
+  "modul": 29,
+  "note": "SZÁNDÉKOSAN ÜRES. Az összerendelés a rendszer legérzékenyebb adata: a gyerek rekordjából azonosítja az anyát, és fordítva. Névtelen szülésnél, örökbeadásnál és apasági vitában MÁS láthatóság indokolt, és ez jogi döntés, nem fejlesztési. Amíg nincs kimondva, ki láthatja a kapcsolatot és milyen jogalapon, az összerendelés NEM hozható létre — és ez nem hiányosság, hanem a modul első kapuja.",
+  "jogalapok": [],
+  "megtekintesAuditalt": true
+}

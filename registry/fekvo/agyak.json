@@ -1,0 +1,81 @@
+{
+  "megnevezes": "Osztályos ágykészlet — DEMÓ, SZINTETIKUS",
+  "modul": 11,
+  "note": "KITALÁLT ÁGYAK. A helytípusok szülészeti-nőgyógyászati osztályra szabottak, és NEM cserélhetők egymással: egy szülőszoba nem gyermekágyas ágy, még ha ugyanannyi négyzetméter is.\n\nA `roomingIn` jelölés a 29. modulhoz köt: azon az ágyon KÉT beteg fekszik, az anya és az újszülött, és az újszülött külön rekorddal rendelkezik. Ha nem foglal helyet a nyilvántartásban, nem is látszik, hogy ott van.",
+  "agyak": [
+    {
+      "id": "agy.tri.1",
+      "hely": "triazs",
+      "szoba": "T1"
+    },
+    {
+      "id": "agy.tri.2",
+      "hely": "triazs",
+      "szoba": "T1"
+    },
+    {
+      "id": "agy.szsz.1",
+      "hely": "szulószoba",
+      "szoba": "SZ1"
+    },
+    {
+      "id": "agy.szsz.2",
+      "hely": "szulószoba",
+      "szoba": "SZ2"
+    },
+    {
+      "id": "agy.szsz.3",
+      "hely": "szulószoba",
+      "szoba": "SZ3"
+    },
+    {
+      "id": "agy.gya.1",
+      "hely": "gyermekagyas",
+      "szoba": "G1",
+      "roomingIn": true
+    },
+    {
+      "id": "agy.gya.2",
+      "hely": "gyermekagyas",
+      "szoba": "G1",
+      "roomingIn": true
+    },
+    {
+      "id": "agy.gya.3",
+      "hely": "gyermekagyas",
+      "szoba": "G2",
+      "roomingIn": true
+    },
+    {
+      "id": "agy.gya.4",
+      "hely": "gyermekagyas",
+      "szoba": "G2",
+      "roomingIn": true
+    },
+    {
+      "id": "agy.tp.1",
+      "hely": "terhespatologia",
+      "szoba": "P1"
+    },
+    {
+      "id": "agy.tp.2",
+      "hely": "terhespatologia",
+      "szoba": "P1"
+    },
+    {
+      "id": "agy.nog.1",
+      "hely": "nogyogyaszat",
+      "szoba": "N1"
+    },
+    {
+      "id": "agy.nog.2",
+      "hely": "nogyogyaszat",
+      "szoba": "N1"
+    },
+    {
+      "id": "agy.nicu.1",
+      "hely": "nicu",
+      "szoba": "NICU"
+    }
+  ]
+}

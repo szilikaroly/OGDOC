@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/szilikaroly/ogdoc/registry/variable.schema.json",
+  "title": "OGDOC VariableDef",
+  "description": "Egy klinikai változó teljes definíciója. Ez az egyetlen forrás: ebből generálódik az űrlap, a dokumentáció, a validáció, a levezetési gráf, az export és a teszt.",
+  "type": "object",
+  "required": ["id", "version", "status", "label", "module", "datatype", "documentation"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$",
+      "description": "Stabil, névterezett azonosító. SOHA nem nevezzük át; elavuláskor status=deprecated + supersededBy."
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["draft", "seed-imported", "active", "deprecated", "superseded"] },
+    "supersededBy": { "type": ["string", "null"] },
+    "aliasOf": {
+      "type": ["string", "null"],
+      "description": "Ha kitöltött, ez a változó csak nézet: az érték a hivatkozott primer változóban él. Kétirányú (mirror). Láncban kör tilos."
+    },
+
+    "label": { "$ref": "#/$defs/i18n" },
+    "short": { "$ref": "#/$defs/i18n" },
+    "module": { "type": "string" },
+    "shownIn": { "type": "array", "items": { "type": "string" } },
+
+    "datatype": { "enum": ["quantity", "coded", "coded-multi", "bool", "tristate", "date", "datetime", "text", "structured"] },
+    "unit": { "type": ["string", "null"], "description": "UCUM kód" },
+    "unitSystem": { "enum": ["UCUM", null] },
+    "domain": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": ["number", "null"] },
+        "max": { "type": ["number", "null"] },
+        "step": { "type": ["number", "null"] },
+        "plausible": { "type": ["array", "null"], "items": { "type": ["number", "null"] }, "minItems": 2, "maxItems": 2,
+                       "description": "Ezen kívül: visszakérdezés, de elfogadható." },
+        "critical": { "type": ["array", "null"], "items": { "type": ["number", "null"] }, "minItems": 2, "maxItems": 2,
+                      "description": "Ezen túl: azonnali klinikai jelzés." }
+      }
+    },
+    "valueSet": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "required": ["code"],
+        "properties": {
+          "code": { "type": ["string", "integer"] },
+          "label_hu": { "type": ["string", "null"] },
+          "label_en": { "type": ["string", "null"] },
+          "flags": { "type": "array", "items": { "enum": ["redflag", "unknown", "notApplicable"] } }
+        }
+      }
+    },
+    "cardinality": { "enum": ["one", "series", "event"], "default": "one" },
+    "validity": {
+      "type": ["object", "null"],
+      "description": "ISO 8601 időtartam kontextusonként. Lejárt érték szürkén jelenik meg, és a score-ok alapból nem használják.",
+      "additionalProperties": { "type": "string" }
+    },
+
+    "timing": { "type": "array", "items": { "type": "string" } },
+    "requiredWhen": { "type": ["string", "null"], "description": "Kifejezés a ctx felett, pl. \"ctx.encounter === 'labour'\"" },
+    "provenanceAllowed": {
+      "type": "array",
+      "items": { "enum": ["clinician", "patient", "device", "derived", "imported", "prefilled"] }
+    },
+
+    "derivation": {
+      "type": ["object", "null"],
+      "oneOf": [
+        {
+          "required": ["kind", "inputs", "fn"],
+          "properties": {
+            "kind": { "const": "computed" },
+            "inputs": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+            "fn": { "type": "string", "description": "Függvénynév a core/derive/fns-ben" },
+            "requiresAll": { "type": "boolean", "default": true,
+                             "description": "Ha true és bármely bemenet hiányzik → insufficient, NEM 0." },
+            "explain": { "$ref": "#/$defs/i18n" }
+          }
+        },
+        {
+          "required": ["kind", "from"],
+          "properties": {
+            "kind": { "const": "prefill" },
+            "from": {
+              "type": "array", "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["source", "policy"],
+                "properties": {
+                  "source": { "type": "string", "description": "self.previousVisit | <variableId> | import.fhir" },
+                  "policy": { "enum": ["carryForward", "latest", "implies", "mostReliable"] },
+                  "value": {},
+                  "maxAge": { "type": ["string", "null"], "description": "ISO 8601 időtartam" }
+                }
+              }
+            },
+            "precedence": { "type": "array", "items": { "type": "string" } },
+            "notify": { "type": "boolean", "default": true,
+                        "description": "A felület jelzi a forrást, és felkínálja a visszaállítást." }
+          }
+        }
+      ]
+    },
+
+    "consumers": {
+      "type": "array", "items": { "type": "string" },
+      "description": "GENERÁLT mező — a build tölti a levezetési gráfból. Kézzel írni tilos."
+    },
+
+    "documentation": {
+      "type": "object",
+      "required": ["definition"],
+      "properties": {
+        "definition": { "$ref": "#/$defs/i18n" },
+        "howToMeasure": { "$ref": "#/$defs/i18n" },
+        "pitfalls": { "$ref": "#/$defs/i18n" },
+        "whyItMatters": { "$ref": "#/$defs/i18n" },
+        "eduLevels": {
+          "type": "object",
+          "description": "IPRACS négyszintű oktatási réteg",
+          "properties": {
+            "student": { "$ref": "#/$defs/i18n" },
+            "resident": { "$ref": "#/$defs/i18n" },
+            "specialist": { "$ref": "#/$defs/i18n" },
+            "professor": { "$ref": "#/$defs/i18n" }
+          }
+        }
+      }
+    },
+
+    "standards": {
+      "type": "object",
+      "properties": {
+        "loinc": { "type": ["string", "null"] },
+        "snomed": { "type": ["string", "null"] },
+        "ichom": { "type": ["string", "null"], "description": "ICHOM PCB v5.0 Set No, pl. PCB015" },
+        "eeszt": { "type": ["string", "null"] },
+        "fhir": {
+          "type": ["object", "null"],
+          "properties": {
+            "resource": { "type": "string" },
+            "code": { "type": ["string", "null"] },
+            "path": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cite"],
+        "properties": {
+          "cite": { "type": "string" },
+          "doi": { "type": ["string", "null"] },
+          "pmid": { "type": ["string", "null"] },
+          "url": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "phi": { "type": "boolean", "default": false },
+    "audit": { "type": "boolean", "default": true },
+
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["v", "date", "what"],
+        "properties": {
+          "v": { "type": "integer" },
+          "date": { "type": "string", "format": "date" },
+          "what": { "type": "string" },
+          "by": { "type": ["string", "null"] }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "i18n": {
+      "type": ["object", "null"],
+      "properties": {
+        "hu": { "type": ["string", "null"] },
+        "en": { "type": ["string", "null"] }
+      },
+      "additionalProperties": { "type": ["string", "null"] }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "figo.ctg.2015",
+  "megnevezes": "CTG-besorolás — FIGO 2015 konszenzus",
+  "forras": "FIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography. Ayres-de-Campos D, Spong CY, Chandraharan E; FIGO Intrapartum Fetal Monitoring Expert Consensus Panel. Int J Gynaecol Obstet 2015;131(1):13–24.",
+  "note": "A SZABÁLY ADAT, NEM KÓD — és itt a legfontosabb, amit a szabály NEM tesz.\n\nEz a készlet NEM osztályoz a klinikus HELYETT. A rendszer ugyanúgy a klinikus besorolását tárolja (`ctg.category`); a szabályokból egy MÁSODIK olvasat születik, és a kettő ÖSSZEVETÉSE a termék. Ha egyeznek, semmi nem történik. Ha eltérnek, az EGYET NEM ÉRTÉS látszik — nem felülbírálás, hanem kérdés.\n\nMiért így: a CTG-értékelés értékelők közötti egyezése köztudottan gyenge, és a leggyakoribb hiba nem a rossz besorolás, hanem az, hogy a besorolás mögötti jellemzőket senki nem írja le. Egy automatikus besorolás ezt nem javítja — csak áthelyezi a felelősséget. A jellemzők rögzítése viszont igen: attól kezdve a besorolás VISSZAKÖVETHETŐ.\n\nÉS AMI NEM DŐL EL ITT: a FIGO 2015 az INTRAPARTUM görbére szól. A terhesség alatti NST értékelése MÁS (reaktivitás), és erre a készlet nem terjed ki — a `ctg.accel` ott besorolási jellemző, itt nem. Az elkülönítés szakmai döntés, és a készlet nem tesz úgy, mintha megvolna.",
+  "jellemzok": [
+    "ctg.baseline",
+    "ctg.variability",
+    "ctg.decel"
+  ],
+  "besorolasok": [
+    {
+      "kod": "pathological",
+      "label_hu": "Kóros",
+      "rang": 3,
+      "barmelyik": [
+        {
+          "var": "ctg.baseline",
+          "op": "lt",
+          "value": 100,
+          "miert": "Alapvonal 100/min alatt."
+        },
+        {
+          "var": "ctg.variability",
+          "op": "in",
+          "value": [
+            "absent",
+            "reduced",
+            "increased",
+            "sinusoidal"
+          ],
+          "miert": "Csökkent, hiányzó vagy fokozott variabilitás, illetve sinusoidalis mintázat — ÖNMAGÁBAN kóros, lassulás nélkül is."
+        },
+        {
+          "var": "ctg.decel",
+          "op": "in",
+          "value": [
+            "lateRepetitive",
+            "prolonged"
+          ],
+          "miert": "Ismétlődő késői vagy elhúzódó (3 percnél hosszabb) lassulás."
+        }
+      ]
+    },
+    {
+      "kod": "suspicious",
+      "label_hu": "Gyanús",
+      "rang": 2,
+      "barmelyik": [
+        {
+          "var": "ctg.baseline",
+          "op": "lt",
+          "value": 110,
+          "miert": "Alapvonal 110/min alatt (de legalább 100)."
+        },
+        {
+          "var": "ctg.baseline",
+          "op": "gt",
+          "value": 160,
+          "miert": "Alapvonal 160/min fölött."
+        },
+        {
+          "var": "ctg.decel",
+          "op": "in",
+          "value": [
+            "variableRepetitive"
+          ],
+          "miert": "Ismétlődő variábilis lassulás."
+        }
+      ],
+      "megjegyzes": "A FIGO meghatározása szerint a gyanús görbe az, amelyből HIÁNYZIK legalább egy normális jellemző, de kóros jellemzője nincs."
+    },
+    {
+      "kod": "normal",
+      "label_hu": "Normál",
+      "rang": 1,
+      "mind": [
+        {
+          "var": "ctg.baseline",
+          "op": "gte",
+          "value": 110,
+          "miert": "Alapvonal 110–160/min."
+        },
+        {
+          "var": "ctg.baseline",
+          "op": "lte",
+          "value": 160,
+          "miert": "Alapvonal 110–160/min."
+        },
+        {
+          "var": "ctg.variability",
+          "op": "in",
+          "value": [
+            "normal"
+          ],
+          "miert": "Variabilitás 5–25/min."
+        },
+        {
+          "var": "ctg.decel",
+          "op": "in",
+          "value": [
+            "none",
+            "early",
+            "variable"
+          ],
+          "miert": "Nincs ismétlődő lassulás."
+        }
+      ]
+    }
+  ],
+  "hitelesitesek": []
+}

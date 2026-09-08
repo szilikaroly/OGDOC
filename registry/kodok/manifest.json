@@ -1,0 +1,100 @@
+{
+ "ingestedAt": "2026-09-03",
+ "sources": [
+  {
+   "file": "SnomedINTL_GPSRelease_PRODUCTION_20260101T120000Z.zip",
+   "bytes": 8521869,
+   "sha256": "f49909beb10ce0c9897863237730cfc5362d1a8a519d3f69e59121305facec75"
+  },
+  {
+   "file": "BNOTORZS.DBF",
+   "bytes": 2082535,
+   "sha256": "5a4886f30c2bb0d959dbc0f16930413d6ed6ff9c337b95eb7e17f6cae5327707"
+  },
+  {
+   "file": "MUTET_AP.DBF",
+   "bytes": 1070604,
+   "sha256": "8f91d8b1dd70cc1e30024fc765a46e20ddf55659e527e3f4119ff8d5537f1472"
+  },
+  {
+   "file": "FNOTORZS.DBF",
+   "bytes": 128906,
+   "sha256": "3b594b9fc510d782b38c7317958a8852431a179af3c8db53f6a01508a4fbbcb5"
+  },
+  {
+   "file": "HBCS50.DBF",
+   "bytes": 364646,
+   "sha256": "7c40fbf5bc152a8eca2c9835fa1bdb318cb2132d050cb3e4ed863939ade6200d"
+  },
+  {
+   "file": "Hbcs50_torzs_20250101_v2.xls",
+   "bytes": 298496,
+   "sha256": "d72e2aef5869f22a0f16f6ec016e7d7805cb797041b515c53d3463a66034ffa3"
+  },
+  {
+   "file": "Hbcs50_torzs_20241101_20250101_20250501.xls",
+   "bytes": 312832,
+   "sha256": "8cea1dd56dcf889f9cfbcdf0fc187f057c975958de0034de415cf66c4221e9aa"
+  },
+  {
+   "file": "szabalykonyv.docx",
+   "bytes": 1056281,
+   "sha256": "0419504707e87c2739a981569c3e7fe01ffb016d3fdada5814ee142470c83918"
+  },
+  {
+   "file": "kompetencia_20260101.xlsx",
+   "bytes": 206899,
+   "sha256": "3868cef8eed32a4b3da344828db28b914da78b8755f330337cb494591941036d"
+  },
+  {
+   "file": "torzslista_20260101.xlsx",
+   "bytes": 185316,
+   "sha256": "b0128498294a3e3af39bc9f9a06525217a430e7e626e6b8dd17601d908deef93"
+  },
+  {
+   "file": "9jegyu_beutalasi_torzslista_202609.xlsx",
+   "bytes": 4036178,
+   "sha256": "c20510a7364611a1a7e159f26fd93553feddf0f418e795bbb94080dc9703cdd6"
+  },
+  {
+   "file": "Diagnosztikai_torzs_2005.xls",
+   "bytes": 1002496,
+   "sha256": "07a37b66ae32710611a60203795c5a396cbea083f1e254fecf1d0908dd139d24"
+  },
+  {
+   "file": "MANYAGUJ_20180604.xlsx",
+   "bytes": 1872703,
+   "sha256": "52d5188d2e42f84ee69f3bcadedc5b8115fe00df6541b2dcbafa2560981ddfa5"
+  }
+ ],
+ "sourcesRead": [
+  {
+   "file": "fekvo.docx",
+   "bytes": 8539149,
+   "sha256": "fdccf176e45a816876d382985b465bb0094edc39045ef3c70dd37c91fd246bdb",
+   "hasznalat": "10/2012. (II. 28.) NEFMI rendelet a HBCs kódolási és besorolási szabályairól → registry/kodok/fekvo/"
+  },
+  {
+   "file": "tech.pdf",
+   "bytes": 1040677,
+   "sha256": "2d316fc4a7e400895aab5710d49331cf3a4d49610c7f5ece51f0b2c201a51f5b",
+   "hasznalat": "NEAK: Fekvőbeteg jelentés — technikai útmutató → registry/kodok/fekvo/rekordkep.json"
+  }
+ ],
+ "tables": {
+  "tbl.snomed (helyi)": 378553,
+  "tbl.bno": 11698,
+  "tbl.mut": 5993,
+  "tbl.fno": 744,
+  "tbl.hbcs": 780,
+  "tbl.hbcs@2025-01-01": 768,
+  "tbl.hbcs@2025-05-01": 778,
+  "tbl.oeno": 3410,
+  "tbl.oeno.bno": 23,
+  "tbl.oeno.egyutt": 418,
+  "tbl.oeno.tele": 126,
+  "tbl.gyfkod": 34918,
+  "tbl.diag": 4178,
+  "tbl.eszkoz": 24062
+ }
+}

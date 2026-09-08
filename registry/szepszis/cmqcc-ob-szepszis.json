@@ -1,0 +1,267 @@
+{
+  "id": "sep.cmqcc.ob",
+  "label": {
+    "hu": "Szülészeti szepszis felismerése (CMQCC OB Sepsis Toolkit szerkezete)"
+  },
+  "source": {
+    "cite": "California Maternal Quality Care Collaborative (CMQCC): Improving Diagnosis and Treatment of Maternal Sepsis — Obstetric Sepsis Toolkit",
+    "standard": "CMQCC OB Sepsis Toolkit",
+    "retrieved": null
+  },
+  "verification": "assumed",
+  "verificationNote": {
+    "hu": "AZ ELSŐDLEGES FORRÁS NEM VOLT ELÉRHETŐ: a cmqcc.org tartományt a hálózati szabályzat blokkolja. A küszöbértékek szakirodalmi emlékezetből, MÁSODKÉZBŐL kerültek ide, és a rendszer ezért egyetlen riasztást sem ad ki belőlük. A szerkezet kész és tesztelt; a számok hitelesítésre várnak. Ez ugyanaz a kapu, mint a normogramoknál: a tábla látszik, percentilist nem ad."
+  },
+  "blocksAlerting": true,
+  "requiresPregnancyState": true,
+  "requiresPregnancyStateNote": {
+    "hu": "A SZŰRÉS NEM FUT ISMERETLEN TERHESSÉGI ÁLLAPOTNÁL. A terhesség fiziológiásan eltolja mindazt, amit a szepszisszűrő mér: a pulzus gyorsabb, a vérnyomás alacsonyabb, a fehérvérsejtszám magasabb, a légzésszám nagyobb. Nem terhes küszöbbel olvasva a terhes nő fals riasztást kap; terhes küszöbbel olvasva a nem terhes beteg szepszise elcsúszik. A rendszer nem esik vissza csendben a nem terhes sávra — ugyanaz a szabály, mint a trimeszterre bontott laborreferenciáknál."
+  },
+  "postpartumWindowDays": 42,
+  "postpartumNote": {
+    "hu": "A SZŰRÉS A SZÜLÉS UTÁN IS ÉL. A szülészeti szepszis jelentős része a gyermekágyban jelentkezik, gyakran már az osztályról való elbocsátás után — éppen ott, ahol az epizód lezárul és a riasztás meghalna. Ez epizódok közötti hivatkozás, nem a szülés napjáig tartó figyelés."
+  },
+  "screen": {
+    "id": "sep.screen",
+    "label": {
+      "hu": "Első lépés — élettani szűrés"
+    },
+    "needed": 2,
+    "neededNote": {
+      "hu": "Legalább KÉT tétel. Egyetlen eltérő élettani érték nem szűrőpozitív — de a kettő sem diagnózis: a szűrés csak azt mondja, hogy meg kell nézni."
+    },
+    "criteria": [
+      {
+        "id": "sep.crit.temp",
+        "var": "vitals.temp",
+        "label": {
+          "hu": "Testhő < 36 °C vagy > 38 °C"
+        },
+        "op": "outside",
+        "low": 36.0,
+        "high": 38.0,
+        "unit": "Cel"
+      },
+      {
+        "id": "sep.crit.hr",
+        "var": "vitals.pulse",
+        "label": {
+          "hu": "Pulzus > 110/perc, tartósan"
+        },
+        "op": "gt",
+        "value": 110,
+        "unit": "/min",
+        "note": {
+          "hu": "TARTÓSAN: egyetlen mérés nem elég. A vajúdás fájdalma, a félelem és a vérvesztés is gyorsítja a pulzust."
+        }
+      },
+      {
+        "id": "sep.crit.rr",
+        "var": "vitals.rr",
+        "label": {
+          "hu": "Légzésszám > 24/perc"
+        },
+        "op": "gt",
+        "value": 24,
+        "unit": "/min",
+        "note": {
+          "hu": "A LEGGYAKRABBAN KIHAGYOTT ÉLETTANI ÉRTÉK, pedig a szepszis legkorábbi jele. Ha nincs rögzítve, a szűrés nem tud teljes lenni — és ez nem ugyanaz, mint hogy normális."
+        }
+      },
+      {
+        "id": "sep.crit.wbc",
+        "var": "lab.wbc",
+        "label": {
+          "hu": "Fehérvérsejtszám > 15 vagy < 4 G/l, vagy > 10% éretlen alak"
+        },
+        "op": "outside",
+        "low": 4,
+        "high": 15,
+        "unit": "10*9/L",
+        "suspendDuring": "labour",
+        "note": {
+          "hu": "VAJÚDÁS ALATT NEM ÉRTÉKELHETŐ: a szülés élettanilag megemeli a fehérvérsejtszámot. A rendszer ilyenkor nem „normálisnak” minősíti, hanem KIVESZI a szűrésből, és ezt kimondja."
+        }
+      }
+    ]
+  },
+  "organDysfunction": {
+    "id": "sep.organ",
+    "label": {
+      "hu": "Harmadik lépés — szervi elégtelenség"
+    },
+    "needed": 1,
+    "criteria": [
+      {
+        "id": "sep.od.sbp",
+        "var": "vitals.bp.systolic",
+        "label": {
+          "hu": "Systolés vérnyomás < 85 Hgmm"
+        },
+        "op": "lt",
+        "value": 85,
+        "unit": "mm[Hg]",
+        "note": {
+          "hu": "AZ ARTÉRIÁS KÖZÉPNYOMÁS (MAP < 65 Hgmm) SZÁNDÉKOSAN NEM SZEREPEL EBBEN A KÉSZLETBEN. A rendszerben a MAP a systolés és a diastolés értékből LEVEZETETT — ugyanabból a mandzsettából. Két tételként számolva egyetlen mérés kétszer vinné a küszöböt, és a validátor ezt kettős számolásként jelzi is. A MAP a helyén marad ott, ahol célérték: a vazopresszor-lépésnél."
+        }
+      },
+      {
+        "id": "sep.od.mental",
+        "var": "vitals.consciousness",
+        "label": {
+          "hu": "Megváltozott tudatállapot (AVPU ≠ éber)"
+        },
+        "op": "notEq",
+        "value": "a",
+        "note": {
+          "hu": "A LEGRÉGEBBI ÉS LEGJOBB JEL, és a legkönnyebben elmagyarázható mással (fáradtság, fájdalomcsillapító, a szülés utáni kimerültség). Nem műszeres adat: valakinek észre kell vennie, és a rendszernek meg kell tudnia kérdezni."
+        }
+      },
+      {
+        "id": "sep.od.lactate",
+        "var": "lab.lactate",
+        "label": {
+          "hu": "Laktát ≥ 2 mmol/l"
+        },
+        "op": "gte",
+        "value": 2,
+        "unit": "mmol/L",
+        "suspendDuring": "labour",
+        "note": {
+          "hu": "A VAJÚDÁS MAGA IS EMELI A LAKTÁTOT — az izommunka, nem a szepszis. Vajúdás alatt mért laktát önmagában nem szervi elégtelenség jele."
+        }
+      },
+      {
+        "id": "sep.od.creat",
+        "var": "lab.cr",
+        "label": {
+          "hu": "Kreatinin emelkedés (a terhességi alapvonalhoz képest)"
+        },
+        "op": "gt",
+        "value": 97,
+        "unit": "umol/L",
+        "note": {
+          "hu": "A TERHESSÉGBEN A KREATININ ÉLETTANILAG ALACSONYABB: a vesekárosodást a nem terhes normáltartomány elrejti. A „még normális” érték terhesben már emelkedés lehet."
+        }
+      },
+      {
+        "id": "sep.od.plt",
+        "var": "lab.plt",
+        "label": {
+          "hu": "Thrombocytaszám < 100 G/l"
+        },
+        "op": "lt",
+        "value": 100,
+        "unit": "10*9/L"
+      },
+      {
+        "id": "sep.od.bili",
+        "var": "lab.bili.total",
+        "label": {
+          "hu": "Összbilirubin emelkedés"
+        },
+        "op": "gt",
+        "value": 34,
+        "unit": "umol/L"
+      }
+    ]
+  },
+  "bundle": {
+    "id": "sep.bundle",
+    "label": {
+      "hu": "Az órához kötött ellátási csomag"
+    },
+    "steps": [
+      {
+        "id": "sep.b.culture",
+        "label": {
+          "hu": "Hemokultúra levétele"
+        },
+        "withinMinutes": 60,
+        "before": "sep.b.antibiotic",
+        "note": {
+          "hu": "A HEMOKULTÚRÁNAK AZ ANTIBIOTIKUM ELŐTT kell levétetnie — utána a tenyésztés jó eséllyel negatív lesz, és a kórokozó örökre ismeretlen marad. Ez a rendszer első SORRENDI kapuja: nem érték, hanem két esemény EGYMÁSHOZ képesti helye. De a hemokultúra hiánya SOHA nem késleltetheti az antibiotikumot: ha választani kell, az antibiotikum megy előre, és ezt a rendszer külön rögzíti."
+        }
+      },
+      {
+        "id": "sep.b.antibiotic",
+        "label": {
+          "hu": "Széles spektrumú antibiotikum"
+        },
+        "withinMinutes": 60,
+        "note": {
+          "hu": "EGY ÓRÁN BELÜL a felismeréstől. Az óra a FELISMERÉSTŐL ketyeg, nem a felvételtől — a kettő különbsége maga is mérőszám. A szer kiválasztása a gyógyszermodul kontraindikáció-kapuján megy át (szoptatás, allergia, veseműködés)."
+        }
+      },
+      {
+        "id": "sep.b.lactate",
+        "label": {
+          "hu": "Laktát mérése"
+        },
+        "withinMinutes": 60
+      },
+      {
+        "id": "sep.b.lactate2",
+        "label": {
+          "hu": "Laktát ismételt mérése, ha az első ≥ 2 mmol/l"
+        },
+        "withinMinutes": 180,
+        "conditionalOn": "sep.b.lactate",
+        "note": {
+          "hu": "A MÁSODIK LAKTÁT A VÁLASZT MÉRI, nem az állapotot. Az egyetlen mért érték nem mond semmit arról, javul-e a beteg."
+        }
+      },
+      {
+        "id": "sep.b.fluid",
+        "label": {
+          "hu": "Krisztalloid folyadékpótlás hypotonia vagy laktát ≥ 4 mmol/l esetén"
+        },
+        "withinMinutes": 180,
+        "note": {
+          "hu": "A TERHES ÉS A GYERMEKÁGYAS NŐ FOLYADÉKTŰRÉSE MÁS: a praeeclampsia és a tüdőödéma kockázata miatt a mennyiség nem gépies. A rendszer emlékeztet, de nem ír elő térfogatot — a kapu itt a klinikusé."
+        }
+      },
+      {
+        "id": "sep.b.pressor",
+        "label": {
+          "hu": "Vazopresszor, ha a folyadékra nem rendeződik"
+        },
+        "withinMinutes": 180,
+        "note": {
+          "hu": "A CÉLÉRTÉK ITT A KÖZÉPNYOMÁS (MAP ≥ 65 Hgmm), nem a systolés érték — a szervi perfúziót az előbbi írja le. A MAP a szűrőkészletből ezért hiányzik, a kezelési célból nem."
+        }
+      },
+      {
+        "id": "sep.b.source",
+        "label": {
+          "hu": "A góc keresése és ellátása"
+        },
+        "withinMinutes": 360,
+        "note": {
+          "hu": "A LEGFONTOSABB LÉPÉS, ÉS A LEGKÖNNYEBBEN ELMARADÓ: a szepszis nem gyógyszeres kérdés, ha van eltávolítható góc (visszamaradt lepényrész, tályog, fertőzött seb). Antibiotikum a góc ellátása nélkül halogatás."
+        }
+      }
+    ]
+  },
+  "escalation": {
+    "label": {
+      "hu": "A riasztás címzettje és a válasz határideje"
+    },
+    "note": {
+      "hu": "A TOOLKIT LEGFONTOSABB ÜZENETE, ÉS EZ NEM KÜSZÖBÉRTÉK: a válaszút nélküli riasztás rosszabb a semminél. Aki naponta háromszor kap figyelmeztetést, amire nincs kihez fordulnia, két hét alatt megtanulja elkattintani — és akkor az igazit is elkattintja. A rendszerben ezért minden riasztásnak van MEGNEVEZETT címzettje, VÁLASZHATÁRIDEJE és ÁTVÉTELI nyugtája. A ki nem adott és a ki nem vett riasztás két külön állapot: „riasztás kiadva” ≠ „riasztás átvéve”, ugyanaz a szerkezet, mint a „megrendelve ≠ eredmény” a leleteknél."
+    },
+    "acknowledgeWithinMinutes": 30,
+    "tipus": "riaszt.szepszis"
+  },
+  "relatedCalculators": [
+    {
+      "id": "calc.omqsofa",
+      "relation": "A SZÜLŐSZOBAI GYORSSZŰRŐ, ami már benne van a rendszerben (SOMANZ 2017), és a CORI-pontszám infekciós tartományát adja. Nem ugyanaz, mint ez a modul: az omqSOFA négy küszöb megszámlálása egyetlen pillanatban, ez pedig háromlépéses ÚT (szűrés → góc → szervi elégtelenség) plusz órához kötött csomag.",
+      "conflict": "UGYANARRA A VÁLTOZÓRA KÉT KÜSZÖB ÁLL A RENDSZERBEN: a légzésszám itt > 24, az omqSOFA-ban > 20; a pulzus itt > 110, ott > 90. Ez NEM elírás, hanem két forrás (CMQCC és SOMANZ) különbsége — de a rendszerben két helyen két szám ugyanarra a mérésre. Amíg a klinikai hitelesítés el nem dönti, melyik az intézményi küszöb, a rendszer MINDKETTŐT megnevezi a forrásával együtt, és egyiket sem csendesíti el a másikkal."
+    },
+    {
+      "id": "calc.cmqcc.stage",
+      "relation": "UGYANANNAK A MŰHELYNEK A MÁSIK ESZKÖZTÁRA (CMQCC Obstetric Hemorrhage Toolkit), és ugyanaz a szerkezete: stádiumhoz kötött válasz, órához kötött lépések, megnevezett címzett. A vérzés eszköztára már be van építve; ez a szepsziseszköztár párja."
+    }
+  ]
+}

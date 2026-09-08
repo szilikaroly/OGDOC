@@ -1,0 +1,165 @@
+[
+  {
+    "id": "care.pregnancy.hu",
+    "label": { "hu": "Várandósgondozási vizitrend — magyar alap" },
+    "version": "26/2014-alap-v1",
+    "validFrom": "2014-07-01",
+    "validTo": null,
+    "verification": "assumed",
+    "by": "ctx.ga",
+    "appliesWhen": [{ "var": "ctx.pregnant", "op": "eq", "value": "pos" }],
+    "source": {
+      "cite": "26/2014. (IV. 8.) EMMI rendelet a várandósgondozásról",
+      "standard": "HU jogszabály"
+    },
+    "documentation": {
+      "definition": { "hu": "A jogszabályi minimumból induló vizitrend, amit a rizikófaktorok sűrítenek." },
+      "pitfalls": { "hu": "AZ ALAPTÁBLA ELLENŐRZÖTTSÉGI SZINTJE `assumed`: a szokásos gyakorlat szerint van felvéve, NEM a jogszabály szövegéből átvezetve. Ezért a terv tervezésre használható, elmulasztott vizit megállapítására nem." },
+      "whyItMatters": { "hu": "A jogszabályi alap PADLÓ: a rizikó sűríthet, de nem ritkíthat. A módosítónak ezért nincs is `removes` mezője — nem ellenőrzés kérdése, hanem a szerkezeté." }
+    },
+    "base": [
+      { "id": "v.01", "label": { "hu": "1. vizit — gondozásba vétel" }, "from": 6, "to": 12,
+        "content": ["a várandósság megállapítása", "első laborcsomag", "rizikófelmérés", "gondozási könyv"] },
+      { "id": "v.02", "label": { "hu": "2. vizit" }, "from": 13, "to": 16, "content": ["vérnyomás, vizelet", "méhfundus"] },
+      { "id": "v.03", "label": { "hu": "3. vizit — II. trimeszteri ultrahang" }, "from": 17, "to": 20,
+        "content": ["részletes fejlődési ultrahang"] },
+      { "id": "v.04", "label": { "hu": "4. vizit" }, "from": 21, "to": 24, "content": ["vérnyomás, vizelet", "magzatmozgás"] },
+      { "id": "v.05", "label": { "hu": "5. vizit — OGTT ideje" }, "from": 25, "to": 28,
+        "content": ["75 g OGTT (24–28. hét)", "vérkép", "Rh-negatívnál anti-D profilaxis"] },
+      { "id": "v.06", "label": { "hu": "6. vizit" }, "from": 29, "to": 30, "content": ["vérnyomás, vizelet", "növekedés"] },
+      { "id": "v.07", "label": { "hu": "7. vizit — III. trimeszteri ultrahang" }, "from": 31, "to": 32,
+        "content": ["növekedés, magzatvíz, elhelyezkedés"] },
+      { "id": "v.08", "label": { "hu": "8. vizit" }, "from": 33, "to": 34, "content": ["vérnyomás, vizelet"] },
+      { "id": "v.09", "label": { "hu": "9. vizit — GBS-szűrés ideje" }, "from": 35, "to": 36,
+        "content": ["B-csoportú streptococcus tenyésztés (35–37. hét)", "szülésmód, születési terv"] },
+      { "id": "v.10", "label": { "hu": "10. vizit" }, "from": 37, "to": 37, "content": ["CTG", "elhelyezkedés"] },
+      { "id": "v.11", "label": { "hu": "11. vizit" }, "from": 38, "to": 38, "content": ["CTG"] },
+      { "id": "v.12", "label": { "hu": "12. vizit" }, "from": 39, "to": 39, "content": ["CTG"] },
+      { "id": "v.13", "label": { "hu": "13. vizit" }, "from": 40, "to": 40, "content": ["CTG", "a szülésindítás megbeszélése"] },
+      { "id": "v.14", "label": { "hu": "14. vizit — túlhordás" }, "from": 41, "to": 42,
+        "content": ["fokozott magzati ellenőrzés", "szülésindítás"] }
+    ],
+    "modifiers": [
+      {
+        "id": "mod.multiple.dc",
+        "label": { "hu": "Kétpetéjű (dichoriális) ikerterhesség" },
+        "when": [{ "var": "ctx.multiple", "op": "eq", "value": "dcda" }],
+        "source": { "cite": "NICE NG137: Twin and triplet pregnancy (2019)", "standard": "NICE NG137" },
+        "why": { "hu": "Dichoriális ikerterhességben a növekedési eltérés és a koraszülés kockázata miatt a 16. héttől négyhetente ultrahangos ellenőrzés szükséges, a 32. héttől sűrűbben." },
+        "adds": [
+          { "id": "v.dc.16", "label": { "hu": "Iker — ultrahang" }, "from": 16, "to": 16, "content": ["növekedés, magzatvíz"] },
+          { "id": "v.dc.20", "label": { "hu": "Iker — ultrahang" }, "from": 20, "to": 20, "content": ["növekedés, magzatvíz"] },
+          { "id": "v.dc.24", "label": { "hu": "Iker — ultrahang" }, "from": 24, "to": 24, "content": ["növekedés, magzatvíz"] },
+          { "id": "v.dc.28", "label": { "hu": "Iker — ultrahang" }, "from": 28, "to": 28, "content": ["növekedés, magzatvíz"] },
+          { "id": "v.dc.32", "label": { "hu": "Iker — ultrahang" }, "from": 32, "to": 32, "content": ["növekedés, magzatvíz"] },
+          { "id": "v.dc.34", "label": { "hu": "Iker — ultrahang" }, "from": 34, "to": 34, "content": ["növekedés, magzatvíz", "a szülés időzítésének megbeszélése"] },
+          { "id": "v.dc.36", "label": { "hu": "Iker — ultrahang" }, "from": 36, "to": 36, "content": ["növekedés, elhelyezkedés"] }
+        ]
+      },
+      {
+        "id": "mod.multiple.mc",
+        "label": { "hu": "Egypetéjű (monochoriális) ikerterhesség" },
+        "when": [{ "var": "ctx.multiple", "op": "in", "value": ["mcda", "mcma"] }],
+        "source": { "cite": "NICE NG137: Twin and triplet pregnancy (2019)", "standard": "NICE NG137" },
+        "why": { "hu": "Monochoriális ikerterhességben a 16. héttől KÉTHETENTE kell ultrahang az ikertranszfúziós szindróma (TTTS) felismerésére: a folyamat gyorsan alakul ki, és négyhetes ellenőrzéssel elkésve ismerhető fel." },
+        "adds": [
+          { "id": "v.mc.16", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 16, "to": 16, "content": ["magzatvíz-mennyiség mindkét zsákban", "hólyagtelődés", "növekedés"] },
+          { "id": "v.mc.18", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 18, "to": 18, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.20", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 20, "to": 20, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.22", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 22, "to": 22, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.24", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 24, "to": 24, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.26", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 26, "to": 26, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.28", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 28, "to": 28, "content": ["magzatvíz-mennyiség mindkét zsákban", "növekedés"] },
+          { "id": "v.mc.30", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 30, "to": 30, "content": ["magzatvíz-mennyiség mindkét zsákban"] },
+          { "id": "v.mc.32", "label": { "hu": "Monochoriális iker — TTTS-ellenőrzés" }, "from": 32, "to": 32, "content": ["magzatvíz-mennyiség mindkét zsákban", "növekedés"] },
+          { "id": "v.mc.34", "label": { "hu": "Monochoriális iker — a szülés időzítése" }, "from": 34, "to": 34, "content": ["növekedés", "a szülés időzítésének megbeszélése"] }
+        ]
+      },
+      {
+        "id": "mod.htn.chronic",
+        "label": { "hu": "Krónikus hypertonia" },
+        "when": [{ "var": "hx.sys.htn", "op": "eq", "value": "pos" }],
+        "source": { "cite": "NICE NG133: Hypertension in pregnancy (2019)", "standard": "NICE NG133" },
+        "why": { "hu": "Krónikus hypertoniában a praeeclampsia kockázata többszörös, és a kialakulása hetek alatt is bekövetkezhet: a vérnyomás és a proteinuria sűrűbb ellenőrzése nélkül a diagnózis késik." },
+        "adds": [
+          { "id": "v.htn.26", "label": { "hu": "Hypertonia — köztes ellenőrzés" }, "from": 26, "to": 26, "content": ["vérnyomás", "vizelet fehérje/kreatinin hányados", "vérkép, májenzimek"] },
+          { "id": "v.htn.30", "label": { "hu": "Hypertonia — köztes ellenőrzés" }, "from": 30, "to": 30, "content": ["vérnyomás", "vizelet fehérje/kreatinin hányados"] },
+          { "id": "v.htn.34", "label": { "hu": "Hypertonia — köztes ellenőrzés" }, "from": 34, "to": 34, "content": ["vérnyomás", "vizelet fehérje/kreatinin hányados", "magzati növekedés"] },
+          { "id": "v.htn.36", "label": { "hu": "Hypertonia — a szülés időzítése" }, "from": 36, "to": 36, "content": ["a szülés időzítésének megbeszélése"] }
+        ]
+      },
+      {
+        "id": "mod.preeclampsia.prev",
+        "label": { "hu": "Korábbi praeeclampsia" },
+        "when": [{ "var": "hx.repro.preeclampsia", "op": "eq", "value": "pos" }],
+        "source": { "cite": "NICE NG133: Hypertension in pregnancy (2019)", "standard": "NICE NG133" },
+        "why": { "hu": "A korábbi praeeclampsia a legerősebb önálló rizikófaktor az ismétlődésre; a kisdózisú aszpirin javallata mellett a sűrűbb ellenőrzés is indokolt." },
+        "adds": [
+          { "id": "v.pe.26", "label": { "hu": "Praeeclampsia-rizikó — ellenőrzés" }, "from": 26, "to": 26, "content": ["vérnyomás", "vizelet fehérje/kreatinin hányados"] },
+          { "id": "v.pe.30", "label": { "hu": "Praeeclampsia-rizikó — ellenőrzés" }, "from": 30, "to": 30, "content": ["vérnyomás", "magzati növekedés"] },
+          { "id": "v.pe.34", "label": { "hu": "Praeeclampsia-rizikó — ellenőrzés" }, "from": 34, "to": 34, "content": ["vérnyomás", "magzati növekedés"] }
+        ]
+      },
+      {
+        "id": "mod.dm.pregestational",
+        "label": { "hu": "Terhesség előtti cukorbetegség" },
+        "whenAny": [
+          { "var": "hx.sys.dm1", "op": "eq", "value": "pos" },
+          { "var": "hx.sys.dm2", "op": "eq", "value": "pos" }
+        ],
+        "source": { "cite": "NICE NG3: Diabetes in pregnancy (2015, updated 2020)", "standard": "NICE NG3" },
+        "why": { "hu": "Terhesség előtti cukorbetegségben a 28. héttől négyhetente növekedési ultrahang szükséges, és a gondozás megosztott a diabetológiával." },
+        "adds": [
+          { "id": "v.dm.28", "label": { "hu": "Cukorbetegség — növekedési ultrahang" }, "from": 28, "to": 28, "content": ["magzati növekedés, magzatvíz", "anyagcsere-vezetés"] },
+          { "id": "v.dm.32", "label": { "hu": "Cukorbetegség — növekedési ultrahang" }, "from": 32, "to": 32, "content": ["magzati növekedés, magzatvíz"] },
+          { "id": "v.dm.36", "label": { "hu": "Cukorbetegség — a szülés időzítése" }, "from": 36, "to": 36, "content": ["magzati növekedés", "a szülés időzítésének megbeszélése"] }
+        ]
+      },
+      {
+        "id": "mod.ptb.prev",
+        "label": { "hu": "Korábbi koraszülés" },
+        "when": [{ "var": "hx.repro.prevBirth.preterm", "op": "eq", "value": "pos" }],
+        "source": { "cite": "NICE NG25: Preterm labour and birth (2015, updated 2022)", "standard": "NICE NG25" },
+        "why": { "hu": "Korábbi koraszülés után a méhnyakhossz sorozatmérése a 16–24. hét között azonosítja azokat, akiknél a progeszteron vagy a cerclage megelőzheti az ismétlődést — az egyszeri mérés ehhez kevés." },
+        "adds": [
+          { "id": "v.ptb.16", "label": { "hu": "Méhnyakhossz-mérés" }, "from": 16, "to": 16, "content": ["hüvelyi ultrahang: méhnyakhossz"] },
+          { "id": "v.ptb.18", "label": { "hu": "Méhnyakhossz-mérés" }, "from": 18, "to": 18, "content": ["hüvelyi ultrahang: méhnyakhossz"] },
+          { "id": "v.ptb.20", "label": { "hu": "Méhnyakhossz-mérés" }, "from": 20, "to": 20, "content": ["hüvelyi ultrahang: méhnyakhossz"] },
+          { "id": "v.ptb.22", "label": { "hu": "Méhnyakhossz-mérés" }, "from": 22, "to": 22, "content": ["hüvelyi ultrahang: méhnyakhossz"] }
+        ]
+      },
+      {
+        "id": "mod.gdm.prev",
+        "label": { "hu": "Korábbi terhességi cukorbetegség" },
+        "when": [{ "var": "hx.repro.gdm", "op": "eq", "value": "pos" }],
+        "source": { "cite": "NICE NG3: Diabetes in pregnancy (2015, updated 2020)", "standard": "NICE NG3" },
+        "why": { "hu": "Korábbi terhességi cukorbetegség után a terheléses vizsgálat a 16–18. hétre előrehozandó — és a NEGATÍV korai eredmény nem zárja le a kérdést, a 24–28. héten megismétlendő." },
+        "adds": [
+          { "id": "v.gdm.17", "label": { "hu": "Korai OGTT" }, "from": 16, "to": 18, "content": ["75 g OGTT (korai)", "a 24–28. heti ismétlés megbeszélése"] }
+        ]
+      },
+      {
+        "id": "mod.prevCs",
+        "label": { "hu": "Korábbi császármetszés" },
+        "when": [{ "var": "hx.repro.prevBirth.cs", "op": "gte", "value": 1 }],
+        "source": { "cite": "RCOG Green-top Guideline No. 45: Birth after previous caesarean birth (2015)", "standard": "RCOG GTG 45" },
+        "why": { "hu": "Korábbi császármetszés után a szülésmód megbeszélése önálló, tervezett alkalmat kíván: a hüvelyi szülés kísérlete és az elektív ismételt császármetszés közötti választás kockázatcsere, és a beteg értékrendje dönt." },
+        "adds": [
+          { "id": "v.cs.36", "label": { "hu": "Szülésmód-tervező vizit" }, "from": 36, "to": 36,
+            "content": ["a korábbi uterotomia típusának tisztázása", "TOLAC és elektív ismételt császármetszés kockázatai", "a beteg preferenciájának rögzítése", "megosztott döntéshozatal dokumentálása"] }
+        ]
+      },
+      {
+        "id": "mod.age.advanced",
+        "label": { "hu": "Anyai életkor 40 év felett" },
+        "when": [{ "var": "patient.age", "op": "gte", "value": 40 }],
+        "source": { "cite": "RCOG Scientific Impact Paper No. 34: Induction of labour at term in older mothers (2013)", "standard": "RCOG SIP 34" },
+        "why": { "hu": "40 év felett a késői magzati halálozás kockázata a 39. hét után emelkedik, ezért a szülésindítás megbeszélése előbbre hozandó — ehhez nem kell új vizit, csak TARTALOM a meglévőn." },
+        "adds": [
+          { "id": "v.age.38", "label": { "hu": "38. hét" }, "from": 38, "to": 38,
+            "content": ["a szülésindítás megbeszélése (40 év feletti anyai életkor)"] }
+        ]
+      }
+    ]
+  }
+]

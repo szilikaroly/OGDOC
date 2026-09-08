@@ -1,0 +1,47 @@
+{
+  "id": "spr.pop.kimaradt",
+  "megnevezes": "Késett vagy kimaradt progesztogén-tartalmú tabletta (POP)",
+  "verzio": "US SPR 2024",
+  "forras": "U.S. Selected Practice Recommendations for Contraceptive Use (US SPR), CDC — 2024. Az Egyesült Államok szövetségi kormányzati munkája: KÖZKINCS.",
+  "hivatkozas": "https://www.cdc.gov/contraception/hcp/usspr/",
+  "vars": [
+    "tipus",
+    "orak",
+    "hetHanyadik",
+    "vedtelenKozosules5Napon",
+    "voltVedtelenKozosules"
+  ],
+  "szabalyok": [
+    {
+      "kat": "noretiszteron.kimaradt",
+      "ha": "tipus == 1 && orak > 3",
+      "miert": "NORETISZTERON vagy NORGESZTREL POP: egy tabletta kimaradt (több mint 3 óra telt el az esedékesség óta).",
+      "teendo": "Egy tablettát mielőbb be kell venni; a szedést naponta, MINDIG UGYANABBAN AZ IDŐPONTBAN folytatni (akkor is, ha egy napon két tabletta jön). Tartózkodás vagy barrier módszer, amíg 2 egymást követő napon át helyesen, időben nem került bevételre tabletta.",
+      "megjegyzes": "SÜRGŐSSÉGI FOGAMZÁSGÁTLÁS MÉRLEGELENDŐ (UPA kivételével), ha védekezés nélküli közösülés történt. A 3 ÓRÁS ABLAK a noretiszteron/norgesztrel POP sajátja — a drospirenon POP-nál 48 óra."
+    },
+    {
+      "kat": "drospirenon.keset",
+      "ha": "tipus == 2 && orak < 48",
+      "miert": "DROSPIRENON POP: egy tabletta késett vagy kimaradt (kevesebb mint 48 óra).",
+      "teendo": "A késett vagy kimaradt tablettát mielőbb be kell venni; naponta egy tablettát folytatni a csomag végéig. További fogamzásgátló védelem NEM szükséges."
+    },
+    {
+      "kat": "drospirenon.tobb.elsoHet.vedtelen",
+      "ha": "tipus == 2 && orak >= 48 && hetHanyadik == 1 && vedtelenKozosules5Napon == 1",
+      "miert": "DROSPIRENON POP: kettő vagy több egymást követő tabletta kimaradt (≥48 óra) az első héten, és az elmúlt 5 napban védekezés nélküli közösülés történt.",
+      "teendo": "Az utolsó kimaradt tablettát mielőbb bevenni; naponta egy tablettát folytatni a csomag végéig (egy vagy több kimaradt tabletta a csomagban marad). Tartózkodás vagy barrier módszer, amíg 7 egymást követő napon át hormonos tabletta nem került bevételre.",
+      "megjegyzes": "SÜRGŐSSÉGI FOGAMZÁSGÁTLÁS MÉRLEGELENDŐ (UPA kivételével)."
+    },
+    {
+      "kat": "drospirenon.tobb",
+      "ha": "tipus == 2 && orak >= 48",
+      "miert": "DROSPIRENON POP: kettő vagy több egymást követő tabletta kimaradt (≥48 óra).",
+      "teendo": "Az utolsó kimaradt tablettát mielőbb bevenni; naponta egy tablettát folytatni a csomag végéig. Tartózkodás vagy barrier módszer, amíg 7 egymást követő napon át hormonos tabletta nem került bevételre.",
+      "megjegyzes": "Sürgősségi fogamzásgátlás mérlegelhető (UPA kivételével)."
+    }
+  ],
+  "eloirasok": [
+    "A `tipus` mező: 1 = noretiszteron vagy norgesztrel POP · 2 = drospirenon POP.",
+    "A KÉT POP-FAJTA ABLAKA GYÖKERESEN KÜLÖNBÖZIK: a noretiszteron/norgesztrel POP-nál 3 ÓRA, a drospirenonnál 48 óra. Ezt egyetlen „POP” mezőben kezelni súlyos hiba lenne: a 3 órás ablakot 48-nak olvasva a védelem elveszne."
+  ]
+}

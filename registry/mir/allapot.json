@@ -1,0 +1,9 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. Egyetlen minőségirányítási dokumentum sincs hatályban. Ez nem hiányosság, hanem a valóság: a 13. lépés reális átfutása 12–18 hónap, és az egész projekt leghosszabb tétele. Amit itt rögzítünk, az nem a dokumentum TARTALMA, hanem a ténye: melyik verzió, mikortól hatályos, ki hagyta jóvá, és MIKOR JÁR LE A FELÜLVIZSGÁLATA. Az utolsó a legfontosabb: a legtöbb minőségirányítási rendszer azon bukik el, hogy a dokumentumokat senki nem vizsgálja felül, és az audit két éve lejárt SOP-okat talál. A `bizonyitek` a hozzá tartozó űrlap vagy rendszerbeli feljegyzés — üresen hagyva építési hiba, mert SOP feljegyzés nélkül nem bizonyít semmit. Munkalap: `npm run mir`.",
+  "szerepek": {
+    "mir": "minőségirányítási vezető — a dokumentumfa és a felülvizsgálatok",
+    "vezetes": "intézményi vezetés — a politika jóváhagyása",
+    "biobank": "biobank-felelős — a minta-életciklus SOP-jai"
+  },
+  "hatalyos": []
+}

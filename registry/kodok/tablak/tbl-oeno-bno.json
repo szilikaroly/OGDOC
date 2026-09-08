@@ -1,0 +1,110 @@
+{
+ "id": "tbl.oeno.bno",
+ "label": {
+  "hu": "BNO mellett elszámolható eljárások (4. melléklet)"
+ },
+ "version": "9/2012 NEFMI, hatályos 2026-01-01",
+ "validFrom": "2026-01-01",
+ "coverage": "full",
+ "source": {
+  "cite": "9/2012. (II. 28.) NEFMI rendelet az Egészségbiztosítási Alap terhére finanszírozható járóbeteg-szakellátási tevékenységekről (hatályos 2026.01.01.)",
+  "standard": "9/2012 NEFMI"
+ },
+ "rows": {
+  "12206": {
+   "label": "Optikai koherencia tomográfia (OCT)",
+   "bno": "H3000;H3010;H3100;H3130;H3530;N9700;N9710;N9720;N9730;N9740;N9780;N9790;N46H0"
+  },
+  "26704": {
+   "label": "Kvantitatív FLC kappa mérés szérumból vagy vizeletből",
+   "bno": "C9000;C9010;C9020;C9110;C8800;D4720;E8580;E8590;Z9481"
+  },
+  "26705": {
+   "label": "Kvantitatív FLC lambda mérés szérumból vagy vizeletből",
+   "bno": "C9000;C9010;C9020;C9110;C8800;D4720;E8580;E8590;Z9481"
+  },
+  "35225": {
+   "label": "Szívizom anyagcsere szcintigráfia I-123 MIBG-vel",
+   "bno": "I4700;I4710;I4720;I4790"
+  },
+  "3522": {
+   "label": "D * Mellékvesekéreg szcintigráfia",
+   "bno": "C7400;D3500;D4410;E2400;E2430;E2480;E2490;E2600"
+  },
+  "35242": {
+   "label": "Mellékvesekéreg szcintigráfia + Dexamethazon supressio",
+   "bno": "C7400;D3500;D4410;E2400;E2430;E2480;E2490;E2600"
+  },
+  "35244": {
+   "label": "Adrenerg receptor szcintigráfia I-123 MIBG-vel",
+   "bno": "C4780;C7300;C7410"
+  },
+  "35274": {
+   "label": "Somatostatin receptor szcintigráfia",
+   "bno": "C2540;C2600;C3490;D1370;D3810"
+  },
+  "35605": {
+   "label": "Agyi receptor SPECT vizsgálat",
+   "bno": "G2000;G2100;G2110;G2120;G2130;G2180;G2190;G4000;G4010;G4020;G4030"
+  },
+  "3570": {
+   "label": "ACsontsűrűség mérése végtagcsontokon",
+   "bno": "E0500;E0510;E0520;E0530;E0540;E0550;E0580;E0590;E2100;E2830;E2890;E2910;E2911;E3100;M4010;M4850;M8000;M8010;M8020;M8030;M8040;M8050;M8080;M8091;M8100;M8110;M8120;M8130;M8140;M8142;M8143;M8144;M8145;M8146;M8191;M8150;M8160;M8180;M8190;M8200;M8210;M8280;N2002;N2500;N9530;N9580;N9590;R6340;M8141;Z9480;M8192;R9371"
+  },
+  "35810": {
+   "label": "Kezelés Sr-89 Metastronnal",
+   "bno": "C7950"
+  },
+  "35900": {
+   "label": "Szívizom vizsgálat SPECT-el",
+   "bno": "I2200;I2210;I2280;I2290;I2520;I2550;I2560;I2580;I2590"
+  },
+  "3613": {
+   "label": "D Tranziens elasztográfia",
+   "bno": "B1810;B1820;Z9440;K7000;K7010;K7020;K7030;K7040;K7090;K7100;K7110;K7120;K7130;K7140;K7150;K7160;K7170;K7180;K7190;K7200;K7210;K7290;K7300;K7310;K7320;K7321;K7329;K7380;K7390;K7400;K7410;K7420;K7430;K7440;K7450;K7460;K7500;K7510;K7520;K7530;K7580;K7590;K7600;B0700;L82H0;L97H0;M7210"
+  },
+  "85712": {
+   "label": "Pharmacologiai neurectomia I., C. botulinum toxinnal",
+   "bno": "G2450;G2440"
+  },
+  "85713": {
+   "label": "Pharmacologiai neurctomia II., C. botulinum toxinnal",
+   "bno": "G8090"
+  },
+  "85714": {
+   "label": "Pharmacologiai neurectomia III. botulinum toxinnal",
+   "bno": "G2430;G2480"
+  },
+  "46000": {
+   "label": "Várandósság rizikó-besorolása",
+   "bno": "Z3210"
+  },
+  "46010": {
+   "label": "Első trimeszteri gondozási vízit alacsony kockázatú várandósságban",
+   "bno": "Z3480"
+  },
+  "46020": {
+   "label": "Második trimeszteri gondozási vizit alacsony kockázatú várandósságban",
+   "bno": "Z3480"
+  },
+  "46030": {
+   "label": "Harmadik trimeszteri gondozási vizit alacsony kockázatú várandósságban",
+   "bno": "Z3480"
+  },
+  "46040": {
+   "label": "Első trimeszteri gondozási vizit magas kockázatú várandósságban",
+   "bno": "Z3590"
+  },
+  "46050": {
+   "label": "Második trimeszteri gondozási vizit magas kockázatú várandósságban",
+   "bno": "Z3590"
+  },
+  "46060": {
+   "label": "Harmadik trimeszteri gondozási vizit magas kockázatú várandósságban",
+   "bno": "Z3590"
+  }
+ },
+ "coverageNote": {
+  "hu": "Az eljárás CSAK a felsorolt BNO-kódok mellett számolható el. Ez a rendszer szempontjából a legfontosabb melléklet: a kódajánlás diagnózis-feltételét jogszabály mondja meg, nem mi."
+ }
+}

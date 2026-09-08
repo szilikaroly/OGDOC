@@ -1,0 +1,261 @@
+[
+  {
+    "id": "rx.folicAcid",
+    "label": {
+      "hu": "Folsav"
+    },
+    "synonyms": [
+      "acidum folicum",
+      "B9-vitamin",
+      "Folsav-Richter"
+    ],
+    "atc": "B03BB01",
+    "class": {
+      "hu": "vitamin"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "ug",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A velőcsőzáródási rendellenesség megelőzésére adott vitamin."
+      },
+      "whyItMatters": {
+        "hu": "A hatás a FOGAMZÁS KÖRÜLI időszakban érvényesül; a terhesség felismerésekor megkezdett pótlás a velőcső záródását már nem befolyásolja."
+      }
+    },
+    "dietSupplement": "diet.supp.folate"
+  },
+  {
+    "id": "rx.ironSulfate",
+    "label": {
+      "hu": "Vas-szulfát"
+    },
+    "synonyms": [
+      "ferrous sulfate",
+      "Sorbifer",
+      "Tardyferon",
+      "vaskészítmény"
+    ],
+    "atc": "B03AA07",
+    "class": {
+      "hu": "vaspótlás"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "mg",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "Székrekedést és sötét székletet okoz — ez utóbbi nem vérzés. A tájékoztatás hiánya miatt sokan felesleges vizsgálatra kerülnek, vagy abbahagyják a pótlást."
+      }
+    },
+    "dietSupplement": "diet.supp.iron"
+  },
+  {
+    "id": "rx.vitaminD3",
+    "label": {
+      "hu": "D3-vitamin"
+    },
+    "synonyms": [
+      "cholecalciferol",
+      "kolekalciferol",
+      "Vigantol"
+    ],
+    "atc": "A11CC05",
+    "class": {
+      "hu": "vitamin"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "[IU]",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "D-vitamin-pótlás."
+      }
+    },
+    "dietSupplement": "diet.supp.vitaminD"
+  },
+  {
+    "id": "rx.potassiumIodide",
+    "label": {
+      "hu": "Kálium-jodid"
+    },
+    "synonyms": [
+      "jódpótlás",
+      "potassium iodide"
+    ],
+    "atc": "H03CA",
+    "class": {
+      "hu": "jódpótlás"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "ug",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Jódpótlás terhesség és szoptatás alatt."
+      },
+      "pitfalls": {
+        "hu": "Pajzsmirigy-túlműködés kezelése alatt külön mérlegelést kér."
+      }
+    },
+    "dietSupplement": "diet.supp.iodine"
+  },
+  {
+    "id": "rx.cyanocobalamin",
+    "label": {
+      "hu": "B12-vitamin"
+    },
+    "synonyms": [
+      "cianokobalamin",
+      "cyanocobalamin",
+      "Neurobion"
+    ],
+    "atc": "B03BA01",
+    "class": {
+      "hu": "vitamin"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "ug",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "B12-vitamin-pótlás."
+      },
+      "whyItMatters": {
+        "hu": "Vegán étrend és bariátriai műtét után kötelező: a hiány a magzat idegrendszerét érinti, és a tünetek későn jelentkeznek."
+      }
+    },
+    "dietSupplement": "diet.supp.b12"
+  },
+  {
+    "id": "rx.dha",
+    "label": {
+      "hu": "Omega-3 (DHA)"
+    },
+    "synonyms": [
+      "halolaj",
+      "dokozahexaénsav",
+      "docosahexaenoic acid"
+    ],
+    "atc": "C10AX06",
+    "class": {
+      "hu": "többszörösen telítetlen zsírsav"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "mg",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Omega-3 zsírsav-pótlás."
+      }
+    },
+    "dietSupplement": "diet.supp.dha"
+  },
+  {
+    "id": "rx.calciumCarbonate",
+    "label": {
+      "hu": "Kalcium-karbonát"
+    },
+    "synonyms": [
+      "kalciumpótlás",
+      "calcium carbonate"
+    ],
+    "atc": "A12AA04",
+    "class": {
+      "hu": "kalciumpótlás"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "mg",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Kalciumpótlás."
+      },
+      "pitfalls": {
+        "hu": "A vaskészítménnyel EGY IDŐBEN adva mindkettő felszívódását rontja — időben elválasztva adandó."
+      }
+    },
+    "dietSupplement": "diet.supp.calcium"
+  },
+  {
+    "id": "rx.prenatalMultivitamin",
+    "label": {
+      "hu": "Terhes-multivitamin"
+    },
+    "synonyms": [
+      "prenatal vitamin",
+      "Elevit",
+      "Femibion"
+    ],
+    "atc": "A11AA",
+    "class": {
+      "hu": "kombinált vitaminkészítmény"
+    },
+    "indications": [
+      "supplementation"
+    ],
+    "doseUnit": "{tbl}",
+    "lactation": {
+      "hale": "L1",
+      "source": {
+        "cite": "Hale TW, Krutsch K. Medications and Mothers' Milk (2025); LactMed (NIH)"
+      }
+    },
+    "documentation": {
+      "pitfalls": {
+        "hu": "NEM helyettesíti a célzott pótlást, és a célzott készítménnyel EGYÜTT adva halmozódik. A rendszer ezért ellenőrzi az átfedést."
+      }
+    },
+    "dietSupplement": "diet.supp.multivit"
+  }
+]

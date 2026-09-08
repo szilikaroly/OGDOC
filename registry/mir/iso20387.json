@@ -1,0 +1,460 @@
+{
+  "id": "mir.iso20387",
+  "label": {
+    "hu": "ISO 20387:2018 — kontrollmátrix"
+  },
+  "note": "A SZABVÁNY SZÖVEGE SZERZŐI JOGVÉDETT, ITT NEM IDÉZHETŐ. Ez a mátrix a szabvány ismert fejezetszerkezetéhez rendel kontrollokat; a fejezetszámokat és a követelmények pontos szövegét a hivatalos szabványpéldány alapján ellenőrizni kell, mielőtt bármelyik sorra hivatkoznánk auditon. A `rogzitettAllapot` a docs/megfeleles/01-iso20387.md-ből átvett, KÉZZEL írt jelölés; a `bizonyitekDokumentumok` az, amit az auditor ténylegesen kér — és ez a lista ma szinte mindenütt üres. A kettő különbsége maga a 13. lépés feladata.",
+  "forras": "docs/megfeleles/01-iso20387.md",
+  "kontrollok": [
+    {
+      "id": "iso.01",
+      "kategoria": "altalanos",
+      "szakasz": "4.1 Pártatlanság",
+      "mitVar": "A biobank működése pártatlan; az összeférhetetlenségek azonosítva és kezelve",
+      "megvalositas": "Szerep-szétválasztás: aki kiadja a mintát, nem dönt a kiadásról; aki a kódkulcsot kezeli, nem kutat a de-identifikált adaton (`00-keret.md` 5.)",
+      "bizonyitekProza": "Összeférhetetlenségi nyilatkozatok, szerepkör-mátrix, `role_permissions` konfiguráció",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.02",
+      "kategoria": "altalanos",
+      "szakasz": "4.1 Pártatlanság",
+      "mitVar": "A pártatlanságot fenyegető kockázatok folyamatos azonosítása",
+      "megvalositas": "Éves kockázatértékelés a vezetőségi átvizsgálás részeként",
+      "bizonyitekProza": "Kockázati nyilvántartás",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.03",
+      "kategoria": "altalanos",
+      "szakasz": "4.1 Pártatlanság",
+      "mitVar": "Kereskedelmi, pénzügyi nyomás nem befolyásolja",
+      "megvalositas": "A v16 nyilatkozat kimondja: **a minta és az adat kereskedelmi értékesítése nem történik**",
+      "bizonyitekProza": "Hozzáférési politika, díjszabály (költségtérítés ≠ értékesítés)",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.04",
+      "kategoria": "altalanos",
+      "szakasz": "4.2 Bizalmas kezelés",
+      "mitVar": "A megszerzett információ bizalmas kezelése, jogilag kikényszeríthető kötelezettséggel",
+      "megvalositas": "Titoktartási nyilatkozat minden szerepkörre; RLS + `has_role()` + `can_access_patient()` szerveroldalon",
+      "bizonyitekProza": "Aláírt nyilatkozatok, RLS-tesztek (`tests/rls/`)",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.05",
+      "kategoria": "altalanos",
+      "szakasz": "4.2 Bizalmas kezelés",
+      "mitVar": "Ha jogszabály előírja a közlést, az érintett értesítése (ha megengedett)",
+      "megvalositas": "Eljárásrend a hatósági megkeresésekre",
+      "bizonyitekProza": "SOP",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.06",
+      "kategoria": "altalanos",
+      "szakasz": "5. Szerkezeti követelmények",
+      "mitVar": "Jogi entitás, azonosított vezetés, meghatározott szervezeti felépítés",
+      "megvalositas": "A biobankot üzemeltető intézmény; szervezeti ábra és felelősségi mátrix",
+      "bizonyitekProza": "Alapító okirat, szervezeti és működési szabályzat",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.07",
+      "kategoria": "altalanos",
+      "szakasz": "5. Szerkezeti követelmények",
+      "mitVar": "A tevékenységi kör (scope) meghatározott",
+      "megvalositas": "`00-keret.md` 4. pont: mire vonatkozik és mire nem",
+      "bizonyitekProza": "Hatókör-nyilatkozat",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "megvan"
+    },
+    {
+      "id": "iso.08",
+      "kategoria": "altalanos",
+      "szakasz": "5. Szerkezeti követelmények",
+      "mitVar": "A biobank tevékenysége elkülönül a többi tevékenységtől",
+      "megvalositas": "Az OGDOC-ban a biobank-modul (`22`) külön adatkörrel, külön szerepkörökkel",
+      "bizonyitekProza": "Szerepkör-mátrix",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.09",
+      "kategoria": "eroforras",
+      "szakasz": "6.2 Személyzet",
+      "mitVar": "Kompetencia-követelmények szerepkörönként meghatározva",
+      "megvalositas": "A platform `profile_skills`, `profile_capabilities`, `competency_domains`, `competency_levels` táblái **már megvannak** (19. modul)",
+      "bizonyitekProza": "Kompetencia-mátrix",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.10",
+      "kategoria": "eroforras",
+      "szakasz": "6.2 Személyzet",
+      "mitVar": "Képzés, felhatalmazás (authorization), felügyelet",
+      "megvalositas": "`training_programs`, `profile_trainings`, `person_accreditations` — megvan",
+      "bizonyitekProza": "Képzési nyilvántartás",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.11",
+      "kategoria": "eroforras",
+      "szakasz": "6.2 Személyzet",
+      "mitVar": "A kompetencia rendszeres újraértékelése",
+      "megvalositas": "Évenkénti felülvizsgálat a vezetőségi átvizsgálás részeként",
+      "bizonyitekProza": "Értékelési feljegyzések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.12",
+      "kategoria": "eroforras",
+      "szakasz": "6.3 Létesítmények és környezeti feltételek",
+      "mitVar": "A tárolás és feldolgozás környezete alkalmas, ellenőrzött, monitorozott",
+      "megvalositas": "**Hőmérséklet-monitorozás**: folyamatos, riasztással. Az OGDOC-ban a `monitoring_thresholds` motor kiterjesztése tároló-eszközökre",
+      "bizonyitekProza": "Hőmérséklet-naplók, riasztási feljegyzések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.13",
+      "kategoria": "eroforras",
+      "szakasz": "6.3 Létesítmények és környezeti feltételek",
+      "mitVar": "Hozzáférés-szabályozás a tárolóterekhez",
+      "megvalositas": "Fizikai beléptetés + a rendszerben rögzített hozzáférési napló",
+      "bizonyitekProza": "Beléptetési napló",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.14",
+      "kategoria": "eroforras",
+      "szakasz": "6.3 Létesítmények és környezeti feltételek",
+      "mitVar": "Elkülönítés az összeférhetetlen tevékenységektől",
+      "megvalositas": "Külön helyiség/zóna a mintakezelésre",
+      "bizonyitekProza": "Alaprajz, zónaterv",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.15",
+      "kategoria": "eroforras",
+      "szakasz": "6.4 Berendezések",
+      "mitVar": "Berendezés-nyilvántartás azonosítóval, státusszal",
+      "megvalositas": "Új `bb_equipment` tábla (`22` modul)",
+      "bizonyitekProza": "Eszközlista",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.16",
+      "kategoria": "eroforras",
+      "szakasz": "6.4 Berendezések",
+      "mitVar": "Kalibrálás, metrológiai visszavezethetőség, karbantartás",
+      "megvalositas": "Kalibrálási terv és naptár, esedékesség-figyelés a `followup_*` motor mintájára",
+      "bizonyitekProza": "Kalibrálási bizonyítványok",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.17",
+      "kategoria": "eroforras",
+      "szakasz": "6.4 Berendezések",
+      "mitVar": "Meghibásodás kezelése: a hatás visszamenőleges értékelése",
+      "megvalositas": "Nemmegfelelőség-eljárás (`08-audit.md`), és **a hatással érintett minták azonosítása** a nyomonkövethetőségből",
+      "bizonyitekProza": "NC-feljegyzések, hatásvizsgálat",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.18",
+      "kategoria": "eroforras",
+      "szakasz": "6.5 Külső szolgáltatók",
+      "mitVar": "Külső folyamatok, termékek, szolgáltatások értékelése és felügyelete",
+      "megvalositas": "Beszállítói jegyzék és minősítés (szállítás, kalibrálás, szekvenálás, felhő)",
+      "bizonyitekProza": "Beszállítói értékelések, szerződések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.19",
+      "kategoria": "eroforras",
+      "szakasz": "6.5 Külső szolgáltatók",
+      "mitVar": "Az adatfeldolgozói lánc dokumentált",
+      "megvalositas": "GDPR Art. 28 szerinti adatfeldolgozói szerződések (`02-gdpr.md`)",
+      "bizonyitekProza": "DPA-k",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.20",
+      "kategoria": "folyamat",
+      "szakasz": "7.1–7.3 Gyűjtés, fogadás, elfogadási kritériumok",
+      "mitVar": "A gyűjtés dokumentált eljárás szerint, az adományozó azonosításával és hozzájárulásával",
+      "megvalositas": "`22` modul: mintavétel az `clinical_encounters`-hez kötve, hozzájárulás-ellenőrzéssel **a felvétel pillanatában**",
+      "bizonyitekProza": "SOP-gyűjtés, hozzájárulási feljegyzések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.21",
+      "kategoria": "folyamat",
+      "szakasz": "7.1–7.3 Gyűjtés, fogadás, elfogadási kritériumok",
+      "mitVar": "Elfogadási és elutasítási kritériumok meghatározva",
+      "megvalositas": "Minta-elfogadási kritériumok (mennyiség, hőmérséklet, idő a levételtől, sérülés)",
+      "bizonyitekProza": "SOP, elutasítási napló",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.22",
+      "kategoria": "folyamat",
+      "szakasz": "7.1–7.3 Gyűjtés, fogadás, elfogadási kritériumok",
+      "mitVar": "A releváns preanalitikai adatok rögzítve",
+      "megvalositas": "**SPREC-kód** vagy azzal egyenértékű preanalitikai leírás minden mintán",
+      "bizonyitekProza": "Minta-rekord",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.23",
+      "kategoria": "folyamat",
+      "szakasz": "7.4 Nyomonkövethetőség",
+      "mitVar": "Minden minta és kapcsolódó adat egyértelműen azonosítható és visszakövethető",
+      "megvalositas": "`07-nyomonkovethetoseg.md` teljes fejezete: azonosítórendszer, kódkulcs, alikvot-fa",
+      "bizonyitekProza": "Azonosító-séma, minta-életút riport",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.24",
+      "kategoria": "folyamat",
+      "szakasz": "7.4 Nyomonkövethetőség",
+      "mitVar": "A minta és az adat kapcsolata fenntartva a teljes életciklusban",
+      "megvalositas": "`bb_specimen` ↔ `patients` kódkulcson át; a kapcsolat auditált",
+      "bizonyitekProza": "Kapcsolati napló",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.25",
+      "kategoria": "folyamat",
+      "szakasz": "7.5–7.6 Előkészítés, tartósítás, tárolás",
+      "mitVar": "Validált feldolgozási és tartósítási eljárások",
+      "megvalositas": "SOP-onként validációs jegyzőkönyv",
+      "bizonyitekProza": "Validációs jelentések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.26",
+      "kategoria": "folyamat",
+      "szakasz": "7.5–7.6 Előkészítés, tartósítás, tárolás",
+      "mitVar": "A tárolási feltételek meghatározva és fenntartva",
+      "megvalositas": "Tárolóhely-hierarchia: helyszín → eszköz → polc → doboz → pozíció",
+      "bizonyitekProza": "Tárolási térkép",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.27",
+      "kategoria": "folyamat",
+      "szakasz": "7.5–7.6 Előkészítés, tartósítás, tárolás",
+      "mitVar": "Fagyasztás-olvadás ciklusok követése",
+      "megvalositas": "`bb_specimen.freeze_thaw_count` — minden kivétel növeli",
+      "bizonyitekProza": "Alikvot-történet",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.28",
+      "kategoria": "folyamat",
+      "szakasz": "7.7–7.8 Kiadás, szállítás, megsemmisítés",
+      "mitVar": "A kiadás jóváhagyott kérelem alapján, dokumentáltan",
+      "megvalositas": "Hozzáférési folyamat: kérelem → etikai és tudományos bírálat → bizottsági döntés → anyagátadási megállapodás (MTA) → kiadás",
+      "bizonyitekProza": "Kérelem-akta, MTA",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.29",
+      "kategoria": "folyamat",
+      "szakasz": "7.7–7.8 Kiadás, szállítás, megsemmisítés",
+      "mitVar": "A szállítás feltételei meghatározva és igazolva",
+      "megvalositas": "Szállítási SOP, hőmérséklet-logger, átvételi igazolás",
+      "bizonyitekProza": "Szállítási feljegyzések",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.30",
+      "kategoria": "folyamat",
+      "szakasz": "7.7–7.8 Kiadás, szállítás, megsemmisítés",
+      "mitVar": "A megsemmisítés dokumentált, visszavonás esetén is",
+      "megvalositas": "**A hozzájárulás visszavonása megsemmisítési eseményt indít**, jegyzőkönyvvel",
+      "bizonyitekProza": "Megsemmisítési jegyzőkönyv",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.31",
+      "kategoria": "folyamat",
+      "szakasz": "7.9–7.10 Minőségellenőrzés, validálás",
+      "mitVar": "A minták minőségének ellenőrzése meghatározott mutatókkal",
+      "megvalositas": "Minőségi mutatók mintatípusonként (DNS: koncentráció, A260/280, integritás; sejt: életképesség)",
+      "bizonyitekProza": "QC-eredmények a minta-rekordban",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.32",
+      "kategoria": "folyamat",
+      "szakasz": "7.9–7.10 Minőségellenőrzés, validálás",
+      "mitVar": "A módszerek validálva/verifikálva",
+      "megvalositas": "Validációs terv és jegyzőkönyvek",
+      "bizonyitekProza": "Validációs akták",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.33",
+      "kategoria": "folyamat",
+      "szakasz": "7.9–7.10 Minőségellenőrzés, validálás",
+      "mitVar": "Trendek követése",
+      "megvalositas": "A `20` modul lekérdezője: QC-mutatók idősoros elemzése",
+      "bizonyitekProza": "QC-trendriportok",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.34",
+      "kategoria": "folyamat",
+      "szakasz": "7.11 Adat- és információkezelés",
+      "mitVar": "Az adatok pontosak, védettek, hozzáférhetők, és az információs rendszer validált",
+      "megvalositas": "Az OGDOC teljes architektúrája: regiszter, RLS, auditnapló, mentés",
+      "bizonyitekProza": "Rendszervalidációs jelentés, RLS-tesztek",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.35",
+      "kategoria": "folyamat",
+      "szakasz": "7.11 Adat- és információkezelés",
+      "mitVar": "Az adatbevitel és -módosítás nyomon követhető",
+      "megvalositas": "`admin_audit_log` + `audit_trigger_fn` — **megvan**",
+      "bizonyitekProza": "Auditnapló-kivonat",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "megvan"
+    },
+    {
+      "id": "iso.36",
+      "kategoria": "folyamat",
+      "szakasz": "7.11 Adat- és információkezelés",
+      "mitVar": "Mentés és helyreállítás",
+      "megvalositas": "Mentési rend, **és a visszaállítás rendszeres próbája**",
+      "bizonyitekProza": "Helyreállítási próba jegyzőkönyve",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.37",
+      "kategoria": "folyamat",
+      "szakasz": "7.12–7.13 Panaszok, nemmegfelelőségek",
+      "mitVar": "Panaszkezelési eljárás",
+      "megvalositas": "Panasz-nyilvántartás, kivizsgálás, visszajelzés",
+      "bizonyitekProza": "Panaszakták",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.38",
+      "kategoria": "folyamat",
+      "szakasz": "7.12–7.13 Panaszok, nemmegfelelőségek",
+      "mitVar": "Nemmegfelelőség azonosítása, elkülönítése, kezelése",
+      "megvalositas": "NC-eljárás, a hatással érintett minták azonosításával",
+      "bizonyitekProza": "NC-napló, CAPA",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.39",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "MIR-dokumentáció, politika, célok",
+      "megvalositas": "`05-mir-dokumentumfa.md`",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.40",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Dokumentumszabályozás (jóváhagyás, verzió, hozzáférés, elavulás)",
+      "megvalositas": "Dokumentumkezelő a platformon (`document_templates`, verziózás)",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "reszben"
+    },
+    {
+      "id": "iso.41",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Feljegyzések szabályozása (megőrzési idő, olvashatóság, védelem)",
+      "megvalositas": "`08-audit.md`; megőrzési idő a **jogszabályi minimumhoz** kötve",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.42",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Kockázatok és lehetőségek kezelése",
+      "megvalositas": "Kockázati nyilvántartás",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.43",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Fejlesztés, helyesbítő tevékenység",
+      "megvalositas": "CAPA-eljárás",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.44",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Belső audit",
+      "megvalositas": "Éves auditterv, képzett auditor",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    },
+    {
+      "id": "iso.45",
+      "kategoria": "iranyitas",
+      "szakasz": "8. Irányítási rendszer",
+      "mitVar": "Vezetőségi átvizsgálás",
+      "megvalositas": "Évente, meghatározott bemenetekkel és kimenetekkel",
+      "bizonyitekProza": "",
+      "bizonyitekDokumentumok": [],
+      "rogzitettAllapot": "nincs"
+    }
+  ]
+}

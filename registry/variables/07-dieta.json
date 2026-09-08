@@ -1,0 +1,743 @@
+[
+  {
+    "id": "diet.allergies.food",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ételallergia"
+    },
+    "module": "diet",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "milk",
+        "label_hu": "Tej"
+      },
+      {
+        "code": "egg",
+        "label_hu": "Tojás"
+      },
+      {
+        "code": "peanut",
+        "label_hu": "Földimogyoró"
+      },
+      {
+        "code": "treeNut",
+        "label_hu": "Diófélék"
+      },
+      {
+        "code": "fish",
+        "label_hu": "Hal"
+      },
+      {
+        "code": "shellfish",
+        "label_hu": "Rákfélék"
+      },
+      {
+        "code": "soy",
+        "label_hu": "Szója"
+      },
+      {
+        "code": "wheat",
+        "label_hu": "Búza"
+      },
+      {
+        "code": "sesame",
+        "label_hu": "Szezám"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen ételre volt korábban allergiás reakció."
+      },
+      "whyItMatters": {
+        "hu": "Az ételallergia a diétás javaslat kemény korlátja: egy tájékoztató, ami tejtermékkel fedezné a kalciumigényt, tejallergiás betegnél használhatatlan."
+      },
+      "pitfalls": {
+        "hu": "EZ A MEZŐ MEGMARAD, és NEM duplikátum: az `allergy.list` az ételallergia TÉNYÉT rögzíti (`allergen.etel`), ez pedig a FAJTÁIT részletezi a diétás tervezéshez. A kettőnek együtt kell mozognia — ha itt van bejegyzés, az `allergen.etel` tételnek is szerepelnie kell a listán."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.breakfast",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — reggeli"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A reggelire javasolt szénhidrátmennyiség."
+      },
+      "whyItMatters": {
+        "hu": "A REGGELI a legszigorúbb: a hajnali kortizol- és növekedésihormon-csúcs miatt a vércukor ilyenkor emelkedik a legkönnyebben. Az étkezésenkénti elosztás ezért nem egyenletes."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.dinner",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — vacsora"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A(z) vacsorare javasolt szénhidrátmennyiség."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.lunch",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — ebéd"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A(z) ebédre javasolt szénhidrátmennyiség."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.snack1",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — tízórai"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A(z) tízóraire javasolt szénhidrátmennyiség."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.snack2",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — uzsonna"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A(z) uzsonnare javasolt szénhidrátmennyiség."
+      }
+    }
+  },
+  {
+    "id": "diet.carb.snack3",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szénhidrát — utóvacsora"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 0,
+      "max": 200
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A(z) utóvacsorare javasolt szénhidrátmennyiség."
+      }
+    }
+  },
+  {
+    "id": "diet.counselingDate",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A tanácsadás időpontja"
+    },
+    "module": "diet",
+    "datatype": "date",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor történt a táplálkozási tanácsadás."
+      }
+    }
+  },
+  {
+    "id": "diet.counselingGiven",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Dietetikai tanácsadás megtörtént"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Kapott-e a beteg személyre szóló táplálkozási tanácsadást."
+      },
+      "whyItMatters": {
+        "hu": "A tanácsadás MEGTÖRTÉNTE önálló, rögzítendő tény: enélkül nem állapítható meg, hogy a beteg kapott-e egyáltalán tájékoztatást, és a minőségi mutató sem számolható."
+      }
+    }
+  },
+  {
+    "id": "diet.energyTarget",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Napi energiaszükséglet"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "kcal",
+    "domain": {
+      "min": 800,
+      "max": 5000
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.energy.pregnancy",
+      "explain": {
+        "hu": "Alapanyagcsere (Mifflin–St Jeor) + trimeszterfüggő többlet."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A becsült napi energiaszükséglet."
+      },
+      "whyItMatters": {
+        "hu": "A tájékoztató legkonkrétabb száma. AMÍG A KAPU ZÁRVA VAN, a tájékoztatóban nem szám, hanem dietetikai konzílium javallata jelenik meg — a modul saját nyitott kérdése is ezt javasolja."
+      }
+    }
+  },
+  {
+    "id": "diet.fluidIntake",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Napi folyadékbevitel"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "L",
+    "domain": {
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "plausible": [
+        1.0,
+        4.0
+      ]
+    },
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mennyi folyadékot iszik naponta."
+      },
+      "whyItMatters": {
+        "hu": "Terhességben és szoptatás alatt emelkedett az igény; a székrekedés és a húgyúti fertőzés megelőzésének legegyszerűbb eszköze."
+      }
+    }
+  },
+  {
+    "id": "diet.pattern",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Jelenlegi étrend"
+    },
+    "module": "diet",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "mixed",
+        "label_hu": "Vegyes"
+      },
+      {
+        "code": "vegetarian",
+        "label_hu": "Vegetáriánus"
+      },
+      {
+        "code": "vegan",
+        "label_hu": "Vegán",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "pescatarian",
+        "label_hu": "Halat is fogyaszt, húst nem"
+      },
+      {
+        "code": "lowCarb",
+        "label_hu": "Szénhidrátszegény"
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen étrendet követ a beteg."
+      },
+      "pitfalls": {
+        "hu": "Az étrend megkérdezése nem ítélet. A tájékoztatás célja a hiányzó tápanyagok pótlása, nem az étrend megváltoztatása."
+      },
+      "whyItMatters": {
+        "hu": "A VEGÁN étrend terhességben külön figyelmet kér: a B12 kizárólag állati eredetű forrásból származik, és a hiánya a magzat idegrendszerét érinti. A pótlás nem opció, hanem kötelező."
+      }
+    }
+  },
+  {
+    "id": "diet.proteinTarget",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Napi fehérjeszükséglet"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "g",
+    "domain": {
+      "min": 20,
+      "max": 300
+    },
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.protein.pregnancy",
+      "explain": {
+        "hu": "1,1 g/testsúlykilogramm a terhesség előtti súlyra (DRI)."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A becsült napi fehérjeszükséglet terhességben."
+      },
+      "whyItMatters": {
+        "hu": "Az energiaigénnyel szemben ez NEM illesztett regresszió, hanem konszenzusos együttható — ezért nincs kapu mögött, és a tájékoztatóban konkrét számként megjelenhet."
+      }
+    }
+  },
+  {
+    "id": "diet.restrictions",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Étrendi megszorítások"
+    },
+    "module": "diet",
+    "datatype": "coded-multi",
+    "valueSet": [
+      {
+        "code": "lactoseFree",
+        "label_hu": "Laktózmentes"
+      },
+      {
+        "code": "glutenFree",
+        "label_hu": "Gluténmentes"
+      },
+      {
+        "code": "halal",
+        "label_hu": "Halal"
+      },
+      {
+        "code": "kosher",
+        "label_hu": "Kóser"
+      },
+      {
+        "code": "lowSalt",
+        "label_hu": "Sószegény"
+      },
+      {
+        "code": "lowFat",
+        "label_hu": "Zsírszegény"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      }
+    ],
+    "datatype_override": null,
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Milyen okból kerül a beteg bizonyos ételeket."
+      }
+    }
+  },
+  {
+    "id": "diet.selfMonitoring",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vércukor-önellenőrzési napló"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Vezet-e a beteg vércukor-önellenőrzési naplót."
+      },
+      "whyItMatters": {
+        "hu": "A terhességi cukorbetegség kezelésének gerince: az étkezés utáni értékek döntik el, elég-e a diéta, vagy inzulin kell."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.b12",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "B12-vitamin — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) b12-vitamin pótlását."
+      },
+      "whyItMatters": {
+        "hu": "Kizárólag állati eredetű forrásból származik. Vegán étrend és bariátriai műtét után a pótlás kötelező, nem választható."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.b12.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "B12-vitamin — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "ug",
+    "domain": {
+      "min": 0,
+      "max": 2000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi b12-vitamin-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.calcium",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kalcium — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) kalcium pótlását."
+      },
+      "whyItMatters": {
+        "hu": "A praeeclampsia kockázatát alacsony kalciumbevitel mellett csökkenti; bariátriai műtét után a felszívódás romlik."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.calcium.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kalcium — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "mg",
+    "domain": {
+      "min": 0,
+      "max": 3000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi kalcium-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.dha",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Omega-3 (DHA) — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) omega-3 (dha) pótlását."
+      },
+      "whyItMatters": {
+        "hu": "A magzati idegrendszer és látás fejlődéséhez. Aki halat nem fogyaszt, étrendből nem fedezi."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.dha.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Omega-3 (DHA) — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "mg",
+    "domain": {
+      "min": 0,
+      "max": 5000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi omega-3 (dha)-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.folate",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Folsav — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) folsav pótlását."
+      },
+      "pitfalls": {
+        "hu": "Korábbi velőcsőzáródási rendellenesség, cukorbetegség, epilepszia elleni kezelés és bariátriai műtét után a szokásosnál nagyobb adag indokolt. A terhes-multivitamin folsavtartalma ilyenkor NEM elég."
+      },
+      "whyItMatters": {
+        "hu": "A velőcsőzáródási rendellenesség megelőzésének legjobban bizonyított beavatkozása. A védőhatás a fogamzás KÖRÜLI időszakban érvényesül: a terhesség felismerésekor megkezdett pótlás már késő ahhoz, hogy a velőcső záródását befolyásolja — ezért a fogamzás előtti gondozás központi eleme."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.folate.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Folsav — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "ug",
+    "domain": {
+      "min": 0,
+      "max": 5000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi folsav-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.iodine",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Jód — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) jód pótlását."
+      },
+      "pitfalls": {
+        "hu": "A pajzsmirigy-túlműködés kezelése alatt a jódpótlás külön mérlegelést kér."
+      },
+      "whyItMatters": {
+        "hu": "A magzat pajzsmirigyhormon-termelése az anyai jódbevitelen múlik, és a hiány az idegrendszeri fejlődést érinti."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.iodine.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Jód — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "ug",
+    "domain": {
+      "min": 0,
+      "max": 1000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi jód-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.iron",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vas — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) vas pótlását."
+      },
+      "pitfalls": {
+        "hu": "C-vitaminnal együtt jobban szívódik fel, teával és kalciummal együtt rosszabbul. A bariátriai műtét után a felszívódás csökken, ezért a szint követendő, nem csak a pótlás elrendelendő."
+      },
+      "whyItMatters": {
+        "hu": "A vashiány a leggyakoribb terhességi hiányállapot, és a koraszülés kockázatával is összefügg."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.iron.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vas — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "mg",
+    "domain": {
+      "min": 0,
+      "max": 500
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi vas-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.multivit",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhes-multivitamin — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) terhes-multivitamin pótlását."
+      },
+      "pitfalls": {
+        "hu": "A multivitamin és a célzott készítmény EGYÜTT adva halmozódik — a rendszer ezért ellenőrzi az átfedést a rendelt gyógyszerekkel."
+      },
+      "whyItMatters": {
+        "hu": "Kényelmes, de NEM helyettesíti a célzott pótlást: a benne lévő adagok az átlagos igényre méretezettek."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.multivit.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhes-multivitamin — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "{tbl}",
+    "domain": {
+      "min": 0,
+      "max": 10
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi terhes-multivitamin-adag."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.vitaminD",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "D-vitamin — javasolt"
+    },
+    "module": "diet",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Javasoljuk-e a(z) d-vitamin pótlását."
+      },
+      "whyItMatters": {
+        "hu": "A hazai napfényviszonyok mellett a hiány gyakori; a csontanyagcserén túl a terhességi kimenetellel is összefüggést mutat."
+      }
+    }
+  },
+  {
+    "id": "diet.supp.vitaminD.dose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "D-vitamin — napi adag"
+    },
+    "module": "diet",
+    "datatype": "quantity",
+    "unit": "[IU]",
+    "domain": {
+      "min": 0,
+      "max": 10000
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A javasolt napi d-vitamin-adag."
+      }
+    }
+  }
+]

@@ -1,0 +1,775 @@
+{
+  "keszult": "2026-09-07",
+  "elv": "Minden forrás lenyomattal szerepel. Ami licenc miatt kimarad, az IS szerepel — a lenyomatával és a kimaradás okával. Egy forrástár, ami hallgat a kihagyott tételekről, teljesnek látszik, és ezért rosszabb a semminél.",
+  "tetelek": [
+    {
+      "forras": "10/2012. (II. 28.) NEFMI rendelet — HBCs kódolási és besorolási szabályok, hatályos 2025.05.01.",
+      "osztaly": "publikus",
+      "bytes": 8539149,
+      "sha256": "fdccf176e45a816876d382985b465bb0094edc39045ef3c70dd37c91fd246bdb",
+      "megjegyzes": "KÉZZEL feldolgozva: ebből lett a `registry/kodok/fekvo/` diagnózis-típusjel és szülés-kódolási szabálykészlete.",
+      "utvonal": "jogszabaly/10_2012_NEFMI_fekvo_20250501.docx"
+    },
+    {
+      "forras": "9/2012. (II. 28.) NEFMI rendelet — járóbeteg-szakellátás, hatályos 2026.01.01.",
+      "osztaly": "publikus",
+      "bytes": 1056281,
+      "sha256": "0419504707e87c2739a981569c3e7fe01ffb016d3fdada5814ee142470c83918",
+      "megjegyzes": "Ebből lett a `tbl.oeno` és a három melléklet-tábla: kompetencia, kizárási és együtt-jelenthetőségi szabályok, BNO-feltételes eljárások.",
+      "utvonal": "jogszabaly/9_2012_NEFMI_jaro_20260101.docx"
+    },
+    {
+      "forras": "NEAK Általános Finanszírozási Főosztály: Fekvőbeteg jelentés — technikai útmutató, 2026. május",
+      "osztaly": "publikus",
+      "bytes": 1040677,
+      "sha256": "2d316fc4a7e400895aab5710d49331cf3a4d49610c7f5ece51f0b2c201a51f5b",
+      "megjegyzes": "KÉZZEL feldolgozva: ebből lett a `rekordkep.json`. Ez döntötte el a kódalak kérdését: BNO_KOD 5 karakter, B_KOD 5 karakter.",
+      "utvonal": "jogszabaly/NEAK_fekvo_technikai_utmutato_202605.pdf"
+    },
+    {
+      "forras": "NEAK: 9 jegyű beutalási (GYFKOD) törzs, 2026. szeptember",
+      "osztaly": "publikus",
+      "bytes": 4036178,
+      "sha256": "c20510a7364611a1a7e159f26fd93553feddf0f418e795bbb94080dc9703cdd6",
+      "megjegyzes": "A SZEMÉLYNEVEK a származtatott táblából szándékosan kimaradnak; a forrásfájl az eredeti, változatlan kiadás.",
+      "utvonal": "torzsek/9jegyu_beutalasi_torzslista_202609.xlsx"
+    },
+    {
+      "forras": "BNO-10 magyar törzs, 3.4 kiadás (2006) — archív",
+      "osztaly": "publikus",
+      "bytes": 173805,
+      "sha256": "f17d69d6e164b0f55106ea61b9af822650b38ce8731d5b6b84d5cfdbcf5e6b90",
+      "megjegyzes": "A korábbi kiadás. Négykarakteres alkategóriákat is tartalmaz; a jelentési alak viszont ötkarakteres, ezért ezt felváltotta az újabb.",
+      "utvonal": "torzsek/BNOX_3_4.zip"
+    },
+    {
+      "forras": "NEAK: BNO-10 magyar törzs, 2025. januári kiadás (BNOTORZS.DBF)",
+      "osztaly": "publikus",
+      "bytes": 173206,
+      "sha256": "b1bb0b51bd89295b29472acb71f6d5a5d1882401fff4f1af12f0001332c22810",
+      "megjegyzes": "Ebből lett a `tbl.bno`. Ez a kiadás adja a nemet, az életkori tartományt és az érvényességet.",
+      "utvonal": "torzsek/BNO_2501.zip"
+    },
+    {
+      "forras": "Diagnosztikai anyagok törzse, 2005.12.20. (archív)",
+      "osztaly": "publikus",
+      "bytes": 1002496,
+      "sha256": "07a37b66ae32710611a60203795c5a396cbea083f1e254fecf1d0908dd139d24",
+      "megjegyzes": "",
+      "utvonal": "torzsek/Diagnosztikai_torzs_20051220.xls"
+    },
+    {
+      "forras": "Egyszerhasználatos (műanyag) eszközök törzse, 2018.06.04.",
+      "osztaly": "publikus",
+      "bytes": 1872703,
+      "sha256": "52d5188d2e42f84ee69f3bcadedc5b8115fe00df6541b2dcbafa2560981ddfa5",
+      "megjegyzes": "",
+      "utvonal": "torzsek/Egyszerhasznalatos_eszkoz_torzs_20180604.xlsx"
+    },
+    {
+      "forras": "NEAK: FNO (ICF) törzs, 2019",
+      "osztaly": "publikus",
+      "bytes": 7016,
+      "sha256": "f3a4f8424e714b2a8b8425c00c94daa845e8451e963952520b94ae8a5f54eb0e",
+      "megjegyzes": "Ebből lett a `tbl.fno`.",
+      "utvonal": "torzsek/FNOTORZS.zip"
+    },
+    {
+      "forras": "NEAK: HBCS 5.0 törzs DBF alakban (HBCS50.DBF)",
+      "osztaly": "publikus",
+      "bytes": 35220,
+      "sha256": "c94c26c93f9b35641d0b0b69dba590f889eb9afe1fc526746ff21c83289b2bc1",
+      "megjegyzes": "Ebből lett a `tbl.hbcs`: súlyszám, határnapok, közérthető csoportnév és a `*` intézeti jelzés.",
+      "utvonal": "torzsek/HBCS_2026-03.zip"
+    },
+    {
+      "forras": "NEAK: HBCS 5.0 törzs, érvényes 2026.04.01-től (XLS)",
+      "osztaly": "publikus",
+      "bytes": 303616,
+      "sha256": "856b2b49cc80b345b65973bb549eca3c9142ef16f45c6b598a8c9f77bb8f5754",
+      "megjegyzes": "Ugyanaz a kiadás táblázatos alakban.",
+      "utvonal": "torzsek/Hbcs50_torzs_20260401.xls"
+    },
+    {
+      "forras": "NEAK: fekvőbeteg beavatkozási (műtéti) törzs, 2026. február (MUTET_AP.DBF)",
+      "osztaly": "publikus",
+      "bytes": 100267,
+      "sha256": "baec437cac6558ba76c5894d1fc1c93ef73e46b3cc42b58dae5c41c51c6d0d64",
+      "megjegyzes": "Ebből lett a `tbl.mut`. Ez döntötte el, hogy a hazai fekvőbeteg beavatkozáskód ötjegyű, nem ICD-9-CM alakú.",
+      "utvonal": "torzsek/MUT_2602.zip"
+    },
+    {
+      "forras": "OENO × szakma kompetencialista, hatályos 2026.01.01.",
+      "osztaly": "publikus",
+      "bytes": 206899,
+      "sha256": "3868cef8eed32a4b3da344828db28b914da78b8755f330337cb494591941036d",
+      "megjegyzes": "Gépi olvasatú kiadás.",
+      "utvonal": "torzsek/OENO_kompetencia_20260101.xlsx"
+    },
+    {
+      "forras": "OENO törzslista pontértékkel, hatályos 2026.01.01.",
+      "osztaly": "publikus",
+      "bytes": 185316,
+      "sha256": "b0128498294a3e3af39bc9f9a06525217a430e7e626e6b8dd17601d908deef93",
+      "megjegyzes": "A pontérték teszi elvégezhetővé a 9/2012 NEFMI 5. § (7) szerinti választást: kizárásos ütközésnél a magasabb pontszámú eljárás számolható el.",
+      "utvonal": "torzsek/OENO_torzslista_20260101.xlsx"
+    },
+    {
+      "forras": "NEAK: HBCS 5.0 korábbi kiadások (2025-01, 2025-05)",
+      "osztaly": "publikus",
+      "bytes": 342440,
+      "sha256": "876d8a9c78b97ff3d8535916d99b45dfdd804f39a285e921c2ff78d85913ae19",
+      "megjegyzes": "Ebből lett a `tbl.hbcs@2025-01-01` és a `tbl.hbcs@2025-05-01`. A 671A Császármetszés súlyszáma 2025 májusában 1,53177 volt, 2026 áprilisában 1,74947 — visszamenőleges elszámoláshoz a KIADÁS dönt, nem a csoportkód.",
+      "utvonal": "torzsek/hbcs50_2025.zip"
+    },
+    {
+      "forras": "IPRACS Lovable-implementációs specifikáció",
+      "osztaly": "sajat",
+      "bytes": 47612,
+      "sha256": "b9a9589a7f7140e146b10e533981462be0b305fc805aff012d7b297eff7986c8",
+      "megjegyzes": "Történeti: a `docs/06-webes-migracio.md` írja le, miért nem ezt használjuk.",
+      "utvonal": "ipracs/IPRACS_Lovable_Spec.md"
+    },
+    {
+      "forras": "IPRACS fejlesztési dokumentáció",
+      "osztaly": "sajat",
+      "bytes": 33867,
+      "sha256": "77dac1fc78e49eb35d0b30e03c644fb139ea5b15638222665eb021f17afa8c9b",
+      "megjegyzes": "",
+      "utvonal": "ipracs/IPRACS_fejlesztesi_dokumentacio.docx"
+    },
+    {
+      "forras": "IPRACS v1.0 fejlesztői dokumentáció",
+      "osztaly": "sajat",
+      "bytes": 58094,
+      "sha256": "23384e0958b440b27355b6c11cb2284d3cd863ac30c83ac1b0679f8320686273",
+      "megjegyzes": "A score-ok és a klinikai kapuk forrása.",
+      "utvonal": "ipracs/IPRACS_fejlesztoi_dokumentacio.docx"
+    },
+    {
+      "forras": "IntuiCare adatbázisséma (230 tábla)",
+      "osztaly": "sajat",
+      "bytes": 439421,
+      "sha256": "1363d34e4f980b9f44a0558a90556b18bedeed913db5d692a5f28fd8db41ff45",
+      "megjegyzes": "",
+      "utvonal": "platform/intuicare-adatbazis.zip"
+    },
+    {
+      "forras": "IntuiCare fejlesztői dokumentáció",
+      "osztaly": "sajat",
+      "bytes": 453377,
+      "sha256": "6f488e7a8badda8ba29384b7095213a1f41a26988d16bdb60b0cc854a8840e7d",
+      "megjegyzes": "",
+      "utvonal": "platform/intuicare-fejlesztoi-dok.zip"
+    },
+    {
+      "forras": "IntuiCare (MedRoster) teljes forráskód",
+      "osztaly": "sajat",
+      "bytes": 2355986,
+      "sha256": "a187bc44f8f2ee231ecfe30f973020d668f7545a50fb7730e74ce3eece3e9eaa",
+      "megjegyzes": "A platform, amire a rendszer épül.",
+      "utvonal": "platform/intuicare-forraskod.zip"
+    },
+    {
+      "forras": "SOS24 portál teljes exportja (71 tábla, 37 edge function)",
+      "osztaly": "sajat",
+      "bytes": 5635763,
+      "sha256": "2b87d6cee2a621eeb64c7c95d010e562af91cbda08aeb27b0ac5c6422c066692",
+      "megjegyzes": "A foglalkozás-egészségügyi domének forrása.",
+      "utvonal": "platform/sos24-export.zip"
+    },
+    {
+      "forras": "Anamnézis-asszisztens v16 dokumentáció",
+      "osztaly": "sajat",
+      "bytes": 456169,
+      "sha256": "52b2bdf800afec4e21e3879b9b0dab9b3442858f82371feaa0779455296712eb",
+      "megjegyzes": "A 110 kérdéssoros anamnézis forrása.",
+      "utvonal": "v16/Anamnezis_v16_dokumentacio.zip"
+    },
+    {
+      "forras": "Egészségügy finanszírozása — oktatási anyag (2017)",
+      "osztaly": "kimarad",
+      "bytes": 2060217,
+      "sha256": "c811a01498b4c53366046bbafdfdcbca78a69564f0681a4a025acb6dcf529cde",
+      "megjegyzes": "Szerzői jogvédett oktatási anyag, ráadásul képként szkennelt: szövegréteg nélkül nem is adott semmit."
+    },
+    {
+      "forras": "Egészségügyi Gazdasági Szemle 2009/6 — szakcikk",
+      "osztaly": "kimarad",
+      "bytes": 163693,
+      "sha256": "ce40e09f9ad135e5c1048527301d5b0818881a686c802fc83730cee83569af1e",
+      "megjegyzes": "Folyóiratcikk, szerzői jogvédett. Háttérirodalom, nem normatív forrás."
+    },
+    {
+      "forras": "ICHOM Pregnancy and Childbirth Data Dictionary v5.0 (2025)",
+      "osztaly": "kimarad",
+      "bytes": 66153,
+      "sha256": "53e7792ae2d374238da58901b1ddc9d7f2ff136018be99eb78ea542ad8cfaa6d",
+      "megjegyzes": "Az ICHOM saját felhasználási feltételei alatt jelenik meg. A belőle GENERÁLT változóleképezés a repóban van (`registry/ichom-pcb-v5.seed.json`), a szótár maga nem."
+    },
+    {
+      "forras": "IME IV/2 (2005): A HBCS rendszer működési zavarai és azok megszüntetése",
+      "osztaly": "kimarad",
+      "bytes": 57354,
+      "sha256": "edbfbdad8c8613a4952ad0f90d34e58271c3b9f5fd64e61d79e02fa951f94aab",
+      "megjegyzes": "Folyóiratcikk, szerzői jogvédett. Háttérirodalom, nem normatív forrás — szabályt nem vezettünk belőle."
+    },
+    {
+      "forras": "SNOMED CT Global Patient Set, 2026-01-01 kiadás",
+      "osztaly": "kimarad",
+      "bytes": 8521869,
+      "sha256": "f49909beb10ce0c9897863237730cfc5362d1a8a519d3f69e59121305facec75",
+      "megjegyzes": "CC BY-ND 4.0. A VÁLTOZATLAN továbbadás megengedett lenne, de a rendszer elve az, hogy SNOMED-tartalom nem kerül a repóba — sem a kiadás, sem a belőle készült tábla. A repó csak AZONOSÍTÓKAT tartalmaz. A készlet helyben települ; ezt a `validateSnomedDistribution()` build-hibával kényszeríti ki."
+    },
+    {
+      "forras": "SNOMED International: Guidelines for Translation of SNOMED CT",
+      "osztaly": "kimarad",
+      "bytes": 817368,
+      "sha256": "eb5ae8eb87f44900dce02a616e1cb03074b0de2ab2bb103ae9c94ad630da54f1",
+      "megjegyzes": "SNOMED International szerzői joga. A belőle következő SZABÁLY a kódban van: magyar SNOMED-megnevezést a rendszer nem ad validált fordítás nélkül."
+    },
+    {
+      "forras": "European Journal of Cancer — 30 közlemény PDF-je (2026-09-05-i letöltés)",
+      "osztaly": "kimarad",
+      "bytes": 24826957,
+      "sha256": "6321392ea94d0329c8d8b2ed041f7bc64eae24535606f3762fe2096d8e75ab7d",
+      "megjegyzes": "KIADÓI (Elsevier) SZERZŐI JOGVÉDETT teljes szövegek. A tárolásuk és továbbadásuk a repóban nem jogszerű — ugyanaz az elv, mint a korábbi két folyóiratcikknél. A lenyomat és a lista viszont marad, hogy utólag eldönthető legyen, mit néztünk meg. TARTALMILAG: a 30 közlemény túlnyomó része általános onkológia (melanoma, emlő, prosztata, vese, immunterápia) — nőgyógyászati onkológiai tétel nincs közöttük. Négy témakör az, ami a 12. modulra átvihető TANULSÁGOT adna: az immunterápia mellékhatásai (irAE) és azok súlyossági meghatározói, a keringő tumor-DNS (ctDNA) mint követési mérés, a palliatív prognosztikai pontszámok összevetése, és az életminőség-pályagörbék. Ezekből ma SEMMI nem került át: mindegyik hitelesítést és elsődleges forrást kíván, nem PDF-et."
+    },
+    {
+      "forras": "BELLA akkreditációs kiadvány (2015) — az egészségügyi szolgáltatók akkreditációs rendszere, TÁMOP-6.2.5.A/12/1",
+      "osztaly": "publikus",
+      "bytes": 3459699,
+      "sha256": "56dbb1b66705e44dde453261607cb5b21aa1e5852cd8db4c4097348825cf3c6c",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET és a NYILVÁNOSAN KÖZÖLT értékelési szabályok: 7 standardcsoport, 43 standardmegnevezés (fekvő 39 · járó 30 · közös 26), a 0/2/4 pontozás súlyszámmal, a kötelező elemek 100%-os és a szintek 75%-os küszöbe, a 3 éves érvényesség, a hatlépéses eljárás. Ebből lett a `registry/mir/keretek.json` BELLA kerete. A standardok TARTALMI ELEMEI és SÚLYSZÁMAI nem kerültek át — azok a hivatalos kiadványból töltendők be.",
+      "utvonal": null,
+      "kimaradas": "A kiadvány PDF-je nem kerül a repóba: a feldolgozott SZERKEZET és a közölt értékelési szabályok igen, a teljes szöveg nem. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik kiadásból dolgoztunk."
+    },
+    {
+      "forras": "BELLA — A standardok fejlesztésének módszertana (2014)",
+      "osztaly": "publikus",
+      "bytes": 2297489,
+      "sha256": "f7c22d3e3289e6b1ebd6d09764daceb11971d4a84326c346efdc2030259829dd",
+      "megjegyzes": "KÉZZEL feldolgozva: a standardsablon szerkezete (működési jellemző · speciális ellátási szükségletek · dokumentálás · ellenőrzés), a standardcsoportok első listája és a megnevezett kötelező standardok. A megnevezéseknél a KÉSŐBBI (2015-ös) kiadvány szövegét vettük át, ahol a kettő eltér.",
+      "utvonal": null,
+      "kimaradas": "A kiadvány PDF-je nem kerül a repóba: a feldolgozott SZERKEZET és a közölt értékelési szabályok igen, a teljes szöveg nem. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik kiadásból dolgoztunk."
+    },
+    {
+      "forras": "NAH — Áttérési ütemterv a MEES 2.1 alkalmazására, 1. kiadás (2025-12-12, hatályos 2025-12-16)",
+      "osztaly": "publikus",
+      "bytes": 345514,
+      "sha256": "b5df530d0099f677ace051226a499ccce50c25a4c88eb3920d4b1c39991eab06",
+      "megjegyzes": "KÉZZEL feldolgozva: az öt mérföldkő dátummal és felelőssel, a közzététel napja (2024-09-25) és a tanúsítványok 3 éves érvényessége. Ebből lett a `registry/mir/keretek.json` MEES 2.1 naptára. A MEES 2.1 Kézikönyv SZÖVEGE nincs meg és nem is szerepel.",
+      "utvonal": null,
+      "kimaradas": "A kiadvány PDF-je nem kerül a repóba: a feldolgozott SZERKEZET és a közölt értékelési szabályok igen, a teljes szöveg nem. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik kiadásból dolgoztunk."
+    },
+    {
+      "forras": "EESZT fejlesztői regisztrációs lap v4.1 (ÁEEK sablon)",
+      "osztaly": "publikus",
+      "bytes": 48484,
+      "sha256": "23fc79c201afb3fc484e7f280e5f40403af4a4c93608d8642be6b3fc47a8a9ce",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET: milyen mezőt kérnek, ki írja alá, mit állít a nyilatkozat. Ebből lett a `registry/eeszt/csatlakozas.json`. Az űrlap SZÖVEGE nem került át.",
+      "utvonal": null,
+      "kimaradas": "A kibocsátó (ÁEEK) sablonja, és a KITÖLTÖTT példány SZEMÉLYES ADATOT tartalmaz (születési hely és idő, anyja neve) — sem az üres sablon, sem a kitöltött példány nem kerül a repóba. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik verzióból dolgoztunk."
+    },
+    {
+      "forras": "EESZT referenciaigazolás sablon v2.2 (ÁEEK)",
+      "osztaly": "publikus",
+      "bytes": 43837,
+      "sha256": "6dce176cc73629380a8bee4e9fd03ef47ffdfd35951d5cb6895bb07c265a06ac",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET: milyen mezőt kérnek, ki írja alá, mit állít a nyilatkozat. Ebből lett a `registry/eeszt/csatlakozas.json`. Az űrlap SZÖVEGE nem került át.",
+      "utvonal": null,
+      "kimaradas": "A kibocsátó (ÁEEK) sablonja, és a KITÖLTÖTT példány SZEMÉLYES ADATOT tartalmaz (születési hely és idő, anyja neve) — sem az üres sablon, sem a kitöltött példány nem kerül a repóba. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik verzióból dolgoztunk."
+    },
+    {
+      "forras": "EESZT titoktartási nyilatkozat v1 (ÁEEK)",
+      "osztaly": "publikus",
+      "bytes": 42781,
+      "sha256": "39cb6e99bb57d16d483f23f3af481200dba76fccbceba27b306d1f7ceaa2c342",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET: milyen mezőt kérnek, ki írja alá, mit állít a nyilatkozat. Ebből lett a `registry/eeszt/csatlakozas.json`. Az űrlap SZÖVEGE nem került át.",
+      "utvonal": null,
+      "kimaradas": "A kibocsátó (ÁEEK) sablonja, és a KITÖLTÖTT példány SZEMÉLYES ADATOT tartalmaz (születési hely és idő, anyja neve) — sem az üres sablon, sem a kitöltött példány nem kerül a repóba. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik verzióból dolgoztunk."
+    },
+    {
+      "forras": "EESZT intézményi megbízott kijelölése — OTP tokenkezelés v1 (ÁEEK)",
+      "osztaly": "publikus",
+      "bytes": 71186,
+      "sha256": "ebc61361f10fd837569a77cacd6fce9a9649d62c0b7707800d9d809eaac47117",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET: milyen mezőt kérnek, ki írja alá, mit állít a nyilatkozat. Ebből lett a `registry/eeszt/csatlakozas.json`. Az űrlap SZÖVEGE nem került át.",
+      "utvonal": null,
+      "kimaradas": "A kibocsátó (ÁEEK) sablonja, és a KITÖLTÖTT példány SZEMÉLYES ADATOT tartalmaz (születési hely és idő, anyja neve) — sem az üres sablon, sem a kitöltött példány nem kerül a repóba. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik verzióból dolgoztunk."
+    },
+    {
+      "forras": "EESZT intézményi megbízott kijelölése — tanúsítványkezelés v1 (ÁEEK)",
+      "osztaly": "publikus",
+      "bytes": 71080,
+      "sha256": "007d8e4e73b6416e93d68afff6db4152bbb8525c4302c25564af6135dab09337",
+      "megjegyzes": "KÉZZEL feldolgozva a SZERKEZET: milyen mezőt kérnek, ki írja alá, mit állít a nyilatkozat. Ebből lett a `registry/eeszt/csatlakozas.json`. Az űrlap SZÖVEGE nem került át.",
+      "utvonal": null,
+      "kimaradas": "A kibocsátó (ÁEEK) sablonja, és a KITÖLTÖTT példány SZEMÉLYES ADATOT tartalmaz (születési hely és idő, anyja neve) — sem az üres sablon, sem a kitöltött példány nem kerül a repóba. A lenyomat itt marad, hogy utólag eldönthető legyen, melyik verzióból dolgoztunk."
+    },
+    {
+      "forras": "MSD Manual (Merck Manual) Consumer Version — újszülött- és csecsemőgondozási fejezetek: Physical Examination of a Newborn; Initial Care of the Healthy Full-Term Newborn; Newborn Screening Tests; First Few Days After Birth; Overview of Feeding; Breastfeeding; Formula Feeding; Starting Solid Foods; Feeding Problems; Stools and Urine in Infants; Sleeping Behaviors; Teething. Szerző: Deborah M. Consolini, MD (Thomas Jefferson University Hospital), teljes felülvizsgálat 2026. június.",
+      "osztaly": "kimarad",
+      "bytes": null,
+      "sha256": "f1331d2cd45a238b39d9fafc85ee8f4611211bd74973bc6f26430bb903606c34",
+      "megjegyzes": "SZERZŐI JOGI VÉDELEM ALATT. A szöveg a msdmanuals.com betegtájékoztató anyaga, névvel jegyzett szerzővel és felülvizsgálati dátummal — nem szabad felhasználású. A repóba SEM idézetként, SEM átfogalmazva nem kerül be. Ugyanaz a kezelés, mint a SNOMED CT GPS-nél (CC BY-ND) és a BCNatal-protokolloknál (ismeretlen licenc): a tartalom nem, a SZERKEZETI tanulság igen. Amit átvettünk: hogy a betegtájékoztató cikknek NEVESÍTETT SZERZŐJE, FELÜLVIZSGÁLATI DÁTUMA és laikus/szakmai változata van — ez a 31. modul szerkezete, nem a tartalma. A tájékoztató SZÖVEGÉT az intézménynek kell megírnia vagy licencelnie.",
+      "utvonal": null
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21328,
+      "sha256": "305c15dde05cb5cb5c213e29b5dc956e47ac8cd789a5cf58042ebe1d581996b7",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/1. Szli krdv 1 hnapos letkor-CN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20241,
+      "sha256": "f08ce63bf9332324eadbc6985e1442565ef69956cf526497f6b863785289686d",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/1. Szli krdv 1 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 18856,
+      "sha256": "7a5d245e406bc77c3a8c5a3de174b5ca7cd26d717aa646a0cbeb23014f70e8c3",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/1. Szli krdv 1 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16819,
+      "sha256": "b6797d8544f10f4b7b0d88197d6b089a4827b5e47d666a0ea7b78228b22ca3ae",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/1. Szli krdv 15 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21000,
+      "sha256": "867e1631211de6d02c096d7b935b31c11efaa84cc0f4a7691bbf7ae659eca947",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/10. Szli krdv 25 ves kiegszt letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21077,
+      "sha256": "cf3223096f8fdfcff6940e3b93641676101bb9916e574574383e97d263c61b02",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/11. Szli krdv 3 ves letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21051,
+      "sha256": "ec29a1e33d892b0549078acb9425661c1e1812a1cb11c0625a6f3e3ca176caf2",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/12. Szli krdv 4 ves letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21280,
+      "sha256": "5787b23866239988554bb3e3f5200ebbc46465cd81939b3a0bc2a15c893ad68f",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/13. Szli krdv 5 ves letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21265,
+      "sha256": "009734d15b649c30737c8b7194ef62ad83c260f2e5c0dec3d3215deead13d225",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/14. Szli krdv 6 ves letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 22860,
+      "sha256": "d06e2b7bb8cabb2a06e167e00a06aef13292d11d58de18bcc77286cdfa8f6fa8",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/15. Szli krdv 7 ves kiegszt letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16971,
+      "sha256": "86642bb47e6fe9d8a364d2722897628727f8d56467f849b70e2d6e7740e1e6a0",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/2. Szli krdv 18 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21795,
+      "sha256": "2c3016a9ce0cf2d1be482d86104950681c38dd9012cbcc39ba3dbd6a9c60c366",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/2. Szli krdv 2 hnapos letkor-CN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20616,
+      "sha256": "463b1aa21346bb8f88077a953acedf94369b758838bffcb94e1e75a9dd7883fa",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/2. Szli krdv 2 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 18138,
+      "sha256": "933edc183092de3cbcbe2f5fbf54d5349c05b39f96d891a4a5c0bd9cb72ed7da",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/2. Szli krdv 2 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 18217,
+      "sha256": "f33bde85f3c671d76608b9d3d176c7aed82aba914bb5bb8b09fc162ae9416ad8",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/3. Szli krdv 2 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16303,
+      "sha256": "7fd59217f4a74821b67fd5aee308501b0afc6d95b8a464f4f462e780d213171f",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/3. Szli krdv 3 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21855,
+      "sha256": "4f6e888c2eab3ee7f77f1ebc0f0cb3e48804cbdc8b8e43de6e6746cd22c9c24e",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/3. Szli krdv 4 hnapos letkor-CN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20855,
+      "sha256": "a60623d42aa177d91fa6a4eac9f50af2cbd6c7f2fee331ac4e68984e276b9eba",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/3. Szli krdv 4 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16734,
+      "sha256": "eb744467eac96642e6f24df7410d0c6d20335c9b986b7b43e1d7c1a989ae60b4",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/4. Szli krdv 25 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16771,
+      "sha256": "8536ca7091aa08928374debfde02770be5f4e418eba73ae88fbfc6471f5f939e",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/4. Szli krdv 4 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 22116,
+      "sha256": "a7a595fbdd846a29fba859dd6d78a0a77a02a7d4bf2bb43f850bb674fec78e1e",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/4. Szli krdv 6 hnapos letkor-CN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 23002,
+      "sha256": "8f786f0f0f13796118baf99e921c08b8dd6e31fc35e8b821211dcd06690c9360",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/4. Szli krdv 6 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 19230,
+      "sha256": "798424f83f79778056512470701656fb05e5b5efee13a0f35bc66eafa9c40cdd",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/5. Szli krdv 3 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 18059,
+      "sha256": "04ab3602cfd80a570471647e556709e6c8547b47c3c0541e80f119e40f1dadb5",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/5. Szli krdv 6 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20299,
+      "sha256": "acbd8d06ba09d4a31d8aa05d3dc50c92352806862be95559725b85944b375bda",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/5. Szli krdv 9 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20146,
+      "sha256": "8fe59672b5d49b9b66906be19de6e1dc5f4296c3abcd5a29692c616de9459b38",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/6. Szli krdv 12 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21401,
+      "sha256": "282df7b2dc8e3cbb8d9ce6e3916635a134ee14d3b559a7abcbb3c3ca8e024171",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/6. Szli krdv 4 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 16808,
+      "sha256": "56d2203f041e5cf68e10406a3949c540a79b4de4d1249ecac5adf85abefd074f",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/6. Szli krdv 9 hnapos letkor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20448,
+      "sha256": "5ecbab14ad08da7e572b7a546b43f7a5ab01314b1122a7dcf271643fe4d9ce6f",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/7. Szli krdv 1 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 20274,
+      "sha256": "baf48bd542313b8bb037145386d362987fe9a45174b79a754ced69f5b4625bc8",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/7. Szli krdv 15 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 22899,
+      "sha256": "3a86cbcc01411f39d7b626e32e1d5e7b24762e595e3321ea93c2f87a4fec32a7",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/7. Szli krdv 5 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21152,
+      "sha256": "d606de346a10b02ddd882347a0669cc03642277009dfdc2daee9d4473189f58a",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/8. Szli krdv 18 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 22134,
+      "sha256": "375ff4894c83ba841cacbc0e0c5132b9211cdb24656aa0e868a91b8449a861e9",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/8. Szli krdv 6 ves kor (1).docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 21063,
+      "sha256": "819051887e3284ac2711c99102da093c71f996403d94a098b2a8832138cd8d5b",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/9. Szli krdv 24 hnapos letkor-EN.docx"
+    },
+    {
+      "forras": "Területi védőnői szűrővizsgálat — szülői kérdőív és védőnői lelet, életkoronként (1 hó – 7 év), magyar/angol/kínai. JOGSZABÁLYI MELLÉKLET: 51/1997. (XII. 18.) NM rendelet 4.§ b), 8.§; 49/2004. (V. 21.) ESZCSM rendelet 3.§ dd).",
+      "osztaly": "publikus",
+      "bytes": 19333,
+      "sha256": "9efdc0a1c252cd13afbfc11b0ee77d7afd3a574e2ce0f9a590019d95529f9530",
+      "megjegyzes": "FELDOLGOZHATÓ. Jogszabály melléklete: az Szjt. szerint nem részesül szerzői jogi védelemben — ugyanaz a kezelés, mint a 10/2012. NEFMI rendeletnél. Ebből lesz a `registry/vedono/kerdoivek.json`. A KITÖLTÖTT példány viszont PHI (TAJ, anyja születési neve, születési hely) — az soha nem kerül a repóba.",
+      "utvonal": "vedono/9. Szli krdv 7 ves kor.docx"
+    },
+    {
+      "forras": "Területi védőnő által évente egyszer jelentendő adatok köre, 2025.",
+      "osztaly": "publikus",
+      "bytes": 111708,
+      "sha256": "79727fc38b30546941411618fa388c2da9a2f64f3ebc55621ef9d87a23587a23",
+      "megjegyzes": "Jelentési adatkör — a 20. modul (statisztika) bemenete.",
+      "utvonal": "vedono/Terleti vdn ltal vente egyszer jelentend adatok kre 2025.pdf"
+    },
+    {
+      "forras": "Vármegyei kormányhivatal NFO által évente egyszer jelentendő adatok köre, 2025.",
+      "osztaly": "publikus",
+      "bytes": 124302,
+      "sha256": "9019562fbb7ba71fbe799356a1bb7e36ddf495ea363c40e8f0bf8e076ff56c85",
+      "megjegyzes": "Jelentési adatkör.",
+      "utvonal": "vedono/Vrmegyei KH NFO ltal vente egyszer jelentend adatok kre 2025.pdf"
+    },
+    {
+      "forras": "Audiogram-adatlap: 11 frekvencia (125 Hz – 8000 Hz) × jobb/bal fül.",
+      "osztaly": "publikus",
+      "bytes": 79979,
+      "sha256": "de828bfa0d6bbf2f5527d8757f9a99d6990558a980414bb9abdd66171f957316",
+      "megjegyzes": "Üres sablon, betegadat nélkül. Ebből lesz az audiogram-szerkezet.",
+      "utvonal": "vedono/audio excel.xlsx"
+    },
+    {
+      "forras": "Audiológiai szűrővizsgálat lelet- és javaslatsablon.",
+      "osztaly": "publikus",
+      "bytes": 90883,
+      "sha256": "3295be83f5b61111c93a143a6e373c21a203091c3cc920ef3a2985f9f5c9d565",
+      "megjegyzes": "Üres sablon. A SZERKEZET (anamnézis / státusz / javaslat + kontrollidő) kerül át, a szöveg nem.",
+      "utvonal": "vedono/audiologia jav sablon.docx"
+    },
+    {
+      "forras": "Tájékoztató szülők számára a szülői kérdőívről.",
+      "osztaly": "publikus",
+      "bytes": 196171,
+      "sha256": "236637f0d65b07615e07ea3e95724da685fcc6989075ca448724f43baf9f4425",
+      "megjegyzes": "Jogszabályi melléklethez tartozó tájékoztató. A 31. modul betegtájékoztató-szerkezetének mintája.",
+      "utvonal": "vedono/Tjkoztat szlk szmra a szli krdvrl.pdf"
+    },
+    {
+      "forras": "NEAK — Védőnői szolgáltatást nyújtó jegyzék, 2026. szeptember (országos).",
+      "osztaly": "publikus",
+      "bytes": 2199040,
+      "sha256": "c9da1f214fbb83abcc3c82ba70c1476f1b9dd9d91e0c823851c2fd7366a5cc2c",
+      "megjegyzes": "Közzétett jegyzék, 9972 sor. FELDOLGOZVA, de a kimenet NEM a repóban: ~10 000 névvel azonosított szakember és munkahelyi cím, HAVI frissítéssel — egy fagyasztott másolat két hónap múlva rossz védőnőt nevezne meg. A beolvasó (tools/ingest/vedono_lista.py) és a szerkezet a repóban, az adat a gitignore-olt registry/vedono/helyi/ alatt.",
+      "utvonal": "vedono/Vedono_ujhonlap.xls"
+    },
+    {
+      "forras": "NNK: Módszertani levél a 2026. évi védőoltásokról (2026.03.30.) — a 18/1998. (VI. 3.) NM rendelet felhatalmazása alapján.",
+      "osztaly": "publikus",
+      "bytes": 952179,
+      "sha256": "fade9657afea4c219337f916ff5070720a892da6927885a79d0a540cae4215cd",
+      "megjegyzes": "KÉZZEL feldolgozva: ebből lett a `registry/vedono/oltasok.json` (11 folyamatos + 4 kampányoltás + 5 időköz-szabály). Hatósági hivatalos közlemény, az Szjt. 1. § (4) szerint nem tárgya szerzői jogi védelemnek — a besorolást JOGI ÁLLÁSFOGLALÁSNAK kell megerősítenie, mert a módszertani levél nem jogszabály, hanem hivatalos közlemény. A levél ÉVENTE új kiadást kap: az oltási naptár aláírása a naptár magjához köt, és az új kiadás elavulttá teszi.",
+      "utvonal": "jogszabaly/2026_vedooltasi_modszertani_level.pdf"
+    },
+    {
+      "forras": "USPSTF: Screening for Cervical Cancer — US Preventive Services Task Force Recommendation Statement (JAMA 2018;320(7):674–686).",
+      "osztaly": "publikus",
+      "bytes": 580324,
+      "sha256": "51b97d095e0ca1d300b81bf2f83a2f443a9ae25a3fec0ed990b8b86c9c8bff41",
+      "megjegyzes": "Az Egyesült Államok szövetségi kormányzati munkája — KÖZKINCS, szabadon felhasználható. FELDOLGOZVA, de CSAK A KILÉPÉSI FELTÉTEL: ebből lett a `scr.cervical.cytology` `exit` szakasza. AZ AMERIKAI SZŰRÉSI REND NEM ÜLTETHETŐ ÁT — az USPSTF 21 éves kortól szűr, a hazai és az EU-ajánlás 25-től, és a kettő nem keverhető. A dokumentum ráadásul a 2018-as kiadás, amelyet az USPSTF azóta frissített (önmintavétel); érvényességét ellenőrizni kell.",
+      "utvonal": null
+    },
+    {
+      "forras": "Perkins RB et al.: Self-collected vaginal specimens for HPV testing and guidance on screening exit — an update to the American Cancer Society cervical cancer screening guideline. CA Cancer J Clin 2025, doi:10.3322/caac.70041.",
+      "osztaly": "publikus",
+      "bytes": 252480,
+      "sha256": "d80453f567b8031378b88f5967f4f9f623b81fa842c79b2bcfce0ea1da131e4e",
+      "megjegyzes": "NYÍLT HOZZÁFÉRÉSŰ, DE CC BY-NC-ND: nem kereskedelmi, ÉS SZÁRMAZÉKOS MŰ NEM KÉSZÍTHETŐ BELŐLE. A szöveg ezért nem kerül át a rendszerbe, és a táblázatai sem. Ami átjött: a HIVATKOZÁS és két SZERKEZETI tény — hogy a szűrés lezárása előzményhez és nem életkorhoz kötött, és hogy az önmintavételes hüvelyi mintából citológia nem készíthető. Ezek tények, nem a szerzők szövege. AZ ND MIATT A TERJESZTETT CSOMAGBA A DOKUMENTUM NEM KERÜLHET BE.",
+      "utvonal": null
+    },
+    {
+      "forras": "INTERGROWTH-21st nemzetközi magzati növekedési standardok és nemzetközi gesztációs súlygyarapodási standardok (© University of Oxford; Villar J et al., Lancet 2014;384:869–79; Cheikh Ismail L et al., BMJ 2016;352:i555), a hozzájuk tartozó számolótáblákkal és a 2025. októberi gesztációskor-határ ajánlással. 23 állomány.",
+      "osztaly": "publikus",
+      "bytes": 34022953,
+      "sha256": "aa5430efa443f1260e6b0dbdd9afe412c91bdd618590e16e810716c6e7c6affd+2e715c7d1ac370238247be40e8b071b47974db34f28e9a0d8b3d2002c673108d",
+      "megjegyzes": "OSZTOTT ZIP (ig.z01 + ig.zip), a két rész sha256-ja fönt. LICENCDÖNTÉS: a rendszer tulajdonosa 2026-09-08-án kimondta, hogy a forrás HASZNÁLHATÓ — normáltartományként és becslőmódszerként egyaránt —, és a táblák a tárba kerülnek. AMI EMBERI FELELŐSSÉG MARAD: az állományokon csak „© University of Oxford” szerepel, kimondott írásos engedély nélkül; a TERJESZTÉS előtt az Oxford University Innovation felhasználási feltételeit írásban meg kell szerezni, mert a nem kereskedelmi klinikai használat és a termékbe ágyazott terjesztés nem ugyanaz. A forrás minden táblánál meg van nevezve. Amit a hitelesítés ELŐTT is ki lehet mondani: ezek a standardok OPTIMÁLIS körülmények közötti növekedést írnak le (egészséges, jól táplált, fertőzésektől mentes anyák nyolc városi helyszínen), tehát NEM egy magyar populáció leíró referenciái — a különbség nem pontatlanság, hanem MÁS KÉRDÉSRE ADOTT VÁLASZ. Melyiket használjuk, emberi és szakmai döntés. Tartalom: 06_gwg.pdf (f9ea26c44c31…); INTERGROWTH-21st_Abdominal_Circumference_Standards.pdf (369e6909640a…); INTERGROWTH-21st_Abdominal_Circumference_Z_Scores.pdf (51e6491a9942…); INTERGROWTH-21st_Biparietal_Diameter_Standards.pdf (6e5725d57efa…); INTERGROWTH-21st_Biparietal_Diameter_Z_Scores.pdf (ef75ad889b7a…); INTERGROWTH-21st_Femur_Length_Standards.pdf (a5b3f54a4f6d…); INTERGROWTH-21st_Femur_Length_Z_Scores.pdf (ae53c7ecf64b…); INTERGROWTH-21st_Head_Circumference_Standards.pdf (50be3b816fc5…); INTERGROWTH-21st_Head_Circumference_Z_Scores.pdf (4ab036041ed4…); INTERGROWTH-21st_Occipitofrontal_Diameter_Standards.pdf (f38d6fcedc31…); INTERGROWTH-21st_Occipitofrontal_Diameter_Z_Scores.pdf (499fa6a7c558…); doppler_percentile_and_z-score.xlsx (c0b2ba8aa3cc…); grow_gwg-nw-ct_en.pdf (f77d76e48daf…); grow_gwg-nw-ct_table.pdf (52b4f0540394…); grow_gwg-nw-zs_en.pdf (2aecefe3dd63…); grow_gwg-nw-zs_table.pdf (48b6e8e1c9f0…); intergrowth_crl_calculator_1.0_2017_04_13.xlsx (27c1cd2a07b6…); intergrowth_efw_calculator_-_new_1.xlsx (f3cc02e2469e…); intergrowth_ga_calculator_1.1.xlsx (707889ae9ce1…); intergrowth_gwg_calculator_1.0_2017_04_13.xlsx (49e4ab05312d…); intergrowth_protocol_sept_2009.pdf (1a110784a097…); intergrowth_sfh_calculator_1.1_ext_2019_03_18_-_new_1.xlsx (c9b5b3414879…); policy_on_gestational_age_limits_for_fetal_growth_standards_4.pdf (59e1e8579000…)",
+      "utvonal": null
+    },
+    {
+      "forras": "CTG/magzati állapot osztályozó gépi tanulási tárak (anandms101, arya-azimi, Farman24476, naomifridman) és a bennük lévő `fetal_health.csv` adatsor.",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df",
+      "megjegyzes": "A lenyomat az ADATSORÉ, és ez a tétel lényege: HÁROM TÁRBAN BÁJTRA AZONOS (2126 sor, 21 jellemző) — a Kaggle „Fetal Health Classification”, az UCI Cardiotocography adatsorból (Ayres-de-Campos et al., SisPorto 2.0, J Matern Fetal Med 2000), EGYETLEN portugál centrumból. Négy tár tehát nem négy bizonyíték. A `fetal_health` címke ráadásul HÁROM SZÜLÉSZ KONSZENZUSA A GÖRBÉRŐL (normális 77,8% · gyanús 13,9% · kóros 8,3%), nem az újszülött kimenetele. LICENC TÉTELENKÉNT: kettőnek NINCS (semmi nem vehető át), egy GPLv3 (copyleft, a terjesztett MIT-műbe nem kerülhet), egy Apache-2.0. Semmi nem került a tárba; a részletes triázs a `registry/kulso/ctg-ml.json` állományban. AMIT ÁTVETTÜNK: nem kód és nem modell, hanem a JELLEMZŐSÉMA felismerése — a rendszer eddig a CTG BESOROLÁST tárolta a jellemzők nélkül, amiken nyugszik.",
+      "utvonal": null
+    },
+    {
+      "forras": "További CTG-osztályozó tárak (kduffuor, laurentinobezerra/cdt-model, VisheshData, AdityaTheDev/SVM, feliciasalim) — ugyanaz a `fetal_health.csv`.",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "md5:e9a749d3003a7c2f224c92ce0ffd99df#2",
+      "megjegyzes": "UGYANAZ A LENYOMAT, MINT AZ ELŐZŐ TÉTELNÉL — és épp ez a mondanivaló. A kilenc megvizsgált CTG-tárból NÉGYBEN bájtra azonos a `fetal_health.csv` (md5 e9a749d3…), további kettő ugyanerre hivatkozik. Licenc: kduffuor MIT, cdt-model MIT (a benne lévő portugál szakdolgozat-PDF viszont nem), AdityaTheDev Apache-2.0, VisheshData és feliciasalim licenc NÉLKÜL. Semmi nem került a tárba. A rendszer válasza nem a modellek átvétele, hanem a `core/ai/egyuttes.ts`: a tanítóadat ujjlenyomata szerint csoportosít, egy ujjlenyomat = egy hang.",
+      "utvonal": null
+    },
+    {
+      "forras": "Niedrigerregen/SonoAI — CNN magzati agydaganat felismerésére ultrahangképen.",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repo:Niedrigerregen/SonoAI@2026-09-08",
+      "megjegyzes": "NINCS LICENCFÁJL — minden jog fenntartva, semmi nem vehető át. A licenckapu itt egybeesik a klinikaival: a szerző maga nevezi kísérletinek („experimental deep learning project exploring whether CNNs can effectively learn from unevenly distributed datasets”), és megnevezi, hogy az adat kevés, zajos és kiegyensúlyozatlan. Ez nem a tár hiányossága, hanem a szerző tisztessége — és pontosan ezért nem klinikai eszköz. A tanítóadat egy kis elemszámú Kaggle-képkészlet.",
+      "utvonal": null
+    },
+    {
+      "forras": "RegnerM2015/scENDO_scOVAR_2020 — méhtest- és petefészekrák egysejt-atlasz elemzési csővezetéke (Regner MJ et al., Molecular Cell 2021;81:4924–4941).",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repo:RegnerM2015/scENDO_scOVAR_2020@2026-09-08",
+      "megjegyzes": "NINCS LICENCFÁJL — az elemzési kód nem vehető át; a KÖZLEMÉNY hivatkozható. MÁS FAJTA FORRÁS, mint a CTG-tárak: nem döntéstámogató modell, hanem kutatási elemzés — bizonyíték, nem eszköz. Amit a rendszernek ad, az nem kód, hanem KÖVETELMÉNY a biobank-mintavételre: az egysejt-elemzéshez szükséges metaadatot (ischaemiás idők, disszociációs protokoll, fagyasztási mód) a mintavételkor kell rögzíteni, utólag nem pótolható.",
+      "utvonal": null
+    },
+    {
+      "forras": "Nőgyógyászati AI-tárak: che0816/SmartGyne (MIT), kuri54/GynAIe (Apache-2.0), Eric43/MFM_AI (GPL), Kalyx1111/GynoCare_AI (MIT), productofbigbang/Gynecological-Health-Assistant (licenc nélkül), opencodeiiita/Fem-care (licenc nélkül).",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repos:nogy-ai@2026-09-08",
+      "megjegyzes": "HÁROM FAJTA, ÉS NEM SZABAD EGY LISTÁBAN TARTANI ŐKET. (1) Klinikai döntéstámogatás: GynAIe citológiai képmodell közölt teljesítménnyel, MFM_AI ultrahang-osztályozás adatkészletekkel, SmartGyne teljes diagnosztikai keretrendszer közleménnyel — ezek a 28. modul AI-kapuján mennének át, és ma egyik sem jut túl rajta. (2) Laikusnak szóló tájékoztató: GynoCare_AI és Fem-care — a saját README-jük mondja ki, hogy nem diagnózis; ezek a 31. modul betegtájékoztatójának rokonai, ahol a kérdés a szerző, a jóváhagyó és a lejárat. (3) A Gynecological-Health-Assistant KÜLÖN eset: a tudásbázisa WIKIPÉDIÁRÓL LEKAPART szöveg — kettős akadály, mert a táron nincs licenc, a tartalom pedig CC BY-SA, és klinikailag sem az a forrás, amiből ellátási tanács születik. Semmi nem került a tárba; a részletes triázs a `registry/kulso/nogy-ai.json` állományban. Az MFM_AI GPL, tehát a terjesztett MIT-műbe származéka nem kerülhet.",
+      "utvonal": null
+    },
+    {
+      "forras": "Isaac-aiai/obnexus-project — szülészeti osztályos működést támogató AI-ügynök (ágykezelés, áthelyezés, elbocsátás-tervezés, erőforrás-beosztás).",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repo:Isaac-aiai/obnexus-project@2026-09-08",
+      "megjegyzes": "NINCS LICENCFÁJL — semmi nem vehető át. AMIT MÉGIS ADOTT: a működési területek felsorolása kimutatta, hogy a rendszerben NEM VOLT sem ágykezelés, sem műtőbeosztás — a `core/fekvo` a NEAK-jelentés, a `core/op` a WHO-ellenőrzőlista. Ebből lett a `core/fekvo/agy.ts` és a `core/op/muto.ts`. A megvalósítás viszont NEM az ügynök logikáját követi: ott a természetes nyelvű felület közvetlenül ír az adatbázisba, és ezzel megkerüli azt a réteget, ahol a kapuk vannak (kiadható-e az ágy, marad-e sürgősségi tartalék). Nálunk a kapu marad kapu.",
+      "utvonal": null
+    },
+    {
+      "forras": "Női egészség — AI-hoz használható adatkészletek és adattárak (a lektorált közlemény 1. és 2. táblázata, 2026.04.28.).",
+      "osztaly": "publikus",
+      "bytes": 22380,
+      "sha256": "e8de1774301d7727948bb68eb9b3dd3408bb284087913730886f3e2ccf156ed8",
+      "megjegyzes": "FELDOLGOZVA: `tools/ingest/adatkeszletek.py` → `registry/adatkeszletek/noi-egeszseg.json` (87 adatkészlet, 45 nyílt / 42 kérelmes). A tábla NEM adat, hanem TÉRKÉP — és a térkép torzít: EURO 40, AMRO 27, Global 12, SEAR 4, WPRO 3, EMR 2, AFR EGY. Az anyai halálozás túlnyomó része az afrikai régióban következik be, és a katalógusban AFR egyetlen tételnél szerepel, ott is másodikként. Ez nem a katalógus hibája, hanem a helyzet, amit leír — de ha egy rendszer ezekre az adatokra épít modellt, a modell arra a populációra tanul, amelyik itt látszik. ÉS A FELDOLGOZÁS TALÁLT ÖT ELLENTMONDÁST a lektorált táblában, köztük KÉT SORT, aminek az eredet- és régiómezője egymással fel van cserélve (BioBank Japan „UK/EURO”, Born in Bradford „Japan/WPRO”), egy szabálytalan régiókódot („WPR” a „WPRO” helyett) és egy hibás régiót (Pima Indians, US → EURO). A hibákat NEM javítottuk bele a sorokba — a forrás a forrás —, hanem a `tabla_hibak` listában nevesítettük.",
+      "utvonal": null
+    },
+    {
+      "forras": "CDC: U.S. Selected Practice Recommendations for Contraceptive Use (US SPR) 2024 — késett/kimaradt tabletta (kombinált és progesztogén), vérzési rendellenességek kezelése, mikor kezdhető.",
+      "osztaly": "publikus",
+      "bytes": 524632,
+      "sha256": "73b9ec6574889f70672ac976386be7ab09c42bb8a64b071f7f824003c9490e02",
+      "megjegyzes": "Az Egyesült Államok szövetségi kormányzati munkája — KÖZKINCS. FELDOLGOZVA: ebből lett a `registry/fogamzas/` három szabálykészlete (17 sor). A legfontosabb, amit a feldolgozás kimondott: A KÉT POP-FAJTA ABLAKA GYÖKERESEN KÜLÖNBÖZIK — a noretiszteron/norgesztrel POP-nál 3 ÓRA, a drospirenonnál 48. Egyetlen „POP” mezőben kezelve a 3 órás ablakot 48-nak olvasva a védelem elveszne. Az ulipristál-acetát MINDEN sorban kivétel a sürgősségi fogamzásgátlás alól.",
+      "utvonal": null
+    },
+    {
+      "forras": "CDC: Summary Chart of U.S. Medical Eligibility Criteria for Contraceptive Use (U.S. MEC), 2024 frissítés — színes és fekete-fehér változat.",
+      "osztaly": "publikus",
+      "bytes": 241044,
+      "sha256": "721841703d565d1fe537a0988d7cf9e1226edf102c66649d624114dd8b58cfb7",
+      "megjegyzes": "KÖZKINCS. MÉG NEM FELDOLGOZVA: a mátrix PDF-táblázatból való kinyerése nem megbízható a szövegrétegből — a feltételnevek tördelődnek, az al-feltételek elszakadnak a szülőjüktől, és az oszlopszám soronként változik (6 vagy 12, aszerint, hogy a kezdés és a folytatás besorolása eltér-e). EGY MEGBÍZHATATLAN MEC-MÁTRIX VESZÉLYES: a 4-es kategória („elfogadhatatlan egészségi kockázat”) 1-esként olvasva („nincs korlátozás”) pontosan az ellenkezőjét mondja. Az importáló ezért csak akkor kerül be, ha soronként meg tudja nevezni, mit NEM tudott egyértelműen kiolvasni. A hátraléklistán `adatHianyzik` állapottal szerepel.",
+      "utvonal": null
+    },
+    {
+      "forras": "ACR O-RADS US v2022 Assessment Categories, Report Template, Sample Reports; O-RADS MRI Risk Score — és a hozzájuk készült generált szabálytáblák.",
+      "osztaly": "kimarad",
+      "bytes": 260436,
+      "sha256": "bf1bb1ef9c181db59357bd0ecb0c0f3c4d65886618ffb49755fafef613df2ddb",
+      "megjegyzes": "© American College of Radiology — SZERZŐI JOGVÉDETT. A SZABÁLYMOTOR (`core/szabaly/motor.ts`) tartalommentes, és a tárba kerül; a TÁBLÁK a `registry/kepalkotas/helyi/` alá (gitignorált, az exportcsomagból kizárva), és a `validateTerjesztes()` build-hibává teszi, ha mégis a terjesztett fába kerülnének. Ugyanaz a szerkezet, mint a SNOMED CT GPS-nél. Ezt a döntést az eredeti projekt szerzője is így hozta meg — a generátorai kimenete náluk is `.gitignore`-ban van. 38 US és 19 MRI szabály töltődött be és validált hibátlanul.",
+      "utvonal": null
+    },
+    {
+      "forras": "MMPI-2 megvalósítások (nucular/mmpi-2 — Unlicense; lsweatman/MMPI_2_Grader — MIT) és a PsyToolkit tesztgyűjtemény (licenc nélkül).",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repos:mmpi-psytoolkit@2026-09-08",
+      "megjegyzes": "A TÁR LICENCE NEM A MŰSZER LICENCE. Mindkét MMPI-2-megvalósítás megengedő licencet visel a KÓDRA — de az MMPI-2 maga a University of Minnesota Press tulajdona, Pearson-terjesztéssel, és a pszichológia egyik legszigorúbban ellenőrzött műszere: a felvétele és értékelése minősített felhasználói státuszhoz kötött. A tételek szabad közlése nem a tárak szerzőinek joga. Ez a 12. modul mérőeszköz-licenckapujának pontosan az az esete, amiért a kapu létezik — és a legélesebb eddig: itt a megengedő licenc AKTÍVAN FÉLREVEZET. A PsyToolkitnek nincs licence, és a gyűjteménye műszerenként eltérő feltételekkel jár.",
+      "utvonal": null
+    },
+    {
+      "forras": "FRAX-alternatívák: bcsdevries/Research-Major-Osteoporotic-Fracture-Risk-calculator (licenc nélkül), winninghealth/medcalcmcp (Apache-2.0).",
+      "osztaly": "kimarad",
+      "bytes": 0,
+      "sha256": "repos:frax-alt@2026-09-08",
+      "megjegyzes": "A csonttörési kockázat VALÓSZÍNŰSÉGET ír ki, tehát a hátraléklistán az MDR szempontjából legszigorúbb kategóriába esik. Az elsőnek nincs licence. A `medcalcmcp` Apache-2.0, és MCP-szolgáltatásként számos kalkulátort kínál — a kód átvehető, DE az EGYES KALKULÁTOROK együtthatói külön licencűek lehetnek, ugyanaz a kettősség, mint az MMPI-nél. Semmi nem került át.",
+      "utvonal": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+ "megnevezes": "Munkakörök és jogosultsági csoportok",
+ "modul": 19,
+ "note": "A CSOPORT A MUNKAKÖR, NEM A SZEMÉLY. Egy csoport azt mondja meg, milyen szerepköröket ad egy munkakör, MILYEN SZINTŰ helyre adható meg, és kötelező-e hozzá lezárt időablak.\n\nA `hatokorFajta` nem formaság: korlát nélkül egy osztályos ápoló megbízást kaphatna a teljes klinikára, és az soha nem tűnne fel. Az `idohozKotott` sem: a műszaknak vége van, a jognak vele — nyitott időablakkal a megbízás évekkel túléli a beosztást.\n\nA `megbizhat` külön mező, mert a megbízás ADÁSA nem klinikai művelet. Aki megbízást adhat, az a jogosultsági rendszer fölött áll — és épp ezért nem olvashat leletet: a rendszergazdai szerepkör a rendszer fölött mindenható, a betegadat fölött nem.",
+ "csoportok": [
+  {
+   "id": "csoport.rendszergazda",
+   "nev": "Rendszergazda",
+   "szerepek": ["admin"],
+   "hatokorFajta": ["klinika"],
+   "idohozKotott": false,
+   "megbizhat": true,
+   "leiras": "Felhasználót és megbízást kezel, modult és mezőt szerkeszt. LELETET NEM OLVAS. Ha klinikai hozzáférés kell neki, megbízást ad magának klinikusként — az látszik az auditnaplóban, névvel és indokkal."
+  },
+  {
+   "id": "csoport.osztalyos-orvos",
+   "nev": "Osztályos orvos",
+   "szerepek": ["clinician"],
+   "hatokorFajta": ["osztaly", "alosztaly"],
+   "idohozKotott": false,
+   "leiras": "A saját osztályához tartós hozzáférés. A hatókör lefelé öröklődik: a szobák és az ágyak is beletartoznak."
+  },
+  {
+   "id": "csoport.ugyeletes-orvos",
+   "nev": "Ügyeletes orvos",
+   "szerepek": ["clinician"],
+   "hatokorFajta": ["reszleg", "telephely", "intezet"],
+   "idohozKotott": true,
+   "leiras": "A teljes tömbhöz — de CSAK AZ ÜGYELET IDEJÉRE. Ez a legtágabb klinikai hatókör a rendszerben, ezért kötelezően lezárt időablakkal jár: az ügyelet reggel véget ér, a jog vele."
+  },
+  {
+   "id": "csoport.szulesznő",
+   "nev": "Szülésznő",
+   "szerepek": ["clinician"],
+   "hatokorFajta": ["osztaly", "alosztaly", "szoba"],
+   "idohozKotott": true,
+   "leiras": "A beosztott szülőszobához vagy osztályhoz, műszakonként."
+  },
+  {
+   "id": "csoport.apolo",
+   "nev": "Ápoló",
+   "szerepek": ["assistant"],
+   "hatokorFajta": ["osztaly", "alosztaly", "szoba"],
+   "idohozKotott": true,
+   "leiras": "A beosztott osztályhoz, MŰSZAKONKÉNT. Rögzít, de nem exportál. A műszak vége a jog vége."
+  },
+  {
+   "id": "csoport.asszisztens",
+   "nev": "Rendelői asszisztens",
+   "szerepek": ["assistant"],
+   "hatokorFajta": ["osztaly", "alosztaly", "szoba"],
+   "idohozKotott": true,
+   "leiras": "Járóbeteg-rendelés adatrögzítése, a rendelés idejére."
+  },
+  {
+   "id": "csoport.auditor",
+   "nev": "Auditor",
+   "szerepek": ["auditor"],
+   "hatokorFajta": ["klinika", "intezmeny", "intezet", "telephely"],
+   "idohozKotott": false,
+   "leiras": "Az AUDITNAPLÓT olvassa, leletet nem. Ez a lényeg: aki a hozzáféréseket ellenőrzi, ne legyen egyben a legnagyobb hozzáférésű felhasználó."
+  },
+  {
+   "id": "csoport.dpo",
+   "nev": "Adatvédelmi tisztviselő",
+   "szerepek": ["dpo"],
+   "hatokorFajta": ["klinika", "intezmeny"],
+   "idohozKotott": false,
+   "leiras": "Törlést rendelhet el és auditnaplót olvas. Leletet nem."
+  },
+  {
+   "id": "csoport.kutato",
+   "nev": "Kutató",
+   "szerepek": ["researcher"],
+   "hatokorFajta": ["klinika", "intezmeny", "intezet"],
+   "idohozKotott": true,
+   "leiras": "Álnevesített exportot kap, egyedi esetet nem lát. Kötelezően lezárt időablak: a kutatási engedélynek van vége."
+  }
+ ]
+}

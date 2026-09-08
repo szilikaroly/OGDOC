@@ -1,0 +1,57 @@
+{
+  "id": "kulso.scendo",
+  "label": {
+    "hu": "scENDO_scOVAR_2020 — méhtest- és petefészekrák egysejt-atlasz",
+    "en": "scENDO_scOVAR_2020 single-cell atlas"
+  },
+  "kiado": {
+    "nev": "Regner MJ, Wisniewska K, Garcia-Recio S et al. (UNC Lineberger)",
+    "url": "https://github.com/RegnerM2015/scENDO_scOVAR_2020"
+  },
+  "miertSzamit": {
+    "hu": "Egysejt-RNS- és ATAC-szekvenálási atlasz méhtest- és petefészekrákos mintákból. NEM döntéstámogató modell és nem kalkulátor: BIZONYÍTÉK. A 22. (biobank) és 23. (genetika) modul számára az a jelentősége, hogy megmutatja, milyen felbontású elemzés készül ma egy szövetmintából — és ezzel azt is, mit kell a MINTAVÉTELKOR rögzíteni ahhoz, hogy a minta később ilyen elemzésre alkalmas legyen."
+  },
+  "beszerzes": {
+    "allapot": "beszerzett",
+    "megkiserelve": "2026-09-08",
+    "amitTudunk": "a tár elemzési szkriptjei és ábrái nyilvánosan olvashatók",
+    "amitNemTudunk": "a nyers szekvenálási adat és annak felhasználási feltételei"
+  },
+  "licenc": {
+    "ismert": false,
+    "megjegyzes": {
+      "hu": "NINCS LICENCFÁJL a tárban — az elemzési kód minden joga fenntartva. A hozzá tartozó KÖZLEMÉNY hivatkozható; a kód nem vehető át."
+    }
+  },
+  "note": {
+    "hu": "MÁS FAJTA FORRÁS, MINT A TÖBBI, ÉS EZT KI KELL MONDANI.\n\nA CTG-tárak döntéstámogató modellek: azt ígérik, hogy egy BETEGRŐL mondanak valamit. Ez egy KUTATÁSI ELEMZÉSI CSŐVEZETÉK egy publikált atlaszhoz — nem egy beteg állapotáról szól, hanem arról, milyen sejtpopulációk figyelhetők meg egy mintakészletben. A kettő összekeverése az a hiba, amitől egy „AI a nőgyógyászatban” lista hasznavehetetlen lesz: a BIZONYÍTÉK és az ESZKÖZ nem ugyanaz, és a katalógus ezért külön fajtaként tartja őket (`tipus: bizonyitek`).\n\nAmit a rendszernek ténylegesen ad: nem kód, hanem KÖVETELMÉNY A MINTAGYŰJTÉSRE. Ha egy biobankminta valaha egysejt-elemzésre kerül, az ahhoz szükséges metaadatot — meleg és hideg ischaemiás idő, a feldolgozás kezdete, a disszociációs protokoll, a fagyasztás módja — A MINTAVÉTELKOR kell rögzíteni. Utólag nem pótolható, és nélküle a minta elemezhető ugyan, de az eredménye nem összehasonlítható másokéval. Ez a 22. modul nyitott kérdése, és ez a forrás teszi konkréttá."
+  },
+  "tetelek": [
+    {
+      "id": "scendo.atlasz",
+      "tipus": "bizonyitek",
+      "cim": "Regner MJ et al.: A multi-omic single-cell landscape of human gynecologic malignancies. Molecular Cell 2021;81(23):4924–4941.",
+      "cimForrasa": "forras",
+      "terulet": "nőgyógyászati onkológia, biobank",
+      "mihezKotodik": [],
+      "mitAdnaHozza": {
+        "hu": "Hivatkozható bizonyíték arról, milyen felbontású elemzés készül ma nőgyógyászati daganatmintából — és ezen keresztül arról, mit kell a mintavételkor rögzíteni."
+      },
+      "allapot": "beszerzett",
+      "licenc": {
+        "ismert": false,
+        "megjegyzes": {
+          "hu": "Az elemzési kód licenc nélküli; a közlemény idézhető."
+        }
+      },
+      "beszerzes": {
+        "allapot": "beszerzett",
+        "megkiserelve": "2026-09-08"
+      },
+      "forras": {
+        "megnevezes": "scENDO_scOVAR_2020 — elemzési szkriptek és ábrák (Figure_1…Figure_6, CellRanger)",
+        "szerzok": "Regner MJ, Wisniewska K, Garcia-Recio S et al."
+      }
+    }
+  ]
+}

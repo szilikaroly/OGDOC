@@ -1,0 +1,789 @@
+[
+  {
+    "id": "diet.protocol.pregnancy.base",
+    "label": {
+      "hu": "Várandós alapajánlás"
+    },
+    "source": {
+      "cite": "NICE NG201: Antenatal care (2021); WHO recommendations on antenatal care (2016)",
+      "standard": "NICE/WHO"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.folate",
+      "diet.supp.vitaminD",
+      "diet.supp.iodine"
+    ],
+    "targets": [
+      {
+        "id": "fluid",
+        "label": {
+          "hu": "Napi folyadék"
+        },
+        "unit": "L",
+        "min": 2.3,
+        "note": {
+          "hu": "Terhességben emelkedett az igény; szoptatás alatt még több."
+        }
+      }
+    ],
+    "avoid": [
+      {
+        "what": {
+          "hu": "Nyers vagy félig sült hús, nyers hal, pasztőrözetlen tej és sajt"
+        },
+        "why": {
+          "hu": "Listeria és toxoplasma: a magzatra veszélyes fertőzések, amelyek az anyánál gyakran tünetmentesek."
+        }
+      },
+      {
+        "what": {
+          "hu": "Nagy testű ragadozó halak (cápa, kardhal, tonhalsteak)"
+        },
+        "why": {
+          "hu": "Higany-felhalmozódás, ami a magzat idegrendszerét károsítja. A kisebb halak (lazac, szardínia) fogyasztása viszont AJÁNLOTT az omega-3 miatt."
+        }
+      },
+      {
+        "what": {
+          "hu": "Alkohol — bármilyen mennyiségben"
+        },
+        "why": {
+          "hu": "Nincs ismert biztonságos mennyiség; a magzati alkoholspektrum-zavar teljes egészében megelőzhető."
+        }
+      },
+      {
+        "what": {
+          "hu": "Máj és májkészítmények nagy mennyiségben"
+        },
+        "why": {
+          "hu": "Nagyon magas A-vitamin-tartalom, ami nagy adagban magzatkárosító."
+        }
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Napi 400 µg folsav a fogamzás előtti hónaptól a 12. hétig"
+        },
+        "why": {
+          "hu": "A velőcsőzáródási rendellenesség megelőzésének legjobban bizonyított beavatkozása — a védőhatás a fogamzás körüli időszakban érvényesül."
+        }
+      },
+      {
+        "what": {
+          "hu": "Kávé: legfeljebb napi 200 mg koffein (kb. két csésze)"
+        }
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "Ez a réteg mindenkire vonatkozik; a többi protokoll erre RAKÓDIK, nem helyettesíti."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.iom.under",
+    "label": {
+      "hu": "Súlygyarapodási célsáv — soványság"
+    },
+    "source": {
+      "cite": "Institute of Medicine / National Research Council. Weight Gain During Pregnancy: Reexamining the Guidelines (2009)",
+      "standard": "IOM 2009"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "lt",
+        "value": 18.5
+      }
+    ],
+    "targets": [
+      {
+        "id": "gain",
+        "label": {
+          "hu": "Teljes terhességi súlygyarapodás"
+        },
+        "unit": "kg",
+        "min": 12.5,
+        "max": 18.0,
+        "note": {
+          "hu": "Egyes magzat esetén, a teljes terhességre. Ikerterhességben a célsáv magasabb."
+        }
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A célsáv a KIINDULÁSI testtömegindextől függ — ezért nincs egyetlen „helyes” súlygyarapodás. Egy fix sáv az elhízott várandósnál rendszeresen téves riasztást adna."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.iom.normal",
+    "label": {
+      "hu": "Súlygyarapodási célsáv — normális testsúly"
+    },
+    "source": {
+      "cite": "Institute of Medicine / National Research Council. Weight Gain During Pregnancy: Reexamining the Guidelines (2009)",
+      "standard": "IOM 2009"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "gte",
+        "value": 18.5
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "lt",
+        "value": 25.0
+      }
+    ],
+    "targets": [
+      {
+        "id": "gain",
+        "label": {
+          "hu": "Teljes terhességi súlygyarapodás"
+        },
+        "unit": "kg",
+        "min": 11.5,
+        "max": 16.0,
+        "note": {
+          "hu": "Egyes magzat esetén, a teljes terhességre. Ikerterhességben a célsáv magasabb."
+        }
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A célsáv a KIINDULÁSI testtömegindextől függ — ezért nincs egyetlen „helyes” súlygyarapodás. Egy fix sáv az elhízott várandósnál rendszeresen téves riasztást adna."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.iom.over",
+    "label": {
+      "hu": "Súlygyarapodási célsáv — túlsúly"
+    },
+    "source": {
+      "cite": "Institute of Medicine / National Research Council. Weight Gain During Pregnancy: Reexamining the Guidelines (2009)",
+      "standard": "IOM 2009"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "gte",
+        "value": 25.0
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "lt",
+        "value": 30.0
+      }
+    ],
+    "targets": [
+      {
+        "id": "gain",
+        "label": {
+          "hu": "Teljes terhességi súlygyarapodás"
+        },
+        "unit": "kg",
+        "min": 7.0,
+        "max": 11.5,
+        "note": {
+          "hu": "Egyes magzat esetén, a teljes terhességre. Ikerterhességben a célsáv magasabb."
+        }
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A célsáv a KIINDULÁSI testtömegindextől függ — ezért nincs egyetlen „helyes” súlygyarapodás. Egy fix sáv az elhízott várandósnál rendszeresen téves riasztást adna."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.iom.obese",
+    "label": {
+      "hu": "Súlygyarapodási célsáv — elhízás"
+    },
+    "source": {
+      "cite": "Institute of Medicine / National Research Council. Weight Gain During Pregnancy: Reexamining the Guidelines (2009)",
+      "standard": "IOM 2009"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "anthro.bmi",
+        "op": "gte",
+        "value": 30.0
+      }
+    ],
+    "targets": [
+      {
+        "id": "gain",
+        "label": {
+          "hu": "Teljes terhességi súlygyarapodás"
+        },
+        "unit": "kg",
+        "min": 5.0,
+        "max": 9.0,
+        "note": {
+          "hu": "Egyes magzat esetén, a teljes terhességre. Ikerterhességben a célsáv magasabb."
+        }
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A célsáv a KIINDULÁSI testtömegindextől függ — ezért nincs egyetlen „helyes” súlygyarapodás. Egy fix sáv az elhízott várandósnál rendszeresen téves riasztást adna."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.bariatric",
+    "label": {
+      "hu": "Bariátriai műtét utáni terhesség"
+    },
+    "source": {
+      "cite": "ACOG Practice Bulletin No. 105: Bariatric Surgery and Pregnancy (2009, reaffirmed); RCOG/BOMSS joint guidance",
+      "standard": "ACOG"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.bariatric",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.iron",
+      "diet.supp.b12",
+      "diet.supp.folate",
+      "diet.supp.vitaminD",
+      "diet.supp.calcium"
+    ],
+    "avoid": [
+      {
+        "what": {
+          "hu": "Tömény cukros italok és gyorsan felszívódó szénhidrátok"
+        },
+        "why": {
+          "hu": "Dömping-szindróma: hasi görcs, hasmenés és reaktív hypoglykaemia."
+        }
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Kis mennyiségű, gyakori étkezés; a folyadékot az étkezéstől külön"
+        },
+        "why": {
+          "hu": "A csökkent gyomortérfogat mellett a szilárd és folyékony bevitel együtt teltségérzetet és hányást okoz."
+        }
+      },
+      {
+        "what": {
+          "hu": "A pótlás nem opcionális, és nem elég a terhes-multivitamin"
+        },
+        "why": {
+          "hu": "A műtét után a felszívódás tartósan csökkent; a multivitamin adagjai az átlagos igényre méretezettek."
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Dietetikai konzílium — bariátriai műtét utáni terhesgondozás"
+        },
+        "urgency": "soon"
+      },
+      {
+        "what": {
+          "hu": "Vas-, B12-, folsav-, D-vitamin- és kalciumszint ellenőrzése trimeszterenként"
+        },
+        "urgency": "soon"
+      },
+      {
+        "what": {
+          "hu": "MÓDOSÍTOTT terhességi cukorbetegség-szűrés: a 75 g-os cukorterhelés dömpinget válthat ki — helyette étkezés utáni vércukor-önellenőrzés vagy HbA1c mérlegelendő"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A bariátriai műtét utáni terhesség a modul elfogadási kritériuma: HAT kötelező pótlás és a módosított cukorterhelés együtt."
+      },
+      "pitfalls": {
+        "hu": "A műtét után legalább 12–18 hónap várakozás javasolt a fogamzásig — a gyors fogyás időszakában a magzati növekedés szenved. Ez a tanács a fogamzás ELŐTTI gondozásba tartozik, és utólag már nem adható."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.gdm",
+    "label": {
+      "hu": "Terhességi cukorbetegség"
+    },
+    "source": {
+      "cite": "NICE NG3: Diabetes in pregnancy (2015, updated 2020); ADA Standards of Care",
+      "standard": "NICE NG3"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.repro.gdm",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "targets": [
+      {
+        "id": "carbBreakfast",
+        "label": {
+          "hu": "Szénhidrát reggelire"
+        },
+        "unit": "g",
+        "min": 15,
+        "max": 30,
+        "note": {
+          "hu": "A reggeli a legszigorúbb: a hajnali hormoncsúcs miatt a vércukor ilyenkor emelkedik a legkönnyebben."
+        }
+      },
+      {
+        "id": "carbMain",
+        "label": {
+          "hu": "Szénhidrát főétkezésenként"
+        },
+        "unit": "g",
+        "min": 30,
+        "max": 45
+      },
+      {
+        "id": "carbSnack",
+        "label": {
+          "hu": "Szénhidrát kisétkezésenként"
+        },
+        "unit": "g",
+        "min": 15,
+        "max": 30
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Napi 5–6 étkezés, egyenletesen elosztva, utóvacsorával"
+        },
+        "why": {
+          "hu": "A hosszú éhezési szakasz ketózishoz vezet, a nagy étkezés vércukorcsúcshoz — az elosztás mindkettőt megelőzi."
+        }
+      },
+      {
+        "what": {
+          "hu": "Étkezés utáni 1 órás vércukor-önellenőrzés, naplóval"
+        },
+        "why": {
+          "hu": "Az étkezés utáni értékek döntik el, elég-e a diéta, vagy inzulin kell."
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Dietetikai konzílium szénhidrát-elosztás beállítására"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A SZÉNHIDRÁT-MEGVONÁS NEM CÉL: a napi 175 g alatti bevitel ketózist okoz, ami a magzatra nézve kockázatos. A cél az ELOSZTÁS, nem a csökkentés."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.anemia",
+    "label": {
+      "hu": "Vérszegénység"
+    },
+    "source": {
+      "cite": "WHO: Guideline on daily iron and folic acid supplementation in pregnant women (2012); NICE NG201",
+      "standard": "WHO/NICE"
+    },
+    "appliesWhen": [
+      {
+        "var": "hx.sys.anemia",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.iron"
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "A vaskészítményt C-vitamin-forrással (citrusfélék) együtt"
+        },
+        "why": {
+          "hu": "A C-vitamin javítja, a tea, a kávé és a kalcium rontja a felszívódást."
+        }
+      },
+      {
+        "what": {
+          "hu": "A vaskészítmény és a kalcium ne egy időben"
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Ferritin és vérkép ellenőrzése a pótlás megkezdése után 4 héttel"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "diet.protocol.vegan",
+    "label": {
+      "hu": "Vegán étrend"
+    },
+    "source": {
+      "cite": "Academy of Nutrition and Dietetics: Position on Vegetarian Diets (2016)",
+      "standard": "AND 2016"
+    },
+    "appliesWhen": [
+      {
+        "var": "diet.pattern",
+        "op": "eq",
+        "value": "vegan"
+      }
+    ],
+    "supplements": [
+      "diet.supp.b12",
+      "diet.supp.iron",
+      "diet.supp.vitaminD",
+      "diet.supp.dha",
+      "diet.supp.calcium"
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "A B12-pótlás kötelező, nem választható"
+        },
+        "why": {
+          "hu": "A B12 kizárólag állati eredetű forrásból származik; a hiány a magzat idegrendszerét érinti, és a tünetek későn jelentkeznek."
+        }
+      },
+      {
+        "what": {
+          "hu": "A vasforrás növényi (nem hem-vas), ezért rosszabbul szívódik fel — C-vitaminnal együtt fogyasztandó"
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Dietetikai konzílium a fehérje- és mikrotápanyag-fedezet átnézésére"
+        },
+        "urgency": "routine"
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A jól tervezett vegán étrend terhességben megfelelő — a „jól tervezett” azonban célzott pótlást jelent, nem jó szándékot."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.celiac",
+    "label": {
+      "hu": "Coeliakia"
+    },
+    "source": {
+      "cite": "NICE NG20: Coeliac disease (2015)",
+      "standard": "NICE NG20"
+    },
+    "appliesWhen": [
+      {
+        "var": "hx.sys.celiac",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.iron",
+      "diet.supp.folate",
+      "diet.supp.vitaminD",
+      "diet.supp.calcium",
+      "diet.supp.b12"
+    ],
+    "avoid": [
+      {
+        "what": {
+          "hu": "Glutén — búza, árpa, rozs, és a rejtett források"
+        },
+        "why": {
+          "hu": "A gluténmentesség nem étrendi preferencia, hanem kezelés: a bélnyálkahártya károsodása felszívódási zavart okoz."
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Vas-, folsav-, D-vitamin- és B12-szint ellenőrzése"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "diet.protocol.ibd",
+    "label": {
+      "hu": "Gyulladásos bélbetegség"
+    },
+    "source": {
+      "cite": "ECCO Guidelines on Reproduction and Pregnancy in IBD (2022)",
+      "standard": "ECCO"
+    },
+    "appliesWhen": [
+      {
+        "var": "hx.sys.ibd",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.iron",
+      "diet.supp.folate",
+      "diet.supp.vitaminD",
+      "diet.supp.b12"
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Gasztroenterológiai és dietetikai konzílium a terhesgondozás elején"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A BETEGSÉG AKTIVITÁSA a nagyobb kockázat, nem a gyógyszer: a remisszióban fogant terhesség kimenetele lényegesen jobb. A fenntartó kezelés önkényes elhagyása a leggyakoribb hiba."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.pcos",
+    "label": {
+      "hu": "PCOS, inzulinrezisztencia"
+    },
+    "source": {
+      "cite": "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)",
+      "standard": "ESHRE/ASRM 2023"
+    },
+    "appliesWhen": [
+      {
+        "var": "hx.sys.pcos",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Alacsony glykaemiás terhelésű étrend, rostban gazdagon"
+        }
+      },
+      {
+        "what": {
+          "hu": "Rendszeres mozgás, akár szerény testsúlycsökkenés mellett is"
+        },
+        "why": {
+          "hu": "Az 5–10%-os fogyás önmagában javítja az ovulációt és az inzulinérzékenységet."
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Terhességi cukorbetegség korai szűrése mérlegelendő"
+        },
+        "urgency": "routine"
+      }
+    ]
+  },
+  {
+    "id": "diet.protocol.icp",
+    "label": {
+      "hu": "Terhességi intrahepaticus cholestasis"
+    },
+    "source": {
+      "cite": "RCOG Green-top Guideline No. 43: Obstetric Cholestasis (2022)",
+      "standard": "RCOG"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "lab.bileAcids",
+        "op": "gte",
+        "value": 19
+      }
+    ],
+    "supplements": [
+      "diet.supp.vitaminD"
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Zsírszegény étrend, a zsírban oldódó vitaminok pótlásával"
+        },
+        "why": {
+          "hu": "A csökkent epesav-kiválasztás a zsír és a zsírban oldódó vitaminok felszívódását rontja."
+        }
+      }
+    ],
+    "referral": [
+      {
+        "what": {
+          "hu": "Epesavszint és májfunkció ismételt ellenőrzése"
+        },
+        "urgency": "soon"
+      },
+      {
+        "what": {
+          "hu": "Szülészeti újraértékelés: a szülés időzítése az epesavszinttől függ"
+        },
+        "urgency": "soon"
+      }
+    ],
+    "documentation": {
+      "whyItMatters": {
+        "hu": "A DIÉTA ITT MELLÉKSZEREPLŐ: a klinikai tétet az epesavszint és a szülés időzítése hordozza. A tájékoztató ezt nem hallgathatja el."
+      }
+    }
+  },
+  {
+    "id": "diet.protocol.htn",
+    "label": {
+      "hu": "Magas vérnyomás terhességben"
+    },
+    "source": {
+      "cite": "NICE NG133: Hypertension in pregnancy (2019); ACOG Practice Bulletin No. 203",
+      "standard": "NICE/ACOG"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.htn",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Mérsékelt sóbevitel — de NEM sómegvonás"
+        },
+        "why": {
+          "hu": "TERHESSÉGBEN A RESTRIKTÍV SÓSZEGÉNY DIÉTA NEM JAVASOLT: csökkenti a keringő plazmatérfogatot, ami a méhlepény vérellátását rontja. Ez a különbség a nem terhes hypertonia kezeléséhez képest a leggyakrabban elkövetett átvitel."
+        }
+      },
+      {
+        "what": {
+          "hu": "Rendszeres vérnyomás-önellenőrzés, naplóval"
+        }
+      }
+    ]
+  },
+  {
+    "id": "diet.protocol.lactation",
+    "label": {
+      "hu": "Szoptatás"
+    },
+    "source": {
+      "cite": "WHO: Guideline on infant feeding (2023); LactMed (NIH)",
+      "standard": "WHO"
+    },
+    "appliesWhen": [
+      {
+        "var": "ctx.breastfeeding",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "supplements": [
+      "diet.supp.iodine",
+      "diet.supp.vitaminD",
+      "diet.supp.dha"
+    ],
+    "targets": [
+      {
+        "id": "fluid",
+        "label": {
+          "hu": "Napi folyadék"
+        },
+        "unit": "L",
+        "min": 3.0,
+        "note": {
+          "hu": "A szoptatás alatti igény a terhességinél is magasabb."
+        }
+      }
+    ],
+    "advice": [
+      {
+        "what": {
+          "hu": "Napi kb. 500 kcal többlet a szoptatás alatt"
+        }
+      },
+      {
+        "what": {
+          "hu": "Az alkohol a tejbe átjut; ha mégis, a szoptatás időzítése számít"
+        },
+        "why": {
+          "hu": "A tej alkoholtartalma a véralkoholt követi — lefejéssel („pump and dump”) nem gyorsítható a kiürülés, csak idővel."
+        }
+      }
+    ]
+  }
+]

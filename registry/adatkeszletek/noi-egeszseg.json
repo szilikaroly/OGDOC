@@ -1,0 +1,1099 @@
+{
+  "id": "kulso.adatkeszletek",
+  "megnevezes": "Női egészség — AI-hoz használható adatkészletek és adattárak",
+  "forras": "A lektorált közlemény 1. és 2. táblázata (2026.04.28.), CSV alakban. sha256: e8de1774301d7727948bb68eb9b3dd3408bb284087913730886f3e2ccf156ed8",
+  "note": "A KATALÓGUS NEM ADAT, HANEM TÉRKÉP — és a térkép torzít.\n\n87 adatkészlet, ebből 45 nyíltan elérhető és 42 kérelmes. A regionális eloszlás viszont a legfontosabb szám az egészben: EURO 40, AMRO 27, Global 12, SEAR 4, WPRO 3, EMR 2, WPR 1, AFR 1.\n\nAz anyai halálozás túlnyomó része az afrikai régióban következik be, és ebben a katalógusban AFR EGYETLEN tételnél szerepel, akkor is másodikként. Ez nem a katalógus hibája — ez a helyzet, amit leír. De ha egy rendszer ezekre az adatokra épít modellt, akkor a modell arra a populációra tanul, amelyik itt látszik, és arra a populációra fogják használni, amelyik nem. Ez ugyanaz a szabály, ami a normogramoknál már ki van mondva: idegen populáción mért tartomány idegen választ ad — csak itt nem egy görbéről van szó, hanem az egész bemeneti oldalról.\n\nAMIT A FELDOLGOZÁS TALÁLT A TÁBLÁBAN. A forrás lektorált, és mégis van benne 5 ellentmondás — köztük KÉT SOR, aminek az eredet- és régiómezője egymással fel van cserélve (a BioBank Japan „UK/EURO”, a bradfordi Born in Bradford „Japan/WPRO”). Aki európai adatkészletekre szűr, a japán biobankot kapja meg, a bradfordit pedig elveszíti. A hibák tételesen a `tabla_hibak` listában állnak — nem javítottuk bele a sorokba, mert a forrás a forrás; megnevezve viszont kezelhető.",
+  "statisztika": {
+    "tetel": 87,
+    "hozzaferes": {
+      "kerelmes": 42,
+      "nyilt": 45
+    },
+    "regio": {
+      "EURO": 40,
+      "AMRO": 27,
+      "EMR": 2,
+      "WPRO": 3,
+      "Global": 12,
+      "SEAR": 4,
+      "WPR": 1,
+      "AFR": 1
+    }
+  },
+  "tabla_hibak": [
+    {
+      "tetel": "BioBank Japan",
+      "fajta": "megjegyzesEltres",
+      "mit": "A megjegyzés „japan”-ra utal, az eredet viszont „UK”. Aki országra szűr, ezt a tételt rossz helyen találja."
+    },
+    {
+      "tetel": "Born in Bradford",
+      "fajta": "megjegyzesEltres",
+      "mit": "A megjegyzés „bradford”-ra utal, az eredet viszont „Japan”. Aki országra szűr, ezt a tételt rossz helyen találja."
+    },
+    {
+      "tetel": "Multi-Modality Ovarian Tumor Ultrasound (MMOTU) image dataset",
+      "fajta": "regiokod",
+      "mit": "Szabálytalan régiókód: „WPR”. A szabályosak: AFR, AMRO, EMR, EURO, Global, SEAR, WPRO. Egy elgépelt kód nem hibaüzenetet ad, hanem külön csoportot — és a tétel kiesik a szűrésből."
+    },
+    {
+      "tetel": "Multi-Modality Ovarian Tumor Ultrasound (MMOTU) image dataset",
+      "fajta": "regioEltres",
+      "mit": "Az eredet „China”, a megadott régió WPR — a várt régió WPRO."
+    },
+    {
+      "tetel": "Pima Indians diabetes database",
+      "fajta": "regioEltres",
+      "mit": "Az eredet „US”, a megadott régió EURO — a várt régió AMRO."
+    }
+  ],
+  "tetelek": [
+    {
+      "nev": "AACR project GENIE",
+      "terulet": "Cancer-related",
+      "modalitas": "Omics (genomics), clinical data",
+      "url": "https://www.aacr.org/professionals/research/aacr-project-genie/aacr-project-genie-data/",
+      "hozzaferes": "kerelmes",
+      "eredet": "Several countries (US, Spain, UK, Netherlands)",
+      "regio": [
+        "EURO",
+        "AMRO"
+      ],
+      "megjegyzes": "Can be accessed on cBioPortal also"
+    },
+    {
+      "nev": "Abdominal and Direct Fetal ECG Database (ADFECGDB)",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "ECG",
+      "url": "https://physionet.org/content/adfecgdb/1.0.0/",
+      "hozzaferes": "nyilt",
+      "eredet": "Poland",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Adolescent Brain Cognitive Development (ABCD Study)",
+      "terulet": "Mental health",
+      "modalitas": "Imaging and behavioural data",
+      "url": "https://abcdstudy.org/scientists/data-sharing/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Longitudinal imaging and behavioural data including mental health metrics, with sex-disaggregated analyses"
+    },
+    {
+      "nev": "All of Us",
+      "terulet": "General health, biobank",
+      "modalitas": "Health data, genomic, measurements and wearables",
+      "url": "https://www.researchallofus.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "American population only."
+    },
+    {
+      "nev": "BioBank Japan",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, clinical data",
+      "url": "https://biobankjp.org/en/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Japan. The omics requires an application and some cost per sample/disease."
+    },
+    {
+      "nev": "BioImage Archive",
+      "terulet": "Biological imaging",
+      "modalitas": "Imaging (microscopy)",
+      "url": "https://www.ebi.ac.uk/bioimage-archive/",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "The BioImage Archive is a free, publicly available online resource which stores and distributes biological images. It accepts submissions of data from any imaging modality, as long as the data are either associated with a peer-reviewed publication, or of value beyond a single experiment."
+    },
+    {
+      "nev": "Bone densitometry dataset",
+      "terulet": "Metabolic and endocrine health",
+      "modalitas": "Dual energy x-ray absorptiometry (DXA), clinical data",
+      "url": "https://drive.google.com/drive/folders/1HmLTG4GFgB2s4D0x7TTRx8vV_VWY3sW3",
+      "hozzaferes": "nyilt",
+      "eredet": "Iran",
+      "regio": [
+        "EMR"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Born in Bradford",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, health data, clinical data, dental data",
+      "url": "https://borninbradford.nhs.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "Japan",
+      "regio": [
+        "WPRO"
+      ],
+      "megjegyzes": "Bradford based biobank following 60,000 individuals. Providing multiomic data, health data, clinical data, dental data and others. Inlcudes trios and pregnancy data."
+    },
+    {
+      "nev": "BRACS: BReAst Carcinoma Subtyping",
+      "terulet": "Cancer-related",
+      "modalitas": "Imaging (H&E histopathological images)",
+      "url": "https://www.bracs.icar.cnr.it/",
+      "hozzaferes": "kerelmes",
+      "eredet": "EU (Italy and Switzerland)",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Breast Cancer Now UK",
+      "terulet": "Cancer-related, biobank",
+      "modalitas": "Omics data",
+      "url": "https://breastcancernow.org/our-research/information-for-researchers/apply-to-our-biobank",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "UK-based biobank for breast tissue, breast cells and blood samples from breast cancer patients"
+    },
+    {
+      "nev": "Cardiac atlas project",
+      "terulet": "Cardiology",
+      "modalitas": "Imaging (cardiac MRI)",
+      "url": "https://www.cardiacatlas.org/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Atlas of various cardiac MRI projects."
+    },
+    {
+      "nev": "cBioPortal",
+      "terulet": "Cancer-related",
+      "modalitas": "Omics (mutation and RNA-Seq)",
+      "url": "https://www.cbioportal.org/",
+      "hozzaferes": "nyilt",
+      "eredet": "Several countries (mainly US, EU, UK, Canada, and China)",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "China Kadoorie Biobank",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, clinical data",
+      "url": "https://www.ckbiobank.org/data-access",
+      "hozzaferes": "kerelmes",
+      "eredet": "China",
+      "regio": [
+        "WPRO"
+      ],
+      "megjegyzes": "Over 512,000 adult participants. Questionnaires, physical measurements, blood and biological samples"
+    },
+    {
+      "nev": "Clinical Practice Research Datalink (CPRD)",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Clinical (GP records)",
+      "url": "https://www.cprd.com/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Clinical Proteomic Tumor Analysis Consortium (CPTAC)",
+      "terulet": "Cancer-related",
+      "modalitas": "Omics (genomics and proteomics) and clinical data",
+      "url": "https://registry.opendata.aws/cptac-3/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "include RNA-Seq Gene Expression Quantification data of several cancer types"
+    },
+    {
+      "nev": "Clinical Record Interactive Search (CRIS)",
+      "terulet": "General health, mental health and other diseases",
+      "modalitas": "Clinical and others (statistic)",
+      "url": "https://www.maudsleybrc.nihr.ac.uk/facilities/clinical-record-interactive-search-cris/cris-data-linkages/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Provides access to anonymised mental health records from the UK’s NHS Trusts"
+    },
+    {
+      "nev": "Data gov",
+      "terulet": "General health and other diseases",
+      "modalitas": "Others (statistic)",
+      "url": "https://www.data.gov.uk/",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Breastfeeding, Pregnancy and birth"
+    },
+    {
+      "nev": "DataLoch",
+      "terulet": "General health",
+      "modalitas": "Clinical (GP records)",
+      "url": "https://dataloch.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "dbGaP",
+      "terulet": "General health and other diseases",
+      "modalitas": "Longitudinal omics data (genotype-phenotype)",
+      "url": "https://dbgap.ncbi.nlm.nih.gov/beta/home",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Database of genotype-phenotype. Needs quite a lot of paperwork to get access. This database holds data from various studies. Eg. Women's health initiative (mentioned above) and California Teachers Study (CTS): Whole Genome Sequences From Under-Represented Populations"
+    },
+    {
+      "nev": "Dementias Platform UK (DPUK)",
+      "terulet": "Dementia",
+      "modalitas": "Omics (genomic), imaging (MRI, PET), Clinical (GP records)",
+      "url": "https://portal.dementiasplatform.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Diabetes 130-US hospitals for years 1999-2008",
+      "terulet": "Metabolic and endocrine health",
+      "modalitas": "Clinical",
+      "url": "https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Discover-NOW",
+      "terulet": "General health",
+      "modalitas": "Clinical (GP records)",
+      "url": "https://discover-now.co.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Estonian Biobank",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics",
+      "url": "https://genomics.ut.ee/en/content/estonian-biobank",
+      "hozzaferes": "kerelmes",
+      "eredet": "Estonia",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Biobank of Estonia. Mostly genomic array with some WGS and other omics. (There is an application cost on top of compute cost.)"
+    },
+    {
+      "nev": "European Genome-Phenome Archive (EGA)",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics data (genotype-phenotype)",
+      "url": "https://ega-archive.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "several countries (especially EU and Africa?)",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "It's like the EU equivalent of dbGaP. Seems easier to get access. eg. Breast Cancer in very young women https://ega-archive.org/studies/EGAS00001001908"
+    },
+    {
+      "nev": "European Nucleotide Archive (ENA)",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (sequencing, genomics and transcriptomics)",
+      "url": "https://www.ebi.ac.uk/ena/browser/home",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Fingenious",
+      "terulet": "Cancer-related, general health biobank",
+      "modalitas": "Omics, health data, imaging data",
+      "url": "https://app.fingenious.fi/cohorts",
+      "hozzaferes": "kerelmes",
+      "eredet": "Finland",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "GDM Dataset",
+      "terulet": "Maternal health",
+      "modalitas": "Clinical",
+      "url": "https://figshare.com/articles/dataset/GDM_Dataset_xlsx/21806472/1?file=38695140",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "retrospective dataset of 16,651 pregnancies monitored at St. Mary’s Hospital, London"
+    },
+    {
+      "nev": "Generation Scotland",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, clinical data",
+      "url": "https://genscot.ed.ac.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Genomics, epigenomics, metabolomics and proteomics of Scottish population (~20K individuals)."
+    },
+    {
+      "nev": "Genes & Health",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, health data",
+      "url": "https://www.genesandhealth.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Focused on British-Pakistani and -Bangladeshi communities."
+    },
+    {
+      "nev": "Genomics England",
+      "terulet": "Rare diseases and cancer-related, biobank",
+      "modalitas": "Omics, clinical data",
+      "url": "https://www.genomicsengland.co.uk/research/data",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Various datasets: 100K Genomes, NHS Genomic Medicine Services. Both for rare disease and cancer research. Working on new datasets such as multimodal for cancer. The current omic data is not available to all, only for pilot studies."
+    },
+    {
+      "nev": "GEO datasets",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (transcriptomics and genomics)",
+      "url": "https://www.ncbi.nlm.nih.gov/gds/",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "curated gene expression DataSets, as well as original Series and Platform records in the Gene Expression Omnibus (GEO) repository. (Eg. Intergrative Multi-Omics of Asian Pregnant Mother https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182409)"
+    },
+    {
+      "nev": "GTEx",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (transcriptomics), histology (genomics + phenotypes with restricted access).",
+      "url": "https://www.gtexportal.org/home/aboutAdultGtex",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Heavily used resource for normal tissue gene expression - 233 of 714 tissues from women."
+    },
+    {
+      "nev": "HC18 Challenge",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "Imaging (ultrasound images)",
+      "url": "https://zenodo.org/records/1327317",
+      "hozzaferes": "nyilt",
+      "eredet": "Netherlands",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Health Data Research UK (HDRUK)",
+      "terulet": "General health, cancer-related and other diseases",
+      "modalitas": "Clinical, omics (transcriptomics, genomics), imaging (MRI), and others (Statistics)",
+      "url": "https://healthdatagateway.org/en",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "This data repository includes lots of diseases (e.g., breast, ovarian and acute presentation of pregnant women)"
+    },
+    {
+      "nev": "Healthy and sustainable places data service",
+      "terulet": "Lifestyle",
+      "modalitas": "Lifestyle and others (statistic)",
+      "url": "https://data.hasp.ac.uk/browser/landing",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Heart Disease (UCI machine learning repository)",
+      "terulet": "Cardiovascular",
+      "modalitas": "Clinical (various)",
+      "url": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+      "hozzaferes": "nyilt",
+      "eredet": "Several countries (US, Hungary, Switzerland)",
+      "regio": [
+        "EURO",
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Heart failure clinical records",
+      "terulet": "Cardiovascular",
+      "modalitas": "Clinical (various)",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181001",
+      "hozzaferes": "nyilt",
+      "eredet": "Pakistan",
+      "regio": [
+        "EMR"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Human Metabolome Database (HMBD)",
+      "terulet": "Other diseases",
+      "modalitas": "Omics (metabolomics)",
+      "url": "https://hmdb.ca/",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "Database of human metabolome studies."
+    },
+    {
+      "nev": "Human protein atlas",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (transcriptomics, proteomics)",
+      "url": "https://www.proteinatlas.org/",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "Gene expression, protein abundance of tissues, cell lines, in healthy and disease human samples."
+    },
+    {
+      "nev": "Indian Institute of Science Fetal Heart Sound Database (IIScFHSDB)",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "Fetal phonocardiography",
+      "url": "https://physionet.org/content/fetalheartsounddata/1.0/",
+      "hozzaferes": "nyilt",
+      "eredet": "India",
+      "regio": [
+        "SEAR"
+      ],
+      "megjegyzes": "small dataset (60 subjects)"
+    },
+    {
+      "nev": "Intelligent detection for PCOS dataset",
+      "terulet": "Metabolic and endocrine health",
+      "modalitas": "Clinical",
+      "url": "https://www.sciencedirect.com/science/article/pii/S030372072030441X?casa_token=bRD_OHd1yooAAAAA:jCMPpVBl3I3UHDurieav-Aw45XGICJD5BuvnRCH1QadBt7susBow2ntgg13iCJHbTg7IfCHz#abs0015",
+      "hozzaferes": "nyilt",
+      "eredet": "China",
+      "regio": [
+        "WPRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Irish Hip Fracture Database (IFHD) & metabolic and endocrine health",
+      "terulet": "Metabolic and endocrine health",
+      "modalitas": "Clinical",
+      "url": "https://www.noca.ie/audits/irish-hip-fracture-database/",
+      "hozzaferes": "kerelmes",
+      "eredet": "Ireland",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "LivWell",
+      "terulet": "Lifestyle",
+      "modalitas": "Demographic and socio-economic data",
+      "url": "https://zenodo.org/records/7277104",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "Global longitudinal dataset which includes a set of key indicators on women’s socio- economic status, health and well-being, access to basic services and demographic outcomes"
+    },
+    {
+      "nev": "Maternal health and high-risk pregnancy dataset",
+      "terulet": "Maternal health",
+      "modalitas": "Clinical",
+      "url": "https://ieee-dataport.org/documents/maternal-health-and-high-risk-pregnancy-dataset",
+      "hozzaferes": "kerelmes",
+      "eredet": "Bangladesh",
+      "regio": [
+        "SEAR"
+      ],
+      "megjegyzes": "include mother’s age, gravida (number of pregnancies), weight, height, blood pressure, gestational age, and fetal health status."
+    },
+    {
+      "nev": "Maternal health risk",
+      "terulet": "Maternal health",
+      "modalitas": "Clinical",
+      "url": "https://archive.ics.uci.edu/dataset/863/maternal+health+risk",
+      "hozzaferes": "nyilt",
+      "eredet": "Bangladesh",
+      "regio": [
+        "SEAR"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Maternal mental health symptom profiles",
+      "terulet": "Maternal mental health",
+      "modalitas": "Sociodemographic and clinical data",
+      "url": "https://zenodo.org/records/5070945",
+      "hozzaferes": "nyilt",
+      "eredet": "Switzerland",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "410 mothers, aim to exploratory obtain maternal mental health symptom profiles"
+    },
+    {
+      "nev": "MIDRC (NIH, USA)",
+      "terulet": "COVID-19",
+      "modalitas": "Medical imaging data (MRI, X-ray)",
+      "url": "https://www.midrc.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Repository for medical images related to COVID-19 and clinical data for development of medical image based AI for use in detection, diagnosis, prognosis and monitoring of COVID-19."
+    },
+    {
+      "nev": "MIMIC-III",
+      "terulet": "Critical care",
+      "modalitas": "Clinical (Patient demographics, clinical notes; procedure and diagnosis data (i.e ICD-9 coded data); patient outcome data (length of stay, etc.)), imaging reports; physiological (i.e. vital signs, lab reports); medication (i.e. prescriptions and administration details);",
+      "url": "https://mimic.mit.edu/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "De-identified health data for patients admitted to critical care at large tertiary care hospitals."
+    },
+    {
+      "nev": "MIMIC-IV",
+      "terulet": "Critical care",
+      "modalitas": "Same as MIMIC-III",
+      "url": "https://mimic.mit.edu/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Updated MIMIC-III includes increased data from previously 40,000 admissions to 523,740 admissions, electronic medication records, improved data structure including module (hospital, ICU, note, etc.), wider range of healthcare applications and research."
+    },
+    {
+      "nev": "MRC CBU openly available datasets resource",
+      "terulet": "Neurology",
+      "modalitas": "Imaging (MRI, fMRI), EEG, behavioural (eye-tracking)",
+      "url": "https://imaging.mrc-cbu.cam.ac.uk/methods/OpenDatasets",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Multi-Modality Ovarian Tumor Ultrasound (MMOTU) image dataset",
+      "terulet": "Cancer-related, gynaecology, ultrasonography",
+      "modalitas": "Imaging (2D transvaginal ultrasound images)",
+      "url": "https://github.com/cv516Buaa/MMOTU_DS2Net",
+      "hozzaferes": "nyilt",
+      "eredet": "China",
+      "regio": [
+        "WPR"
+      ],
+      "megjegyzes": "1469 2d ultrasound images and 170 contrast enhanced ultrasonography (CEUS) images with pixel-wise and global-wise annotations. Specifically designed for Unsupervised Cross-Domain Semantic Segmentation. See article: https://doi.org/10.48550/arXiv.2207.06799"
+    },
+    {
+      "nev": "National library of medicine (NCBI)",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (transcriptomics, genomics and proteomics)",
+      "url": "https://www.ncbi.nlm.nih.gov/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "NHS England digital",
+      "terulet": "Cancer-related and other diseases, gynaecology",
+      "modalitas": "Imaging (MRI, CT, X-ray) and clinical (GP records and patient information)",
+      "url": "https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "National data sets collect information from care records, systems and organisations. This is used to inform policy and monitor, and improve care. This data repository includes many diseases ( based on diagnosis code) and some specific topic to women (e.g., Female Genital Mutilation datasets)"
+    },
+    {
+      "nev": "Nightingale open science",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Imaging (microscopy)",
+      "url": "https://docs.ngsci.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "NIMH Data Archive (NDA)",
+      "terulet": "Mental health",
+      "modalitas": "Clinical, omics and neuro-signal recordings (EEG and EGG)",
+      "url": "https://www.nimh.nih.gov/",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "A centralised repository for US-funded mental health studies, including adolescent and adult datasets"
+    },
+    {
+      "nev": "OMI-DB",
+      "terulet": "Cancer-related",
+      "modalitas": "Imaging (Mammography)",
+      "url": "https://medphys.royalsurrey.nhs.uk/omidb/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Mammography imaging database (~750k)"
+    },
+    {
+      "nev": "OpenNeuro",
+      "terulet": "Neurology",
+      "modalitas": "Imaging (MRI, PET), EEG",
+      "url": "https://openneuro.org/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "OpenSafely",
+      "terulet": "General health",
+      "modalitas": "Clinical (GP records, hospital records)",
+      "url": "https://www.opensafely.org/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "OrbiGenAI - maternity care modeling",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "Demographic, Clinical, Others (statistic)",
+      "url": "https://github.com/OrbiGenAI-Innovations-Lab/Maternity-Care-Modeling-Predicting-Pregnancy-Outcomes-and-Mode-of-Delivery",
+      "hozzaferes": "nyilt",
+      "eredet": "India",
+      "regio": [
+        "SEAR"
+      ],
+      "megjegyzes": "data repository includes several datasets to predict pregnancy outcomes (e.g., complications) using machine learning and deep learning techniques"
+    },
+    {
+      "nev": "Our Future Health",
+      "terulet": "General health, biobank",
+      "modalitas": "Genotype, linked clinical records, health data",
+      "url": "https://research.ourfuturehealth.org.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "UK based biobank with a wider range of participant age than UK biobank, and more focus on diverse ethnic backgrounds."
+    },
+    {
+      "nev": "PhysioNet",
+      "terulet": "Cardiology, Neurology",
+      "modalitas": "ECG and EEG",
+      "url": "https://physionet.org/about/database/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "about physiological signals. This data repository includes several smaller datasets, which has up to 150-160 female records (~50% total records)"
+    },
+    {
+      "nev": "PhysioNet - noninvasive fetal ECG",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "ECG",
+      "url": "https://physionet.org/content/nifeadb/1.0.0/",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Pima Indians diabetes database",
+      "terulet": "Metabolic and endocrine health",
+      "modalitas": "Clinical",
+      "url": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database/data}{Pima Indians Diabetes Database",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Pioneer",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Clinical records",
+      "url": "https://www.pioneerdatahub.co.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "Postnatal maternal depression dataset in South African community cohort",
+      "terulet": "Maternal mental health",
+      "modalitas": "Sociodemographic",
+      "url": "https://zenodo.org/records/7131914",
+      "hozzaferes": "nyilt",
+      "eredet": "US and South Africa",
+      "regio": [
+        "AMRO",
+        "AFR"
+      ],
+      "megjegyzes": "Small dataset with around 80 participant, South African cohort, the study investigated associations between adverse maternal experiences with postnatal maternal depression and child social-emotional outcomes"
+    },
+    {
+      "nev": "PREdiction of Clinical Outcomes from Genomic profiles (PRECOG)",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (genomic profiles) and clinical outcomes",
+      "url": "https://precog.stanford.edu/",
+      "hozzaferes": "nyilt",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Genomic profiles and clinical outcomes of many disease including breast and ovarian cancer (data deposited in GEO, mentioned below)"
+    },
+    {
+      "nev": "PRIDE / Proteomics Identifications Database",
+      "terulet": "General health, cancer-related and other diseases",
+      "modalitas": "Omics (proteomics)",
+      "url": "https://www.ebi.ac.uk/pride/",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "Repository of proteomic studies (eg.A disease of metabolism: Defining lipedema’s molecular hallmarks by multi-omics approach for disease prediction https://www.ebi.ac.uk/pride/archive/projects/PXD058489 )"
+    },
+    {
+      "nev": "QResearch",
+      "terulet": "Menopause",
+      "modalitas": "Clinical and laboratory test data",
+      "url": "https://www.qresearch.org/data/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "captures menopause-related consultations and prescriptions, enabling large-scale observational studies of menopausal symptom management and associated risks"
+    },
+    {
+      "nev": "Reproductive cell atlas",
+      "terulet": "General health, cancer-related and other diseases",
+      "modalitas": "Omics (single-cell omics data)",
+      "url": "https://www.reproductivecellatlas.org/index.html",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Derived from this paper https://pmc.ncbi.nlm.nih.gov/articles/PMC11387200/ - Vento's lab works a lot on women's health https://ventolab.org/"
+    },
+    {
+      "nev": "Roadmap epigenomics project",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (epigenomic)",
+      "url": "https://egg2.wustl.edu/roadmap/web_portal/index.html",
+      "hozzaferes": "nyilt",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Reference human epigenomic samples (has sex-specific samples and tissue sampes)"
+    },
+    {
+      "nev": "SAIL databank",
+      "terulet": "General health",
+      "modalitas": "Clinical and others (statistic)",
+      "url": "https://saildatabank.com/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "SEER breast cancer Data",
+      "terulet": "Cancer-related",
+      "modalitas": "Clinical, Other (statistic)",
+      "url": "https://ieee-dataport.org/open-access/seer-breast-cancer-data",
+      "hozzaferes": "nyilt",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "SEER Program of the NCI,"
+    },
+    {
+      "nev": "Single cell expression atlas",
+      "terulet": "Cancer-related and other diseases",
+      "modalitas": "Omics (single-cell expression data)",
+      "url": "https://www.ebi.ac.uk/gxa/sc/home",
+      "hozzaferes": "nyilt",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Single cell gene expression across species"
+    },
+    {
+      "nev": "SNAP:EPICCS2",
+      "terulet": "Critical care",
+      "modalitas": "Clinical data",
+      "url": "https://www.rcoa.ac.uk/snap-2-epiccs-patient-information",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Examines provision of critical care after surgery, epidemiology of perioperative risk, outcomes and critical care after inpatient surgery in the UK."
+    },
+    {
+      "nev": "Study of women's health across the nation",
+      "terulet": "Menopause",
+      "modalitas": "Demographics, lifestyle, psychosocial, health outcomes and etc",
+      "url": "https://www.swanstudy.org/swan-research/data-access/",
+      "hozzaferes": "kerelmes",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "longitudinal data on hormonal changes, menopausal symptoms, and health outcomes in midlife women"
+    },
+    {
+      "nev": "The Cancer Genome Atlas Program (TCGA)",
+      "terulet": "Cancer-related",
+      "modalitas": "Imaging (CT, H&E imaging), omics (transcriptomics, genomics, proteomics), clinical data",
+      "url": "https://www.cancer.gov/ccg/research/genome-sequencing/tcga",
+      "hozzaferes": "nyilt",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "The Cancer Imaging Archive (TCIA)",
+      "terulet": "Cancer-related",
+      "modalitas": "Imaging (CT, PET), omics (transcriptomics, genomics), clinical data",
+      "url": "https://www.cancerimagingarchive.net/",
+      "hozzaferes": "nyilt",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "The Health Improvement Network (THIN)",
+      "terulet": "General health",
+      "modalitas": "Clinical data (electronic health records)",
+      "url": "https://www.the-health-improvement-network.com/de/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK, France, Italy, Spain, Belgium, Romania",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "electronic health record database from general practices, including information on symptoms, diagnoses, prescriptions, and lab results, often used in women’s health studies"
+    },
+    {
+      "nev": "The metabolomics workbench",
+      "terulet": "Maternal health, gynaecology",
+      "modalitas": "Omics (metabolomics)",
+      "url": "https://www.metabolomicsworkbench.org/",
+      "hozzaferes": "nyilt",
+      "eredet": "USA",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Similar to HMBD. (eg. Multiomics Longitudinal Modeling of Preeclamptic Pregnancies (part I) https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Study&StudyType=&StudyID=ST001889 )"
+    },
+    {
+      "nev": "The million women study",
+      "terulet": "Lifestyle",
+      "modalitas": "Lifestyle",
+      "url": "https://www.ceu.ox.ac.uk/research/the-million-women-study/about-the-study",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Investigates the effects of medications and behaviours on the risk of women developing diseases"
+    },
+    {
+      "nev": "UKBiobank",
+      "terulet": "General health, biobank",
+      "modalitas": "Omics, multimodal (ECGs, MRIs, etc), activity monitor, health data",
+      "url": "https://www.ukbiobank.ac.uk/",
+      "hozzaferes": "kerelmes",
+      "eredet": "UK",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Can also be used to study women-only conditions or sex-specifc features of conditions. ~273k women, although mostly white-British."
+    },
+    {
+      "nev": "UNICEF data",
+      "terulet": "Maternal and fetal health",
+      "modalitas": "Demographic, Others (statistic)",
+      "url": "https://data.unicef.org/resources/dataset/maternal-health-data/",
+      "hozzaferes": "nyilt",
+      "eredet": "Internaitonal",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": null
+    },
+    {
+      "nev": "USOVA3D annotated 3D ovarian ultrasound images",
+      "terulet": "Gynacology, ultrasonography",
+      "modalitas": "Imaging (3D transvaginal ultrasound volumes)",
+      "url": "https://usova3d.um.si/wordpress/",
+      "hozzaferes": "kerelmes",
+      "eredet": "slovenia",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "created for the impartial validation of ovarian follicle detection procedures in 3D ultrasound images of ovaries see article: https://doi.org/10.1016/j.cmpb.2020.105621"
+    },
+    {
+      "nev": "UterUS annotated dataset of uteri in volumetric ultrasound data",
+      "terulet": "Gynacology, ultrasonography",
+      "modalitas": "Imaging (3D transvaginal ultrasound volumes)",
+      "url": "https://github.com/UL-FRI-LGM/UterUS",
+      "hozzaferes": "nyilt",
+      "eredet": "several EU countries (not one in particular)",
+      "regio": [
+        "EURO"
+      ],
+      "megjegyzes": "Made for Automatic Segmentation and Alignment of Uterine Shapes from 3D Ultrasound Data with manual annotations see article: 10.1016/j.compbiomed.2024.108794"
+    },
+    {
+      "nev": "WHO",
+      "terulet": "Maternal health, cancer-related",
+      "modalitas": "Demographic, others (statistic)",
+      "url": "https://platform.who.int/data/maternal-newborn-child-adolescent-ageing",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "national policy and social economic"
+    },
+    {
+      "nev": "Women's health initiative",
+      "terulet": "General health, other diseases",
+      "modalitas": "Omics (metabolomics, epigenomics, proteomics, and transcriptomics )",
+      "url": "https://www.whi.org/md/working-with-whi-data",
+      "hozzaferes": "kerelmes",
+      "eredet": "US",
+      "regio": [
+        "AMRO"
+      ],
+      "megjegyzes": "Trans-Omics for Precision Medicine - longstanding project. Its data is deposited in the data repos mentioned below."
+    },
+    {
+      "nev": "World bank open data",
+      "terulet": "Lifestyle",
+      "modalitas": "Others (statistic)",
+      "url": "https://data360.worldbank.org/en/people",
+      "hozzaferes": "nyilt",
+      "eredet": "global",
+      "regio": [
+        "Global"
+      ],
+      "megjegyzes": "People: Investing in people through education, health, social protection, and gender equality"
+    }
+  ]
+}

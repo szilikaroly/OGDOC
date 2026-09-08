@@ -1,0 +1,206 @@
+{
+  "megnevezes": "Életkorhoz kötött kötelező védőoltások — 2026",
+  "modul": 30,
+  "forras": "NNK módszertani levele a 2026. évi védőoltásokról (2026.03.30.), a 18/1998. (VI. 3.) NM rendelet felhatalmazása alapján.",
+  "ervenyes": "2026",
+  "note": "KÉT ÜTEMEZÉS, ÉS ÖSSZEKEVERNI ŐKET SZERKEZETI HIBA.\n\nA FOLYAMATOS oltások életkorhoz kötöttek (hónapban). A KAMPÁNYOLTÁSOK viszont ISKOLAI ÉVFOLYAMHOZ — a Módszertani levél ezt kimondja: „A kampányoltások iskolai osztályokra és nem a tanulók életkorára vonatkoznak.” Egy 12 éves harmadikos és egy 12 éves hatodikos NEM ugyanazt az oltást kapja, és a levél külön rendelkezik arról, mikor kell alsóbb osztályost is oltani (ha feltételezhető, hogy sosem éri el a kijelölt osztályt).\n\nA naptár aláírásra vár: az érvényesség ÉVHEZ kötött, és a következő Módszertani levél elavulttá teszi.",
+  "allapotok": [
+    {
+      "kod": "beadva",
+      "label_hu": "Beadva",
+      "miert": "Oltóanyag tétel- és lejáratszámmal együtt."
+    },
+    {
+      "kod": "halasztva",
+      "label_hu": "Halasztva",
+      "miert": "MEGNEVEZETT okkal és ÚJ IDŐPONTTAL. Halasztás időpont nélkül nem halasztás."
+    },
+    {
+      "kod": "elutasitva",
+      "label_hu": "A szülő megtagadta",
+      "miert": "KÜLÖN ÁLLAPOT: a kötelező oltás megtagadása jogkövetkezménnyel és jelentési kötelezettséggel jár."
+    },
+    {
+      "kod": "ellenjavallt",
+      "label_hu": "Tartósan ellenjavallt",
+      "miert": "Dokumentált orvosi ellenjavallat. Nem mulasztás."
+    },
+    {
+      "kod": "atesett",
+      "label_hu": "Átesett a betegségen",
+      "miert": "Varicellánál külön eset: aki átesett rajta, nem oltandó — de a beadás nem jelent kockázatot."
+    }
+  ],
+  "naptar": [
+    {
+      "id": "olt.bcg",
+      "utemezes": "folyamatos",
+      "korHonap": "0",
+      "oltas": "BCG",
+      "tipus": "kotelezo",
+      "megjegyzes": "A szülészeti intézményben, illetőleg a születést követő 4 HÉTEN BELÜL. Az elmaradt BCG-t minél korábban, de legfeljebb 1 ÉVES KORIG. A késleltetett BCG nem befolyásolja a csecsemőkori oltások ütemezését."
+    },
+    {
+      "id": "olt.dtpa_ipv_hib.2",
+      "utemezes": "folyamatos",
+      "korHonap": "2",
+      "oltas": "DTPa+IPV+Hib (alapimmunizálás 1.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.pcv.2"
+      ]
+    },
+    {
+      "id": "olt.pcv.2",
+      "utemezes": "folyamatos",
+      "korHonap": "2",
+      "oltas": "PCV (alapimmunizálás 1.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.dtpa_ipv_hib.2"
+      ],
+      "megjegyzes": "Két KÜLÖNBÖZŐ testtájékra a DTPa+IPV+Hib-bel egyidejűleg."
+    },
+    {
+      "id": "olt.dtpa_ipv_hib.3",
+      "utemezes": "folyamatos",
+      "korHonap": "3",
+      "oltas": "DTPa+IPV+Hib (alapimmunizálás 2.)",
+      "tipus": "kotelezo"
+    },
+    {
+      "id": "olt.dtpa_ipv_hib.4",
+      "utemezes": "folyamatos",
+      "korHonap": "4",
+      "oltas": "DTPa+IPV+Hib (alapimmunizálás 3.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.pcv.4"
+      ],
+      "megjegyzes": "Ha az alapimmunizálás csak egyéves kor után fejeződik be, a 3. részlet és az első emlékeztető között legalább 6 HÓNAP teljen el."
+    },
+    {
+      "id": "olt.pcv.4",
+      "utemezes": "folyamatos",
+      "korHonap": "4",
+      "oltas": "PCV (alapimmunizálás 2.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.dtpa_ipv_hib.4"
+      ]
+    },
+    {
+      "id": "olt.pcv.12",
+      "utemezes": "folyamatos",
+      "korHonap": "12",
+      "oltas": "PCV (emlékeztető)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.varicella.12"
+      ]
+    },
+    {
+      "id": "olt.varicella.12",
+      "utemezes": "folyamatos",
+      "korHonap": "12",
+      "oltas": "Varicella (1.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.pcv.12"
+      ],
+      "megjegyzes": "A pneumococcus emlékeztetővel egyidejűleg. Aki már átesett bárányhimlőn, nem oltandó — a beadás azonban nem jelent kockázatot."
+    },
+    {
+      "id": "olt.mmr.15",
+      "utemezes": "folyamatos",
+      "korHonap": "15",
+      "oltas": "MMR (1.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.varicella.15"
+      ]
+    },
+    {
+      "id": "olt.varicella.15",
+      "utemezes": "folyamatos",
+      "korHonap": "15",
+      "oltas": "Varicella (2.)",
+      "tipus": "kotelezo",
+      "egyidejuleg": [
+        "olt.mmr.15"
+      ],
+      "megjegyzes": "Az MMR-rel egyidejűleg."
+    },
+    {
+      "id": "olt.dtpa_ipv.72",
+      "utemezes": "folyamatos",
+      "korHonap": "72",
+      "oltas": "DTPa+IPV (2. emlékeztető)",
+      "tipus": "kotelezo",
+      "megjegyzes": "Betöltött 6 éves korban."
+    },
+    {
+      "id": "olt.mmr.k6",
+      "utemezes": "kampany",
+      "evfolyam": "6. évfolyam",
+      "oltas": "MMR (újraoltás)",
+      "tipus": "kotelezo",
+      "honap": "szeptember"
+    },
+    {
+      "id": "olt.dtap.k6",
+      "utemezes": "kampany",
+      "evfolyam": "6. évfolyam",
+      "oltas": "dTap (emlékeztető)",
+      "tipus": "kotelezo",
+      "honap": "október",
+      "megjegyzes": "Aki ehhez a korosztályhoz tartozik, de korábban már kapott dTap emlékeztetőt, nem oltandó."
+    },
+    {
+      "id": "olt.hepb.k7",
+      "utemezes": "kampany",
+      "evfolyam": "7. évfolyam",
+      "oltas": "Hepatitis B (sorozatoltás)",
+      "tipus": "kotelezo",
+      "honap": "szeptember–október–március",
+      "megjegyzes": "HÁROM részlet. Az újszülöttkori HBV-programban sorozatoltásban részesített csecsemőket serdülőkorban NEM kell újraoltani — dokumentációval igazolva."
+    },
+    {
+      "id": "olt.hpv.k7",
+      "utemezes": "kampany",
+      "evfolyam": "7. évfolyam",
+      "oltas": "HPV",
+      "tipus": "ajanlott",
+      "honap": "szeptember",
+      "megjegyzes": "ÖNKÉNTES: nem minden 7. évfolyamos oltandó. A hepatitis B kötelező, a HPV nem — a kettő egyidejű beadása ezért külön szervezést kíván."
+    }
+  ],
+  "idokozok": [
+    {
+      "id": "ik.inaktivalt",
+      "szabaly": "Különböző INAKTIVÁLT oltóanyagok egyszerre vagy időköz nélkül bármikor beadhatók.",
+      "napMin": 0
+    },
+    {
+      "id": "ik.inaktivalt_elo",
+      "szabaly": "Inaktivált és ÉLŐVÍRUS-tartalmú vakcina (vagy BCG) egyidejűleg, időköz nélkül adható.",
+      "napMin": 0
+    },
+    {
+      "id": "ik.elo_elo",
+      "szabaly": "Két ÉLŐVÍRUS-vakcina egyszerre adható; ha NEM egyszerre, legalább 4 HÉT intervallum.",
+      "napMin": 28
+    },
+    {
+      "id": "ik.elo_bcg",
+      "szabaly": "Élővírus-vakcina és BCG között (ha nem egyidejű) 4 HÉT.",
+      "napMin": 28
+    },
+    {
+      "id": "ik.tetanusz",
+      "szabaly": "Sérülés miatti tetanusz posztexpozíciós profilaxis után 6–12 éves gyermeknél a soron következő tetanusz-komponensű oltás 1 HÓNAP intervallummal.",
+      "napMin": 30
+    }
+  ],
+  "hitelesitesek": []
+}

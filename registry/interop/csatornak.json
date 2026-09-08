@@ -1,0 +1,107 @@
+{
+ "megnevezes": "Kommunikációs csatornák",
+ "modul": 8,
+ "note": "A NÉGY KAPU (azonosság, fogalom, egység, eszköz-QC) minden csatornára ugyanaz. A CSATORNÁK KÉPESSÉGE VISZONT NEM.\n\nEgy HL7-üzenet hordoz betegazonosítót, nyugtázást és időbélyeget. Egy soros vonalon érkező mérés egyiket sem. Ha a rendszer egyformán kezeli őket, akkor vagy a HL7-et kezeli feleslegesen szigorúan, vagy — és ez a rosszabb — a soros mérést kezeli olyan bizalommal, amit az nem érdemel: egy betegazonosító nélküli mérés némán a rossz laphoz kerül.\n\nEZÉRT MINDEN CSATORNÁHOZ TARTOZIK KÉPESSÉGLISTA ÉS PÓTLÁSI MÓD. A „nincs betegazonosító” nem hiányosság, amit el kell hallgatni, hanem tulajdonság, amihez eljárás kell.",
+ "csatornak": [
+  {
+   "id": "his",
+   "megnevezes": "Kórházi rendszer (HIS)",
+   "atvitel": "TCP/MLLP vagy REST over TLS",
+   "formatum": "HL7 v2.x ADT / ORU, vagy FHIR R4",
+   "allapot": "feltetelreVar",
+   "betegazonosito": true, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [],
+   "irany": "ketiranyu",
+   "leiras": "A felvétel, áthelyezés és elbocsátás (ADT A01/A02/A03) forrása. A képességei teljesek: az üzenet önmagában elég. A csatlakozáshoz intézményi integrációs megállapodás és tesztkörnyezet kell."
+  },
+  {
+   "id": "lis",
+   "megnevezes": "Laborrendszer (LIS)",
+   "atvitel": "TCP/MLLP",
+   "formatum": "HL7 v2.x ORU^R01",
+   "allapot": "feltetelreVar",
+   "betegazonosito": true, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [],
+   "irany": "ketiranyu",
+   "leiras": "Laboreredmények fogadása és rendelés küldése. A LOINC-leképezés és a mértékegység-egyeztetés kötelező: az 5,0 mg/dL kreatinin és az 5,0 µmol/L nem ugyanaz a beteg."
+  },
+  {
+   "id": "poct",
+   "megnevezes": "Betegágy melletti mérés (POCT)",
+   "atvitel": "POCT1-A2 vagy gyártóspecifikus",
+   "formatum": "HL7 vagy XML",
+   "allapot": "tervezett",
+   "betegazonosito": true, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [],
+   "irany": "be",
+   "leiras": "Vércukor, vérgáz, hemoglobin az ágy mellett. EGYEDÜLI CSATORNA, ahol az eszköz-minőségellenőrzés (QC) kapuja is fut: a lejárt kontroll melletti mérés nem vehető át."
+  },
+  {
+   "id": "pacs",
+   "megnevezes": "Képarchívum (PACS)",
+   "atvitel": "DICOM C-FIND / C-MOVE / WADO-RS",
+   "formatum": "DICOM",
+   "allapot": "feltetelreVar",
+   "betegazonosito": true, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [],
+   "irany": "ketiranyu",
+   "leiras": "Képválasztás a leletre. A `BurnedInAnnotation` hiánya NEM azt jelenti, hogy nincs ráégetett azonosító — csak azt, hogy a küldő nem nyilatkozott róla."
+  },
+  {
+   "id": "eeszt",
+   "megnevezes": "EESZT",
+   "atvitel": "SOAP/REST over TLS, ágazati tanúsítvánnyal",
+   "formatum": "EESZT sémák",
+   "allapot": "tervezett",
+   "betegazonosito": true, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [],
+   "irany": "ketiranyu",
+   "leiras": "Országos tér. Az ide küldött üzenet ELHAGYJA a rendszert, és attól kezdve nem a miénk: a hibás belső bejegyzés javítható, az országos térbe küldött nem. Négy kapu védi (lásd `core/eeszt/`)."
+  },
+  {
+   "id": "serial",
+   "megnevezes": "Soros vonal (RS-232 / RS-485)",
+   "atvitel": "soros port, 9600–115200 baud, gyártói kábelezés",
+   "formatum": "sorokra tagolt ASCII, gyártóspecifikus (ASTM E1381/E1394 vagy saját)",
+   "allapot": "tervezett",
+   "betegazonosito": false, "nyugtazas": false, "idobelyeg": false, "mertekegyseg": false,
+   "potlas": [
+    "A BETEGAZONOSÍTÓT a mérés ELINDÍTÁSAKOR rögzítjük, és a beérkező adatot ahhoz kötjük — a hozzárendelés külön, naplózott lépés, nem az üzenet része.",
+    "A NYUGTÁZÁS helyett a fogadó oldal folytonosságot ellenőriz: sorszám- vagy időrés-kihagyás esetén hiányjelzés. Az elveszett mérés csendes volna, ezért ezt aktívan kell keresni.",
+    "AZ IDŐBÉLYEGET a fogadó adja, és az eszköz saját idejét külön mezőben őrizzük meg — a kettő eltérése maga is adat (az eszközóra elcsúszása).",
+    "A MÉRTÉKEGYSÉGET az eszközprofil adja, nem az üzenet. Profil nélküli eszköztől érkező szám NEM vehető át: mértékegység nélküli szám nem adat."
+   ],
+   "irany": "be",
+   "leiras": "Mérleg, magzati monitor, vérgázanalizátor, spirométer. A legrégebbi és a legcsupaszabb csatorna — és a valóságban ott van. Ha a rendszer nem ismeri el, a mérés kézzel kerül be, gépelési hibával együtt: a 3,450 kg-ból 34,50 kg lesz, és a percentilis némán hamis."
+  },
+  {
+   "id": "text",
+   "megnevezes": "Egyszerű szöveges bemenet",
+   "atvitel": "fájl feltöltése, vágólap, beillesztett szöveg",
+   "formatum": "szabad szöveg, CSV vagy tagolt lista",
+   "allapot": "tervezett",
+   "betegazonosito": false, "nyugtazas": false, "idobelyeg": false, "mertekegyseg": false,
+   "potlas": [
+    "A BETEGAZONOSÍTÓT az illesztő ember adja meg — tudatos művelet, ezért naplózva és visszavonhatóan.",
+    "NYUGTÁZÁS nem értelmezhető: az átvétel a beillesztés pillanata, és ez elég.",
+    "AZ IDŐBÉLYEG a beillesztésé; ha a szövegben van dátum, azt KÜLÖN mezőben őrizzük, és eltérés esetén rákérdezünk.",
+    "A MÉRTÉKEGYSÉGET az OCR-réteg egységegyeztetője állapítja meg (`core/ocr/beolvasas.ts`); ha nem állapítható meg, a mező NEM tölthető ki."
+   ],
+   "irany": "be",
+   "leiras": "Beillesztett zárójelentés, külső laborlelet szövege, kézzel átvitt lista. Ugyanaz a probléma, mint a sorosnál — a különbség, hogy itt EMBER illeszti be, tehát a hozzárendelés tudatos. Az OCR-réteg ugyanezt kezeli képnél és PDF-nél."
+  },
+  {
+   "id": "research",
+   "megnevezes": "Kutatási export",
+   "atvitel": "fájl, kérelemre",
+   "formatum": "álnevesített CSV vagy JSON, adatszótárral",
+   "allapot": "mukodik",
+   "betegazonosito": false, "nyugtazas": true, "idobelyeg": true, "mertekegyseg": true,
+   "potlas": [
+    "A BETEGAZONOSÍTÓ SZÁNDÉKOSAN HIÁNYZIK: az export álnevesített. A kódkulcs nem az exportban van, és nem is mehet vele — ez nem hiány, hanem a művelet lényege."
+   ],
+   "irany": "ki",
+   "leiras": "Egyirányú, kifelé. A `phi: true` mezők kimaradnak, és a csomagolás megáll, ha betegadat-gyanús fájlnevet talál."
+  }
+ ]
+}

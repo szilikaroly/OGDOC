@@ -1,0 +1,1519 @@
+[
+  {
+    "id": "op.cs.adhesions",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Összenövések"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs"
+      },
+      {
+        "code": "mild",
+        "label_hu": "Enyhe"
+      },
+      {
+        "code": "moderate",
+        "label_hu": "Közepes"
+      },
+      {
+        "code": "severe",
+        "label_hu": "Kiterjedt",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen mértékű összenövéseket találtunk."
+      },
+      "whyItMatters": {
+        "hu": "Az ismételt császármetszés nehézségének és a műtéti idő megtervezésének bemenete a következő alkalommal."
+      }
+    }
+  },
+  {
+    "id": "op.cs.placenta",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A lepény eltávolítása"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "spontaneous",
+        "label_hu": "Spontán, kontrollált zsinórhúzással"
+      },
+      {
+        "code": "manual",
+        "label_hu": "Kézi lefejtés"
+      },
+      {
+        "code": "adherent",
+        "label_hu": "Tapadó lepény, nehezített eltávolítás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "accreta",
+        "label_hu": "Beékelődött lepény",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan távolítottuk el a lepényt."
+      },
+      "whyItMatters": {
+        "hu": "A KÉZI LEFEJTÉS több endometritisszel és vérvesztéssel jár, mint a spontán eltávolítás — ezért nem rutin, hanem indikációhoz kötött."
+      }
+    }
+  },
+  {
+    "id": "op.cs.prevScar",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A korábbi heg állapota"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "intact",
+        "label_hu": "Ép"
+      },
+      {
+        "code": "thin",
+        "label_hu": "Elvékonyodott"
+      },
+      {
+        "code": "dehiscence",
+        "label_hu": "Szétvált (dehiscentia)",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "rupture",
+        "label_hu": "Megrepedt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notApplicable",
+        "label_hu": "Nem volt korábbi metszés",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen állapotban találtuk az előző császármetszés hegét."
+      },
+      "whyItMatters": {
+        "hu": "A KÖVETKEZŐ terhesség VBAC-kockázatának közvetlen bemenete. Ezt csak az láthatja, aki a hasat megnyitotta — utólag rekonstruálhatatlan."
+      }
+    }
+  },
+  {
+    "id": "op.cs.uterotomy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Uterotomia típusa"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "lowTransverse",
+        "label_hu": "Alsó harántmetszés"
+      },
+      {
+        "code": "lowVertical",
+        "label_hu": "Alsó hosszmetszés"
+      },
+      {
+        "code": "classical",
+        "label_hu": "Klasszikus (test) metszés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "inverted-T",
+        "label_hu": "Fordított T",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "J",
+        "label_hu": "J-metszés",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan nyitottuk meg a méhet."
+      },
+      "pitfalls": {
+        "hu": "EZT AZ ADATOT A LEGGYAKRABBAN NEM TALÁLJÁK MEG a következő terhességnél — a zárójelentésben gyakran csak „császármetszés” szerepel. Ezért önálló, kódolt mező, és a `03` modul előtöltéssel visszakéri."
+      },
+      "whyItMatters": {
+        "hu": "A KÖVETKEZŐ TERHESSÉG legfontosabb adata: az alsó harántmetszés után a hüvelyi szülés megkísérelhető, a klasszikus és a T-metszés után a méhrepedés kockázata lényegesen nagyobb, és a hüvelyi szülés ellenjavallt."
+      }
+    }
+  },
+  {
+    "id": "op.intra.anesthesia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Érzéstelenítés típusa"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "spinal",
+        "label_hu": "Spinális"
+      },
+      {
+        "code": "epidural",
+        "label_hu": "Epidurális"
+      },
+      {
+        "code": "cse",
+        "label_hu": "Kombinált spinális-epidurális"
+      },
+      {
+        "code": "general",
+        "label_hu": "Általános"
+      },
+      {
+        "code": "local",
+        "label_hu": "Helyi"
+      },
+      {
+        "code": "sedation",
+        "label_hu": "Szedáció"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen érzéstelenítésben történt a beavatkozás."
+      },
+      "pitfalls": {
+        "hu": "Az általános érzéstelenítésre való átállás önálló, rögzítendő esemény — a nehéz légút terhesen gyakoribb, és a fel nem ismert nyelőcső-intubáció a szülészeti anesztézia klasszikus katasztrófája."
+      },
+      "whyItMatters": {
+        "hu": "Császármetszésnél a NEURAXIÁLIS érzéstelenítés az elsőként választandó: kisebb anyai halálozással jár, mint az általános, és a nő ébren találkozhat az újszülöttel."
+      }
+    }
+  },
+  {
+    "id": "op.intra.approach",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Behatolás"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pfannenstiel",
+        "label_hu": "Pfannenstiel"
+      },
+      {
+        "code": "joelCohen",
+        "label_hu": "Joel-Cohen"
+      },
+      {
+        "code": "midline",
+        "label_hu": "Median laparotomia"
+      },
+      {
+        "code": "laparoscopy",
+        "label_hu": "Laparoszkópia"
+      },
+      {
+        "code": "vaginal",
+        "label_hu": "Hüvelyi"
+      },
+      {
+        "code": "hysteroscopy",
+        "label_hu": "Hiszteroszkópia"
+      },
+      {
+        "code": "robotic",
+        "label_hu": "Robotasszisztált"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen úton történt a behatolás."
+      }
+    }
+  },
+  {
+    "id": "op.intra.closure",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Zárás"
+    },
+    "module": "op",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan történt a zárás, milyen varróanyaggal."
+      }
+    }
+  },
+  {
+    "id": "op.intra.closureAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A zárás befejezése"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor fejeződött be a műtét."
+      }
+    }
+  },
+  {
+    "id": "op.intra.complication",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Intraoperatív szövődmény"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "hemorrhage",
+        "label_hu": "Jelentős vérzés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "bladderInjury",
+        "label_hu": "Hólyagsérülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ureterInjury",
+        "label_hu": "Ureter-sérülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "bowelInjury",
+        "label_hu": "Bélsérülés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "hysterectomy",
+        "label_hu": "Méheltávolítás",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "anesthetic",
+        "label_hu": "Aneszteziológiai szövődmény",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "other",
+        "label_hu": "Egyéb"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Történt-e szövődmény a műtét során."
+      }
+    }
+  },
+  {
+    "id": "op.intra.deliveryAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A magzat kiemelésének időpontja"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor emelték ki a magzatot."
+      },
+      "whyItMatters": {
+        "hu": "A BEMETSZÉS–KIEMELÉS és a DÖNTÉS–KIEMELÉS idő is ebből számolódik. Az utóbbi az 1. kategóriás császármetszés minőségi mutatója."
+      }
+    }
+  },
+  {
+    "id": "op.intra.drain",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Drén"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "subfascial",
+        "label_hu": "Fascia alatti"
+      },
+      {
+        "code": "subcutaneous",
+        "label_hu": "Bőr alatti"
+      },
+      {
+        "code": "intraabdominal",
+        "label_hu": "Hasűri"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Helyeztek-e be drént."
+      }
+    }
+  },
+  {
+    "id": "op.intra.findings",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Műtéti lelet"
+    },
+    "module": "op",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Amit a műtét során találtunk."
+      },
+      "whyItMatters": {
+        "hu": "A STRUKTURÁLT VÁZ egyik szabad szöveges mezője. A modul nyitott kérdése erre a felosztásra jutott: a váz (behatolás, lelet, lépések, zárás) kódolt és kereshető, a részletek szabad szövegben. Teljesen strukturált leírás merev és lassú; teljesen szabad szöveg nem kereshető — a kereshetőséghez a váz elég."
+      }
+    }
+  },
+  {
+    "id": "op.intra.incisionAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Bemetszés időpontja"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor történt a bemetszés."
+      }
+    }
+  },
+  {
+    "id": "op.intra.qbl",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Műtéti vérvesztés (mért)"
+    },
+    "module": "op",
+    "datatype": "quantity",
+    "unit": "mL",
+    "domain": {
+      "min": 0,
+      "max": 10000,
+      "critical": [
+        null,
+        1000
+      ]
+    },
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A műtét során mért vérvesztés."
+      },
+      "howToMeasure": {
+        "hu": "MÉRT: a szívóedény térfogata mínusz az öblítőfolyadék, plusz a törlők tömegkülönbsége."
+      },
+      "pitfalls": {
+        "hu": "A BECSÜLT és a mért vérvesztés eltérése műtétben a legnagyobb: a vizuális becslés 30–50%-kal alábecsülhet. A `10` modul kumulatív vérvesztésével EGYÜTT olvasandó, ha a beteg vajúdott is."
+      }
+    }
+  },
+  {
+    "id": "op.intra.steps",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Az elvégzett lépések"
+    },
+    "module": "op",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A beavatkozás menete lépésenként."
+      }
+    }
+  },
+  {
+    "id": "op.post.complication",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Posztoperatív szövődmény"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "infection",
+        "label_hu": "Sebfertőzés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "endometritis",
+        "label_hu": "Endometritis",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "bleeding",
+        "label_hu": "Utóvérzés",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "vte",
+        "label_hu": "Thromboembolia",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "ileus",
+        "label_hu": "Bélparalízis"
+      },
+      {
+        "code": "readmission",
+        "label_hu": "Visszavétel",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Történt-e szövődmény a műtét után."
+      }
+    }
+  },
+  {
+    "id": "op.post.mobilization",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Mobilizáció"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "within6h",
+        "label_hu": "6 órán belül"
+      },
+      {
+        "code": "within24h",
+        "label_hu": "24 órán belül"
+      },
+      {
+        "code": "later",
+        "label_hu": "24 óra után"
+      },
+      {
+        "code": "bedrest",
+        "label_hu": "Ágynyugalom elrendelve"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kelt fel először a beteg."
+      },
+      "whyItMatters": {
+        "hu": "A korai mobilizáció a thrombosis-megelőzés része, és az ERAS-elvű ellátás egyik legkönnyebben teljesíthető eleme."
+      }
+    }
+  },
+  {
+    "id": "op.post.vte.prophylaxis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "VTE-profilaxis"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nem indokolt"
+      },
+      {
+        "code": "mechanical",
+        "label_hu": "Csak mechanikus (harisnya, kompresszió)"
+      },
+      {
+        "code": "lmwh",
+        "label_hu": "Kis molekulatömegű heparin"
+      },
+      {
+        "code": "both",
+        "label_hu": "Gyógyszeres és mechanikus együtt"
+      },
+      {
+        "code": "omitted",
+        "label_hu": "Indokolt lett volna, de elmaradt",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen thrombosis-megelőzés indult."
+      },
+      "whyItMatters": {
+        "hu": "Az „elmaradt” ÖNÁLLÓ érték, nem a „nem indokolt” változata: a kettő összemosása elrejti a rendszer legfontosabb megelőzhető mulasztását."
+      }
+    }
+  },
+  {
+    "id": "op.post.vte.startedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A VTE-profilaxis kezdete"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kapta a beteg az első adagot."
+      },
+      "whyItMatters": {
+        "hu": "A NEURAXIÁLIS ÉRZÉSTELENÍTÉS után a katéter eltávolításától számított időbeli távolság kell — a túl korai adag spinális haematomát okozhat."
+      }
+    }
+  },
+  {
+    "id": "op.post.wound",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Sebállapot"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "clean",
+        "label_hu": "Ép, száraz"
+      },
+      {
+        "code": "erythema",
+        "label_hu": "Bőrpír a seb körül"
+      },
+      {
+        "code": "discharge",
+        "label_hu": "Váladékozó",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "dehiscence",
+        "label_hu": "Szétnyílt",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "hematoma",
+        "label_hu": "Haematoma",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A műtéti seb ellenőrzésének lelete."
+      }
+    }
+  },
+  {
+    "id": "op.pre.antibiotic.timing",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Antibiotikus profilaxis időzítése"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "before",
+        "label_hu": "A bemetszés előtt 30–60 perccel"
+      },
+      {
+        "code": "atIncision",
+        "label_hu": "A bemetszéskor"
+      },
+      {
+        "code": "afterCordClamp",
+        "label_hu": "A köldökzsinór lefogása után"
+      },
+      {
+        "code": "none",
+        "label_hu": "Nem kapott",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": "notIndicated",
+        "label_hu": "Nem indokolt",
+        "flags": [
+          "notApplicable"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kapta a beteg a profilaktikus antibiotikumot."
+      },
+      "whyItMatters": {
+        "hu": "Császármetszésnél a BEMETSZÉS ELŐTTI adás kevesebb anyai sebfertőzéssel és endometritisszel jár, mint a köldökzsinór lefogása utáni — és az újszülöttre nézve nem jelent hátrányt. A régi, lefogás utáni gyakorlat elhagyása az egyik legjobban dokumentált szülészeti minőségjavítás."
+      }
+    }
+  },
+  {
+    "id": "op.pre.anticoag.lastDose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Utolsó antikoaguláns adag"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor kapta a beteg az utolsó véralvadásgátló adagot."
+      },
+      "pitfalls": {
+        "hu": "Ez a mező a mi rendelésünktől FÜGGETLENÜL kell: a beteg otthon szedett készítménye ugyanúgy számít, és arról a rendelési lista nem tud."
+      },
+      "whyItMatters": {
+        "hu": "A NEURAXIÁLIS ÉRZÉSTELENÍTÉS IDŐZÍTÉSÉNEK feltétele: profilaktikus kis molekulatömegű heparin után legalább 12 óra, terápiás adag után 24 óra szükséges a punkcióig. A spinális haematoma ritka, de maradandó bénulást okoz."
+      }
+    }
+  },
+  {
+    "id": "op.pre.asa",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "ASA fizikai státusz"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "I — egészséges"
+      },
+      {
+        "code": 2,
+        "label_hu": "II — enyhe szisztémás betegség"
+      },
+      {
+        "code": 3,
+        "label_hu": "III — súlyos szisztémás betegség"
+      },
+      {
+        "code": 4,
+        "label_hu": "IV — súlyos, életet veszélyeztető szisztémás betegség",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": 5,
+        "label_hu": "V — moribund beteg",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": 6,
+        "label_hu": "VI — agyhalott donor",
+        "flags": [
+          "redflag"
+        ]
+      }
+    ],
+    "codeSystem": {
+      "id": "asa-ps",
+      "version": "2020",
+      "source": "American Society of Anesthesiologists Physical Status Classification System (2020)"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A beteg általános állapotának aneszteziológiai besorolása."
+      },
+      "pitfalls": {
+        "hu": "A TERHESSÉG ÖNMAGÁBAN II-es besorolást jelent az ASA szerint — az egészséges várandós nem I-es. Ez a leggyakoribb besorolási hiba, és a kockázatkiigazított mutatókat rendszeresen torzítja."
+      },
+      "whyItMatters": {
+        "hu": "Az aneszteziológiai kockázat legelterjedtebb jelzője, és a műtéti kimeneteli mutatók kockázatkiigazításának alapja."
+      }
+    }
+  },
+  {
+    "id": "op.pre.bloodUnitsReady",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Előkészített vérkészítmény"
+    },
+    "module": "op",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 20
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Hány egység vörösvértest-koncentrátum áll készen."
+      },
+      "whyItMatters": {
+        "hu": "Placenta accreta és ismert vérzési kockázat mellett a KERESZTPRÓBÁLT vér a műtét megkezdésének feltétele — nem a vérzés kezdetekor rendelendő."
+      }
+    }
+  },
+  {
+    "id": "op.pre.consent",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Tájékozott beleegyezés megtörtént"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Aláírta-e a beteg a tájékozott beleegyezést."
+      },
+      "whyItMatters": {
+        "hu": "Jogi és etikai előfeltétel. SÜRGŐS helyzetben a beleegyezés beszerzése nem késleltetheti az életmentő beavatkozást — ilyenkor a körülmény dokumentálandó, nem a beleegyezés pótolandó utólag aláíratással."
+      }
+    }
+  },
+  {
+    "id": "op.pre.consent.discussedRisks",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megbeszélt kockázatok"
+    },
+    "module": "op",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Milyen kockázatokról tájékoztattuk a beteget."
+      },
+      "whyItMatters": {
+        "hu": "A beleegyezés attól tájékozott, hogy MIRŐL szólt. Az aláírás önmagában nem bizonyítja a tájékoztatás tartalmát — és épp ez a vitatott pont utólag."
+      }
+    }
+  },
+  {
+    "id": "op.pre.fastingSince",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Utolsó étkezés időpontja"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "Mikor evett vagy ivott utoljára a beteg."
+      },
+      "pitfalls": {
+        "hu": "A TISZTA FOLYADÉK 2 órával a műtét előtt megengedett, és a hosszú éhezés önmagában is árt. A „reggeltől semmit” gyakorlat nem bizonyítékon alapul."
+      },
+      "whyItMatters": {
+        "hu": "Az aspiráció kockázatának megítéléséhez. A terhes beteget TELE GYOMRÚNAK kell tekinteni a gyomorürülés lassulása és a gyomorszáj-elégtelenség miatt — sürgős műtétnél az éhezési idő nem vár be."
+      }
+    }
+  },
+  {
+    "id": "op.pre.urgency",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Sürgősség"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": 1,
+        "label_hu": "1 — azonnali: anyai vagy magzati életveszély",
+        "flags": [
+          "redflag"
+        ]
+      },
+      {
+        "code": 2,
+        "label_hu": "2 — sürgős: anyai vagy magzati veszélyeztetettség, de nem közvetlen"
+      },
+      {
+        "code": 3,
+        "label_hu": "3 — korai: befejezés szükséges, de nincs veszélyeztetettség"
+      },
+      {
+        "code": 4,
+        "label_hu": "4 — elektív: a nőnek és a csapatnak megfelelő időben"
+      }
+    ],
+    "codeSystem": {
+      "id": "nice-cs-urgency",
+      "version": "2011",
+      "source": "NICE CG132 / RCOG: a császármetszés sürgősségi kategóriái"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire sürgős a beavatkozás."
+      },
+      "pitfalls": {
+        "hu": "A kategória a MŰTÉT MEGKEZDÉSEKOR érvényes megítélés. Ha a helyzet közben változik, az új kategória külön bejegyzés — a visszamenőleges átminősítés a minőségi mutatót értelmetlenné teszi."
+      },
+      "whyItMatters": {
+        "hu": "A KATEGÓRIA IDŐT JELENT: az 1. kategóriánál a döntéstől a magzat kiemeléséig eltelt idő célértéke 30 perc, a 2.-nál 75 perc. Ez minőségi mutató és auditált adat — de a percszám nem öncél: a sietség maga is kockázat, és a kategória a KLINIKAI helyzetet írja le, nem a stopperórát."
+      }
+    }
+  },
+  {
+    "id": "op.procedure",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elvégzett beavatkozás"
+    },
+    "module": "op",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "proc.adnexectomy",
+        "label_hu": "Függelék eltávolítása"
+      },
+      {
+        "code": "proc.bartholin",
+        "label_hu": "Bartholin-ciszta marsupialisatiója"
+      },
+      {
+        "code": "proc.cerclage",
+        "label_hu": "Méhszáj-körülöltés (cerclage)"
+      },
+      {
+        "code": "proc.conization",
+        "label_hu": "Méhnyak-konizáció"
+      },
+      {
+        "code": "proc.cs.elective",
+        "label_hu": "Tervezett császármetszés",
+        "opens": [
+          "op.cs.uterotomy",
+          "op.cs.prevScar",
+          "op.cs.placenta",
+          "op.cs.adhesions",
+          "op.intra.deliveryAt"
+        ]
+      },
+      {
+        "code": "proc.cs.emergency",
+        "label_hu": "Sürgős császármetszés",
+        "opens": [
+          "op.cs.uterotomy",
+          "op.cs.prevScar",
+          "op.cs.placenta",
+          "op.cs.adhesions",
+          "op.intra.deliveryAt",
+          "op.pre.urgency"
+        ]
+      },
+      {
+        "code": "proc.cs.hysterectomy",
+        "label_hu": "Császármetszés méheltávolítással",
+        "opens": [
+          "op.cs.uterotomy",
+          "op.cs.prevScar",
+          "op.cs.placenta",
+          "op.cs.adhesions",
+          "op.intra.deliveryAt"
+        ]
+      },
+      {
+        "code": "proc.curettage",
+        "label_hu": "Méhűri kaparás"
+      },
+      {
+        "code": "proc.embryo.transfer",
+        "label_hu": "Embrió-beültetés"
+      },
+      {
+        "code": "proc.forceps",
+        "label_hu": "Fogóműtét"
+      },
+      {
+        "code": "proc.hysterectomy.abdominal",
+        "label_hu": "Hasi méheltávolítás"
+      },
+      {
+        "code": "proc.hysterectomy.laparoscopic",
+        "label_hu": "Laparoszkópos méheltávolítás"
+      },
+      {
+        "code": "proc.hysterectomy.vaginal",
+        "label_hu": "Hüvelyi méheltávolítás"
+      },
+      {
+        "code": "proc.hysteroscopy.diagnostic",
+        "label_hu": "Diagnosztikus hiszteroszkópia"
+      },
+      {
+        "code": "proc.hysteroscopy.operative",
+        "label_hu": "Műtéti hiszteroszkópia"
+      },
+      {
+        "code": "proc.iud.insertion",
+        "label_hu": "Méhen belüli eszköz behelyezése"
+      },
+      {
+        "code": "proc.laparoscopy.cystectomy",
+        "label_hu": "Petefészek-ciszta laparoszkópos eltávolítása"
+      },
+      {
+        "code": "proc.laparoscopy.diagnostic",
+        "label_hu": "Diagnosztikus laparoszkópia"
+      },
+      {
+        "code": "proc.laparoscopy.ectopic",
+        "label_hu": "Méhen kívüli terhesség laparoszkópos ellátása"
+      },
+      {
+        "code": "proc.leep",
+        "label_hu": "LLETZ / hurokkimetszés"
+      },
+      {
+        "code": "proc.myomectomy",
+        "label_hu": "Myoma eltávolítása"
+      },
+      {
+        "code": "proc.oocyte.retrieval",
+        "label_hu": "Petesejt-leszívás"
+      },
+      {
+        "code": "proc.other",
+        "label_hu": "Egyéb beavatkozás"
+      },
+      {
+        "code": "proc.perineal.repair",
+        "label_hu": "Gátsérülés ellátása",
+        "opens": [
+          "labour.perinealTrauma"
+        ]
+      },
+      {
+        "code": "proc.vacuum",
+        "label_hu": "Vákuum-extrakció"
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "Melyik beavatkozás történt — a beavatkozási törzsből."
+      },
+      "pitfalls": {
+        "hu": "Az értékkészletet a BEAVATKOZÁSI TÖRZS adja (`registry/beavatkozasok/`), és a `tools/gen-procedure-roster.ts` írja ide."
+      },
+      "whyItMatters": {
+        "hu": "EZ A NÉVSOR: az OENO-kódajánlás ebből képződik, és a műtéti leírás váza is ehhez igazodik."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.airway",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Nehéz légút vagy aspirációs kockázat felmérve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: nehéz légút vagy aspirációs kockázat felmérve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.allergy",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Ismert allergia egyeztetve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: ismert allergia egyeztetve."
+      },
+      "pitfalls": {
+        "hu": "EZ NEM ALLERGIA-ÁLLÍTÁS, HANEM ELLENŐRZÉSI TÉNY: azt rögzíti, hogy a műtő előtti ellenőrzésnél EGYEZTETTÉK-e az allergiát — nem azt, hogy van-e. A megfelelője az `allergy.asked`, és a kettő közötti különbség az, hogy ez BOOLEAN: nincs benne hely a „megkérdeztük, de a beteg nem tudja” esetnek. Amíg ez így van, a WHO-sor kipipálása nem bizonyítja, hogy az allergia ISMERT."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.anesthesia",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Az aneszteziológiai gép és gyógyszerek ellenőrizve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: az aneszteziológiai gép és gyógyszerek ellenőrizve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.bloodLoss",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Várható vérvesztés és vérkészítmény-igény egyeztetve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: várható vérvesztés és vérkészítmény-igény egyeztetve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.completedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO Bejelentkezés (érzéstelenítés előtt) — időbélyeg"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor zárult le a(z) „Bejelentkezés (érzéstelenítés előtt)” fázis."
+      },
+      "whyItMatters": {
+        "hu": "A fázis LEZÁRÁSÁNAK ideje: enélkül nem állapítható meg, hogy a lista a megfelelő pillanatban készült-e el, vagy utólag, emlékezetből."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.identity",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A beteg azonossága, a beavatkozás és a beleegyezés megerősítve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: a beteg azonossága, a beavatkozás és a beleegyezés megerősítve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.pulseOx",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Pulzoximéter a betegen és működik"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: pulzoximéter a betegen és működik."
+      }
+    }
+  },
+  {
+    "id": "op.who.signIn.site",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A műtéti terület megjelölve, ha releváns"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Bejelentkezés (érzéstelenítés előtt)” fázis tétele: a műtéti terület megjelölve, ha releváns."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.completedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO Kijelentkezés (a beteg elhagyása előtt) — időbélyeg"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor zárult le a(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis."
+      },
+      "whyItMatters": {
+        "hu": "A fázis LEZÁRÁSÁNAK ideje: enélkül nem állapítható meg, hogy a lista a megfelelő pillanatban készült-e el, vagy utólag, emlékezetből."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.counts",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Eszköz-, tű- és törlőszám egyezik"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis tétele: eszköz-, tű- és törlőszám egyezik."
+      },
+      "whyItMatters": {
+        "hu": "AZ ESZKÖZ- ÉS TÖRLŐSZÁM az a tétel, amiért az egész lista létezik: a visszamaradt idegen test megelőzhető, visszafordíthatatlan és perelhető esemény."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.equipmentIssues",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Eszközhiba vagy probléma jelezve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis tétele: eszközhiba vagy probléma jelezve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.procedureName",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A ténylegesen elvégzett beavatkozás rögzítve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis tétele: a ténylegesen elvégzett beavatkozás rögzítve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.recoveryPlan",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A felépülés és az ellátás fő szempontjai egyeztetve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis tétele: a felépülés és az ellátás fő szempontjai egyeztetve."
+      }
+    }
+  },
+  {
+    "id": "op.who.signOut.specimen",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A minta megjelölve, a beteg nevével"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Kijelentkezés (a beteg elhagyása előtt)” fázis tétele: a minta megjelölve, a beteg nevével."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.anesthesiaConcerns",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Az aneszteziológus elmondta a beteg-specifikus aggályokat"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: az aneszteziológus elmondta a beteg-specifikus aggályokat."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.completedAt",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO Időkérés (bemetszés előtt) — időbélyeg"
+    },
+    "module": "op",
+    "datatype": "datetime",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Mikor zárult le a(z) „Időkérés (bemetszés előtt)” fázis."
+      },
+      "whyItMatters": {
+        "hu": "A fázis LEZÁRÁSÁNAK ideje: enélkül nem állapítható meg, hogy a lista a megfelelő pillanatban készült-e el, vagy utólag, emlékezetből."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.confirmPatient",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A beteg, a beavatkozás és a terület hangosan megerősítve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: a beteg, a beavatkozás és a terület hangosan megerősítve."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.criticalSteps",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A sebész elmondta a kritikus lépéseket és a várható időt"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: a sebész elmondta a kritikus lépéseket és a várható időt."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.imaging",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A szükséges képalkotó felvételek megjelenítve"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: a szükséges képalkotó felvételek megjelenítve."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.introductions",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A csapat tagjai bemutatkoztak, név és szerep"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: a csapat tagjai bemutatkoztak, név és szerep."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.nursingConcerns",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — A műtősnő megerősítette a sterilitást és az eszközöket"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: a műtősnő megerősítette a sterilitást és az eszközöket."
+      }
+    }
+  },
+  {
+    "id": "op.who.timeOut.prophylaxis",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "WHO — Az antibiotikus profilaxis 60 percen belül megtörtént"
+    },
+    "module": "op",
+    "datatype": "bool",
+    "cardinality": "series",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A(z) „Időkérés (bemetszés előtt)” fázis tétele: az antibiotikus profilaxis 60 percen belül megtörtént."
+      }
+    }
+  }
+]

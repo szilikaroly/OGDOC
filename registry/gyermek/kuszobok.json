@@ -1,0 +1,55 @@
+{
+  "megnevezes": "Perinatális és újszülött-küszöbök",
+  "modul": 29,
+  "note": "A KÜSZÖBÖK ITT JAVASLATKÉNT ÁLLNAK, nem hitelesítve. A rendszer minden más küszöbe ugyanígy indult: felvéve, forrással megnevezve, és ALÁÍRÁSRA várva. Amíg nincs aláírás, a küszöb NEM ad ítéletet — a mérés `nincsKuszob` állapotot kap, ami kimondja, hogy a rendszernek nincs mihez mérnie. Ez a biztonságos irány: rossz küszöbön a rendszer ROSSZAT mond, küszöb nélkül csak hallgat — de a hallgatását megnevezi.\n\nA javaslatok szándékosan a legkonszenzusosabb küszöbök: nem új tudás, hanem az, aminek a hiánya a mérésauditban kiderült. Az aláíró dolga nem kitalálni őket, hanem ÖSSZEVETNI az elsődleges forrással és vállalni.",
+  "szerepek": {
+    "neonatologus": "neonatológus — az újszülött-küszöbök és a vérgáz",
+    "szuleszet": "szülészeti osztályvezető — a gesztációs kor és a születési súly",
+    "gyermekgyogyasz": "gyermekgyógyász — a csecsemő- és gyermekkori sávok"
+  },
+  "kuszobok": [
+    {
+      "id": "nb.apgar.at5",
+      "irany": "lt",
+      "ertek": 7,
+      "forras": "Apgar-pontszám; az 5 perces érték a nemzetközi gyakorlatban a beavatkozási küszöb.",
+      "miert": "A 7 alatti ötperces Apgar azonnali megítélést kíván. A 4 alatti súlyos — ezt külön sávnak érdemes felvenni."
+    },
+    {
+      "id": "nb.apgar.at1",
+      "irany": "lt",
+      "ertek": 7,
+      "forras": "Apgar-pontszám, 1 perces érték.",
+      "miert": "Az 1 perces érték az újraélesztés szükségességét jelzi; önmagában gyengébb kimeneteljelző, mint az 5 perces."
+    },
+    {
+      "id": "nb.cordPh",
+      "irany": "lt",
+      "ertek": 7.0,
+      "forras": "Köldökzsinór-artériás vérgáz; a 7,00 alatti pH a jelentős acidózis általánosan használt határa.",
+      "miert": "A 7,20 alatti figyelendő, a 7,00 alatti jelentős acidózis. Két sáv kellhet, nem egy."
+    },
+    {
+      "id": "nb.cordBe",
+      "irany": "lt",
+      "ertek": -12,
+      "forras": "Köldökzsinór-artériás bázisfelesleg.",
+      "miert": "A −12 mmol/l alatti bázisfelesleg metabolikus acidózist jelez; a pH-val EGYÜTT értelmezendő, külön-külön félrevezet."
+    },
+    {
+      "id": "nb.ga.atBirth",
+      "irany": "lt",
+      "ertek": 37,
+      "forras": "WHO koraszülés-definíció.",
+      "miert": "37 hét alatt koraszülött; 32 alatt nagyon, 28 alatt extrém — ez inkább SÁVOZÁS, mint egyetlen küszöb."
+    },
+    {
+      "id": "neo.glucose",
+      "irany": "lt",
+      "ertek": 2.6,
+      "forras": "Újszülöttkori hypoglykaemia beavatkozási küszöbe.",
+      "miert": "Az érték életkorfüggő az első órákban, és a küszöb intézményenként eltér — ezért kifejezetten aláírást kíván."
+    }
+  ],
+  "hitelesitesek": []
+}

@@ -1,0 +1,1581 @@
+[
+  {
+    "id": "compl.pain.abdomen.rlq",
+    "label": {
+      "hu": "Jobb alhasi fájdalom"
+    },
+    "synonyms": [
+      "szúr a hasam alul jobb oldalt",
+      "jobb oldali alhasi fájdalom",
+      "jobb petefészek táji fájdalom",
+      "vakbél tájéki fájdalom",
+      "fáj a jobb oldalam lent"
+    ],
+    "bodySite": "abdomen.rlq",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "ctx.ga",
+        "op": "lt",
+        "value": 12
+      }
+    ],
+    "opens": [
+      "status.gyn.bimanual",
+      "us.gyn",
+      "lab.hcg",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "appendicitis",
+      "petefészek-csavarodás",
+      "méhen kívüli terhesség",
+      "kismedencei gyulladás",
+      "megrepedt tüsző",
+      "vesekő"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Fogamzóképes nőnél a terhességi teszt a fizikális vizsgálat része, nem külön döntés. Terhességben az appendix feljebb tolódik, és a hashártya-izgalmi jelek elmosódnak — az appendicitis terhesen később derül ki és gyakrabban perforál."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.abdomen.llq",
+    "label": {
+      "hu": "Bal alhasi fájdalom"
+    },
+    "synonyms": [
+      "fáj a bal oldalam lent",
+      "bal petefészek táji fájdalom",
+      "bal alhasi szúrás",
+      "bal oldali görcs a hasamban"
+    ],
+    "bodySite": "abdomen.llq",
+    "redflagWhen": [
+      {
+        "var": "ctx.pregnant",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "ctx.ga",
+        "op": "lt",
+        "value": 12
+      }
+    ],
+    "opens": [
+      "status.gyn.bimanual",
+      "us.gyn",
+      "lab.hcg",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "petefészek-csavarodás",
+      "méhen kívüli terhesség",
+      "diverticulitis",
+      "kismedencei gyulladás",
+      "megrepedt ciszta"
+    ],
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.abdomen.suprapubic",
+    "label": {
+      "hu": "Szeméremcsont feletti fájdalom"
+    },
+    "synonyms": [
+      "fáj a hólyagom tájéka",
+      "alhasi nyomás",
+      "szeméremcsont felett fáj",
+      "hólyagtáji fájdalom"
+    ],
+    "bodySite": "abdomen.suprapubic",
+    "opens": [
+      "lab.urine.nitrite",
+      "lab.urine.leukocyte",
+      "us.gyn",
+      "lab.hcg"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "húgyúti fertőzés",
+      "hólyagfájdalom-szindróma",
+      "méh eredetű fájdalom",
+      "vetélés",
+      "vizeletretenció"
+    ],
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.abdomen.diffuse",
+    "label": {
+      "hu": "Kiterjedt hasi fájdalom"
+    },
+    "synonyms": [
+      "fáj az egész hasam",
+      "mindenhol fáj a hasam",
+      "általános hasi fájdalom"
+    ],
+    "bodySite": "abdomen",
+    "opens": [
+      "status.gyn.bimanual",
+      "us.gyn",
+      "lab.hcg",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "hashártyagyulladás",
+      "bélelzáródás",
+      "hasűri vérzés",
+      "gyomor-bél fertőzés",
+      "ovarialis hyperstimulatiós szindróma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A KITERJEDT, deszkakemény has hashártyagyulladás jele, és sebészeti sürgősség — a nőgyógyászati okok keresése nem késleltetheti a sebészeti megítélést."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.flank",
+    "label": {
+      "hu": "Vesetáji fájdalom"
+    },
+    "synonyms": [
+      "fáj a vesém",
+      "oldalt hátul fáj",
+      "veseütés fájdalmas",
+      "vesetáji görcs"
+    ],
+    "bodySite": "flank",
+    "opens": [
+      "lab.urine.blood",
+      "lab.urine.nitrite",
+      "vitals.temp",
+      "lab.crp"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "vesekő",
+      "pyelonephritis",
+      "hydronephrosis terhességben",
+      "mozgásszervi eredet"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhességben a jobb oldali élettani hydronephrosis gyakori, és tompa vesetáji fájdalmat okozhat kő nélkül is. A lázas vesetáji fájdalom viszont terhesen sürgős: a pyelonephritis koraszülést és szepszist okoz."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.dysmenorrhea",
+    "label": {
+      "hu": "Menstruációs görcsök"
+    },
+    "synonyms": [
+      "fáj a menstruációm",
+      "görcsöl a hasam a vérzés alatt",
+      "menzeszgörcs",
+      "havi vérzéskor fájdalom",
+      "erős menstruációs fájdalom"
+    ],
+    "bodySite": "pelvis",
+    "opens": [
+      "us.gyn",
+      "status.gyn.bimanual"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "primer dysmenorrhoea",
+      "endometriosis",
+      "adenomyosis",
+      "myoma",
+      "fejlődési rendellenesség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A MUNKÁT vagy ISKOLÁT akadályozó menstruációs fájdalom nem „normális női sors”: az endometriosis diagnózisáig átlagosan hét év telik el, és a késés fő oka a panasz bagatellizálása. A fájdalomcsillapítóra nem reagáló és az idővel súlyosbodó dysmenorrhoea kivizsgálandó."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.dyspareunia.deep",
+    "label": {
+      "hu": "Mély közösülési fájdalom"
+    },
+    "synonyms": [
+      "fáj a szex mélyen",
+      "belül fáj együttlétkor",
+      "mélyen fáj közösüléskor"
+    ],
+    "bodySite": "pelvis",
+    "opens": [
+      "status.gyn.bimanual",
+      "status.gyn.douglas",
+      "us.gyn"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "endometriosis",
+      "kismedencei gyulladás",
+      "adhéziók",
+      "myoma",
+      "kismedencei pangás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A mély dyspareunia a mély infiltráló endometriosis egyik legjellemzőbb tünete, és a Douglas-üreg tapintásával gyakran objektiválható."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.dyspareunia.superficial",
+    "label": {
+      "hu": "Felszíni közösülési fájdalom"
+    },
+    "synonyms": [
+      "fáj a behatolás",
+      "égő fájdalom szex közben",
+      "nem megy be fájdalom nélkül",
+      "hüvelybemeneti fájdalom"
+    ],
+    "bodySite": "vulva",
+    "opens": [
+      "status.gyn.vulva",
+      "status.gyn.speculum",
+      "lab.swab.vaginal"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "vulvodynia",
+      "vaginismus",
+      "atrophiás vulvovaginitis",
+      "lichen sclerosus",
+      "fertőzés",
+      "gátseb utáni állapot"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A vaginismus és a vulvodynia FÁJDALOMSZINDRÓMA, nem „pszichés” ok — a vizsgálat maga is fájdalmas lehet, és a beteg beleegyezésének folyamatos fenntartása a vizsgálat része."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.pain.chronicPelvic",
+    "label": {
+      "hu": "Krónikus kismedencei fájdalom"
+    },
+    "synonyms": [
+      "hónapok óta fáj az alhasam",
+      "állandó kismedencei fájdalom",
+      "nem múló alhasi fájdalom"
+    ],
+    "bodySite": "pelvis",
+    "opens": [
+      "status.gyn.bimanual",
+      "us.gyn"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "endometriosis",
+      "adhéziók",
+      "irritábilis bél",
+      "hólyagfájdalom-szindróma",
+      "izomeredetű medencefájdalom",
+      "korábbi trauma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Hat hónapnál régebbi kismedencei fájdalomnál a nőgyógyászati ok mellett a bél-, a hólyag- és az izomeredetet is végig kell gondolni; a negatív laparoszkópia nem zárja le a panaszt."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.heavy",
+    "label": {
+      "hu": "Erős menstruációs vérzés"
+    },
+    "synonyms": [
+      "nagyon erősen vérzek",
+      "óránként cserélek betétet",
+      "alvadékokkal vérzek",
+      "elárasztó vérzés",
+      "átvérzem az ágyneműt"
+    ],
+    "bodySite": "uterus",
+    "opens": [
+      "lab.hgb",
+      "us.gyn",
+      "status.gyn.bimanual"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "myoma",
+      "adenomyosis",
+      "polyp",
+      "véralvadási zavar",
+      "pajzsmirigy-betegség",
+      "endometrium-hyperplasia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A vérzés mennyiségének megítélése betétszámmal pontatlan; az ÉLETMINŐSÉGRE gyakorolt hatás (kimarad-e a munkából, tervez-e a vérzés köré) jobb mérőszám. Serdülőkortól tartó erős vérzésnél véralvadási zavart (leggyakrabban von Willebrand-betegséget) kell keresni."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.intermenstrual",
+    "label": {
+      "hu": "Ciklusok közti vérzés"
+    },
+    "synonyms": [
+      "két menstruáció között vérzek",
+      "pecsételek a ciklus közepén",
+      "rendszertelen vérzés",
+      "közti vérzés"
+    ],
+    "bodySite": "uterus",
+    "opens": [
+      "us.gyn",
+      "status.gyn.portio",
+      "status.gyn.cytology",
+      "lab.hcg"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "polyp",
+      "méhnyak-elváltozás",
+      "fogamzásgátló mellékhatása",
+      "endometritis",
+      "terhesség",
+      "endometrium-carcinoma"
+    ],
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.postcoital",
+    "label": {
+      "hu": "Közösülés utáni vérzés"
+    },
+    "synonyms": [
+      "szex után vérzek",
+      "együttlét után vérzés",
+      "érintésre vérzik"
+    ],
+    "bodySite": "cervix",
+    "redflag": true,
+    "opens": [
+      "status.gyn.portio",
+      "status.gyn.portio.contactBleeding",
+      "status.gyn.cytology",
+      "status.gyn.hpv"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "méhnyakrák",
+      "méhnyak-polyp",
+      "ectopia",
+      "cervicitis",
+      "atrophia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A postcoitalis vérzés a méhnyakrák egyik legkorábbi tünete, és a NEGATÍV citológia nem zárja ki: az exophyticus tumor mellől vett kenet hamisan negatív lehet. A méhszáj MEGTEKINTÉSE kötelező."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.postmenopausal",
+    "label": {
+      "hu": "Vérzés a változókor után"
+    },
+    "synonyms": [
+      "megint vérzek pedig évek óta nem volt",
+      "menopauza után vérzés",
+      "változókor után vérzek"
+    ],
+    "bodySite": "uterus",
+    "redflag": true,
+    "opens": [
+      "us.gyn",
+      "us.gyn.finding",
+      "status.gyn.portio"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "endometrium-carcinoma",
+      "endometrium-polyp",
+      "atrophiás endometritis",
+      "hormonpótlás mellékhatása",
+      "méhnyak-elváltozás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A menopauza után egy éven túl jelentkező BÁRMILYEN vérzés kivizsgálandó: az esetek mintegy tizedében endometrium-carcinoma áll a háttérben. Az „biztos csak a hormon” magyarázat csak a kivizsgálás után áll meg."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.amenorrhea.secondary",
+    "label": {
+      "hu": "Elmaradt menstruáció"
+    },
+    "synonyms": [
+      "nem jött meg",
+      "kimaradt a menstruációm",
+      "hónapok óta nincs vérzésem",
+      "elmaradt a havi vérzés"
+    ],
+    "bodySite": "uterus",
+    "opens": [
+      "lab.hcg",
+      "lab.tsh",
+      "us.gyn"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "terhesség",
+      "PCOS",
+      "hyperprolactinaemia",
+      "pajzsmirigy-betegség",
+      "korai petefészek-elégtelenség",
+      "hypothalamicus amenorrhoea",
+      "Asherman-szindróma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az ELSŐ vizsgálat a terhességi teszt, kortól és fogamzásgátlástól függetlenül. Sportoló és étkezési zavarban szenvedő betegnél a hypothalamicus eredet és a csontvesztés együtt jár — a hormonpótlás önmagában nem oldja meg."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.amenorrhea.primary",
+    "label": {
+      "hu": "A menstruáció meg sem indult"
+    },
+    "synonyms": [
+      "még sosem menstruáltam",
+      "16 éves és nincs vérzése",
+      "nem indult meg a havi vérzés"
+    ],
+    "bodySite": "uterus",
+    "opens": [
+      "status.fert.tanner.breast",
+      "us.gyn",
+      "lab.tsh"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "fejlődési rendellenesség",
+      "Turner-szindróma",
+      "androgénérzéketlenség",
+      "késői pubertás",
+      "hymen imperforatus"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Ciklikus alhasi fájdalom + hiányzó vérzés elzáródásra (pl. záró szűzhártya) gyanús, és ez sürgős. A mell-fejlődés megléte vagy hiánya kettéosztja a kivizsgálást — ezért a Tanner-stádium az első lépés, nem a hormonpanel."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.bleeding.oligomenorrhea",
+    "label": {
+      "hu": "Ritka menstruáció"
+    },
+    "synonyms": [
+      "ritkán jön meg",
+      "kiszámíthatatlan a ciklusom",
+      "35 napnál hosszabb a ciklusom",
+      "évente néhányszor menstruálok"
+    ],
+    "bodySite": "uterus",
+    "opens": [
+      "us.gyn",
+      "lab.tsh",
+      "status.fert.fg.total",
+      "status.endo.acanthosis"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "PCOS",
+      "pajzsmirigy-betegség",
+      "hyperprolactinaemia",
+      "elhízás",
+      "korai petefészek-elégtelenség"
+    ],
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.discharge.increased",
+    "label": {
+      "hu": "Fokozott hüvelyi folyás"
+    },
+    "synonyms": [
+      "sok a folyásom",
+      "több lett a folyás",
+      "fehér folyás",
+      "állandóan nedves vagyok",
+      "túrós folyás"
+    ],
+    "bodySite": "vagina",
+    "opens": [
+      "status.gyn.speculum",
+      "status.gyn.fluor.character",
+      "status.gyn.ph",
+      "lab.swab.vaginal"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "candidiasis",
+      "bakteriális vaginosis",
+      "trichomoniasis",
+      "cervicitis",
+      "élettani folyás",
+      "idegentest"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesség végén a hirtelen megszaporodott, vizes folyás BUROKREPEDÉS lehet — ilyenkor nem folyásként, hanem `compl.obs.fluidLeak` tételként rögzítendő."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.discharge.malodorous",
+    "label": {
+      "hu": "Bűzös hüvelyi folyás"
+    },
+    "synonyms": [
+      "büdös a folyásom",
+      "halszagú folyás",
+      "kellemetlen szagú váladék"
+    ],
+    "bodySite": "vagina",
+    "opens": [
+      "status.gyn.fluor.odor",
+      "status.gyn.ph",
+      "lab.swab.vaginal"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "bakteriális vaginosis",
+      "trichomoniasis",
+      "idegentest (elfelejtett tampon)",
+      "fistula"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Tartósan bűzös folyásnál az elfelejtett tampon és a hüvelyi idegentest a leggyakrabban kihagyott ok — a feltárás enélkül nem teljes."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.vulva.itching",
+    "label": {
+      "hu": "Külső nemi szervek viszketése"
+    },
+    "synonyms": [
+      "viszket odalent",
+      "viszket a szeméremtestem",
+      "vakarózom lent",
+      "éjszaka viszket a hüvelybemenet"
+    ],
+    "bodySite": "vulva",
+    "opens": [
+      "status.gyn.vulva",
+      "status.gyn.vulva.lesion",
+      "lab.swab.vaginal"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.relieve",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "candidiasis",
+      "lichen sclerosus",
+      "kontakt dermatitis",
+      "atrophia",
+      "vulvaris intraepithelialis neoplasia",
+      "tetvesség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A hónapok óta tartó, gombaellenes kezelésre NEM javuló viszketés lichen sclerosusra gyanús — a kezeletlen lichen hegesedéshez és emelkedett vulva-carcinoma kockázathoz vezet. Ilyenkor a megtekintés és a biopszia a helyes út, nem az újabb gombaellenes kúra."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.vulva.lump",
+    "label": {
+      "hu": "Csomó a külső nemi szerveken"
+    },
+    "synonyms": [
+      "csomót tapintok lent",
+      "duzzanat a szeméremajkon",
+      "gömb nőtt odalent",
+      "kemény duzzanat a hüvelybemenetnél"
+    ],
+    "bodySite": "vulva",
+    "opens": [
+      "status.gyn.vulva",
+      "status.gyn.vulva.lesion"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "Bartholin-ciszta vagy tályog",
+      "epidermalis ciszta",
+      "condyloma",
+      "lipoma",
+      "vulva-carcinoma",
+      "sérv"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A menopauza után újonnan megjelenő vulva-csomó biopsziát kér, akkor is, ha cisztának látszik."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.vulva.ulcer",
+    "label": {
+      "hu": "Fekély a külső nemi szerveken"
+    },
+    "synonyms": [
+      "kisebesedett odalent",
+      "seb van a szeméremtestemen",
+      "hólyagok fájnak lent",
+      "kifekélyesedett terület"
+    ],
+    "bodySite": "vulva",
+    "redflag": true,
+    "opens": [
+      "status.gyn.vulva",
+      "status.gyn.vulva.lesion"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "herpes genitalis",
+      "syphilis",
+      "Behçet-kór",
+      "aphtha",
+      "vulva-carcinoma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Fájdalmatlan, kemény szélű fekélynél szifiliszre kell gondolni, és a partner-értesítés is a teendő része."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.uro.dysuria",
+    "label": {
+      "hu": "Fájdalmas vizelés"
+    },
+    "synonyms": [
+      "csíp vizeléskor",
+      "égő érzés pisiléskor",
+      "fáj amikor vizelek",
+      "szúr a vizelet",
+      "hólyaghurut"
+    ],
+    "bodySite": "bladder",
+    "opens": [
+      "lab.urine.nitrite",
+      "lab.urine.leukocyte",
+      "lab.urine.blood"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "húgyúti fertőzés",
+      "urethritis",
+      "vulvovaginitis",
+      "hólyagfájdalom-szindróma",
+      "atrophia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhességben a tünetmentes bacteriuria is kezelendő, és a fertőzés pyelonephritisbe fordulhat — a terhes beteg húgyúti panasza nem „majd elmúlik” kategória."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.uro.frequency",
+    "label": {
+      "hu": "Gyakori vizelés"
+    },
+    "synonyms": [
+      "sűrűn kell pisilnem",
+      "állandóan vizelnem kell",
+      "óránként WC-re megyek",
+      "éjszaka is felkelek vizelni"
+    ],
+    "bodySite": "bladder",
+    "opens": [
+      "lab.urine.nitrite",
+      "lab.urine.leukocyte"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "húgyúti fertőzés",
+      "terhesség",
+      "cukorbetegség",
+      "túlműködő hólyag",
+      "myoma nyomása"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Új keletű gyakori vizelés + szomjúság + fogyás cukorbetegségre gyanús — a vércukor mérése egyszerű és gyakran kimarad."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.uro.incontinence.stress",
+    "label": {
+      "hu": "Vizeletvesztés terhelésre"
+    },
+    "synonyms": [
+      "elcsöppen ha köhögök",
+      "tüsszentéskor elmegy a vizelet",
+      "sportnál elcsurran",
+      "nevetéskor elengedem"
+    ],
+    "bodySite": "bladder",
+    "opens": [
+      "status.gyn.vulva"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "stressz-inkontinencia",
+      "kevert inkontinencia",
+      "medencefenék-gyengeség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A panasz szégyenérzet miatt gyakran csak rákérdezésre derül ki, és a betegek átlagosan évekig várnak vele. Az ÉLETMINŐSÉGRE gyakorolt hatás rögzítése fontosabb, mint a vesztett mennyiség."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.uro.incontinence.urge",
+    "label": {
+      "hu": "Vizeletvesztés sürgető inger mellett"
+    },
+    "synonyms": [
+      "nem érek ki a WC-re",
+      "hirtelen rám tör és elmegy",
+      "sürgető vizelési inger"
+    ],
+    "bodySite": "bladder",
+    "opens": [
+      "lab.urine.nitrite",
+      "lab.urine.leukocyte"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "túlműködő hólyag",
+      "húgyúti fertőzés",
+      "neurogén hólyag"
+    ],
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.uro.retention",
+    "label": {
+      "hu": "Vizelési képtelenség"
+    },
+    "synonyms": [
+      "nem tudok vizelni",
+      "nem jön ki a vizelet",
+      "feszül a hólyagom de nem megy"
+    ],
+    "bodySite": "bladder",
+    "redflag": true,
+    "opens": [
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset"
+    ],
+    "differential": [
+      "vizeletretenció",
+      "retrovertált terhes méh beszorulása",
+      "haematoma",
+      "neurológiai ok",
+      "gyógyszer-mellékhatás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az akut vizeletretenció sürgősség: a hólyag túlfeszülése maradandó károsodást okoz. A 12–14. hét körüli, beszorult retrovertált méh ritka, de klasszikus és jól kezelhető oka."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf"
+    ]
+  },
+  {
+    "id": "compl.breast.lump",
+    "label": {
+      "hu": "Csomó az emlőben"
+    },
+    "synonyms": [
+      "csomót tapintok a mellemben",
+      "göböt érzek a mellemben",
+      "kemény rész a mellemben"
+    ],
+    "bodySite": "breast",
+    "redflag": true,
+    "opens": [
+      "us.breast",
+      "us.breast.finding",
+      "us.breast.side"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "fibroadenoma",
+      "ciszta",
+      "emlőrák",
+      "galactocele",
+      "tályog"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A terhességi és szoptatási emlőrák felismerése rendszeresen késik, mert a csomót a laktációnak tulajdonítják. A terhesség NEM ok a képalkotás halasztására: az emlő-ultrahang terhesen is elvégezhető."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.breast.pain",
+    "label": {
+      "hu": "Emlőfájdalom"
+    },
+    "synonyms": [
+      "fáj a mellem",
+      "feszül a mellem",
+      "érzékeny a mellem menstruáció előtt",
+      "mellfájdalom"
+    ],
+    "bodySite": "breast",
+    "opens": [
+      "us.breast"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "ciklikus mastalgia",
+      "tejcsatorna-elzáródás",
+      "mastitis",
+      "mozgásszervi eredet",
+      "gyógyszer-mellékhatás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az emlőfájdalom önmagában ritkán daganat jele — de a FÉLOLDALI, körülírt, nem ciklikus fájdalom kivizsgálandó."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.breast.discharge",
+    "label": {
+      "hu": "Váladékozás az emlőbimbóból"
+    },
+    "synonyms": [
+      "folyik valami a mellbimbómból",
+      "tejszerű váladék",
+      "véres váladék a mellemből"
+    ],
+    "bodySite": "breast",
+    "opens": [
+      "status.fert.galactorrhoea",
+      "status.fert.galactorrhoea.character",
+      "us.breast"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "hyperprolactinaemia",
+      "intraductalis papilloma",
+      "emlőrák",
+      "gyógyszer-mellékhatás",
+      "élettani szoptatási váladékozás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A kétoldali, tejszerű váladék endokrin ok, az egyoldali véres váladék képalkotást kér — a kettő teendője ellentétes irányba mutat."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.breast.skinChange",
+    "label": {
+      "hu": "Bőrelváltozás az emlőn"
+    },
+    "synonyms": [
+      "behúzódik a bőr a mellemen",
+      "narancsbőr lett a mellem",
+      "befelé fordult a mellbimbóm",
+      "kipirosodott az egész mellem"
+    ],
+    "bodySite": "breast",
+    "redflag": true,
+    "opens": [
+      "us.breast",
+      "us.breast.finding"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "gyulladásos emlőrák",
+      "mastitis",
+      "Paget-kór",
+      "ekcéma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A gyulladásos emlőrák mastitisnek látszik, és antibiotikumra nem javul. Ha egy „mastitis” két hét alatt nem gyógyul, képalkotás és szövettan következik, nem újabb antibiotikum."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.fert.infertility",
+    "label": {
+      "hu": "Nem jön létre terhesség"
+    },
+    "synonyms": [
+      "nem esem teherbe",
+      "egy éve próbálkozunk",
+      "meddőség",
+      "nem sikerül a baba"
+    ],
+    "opens": [
+      "status.fert.partner.semenAnalysis",
+      "us.gyn",
+      "lab.tsh",
+      "status.fert.fg.total"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "ovulációs zavar",
+      "petevezeték-eltérés",
+      "férfi tényező",
+      "endometriosis",
+      "méh eredetű ok",
+      "ismeretlen eredetű meddőség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A kivizsgálás a PÁRÉ, nem a nőé: az ondóvizsgálat az első lépések egyike, és a legolcsóbb. 35 év felett hat hónap sikertelen próbálkozás után indul a kivizsgálás, nem egy év után."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.fert.recurrentLoss",
+    "label": {
+      "hu": "Ismétlődő terhességvesztés"
+    },
+    "synonyms": [
+      "többször elvetéltem",
+      "sorozatos vetélés",
+      "nem tudom kihordani"
+    ],
+    "redflag": true,
+    "opens": [
+      "us.gyn",
+      "lab.tsh"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "antifoszfolipid szindróma",
+      "méh fejlődési rendellenessége",
+      "pajzsmirigy-betegség",
+      "kromoszóma-eltérés",
+      "méhszáj-elégtelenség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az ismétlődő vetélés kivizsgálása célzott: a rutinszerű „mindent lekérünk” megközelítés sok álpozitív eredményt ad, és felesleges kezeléshez vezet."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.meno.hotFlush",
+    "label": {
+      "hu": "Hőhullámok"
+    },
+    "synonyms": [
+      "hőhullámaim vannak",
+      "kimelegszem hirtelen",
+      "éjszakai izzadás",
+      "átizzadom az ágyneműt",
+      "forróságérzés"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "climacterium",
+      "pajzsmirigy-túlműködés",
+      "gyógyszer-mellékhatás",
+      "korai petefészek-elégtelenség"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "45 év ALATT jelentkező hőhullámnál korai petefészek-elégtelenségre kell gondolni — ott a hormonpótlás nem életmódi kérdés, hanem csont- és szív-védelem."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.meno.vaginalDryness",
+    "label": {
+      "hu": "Hüvelyszárazság"
+    },
+    "synonyms": [
+      "száraz a hüvelyem",
+      "fáj a szex a szárazság miatt",
+      "hüvelyi kiszáradás"
+    ],
+    "bodySite": "vagina",
+    "opens": [
+      "status.gyn.speculum",
+      "status.gyn.vulva"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "genitourinaris menopauza-szindróma",
+      "szoptatás alatti hypoösztrogénizmus",
+      "lichen sclerosus",
+      "Sjögren-szindróma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Jól kezelhető panasz, amit a betegek ritkán hoznak szóba maguktól — a helyi ösztrogén az emlőrák-túlélők nagy részénél is mérlegelhető, egyeztetve az onkológussal."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  },
+  {
+    "id": "compl.gyn.prolapse",
+    "label": {
+      "hu": "Kidomborodás érzése a hüvelyben"
+    },
+    "synonyms": [
+      "mintha kiesne valami",
+      "gömböt érzek a hüvelyemben",
+      "lesüllyedt a méhem",
+      "kitüremkedik valami odalent"
+    ],
+    "bodySite": "vagina",
+    "opens": [
+      "status.gyn.vulva",
+      "status.gyn.bimanual"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.impact",
+      "compl.q.provoke"
+    ],
+    "differential": [
+      "méhsüllyedés",
+      "hólyagsérv",
+      "végbélsérv",
+      "hüvelycsonk-süllyedés"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A süllyedés MÉRTÉKE és a PANASZ mértéke gyakran nem függ össze — a kezelés indikációját a panasz adja, nem a stádium."
+      }
+    },
+    "pathways": [
+      "gynecology",
+      "preconception",
+      "pre-ivf",
+      "postpartum"
+    ]
+  }
+]

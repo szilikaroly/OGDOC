@@ -1,0 +1,317 @@
+[
+  {
+    "id": "cons.senior",
+    "specialty": "seniorObstetric",
+    "label": {
+      "hu": "Szülész szakorvosi (senior) konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "ctx.multiple",
+        "op": "in",
+        "value": [
+          "mcda",
+          "mcma",
+          "higher"
+        ]
+      },
+      {
+        "var": "hx.repro.prevBirth.cs",
+        "op": "gte",
+        "value": 2
+      },
+      {
+        "var": "hx.repro.currentPregnancy.previa",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "NICE NG137: Twin and triplet pregnancy (2019); RCOG Green-top Guideline No. 27a: Placenta praevia and placenta accreta (2018)",
+      "standard": "NICE / RCOG"
+    },
+    "why": {
+      "hu": "Monochoriális vagy többes ikerterhesség, kettőnél több korábbi császármetszés, illetve elölfekvő lepény esetén a gondozás szakorvosi vezetést kíván — a szülés helyének és módjának eldöntése nem halasztható a megindulásig."
+    }
+  },
+  {
+    "id": "cons.cardiology",
+    "specialty": "cardiology",
+    "label": {
+      "hu": "Terhes-kardiológiai konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "hx.sys.cardiac.congenital",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.cardiac.mechValve",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.cardiac.prevEvent",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "ESC Guidelines for the management of cardiovascular diseases during pregnancy (Eur Heart J 2018;39:3165-3241)",
+      "standard": "ESC 2018"
+    },
+    "why": {
+      "hu": "A szívbetegség a közvetett anyai halálozás vezető oka. A terhesség keringési terhelése a II. trimeszterben tetőzik, és a kezelési terv ELŐRE kell megszülessen, nem a rosszullét idején."
+    }
+  },
+  {
+    "id": "cons.cardiology.valve",
+    "specialty": "haematology",
+    "label": {
+      "hu": "Haematológiai konzílium — műbillentyű antikoagulálása"
+    },
+    "urgency": "urgent",
+    "when": [
+      {
+        "var": "hx.sys.cardiac.mechValve",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "ESC Guidelines for the management of cardiovascular diseases during pregnancy (2018)",
+      "standard": "ESC 2018"
+    },
+    "why": {
+      "hu": "Mechanikus műbillentyűnél az antikoagulálás terhességi rendje SÜRGŐS kérdés: a K-vitamin-antagonista magzatkárosító, az elhagyása viszont billentyűtrombózist okoz. A döntés nem halasztható, és nem a szülészé egyedül."
+    }
+  },
+  {
+    "id": "cons.diabetology",
+    "specialty": "diabetology",
+    "label": {
+      "hu": "Diabetológiai konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "hx.sys.dm1",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.dm2",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "NICE NG3: Diabetes in pregnancy (2015, updated 2020)",
+      "standard": "NICE NG3"
+    },
+    "why": {
+      "hu": "Terhesség előtti cukorbetegségben a gondozás megosztott: az anyagcsere-vezetés és a magzati ellenőrzés egyszerre zajlik, és az inzulinigény a terhesség alatt jelentősen változik."
+    }
+  },
+  {
+    "id": "cons.psychiatry.ppp",
+    "specialty": "psychiatry",
+    "label": {
+      "hu": "SÜRGŐS perinatális pszichiátriai konzílium"
+    },
+    "urgency": "urgent",
+    "whenAny": [
+      {
+        "var": "psy.ppp.risk",
+        "op": "eq",
+        "value": "high"
+      }
+    ],
+    "source": {
+      "cite": "NICE CG192: Antenatal and postnatal mental health (2014, updated 2020)",
+      "standard": "NICE CG192"
+    },
+    "why": {
+      "hu": "A postpartum pszichózis kockázata bipoláris zavarban vagy korábbi epizód után nagyságrenddel nagyobb, és az esemény órák alatt alakul ki a szülés utáni első két hétben. A terv előre kell készen álljon — utólag nincs rá idő."
+    }
+  },
+  {
+    "id": "cons.psychiatry.depression",
+    "specialty": "psychiatry",
+    "label": {
+      "hu": "Pszichiátriai konzílium — depresszió gyanúja"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "psy.epds.total",
+        "op": "gte",
+        "value": 13
+      },
+      {
+        "var": "psy.epds.q10",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "source": {
+      "cite": "NICE CG192: Antenatal and postnatal mental health (2014, updated 2020)",
+      "standard": "NICE CG192"
+    },
+    "why": {
+      "hu": "A vágóérték feletti EPDS-összeg vagy a 10. tétel BÁRMILYEN pozitív válasza (önbántalmazási gondolat) szakértői értékelést kíván — a 10. tétel az összegtől függetlenül."
+    }
+  },
+  {
+    "id": "cons.genetics",
+    "specialty": "genetics",
+    "label": {
+      "hu": "Klinikai genetikai tanácsadás"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "onc.gyn.germline",
+        "op": "in",
+        "value": [
+          "brca1",
+          "brca2",
+          "lynch",
+          "other"
+        ]
+      },
+      {
+        "var": "hx.family.documentationGap",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "NICE CG164: Familial breast cancer (2013, updated 2019)",
+      "standard": "NICE CG164"
+    },
+    "why": {
+      "hu": "Igazolt csíravonalas patogén variáns vagy tisztázatlan családi daganathalmozódás esetén a tanácsadás a kaszkád-vizsgálat és a megelőzés kapuja — a vizsgálat maga a 23. modulé."
+    }
+  },
+  {
+    "id": "cons.dietetics",
+    "specialty": "dietetics",
+    "label": {
+      "hu": "Dietetikai konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "hx.sys.bariatric",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.repro.gdm",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.celiac",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "ASMBS/ACOG: Pregnancy after bariatric surgery; NICE NG3",
+      "standard": "ACOG / NICE"
+    },
+    "why": {
+      "hu": "Bariátriai műtét után a mikrotápanyag-hiány (B12, vas, folát, D-vitamin) terhességben felerősödik; korábbi terhességi cukorbetegségnél az étrendi vezetés a szűrés eredményétől függetlenül elkezdhető."
+    }
+  },
+  {
+    "id": "cons.anaesthesiology",
+    "specialty": "anaesthesiology",
+    "label": {
+      "hu": "Aneszteziológiai konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "hx.sys.bleedingDisorder",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.osa",
+        "op": "eq",
+        "value": "pos"
+      },
+      {
+        "var": "hx.sys.cardiac.congenital",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "OAA/AAGBI Guidelines for Obstetric Anaesthetic Services (2013)",
+      "standard": "OAA / AAGBI"
+    },
+    "why": {
+      "hu": "Véralvadási zavar, obstruktív alvási apnoe vagy szívfejlődési rendellenesség esetén az érzéstelenítési terv előre kell készen álljon: a neuraxiális érzéstelenítés lehetősége nem a szülőszobán eldöntendő kérdés."
+    }
+  },
+  {
+    "id": "cons.neonatology",
+    "specialty": "neonatology",
+    "label": {
+      "hu": "Neonatológiai konzílium"
+    },
+    "urgency": "routine",
+    "whenAny": [
+      {
+        "var": "ctx.multiple",
+        "op": "in",
+        "value": [
+          "mcda",
+          "mcma",
+          "higher"
+        ]
+      },
+      {
+        "var": "hx.repro.prevBirth.preterm",
+        "op": "eq",
+        "value": "pos"
+      }
+    ],
+    "source": {
+      "cite": "BAPM: Perinatal Management of Extreme Preterm Birth (2019); NICE NG137",
+      "standard": "BAPM / NICE"
+    },
+    "why": {
+      "hu": "Ha a koraszülés valószínű, a szülő előzetes tájékoztatása a várható újszülöttellátásról a szülés után már nem pótolható — és a születés helyének megválasztását is befolyásolja."
+    }
+  },
+  {
+    "id": "cons.oncology",
+    "specialty": "oncology",
+    "label": {
+      "hu": "Onkológiai konzílium — terhesség alatti daganat"
+    },
+    "urgency": "urgent",
+    "when": [
+      {
+        "var": "onc.preg.gaAtDiagnosis",
+        "op": "gte",
+        "value": 0
+      }
+    ],
+    "source": {
+      "cite": "Amant F et al. Gynecologic cancers in pregnancy: guidelines of the second international consensus meeting. Int J Gynecol Cancer 2014;24(3):394-403",
+      "standard": "ESGO consensus"
+    },
+    "why": {
+      "hu": "Terhesség alatt diagnosztizált daganatnál a kezelés minden napja számít, és a döntés multidiszciplináris — szülész és neonatológus részvételével. A halasztás önmagában is döntés."
+    }
+  }
+]

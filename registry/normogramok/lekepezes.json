@@ -1,0 +1,45 @@
+{
+  "id": "ng.lekepezes",
+  "label": {
+    "hu": "A katalógusbeli mérések leképezése a regiszter változóira",
+    "en": "Mapping of catalogued measures to registry variables"
+  },
+  "note": {
+    "hu": "A leképezés EMBERI DÖNTÉS, nem karakterlánc-hasonlítás. Egy „HC” és egy „HC/AC” automatikus párosítása pontosan az a csendes hiba, amit a réteg egyébként kizár. Ezért a párok itt tételesen állnak, és ami nincs itt, az NINCS leképezve — a rendszer erre a mérésre nem ad percentilist, és ezt ki is mondja.",
+    "en": "The mapping is a human decision, not string similarity."
+  },
+  "kotesek": {
+    "AC": "us.ac",
+    "BPD": "us.bpd",
+    "HC": "us.hc",
+    "FL": "us.fl",
+    "EFW": "us.efw",
+    "Humerus": "us.hl",
+    "Amniotic Fluid Index": "us.afi",
+    "Birthweight": "nb.birthWeight",
+    "Umbilical PI": "us.ua.pi",
+    "Middle Cerebral PI": "us.mca.pi",
+    "Uterine Artery PI": "us.uta.pi.left",
+    "R. Uterine Artery PI": "us.uta.pi.right",
+    "Yolk Sac Diameter": "us.ys",
+    "FHR Baseline": "labour.fhr.baseline",
+    "PlGF": "lab.plgf"
+  },
+  "nemKotott": {
+    "megjegyzes": {
+      "hu": "Ezek NEM tévedésből maradtak ki. Mindegyiknél megnevezzük, mi hiányzik hozzá — mert egy leképezetlen mérés vagy hiányzó VÁLTOZÓT jelez, vagy azt, hogy a mérés nálunk nem is értelmezett."
+    },
+    "okok": {
+      "magzati-vertetel": "FBS Haemoglobin, Haematocrit, Erythroblasts, Leucocytes, Platelets, Retics, pH, PO2, PCO2 — magzati vérmintavétel (cordocentesis) leletei. A beavatkozás a rendszerben szerepel, a LELETMEZŐI nem: külön változócsoport kell hozzá.",
+      "szivmorfometria": "LA/LV/RA/RV méretek, falvastagságok, billentyűátmérők, Ao/PA — a 28 katalogizált szívgörbe bemenetei. A regiszterben ma három szívváltozó van (`us.cardiac.*`), ez a terület tehát nagyrészt hiányzik.",
+      "veseparameterek": "Kidney_Length, Kidney_Volume, Renal_Pelvis, Renal Artery PI — a magzati vese mérései; a regiszterben nincs magzati vese-változó.",
+      "arany-szarmaztatott": "HC/AC, HC/FL, Femur/Foot, Va/H, Vp/H, PI AT/ACM — ARÁNYOK. Ezek levezetett értékek: a leképezés akkor helyes, ha a hányadost a rendszer SZÁMOLJA a két tagból, nem külön mezőként tárolja.",
+      "biokemia-szurés": "AFP, PAPP-A, Free-beta hCG, Total HCG, Trisomy 21, MAP MOM — a kombinált szűrés MoM-értékei. Ezek nem nyers mérések: a MoM-modell kimenetei, és a modell nincs telepítve. A PAPP-A ráadásul VÁLTOZÓKÉNT SINCS meg a regiszterben (a `lab.plgf` és a `lab.hcg` igen) — a leképezés ezt hozta felszínre.",
+      "csontok": "Radius, Ulna, Tibia, Fibula, Foot — hosszú csontok a femuron és a humeruson túl; a regiszterben nincs hozzájuk változó.",
+      "egyeb-magzati": "TCD, TAD, TC, OFD, APAD, IOD, EOD, Eye, Prenasal thickness, Hard_palate_area, ICT, Isthmus — részletes magzati biometria és neuroszonográfia; a regiszter ezt a mélységet nem fedi.",
+      "vizelet": "Urine Calcium/Creatinin/Sodium/Urea — anyai vizeletleletek, nem magzati mérések; a laborterületre tartoznak, nem a normogram-katalógusba.",
+      "ctg-szarmaztatott": "FHR Accelerations, FHR Variation, FHR Low Variation — számítógépes CTG kimenetei; a rendszer CTG-kategóriát tárol, nem nyers variabilitást.",
+      "duplikatum": "„Uterine artery PI” és „R. Uterine artery PI/RI” kisbetűs változatok, „Haemoglobin measured/predicted”, „Birthweight, totale groep, Belgium” — a forráskatalógus írásmódbeli és populációs változatai; a kötést a kanonikus alakhoz adtuk meg."
+    }
+  }
+}

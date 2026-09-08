@@ -1,0 +1,419 @@
+{
+ "megnevezes": "Modultérkép — melyik modulhoz milyen kód, teszt és dokumentum tartozik",
+ "note": "A TÉRKÉP AZÉRT ADAT, MERT ELLENŐRIZHETŐ. Egy kézzel karbantartott „mi tartozik hova” lista fél éven belül elavul: a kód átkerül, a fájl megszűnik, és a lista tovább mutat rá. A validálás ezért minden útvonalat megnéz, és a nem létezőt HIBÁNAK veszi.\n\nAmi több modulhoz tartozik, az több helyen szerepel — ez nem duplikátum, hanem tény: a `core/auth` a 19. (CRM/HR) és a 36. (hitelesítés) modulnak is a része, és a kettő nem ugyanaz a nézőpont.",
+ "modulok": [
+  {
+   "n": 1,
+   "kod": [
+    "core/complaints"
+   ],
+   "teszt": [
+    "test/panasz.test.ts"
+   ],
+   "doksi": "docs/modulok/01-panaszok.md"
+  },
+  {
+   "n": 2,
+   "kod": [
+    "core/types.ts"
+   ],
+   "teszt": [
+    "test/core.test.ts"
+   ],
+   "doksi": "docs/modulok/02-orvoshoz-fordulas.md"
+  },
+  {
+   "n": 3,
+   "kod": [
+    "core/anamnezis"
+   ],
+   "teszt": [
+    "test/anamnezis-gerinc.test.ts"
+   ],
+   "doksi": "docs/modulok/03-anamnezis.md"
+  },
+  {
+   "n": 4,
+   "kod": [
+    "core/us/anatomia.ts"
+   ],
+   "teszt": [
+    "test/anatomia.test.ts"
+   ],
+   "doksi": "docs/modulok/04-statusz.md"
+  },
+  {
+   "n": 5,
+   "kod": [
+    "core/us",
+    "core/calc",
+    "core/scores",
+    "core/pacs"
+   ],
+   "teszt": [
+    "test/normogram.test.ts",
+    "test/normogram-katalogus.test.ts",
+    "test/normogram-hitelesites.test.ts",
+    "test/kalkulator-hitelesites.test.ts",
+    "test/modul05-elfogadas.test.ts",
+    "test/pacs.test.ts",
+    "test/intergrowth.test.ts"
+   ],
+   "doksi": "docs/modulok/05-vizsgalatok.md"
+  },
+  {
+   "n": 6,
+   "kod": [
+    "core/rx"
+   ],
+   "teszt": [
+    "test/gyogyszereles.test.ts",
+    "test/rx-kiallitas.test.ts"
+   ],
+   "doksi": "docs/modulok/06-gyogyszereles.md"
+  },
+  {
+   "n": 7,
+   "kod": [
+    "core/diet"
+   ],
+   "teszt": [
+    "test/dieta.test.ts"
+   ],
+   "doksi": "docs/modulok/07-dieta.md"
+  },
+  {
+   "n": 8,
+   "kod": [
+    "core/kerdoiv",
+    "core/interop"
+   ],
+   "teszt": [
+    "test/pszichologia.test.ts",
+    "test/interop.test.ts",
+    "test/csatorna-biobank.test.ts",
+    "test/interop-soros-dicom.test.ts"
+   ],
+   "doksi": "docs/modulok/08-pszichologia.md"
+  },
+  {
+   "n": 9,
+   "kod": [
+    "core/epikrizis"
+   ],
+   "teszt": [
+    "test/epikrizis.test.ts"
+   ],
+   "doksi": "docs/modulok/09-epikrizis.md"
+  },
+  {
+   "n": 10,
+   "kod": [
+    "core/szepszis",
+    "core/plan/delivery.ts"
+   ],
+   "teszt": [
+    "test/szuloszoba.test.ts",
+    "test/szepszis.test.ts",
+    "test/szepszis-kuszob.test.ts"
+   ],
+   "doksi": "docs/modulok/10-szuloszoba.md"
+  },
+  {
+   "n": 11,
+   "kod": [
+    "core/op"
+   ],
+   "teszt": [
+    "test/muto.test.ts",
+    "test/agy-muto.test.ts"
+   ],
+   "doksi": "docs/modulok/11-muto.md"
+  },
+  {
+   "n": 12,
+   "kod": [
+    "core/onc"
+   ],
+   "teszt": [
+    "test/onkologia.test.ts"
+   ],
+   "doksi": "docs/modulok/12-onkologia.md"
+  },
+  {
+   "n": 13,
+   "kod": [
+    "core/plan"
+   ],
+   "teszt": [
+    "test/tervezes.test.ts"
+   ],
+   "doksi": "docs/modulok/13-ellatas-tervezes.md"
+  },
+  {
+   "n": 14,
+   "kod": [
+    "core/zaro"
+   ],
+   "teszt": [
+    "test/zarojelentes.test.ts"
+   ],
+   "doksi": "docs/modulok/14-zarojelentes.md"
+  },
+  {
+   "n": 15,
+   "kod": [
+    "core/followup"
+   ],
+   "teszt": [
+    "test/utankovetes.test.ts"
+   ],
+   "doksi": "docs/modulok/15-utankovetes.md"
+  },
+  {
+   "n": 16,
+   "kod": [
+    "core/prom"
+   ],
+   "teszt": [
+    "test/prom.test.ts"
+   ],
+   "doksi": "docs/modulok/16-betegelegedettseg.md"
+  },
+  {
+   "n": 17,
+   "kod": [
+    "core/coding",
+    "core/codes.ts"
+   ],
+   "teszt": [
+    "test/kodolas.test.ts"
+   ],
+   "doksi": "docs/modulok/17-kodolas.md"
+  },
+  {
+   "n": 18,
+   "kod": [
+    "core/mir",
+    "core/audit"
+   ],
+   "teszt": [
+    "test/mir.test.ts",
+    "test/audit.test.ts",
+    "test/keretek.test.ts"
+   ],
+   "doksi": "docs/modulok/18-minosegbiztositas.md"
+  },
+  {
+   "n": 19,
+   "kod": [
+    "core/auth",
+    "core/admin"
+   ],
+   "teszt": [
+    "test/auth.test.ts",
+    "test/helyszerkeszto.test.ts"
+   ],
+   "doksi": "docs/modulok/19-crm.md"
+  },
+  {
+   "n": 20,
+   "kod": [
+    "core/jelentes"
+   ],
+   "teszt": [
+    "test/fekvojelentes.test.ts"
+   ],
+   "doksi": "docs/modulok/20-statisztika-lekerdezes.md"
+  },
+  {
+   "n": 21,
+   "kod": [
+    "core/finanszirozas"
+   ],
+   "teszt": [
+    "test/finanszirozas.test.ts",
+    "test/hbcs-besorolas.test.ts"
+   ],
+   "doksi": "docs/modulok/21-foglalkozas-egeszsegugy.md"
+  },
+  {
+   "n": 22,
+   "kod": [
+    "core/biobank"
+   ],
+   "teszt": [
+    "test/csatorna-biobank.test.ts"
+   ],
+   "doksi": "docs/modulok/22-biobank.md"
+  },
+  {
+   "n": 23,
+   "kod": [
+    "core/kulso"
+   ],
+   "teszt": [
+    "test/kulso.test.ts",
+    "test/kulso-modell.test.ts"
+   ],
+   "doksi": "docs/modulok/23-genetika.md"
+  },
+  {
+   "n": 24,
+   "kod": [
+    "core/kulso/protokoll.ts"
+   ],
+   "teszt": [
+    "test/kulso.test.ts"
+   ],
+   "doksi": "docs/modulok/24-ivf.md"
+  },
+  {
+   "n": 25,
+   "kod": [
+    "core/admin"
+   ],
+   "teszt": [
+    "test/helyszerkeszto.test.ts"
+   ],
+   "doksi": "docs/modulok/25-admin-szerkeszto.md"
+  },
+  {
+   "n": 26,
+   "kod": [
+    "core/import"
+   ],
+   "teszt": [
+    "test/import.test.ts"
+   ],
+   "doksi": "docs/modulok/26-eloeleti-import.md"
+  },
+  {
+   "n": 27,
+   "kod": [
+    "core/tele"
+   ],
+   "teszt": [
+    "test/tele.test.ts"
+   ],
+   "doksi": "docs/modulok/27-telemedicina.md"
+  },
+  {
+   "n": 28,
+   "kod": [
+    "core/exassist"
+   ],
+   "teszt": [
+    "test/exassist.test.ts"
+   ],
+   "doksi": "docs/modulok/28-exassist.md"
+  },
+  {
+   "n": 29,
+   "kod": [
+    "core/gyermek",
+    "core/neo"
+   ],
+   "teszt": [
+    "test/gyermeknogyogyaszat.test.ts",
+    "test/jelzes.test.ts",
+    "test/gyermek-oltas.test.ts",
+    "test/gyermek-mdr-licenc.test.ts"
+   ],
+   "doksi": "docs/modulok/29-perinatalis-gyermek.md"
+  },
+  {
+   "n": 30,
+   "kod": [
+    "core/vedono"
+   ],
+   "teszt": [
+    "test/vedono.test.ts"
+   ],
+   "doksi": "docs/modulok/30-vedono.md"
+  },
+  {
+   "n": 31,
+   "kod": [
+    "core/cms"
+   ],
+   "teszt": [
+    "test/cms.test.ts"
+   ],
+   "doksi": "docs/modulok/31-cms-tajekoztato.md"
+  },
+  {
+   "n": 32,
+   "kod": [
+    "core/rx/kiallitas.ts"
+   ],
+   "teszt": [
+    "test/rx-kiallitas.test.ts"
+   ],
+   "doksi": "docs/modulok/32-recept-gyse.md"
+  },
+  {
+   "n": 33,
+   "kod": [
+    "core/endo",
+    "core/lab"
+   ],
+   "teszt": [
+    "test/endo.test.ts",
+    "test/referencia.test.ts",
+    "test/referencia-hitelesites.test.ts"
+   ],
+   "doksi": "docs/modulok/33-belgyogyaszat-endokrin-diabetes.md"
+  },
+  {
+   "n": 34,
+   "kod": [
+    "core/fekvo"
+   ],
+   "teszt": [
+    "test/fekvo34.test.ts"
+   ],
+   "doksi": "docs/modulok/34-fekvobeteg.md"
+  },
+  {
+   "n": 35,
+   "kod": [
+    "core/profil",
+    "core/fedes"
+   ],
+   "teszt": [
+    "test/profil.test.ts",
+    "test/fedes.test.ts"
+   ],
+   "doksi": "docs/modulok/35-paciens-profil.md"
+  },
+  {
+   "n": 36,
+   "kod": [
+    "core/auth",
+    "core/store/hozzaferes.ts",
+    "web/auth-api.ts"
+   ],
+   "teszt": [
+    "test/auth.test.ts",
+    "test/web.test.ts",
+    "test/tarolo.test.ts"
+   ],
+   "doksi": "docs/modulok/36-hitelesites.md"
+  },
+  {
+   "n": 37,
+   "kod": [
+    "core/karbantartas",
+    "core/szabaly",
+    "core/ocr"
+   ],
+   "teszt": [
+    "test/karbantartas.test.ts",
+    "test/szabalymotor.test.ts",
+    "test/ocr.test.ts"
+   ],
+   "doksi": "docs/modulok/37-karbantartas.md"
+  }
+ ]
+}

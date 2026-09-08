@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ng.customised.ac",
+    "parameter": "us.ac",
+    "by": "ctx.ga",
+    "unit": "mm",
+    "kind": "customised",
+    "population": "személyre szabott — anyai testalkat, paritás és magzati nem szerint igazítva",
+    "source": {
+      "cite": "Gardosi J, Chang A, Kalyan B, Sahota D, Symonds EM. Customised antenatal growth charts. Lancet 1992;339(8788):283-287",
+      "pmid": "1346292"
+    },
+    "verification": "assumed",
+    "adjust": {
+      "base": "ng.chitty.ac",
+      "terms": [
+        {
+          "var": "anthro.height",
+          "kind": "linear",
+          "coefficient": 0.0035,
+          "center": 163,
+          "note": { "hu": "Anyai testmagasság, a 163 cm-es középértékhez viszonyítva." }
+        },
+        {
+          "var": "anthro.weight.prepregnancy",
+          "kind": "linear",
+          "coefficient": 0.0012,
+          "center": 64,
+          "note": { "hu": "Terhesség ELŐTTI testsúly — a futó terhességi súly ide nem való." }
+        },
+        {
+          "var": "ctx.parity.para",
+          "kind": "linear",
+          "coefficient": 0.008,
+          "center": 0,
+          "note": { "hu": "Paritás: a másodszor szülő nő magzata átlagosan nagyobb." }
+        },
+        {
+          "var": "us.fetal.sex",
+          "kind": "coded",
+          "byCode": { "female": -0.012, "male": 0.012 },
+          "note": { "hu": "A magzat neme. A „nem megítélhető” és a „nem kéri a közlését” nem szerepel: hiányzó tagnál a személyre szabott érték nem születik meg." }
+        }
+      ]
+    }
+  }
+]

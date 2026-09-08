@@ -1,0 +1,10 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A 12. lépés elfogadási kritériuma KÉTKIMENETŰ: minden mérőeszközre vagy licenc + validált tételszöveg van, VAGY egy leírt döntés, hogy nem használjuk. A második nem kudarc, hanem érvényes válasz — enélkül a licenceletlen eszköz örökre nyitott tétel maradna. A licenc a rendszer egyetlen olyan igazolása, ami LEJÁR: a többi aláírás időtlen, egy licenc dátumhoz kötött, és a megújítás hónapokat vihet, ezért a kapu 90 nappal előre szól. Az `itemText: \"loaded\"` jelölés önmagában nem nyit kaput: nyilvántartott licenc nélkül építési hiba. Munkalap: `npm run licenc`.",
+  "szerepek": {
+    "kutatasvezeto": "kutatásvezető — a licenc megszerzése és a „nem használjuk” döntés",
+    "jogasz": "jogász — a licencszerződés hatóköre és a lejárat",
+    "pszichologus": "klinikai szakpszichológus — a fordítás validáltsága és a helyettesítő eszköz"
+  },
+  "licencek": [],
+  "dontesek": []
+}

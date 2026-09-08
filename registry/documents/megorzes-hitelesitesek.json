@@ -1,0 +1,8 @@
+{
+  "note": "SZÁNDÉKOSAN ÜRES. A 14 dokumentumtípus megőrzési idejét JOGÁSZ veti össze a HATÁLYOS jogszabályszöveggel — az elsődleges forrást a hálózati szabályzat blokkolja, ezért a mostani számok másodlagos forrásokból (hatósági és intézményi adatvédelmi dokumentumok, egyetemi szabályzat) származnak. Amíg nincs aláírás, a `retention.verification` mező nem lehet `primary`, és automatikus törlés nem indul. Itt a tét a legnagyobb a rendszer öt hitelesítési rétege közül: egy hibás megőrzési idő nem téves számot ad, hanem visszahozhatatlanul megsemmisít dokumentációt. Az aláírás ezért megnevezi a JOGSZABÁLYT és a HATÁLYOSSÁG NAPJÁT is: egy törvény tavalyi szövege nem a hatályos szöveg, és a különbség épp a megőrzési időkben szokott lenni. Munkalap: `npm run megorzes`.",
+  "szerepek": {
+    "jogasz": "jogász — a megőrzési idők és a jogszabályhelyek",
+    "dpo": "adatvédelmi tisztviselő — a törlés előtti értesítés és a betegkérés kezelése"
+  },
+  "hitelesitesek": []
+}

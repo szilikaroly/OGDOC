@@ -1,0 +1,378 @@
+{
+  "id": "mir.dokumentumfa",
+  "label": {
+    "hu": "Minőségirányítási dokumentumfa (ISO 20387 „A” opció)"
+  },
+  "note": "A SZABÁLY, AMIT EDDIG SEMMI NEM KÉNYSZERÍTETT KI: minden SOP-hoz tartozik legalább egy űrlap vagy rendszerbeli feljegyzés. SOP feljegyzés nélkül nem bizonyít semmit; feljegyzés SOP nélkül nem szabályozott. A `bizonyitek` mező ezért kötelező — üresen hagyva építési hiba. A fa maga NEM a dokumentumok tartalma, hanem a lista arról, minek KELL léteznie; hogy melyik létezik és mikorra jár le a felülvizsgálata, azt a `registry/mir/allapot.json` mondja meg.",
+  "forras": "docs/megfeleles/05-mir-dokumentumfa.md",
+  "dokumentumok": [
+    {
+      "id": "POL-01",
+      "szint": "politika",
+      "targy": "Biobank-politika — a vezetés nyilatkozata: célok, hatókör, pártatlanság, bizalmas kezelés, a minőség iránti elkötelezettség, erőforrás-biztosítás",
+      "gazda": "vezetes",
+      "felulvizsgalatHonap": 12,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "KEZ-01",
+      "szint": "kezikonyv",
+      "targy": "Minőségirányítási kézikönyv — a MIR térképe: szervezeti felépítés, felelősségek, a folyamatok kapcsolata, a dokumentumok listája",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "QP-01",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Dokumentumszabályozás — létrehozás, jóváhagyás, verzió, kiadás, elavulás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-02",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Feljegyzések szabályozása — azonosítás, tárolás, védelem, megőrzési idő, selejtezés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-03",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Belső audit — terv, auditor-kompetencia, lefolytatás, jelentés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-04",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Vezetőségi átvizsgálás — bemenetek, kimenetek, gyakoriság",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-05",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Nemmegfelelőség kezelése — azonosítás, elkülönítés, hatásvizsgálat",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-06",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Helyesbítő tevékenység (CAPA) — gyökérok-elemzés, hatékonyság-ellenőrzés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-07",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Kockázatok és lehetőségek kezelése",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-08",
+      "szint": "eljaras",
+      "csoport": "iranyitasi",
+      "targy": "Panaszkezelés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-10",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Személyzet: kompetencia-követelmény, képzés, felhatalmazás, újraértékelés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-11",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Létesítmények és környezeti feltételek, beléptetés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-12",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Berendezések: nyilvántartás, kalibrálás, karbantartás, meghibásodás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-13",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Hőmérséklet-monitorozás és riasztás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-14",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Külső szolgáltatók értékelése és felügyelete",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "QP-15",
+      "szint": "eljaras",
+      "csoport": "eroforras",
+      "targy": "Katasztrófaterv és üzletmenet-folytonosság",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-01",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Beleegyezés felvétele és rögzítése",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-02",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Beleegyezés visszavonásának kezelése",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-03",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Mintavétel és azonosítás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-04",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Minta fogadása, elfogadási és elutasítási kritériumok",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-05",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Preanalitikai adatok rögzítése (SPREC)",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-06",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Feldolgozás és alikvotálás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-07",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Nukleinsav-izolálás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-08",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Tartósítás és fagyasztás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-09",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Tárolás, tárolóhely-kiosztás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-10",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Kivétel és fagyasztás-olvadás nyilvántartás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-11",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Minőségellenőrzés mintatípusonként",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-12",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Kiadás és szállítás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-13",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Megsemmisítés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-14",
+      "szint": "sop",
+      "csoport": "minta-eletciklus",
+      "targy": "Leltár és készletegyeztetés",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": true
+    },
+    {
+      "id": "SOP-20",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Azonosítórendszer és kódkulcs kezelése",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-21",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Adatbevitel, ellenőrzés, javítás",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-22",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "De-identifikálás és export",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-23",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Hozzáférési kérelem elbírálása",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-24",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Anyagátadási megállapodás (MTA)",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-25",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Adatvédelmi incidens kezelése (GDPR Art. 33–34)",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    },
+    {
+      "id": "SOP-26",
+      "szint": "sop",
+      "csoport": "adat-hozzaferes",
+      "targy": "Rendszervalidálás, mentés és helyreállítási próba",
+      "gazda": "mir",
+      "felulvizsgalatHonap": 24,
+      "bizonyitek": [],
+      "elsoKor": false
+    }
+  ]
+}

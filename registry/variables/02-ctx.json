@@ -1,0 +1,706 @@
+[
+  {
+    "id": "ctx.breastfeeding",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Szoptat"
+    },
+    "module": "ctx",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudom",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "Szoptat-e jelenleg a beteg."
+      },
+      "pitfalls": {
+        "hu": "A „nem tudom” itt is önálló válasz: a szoptatás megkezdése előtt álló gyermekágyasnál a kérdés még nyitott, és a szer megválasztása ilyenkor épp a szoptatás lehetőségét befolyásolja."
+      },
+      "whyItMatters": {
+        "hu": "A GYERMEKÁGYBAN EZ A LEGGYAKRABBAN FELTETT KÉRDÉS minden rendelésnél. A szoptatás alatti biztonság (Hale LRC, relatív csecsemődózis) csak akkor jeleníthető meg, ha a rendszer tudja, hogy szoptat."
+      }
+    }
+  },
+  {
+    "id": "ctx.conception",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fogamzás módja"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "spontaneous",
+        "label_hu": "Spontán"
+      },
+      {
+        "code": "oi",
+        "label_hu": "Ovuláció-indukció"
+      },
+      {
+        "code": "iui",
+        "label_hu": "IUI"
+      },
+      {
+        "code": "ivf",
+        "label_hu": "IVF"
+      },
+      {
+        "code": "icsi",
+        "label_hu": "ICSI"
+      },
+      {
+        "code": "fet",
+        "label_hu": "Fagyasztott embrió-transzfer (FET)"
+      },
+      {
+        "code": "donor",
+        "label_hu": "Donor ivarsejt vagy embrió"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Hogyan jött létre a terhesség."
+      },
+      "whyItMatters": {
+        "hu": "Az asszisztált reprodukcióból létrejött terhesség önálló szülészeti rizikó (praeeclampsia, koraszülés, többes terhesség). IVF-nél a gesztációs kor a transzfer dátumából számolódik."
+      },
+      "pitfalls": {
+        "hu": "A 24. modulból `prefill`-lel érkezik, ha volt IVF-ciklus — nem kell újra beírni."
+      }
+    }
+  },
+  {
+    "id": "ctx.consentState",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kutatási beleegyezés állapota"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "none",
+        "label_hu": "Nincs megkérdezve"
+      },
+      {
+        "code": "declined",
+        "label_hu": "Elutasította"
+      },
+      {
+        "code": "partial",
+        "label_hu": "Részleges — egyes pontokra"
+      },
+      {
+        "code": "broad",
+        "label_hu": "Széles körű beleegyezés"
+      },
+      {
+        "code": "withdrawn",
+        "label_hu": "Visszavonta"
+      }
+    ],
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "A tudományos és biobanki felhasználásra adott hozzájárulás állapota."
+      },
+      "whyItMatters": {
+        "hu": "Ez dönti el, hogy az eset bekerülhet-e kutatási exportba. Hozzájárulás nélkül a mintavétel sem indul (22. modul)."
+      },
+      "pitfalls": {
+        "hu": "A VISSZAVONÁS kétágú folyamat: a kutatási felhasználás megszűnik, az ellátási dokumentáció a jogszabályi megőrzési idő végéig marad. A beteget erről a nyilatkozatban kell tájékoztatni, nem utólag."
+      }
+    }
+  },
+  {
+    "id": "ctx.edd",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Várható szülési időpont"
+    },
+    "module": "ctx",
+    "datatype": "date",
+    "derivation": {
+      "kind": "computed",
+      "calc": "calc.edd.naegele"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A Naegele-szabály szerinti várható szülési időpont."
+      },
+      "pitfalls": {
+        "hu": "28 napos ciklust feltételez. Korai UH esetén annak a dátuma az elsődleges."
+      }
+    }
+  },
+  {
+    "id": "ctx.eduLevel",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Képzettségi szint"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "student",
+        "label_hu": "Hallgató"
+      },
+      {
+        "code": "resident",
+        "label_hu": "Rezidens"
+      },
+      {
+        "code": "specialist",
+        "label_hu": "Szakorvos"
+      },
+      {
+        "code": "professor",
+        "label_hu": "Egyetemi oktató"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A felhasználó képzettségi szintje — a megjelenített magyarázatok részletességéhez."
+      }
+    },
+    "standards": {
+      "ichom": "PCB004"
+    }
+  },
+  {
+    "id": "ctx.encounter",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ellátási esemény típusa"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ambulatory",
+        "label_hu": "Ambuláns vizit"
+      },
+      {
+        "code": "emergency",
+        "label_hu": "Sürgősségi ellátás"
+      },
+      {
+        "code": "elective.admission",
+        "label_hu": "Tervezett felvétel"
+      },
+      {
+        "code": "labour",
+        "label_hu": "Szülőszoba, vajúdás"
+      },
+      {
+        "code": "followup",
+        "label_hu": "Kontroll"
+      },
+      {
+        "code": "screening",
+        "label_hu": "Szűrővizsgálat"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Milyen ellátási helyzetben történik a vizsgálat."
+      },
+      "whyItMatters": {
+        "hu": "Ez választja ki minden változó ÉRVÉNYESSÉGI ABLAKÁT és kötelezőségét. Ugyanaz a vérnyomás ambulánsan 7 napig érvényes, vajúdás alatt 4 óráig."
+      },
+      "pitfalls": {
+        "hu": "A típus megváltoztatása azonnal átrendezi, mely mezők kötelezőek és mely korábbi értékek számítanak lejártnak — ez nem megjelenítési, hanem adatérvényességi kérdés."
+      }
+    }
+  },
+  {
+    "id": "ctx.ga",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gesztációs kor",
+      "en": "Gestational age"
+    },
+    "module": "ctx",
+    "datatype": "quantity",
+    "unit": "wk",
+    "domain": {
+      "min": 0,
+      "max": 45,
+      "plausible": [
+        4,
+        42
+      ]
+    },
+    "derivation": {
+      "kind": "computed",
+      "explain": {
+        "hu": "Az utolsó menstruációból számolva. IVF-nél a transzfer dátuma, egyébként a korai CRL pontosabb — a precedenciát a 02. modul kezeli."
+      },
+      "calc": "calc.ga.lmp"
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A terhesség fennállásának ideje tizedes hétben."
+      },
+      "whyItMatters": {
+        "hu": "A fullPIERS közvetlen bemenete, és a legtöbb szűrés időzítését ez adja."
+      }
+    }
+  },
+  {
+    "id": "ctx.gaSource",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A gesztációs kor forrása"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "ivf.transfer",
+        "label_hu": "IVF/FET transzfer dátuma és embriókor"
+      },
+      {
+        "code": "crl",
+        "label_hu": "Korai ultrahang CRL (8–13+6. hét)"
+      },
+      {
+        "code": "lmp",
+        "label_hu": "Utolsó menstruáció"
+      },
+      {
+        "code": "late.biometry",
+        "label_hu": "Késői UH-biometria — pontatlan"
+      },
+      {
+        "code": "unknown",
+        "label_hu": "Nem meghatározható"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik forrásból számoltuk a terhességi kort."
+      },
+      "whyItMatters": {
+        "hu": "Egy LMP-ből és egy CRL-ből számolt gesztációs kor között KÉT HÉT különbség is lehet — és ez a triszómia-szűrés, a koraszülés-határ és az indukció időzítése szempontjából is számít."
+      },
+      "pitfalls": {
+        "hu": "A precedencia klinikai konszenzus, nem tetszés kérdése: IVF-transzfer → korai CRL → LMP → késői biometria. A forrás MINDIG látszik a felületen; enélkül egy retrospektív adat nem értelmezhető."
+      }
+    }
+  },
+  {
+    "id": "ctx.lmp",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Utolsó menstruáció első napja",
+      "en": "Last menstrual period"
+    },
+    "module": "ctx",
+    "datatype": "date",
+    "provenanceAllowed": [
+      "patient",
+      "clinician"
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Az utolsó menstruációs vérzés első napja."
+      },
+      "pitfalls": {
+        "hu": "Önbevallott adat, gyakran pontatlan. Ha van korai ultrahang, az pontosabb datálást ad."
+      }
+    }
+  },
+  {
+    "id": "ctx.multiple",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Többes terhesség — chorionicitás és amnionicitás"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "no",
+        "label_hu": "Egyes terhesség"
+      },
+      {
+        "code": "dcda",
+        "label_hu": "Ikerterhesség — DCDA (két lepény, két burok)"
+      },
+      {
+        "code": "mcda",
+        "label_hu": "Ikerterhesség — MCDA (egy lepény, két burok)"
+      },
+      {
+        "code": "mcma",
+        "label_hu": "Ikerterhesség — MCMA (egy lepény, egy burok)"
+      },
+      {
+        "code": "higher",
+        "label_hu": "Hármas vagy több"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Egyes vagy többes terhesség, a chorionicitás és amnionicitás szerint."
+      },
+      "whyItMatters": {
+        "hu": "A CMQCC vérzési kockázat és a praeeclampsia-kockázat közvetlen bemenete; a vizitrend sűrűségét is ez határozza meg."
+      },
+      "pitfalls": {
+        "hu": "A chorionicitást a 11–14. héten kell meghatározni — később megbízhatatlan. Az MCMA a legmagasabb kockázatú forma, és önálló gondozási protokollt kíván."
+      }
+    },
+    "standards": {
+      "ichom": "PCB014"
+    }
+  },
+  {
+    "id": "ctx.now",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Vizsgálat időpontja",
+      "en": "Assessment time"
+    },
+    "module": "ctx",
+    "datatype": "datetime",
+    "documentation": {
+      "definition": {
+        "hu": "A számítások vonatkoztatási időpontja."
+      }
+    }
+  },
+  {
+    "id": "ctx.parity.gravida",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gravida"
+    },
+    "module": "ctx",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 25
+    },
+    "documentation": {
+      "definition": {
+        "hu": "Az összes eddigi terhesség száma, a jelenlegit is beleértve."
+      },
+      "pitfalls": {
+        "hu": "A gravida a TERHESSÉGEK száma, a para a SZÜLÉSEK száma — a kettő nem ugyanaz, és a keverésük a leggyakoribb anamnesztikus hiba."
+      }
+    }
+  },
+  {
+    "id": "ctx.parity.para",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Para"
+    },
+    "module": "ctx",
+    "datatype": "quantity",
+    "unit": "1",
+    "domain": {
+      "min": 0,
+      "max": 20
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A 24. héten túl megszült terhességek száma."
+      },
+      "whyItMatters": {
+        "hu": "A VBAC-esély, a CMQCC vérzési kockázat és a vajúdás várható lefolyása is ettől függ."
+      }
+    },
+    "standards": {
+      "ichom": "PCB010"
+    }
+  },
+  {
+    "id": "ctx.pathway",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Ellátási útvonal"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "preconception",
+        "label_hu": "Fogamzás előtti gondozás"
+      },
+      {
+        "code": "pre-ivf",
+        "label_hu": "IVF-előkészítés"
+      },
+      {
+        "code": "prenatal",
+        "label_hu": "Várandósgondozás"
+      },
+      {
+        "code": "pregnancy.pathology",
+        "label_hu": "Patológiás terhesség"
+      },
+      {
+        "code": "gynecology",
+        "label_hu": "Nőgyógyászat"
+      },
+      {
+        "code": "postpartum",
+        "label_hu": "Gyermekágy"
+      },
+      {
+        "code": "oncology",
+        "label_hu": "Onkológia"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Melyik gondozási úton halad a beteg."
+      },
+      "whyItMatters": {
+        "hu": "Ez választja ki a megjelenő modulokat és a kérdőívek esedékességét."
+      }
+    }
+  },
+  {
+    "id": "ctx.pregnant",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Terhes-e"
+    },
+    "module": "ctx",
+    "datatype": "tristate",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Igen"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem tudja",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Fennáll-e terhesség."
+      },
+      "whyItMatters": {
+        "hu": "Ez nyitja meg a terhességi útvonalat, és ez zárja el a terhességben tiltott gyógyszereket és képalkotó vizsgálatokat."
+      },
+      "pitfalls": {
+        "hu": "A „nem tudja” ÖNÁLLÓ válasz, és sürgősségi ellátásban gyakori. Ilyenkor a terhességi tesztet el kell végezni, nem feltételezni a negatívot."
+      }
+    }
+  },
+  {
+    "id": "ctx.purpose",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A vizit célja"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "complaint",
+        "label_hu": "Panasz kivizsgálása"
+      },
+      {
+        "code": "care",
+        "label_hu": "Gondozási vizit"
+      },
+      {
+        "code": "procedure",
+        "label_hu": "Beavatkozás"
+      },
+      {
+        "code": "followup",
+        "label_hu": "Utánkövetés"
+      },
+      {
+        "code": "screening",
+        "label_hu": "Szűrés"
+      },
+      {
+        "code": "second",
+        "label_hu": "Második vélemény"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Miért jött a beteg."
+      }
+    }
+  },
+  {
+    "id": "ctx.referral",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Beutalóval érkezett"
+    },
+    "module": "ctx",
+    "datatype": "bool",
+    "documentation": {
+      "definition": {
+        "hu": "Van-e érvényes beutaló."
+      }
+    }
+  },
+  {
+    "id": "ctx.referralDx",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Beutaló diagnózisa"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "codeSystem": {
+      "id": "bno-10-hu",
+      "version": "2026",
+      "source": "NEAK BNO-10 törzs"
+    },
+    "valueSet": [
+      {
+        "code": "O00",
+        "label_hu": "Méhen kívüli terhesség"
+      },
+      {
+        "code": "O14",
+        "label_hu": "Praeeclampsia"
+      },
+      {
+        "code": "O24",
+        "label_hu": "Terhességi diabetes"
+      },
+      {
+        "code": "N80",
+        "label_hu": "Endometriosis"
+      },
+      {
+        "code": "N92",
+        "label_hu": "Rendellenes méhvérzés"
+      },
+      {
+        "code": "Z34",
+        "label_hu": "Normális terhesség felügyelete"
+      },
+      {
+        "code": "egyeb",
+        "label_hu": "Egyéb — a teljes törzsből választva"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "A beutalón szereplő diagnózis."
+      },
+      "pitfalls": {
+        "hu": "Mintakészlet: a teljes, 1922 tételes EESZT BNO-törzs a 17. modullal érkezik. A verziószám az értéken rögzül, mert a BNO évente frissül."
+      }
+    }
+  },
+  {
+    "id": "ctx.referralOrg",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Beutaló intézmény"
+    },
+    "module": "ctx",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "A beutalót kiállító intézmény."
+      },
+      "pitfalls": {
+        "hu": "Szabad szöveg, amíg az intézménytörzs nincs beolvasztva. Ezt a 17. modul kódolt intézményazonosítóra váltja — addig `text`, kimondottan ideiglenesen."
+      }
+    }
+  },
+  {
+    "id": "ctx.role",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A rögzítő szerepe"
+    },
+    "module": "ctx",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "patient",
+        "label_hu": "Beteg"
+      },
+      {
+        "code": "midwife",
+        "label_hu": "Szülésznő"
+      },
+      {
+        "code": "resident",
+        "label_hu": "Rezidens"
+      },
+      {
+        "code": "specialist",
+        "label_hu": "Szakorvos"
+      },
+      {
+        "code": "researcher",
+        "label_hu": "Kutató"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Ki tölti ki az űrlapot."
+      },
+      "pitfalls": {
+        "hu": "NEM biztonsági határ: csak felületszűrés, a felhasználó átállíthatja. A valódi jogosultságkezelés szerveroldalon, a 25. modulban van — ezt a felületen is ki kell mondani, nehogy valaki adatvédelmi garanciának higgye."
+      }
+    }
+  }
+]

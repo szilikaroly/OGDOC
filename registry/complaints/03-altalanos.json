@@ -1,0 +1,860 @@
+[
+  {
+    "id": "compl.gen.fever",
+    "label": {
+      "hu": "Láz"
+    },
+    "synonyms": [
+      "lázas vagyok",
+      "hőemelkedés",
+      "38 fokom van",
+      "kiráz a hideg",
+      "forró vagyok"
+    ],
+    "opens": [
+      "vitals.temp",
+      "lab.crp",
+      "lab.wbc"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "fertőzés",
+      "gyulladásos betegség",
+      "gyógyszerláz"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesnél és gyermekágyasnál a láz nem általános panasz: külön tételként (`compl.obs.fever`, `compl.pp.fever`) rögzítendő, mert más a teendő."
+      }
+    },
+    "pathways": [
+      "preconception",
+      "pre-ivf",
+      "gynecology",
+      "oncology"
+    ]
+  },
+  {
+    "id": "compl.gen.fatigue",
+    "label": {
+      "hu": "Fáradékonyság"
+    },
+    "synonyms": [
+      "állandóan fáradt vagyok",
+      "nincs energiám",
+      "kimerült vagyok",
+      "elfáradok a semmitől"
+    ],
+    "opens": [
+      "lab.hgb",
+      "lab.tsh"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "vashiányos anaemia",
+      "pajzsmirigy-alulműködés",
+      "depresszió",
+      "alvászavar",
+      "cukorbetegség",
+      "élettani terhességi fáradtság"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A leggyakoribb és leginkább alábecsült panasz. Nőknél a vashiány a vezető ok, és erős menstruációs vérzés mellett rendszeresen kimarad a ferritin-meghatározás."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.weightLoss",
+    "label": {
+      "hu": "Fogyás"
+    },
+    "synonyms": [
+      "fogytam pedig nem akartam",
+      "lement rólam a hús",
+      "nem tudom miért fogyok"
+    ],
+    "redflag": true,
+    "opens": [
+      "anthro.weight.current",
+      "lab.tsh"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "daganat",
+      "pajzsmirigy-túlműködés",
+      "cukorbetegség",
+      "étkezési zavar",
+      "felszívódási zavar",
+      "depresszió"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A szándékolatlan, hat hónap alatt 5%-ot meghaladó fogyás önmagában kivizsgálást indokol."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.weightGain",
+    "label": {
+      "hu": "Hízás"
+    },
+    "synonyms": [
+      "hízom",
+      "felszedtem magamra",
+      "nem tudok fogyni"
+    ],
+    "opens": [
+      "anthro.weight.current",
+      "anthro.bmi",
+      "lab.tsh",
+      "status.endo.fatDistribution",
+      "status.endo.acanthosis"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "PCOS",
+      "pajzsmirigy-alulműködés",
+      "Cushing-szindróma",
+      "gyógyszer-mellékhatás",
+      "életmódi ok"
+    ]
+  },
+  {
+    "id": "compl.gen.nausea",
+    "label": {
+      "hu": "Hányinger"
+    },
+    "synonyms": [
+      "hányingerem van",
+      "felkavarodik a gyomrom",
+      "émelygek"
+    ],
+    "opens": [
+      "lab.hcg"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "terhesség",
+      "gyomor-bél fertőzés",
+      "gyógyszer-mellékhatás",
+      "migrén",
+      "epeút-betegség"
+    ]
+  },
+  {
+    "id": "compl.gen.vomiting",
+    "label": {
+      "hu": "Hányás"
+    },
+    "synonyms": [
+      "hányok",
+      "kihánytam",
+      "nem marad meg semmi bennem"
+    ],
+    "opens": [
+      "lab.hcg",
+      "lab.cr"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "gyomor-bél fertőzés",
+      "hyperemesis gravidarum",
+      "bélelzáródás",
+      "koponyaűri nyomásfokozódás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az EPÉS vagy SZÉKLETSZAGÚ hányás bélelzáródásra gyanús, és sebészeti megítélést kér."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.bloating",
+    "label": {
+      "hu": "Puffadás, haspuffadás"
+    },
+    "synonyms": [
+      "felfúvódik a hasam",
+      "puffadok",
+      "feszül a hasam",
+      "nőtt a hasam"
+    ],
+    "bodySite": "abdomen",
+    "opens": [
+      "us.gyn",
+      "status.internal.abdomen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "irritábilis bél",
+      "petefészek-daganat",
+      "ascites",
+      "ételintolerancia",
+      "myoma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A tartós, ÚJ keletű puffadás étvágytalansággal és korai teltségérzéssel együtt petefészek-daganat gyanúját veti fel — ezt a négyes tünetegyüttest évekig „bélpanaszként” kezelik, és ez a késői felismerés fő oka."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.constipation",
+    "label": {
+      "hu": "Székrekedés"
+    },
+    "synonyms": [
+      "nem tudok székelni",
+      "napok óta nincs székletem",
+      "kemény a székletem"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "élettani terhességi lassulás",
+      "vashiány-kezelés mellékhatása",
+      "hypothyreosis",
+      "bélelzáródás",
+      "medencefenék-zavar"
+    ]
+  },
+  {
+    "id": "compl.gen.diarrhea",
+    "label": {
+      "hu": "Hasmenés"
+    },
+    "synonyms": [
+      "hasmenésem van",
+      "híg a székletem",
+      "sokszor kell WC-re mennem"
+    ],
+    "opens": [
+      "lab.crp"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "fertőzés",
+      "gyulladásos bélbetegség",
+      "irritábilis bél",
+      "antibiotikum utáni állapot"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesség végén a hasmenés a szülés megindulásának előjele is lehet."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.syncope",
+    "label": {
+      "hu": "Ájulás"
+    },
+    "synonyms": [
+      "elájultam",
+      "elvesztettem az eszméletemet",
+      "összeestem",
+      "elsötétült minden"
+    ],
+    "redflag": true,
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.pulse",
+      "ekg.qt",
+      "lab.hgb",
+      "lab.hcg"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.provoke",
+      "compl.q.course",
+      "compl.q.firstEpisode"
+    ],
+    "differential": [
+      "vasovagalis ájulás",
+      "arrhythmia",
+      "hasűri vérzés",
+      "tüdőembólia",
+      "vena cava-szindróma",
+      "anaemia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Fogamzóképes nő ájulásánál a megrepedt méhen kívüli terhesség kizárása kötelező. A TERHELÉS ALATTI ájulás mindig szívi eredetre gyanús, és azonnali kardiológiai kivizsgálást kér."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.palpitations",
+    "label": {
+      "hu": "Szívdobogásérzés"
+    },
+    "synonyms": [
+      "kalapál a szívem",
+      "érzem a szívverésemet",
+      "kihagy a szívem",
+      "gyorsan ver a szívem"
+    ],
+    "bodySite": "chest",
+    "opens": [
+      "vitals.pulse",
+      "ekg.qt",
+      "lab.tsh",
+      "lab.hgb"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "sinus-tachycardia",
+      "supraventricularis tachycardia",
+      "extrasystole",
+      "pajzsmirigy-túlműködés",
+      "anaemia",
+      "szorongás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhességben a szívfrekvencia élettanilag emelkedett, de az ÚJ keletű, hirtelen kezdetű és hirtelen véget érő szapora szívverés arrhythmiára gyanús, és EKG-t kér a roham alatt."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.chestPain",
+    "label": {
+      "hu": "Mellkasi fájdalom"
+    },
+    "synonyms": [
+      "fáj a mellkasom",
+      "szorít a mellkasom",
+      "nyomás a mellkasomban",
+      "szúr a mellkasom belégzésnél"
+    ],
+    "bodySite": "chest",
+    "redflag": true,
+    "opens": [
+      "ekg.qt",
+      "vitals.bp.systolic",
+      "vitals.spo2",
+      "lab.dimer",
+      "status.internal.lungs"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "tüdőembólia",
+      "acut coronaria-szindróma",
+      "aorta-dissectio",
+      "pneumonia",
+      "reflux",
+      "mozgásszervi eredet",
+      "peripartum cardiomyopathia"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A terhes és a gyermekágyas beteg mellkasi fájdalmát rendszeresen alábecsülik a fiatal életkor miatt. A szülés körüli időszak a thromboemboliás kockázat csúcsa, és a spontán coronaria-dissectio tipikusan fiatal, nemrég szült nőt érint."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.legSwelling",
+    "label": {
+      "hu": "Egyoldali lábdagadás"
+    },
+    "synonyms": [
+      "megdagadt az egyik lábam",
+      "vastagabb a jobb lábam",
+      "feszül a vádlim",
+      "csak az egyik lábam dagadt meg"
+    ],
+    "bodySite": "leg",
+    "redflag": true,
+    "opens": [
+      "lab.dimer",
+      "status.internal.perfusion",
+      "status.internal.varicosity"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "mélyvénás thrombosis",
+      "Baker-ciszta",
+      "cellulitis",
+      "nyirokoedema"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhességben a bal alsó végtag érintett gyakrabban, és a D-dimer nem használható kizárásra — a kompressziós ultrahang az első vizsgálat, nem a labor."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.headache",
+    "label": {
+      "hu": "Fejfájás"
+    },
+    "synonyms": [
+      "fáj a fejem",
+      "fejfájás",
+      "hasogat a fejem",
+      "lüktet a halántékom"
+    ],
+    "bodySite": "head",
+    "opens": [
+      "vitals.bp.systolic",
+      "vitals.bp.diastolic"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.quality",
+      "compl.q.severity",
+      "compl.q.radiation",
+      "compl.q.provoke",
+      "compl.q.relieve",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "tenziós fejfájás",
+      "migrén",
+      "praeeclampsia",
+      "sinus-thrombosis",
+      "subarachnoidealis vérzés",
+      "gyógyszer-túlhasználat"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhességben és gyermekágyban a fejfájás nem általános panasz: a vérnyomás mérése és a látászavar kérdése minden esetben a vizsgálat része. Látászavarral együtt külön tétel (`compl.neuro.headache.visual`)."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.visualDisturbance",
+    "label": {
+      "hu": "Látászavar"
+    },
+    "synonyms": [
+      "homályosan látok",
+      "villog a szemem",
+      "kettőslátás",
+      "foltokat látok",
+      "elsötétül a látásom"
+    ],
+    "bodySite": "head",
+    "redflag": true,
+    "opens": [
+      "vitals.bp.systolic",
+      "lab.urine.protein",
+      "status.endo.eyeSigns"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "praeeclampsia",
+      "migrénes aura",
+      "retina-eltérés",
+      "Graves-orbitopathia",
+      "koponyaűri nyomásfokozódás"
+    ]
+  },
+  {
+    "id": "compl.gen.rash",
+    "label": {
+      "hu": "Bőrkiütés"
+    },
+    "synonyms": [
+      "kiütéses lettem",
+      "piros foltok a bőrömön",
+      "csalánkiütés",
+      "viszkető kiütés"
+    ],
+    "opens": [
+      "status.internal.skin"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "PUPPP",
+      "pemphigoid gestationis",
+      "gyógyszer-allergia",
+      "vírusos exanthema",
+      "ekcéma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Terhesség alatti hólyagos kiütésnél a pemphigoid gestationis magzati kockázattal jár, és bőrgyógyászati megítélést kér."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.hairLoss",
+    "label": {
+      "hu": "Hajhullás"
+    },
+    "synonyms": [
+      "hullik a hajam",
+      "kopaszodom",
+      "csomókban jön ki a hajam"
+    ],
+    "opens": [
+      "lab.tsh",
+      "lab.hgb",
+      "status.endo.virilization"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "telogén effluvium szülés után",
+      "vashiány",
+      "pajzsmirigy-betegség",
+      "androgén típusú hajhullás",
+      "PCOS"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A szülés utáni 2–4. hónapban jelentkező hajhullás élettani (telogén effluvium), és magától rendeződik — a megnyugtatás itt valódi ellátás."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.hirsutism",
+    "label": {
+      "hu": "Fokozott szőrnövekedés"
+    },
+    "synonyms": [
+      "szőrös lettem",
+      "nő a szőr az államon",
+      "férfias szőrzet",
+      "borostám nő",
+      "sok szőr a hasamon"
+    ],
+    "opens": [
+      "status.fert.fg.total",
+      "status.endo.virilization",
+      "us.gyn",
+      "status.endo.acanthosis"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "PCOS",
+      "idiopathiás hirsutismus",
+      "congenitalis adrenalis hyperplasia",
+      "androgéntermelő daganat",
+      "gyógyszer-mellékhatás"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A GYORSAN (hónapok alatt) kialakuló szőrnövekedés virilizációs jelekkel androgéntermelő daganat gyanúja — az évek alatt lassan alakuló nem az."
+      }
+    }
+  },
+  {
+    "id": "compl.gen.acne",
+    "label": {
+      "hu": "Pattanásosság"
+    },
+    "synonyms": [
+      "pattanásos lettem",
+      "akne",
+      "kiütések az arcomon és a hátamon"
+    ],
+    "opens": [
+      "status.fert.fg.total",
+      "us.gyn"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.onsetType",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.firstEpisode",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "PCOS",
+      "hormonális ok",
+      "gyógyszer-mellékhatás"
+    ]
+  },
+  {
+    "id": "compl.psy.depressedMood",
+    "label": {
+      "hu": "Nyomott hangulat"
+    },
+    "synonyms": [
+      "szomorú vagyok",
+      "semmihez nincs kedvem",
+      "nem tudok örülni",
+      "levert vagyok hetek óta",
+      "sírok mindenen"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "depresszió",
+      "postpartum depresszió",
+      "pajzsmirigy-alulműködés",
+      "gyászreakció",
+      "bipoláris zavar"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "Az „egyre romlik” lefolyás és a MŰKÖDÉSRE gyakorolt hatás a két legfontosabb adat. A kérdőív (pl. EPDS) szűr, nem diagnosztizál."
+      }
+    },
+    "pathways": [
+      "preconception",
+      "pre-ivf",
+      "prenatal",
+      "pregnancy.pathology",
+      "gynecology",
+      "oncology"
+    ]
+  },
+  {
+    "id": "compl.psy.anxiety",
+    "label": {
+      "hu": "Szorongás"
+    },
+    "synonyms": [
+      "szorongok",
+      "állandóan félek",
+      "pánikrohamaim vannak",
+      "nem tudok megnyugodni"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "generalizált szorongás",
+      "pánikzavar",
+      "pajzsmirigy-túlműködés",
+      "terhességgel kapcsolatos félelem",
+      "korábbi szülési trauma"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A szülés utáni pánikroham és a tüdőembólia tünetei átfednek — a szomatikus ok kizárása megelőzi a szorongás diagnózisát, nem követi."
+      }
+    }
+  },
+  {
+    "id": "compl.psy.sleepDisturbance",
+    "label": {
+      "hu": "Alvászavar"
+    },
+    "synonyms": [
+      "nem tudok aludni",
+      "éjjel felébredek",
+      "nem alszom napok óta"
+    ],
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.timing",
+      "compl.q.course",
+      "compl.q.impact"
+    ],
+    "differential": [
+      "élettani terhességi alvászavar",
+      "depresszió",
+      "szorongás",
+      "nyugtalan láb szindróma",
+      "alvási apnoe"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A gyermekágyban a „nem tudok aludni, pedig a baba alszik” minőségileg más, mint az alváshiány, és a postpartum pszichózis korai jele lehet."
+      }
+    }
+  },
+  {
+    "id": "compl.psy.suicidalThoughts",
+    "label": {
+      "hu": "Önbántó gondolatok"
+    },
+    "synonyms": [
+      "nem akarok élni",
+      "arra gondolok hogy véget vetek",
+      "jobb lenne ha nem lennék",
+      "bántani akarom magam"
+    ],
+    "redflag": true,
+    "asks": [
+      "compl.q.onset",
+      "compl.q.severity",
+      "compl.q.course"
+    ],
+    "differential": [
+      "súlyos depresszió",
+      "postpartum pszichózis",
+      "krízisállapot"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "EZ A PANASZ NEM ZÁRHATÓ LE AUTOMATIKUSAN, és nem kaphat generált betegtájékoztató szöveget. A teendő személyes megítélés és azonnali pszichiátriai konzultáció; a rendszer szerepe annyi, hogy a panasz ne vesszen el és ne maradjon válasz nélkül."
+      }
+    }
+  },
+  {
+    "id": "compl.psy.violence",
+    "label": {
+      "hu": "Bántalmazás"
+    },
+    "synonyms": [
+      "bánt a páromm",
+      "megütöttek otthon",
+      "félek otthon",
+      "erőszakoskodik velem"
+    ],
+    "redflag": true,
+    "asks": [
+      "compl.q.onset"
+    ],
+    "differential": [
+      "partnerkapcsolati erőszak",
+      "szexuális erőszak"
+    ],
+    "documentation": {
+      "pitfalls": {
+        "hu": "A kérdés csak NÉGYSZEMKÖZT tehető fel, kísérő nélkül. A rögzítés módja önmagában is kockázat: ha a beteg hozzáférést ad a kísérőnek a dokumentációhoz, a bejegyzés veszélybe sodorhatja. A hozzáférés-korlátozás ezért ennél a tételnél nem adminisztratív részlet, hanem betegbiztonság."
+      }
+    }
+  }
+]

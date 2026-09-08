@@ -1,0 +1,93 @@
+{
+ "megnevezes": "DICOM-csomópontok és az oldalkocsi",
+ "modul": 8,
+ "note": "A MAG SOHA NEM ELEMEZ DICOM-OT. A hálózati réteg (DIMSE, PDU, presentation context) és a képadat-dekódolás (JPEG, JPEG-LS, JPEG 2000, RLE) együtt nagyobb és kockázatosabb, mint az egész klinikai mag — és a mag épp attól tesztelhető, hogy tiszta függvényekből áll, futásidejű függőség nélkül.\n\nA DICOM-csomópont ezért KÜLÖN FOLYAMAT (oldalkocsi). Az OGDOC nem tud DICOM-ul; azt tudja, MIT KÉR ÉS MIT FOGAD EL.\n\nHÁROM DÖNTÉST AZ OLDALKOCSI NEM HOZHAT MEG: ki a beteg (a DICOM PatientID egy MÁSIK rendszer azonosítója), szabad-e a képet felhasználni (ráégetett azonosító), és elég-e a de-identifikáció (a címkék törlése NEM tisztítja a pixeleket). Ez klinikai és jogi kérdés, nem protokollkérdés.\n\nHÁROM SZOLGÁLTATÁS, AMI NÉLKÜL A LÁNC NEM ZÁR BE. A MWL a modalitásra viszi ki a betegazonosítót gépelés nélkül; az MPPS hozza vissza, hogy mi TÖRTÉNT — enélkül a tétel örökre „ütemezett” marad, és nem derül ki, hogy a vizsgálat elmaradt-e. A STORAGE COMMITMENT pedig az EGYETLEN válasz, amiben az archívum felelősséget vállal a megőrzésért: a C-STORE (és a STOW-RS 200-as) sikere annyit jelent, hogy MEGKAPTAM.\n\nA DICOMweb NEM „a DIMSE HTTP-n”. A DIMSE-nél az AE title azonosít, és az ismeretlen AE title elutasított társítást kap — az alapállapot a TILTÁS. A DICOMwebnél az URL nyilvános, az azonosság a HTTP-hitelesítésből jön: hitelesítés nélkül a végpont NYITVA VAN. Ezért külön listában van, külön szabályokkal.",
+ "sajatAeTitle": "OGDOC",
+ "oldalkocsi": {
+  "csomag": "github.com/amrshadid/go-dicom",
+  "licenc": "MIT",
+  "osszefer": true,
+  "allapot": "tervezett",
+  "hianyzik": [
+   "Az oldalkocsi-folyamat megírása: a szerződés (`core/interop/dicom.ts` — `DicomKapu`) leképezése a csomag SCU/SCP API-jára.",
+   "A mag és az oldalkocsi közti csatorna kiválasztása (helyi socket vagy HTTP a loopbackon) — a képadat SOHA nem mehet át a magon.",
+   "Az intézményi PACS AE title-je, hostja, portja és a társítási engedély (a PACS oldalán is fel kell venni minket).",
+   "TLS-tanúsítvány a DICOM-kapcsolathoz: a protokoll alapból nyílt.",
+   "A transfer syntax egyeztetés eldöntése: melyik tömörítést fogadjuk el, és mit kérünk vissza tömörítetlenül.",
+   "Meg kell tudni, hogy az intézményi PACS nyújt-e STORAGE COMMITMENT szolgáltatást. Amíg ez nem tisztázott, a beküldött kép HELYI MÁSOLATA NEM TÖRÖLHETŐ: a C-STORE sikere csak átvételt jelent, és a törlés egy olyan állításra épülne, amit soha senki nem tett meg.",
+   "A DICOMweb-végpont (QIDO-RS / WADO-RS) URL-je, hitelesítési módja és a hozzáférés engedélyezése. Hitelesítés nélküli végpont nem vehető használatba.",
+   "Az SR-kódok leképezése a rendszer változóira (DCM / SCT / LOINC → OGDOC-változó). Leképezés nélkül az SR-mérés várakozó sorba kerül, számként nem rögzül."
+  ]
+ },
+ "csomopontok": [
+  {
+   "aeTitle": "PACS-FO",
+   "megnevezes": "Központi képarchívum",
+   "host": "pacs.intezmeny.helyi",
+   "port": 11112,
+   "tls": false,
+   "szolgaltatasok": [
+    "C-ECHO",
+    "C-FIND",
+    "C-MOVE",
+    "C-STORE"
+   ],
+   "leiras": "A leletre választható képek forrása. A C-MOVE miatt NEKÜNK kell C-STORE-t fogadnunk: a küldést a PACS indítja a mi csomópontunk felé. AZ `archivum` JELÖLÉS SZÁNDÉKOSAN `false`: nem tudjuk, nyújt-e storage commitmentet, tehát nem hivatkozhatunk rá a helyi másolat törlésekor. A jelölés akkor válthat `true`-ra, ha a szolgáltatás megvan — addig a törlés egy meg nem tett állításra épülne.",
+   "archivum": false
+  },
+  {
+   "aeTitle": "OGDOC-STORE",
+   "megnevezes": "A mi fogadó csomópontunk",
+   "host": "0.0.0.0",
+   "port": 11113,
+   "tls": false,
+   "szolgaltatasok": [
+    "C-ECHO",
+    "C-STORE",
+    "SR",
+    "SC"
+   ],
+   "leiras": "Ide érkeznek a C-MOVE-val lehívott képek. Enélkül a lehívás elindulna, és a kép SEHOVA nem érkezne meg — hibaüzenet nélkül. Ugyanitt érkezik az SR (a modalitás kódolt MÉRÉSEI, nem kép) és az SC (képernyőmentés, szkennelt papír). Az SC a ráégetett azonosító elsőszámú forrása: ott a név nem a címkében, hanem a pixelekben van."
+  },
+  {
+   "aeTitle": "MWL-SZULESZET",
+   "megnevezes": "Vizsgálati munkalista (szülészeti ultrahang)",
+   "host": "mwl.intezmeny.helyi",
+   "port": 11114,
+   "tls": false,
+   "szolgaltatasok": [
+    "C-ECHO",
+    "MWL",
+    "MPPS"
+   ],
+   "leiras": "Mit kell ma megcsinálni, és mi történt valójában. A munkalista az EGYETLEN hely, ahol a betegazonosító a modalitásra kerül gépelés nélkül — enélkül a vizsgáló írja be, és az elgépelés innen ered."
+  },
+  {
+   "aeTitle": "OGDOC-SR",
+   "megnevezes": "Strukturált lelet fogadása (szülészeti biometria)",
+   "host": "0.0.0.0",
+   "port": 11115,
+   "tls": false,
+   "szolgaltatasok": [
+    "C-ECHO",
+    "SR"
+   ],
+   "archivum": false,
+   "leiras": "Az ultrahangkészülék kódolt mérései. HÁROM DOLOG NÉLKÜL A SZÁM NEM ADAT: kód (mit mér), mértékegység (3,2 cm ≠ 3,2 mm) és megfigyelő (melyik gép, melyik szoftververzió — az eltérő gyártói algoritmusok eltérő számot adnak ugyanarra a képre). A LEGCSENDESEBB HIBA azonban az ÜTKÖZÉS: ugyanaz a biometria kétszer kerül be, egyszer a géptől SR-ben, egyszer az asszisztens beírásából. A két szám kicsit eltér, és onnantól ugyanaz a klinikai tény két mezőben él. A `srAtveheto()` ezért az emberi rögzítéssel ütköző gépi mérést NEM írja felül és nem is teszi mellé — emberi döntést kér."
+  }
+ ],
+ "webVegpontok": [
+  {
+   "id": "dicomweb.kulcsobjektum",
+   "megnevezes": "Kulcsobjektumok lehívása (WADO-RS / QIDO-RS)",
+   "alapUrl": "https://pacs.intezmeny.helyi/dicom-web",
+   "hitelesites": "oauth2",
+   "szolgaltatasok": [
+    "QIDO-RS",
+    "WADO-RS"
+   ],
+   "megorzesiNyugta": null,
+   "leiras": "A leletbe emelt kulcsobjektumok (mért képek, kijelölt felvételek) lehívása. A WADO-RS-nél — a C-MOVE-val ellentétben — NEM kell fogadó SCP: a válasz ugyanazon a kapcsolaton jön vissza, tehát nincs az a némán elveszett kép, amit a hiányzó C-STORE SCP okoz. KÜLDÉS (STOW-RS) SZÁNDÉKOSAN NINCS a listában: amíg nem tudjuk, hogy a végpont ad-e megőrzési nyugtát, a beküldés olyan lánc kezdete lenne, amelynek a végén valaki töröl egy helyi másolatot egy meg nem történt visszaigazolás alapján. A `megorzesiNyugta` ezért `null` — és a `null` itt nem „igen”."
+  }
+ ]
+}

@@ -1,0 +1,390 @@
+{
+ "id": "anat.magzat.elsoTrimeszter",
+ "label": {
+  "hu": "Magzati részletes anatómia — szervrendszerenkénti értékkészlet"
+ },
+ "source": {
+  "cite": "A jelenleg használt szülészeti rendszer „Részletes anatómia” fülei (képernyőképes átvétel, 2026-09-03)"
+ },
+ "coverage": "full",
+ "coverageNote": {
+  "hu": "Mind a TIZENKÉT szervrendszer átvéve."
+ },
+ "gaps": [],
+ "states": [
+  {
+   "id": "normal",
+   "label": "A normál állítás bejelölve",
+   "meaning": "Megvizsgálva, eltérés nélkül."
+  },
+  {
+   "id": "notVisible",
+   "label": "Nem látható",
+   "meaning": "LELET: a szerv nem ábrázolódott. Ez ÖNMAGÁBAN lehet kóros — a nem látható gyomor oesophagus-atresia jele."
+  },
+  {
+   "id": "notObtainable",
+   "label": "Nem hozható látótérbe",
+   "meaning": "TECHNIKAI KORLÁT: a magzat helyzete, az anyai habitus vagy a magzatvíz mennyisége miatt nem volt beállítható a metszet. Ez a vizsgálatról szól, nem a magzatról."
+  },
+  {
+   "id": "abnormal",
+   "label": "Rendellenesség",
+   "meaning": "Eltérés — a tételes lista nyílik."
+  },
+  {
+   "id": "notRecorded",
+   "label": "Semmi nincs bejelölve",
+   "meaning": "KIMARADT: erről a szervről a rendszer SEMMIT nem állít."
+  }
+ ],
+ "stateNote": {
+  "hu": "A NEM LÁTHATÓ ÉS A NEM HOZHATÓ LÁTÓTÉRBE NEM UGYANAZ, és ez a megkülönböztetés a legfontosabb, ami ebből a felületből átveendő. Az első LELET a magzatról — a nem látható gyomor oesophagus-atresiára utal, a nem látható húgyhólyag alsó húgyúti obstructióra. A második a VIZSGÁLATRÓL szól: a magzat háttal fekszik. A rendszer eddig egyetlen „nem vizsgálható” állapotot ismert; ez a felület kettéválasztja, és igaza van."
+ },
+ "regions": [
+  {
+   "id": "fej",
+   "label": "Fej",
+   "normalStatement": "Szabályos koponyaforma",
+   "measurements": [],
+   "abnormalities": [
+    "Acrania",
+    "Brachycephalia",
+    "Craniosynostosis",
+    "Dolichocephalia",
+    "Hátraboltosuló tarkó",
+    "Lóhere formájú fej (clover)",
+    "Citrom jel",
+    "Eper jel"
+   ]
+  },
+  {
+   "id": "agy",
+   "label": "Agy",
+   "normalStatement": "Agyféltekék, agykamrák, középagy és hátsó koponyagödör megjelenése normális",
+   "measurements": [
+    "Va bal (mm)",
+    "Vp bal (mm)",
+    "Hem left (mm)",
+    "Első szarv (Va, mm)",
+    "Hátsó szarv (Vp, mm)",
+    "Hem right (mm)",
+    "3. agykamra (mm)",
+    "4. agykamra (mm)",
+    "Plexus choroideus cysta bal oldali (mm × mm × mm)",
+    "Plexus choroideus cysta jobb oldali (mm × mm × mm)"
+   ],
+   "abnormalities": [
+    "Microcephalia",
+    "Macrocephalia",
+    "Anencephalia",
+    "Corpus callosum agenesia (részleges / teljes)",
+    "Könnycsepp jel",
+    "Encephalocele (lokalizációval)",
+    "Exencephalia",
+    "Holoprosencephalia (alobaris / semilobaris / lobaris)",
+    "Iniencephalia",
+    "Fossa posterior: kitágult cisterna magna",
+    "Fossa posterior: kisméretű cisterna magna",
+    "Fossa posterior: Blake pouch cysta",
+    "Fossa posterior: vermis hypoplasia",
+    "Fossa posterior: vermis agenesia",
+    "Fossa posterior: rhombencephalosynapsis",
+    "Fossa posterior: cerebellum hypoplasia",
+    "Fossa posterior: banán-jel (cerebellum)",
+    "Fossa posterior: cerebelláris sérülés (oldallal)",
+    "Fossa posterior: hátsó koponyagödör cysta (mérettel)",
+    "Destruktív laesio: porencephalia (mérettel)",
+    "Destruktív laesio: hydranencephalia",
+    "Destruktív laesio: schizencephalia",
+    "Agykéreg: hemimegalencephalia",
+    "Ventriculomegalia (enyhe / közepes 12-14 mm / súlyos)",
+    "Meszesedések (mérettel)",
+    "Cysták (lokalizációval, mérettel)",
+    "Arachnoidális cysta (mérettel)",
+    "Tumor (lokalizációval, mérettel)",
+    "Vena Galeni aneurysma"
+   ]
+  },
+  {
+   "id": "arc",
+   "label": "Arc",
+   "normalStatement": "Arc- és ajakhasadék nem látható, a szemek, az orr és a mandibula megjelenése normális",
+   "measurements": [
+    "IOD (mm)",
+    "EOD (mm)",
+    "Bal szem (mm)",
+    "Jobb szem (mm)",
+    "Bal fül (mm)",
+    "Jobb fül (mm)",
+    "Orrcsont (mm)",
+    "Praenasalis vastagság (mm)",
+    "Kemény szájpad területe (mm²)"
+   ],
+   "abnormalities": [
+    "Hasadék (ajak / ajak és szájpad; oldalisággal; mérettel)",
+    "Fülek rendellenessége",
+    "Szemek (pl. echodenz szemlencse; oldalisággal)",
+    "Lapos arc",
+    "Macroglossia",
+    "Micrognathia (mandibula mérettel)",
+    "Orr (pl. hypoplasiás orrcsont)",
+    "Arc daganata"
+   ]
+  },
+  {
+   "id": "gerinc",
+   "label": "Gerinc",
+   "normalStatement": "Ép gerinc, sem spina bifida, sem kyphoscoliosis nem látható",
+   "measurements": [],
+   "abnormalities": [
+    "Spina bifida (nyitott / zárt; cervicalis · thoracalis · lumbalis · sacralis; érintett szegmensek száma; myelomeningocelével)",
+    "Hemivertebra (szegmensekkel)",
+    "Kyphosis (szegmensekkel)",
+    "Sacralis agenesia",
+    "Sacrococcygealis teratoma (típussal)",
+    "Sirenomelia",
+    "Scoliosis (szegmensekkel)",
+    "Arnold-Chiari malformáció: hiányzó cerebellum",
+    "Arnold-Chiari malformáció: banán-jel (cerebellum)",
+    "Arnold-Chiari malformáció: citrom alakú fej"
+   ],
+   "note": "A gerincnél a SZEGMENS is adat: a spina bifida szintje és kiterjedése dönti el a prognózist, nem a puszta megléte."
+  },
+  {
+   "id": "nyak",
+   "label": "Nyak / Bőr",
+   "normalStatement": "Sem bőrödéma, sem cysticus hygroma nem látható",
+   "measurements": [
+    "Tarkóredő vastagsága (mm)"
+   ],
+   "abnormalities": [
+    "Nyaki ödéma",
+    "Cysticus hygroma (mértékkel; szeptált / nem szeptált)",
+    "Generalizált ödéma (mértékkel)",
+    "Tumor (típussal, mérettel)"
+   ]
+  },
+  {
+   "id": "mellkas",
+   "label": "Mellkas",
+   "normalStatement": "A mellkas és a tüdők megjelenése normális",
+   "measurements": [
+    "Mellkas átmérő T (mm)",
+    "Mellkas átmérő A-P (mm)",
+    "Mellkas körfogat (mm)",
+    "Mellkas / has arány",
+    "Jobb tüdő (mm × mm)",
+    "Bal tüdő (mm × mm)",
+    "Clavicula (mm)",
+    "Tüdő-fej hányados (LHR)",
+    "Túlélés LHR alapján (%)"
+   ],
+   "abnormalities": [
+    "Bronchogen cysták (oldalisággal, max. átmérővel)",
+    "Cysticus-adenomatoid malformáció (oldalisággal; macro- / microcystás)",
+    "Congenitalis rekeszsérv (oldalisággal; izolált-e; máj helyzetével; tüdőméret-meghatározás módjával; herniálódott képletekkel: gyomor · bél · máj · lép)",
+    "Pleuralis folyadékgyülem (oldalisággal, mértékkel)",
+    "Sequestratio (oldalisággal; intra- / extralobaris)",
+    "Tüdő hypoplasia (oldalisággal)",
+    "Laryngealis atresia",
+    "Mellkasforma: rövid, hordó alakú",
+    "Mellkasforma: hosszú, keskeny",
+    "Mellkasforma: keskeny, körte alakú",
+    "Bordatörések",
+    "Mediastinalis eltolódás"
+   ],
+   "note": "A rekeszsérvnél a TÜDŐ-FEJ HÁNYADOS (LHR) és a belőle számított túlélési esély együtt áll a lapon — a második a MODELL kimenete, és a rendszer `calc.verified` kapuja alá tartozik."
+  },
+  {
+   "id": "sziv",
+   "label": "Szív",
+   "normalStatement": "Normál négyüregű szív; a főerek vizsgálata megtörtént és normál megjelenést mutatnak; normál kiáramlási pályák; normál háromér-metszet",
+   "measurements": [
+    "Szívátmérő T (mm)",
+    "Szívátmérő A-P (mm)",
+    "Szívkörfogat (mm)",
+    "Mellkas átmérő T (mm)",
+    "Mellkas átmérő A-P (mm)",
+    "Mellkas körfogat (mm)",
+    "Szív-mellkas arány",
+    "RVD diastole (mm)",
+    "RVD systole (mm)",
+    "LVD diastole (mm)",
+    "LVD systole (mm)",
+    "Aorta átmérő (mm)",
+    "Pulmonalis artéria átmérő (mm)",
+    "Echogén focusok"
+   ],
+   "abnormalities": [
+    "Dilatáció (mértékkel)",
+    "Dysrhythmia",
+    "Ebstein-anomália",
+    "Fallot-tetralogia",
+    "Pericardialis folyadékgyülem (mértékkel)",
+    "Atrio-ventricularis septumdefectus",
+    "Kamrai septumdefectus",
+    "Uni-ventricularis szív",
+    "Uni-atrialis szív",
+    "Acardia",
+    "Coarctatio aortae",
+    "Nagyér-transzpozíció",
+    "Hypoplasiás bal szívfél szindróma",
+    "Hypoplasiás jobb szívfél szindróma",
+    "Aberráns jobb arteria subclavia (ARSA)",
+    "Mediastinalis eltolódás"
+   ],
+   "note": "A SZÍVNÉL NÉGY KÜLÖN NORMÁL-ÁLLÍTÁS van, mindegyik SAJÁT „nem látható” és „nem hozható látótérbe” állapottal: négyüregű kép, főerek, kiáramlási pályák, háromér-metszet. Ez nem szőrszálhasogatás — a négyüregű kép normális lehet úgy is, hogy a nagyerek transzponáltak. Egyetlen „szív normális” pipa ezt elfedné."
+  },
+  {
+   "id": "hasfal",
+   "label": "Hasfal",
+   "normalStatement": "Nincs hasfali deformitás",
+   "measurements": [],
+   "abnormalities": [
+    "Gastroschisis (herniálódott zsigerekkel: belek · máj · gyomor · mesenterium · szív)",
+    "Exomphalos (tartalommal: bél · máj · húgyhólyag · szív · mesenterium · gyomor)",
+    "Test-nyél rendellenesség (body stalk anomaly)",
+    "Hólyag-extrophia",
+    "Kloáka-extrophia"
+   ],
+   "note": "A HERNIÁLÓDOTT TARTALOM önálló adat: a csak belet tartalmazó exomphalos prognózisa más, mint a májat is tartalmazóé."
+  },
+  {
+   "id": "git",
+   "label": "GIT — hasüreg",
+   "normalStatement": "A gyomor és a GIT megjelenése normál",
+   "measurements": [
+    "Gyomor (mm × mm × mm)"
+   ],
+   "abnormalities": [
+    "Ascites (mértékkel, mennyiséggel)",
+    "Abdominalis cysta: májcysta",
+    "Abdominalis cysta: mesenterialis",
+    "Abdominalis cysta: bal petefészek",
+    "Abdominalis cysta: jobb petefészek",
+    "Abdominalis cysta: choledochus",
+    "Abdominalis cysta: bal vese",
+    "Abdominalis cysta: jobb vese",
+    "Abdominalis cysta: ismeretlen eredetű",
+    "Double bubble",
+    "Hyperechogen bél (mértékkel)",
+    "Intraamnialis vérzés nyoma",
+    "Máj nodulus (mérettel)",
+    "Vékonybél-obstructio",
+    "Vastagbél-obstructio",
+    "Situs inversus",
+    "Gyomor nem látható",
+    "Gyomor összeesett",
+    "Gyomor kitágult",
+    "Hepatomegalia",
+    "Splenomegalia",
+    "Hiányzó húgyhólyag",
+    "Duplex húgyhólyag"
+   ]
+  },
+  {
+   "id": "urogenitalis",
+   "label": "Urogenitalis traktus",
+   "normalStatement": "A vesék és a húgyhólyag megjelenése normál",
+   "measurements": [
+    "Bal vese A-P / Tr / L (mm)",
+    "Bal vese térfogat (cm³)",
+    "Bal vesemedence A-P / Tr / L (mm)",
+    "Jobb vese A-P / Tr / L (mm)",
+    "Jobb vese térfogat (cm³)",
+    "Jobb vesemedence A-P / Tr / L (mm)",
+    "Hólyag A-P / Tr / L (mm)",
+    "Hólyag térfogat (cm³)",
+    "Bal ureter (mm)",
+    "Jobb ureter (mm)"
+   ],
+   "abnormalities": [
+    "Ureterek (normál / nem látható / tágult; oldalankénti mérettel)",
+    "Hólyag (kitágult, fokozott tónus / diverticulum / laza falú)",
+    "Hydronephrosis (oldallal; oldalankénti tágulat-mértékkel; cortex állapotával)",
+    "Multicystás vese (oldallal)",
+    "Polycystás vese (autosomalis recesszív / domináns; oldallal)",
+    "Vese agenesia (oldallal)",
+    "Vese a medencében (oldallal)",
+    "Patkóvese",
+    "Kettőzött vese (oldallal)",
+    "Vese dysplasia (oldallal)",
+    "Tumor (lokalizációval, oldallal, mérettel)"
+   ]
+  },
+  {
+   "id": "vegtagok",
+   "label": "Végtagok",
+   "normalStatement": "A kezek, karok, lábfejek, lábak és ízületek megjelenése normális",
+   "measurements": [
+    "Lábfej bal / jobb (mm)",
+    "Humerus bal / jobb (mm)",
+    "Femur bal / jobb (mm)",
+    "Radius bal / jobb (mm)",
+    "Ulna bal / jobb (mm)",
+    "Tibia bal / jobb (mm)",
+    "Fibula bal / jobb (mm)",
+    "Femur / lábfej arány"
+   ],
+   "abnormalities": [
+    "Kezek: hiányzik · adactylia · arachnodactylia · brachydactylia · hasadék · clinodactylia · oligodactylia · egymást fedő ujjak · polydactylia · syndactylia (mind oldalisággal)",
+    "Lábfejek: hiányzik · adactylia · brachydactylia · hasadék · clinodactylia · oligodactylia · átfedő lábujjak · polydactylia · rocker-bottom (hintalótalp) · szandál jel (mind oldalisággal)",
+    "Humerus: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Femur: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Radius: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Ulna: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Tibia: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Fibula: Hiányzik (oldalisággal) · Hajlott (oldalisággal) · Törés (oldalisággal) · Rövid (oldalisággal)",
+    "Könyökök: Fixált, flexált (oldalisággal) · Fixált, extendált (oldalisággal) · Abducált (oldalisággal) · Adducált (oldalisággal)",
+    "Csuklók: Fixált, flexált (oldalisággal) · Fixált, extendált (oldalisággal) · Abducált (oldalisággal) · Adducált (oldalisággal)",
+    "Térdek: Fixált, flexált (oldalisággal) · Fixált, extendált (oldalisággal) · Abducált (oldalisággal) · Adducált (oldalisággal)",
+    "Dongaláb (oldalisággal)"
+   ],
+   "note": "MINDEN TÉTELNEK OLDALISÁGA VAN, és a hosszméretek is oldalanként állnak. Az egyoldali hiány és a kétoldali hiány KÜLÖNBÖZŐ diagnózis; oldaliság nélkül a lelet nem is értelmezhető."
+  },
+  {
+   "id": "genitalia",
+   "label": "Genitalia",
+   "normalStatement": "Normál genitália",
+   "measurements": [],
+   "abnormalities": [
+    "Hydrocoele (oldalisággal)",
+    "Hypospadiasis"
+   ],
+   "note": "EZ A LAP ADJA A KIMENETI KAPU MŰKÖDŐ PÉLDÁJÁT. Két külön mező van: a „Lelet” (pl. „normál genitália — a szülők nem akarják tudni a magzat nemét”) és a „Nincs nyomtatásban” (pl. „normál hím külső ivarszervek”). A megállapítás tehát RÖGZÜL, de nem KERÜL A NYOMTATOTT LELETRE. Pontosan ez az, amit a jelen terhesség főpaneljének „Páciens tudni szeretné a magzat nemét” mezője kapuz — és itt látszik, hogy a szakma ezt már megoldotta: a dokumentáció teljes marad, a betegnek adott papír nem mond el mindent."
+  },
+  {
+   "id": "egyeb",
+   "label": "Egyéb rendellenességek",
+   "normalStatement": "Szervrendszerhez nem köthető rendellenesség nem látható",
+   "measurements": [],
+   "abnormalities": [
+    "SGA (a growth-restrictio gyanúja)",
+    "Csontváz: intrauterin csonttörések",
+    "Csontváz: a csontváz megrövidülése",
+    "Csontváz: thanatophor törpeség",
+    "Csontváz: achondrogenesis (típussal)",
+    "Csontváz: osteogenesis imperfecta (típussal)",
+    "Csontváz: camptomeliás dysplasia",
+    "Csontváz: rövid-borda–rövid-végtag szindróma",
+    "Csontváz: Ellis-van Creveld szindróma",
+    "Csontváz: chondrodystrophiás dystrophia",
+    "Csontváz: arthrogryposis multiplex congenita",
+    "Amniotic band szindróma"
+   ],
+   "note": "NEM SZABAD SZÖVEGES GYŰJTŐHELY, hanem a szervrendszerhez nem köthető entitások lapja: a CSONTVÁZ-DYSPLASIÁK ugyanis nem egy szervet érintenek, hanem az egész magzatot. Tíz nevesített tétel áll rajta, típus-alkategóriákkal. Csak a MÁSODIK trimeszteri anatómián van ilyen fül — az elsőn a csontváz még nem ítélhető meg."
+  }
+ ],
+ "printGate": {
+  "hu": "A genitalia lapon a rendszer KÉT KIMENETET különböztet meg: a rögzített leletet és a nyomtatásba kerülő leletet. A „Nincs nyomtatásban” mező a működő bizonyíték arra, hogy a beteg kérése (nem akarja tudni a magzat nemét) a DOKUMENTUM szintjén kapuzható anélkül, hogy a dokumentáció hiányos lenne."
+ },
+ "tabsByTrimester": {
+  "first": 12,
+  "second": 13
+ },
+ "regionNote": {
+  "hu": "A MÁSODIK TRIMESZTERI anatómia szervrendszeri füleinek értékkészlete AZONOS az elsőével — ugyanaz a katalógus, másik terhességi korra. Ez nem feltevés: mind a tizenkét fül összevetve (fej, agy, arc, gerinc, nyak/bőr, mellkas, szív, hasfal, GIT, urogenitalis, végtagok, genitalia), és tételről tételre egyeznek. A különbség egyetlen többletfül: az „Egyéb rendellenességek”, ahol a csontváz-dysplasiák állnak. Ez megerősíti a katalógus szerkezetét: nem trimeszterenként külön listát kell vezetni, hanem EGY listát, terhességi kor szerinti elérhetőséggel."
+ },
+ "verification": "A két trimeszter füleinek tételes összevetése megtörtént."
+}

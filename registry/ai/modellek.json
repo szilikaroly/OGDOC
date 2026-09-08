@@ -1,0 +1,697 @@
+{
+  "megnevezes": "AI-modellek — jelöltek, és ami mindegyiktől kell",
+  "modul": 28,
+  "elv": "Az AI-kimenet JAVASLAT, nem lelet. A modell klinikusi megerősítés nélkül nem hoz létre leletet, és hitelesítetlen modell egyáltalán nem ad kimenetet — ugyanaz a szerkezet, mint a `calc.verified` kapunál. A licenckapu MEGELŐZI a hitelesítést: ismeretlen licencnél az átvétel akkor sem indul el, ha a modell egyébként jó volna.",
+  "kovetelmenyek": [
+    {
+      "id": "licenc",
+      "kerdes": "Van megnevezett, felhasználást engedő licenc?",
+      "blokkolo": true,
+      "miert": "Ismeretlen licencnél az átvétel el sem indul. Egy hitelesítetlen átvételt ki lehet javítani, egy jogosulatlant nem."
+    },
+    {
+      "id": "bemenet",
+      "kerdes": "Mi a modell tényleges bemenete — nyers jel vagy már kinyert jellemzők?",
+      "blokkolo": true,
+      "miert": "Ha a modell már kinyert jellemzőket kap, akkor a nehéz felét egy MÁSIK rendszer végzi — és az a másik rendszer is orvostechnikai eszköz."
+    },
+    {
+      "id": "cimke",
+      "kerdes": "Mi a tanító címke: KIMENETEL vagy szakértői osztályozás?",
+      "blokkolo": true,
+      "miert": "A szakértői osztályozásra tanított modell azt tanulja meg, hogy EGYETÉRTSEN a szakértővel — nem azt, hogy előre jelezze a bajt. Nem tudja túlszárnyalni azokat, akiket utánoz, és örökli a tévedéseiket."
+    },
+    {
+      "id": "validalas",
+      "kerdes": "Van KÜLSŐ validálás, más populáción?",
+      "blokkolo": true,
+      "miert": "A saját adatán mért teljesítmény nem teljesítmény. Ez ugyanaz a kérdés, mint a 18. lépésnél: a rendszer önmagához mérve tökéletes egyezést talál."
+    },
+    {
+      "id": "mdr",
+      "kerdes": "Van CE-jelölés és klinikai értékelés (MDR)?",
+      "blokkolo": true,
+      "miert": "Egy CTG-t értelmező algoritmus klinikai döntés céljából orvostechnikai eszköz. Ez nem fejlesztési, hanem engedélyezési kérdés."
+    },
+    {
+      "id": "bizonytalansag",
+      "kerdes": "Ki tudja mondani, hogy NEM TUDJA megítélni?",
+      "blokkolo": true,
+      "miert": "A magabiztos gépi „normális” a legrosszabb kimenet. A bizonytalanság kimenet, nem hiba."
+    },
+    {
+      "id": "verzio",
+      "kerdes": "Rögzül a modell neve, verziója és a bemenet pillanatképe?",
+      "blokkolo": true,
+      "miert": "Enélkül a kimenet visszamenőleg nem magyarázható — és a 17. lépés audit-hurka nem tudja visszamérni."
+    },
+    {
+      "id": "klinikaiHaszon",
+      "kerdes": "Van bizonyíték arra, hogy JAVÍTJA a kimeneteleket?",
+      "blokkolo": false,
+      "miert": "A számítógépes CTG-értelmezés nagy, jól tervezett vizsgálatokban nem javította a klinikai kimeneteleket. Ez nem tiltás, hanem az a tény, amivel szemben egy új jelöltnek bizonyítania kell."
+    }
+  ],
+  "jeloltek": [
+    {
+      "id": "ai.ctg-guardian",
+      "megnevezes": "CTG Guardian",
+      "forras": "https://github.com/Fillo001/CTG-Guardian",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS licencfájl és a README sem mond licencet."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, vesszővel elválasztva — nem CTG-görbe. A jellemzőket (alapfrekvencia, akcelerációk, decelerációk, rövid/hosszú távú variabilitás, hisztogram-statisztikák) egy MÁSIK rendszer nyeri ki."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása, nem az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Nincs közölt validálási eredmény; a repóban nincs sem tanító-, sem kiértékelő futtatás."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad egy címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "A modellfájl (`ctg_model.pkl`) nincs a repóban; verzió és bemenet-pillanatkép nincs."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs erre vonatkozó adat."
+        }
+      },
+      "megjegyzes": "Tanulóprojekt, nem klinikai eszköz — és ezt a katalógus azért mondja ki, hogy a kérdés eldönthető legyen, ne benyomás alapján dőljön el. A README három olyat állít, ami a repóban nincs meg: SHAP-értelmezhetőség (nincs SHAP-kód), „clean codebase with modular notebooks” (négy, 122–387 bájtos fájl, amelyek nem érvényes notebookok), és a futtatható alkalmazás (a betöltött modellfájl hiányzik). AMI VISZONT HASZNÁLHATÓ BELŐLE, és nem is tőle származik: a 21 jellemzős vektor és a háromosztályos kimenet PUBLIKUS, széles körben ismert szerkezet (a UCI/Kaggle kardiotokográfiai adatkészlet, SisPorto-val kinyert jellemzőkkel). Ez SZERKEZET, nem tartalom — a jellemzőlistát mint fogalmi keretet fel lehet használni anélkül, hogy ebből a repóból bármit átvennénk.",
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.cervical-cytology",
+      "megnevezes": "Cervical Cytology AI",
+      "forras": "https://github.com/PritamTheCoder/cervical_cytology_ai",
+      "cel": "Sejtszintű citológiai osztályozás kenetképen, majd kenetszintű összegzés",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "MIT — az OGDOC licencével összefér."
+        },
+        "bemenet": {
+          "van": true,
+          "mit": "VALÓDI KÉPEK: Cellpose-szegmentálás, majd sejtszintű osztályozás. Nem előre kinyert jellemzők."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "SIPaKMeD sejtosztályok (dyskeratotic, koilocytotic stb.) — citológus MORFOLÓGIAI besorolása, nem szövettani kimenetel."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Nincs közölt külső validálás más populáción."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "A szerző maga mondja ki: „research proof-of-concept, NOT a medical device”."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "Nincs dokumentált „nem tudom megítélni” kimenet."
+        },
+        "verzio": {
+          "van": true,
+          "mit": "Verziózott folyamat, konfigurációval (`pipeline.yaml`) és naplózással."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs erre vonatkozó adat."
+        }
+      },
+      "megjegyzes": "A négy jelölt közül szerkezetileg a legkomolyabb: teljes folyamat a képtől a jelentésig, MIT licenccel, és a szerző MAGA mondja ki, hogy nem orvostechnikai eszköz. A licenckapu tehát NEM zárja — a blokkolás oka a címke, a validálás és az MDR, és mindhárom ORVOSOLHATÓ, szemben a licenchiánnyal. Ez érdemi különbség.",
+      "tanitoAdat": {
+        "id": "adat.cervical-cytology",
+        "md5": null,
+        "n": null,
+        "megnevezes": "lásd a jelölt forrását",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.herlev-svm",
+      "megnevezes": "Cervical Cancer Classification (GLCM + SVM)",
+      "forras": "https://github.com/nowitsanurag/Classification-of-Cervical-Cancer-using-machine-learning",
+      "cel": "Pap-kenet sejtek osztályozása GLCM-jellemzőkből, SVM-mel",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "MIT (2021)."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "GLCM-textúrajellemzők — előre kinyert jellemzők, nem kép."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "Herlev-osztályok: citológus besorolása, nem kimenetel."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "A közölt 95% a Herlev-készleten mért, ami kicsi és egyforrású — ez nem külső validálás."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "Nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "MATLAB-szkriptek és `.mat` jellemzőfájlok, verziózás nélkül."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs erre vonatkozó adat."
+        }
+      },
+      "megjegyzes": "Publikált módszer (IEEE), MIT licenccel — a HIVATKOZÁS tehát rendben van. Átvétel viszont nem: MATLAB-kód `.mat` jellemzőfájlokkal, és a bemenet itt is előre kinyert jellemző. Ugyanaz a szerkezeti korlát, mint a CTG-Guardiannél.",
+      "tanitoAdat": {
+        "id": "adat.herlev-svm",
+        "md5": null,
+        "n": null,
+        "megnevezes": "lásd a jelölt forrását",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.kduffuor",
+      "megnevezes": "fetal-health-ml-analysis (kduffuor)",
+      "forras": "https://github.com/kduffuor/fetal-health-ml-analysis",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "MIT — megengedő, forrásmegjelöléssel átvehető."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.cdt",
+      "megnevezes": "cdt-model — döntési fa (laurentinobezerra)",
+      "forras": "https://github.com/laurentinobezerra/cdt-model",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "MIT — megengedő. A tárban lévő portugál nyelvű szakdolgozat-PDF viszont NEM MIT alatt áll: az szerzői jogvédett szöveg."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.svm",
+      "megnevezes": "FetalHealthClassification SVM (AdityaTheDev)",
+      "forras": "https://github.com/AdityaTheDev/FetalHealthClassification-Using-SupportVectorMachine",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "Apache-2.0 — megengedő, a NOTICE megtartásával."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.vishesh",
+      "megnevezes": "Fetal_health_classification (VisheshData)",
+      "forras": "https://github.com/VisheshData/Fetal_health_classification",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS LICENCFÁJL — minden jog fenntartva. A licenc hiánya nem szabad felhasználás."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.feliciasalim",
+      "megnevezes": "fetal-health-classification, random erdő (feliciasalim)",
+      "forras": "https://github.com/feliciasalim/fetal-health-classification",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS LICENCFÁJL — minden jog fenntartva."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.anandms101",
+      "megnevezes": "fetal-health-classification (anandms101)",
+      "forras": "https://github.com/anandms101/fetal-health-classification",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "Apache-2.0 — megengedő. A benne lévő ADATSOR licence viszont nem ezé a táré."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.aryaazimi",
+      "megnevezes": "fetal-health-classification (arya-azimi)",
+      "forras": "https://github.com/arya-azimi/fetal-health-classification",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS LICENCFÁJL — minden jog fenntartva."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.farman",
+      "megnevezes": "Early Detection of Fetal Distress (Farman24476)",
+      "forras": "https://github.com/Farman24476/Early-Detection-of-Fetal-Distress-Using-Machine-Learning-on-CTG-Data-for-Smarter-Prenatal-Care",
+      "cel": "CTG-jellemzők háromosztályos besorolása: Normal / Suspect / Pathologic",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS LICENCFÁJL — minden jog fenntartva."
+        },
+        "bemenet": {
+          "van": false,
+          "mit": "21 SZÁM, nem CTG-görbe. A jellemzőket egy MÁSIK rendszer nyeri ki — a rendszer most már tárolja őket (`ctg.baseline`, `ctg.variability`, `ctg.decel`), de a hisztogram-statisztikák nem."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A `fetal_health` 1/2/3 a GÖRBE szakértői osztályozása (három szülész konszenzusa), NEM az újszülött kimenetele."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.uci-ctg",
+        "md5": "e9a749d3003a7c2f224c92ce0ffd99df",
+        "n": 2126,
+        "megnevezes": "UCI Cardiotocography / Kaggle „Fetal Health Classification”",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.ctg.fhrsig",
+      "megnevezes": "fetus_stress_detection_FHR_UC (naomifridman)",
+      "forras": "https://github.com/naomifridman/fetus_stress_detection_FHR_UC",
+      "cel": "Alapvonal-meghatározás és gyorsulás/lassulás-felismerés NYERS FHR-jelből",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": true,
+          "mit": "GPL-3.0 — COPYLEFT: származékos mű nem kerülhet a terjesztett MIT-licencű műbe. Csak helyi telepítés jöhet szóba."
+        },
+        "bemenet": {
+          "van": true,
+          "mit": "NYERS FHR-JEL, nem kinyert jellemzők. Ez az egyetlen jelölt, amelyik a görbét magát dolgozza fel."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "A lille-i adatsor szakértői konszenzus-alapvonala — szintén OLVASAT, de MÁS olvasat: nem besorolás, hanem alapvonal-meghatározás."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "Belső keresztvalidálás ugyanazon az adatsoron. Külső, független populáción végzett validálás nincs."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.lille-fhr",
+        "md5": null,
+        "n": null,
+        "megnevezes": "Lille-i FHR-jeladatsor (Houzé de l'Aulnoit / Boudet), szakértői konszenzussal",
+        "cimkeFajta": "olvasat"
+      }
+    },
+    {
+      "id": "ai.us.sonoai",
+      "megnevezes": "SonoAI — magzati agydaganat ultrahangképen",
+      "forras": "https://github.com/Niedrigerregen/SonoAI",
+      "cel": "Magzati agydaganat felismerése ultrahangképen",
+      "allapot": "nem-atveheto",
+      "valaszok": {
+        "licenc": {
+          "van": false,
+          "mit": "NINCS LICENCFÁJL — minden jog fenntartva."
+        },
+        "bemenet": {
+          "van": true,
+          "mit": "Ultrahangkép. A tárban két betanított Keras-modell van."
+        },
+        "cimke": {
+          "van": false,
+          "mit": "Kaggle-képkészlet címkéi; a szerző maga írja, hogy az adat kevés, zajos és kiegyensúlyozatlan."
+        },
+        "validalas": {
+          "van": false,
+          "mit": "A SZERZŐ MAGA KÍSÉRLETINEK NEVEZI: „experimental deep learning project exploring whether CNNs can effectively learn from unevenly distributed datasets”. Ez nem hiányosság a tárban, hanem a szerző tisztessége — és pontosan ezért nem klinikai eszköz."
+        },
+        "mdr": {
+          "van": false,
+          "mit": "Nincs CE-jelölés, klinikai értékelés vagy minőségirányítás."
+        },
+        "bizonytalansag": {
+          "van": false,
+          "mit": "A besorolás mindig ad címkét; „nem tudom megítélni” kimenet nincs."
+        },
+        "verzio": {
+          "van": false,
+          "mit": "Nincs verziózott modellkiadás, sem bemenet-pillanatkép."
+        },
+        "klinikaiHaszon": {
+          "van": false,
+          "mit": "Nincs vizsgálat arról, hogy a használata javítaná a kimenetelt."
+        }
+      },
+      "tanitoAdat": {
+        "id": "adat.kaggle-us-fetus",
+        "md5": null,
+        "n": null,
+        "megnevezes": "Kaggle „ultrasound fetus dataset” — kis elemszámú, kiegyensúlyozatlan",
+        "cimkeFajta": "olvasat"
+      }
+    }
+  ],
+  "adatforrasok": [
+    {
+      "id": "adat.annocerv",
+      "megnevezes": "AnnoCerv — szegmentált és annotált kolposzkópos képkészlet",
+      "forras": "https://github.com/iclx/AnnoCerv",
+      "licenc": "CC BY 4.0",
+      "meret": "1,6 GB · 527 kép, 100 eset",
+      "hasznalhato": true,
+      "mit": "Szakértők által szegmentált és annotált kolposzkópos képek, esetenkénti SWEDE-PONTSZÁMMAL. Az annotáció színkódolása pontosan azokat a jegyeket jelöli, amiket az ExAssist kolposzkópia-protokollja tételként kér: laphám-hengerhám határ, ecetfehér terület, atípusos erek és punctatio, mozaik, Naboth-tüsző, gyűrűs mirigynyílás.",
+      "feltetel": "CC BY 4.0: HIVATKOZÁS kötelező. A képkészlet MÉRETE és természete miatt a repóba nem kerül — helyben települ, a `registry/kulso/helyi/` mintájára, gitignore-olva. Betegképekről van szó: a felhasználás célhoz kötött.",
+      "megjegyzes": "A NÉGY HIVATKOZOTT FORRÁS KÖZÜL EZ A LEGHASZNÁLHATÓBB — és nem AI-modell. A Swede-pontszám publikált, determinisztikus kolposzkópos pontrendszer: öt paraméter, egyenként 0–2 pont, összesen 0–10. Ez a KALKULÁTOR-rétegbe való, a `calc.verified` kapu mögé — nem az AI-rétegbe. Nem kell hozzá MDR-döntés, nem kell hozzá modellhitelesítés, és a hitelesítése ugyanaz a munka, mint a rendszer többi kalkulátoráé."
+    }
+  ]
+}

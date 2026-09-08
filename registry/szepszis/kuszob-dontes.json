@@ -1,0 +1,11 @@
+{
+  "note": "AZ INTÉZMÉNYI KÜSZÖB — SZÁNDÉKOSAN ELDÖNTETLEN. Ugyanarra a mérésre két forrás két számot ad (CMQCC és SOMANZ), és ezt nem a fejlesztés dönti el. Amíg nincs döntés, a rendszer MINDKETTŐT megnevezi a forrásával együtt, és egyiket sem csendesíti el a másikkal. A döntés akkor döntés, ha DOKUMENTUMBAN is megtalálható; a `lenyomat` azokra az eltérésekre vonatkozik, amelyek ismeretében megszületett — ha a küszöbök azóta elmozdultak, a döntés elavulttá válik, és a rendszer ezt kimondja. A választás NEM tünteti el a másik forrást: attól, hogy választottunk, a két szám nem lesz egy szám.",
+  "allapot": "nincs-dontes",
+  "valasztott": null,
+  "ki": null,
+  "szerep": null,
+  "mikor": null,
+  "dokumentum": null,
+  "lenyomat": null,
+  "indoklas": null
+}

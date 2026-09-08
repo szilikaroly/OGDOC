@@ -1,0 +1,440 @@
+{
+  "id": "mir.keretek",
+  "label": {
+    "hu": "Akkreditációs és tanúsítási keretrendszerek — ISO 20387 · BELLA · MEES 2.1"
+  },
+  "note": "A HÁROM KERET SZÖVEGE MINDHÁROM ESETBEN VÉDETT VAGY KÜLÖN KIADVÁNY: itt sem az ISO 20387 követelményszövege, sem a BELLA tartalmi elemei, sem a MEES 2.1 Kézikönyv szövege NEM szerepel. Ami itt áll: a SZERKEZET (csoportok, standardmegnevezések), a NYILVÁNOSAN KÖZZÉTETT értékelési szabályok (pontozás, küszöbök, érvényességi idők) és a határidők. A standardok TARTALMI ELEMEIT a hivatalos kiadványból kell betölteni — enélkül a pontozó motor fut, de nincs mit pontoznia, és ezt ki is mondja.",
+  "keretek": [
+    {
+      "id": "iso20387",
+      "megnevezes": "ISO 20387:2018 — biobanki általános követelmények",
+      "fajta": "akkreditalas",
+      "hatokor": "biobank",
+      "forras": "registry/mir/iso20387.json",
+      "megjegyzes": "A kontrollmátrix külön fájlban áll, 45 sorral. Ez a keret az akkreditálható biobanki működésre vonatkozik — NEM az ellátásra."
+    },
+    {
+      "id": "bella",
+      "megnevezes": "BELLA — BetegELLátók Akkreditációja az ellátás biztonságáért",
+      "fajta": "akkreditalas",
+      "hatokor": "fekvo- és járóbeteg-ellátás",
+      "forras": "BELLA akkreditációs standardok, TÁMOP-6.2.5.A/12/1 (2014) — módszertani kiadvány és akkreditációs kiadvány (2015)",
+      "megjegyzes": "A standardok az INTÉZMÉNYI MŰKÖDÉS és nem a szakmai munka szabályait határozzák meg. Ez a különbség lényegi: a gyógyítói szabadság nem sérül, a háttérfolyamatok viszont szabályozottá válnak. A rendszerben ez pontosan az a réteg, amit az OGDOC épít.",
+      "standardSzam": {
+        "fekvo": 39,
+        "jaro": 30,
+        "kozos": 26
+      },
+      "ertekeles": {
+        "pontertekek": [
+          0,
+          2,
+          4
+        ],
+        "pontertekNote": "Minden értékelt tartalmi elemre 0, 2 vagy 4 pont adható; a pontot a tartalmi elem SÚLYSZÁMÁVAL kell szorozni. A súlyszámok a hivatalos kiadványból származnak — ebben a regiszterben nincsenek benne.",
+        "kotelezoSzazalek": 100,
+        "alapSzazalek": 75,
+        "emeltSzazalek": 75,
+        "ervenyessegEv": 3,
+        "note": "A kötelező tartalmi elemeket 100%-ban teljesíteni kell; enélkül az elért pontszámtól FÜGGETLENÜL nem adható ki akkreditációs igazolás. Alapszint: a kötelező elemeken túl az alapszintű elemek elérhető pontszámainak 75%-a. Emelt szint: az alapszint mellett az emelt szintű elemek elérhető pontszámainak 75%-a. Az igazolás kétszintű és 3 évre szól."
+      },
+      "eljaras": [
+        {
+          "lepes": "I",
+          "megnevezes": "Bejelentkezés az akkreditációs programba"
+        },
+        {
+          "lepes": "II",
+          "megnevezes": "Felkészítési időszak — oktatás, tanácsadás, offline önértékelés (helyzetértékelés)"
+        },
+        {
+          "lepes": "III",
+          "megnevezes": "Bevezetési időszak — az egyeztetett változtatások végrehajtása"
+        },
+        {
+          "lepes": "IV",
+          "megnevezes": "Online önértékelési kérdőív (max. 2 hónap)"
+        },
+        {
+          "lepes": "V",
+          "megnevezes": "Működtetési időszak — 6 hónap, tanácsadás nélkül",
+          "honap": 6
+        },
+        {
+          "lepes": "VI",
+          "megnevezes": "Helyszíni felülvizsgálat"
+        }
+      ],
+      "eljarasNote": "A helyzetértékelés BELSŐ anyag: a felülvizsgálók nem találkoznak vele. Az önértékelési kérdőív szakmai tartalma NEM befolyásolja az akkreditációs döntést — a felülvizsgálók a gyakorlati megvalósulásra keresnek bizonyítékot. A helyszíni felülvizsgálat a működtetési időszakra VISSZAMENŐLEG vizsgálódik.",
+      "standardok": [
+        {
+          "id": "bella.01",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Szakmai Fejlesztési Terv",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.02",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Döntéstámogatás",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.03",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "A betegellátás biztonságát javító vezetői tevékenység",
+          "kotelezoStandard": true,
+          "ellatas": null
+        },
+        {
+          "id": "bella.04",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Minőségbiztosítás és minőségfejlesztés",
+          "kotelezoStandard": true,
+          "ellatas": null
+        },
+        {
+          "id": "bella.05",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Klinikai audit tervezése és végzése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.06",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Humán erőforrás menedzselése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.07",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Új munkatársak fogadása és alkalmazása",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.08",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "A szakmai ellátás helyi szabályainak kialakítása és alkalmazása",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.09",
+          "csoport": "1. Menedzsment",
+          "megnevezes": "Panaszok és bejelentések kezelése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.10",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Tájékoztatás az elérhető szolgáltatásokról",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.11",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Külső kommunikáció",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.12",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Belső kommunikáció",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.13",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Fekvőbetegek áthelyezése, továbbutalása, elbocsátása",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.14",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Járóbetegek átadása, továbbutalása",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "jaro"
+          ]
+        },
+        {
+          "id": "bella.15",
+          "csoport": "2. Kommunikáció",
+          "megnevezes": "Műszakok közötti átadás fekvőbeteg-ellátásban",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.16",
+          "csoport": "3. Dokumentáció",
+          "megnevezes": "Működési dokumentumok kialakítása és kezelése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.17",
+          "csoport": "3. Dokumentáció",
+          "megnevezes": "Egészségügyi dokumentáció készítése és kezelése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.18",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Fekvőbetegek előjegyzése, fogadása és felvétele",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.19",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Fekvőbetegek ellátása",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.20",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Biztonságos gyógyszerelés a fekvőbetegek ellátásában",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.21",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Biztonságos gyógyszeres kezelés a járóbeteg-ellátásban",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "jaro"
+          ]
+        },
+        {
+          "id": "bella.22",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Járóbetegek ellátása és gondozása",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "jaro"
+          ]
+        },
+        {
+          "id": "bella.23",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Csekklista használata műtéti tevékenység során",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.24",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "A beteg műtét utáni felügyelete",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.25",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Preoperatív kivizsgálás és kockázatértékelés",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.26",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Decubitus megelőzése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.27",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Betegek esésének megelőzése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.28",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Éles vagy hegyes munkaeszközök által okozott sérülések megelőzése, a baleseteket követő tevékenységek szervezése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.29",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Újraélesztés egészségügyi ellátó intézményben",
+          "kotelezoStandard": true,
+          "ellatas": null
+        },
+        {
+          "id": "bella.30",
+          "csoport": "4. Betegellátás",
+          "megnevezes": "Haldokló betegek és elhunytak ellátása",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.31",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Infekciókontroll a járóbeteg-ellátásban",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "jaro"
+          ]
+        },
+        {
+          "id": "bella.32",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Infekciókontroll és surveillance a fekvőbeteg-ellátásban",
+          "kotelezoStandard": false,
+          "ellatas": [
+            "fekvo"
+          ]
+        },
+        {
+          "id": "bella.33",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Az antibiotikum-alkalmazás irányítása",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.34",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Egészségügyi textíliaellátás",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.35",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Orvostechnikai eszközök fertőtlenítése és sterilizálása",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.36",
+          "csoport": "5. Infekciókontroll",
+          "megnevezes": "Takarítás, egészségügyi hulladék kezelése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.37",
+          "csoport": "6. Betegellátással kapcsolatos egyéb tevékenységek",
+          "megnevezes": "Vizsgálatok és konzíliumok rendje",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.38",
+          "csoport": "6. Betegellátással kapcsolatos egyéb tevékenységek",
+          "megnevezes": "Betegazonosítás és a beteghez tartozó dokumentumok, minták, anyagok, eszközök összerendelése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.39",
+          "csoport": "6. Betegellátással kapcsolatos egyéb tevékenységek",
+          "megnevezes": "Betegek oktatása és képzése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.40",
+          "csoport": "7. Termékek, szolgáltatások",
+          "megnevezes": "Termékek és szolgáltatások beszerzése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.41",
+          "csoport": "7. Termékek, szolgáltatások",
+          "megnevezes": "Termékek átvétele, raktározása és selejtezése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.42",
+          "csoport": "7. Termékek, szolgáltatások",
+          "megnevezes": "Vásárolt szolgáltatások felügyelete",
+          "kotelezoStandard": false,
+          "ellatas": null
+        },
+        {
+          "id": "bella.43",
+          "csoport": "7. Termékek, szolgáltatások",
+          "megnevezes": "Az épített környezet, a közműrendszerek, eszközök, berendezések biztonságos működtetése",
+          "kotelezoStandard": false,
+          "ellatas": null
+        }
+      ],
+      "ellatasNote": "AZ ELLÁTÁSI FORMA CSAK OTT VAN KITÖLTVE, AHOL A STANDARD NEVE ELDÖNTI. A hivatalos táblázat oszloponkénti jelöléssel mondja meg, melyik standard melyik ellátási formára vonatkozik; ez a jelölés a szöveges kivonatból nem vezethető le, és TIPPELNI nem szabad. A `standardSzam` a kiadványban KÖZÖLT szám (fekvő 39 · járó 30 · közös 26, ami 43 különböző standardot ad ki, és a lista pontosan ennyi tételt tartalmaz) — a hozzárendelést a hivatalos kiadványból kell betölteni. Amíg nincs betöltve, a `null` áll ott, és a validálás megnevezi az eltérést.",
+      "megnevezesNote": "A STANDARDMEGNEVEZÉSEK KÉT KIADVÁNYBÓL SZÁRMAZNAK, egy év eltéréssel: a módszertani kiadványból (2014) és az akkreditációs kiadványból (2015). Ahol a kettő eltér, a KÉSŐBBI szövegét vettük át — például „Antibiotikum stewardship” helyett „Az antibiotikum-alkalmazás irányítása”, és „Orvostechnikai eszközök újrafelhasználhatóvá tétele” helyett „Orvostechnikai eszközök fertőtlenítése és sterilizálása”. Ez nem stiláris: a megnevezés azonosító, és a két kiadvány közötti eltérés maga is a hivatalos forráshoz kötendő."
+    },
+    {
+      "id": "mees21",
+      "megnevezes": "MEES 2.1 — Magyar Egészségügyi Ellátási Standardok Kézikönyv 2.1",
+      "fajta": "tanusitas",
+      "hatokor": "egészségügyi ellátás",
+      "forras": "Egészségügyi Közlöny 2024/17. (közzététel: 2024-09-25); NAH áttérési ütemterv, 1. kiadás (2025-12-12, hatályos 2025-12-16)",
+      "megjegyzes": "A MEES a BELLA ELŐZMÉNYE és utódja egyszerre: a 2001-es KES-ből fejlesztett MEES-hez annak idején NEM készült el a felülvizsgálati rendszer — épp ezért indult a BELLA. A MEES 2.1 ma az MSZ EN ISO/IEC 17021-1 szerint akkreditált tanúsító szervezetek által tanúsított irányítási rendszer standardja.",
+      "kozzetetel": "2024-09-25",
+      "tanusitvanyErvenyessegEv": 3,
+      "merfoldkovek": [
+        {
+          "id": "mees.m1",
+          "megnevezes": "NAH szabályzatok és formanyomtatványok megfelelnek a MEES 2.1 követelményeknek",
+          "hatarido": "2025-12-16",
+          "felelos": "NAH"
+        },
+        {
+          "id": "mees.m2",
+          "megnevezes": "A NAH felkészült a MEES 2.1 szerinti értékelésre",
+          "hatarido": "2025-12-17",
+          "felelos": "NAH"
+        },
+        {
+          "id": "mees.m3",
+          "megnevezes": "A NAH már csak MEES 2.1 szerint végez kezdeti vagy bővítési akkreditálási eljárást",
+          "hatarido": "2025-12-17",
+          "felelos": "NAH"
+        },
+        {
+          "id": "mees.m4",
+          "megnevezes": "Az átmeneti időszak vége: már csak MEES 2.1 szerint akkreditált státusz van érvényben",
+          "hatarido": "2026-09-25",
+          "felelos": "NAH",
+          "erinti": "intezmeny"
+        },
+        {
+          "id": "mees.m5",
+          "megnevezes": "A tanúsítói átmeneti időszak vége: a tanúsító szervezetek már csak MEES 2.1 szerinti tanúsítványt tartanak nyilván; a MEES 2.0 tanúsítványok érvényüket vesztik",
+          "hatarido": "2027-09-25",
+          "felelos": "akkreditált szervezetek",
+          "erinti": "intezmeny"
+        }
+      ]
+    }
+  ]
+}

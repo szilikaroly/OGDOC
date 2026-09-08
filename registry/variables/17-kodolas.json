@@ -1,0 +1,231 @@
+[
+  {
+    "id": "code.dx.primary",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Fődiagnózis (BNO)"
+    },
+    "module": "code",
+    "datatype": "text",
+    "audit": true,
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kódoló által választott fődiagnózis BNO-kódja."
+      },
+      "pitfalls": {
+        "hu": "EZ A KÓDOLÓ DÖNTÉSE, nem a rendszer ajánlása. Az ajánlás nem tárolódik: minden hívásnál újraszámol a rögzített adatból. A döntés és az ajánlás ELTÉRÉSE önmagában adat — ugyanaz a szétválasztás, mint a konzílium-javallat és a konzílium megkérése között."
+      },
+      "whyItMatters": {
+        "hu": "A fődiagnózis a finanszírozási besorolás gerince, és minden case-mix elemzés ebből indul."
+      }
+    }
+  },
+  {
+    "id": "code.dx.secondary",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Kísérő betegségek (BNO)"
+    },
+    "module": "code",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kódoló által felvett kísérő diagnózisok."
+      },
+      "whyItMatters": {
+        "hu": "A besorolás LEGGYAKORIBB hibaforrása: egy nem dokumentált kísérő betegség alacsonyabb súlyszámú csoportot eredményez — a beteg állapotától függetlenül."
+      }
+    }
+  },
+  {
+    "id": "code.proc.performed",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Elvégzett beavatkozások (OENO)"
+    },
+    "module": "code",
+    "datatype": "text",
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A kódoló által rögzített OENO-kódok."
+      },
+      "pitfalls": {
+        "hu": "A 11. modul `oenoFor()` függvénye JAVASLATOT ad a beavatkozási törzsből; a felvétel a kódolóé."
+      }
+    }
+  },
+  {
+    "id": "code.dx.certainty",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A diagnózis bizonyossága"
+    },
+    "module": "code",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "confirmed",
+        "label_hu": "Igazolt"
+      },
+      {
+        "code": "probable",
+        "label_hu": "Valószínű"
+      },
+      {
+        "code": "suspected",
+        "label_hu": "Gyanú",
+        "flags": [
+          "unknown"
+        ]
+      },
+      {
+        "code": "ruledOut",
+        "label_hu": "Kizárva"
+      }
+    ],
+    "documentation": {
+      "definition": {
+        "hu": "Mennyire biztos a rögzített diagnózis."
+      },
+      "pitfalls": {
+        "hu": "A GYANÚ NEM DIAGNÓZIS. Ha a bizonyosság nincs rögzítve, a kód a statisztikában igazoltként viselkedik — és egy kizárt diagnózis kódja évekig kísérheti a beteget."
+      }
+    }
+  },
+  {
+    "id": "code.rulebook.hbcs",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A HBCS-szabálykönyv verziója"
+    },
+    "module": "code",
+    "datatype": "text",
+    "documentation": {
+      "definition": {
+        "hu": "Melyik évi HBCS-szabálykönyv szerint történt a besorolás."
+      },
+      "pitfalls": {
+        "hu": "A szabálykönyv ÉVENTE változik. Verzió nélkül egy retrospektív besorolás nem reprodukálható — ugyanaz a probléma, mint a FIGO-stádiumoknál és a gondozási protokollnál."
+      }
+    }
+  },
+  {
+    "id": "code.hbcs.final",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Végleges HBCS-besorolás"
+    },
+    "module": "code",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Az intézmény által rögzített végleges besorolás."
+      },
+      "whyItMatters": {
+        "hu": "A rendszer NEM ad besorolást (a szabálykönyv nincs betöltve). Ez a mező az emberi döntést rögzíti — és ha később a rendszer is besorolna, a kettő eltérése lenne a minőségi mutató."
+      }
+    }
+  },
+  {
+    "id": "code.coder",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "A kódoló"
+    },
+    "module": "code",
+    "datatype": "text",
+    "audit": true,
+    "documentation": {
+      "definition": {
+        "hu": "Ki végezte a kódolást."
+      },
+      "pitfalls": {
+        "hu": "Mint a zárójelentés aláírásánál: hitelesített felhasználói azonosítás (25. modul) nélkül a beírt név nem bizonyít semmit."
+      }
+    }
+  },
+  {
+    "id": "addr.postcode",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Irányítószám"
+    },
+    "module": "addr",
+    "datatype": "text",
+    "patientEntry": true,
+    "documentation": {
+      "definition": {
+        "hu": "A beteg lakcímének irányítószáma."
+      },
+      "whyItMatters": {
+        "hu": "A településnevet ebből vezetjük le — a rendszer legegyszerűbb keresztfeltöltése, és az első TÁBLAKERESÉSES levezetés."
+      }
+    }
+  },
+  {
+    "id": "addr.settlement",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Település"
+    },
+    "module": "addr",
+    "datatype": "text",
+    "derivation": {
+      "kind": "lookup",
+      "table": "tbl.irszmap",
+      "from": "addr.postcode",
+      "column": "label",
+      "explain": {
+        "hu": "Az irányítószámból, a betöltött irányítószám-törzsből."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A lakcím települése."
+      },
+      "pitfalls": {
+        "hu": "TÁBLAKERESÉSSEL levezetett mező: nem a kalkulátor-rétegen megy, mert az számot vesz és számot ad. Ha a törzs nincs betöltve, a mező ÜRES MARAD, és a hiba a hibalistába kerül — nem találgatunk."
+      }
+    }
+  },
+  {
+    "id": "addr.county",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Megye"
+    },
+    "module": "addr",
+    "datatype": "text",
+    "derivation": {
+      "kind": "lookup",
+      "table": "tbl.irszmap",
+      "from": "addr.postcode",
+      "column": "megye",
+      "explain": {
+        "hu": "Az irányítószámból, ugyanabból a törzsből, másik oszlopból."
+      }
+    },
+    "documentation": {
+      "definition": {
+        "hu": "A lakcím megyéje."
+      },
+      "whyItMatters": {
+        "hu": "Egy tábla több oszlopa több levezetést szolgál ki — a törzs egyszer töltődik be, és a verziója mindkét mezőn ugyanaz."
+      }
+    }
+  }
+]

@@ -1,0 +1,482 @@
+[
+ {
+  "id": "rule.pe",
+  "code": "O1490",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   },
+   {
+    "var": "ctx.ga",
+    "op": "gte",
+    "value": 20
+   },
+   {
+    "var": "lab.urine.protein",
+    "op": "in",
+    "value": [
+     "plus1",
+     "plus2",
+     "plus3",
+     "plus4"
+    ]
+   }
+  ],
+  "whenAny": [
+   {
+    "var": "vitals.bp.systolic",
+    "op": "gte",
+    "value": 140
+   },
+   {
+    "var": "vitals.bp.diastolic",
+    "op": "gte",
+    "value": 90
+   }
+  ],
+  "source": {
+   "cite": "ACOG Practice Bulletin 222: Gestational Hypertension and Preeclampsia (2020); NICE NG133",
+   "standard": "ACOG / NICE"
+  },
+  "why": {
+   "hu": "A 20. hét után újonnan jelentkező hypertonia proteinuriával praeeclampsia."
+  },
+  "snomed": "398254007",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.pe.severe",
+  "code": "O1410",
+  "system": "bno",
+  "supersedes": [
+   "O1490"
+  ],
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   },
+   {
+    "var": "ctx.ga",
+    "op": "gte",
+    "value": 20
+   }
+  ],
+  "whenAny": [
+   {
+    "var": "vitals.bp.systolic",
+    "op": "gte",
+    "value": 160
+   },
+   {
+    "var": "vitals.bp.diastolic",
+    "op": "gte",
+    "value": 110
+   },
+   {
+    "var": "lab.plt",
+    "op": "lt",
+    "value": 100
+   },
+   {
+    "var": "lab.ast",
+    "op": "gte",
+    "value": 70
+   },
+   {
+    "var": "lab.alt",
+    "op": "gte",
+    "value": 70
+   }
+  ],
+  "source": {
+   "cite": "ACOG Practice Bulletin 222: Gestational Hypertension and Preeclampsia (2020)",
+   "standard": "ACOG PB 222"
+  },
+  "why": {
+   "hu": "Súlyossági ismérv: 160/110 Hgmm feletti vérnyomás, 100 G/l alatti thrombocytaszám, vagy a normálérték kétszeresét elérő transzamináz."
+  },
+  "incompleteNote": {
+   "hu": "A súlyossági ismérvek listája HIÁNYOS: a szérumkreatinin, a tüdőoedema és az újonnan jelentkező agyi vagy látászavar nincs bekötve. Egy súlyos eset ezért enyhének LÁTSZHAT — a szabály hiánya nem jelenti a súlyosság hiányát."
+  },
+  "snomed": "46764007",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.hellp",
+  "code": "O1410",
+  "system": "bno",
+  "supersedes": [
+   "O1490",
+   "O1400"
+  ],
+  "when": [
+   {
+    "var": "lab.plt",
+    "op": "lt",
+    "value": 100
+   },
+   {
+    "var": "lab.ldh",
+    "op": "gte",
+    "value": 600
+   }
+  ],
+  "whenAny": [
+   {
+    "var": "lab.ast",
+    "op": "gte",
+    "value": 70
+   },
+   {
+    "var": "lab.alt",
+    "op": "gte",
+    "value": 70
+   }
+  ],
+  "source": {
+   "cite": "Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol 2004;103(5 Pt 1):981-991",
+   "standard": "Tennessee-kritériumok"
+  },
+  "why": {
+   "hu": "Haemolysis (LDH), emelkedett májenzim és alacsony thrombocytaszám együtt — HELLP-szindróma."
+  },
+  "incompleteNote": {
+   "hu": "A BETÖLTÖTT BNO-TÖRZSBEN NINCS ÖNÁLLÓ HELLP-KÓD: a szindróma a súlyos praeeclampsia (O141) kódjára esik. A megnevezés ezért a kódból NEM derül ki — a HELLP tényét a diagnózis szövegében kell rögzíteni, különben az esetek visszakeresése lehetetlen."
+  },
+  "snomedNote": {
+   "hu": "A HELLP-szindrómának a betöltött Global Patient Set kiadásban NINCS megfelelő fogalma. A GPS a teljes SNOMED CT RÉSZHALMAZA — a hiány nem jelenti azt, hogy a fogalom nem létezik, csak azt, hogy ebben a kiadásban nincs benne. Azonosítót emlékezetből NEM írunk be."
+  }
+ },
+ {
+  "id": "rule.htn.chronic",
+  "code": "O1000",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   },
+   {
+    "var": "hx.sys.htn",
+    "op": "eq",
+    "value": "pos"
+   }
+  ],
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "A terhesség előtt fennálló magas vérnyomás önálló kódot kap."
+  },
+  "snomed": "8762007",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.gdm",
+  "code": "O2440",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   }
+  ],
+  "whenAny": [
+   {
+    "var": "lab.ogtt.0",
+    "op": "gte",
+    "value": 5.1
+   },
+   {
+    "var": "lab.ogtt.60",
+    "op": "gte",
+    "value": 10.0
+   },
+   {
+    "var": "lab.ogtt.120",
+    "op": "gte",
+    "value": 8.5
+   }
+  ],
+  "source": {
+   "cite": "WHO: Diagnostic criteria and classification of hyperglycaemia first detected in pregnancy (2013); IADPSG 2010",
+   "standard": "WHO 2013"
+  },
+  "why": {
+   "hu": "A terheléses vizsgálat HÁROM értékéből BÁRMELYIK küszöb feletti értéke elég a diagnózishoz."
+  },
+  "snomed": "11687002",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.icp",
+  "code": "O2660",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   },
+   {
+    "var": "lab.bileAcids",
+    "op": "gte",
+    "value": 10
+   }
+  ],
+  "source": {
+   "cite": "RCOG Green-top Guideline No. 43: Obstetric Cholestasis (2022)",
+   "standard": "RCOG GTG 43"
+  },
+  "why": {
+   "hu": "Emelkedett epesavszint terhességben — intrahepatikus cholestasis."
+  },
+  "snomed": "235888006",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.twin",
+  "code": "O3000",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.multiple",
+    "op": "in",
+    "value": [
+     "dcda",
+     "mcda",
+     "mcma"
+    ]
+   }
+  ],
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "Ikerterhesség."
+  },
+  "snomed": "65147003",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.triplet",
+  "code": "O3010",
+  "system": "bno",
+  "supersedes": [
+   "O3000"
+  ],
+  "when": [
+   {
+    "var": "ctx.multiple",
+    "op": "eq",
+    "value": "higher"
+   }
+  ],
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "Hármas vagy többes terhesség."
+  },
+  "snomed": "64254006",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.previa",
+  "code": "O4400",
+  "system": "bno",
+  "when": [
+   {
+    "var": "hx.repro.currentPregnancy.previa",
+    "op": "eq",
+    "value": "pos"
+   }
+  ],
+  "source": {
+   "cite": "RCOG Green-top Guideline No. 27a: Placenta Praevia and Placenta Accreta (2018)",
+   "standard": "RCOG GTG 27a"
+  },
+  "why": {
+   "hu": "Elölfekvő lepény."
+  },
+  "snomed": "36813001",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.oasis3",
+  "code": "O7020",
+  "system": "bno",
+  "when": [
+   {
+    "var": "labour.perinealTrauma",
+    "op": "in",
+    "value": [
+     "thirdA",
+     "thirdB",
+     "thirdC"
+    ]
+   }
+  ],
+  "source": {
+   "cite": "RCOG Green-top Guideline No. 29: Third- and Fourth-degree Perineal Tears (2015)",
+   "standard": "RCOG GTG 29"
+  },
+  "why": {
+   "hu": "Harmadfokú gátrepedés (OASIS) — a záróizom érintett."
+  },
+  "snomed": "10217006",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.oasis4",
+  "code": "O7030",
+  "system": "bno",
+  "supersedes": [
+   "O7020"
+  ],
+  "when": [
+   {
+    "var": "labour.perinealTrauma",
+    "op": "eq",
+    "value": "fourthDegree"
+   }
+  ],
+  "source": {
+   "cite": "RCOG Green-top Guideline No. 29 (2015)",
+   "standard": "RCOG GTG 29"
+  },
+  "why": {
+   "hu": "Negyedfokú gátrepedés — a végbélnyálkahártya is érintett."
+  },
+  "snomed": "16950007",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.pph",
+  "code": "O7210",
+  "system": "bno",
+  "when": [
+   {
+    "var": "labour.qbl",
+    "op": "gte",
+    "value": 500
+   }
+  ],
+  "source": {
+   "cite": "RCOG Green-top Guideline No. 52: Prevention and Management of Postpartum Haemorrhage (2016); WHO 2012",
+   "standard": "RCOG GTG 52"
+  },
+  "why": {
+   "hu": "Szülés utáni vérzés: 500 ml feletti mért vérvesztés."
+  },
+  "incompleteNote": {
+   "hu": "A KÜSZÖB SZÜLÉSMÓD-FÜGGŐ: hüvelyi szülésnél 500 ml, császármetszésnél 1000 ml a szokásos határ. A szabály ma egyetlen küszöböt használ, ezért császármetszésnél TÚLJELEZ."
+  },
+  "snomed": "47821001",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.cs",
+  "code": "O8290",
+  "system": "bno",
+  "when": [
+   {
+    "var": "labour.deliveryMode",
+    "op": "in",
+    "value": [
+     "csElective",
+     "csIntrapartum",
+     "csEmergency"
+    ]
+   }
+  ],
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "Császármetszéssel végződött szülés."
+  },
+  "snomed": "11466000",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.normal",
+  "code": "O8090",
+  "system": "bno",
+  "when": [
+   {
+    "var": "labour.deliveryMode",
+    "op": "eq",
+    "value": "spontaneous"
+   }
+  ],
+  "supersededByAny": true,
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "Egyszerű, spontán szülés — kizárólag akkor, ha SEMMILYEN más szülészeti kód nem áll fenn."
+  },
+  "snomed": "177184002",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.anaemia",
+  "code": "O9900",
+  "system": "bno",
+  "when": [
+   {
+    "var": "ctx.pregnant",
+    "op": "eq",
+    "value": "pos"
+   },
+   {
+    "var": "lab.hgb",
+    "op": "lt",
+    "value": 110
+   }
+  ],
+  "source": {
+   "cite": "WHO: Haemoglobin concentrations for the diagnosis of anaemia (2011)",
+   "standard": "WHO"
+  },
+  "why": {
+   "hu": "Terhességi anaemia: 110 g/l alatti haemoglobin."
+  },
+  "snomed": "45828008",
+  "snomedVerified": "20260101"
+ },
+ {
+  "id": "rule.preterm",
+  "code": "O60H0",
+  "system": "bno",
+  "when": [
+   {
+    "var": "nb.preterm.type",
+    "op": "eq",
+    "value": "spontaneous"
+   }
+  ],
+  "source": {
+   "cite": "BNO-10 XV. fejezet",
+   "standard": "BNO-10"
+  },
+  "why": {
+   "hu": "Spontán koraszülés."
+  },
+  "snomed": "6383007",
+  "snomedVerified": "20260101"
+ }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ng.local.us-ac",
+    "parameter": "us.ac",
+    "by": "ctx.ga",
+    "unit": "mm",
+    "kind": "local",
+    "verification": "local",
+    "population": "helyi referencia — szintetikus demó",
+    "source": {
+      "cite": "Helyben generált referencia a saját mérésekből, szintetikus demó. Nem publikált standard."
+    },
+    "derivedFrom": {
+      "n": 1320,
+      "from": "2024-01-01",
+      "to": "2026-06-30",
+      "site": "szintetikus demó",
+      "inclusion": [
+        "egyes terhesség",
+        "élő magzat",
+        "ismert gesztációs kor"
+      ],
+      "exclusion": [
+        "növekedési elmaradás gondozás alatt",
+        "ismert magzati fejlődési rendellenesség",
+        "cukorbetegség",
+        "hypertensiv kórkép"
+      ],
+      "minPerBin": 50,
+      "countByX": {
+        "20": 20,
+        "21": 80,
+        "22": 80,
+        "23": 80,
+        "24": 20,
+        "25": 80,
+        "26": 80,
+        "27": 80,
+        "28": 20,
+        "29": 80,
+        "30": 80,
+        "31": 80,
+        "32": 20,
+        "33": 80,
+        "34": 80,
+        "35": 80,
+        "36": 20,
+        "37": 80,
+        "38": 80,
+        "39": 80,
+        "40": 20
+      }
+    },
+    "rows": [
+      {
+        "x": 20,
+        "mean": 148.86,
+        "sd": 9.8
+      },
+      {
+        "x": 21,
+        "mean": 158.56,
+        "sd": 11.32
+      },
+      {
+        "x": 22,
+        "mean": 170.23,
+        "sd": 12.42
+      },
+      {
+        "x": 23,
+        "mean": 180.72,
+        "sd": 13.51
+      },
+      {
+        "x": 24,
+        "mean": 190.68,
+        "sd": 14.01
+      },
+      {
+        "x": 25,
+        "mean": 201.1,
+        "sd": 12.13
+      },
+      {
+        "x": 26,
+        "mean": 210.98,
+        "sd": 14.81
+      },
+      {
+        "x": 27,
+        "mean": 221.15,
+        "sd": 17.5
+      },
+      {
+        "x": 28,
+        "mean": 236.74,
+        "sd": 11.4
+      },
+      {
+        "x": 29,
+        "mean": 246.98,
+        "sd": 15.75
+      },
+      {
+        "x": 30,
+        "mean": 251.13,
+        "sd": 19.16
+      },
+      {
+        "x": 31,
+        "mean": 262.96,
+        "sd": 21.21
+      },
+      {
+        "x": 32,
+        "mean": 273.66,
+        "sd": 24.34
+      },
+      {
+        "x": 33,
+        "mean": 282.84,
+        "sd": 22.66
+      },
+      {
+        "x": 34,
+        "mean": 291.14,
+        "sd": 18.69
+      },
+      {
+        "x": 35,
+        "mean": 300.39,
+        "sd": 21.26
+      },
+      {
+        "x": 36,
+        "mean": 308.09,
+        "sd": 19.9
+      },
+      {
+        "x": 37,
+        "mean": 321.13,
+        "sd": 24.61
+      },
+      {
+        "x": 38,
+        "mean": 331.76,
+        "sd": 24.43
+      },
+      {
+        "x": 39,
+        "mean": 343.26,
+        "sd": 25.47
+      },
+      {
+        "x": 40,
+        "mean": 349.49,
+        "sd": 29.73
+      }
+    ]
+  }
+]

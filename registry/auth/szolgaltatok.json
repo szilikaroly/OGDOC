@@ -1,0 +1,61 @@
+{
+ "megnevezes": "Hitelesítési szolgáltatók",
+ "modul": 19,
+ "note": "AZ ELÉRHETETLEN SZOLGÁLTATÓ NEM OK A GYENGÉBB HITELESÍTÉSRE. Aki külső szolgáltatóhoz tartozik, helyi jelszóval SOHA nem lép be — akkor sem, ha a szolgáltató épp nem válaszol. A csendes visszaesés pontosan azt a támadási felületet nyitja meg, amiért az SSO-t bevezették.\n\nA `hianyzik` lista nem fejlesztői hátralék: szerződés, tanúsítvány és regisztráció áll rajta. A rendszer ezeket nem tudja megcsinálni — megnevezni tudja, és a `kinel` mező megmondja, kinél áll.",
+ "szolgaltatok": [
+  {
+   "id": "helyi",
+   "nev": "Helyi jelszó",
+   "protokoll": "felhasználónév + jelszó (scrypt, NIST SP 800-63B)",
+   "allapot": "mukodik",
+   "hianyzik": [],
+   "kinel": "—",
+   "ketTenyezos": false,
+   "leiras": "Az egyetlen most működő út. ÁTMENET, nem cél: éles kórházi üzemben legfeljebb rendszergazdai tartalék. Második tényezőt nem ad."
+  },
+  {
+   "id": "intezmenyi",
+   "nev": "Intézményi címtár (LDAP / Active Directory)",
+   "protokoll": "LDAP over TLS vagy SAML 2.0",
+   "allapot": "tervezett",
+   "hianyzik": [
+    "az intézmény címtárszolgáltatásának elérési adatai és szolgáltatásfiók",
+    "a szerepkör-leképezés megállapodása: melyik AD-csoport melyik OGDOC-csoport",
+    "TLS-tanúsítvány a címtárhoz",
+    "az intézmény informatikai biztonsági jóváhagyása"
+   ],
+   "kinel": "intézményi informatika + adatvédelmi tisztviselő",
+   "ketTenyezos": false,
+   "leiras": "A legkézenfekvőbb első lépés: a felhasználók már léteznek, a belépési adat ismerős, és a kilépő dolgozó a címtárból is kikerül — ez utóbbi önmagában többet ér, mint bármilyen kézi visszavonás."
+  },
+  {
+   "id": "eeszt",
+   "nev": "EESZT azonosítás",
+   "protokoll": "EESZT eSzemélyi / ügyfélkapus azonosítás, SAML",
+   "allapot": "tervezett",
+   "hianyzik": [
+    "EESZT csatlakozási szerződés és intézményi regisztráció",
+    "tesztkörnyezeti hozzáférés és tanúsítvány",
+    "az EESZT azonosító és a helyi felhasználó összerendelésének szabálya",
+    "működési nyilvántartási (pecsét)szám ellenőrzésének módja"
+   ],
+   "kinel": "intézményi EESZT-felelős",
+   "ketTenyezos": true,
+   "leiras": "Ez adna második tényezőt és hiteles orvosi azonosítást egyszerre. Az EESZT-csatlakozás állapotát a rendszer külön követi (lásd `core/eeszt/`) — a hitelesítés ugyanannak a csatlakozásnak a része."
+  },
+  {
+   "id": "eduid",
+   "nev": "eduID Hungary",
+   "protokoll": "SAML 2.0 föderáció (eduGAIN)",
+   "allapot": "tervezett",
+   "hianyzik": [
+    "eduID szolgáltatói (SP) regisztráció és metaadat-közzététel",
+    "a kiadott attribútumok (eduPersonAffiliation, schacHomeOrganization) egyeztetése",
+    "a klinikai szerepkör forrásának tisztázása: az eduID hovatartozást ad, munkakört nem"
+   ],
+   "kinel": "egyetemi informatika",
+   "ketTenyezos": true,
+   "leiras": "Egyetemi klinikán és kutatói hozzáférésnél kézenfekvő. FIGYELEM: az eduID azt mondja meg, hogy valaki az egyetem munkatársa — azt NEM, hogy melyik osztályon dolgozik. A megbízás ettől még a beosztásból jön, nem a föderációból."
+  }
+ ]
+}

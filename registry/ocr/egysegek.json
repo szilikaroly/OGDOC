@@ -1,0 +1,112 @@
+{
+  "megnevezes": "Mértékegység-egyeztetés az OCR-beolvasáshoz",
+  "note": "A MÉRTÉKEGYSÉG-TÉVESZTÉS NÉMA, ÉS NAGYSÁGRENDEKET MOZGAT.\n\nA karakter-tévesztés látható: egy „8” helyett olvasott „3” valószínűtlen értéket ad, és a tartomány-ellenőrzés megfogja. A mértékegység nem ilyen.\n\nA legveszélyesebb eset a KREATININ: 5,0 mg/dL súlyos veseelégtelenség, 5,0 µmol/L pedig értelmezhetetlenül alacsony, de a REGISZTER TARTOMÁNYÁN BELÜL van. Egy mg/dL-ben olvasott, µmol/L-ként beírt kreatinin tehát tökéletesen életszerű számként jelenik meg — és eltünteti a veseelégtelenséget. A tartomány itt nem véd.\n\nEZÉRT A SZABÁLY: EGYSÉG NÉLKÜL NINCS BEÍRÁS, és a nagyságrendből SOHA nem következtetünk vissza az egységre.\n\nAz `analitFuggo` jelölés arra emlékeztet, hogy a mg/dL ↔ mmol/L átváltás NEM egyetlen szorzó: analitonként más, mert a molekulatömegtől függ. Egy közös „mg/dL → mmol/L” szorzó a rendszerben a legrosszabb fajta egyszerűsítés lenne.",
+  "irasvaltozatok": {
+    "mmol/l": "mmol/L",
+    "mm": "mm",
+    "mmoll-1": "mmol/L",
+    "umol/l": "umol/L",
+    "µmol/l": "umol/L",
+    "μmol/l": "umol/L",
+    "mikromol/l": "umol/L",
+    "um": "umol/L",
+    "mg/dl": "mg/dL",
+    "mg%": "mg/dL",
+    "mg/100ml": "mg/dL",
+    "mgdl": "mg/dL",
+    "g/l": "g/L",
+    "gl-1": "g/L",
+    "g/dl": "g/dL",
+    "gdl": "g/dL",
+    "mm[hg]": "mm[Hg]",
+    "mmhg": "mm[Hg]",
+    "hgmm": "mm[Hg]",
+    "higanymilliméter": "mm[Hg]",
+    "g": "g",
+    "gramm": "g",
+    "gr": "g",
+    "mg": "mg",
+    "milligramm": "mg",
+    "ug": "ug",
+    "µg": "ug",
+    "μg": "ug",
+    "mikrogramm": "ug",
+    "mcg": "ug",
+    "milliméter": "mm",
+    "cm": "cm",
+    "centiméter": "cm",
+    "ml": "mL",
+    "milliliter": "mL",
+    "%": "%",
+    "szazalek": "%",
+    "százalék": "%",
+    "pct": "%",
+    "/min": "/min",
+    "1/min": "/min",
+    "perc-1": "/min",
+    "bpm": "/min",
+    "/perc": "/min",
+    "1": "1",
+    "arány": "1",
+    "ratio": "1",
+    "wk": "wk",
+    "hét": "wk",
+    "weeks": "wk",
+    "hét(ek)": "wk",
+    "iu/l": "IU/L",
+    "u/l": "IU/L",
+    "ne/l": "IU/L",
+    "ie/l": "IU/L",
+    "miu/ml": "mIU/mL",
+    "mne/ml": "mIU/mL",
+    "pmol/l": "pmol/L",
+    "ng/ml": "ng/mL"
+  },
+  "atvaltasok": {
+    "lab.glucose.fasting": [
+      {
+        "rol": "mg/dL",
+        "ra": "mmol/L",
+        "szorzo": 0.0555,
+        "analitFuggo": true,
+        "forras": "glükóz molekulatömege 180,16 g/mol; 1 mg/dL = 0,0555 mmol/L"
+      }
+    ],
+    "lab.ogtt.0": [
+      {
+        "rol": "mg/dL",
+        "ra": "mmol/L",
+        "szorzo": 0.0555,
+        "analitFuggo": true,
+        "forras": "glükóz molekulatömege 180,16 g/mol"
+      }
+    ],
+    "lab.ogtt.60": [
+      {
+        "rol": "mg/dL",
+        "ra": "mmol/L",
+        "szorzo": 0.0555,
+        "analitFuggo": true,
+        "forras": "glükóz molekulatömege 180,16 g/mol"
+      }
+    ],
+    "lab.ogtt.120": [
+      {
+        "rol": "mg/dL",
+        "ra": "mmol/L",
+        "szorzo": 0.0555,
+        "analitFuggo": true,
+        "forras": "glükóz molekulatömege 180,16 g/mol"
+      }
+    ],
+    "lab.cr": [
+      {
+        "rol": "mg/dL",
+        "ra": "umol/L",
+        "szorzo": 88.4,
+        "analitFuggo": true,
+        "forras": "kreatinin molekulatömege 113,12 g/mol; 1 mg/dL = 88,4 µmol/L"
+      }
+    ]
+  }
+}
