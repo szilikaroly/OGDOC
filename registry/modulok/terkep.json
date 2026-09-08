@@ -356,12 +356,14 @@
    "n": 33,
    "kod": [
     "core/endo",
-    "core/lab"
+    "core/lab",
+    "core/belgyogyaszat"
    ],
    "teszt": [
     "test/endo.test.ts",
     "test/referencia.test.ts",
-    "test/referencia-hitelesites.test.ts"
+    "test/referencia-hitelesites.test.ts",
+    "test/belgyogyaszat.test.ts"
    ],
    "doksi": "docs/modulok/33-belgyogyaszat-endokrin-diabetes.md"
   },

@@ -3,7 +3,7 @@
 > **Ez a fájl generált.** Forrása a `registry/variables/`; a
 > `node tools/gen-coverage.ts` állítja elő, és a CI ellenőrzi.
 
-**894 változó** a tervezett **~4035**-ból — **22.2%**.
+**905 változó** a tervezett **~4035**-ból — **22.4%**.
 
 A tervezett szám a `docs/modulok/` becslése: **nagyságrend, nem előrejelzés**. Arra jó,
 hogy lássuk, hol van a munka tömege — és hogy egy modul ne látsszon késznek, amíg a
@@ -48,9 +48,9 @@ Két dolog, amit érdemes külön nézni:
 | Jellemző | Darab | Arány | Cél |
 |---|---:|---:|---|
 | Szabad szöveg (`text`) | 46 | 5.1% | ≤ 10% |
-| Háromállású kérdés | 103 | 11.5% | anamnézisben mind |
+| Háromállású kérdés | 103 | 11.4% | anamnézisben mind |
 | Click-open lelet | 23 | — | a fizikális státusz egésze |
-| Beteg tölti ki | 172 | 19.2% | az anamnézis egésze |
+| Beteg tölti ki | 172 | 19.0% | az anamnézis egésze |
 | Beteg-azonosító (`phi`) | 2 | — | jelölve |
 
 **14 dokumentumtípus** definiálva, mind ellátási dokumentáció.

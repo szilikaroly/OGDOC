@@ -8,14 +8,14 @@
 
 | | |
 |---|---:|
-| Regiszterbeli változó | **894** |
+| Regiszterbeli változó | **905** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1876** |
-| Mag: fájl / sor | 159 / 42855 |
-| Teszt: fájl / sor | 81 / 20734 |
+| Teszt | **1933** |
+| Mag: fájl / sor | 161 / 43898 |
+| Teszt: fájl / sor | 82 / 21190 |
 | Dokumentum | 134 |
-| Regiszterfájl | 135 |
+| Regiszterfájl | 139 |
 
 ## A forrásrendszerek felülettérképe
 
@@ -113,6 +113,7 @@ Ami az átvételt megállítja, tételenként:
 | `core/gyermek/` | 4 | 1344 |
 | `core/auth/` | 6 | 1332 |
 | `core/fekvo/` | 6 | 1268 |
+| `core/belgyogyaszat/` | 2 | 1043 |
 | `core/scores/` | 6 | 984 |
 | `core/kulso/` | 2 | 978 |
 | `core/kerdoiv/` | 4 | 919 |

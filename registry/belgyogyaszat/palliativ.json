@@ -1,0 +1,219 @@
+{
+ "megnevezes": "Palliatív ellátás és hospice — két különböző dolog egy néven",
+ "modul": 33,
+ "alairas": null,
+ "note": "A „HOSPICE” SZÓ EBBEN A RENDSZERBEN KÉT, EGYMÁSSAL ÖSSZE NEM TÉVESZTHETŐ DOLGOT JELENT.\n\nA felnőtt palliatív ellátásban a BETEG haldoklik, ő dönt, és az ellátás a halálával ér véget. A perinatális palliatív ellátásban a magzat vagy az újszülött haldoklik — a beteg, vagyis a terhes nő, NEM —, a szülők döntenek a magzat helyett, az ellátás a szüléssel nem ér véget, és a gyászgondozás hónapokig tart.\n\nAZ ÖSSZEMOSÁS KÖVETKEZMÉNYE KONKRÉT. Egyetlen közös „palliatív” zászló azt eredményezné, hogy a letális magzati rendellenességgel gondozott terhes nő ellátása is visszafogódik — pedig ő nem haldoklik, és a vérzés, a preeclampsia, a fertőzés ugyanúgy teljes ellátást kíván. Ezért a rendszer NEM enged egyetlen közös zászlót: a magzat ellátási céljai és az anya ellátási céljai külön mezőben állnak.\n\nAZ ELLÁTÁSI CÉL NEM KÉTÁLLÁSÚ. A „teljes ellátás” és a „komfort” közti egyetlen kapcsoló a leggyakoribb és legkárosabb egyszerűsítés: a „nem újraélesztendő” jelölést a gyakorlat rendszeresen „ne kezeld”-ként olvassa. Ezért minden beavatkozás KÜLÖN döntés, külön rögzítéssel — az újraélesztés, a lélegeztetés, az antibiotikum és a transzfúzió nem egy kérdés négyszer, hanem négy kérdés.\n\nAMIT A GÉP NEM DÖNTHET EL. Egy előzetes rendelkezés érvényességét, azt hogy egy beavatkozás „életfenntartó”-e, és hogy egy terhes nő „előreláthatóan képes-e a gyermek kihordására”, gép nem állapítja meg. A rendszer jelzi, hogy a kérdés fennáll, és megnevezi, kihez tartozik.\n\nA TÁBLA ALÁÍRATLAN. Palliatív szakorvos, szülész-nőgyógyász és jogász aláírásáig tájékoztató.",
+ "fajtak": [
+  {
+   "id": "pall.felnott",
+   "megnevezes": "Felnőtt palliatív ellátás / hospice",
+   "kiHaldoklik": "a beteg maga",
+   "kiDont": "a beteg — vagy ha nem cselekvőképes, az előzetes rendelkezése, illetve a törvényes képviselő",
+   "gondozasTargya": "tünetkontroll, méltóság, a beteg saját céljai szerinti ellátás",
+   "idotav": "hetektől hónapokig, néha tovább",
+   "ellatasVege": "a beteg halála",
+   "utana": "hozzátartozói gyászgondozás",
+   "jellemzoUt": "nőgyógyászati daganat (petefészek, méhnyak, méhtest) előrehaladott szakasza",
+   "tiltas": "A palliatív jelölés NEM jelenti azt, hogy kevesebb ellátás jár. A „komfort” cél a beavatkozások CÉLJÁT változtatja meg, nem a mennyiségét: a fájdalomcsillapítás, a folyadékpótlás és a szövődménykezelés ugyanúgy aktív ellátás."
+  },
+  {
+   "id": "pall.perinatalis",
+   "megnevezes": "Perinatális palliatív ellátás",
+   "kiHaldoklik": "a magzat vagy az újszülött — NEM a beteg",
+   "kiDont": "a szülők, a magzat helyett; a terhes nő a SAJÁT ellátásáról maga dönt",
+   "gondozasTargya": "a terhesség kihordásának támogatása, a szülés megtervezése, a búcsú lehetősége",
+   "idotav": "a diagnózistól a szülésig (hetek–hónapok), majd a születés után órák–napok",
+   "ellatasVege": "a szülés — az újszülött halála után is folytatódik",
+   "utana": "gyászgondozás, ami hónapokig tart, és a KÖVETKEZŐ terhességre is átnyúlik",
+   "jellemzoUt": "letális magzati fejlődési rendellenesség diagnózisa a terhesség alatt",
+   "tiltas": "A perinatális palliatív jelölés SOHA nem csökkentheti az ANYA szülészeti ellátását. Az anya NEM haldoklik: a vérzés, a preeclampsia és a fertőzés ugyanúgy teljes ellátást kíván. Ez a két fajta összemosásának legsúlyosabb következménye — egy „palliatív” zászló, ami az anyát is lekapcsolja az aktív ellátásról."
+  }
+ ],
+ "ellatasiCelok": [
+  {
+   "id": "cel.ujraelesztes",
+   "megnevezes": "Újraélesztés (CPR)",
+   "kor": "felnott",
+   "leiras": "Külön döntés. A „nem újraélesztendő” NEM jelenti azt, hogy más beavatkozás sem jár."
+  },
+  {
+   "id": "cel.intubalas",
+   "megnevezes": "Intubálás, gépi lélegeztetés",
+   "kor": "felnott",
+   "leiras": "Külön döntés az újraélesztéstől: van, aki a lélegeztetést vállalja, az újraélesztést nem."
+  },
+  {
+   "id": "cel.intenziv",
+   "megnevezes": "Intenzív osztályos felvétel",
+   "kor": "felnott",
+   "leiras": "Külön döntés. Az intenzív ellátás tünetkontrollra is szolgálhat."
+  },
+  {
+   "id": "cel.antibiotikum",
+   "megnevezes": "Antibiotikum-kezelés",
+   "kor": "felnott",
+   "leiras": "Külön döntés. Gyakran TÜNETKONTROLL: a húgyúti fertőzés kezelése a deliriumot enyhíti."
+  },
+  {
+   "id": "cel.folyadek",
+   "megnevezes": "Mesterséges folyadékpótlás",
+   "kor": "felnott",
+   "leiras": "Külön döntés, és a legvitatottabb. A hozzátartozó számára az elhagyása gyakran „éheztetésnek” tűnik — ezt beszélgetés oldja, nem szabály."
+  },
+  {
+   "id": "cel.taplalas",
+   "megnevezes": "Mesterséges táplálás",
+   "kor": "felnott",
+   "leiras": "Külön döntés a folyadékpótlástól."
+  },
+  {
+   "id": "cel.transzfuzio",
+   "megnevezes": "Transzfúzió",
+   "kor": "felnott",
+   "leiras": "Külön döntés. Nőgyógyászati daganatnál a vérzés miatt gyakran tünetkontroll."
+  },
+  {
+   "id": "cel.mutet",
+   "megnevezes": "Műtéti beavatkozás",
+   "kor": "felnott",
+   "leiras": "Külön döntés. A palliatív műtét (pl. bélelzáródás oldása) nem gyógyító célú, mégis műtét."
+  },
+  {
+   "id": "cel.ujszulott.eleszthes",
+   "megnevezes": "Újszülött élesztése a születés után",
+   "kor": "perinatalis",
+   "leiras": "A szülők döntése, a diagnózis bizonyosságának függvényében. A „letális” diagnózis bizonyossága maga is adat."
+  },
+  {
+   "id": "cel.csaszarmetszes",
+   "megnevezes": "Császármetszés magzati javallatra",
+   "kor": "perinatalis",
+   "leiras": "KÜLÖN, KIMONDOTT DÖNTÉS. Letális magzati rendellenesség mellett a magzati javallatú császármetszés ANYAI kockázatot jelent MAGZATI haszon nélkül. Ez nem következhet sodródásból: ki kell mondani, hogy megbeszélték, és mit döntöttek."
+  },
+  {
+   "id": "cel.magzati.monitorozas",
+   "megnevezes": "Szülés alatti magzati monitorozás",
+   "kor": "perinatalis",
+   "leiras": "Külön döntés: a monitorozás akkor is folytatható, ha beavatkozás nem következik belőle — és akkor is elhagyható, ha a szülők így kérik."
+  },
+  {
+   "id": "cel.bucsu",
+   "megnevezes": "Búcsú és emléktárgyak",
+   "kor": "perinatalis",
+   "leiras": "Fényképek, kéz- és lábnyomat, névadás, keresztelés. Amit a születés pillanatában nem vesznek fel, azt később nem lehet pótolni."
+  },
+  {
+   "id": "cel.boncolas",
+   "megnevezes": "Kórbonctani vizsgálat",
+   "kor": "perinatalis",
+   "leiras": "Külön beleegyezés. A következő terhesség tanácsadása múlhat rajta — ezért a kérdést fel KELL tenni, akkor is, ha nehéz."
+  }
+ ],
+ "tunetkorok": [
+  {
+   "id": "tunet.fajdalom",
+   "megnevezes": "Fájdalom",
+   "eszkoz": [
+    "NRS 0–10",
+    "viselkedésalapú skála, ha nem közli"
+   ],
+   "gyogyszerKapcsolat": "opioid — a terhességi és szoptatási állásfoglalás a 6. modul gyógyszerrétegéből jön",
+   "megjegyzes": "Terhes vagy szoptató palliatív betegnél a fájdalomcsillapítás NEM halasztható a magzati kockázat miatt: a kezeletlen fájdalom is kockázat, és a döntést ki kell mondani, nem elhalasztani."
+  },
+  {
+   "id": "tunet.nehezlegzes",
+   "megnevezes": "Nehézlégzés",
+   "eszkoz": [
+    "NRS 0–10",
+    "légzésszám"
+   ],
+   "gyogyszerKapcsolat": "opioid, oxigén",
+   "megjegyzes": "A terhesség végén az élettani nehézlégzés és a szívelégtelenség ugyanúgy néz ki — ez a kardiológiai réteggel közös határterület."
+  },
+  {
+   "id": "tunet.hanyinger",
+   "megnevezes": "Hányinger, hányás",
+   "eszkoz": [
+    "NRS 0–10"
+   ],
+   "gyogyszerKapcsolat": "antiemetikum",
+   "megjegyzes": "Nőgyógyászati daganatnál gyakran bélelzáródás áll mögötte — a tünetkezelés nem helyettesíti az ok keresését."
+  },
+  {
+   "id": "tunet.delirium",
+   "megnevezes": "Delírium, nyugtalanság",
+   "eszkoz": [
+    "CAM vagy egyenértékű"
+   ],
+   "gyogyszerKapcsolat": "antipszichotikum",
+   "megjegyzes": "Visszafordítható ok (fertőzés, hypercalcaemia, gyógyszer) mögötte GYAKORI — a „terminális nyugtalanság” címke elzárja a keresést."
+  },
+  {
+   "id": "tunet.valadek",
+   "megnevezes": "Légúti váladékozás",
+   "eszkoz": [
+    "megfigyelés"
+   ],
+   "gyogyszerKapcsolat": "antikolinerg",
+   "megjegyzes": "A beteget jellemzően nem zavarja; a HOZZÁTARTOZÓT igen. Ezt ki kell mondani, mert a kezelés indoka más."
+  },
+  {
+   "id": "tunet.szorongas",
+   "megnevezes": "Szorongás, halálfélelem",
+   "eszkoz": [
+    "beszélgetés"
+   ],
+   "gyogyszerKapcsolat": "benzodiazepin",
+   "megjegyzes": "Nem minden szorongás gyógyszeres kérdés."
+  }
+ ],
+ "jogiFeltetelek": [
+  {
+   "id": "jog.elozetes.rendelkezes",
+   "megnevezes": "Előzetes rendelkezés (élő végrendelet)",
+   "allitas": "Cselekvőképes személy előre rendelkezhet arról, hogy cselekvőképtelen állapotában mely beavatkozásokat utasítja vissza, és megnevezheti a helyette döntő személyt.",
+   "alakiFeltetel": "Kötött alakisághoz kötött (közokirat vagy teljes bizonyító erejű magánokirat), és további feltételei vannak.",
+   "jogszabaly": "1997. évi CLIV. törvény az egészségügyről",
+   "jogiEllenorzes": "jogász",
+   "gepiHatar": "A rendszer NYILVÁNTARTJA, hogy van-e ilyen rendelkezés, és hogy az alaki feltételeit ellenőrizte-e valaki. A TARTALMÁT nem értelmezi, és érvényességéről nem nyilatkozik."
+  },
+  {
+   "id": "jog.terhes.visszautasitas",
+   "megnevezes": "A visszautasítás korlátja terhesség esetén",
+   "allitas": "Az életfenntartó vagy életmentő beavatkozás visszautasításának joga a magyar szabályozás szerint nem gyakorolható, ha a beteg terhes, és előreláthatóan képes a gyermek kihordására.",
+   "alakiFeltetel": "—",
+   "jogszabaly": "1997. évi CLIV. törvény az egészségügyről",
+   "jogiEllenorzes": "jogász",
+   "gepiHatar": "A RENDSZER EZT SOHA NEM ALKALMAZZA MAGÁTÓL. Két olyan elem van benne, amit gép nem dönthet el: hogy a beavatkozás „életfenntartó”-e, és hogy a beteg „előreláthatóan képes a gyermek kihordására”. Az utóbbi orvosi jóslat, nem adat. A rendszer annyit tesz, hogy JELZI: terhesség mellett rögzített visszautasítás van, és ez jogi és klinikai megítélést kíván — megnevezett embertől, nem a rendszertől. Egy előzetes rendelkezést gép nem érvényteleníthet."
+  },
+  {
+   "id": "jog.magzat.nem.beteg",
+   "megnevezes": "A magzat jogállása az ellátásban",
+   "allitas": "A perinatális palliatív ellátásban az ELLÁTOTT a terhes nő. A magzat ellátásáról a szülők a nő ellátásán keresztül döntenek.",
+   "alakiFeltetel": "—",
+   "jogszabaly": "1997. évi CLIV. törvény az egészségügyről",
+   "jogiEllenorzes": "jogász",
+   "gepiHatar": "Ebből következik, hogy a perinatális palliatív jelölés a MAGZAT ellátási céljaira vonatkozik, és az anya ellátási céljait nem érinti. A rendszer a kettőt külön mezőben tartja, és nem enged egyetlen közös „palliatív” zászlót."
+  }
+ ],
+ "atadasok": [
+  {
+   "id": "atadas.onkologia.hospice",
+   "megnevezes": "Onkológia → hospice",
+   "res": "Az utolsó onkológiai kezelés és az első hospice-kapcsolat között gyakran hetek telnek el, és ebben az ablakban a beteg SEHOL nincs gondozva.",
+   "mit": "A rendszer az utolsó daganatellenes kezelés és a palliatív gondozás megkezdése közti időt MÉRI, és a hiányt jelként mutatja — a 15. modul elmulasztott vizit mintájára."
+  },
+  {
+   "id": "atadas.szuloszoba.gyasz",
+   "megnevezes": "Szülőszoba → gyászgondozás",
+   "res": "A perinatális veszteség után az anya a szülészeti ellátásból kikerül, a gyászgondozás viszont hónapokig tart. Ezt az átadást senki nem birtokolja.",
+   "mit": "A rendszer a szülés utáni gyászgondozási kapcsolatfelvételt esedékességként tartja nyilván, és az elmaradását jelzi."
+  },
+  {
+   "id": "atadas.kovetkezo.terhesseg",
+   "megnevezes": "Gyászgondozás → következő terhesség",
+   "res": "A következő terhesség gondozója gyakran nem tudja, hogy volt korábbi perinatális veszteség — pedig ez a gondozás egészét meghatározza.",
+   "mit": "A veszteség ténye az előzményben marad, és az új terhesség gondozási tervébe átemelődik. A boncolási eredmény, ha volt, ide kapcsolódik."
+  }
+ ]
+}

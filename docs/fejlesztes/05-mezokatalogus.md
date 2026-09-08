@@ -72,7 +72,7 @@ kizárja a valós beteget, adatvesztést okoz, mert a klinikus máshova írja be
 ## 5. A katalógus
 
 
-**894 változó**, 45 modulban.
+**905 változó**, 46 modulban.
 
 | Jellemző | Darab | Arány |
 |---|---:|---:|
@@ -120,6 +120,20 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `anthro.weight.current` | Aktuális testsúly | quantity | kg | 25–250 | — | `anthro.bsa` `anthro.weightGain` `rx.crcl` `rx.lmwh.dailyDose` | sorozat |
 | `anthro.weight.prepregnancy` | Terhesség előtti testsúly | quantity | kg | 30–250 | — | `anthro.bmi` `anthro.weightGain` `diet.energyTarget` `diet.proteinTarget` | — |
 | `anthro.weightGain` | Terhességi súlygyarapodás | quantity | kg | -20–60 | `calc.weightGain` | — | — |
+
+### `cardio` — 9 mező
+
+| Azonosító | Név | Típus | Egység | Tartomány | Levezetés | Feltölti ezeket | Jelölés |
+|---|---|---|---|---|---|---|---|
+| `cardio.kardiologiai.idopont` | Szülés utáni kardiológiai kontroll időpontja | date | — | — | — | — | — |
+| `cardio.mwho` | Anyai kardiovaszkuláris kockázat (mWHO) | coded | — | 6 kód | — | — | — |
+| `cardio.nyha` | NYHA funkcionális osztály | coded | — | 4 kód | — | — | — |
+| `cardio.szivbetegseg.allapot` | Ismert szívbetegség — állapot az mWHO-táblából | coded | — | 3 kód | — | — | — |
+| `echo.aorta.atmero` | Aortagyök / ascendens átmérő | quantity | mm | 10–90 | — | — | sorozat |
+| `echo.aorta.gradiens` | Aortabillentyű maximális gradiens | quantity | mm[Hg] | 0–200 | — | — | sorozat |
+| `echo.lvef` | Balkamrai ejekciós frakció | quantity | % | 5–85 | — | — | sorozat |
+| `echo.mitralis.terulet` | Mitralis szájadék területe | quantity | cm2 | 0.2–6 | — | — | sorozat |
+| `echo.pap` | Becsült szisztolés pulmonalis artériás nyomás | quantity | mm[Hg] | 5–150 | — | — | sorozat |
 
 ### `code` — 7 mező
 
@@ -583,7 +597,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `us.uta.pi.right` | Arteria uterina PI — jobb | quantity | 1 | 0–6 | — | — | sorozat |
 | `us.ys` | Szikzsák átmérője | quantity | mm | 1–20 | — | — | sorozat |
 
-### `lab` — 73 mező
+### `lab` — 75 mező
 
 | Azonosító | Név | Típus | Egység | Tartomány | Levezetés | Feltölti ezeket | Jelölés |
 |---|---|---|---|---|---|---|---|
@@ -634,6 +648,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `lab.mcv` | MCV — átlagos vörösvérsejt-térfogat | quantity | fL | 50–130 | — | — | sorozat |
 | `lab.mg` | Magnézium | quantity | mmol/L | 0.1–8 | — | — | sorozat |
 | `lab.na` | Nátrium | quantity | mmol/L | 100–180 | — | — | sorozat |
+| `lab.ntprobnp` | NT-proBNP | quantity | pg/mL | 0–40000 | — | — | sorozat |
 | `lab.ogtt.0` | OGTT — éhomi | quantity | mmol/L | 1–40 | — | — | sorozat |
 | `lab.ogtt.120` | OGTT — 120 perc | quantity | mmol/L | 1–40 | — | — | sorozat |
 | `lab.ogtt.60` | OGTT — 60 perc | quantity | mmol/L | 1–40 | — | — | sorozat |
@@ -651,6 +666,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `lab.toxo.igg` | Toxoplasma IgG | coded | — | 5 kód | — | — | sorozat |
 | `lab.toxo.igm` | Toxoplasma IgM | coded | — | 5 kód | — | — | sorozat |
 | `lab.trak` | TRAK (TSH-receptor elleni antitest) | quantity | [IU]/L | 0–100 | — | — | sorozat |
+| `lab.troponin.hs` | Nagy érzékenységű troponin | quantity | ng/L | 0–50000 | — | — | sorozat |
 | `lab.tsh` | TSH | quantity | m[IU]/L | 0–200 | — | — | sorozat |
 | `lab.ua` | Húgysav | quantity | umol/L | 50–1200 | — | — | sorozat |
 | `lab.urea` | Karbamid | quantity | mmol/L | 0–60 | — | — | sorozat |
@@ -1207,7 +1223,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 
 ## 6. Lefedettség
 
-A tervezett **~4035** változóból **894** van meg (22.2%).
+A tervezett **~4035** változóból **905** van meg (22.4%).
 Ez szándékos: a mag **helyességét** bizonyítja, nem a lefedettséget. A hiányzó
 mezők felvétele mechanikus munka, amihez a `04-modul-csontvaz.md` adja az eljárást.
 

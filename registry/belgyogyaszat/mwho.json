@@ -1,0 +1,497 @@
+{
+ "megnevezes": "Anyai kardiovaszkuláris kockázat — módosított WHO (mWHO) besorolás",
+ "modul": 33,
+ "forras": {
+  "cite": "2018 ESC Guidelines for the management of cardiovascular diseases during pregnancy. European Heart Journal 2018;39(34):3165–3241",
+  "doi": "10.1093/eurheartj/ehy340",
+  "megjegyzes": "A besorolás szerkezete és kategóriái az irányelvből valók; a szövegezés itt saját. Az irányelv teljes szövege szerzői jogvédett, és NEM kerül be a repóba — a klinikai használat előtt a hivatalos szövegpéldánnyal kell összevetni."
+ },
+ "alairas": null,
+ "note": "A BESOROLÁS NEM A DIAGNÓZIS TULAJDONSÁGA. Ugyanaz a kórkép két osztályba is kerülhet aszerint, hogy milyen az elváltozás súlyossága, megtörtént-e a korrekció, és van-e tünet: a súlyos aortastenosis TÜNETMENTESEN III., TÜNETESEN IV. Egy „aortastenosis: igen” mező ezt a különbséget nem tudja hordozni, és a rossz irányba téved.\n\nAMI HIÁNYZIK, AZ NEM A KEDVEZŐBB OSZTÁLY. Minden állapothoz tartozik `kellAdat` lista: ha ezek közül bármi hiányzik, a besorolás `nemBesorolhato`, és megnevezi, mi hiányzik. A leggyakoribb csendes hiba az volna, hogy adat híján a rendszer a kisebb kockázatot mutatja — a korábbi peripartalis cardiomyopathiánál ez a III. és a IV. osztály közti különbség, tehát egy ismételt terhesség egész kimenetele.\n\nA IV. OSZTÁLYT A RENDSZER NEM FORDÍTJA JAVASLATTÁ. Az irányelv szövege szerint ott a terhesség ellenjavallt; ezt a rendszer TÉNYKÉNT közli, nem tanácsként. Egy gép nem javasol terhességmegszakítást, és nem is beszél le róla: a döntés a betegé, a terhesszív-csapattal.\n\nA TÁBLA ALÁÍRATLAN. Amíg kardiológus tételesen alá nem írja, a besorolás TÁJÉKOZTATÓ: megmutatja, mit mond az irányelv szerkezete, de nem gondozási szintet rendel.",
+ "osztalyok": [
+  {
+   "id": "mwho.I",
+   "jel": "I",
+   "megnevezes": "Nem kimutathatóan emelkedett kockázat",
+   "esemenyAranySzazalek": [
+    2.5,
+    5.0
+   ],
+   "gondozasiSzint": "helyi",
+   "ellenorzes": "Trimeszterenként egyszer elég.",
+   "leiras": "Az anyai halálozás kockázata nem kimutathatóan emelkedett, a szövődményeké legfeljebb enyhén."
+  },
+  {
+   "id": "mwho.II",
+   "jel": "II",
+   "megnevezes": "Kismértékben emelkedett kockázat",
+   "esemenyAranySzazalek": [
+    5.7,
+    10.5
+   ],
+   "gondozasiSzint": "helyi",
+   "ellenorzes": "Trimeszterenként.",
+   "leiras": "Kismértékben emelkedett anyai halálozási vagy közepes mértékben emelkedett szövődménykockázat."
+  },
+  {
+   "id": "mwho.II-III",
+   "jel": "II–III",
+   "megnevezes": "Köztes kockázat",
+   "esemenyAranySzazalek": [
+    10.0,
+    19.0
+   ],
+   "gondozasiSzint": "megyei",
+   "ellenorzes": "Kéthavonta.",
+   "leiras": "A II. és a III. osztály között — az egyedi állapot dönti el, melyik felé húz. Ez az osztály SZÁNDÉKOSAN nem egyértelmű: aki ide kerül, arról kardiológusnak kell egyedileg nyilatkoznia."
+  },
+  {
+   "id": "mwho.III",
+   "jel": "III",
+   "megnevezes": "Jelentősen emelkedett kockázat",
+   "esemenyAranySzazalek": [
+    19.0,
+    27.0
+   ],
+   "gondozasiSzint": "terhesszív-csapat",
+   "ellenorzes": "Havonta vagy kéthavonta, szakértői központban.",
+   "leiras": "Jelentősen emelkedett anyai halálozási vagy súlyos szövődménykockázat. Szakértői tanácsadás KÖTELEZŐ; ha a terhesség folytatódik, végig fokozott kardiológiai és szülészeti követés."
+  },
+  {
+   "id": "mwho.IV",
+   "jel": "IV",
+   "megnevezes": "Rendkívül magas kockázat",
+   "esemenyAranySzazalek": [
+    40.0,
+    100.0
+   ],
+   "gondozasiSzint": "terhesszív-csapat",
+   "ellenorzes": "Havonta vagy gyakrabban, szakértői központban.",
+   "leiras": "Az irányelv szövege szerint ebben az osztályban a terhesség ELLENJAVALLT, és ha mégis létrejön, a megszakítás megbeszélendő. A RENDSZER EZT NEM MONDJA KI JAVASLATKÉNT: a besorolás tény, a döntés a betegé — a terhesszív-csapattal együtt. Egy gép nem javasol terhességmegszakítást."
+  }
+ ],
+ "allapotok": [
+  {
+   "id": "szivbeteg.psten.enyhe",
+   "megnevezes": "Enyhe pulmonalis stenosis",
+   "diagnozis": "Pulmonalis stenosis",
+   "allapotFeltetel": "enyhe, tünetmentes",
+   "osztaly": "mwho.I",
+   "kellAdat": [
+    "echo.pulmonalis.gradiens"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.psten.sulyos",
+   "megnevezes": "Súlyos pulmonalis stenosis",
+   "diagnozis": "Pulmonalis stenosis",
+   "allapotFeltetel": "súlyos",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.pulmonalis.gradiens"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.pda.kicsi",
+   "megnevezes": "Kicsi, tünetmentes PDA",
+   "diagnozis": "Ductus arteriosus persistens",
+   "allapotFeltetel": "kicsi",
+   "osztaly": "mwho.I",
+   "kellAdat": [],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.mvp.enyhe",
+   "megnevezes": "Mitralis billentyű prolapsus jelentős regurgitáció nélkül",
+   "diagnozis": "Mitralis prolapsus",
+   "allapotFeltetel": "nincs jelentős regurgitáció",
+   "osztaly": "mwho.I",
+   "kellAdat": [
+    "echo.mitralis.regurgitacio"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.asd.zart",
+   "megnevezes": "Sikeresen zárt ASD / VSD / PDA",
+   "diagnozis": "Egyszerű veleszületett vitium",
+   "allapotFeltetel": "műtétileg vagy katéterrel zárva, maradványelváltozás nélkül",
+   "osztaly": "mwho.I",
+   "kellAdat": [
+    "echo.maradvany"
+   ],
+   "megjegyzes": "A „zárva” ÖNMAGÁBAN nem elég: maradványsönt vagy kamrafunkció-romlás mellett a besorolás magasabb."
+  },
+  {
+   "id": "szivbeteg.asd.nyitott",
+   "megnevezes": "Nem operált pitvari vagy kamrai sövényhiány",
+   "diagnozis": "ASD / VSD",
+   "allapotFeltetel": "nem zárt, kis sönt",
+   "osztaly": "mwho.II",
+   "kellAdat": [
+    "echo.sont"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.fallot.korrigalt",
+   "megnevezes": "Korrigált Fallot-tetralógia",
+   "diagnozis": "Fallot-tetralógia",
+   "allapotFeltetel": "korrigált, jó jobbkamra-funkcióval",
+   "osztaly": "mwho.II",
+   "kellAdat": [
+    "echo.jobbkamra"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.avsd",
+   "megnevezes": "Atrioventricularis septum defektus",
+   "diagnozis": "AVSD",
+   "allapotFeltetel": "korrigált",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.av.billentyu"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.coarctatio.korrigalt",
+   "megnevezes": "Korrigált aortacoarctatio",
+   "diagnozis": "Aortacoarctatio",
+   "allapotFeltetel": "korrigált, szűkület nélkül",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.gradiens",
+    "vitals.bp.kar.kulonbseg"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.coarctatio.sulyos",
+   "megnevezes": "Súlyos vagy visszatérő coarctatio",
+   "diagnozis": "Aortacoarctatio",
+   "allapotFeltetel": "súlyos / re-coarctatio",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.gradiens"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.cyanotikus",
+   "megnevezes": "Nem korrigált cyanotikus szívbetegség",
+   "diagnozis": "Cyanotikus vitium",
+   "allapotFeltetel": "nem korrigált",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "vitals.spo2"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.fontan.szovodmenymentes",
+   "megnevezes": "Szövődménymentes Fontan-keringés",
+   "diagnozis": "Fontan",
+   "allapotFeltetel": "szövődménymentes",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.kamrafunkcio",
+    "lab.alb"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.fontan.szovodmenyes",
+   "megnevezes": "Fontan-keringés BÁRMILYEN szövődménnyel",
+   "diagnozis": "Fontan",
+   "allapotFeltetel": "szövődménnyel",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.kamrafunkcio"
+   ],
+   "megjegyzes": "Itt a „bármilyen” szó szerint értendő: fehérjevesztő enteropathia, ritmuszavar, kamrafunkció-romlás, thrombosis mind ide sorol."
+  },
+  {
+   "id": "szivbeteg.rendszeres.jobbkamra.jo",
+   "megnevezes": "Rendszerkeringési jobb kamra, jó vagy enyhén csökkent funkcióval",
+   "diagnozis": "Rendszerkeringési jobb kamra",
+   "allapotFeltetel": "jó / enyhén csökkent",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.rendszerkamra"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.rendszeres.jobbkamra.rossz",
+   "megnevezes": "Rendszerkeringési jobb kamra, közepesen vagy súlyosan csökkent funkcióval",
+   "diagnozis": "Rendszerkeringési jobb kamra",
+   "allapotFeltetel": "közepesen / súlyosan csökkent",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.rendszerkamra"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.msten.kozepes",
+   "megnevezes": "Közepes mitralis stenosis",
+   "diagnozis": "Mitralis stenosis",
+   "allapotFeltetel": "közepes",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.mitralis.terulet"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.msten.sulyos",
+   "megnevezes": "Súlyos mitralis stenosis",
+   "diagnozis": "Mitralis stenosis",
+   "allapotFeltetel": "súlyos",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.mitralis.terulet"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.asten.sulyos.tunetmentes",
+   "megnevezes": "Súlyos, tünetmentes aortastenosis",
+   "diagnozis": "Aortastenosis",
+   "allapotFeltetel": "súlyos, tünetmentes",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.aorta.gradiens",
+    "nyha"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.asten.sulyos.tunetes",
+   "megnevezes": "Súlyos, TÜNETES aortastenosis",
+   "diagnozis": "Aortastenosis",
+   "allapotFeltetel": "súlyos, tünetes",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.aorta.gradiens",
+    "nyha"
+   ],
+   "megjegyzes": "UGYANAZ A DIAGNÓZIS, KÉT OSZTÁLY. A tünet megléte dönti el — és ha a tünetről nincs adat, a besorolás NEM a kedvezőbb."
+  },
+  {
+   "id": "szivbeteg.mubillentyu",
+   "megnevezes": "Műbillentyű (mechanikus)",
+   "diagnozis": "Mechanikus műbillentyű",
+   "allapotFeltetel": "bármilyen",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "antikoagulans.fajta"
+   ],
+   "megjegyzes": "A kockázat nagy része az ANTIKOAGULÁLÁSBÓL ered, nem a billentyűből: a K-vitamin-antagonista magzatkárosító, a heparin viszont kevésbé véd a billentyű-thrombosis ellen. Nincs jó válasz, csak megbeszélt választás."
+  },
+  {
+   "id": "szivbeteg.biologiai.billentyu",
+   "megnevezes": "Biológiai vagy natív billentyűbetegség, ha nem I. és nem IV.",
+   "diagnozis": "Billentyűbetegség",
+   "allapotFeltetel": "köztes",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.billentyu"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.ef.enyhe",
+   "megnevezes": "Enyhén csökkent balkamra-funkció (EF > 45%)",
+   "diagnozis": "Balkamra-diszfunkció",
+   "allapotFeltetel": "EF > 45%",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.lvef"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.ef.kozepes",
+   "megnevezes": "Közepesen csökkent balkamra-funkció (EF 30–45%)",
+   "diagnozis": "Balkamra-diszfunkció",
+   "allapotFeltetel": "EF 30–45%",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.lvef"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.ef.sulyos",
+   "megnevezes": "Súlyos balkamra-diszfunkció (EF < 30%) vagy NYHA III–IV",
+   "diagnozis": "Balkamra-diszfunkció",
+   "allapotFeltetel": "EF < 30% vagy NYHA III–IV",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.lvef",
+    "nyha"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.hcm",
+   "megnevezes": "Hypertrophiás cardiomyopathia",
+   "diagnozis": "HCM",
+   "allapotFeltetel": "bármilyen",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.falvastagsag",
+    "echo.lvot.gradiens"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.ppcm.maradvany.nelkul",
+   "megnevezes": "Korábbi peripartalis cardiomyopathia MARADVÁNY NÉLKÜL",
+   "diagnozis": "PPCM az anamnézisben",
+   "allapotFeltetel": "a balkamra-funkció teljesen rendeződött",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.lvef"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.ppcm.maradvannyal",
+   "megnevezes": "Korábbi peripartalis cardiomyopathia BÁRMILYEN maradvánnyal",
+   "diagnozis": "PPCM az anamnézisben",
+   "allapotFeltetel": "maradék balkamra-károsodás",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.lvef"
+   ],
+   "megjegyzes": "A KÜLÖNBSÉG EGYETLEN ADATON MÚLIK: rendeződött-e a kamrafunkció. Adat nélkül a besorolás NEM a kedvezőbb — ez az az eset, ahol az ismételt terhesség a legnagyobb veszteséget okozhatja."
+  },
+  {
+   "id": "szivbeteg.marfan.tagulat.nelkul",
+   "megnevezes": "Marfan vagy más örökletes aortabetegség aortatágulat nélkül",
+   "diagnozis": "Örökletes aortabetegség",
+   "allapotFeltetel": "aorta nem tágult",
+   "osztaly": "mwho.II-III",
+   "kellAdat": [
+    "echo.aorta.atmero"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.marfan.kozepes",
+   "megnevezes": "Marfan-szindróma, aorta 40–45 mm",
+   "diagnozis": "Marfan-szindróma",
+   "allapotFeltetel": "aorta 40–45 mm",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.aorta.atmero"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.marfan.sulyos",
+   "megnevezes": "Marfan-szindróma, aorta > 45 mm",
+   "diagnozis": "Marfan-szindróma",
+   "allapotFeltetel": "aorta > 45 mm",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.aorta.atmero"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.bicuspidalis.kozepes",
+   "megnevezes": "Bicuspidalis aortabillentyű, aorta 45–50 mm",
+   "diagnozis": "Bicuspidalis aortabillentyű",
+   "allapotFeltetel": "aorta 45–50 mm",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "echo.aorta.atmero"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.bicuspidalis.sulyos",
+   "megnevezes": "Bicuspidalis aortabillentyű, aorta > 50 mm",
+   "diagnozis": "Bicuspidalis aortabillentyű",
+   "allapotFeltetel": "aorta > 50 mm",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.aorta.atmero"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.turner.asi",
+   "megnevezes": "Turner-szindróma, aortaméret-index > 25 mm/m²",
+   "diagnozis": "Turner-szindróma",
+   "allapotFeltetel": "ASI > 25 mm/m²",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.aorta.atmero",
+    "anthro.bsa"
+   ],
+   "megjegyzes": "Turner-szindrómában az abszolút aortaátmérő félrevezet: a testfelszínre vetített index a mérvadó, mert a betegek alacsonyak."
+  },
+  {
+   "id": "szivbeteg.veds",
+   "megnevezes": "Vascularis Ehlers–Danlos-szindróma",
+   "diagnozis": "vEDS",
+   "allapotFeltetel": "bármilyen",
+   "osztaly": "mwho.IV",
+   "kellAdat": [],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.pah",
+   "megnevezes": "Pulmonalis arteriás hypertonia",
+   "diagnozis": "PAH",
+   "allapotFeltetel": "bármilyen okból",
+   "osztaly": "mwho.IV",
+   "kellAdat": [
+    "echo.pap",
+    "jobbszivkateter"
+   ],
+   "megjegyzes": "Az anyai halálozás itt a legmagasabb, és a legveszélyesebb szakasz a SZÜLÉS UTÁNI első hetek — nem a szülés maga."
+  },
+  {
+   "id": "szivbeteg.supraventricularis",
+   "megnevezes": "Supraventricularis ritmuszavarok",
+   "diagnozis": "Ritmuszavar",
+   "allapotFeltetel": "supraventricularis",
+   "osztaly": "mwho.II",
+   "kellAdat": [
+    "ekg.rhythm"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.kamrai.tachycardia",
+   "megnevezes": "Kamrai tachycardia",
+   "diagnozis": "Ritmuszavar",
+   "allapotFeltetel": "kamrai",
+   "osztaly": "mwho.III",
+   "kellAdat": [
+    "ekg.rhythm"
+   ],
+   "megjegyzes": ""
+  },
+  {
+   "id": "szivbeteg.extrasystole",
+   "megnevezes": "Izolált pitvari vagy kamrai extrasystolék",
+   "diagnozis": "Ritmuszavar",
+   "allapotFeltetel": "izolált extrasystolék",
+   "osztaly": "mwho.I",
+   "kellAdat": [
+    "ekg.rhythm"
+   ],
+   "megjegyzes": ""
+  }
+ ]
+}

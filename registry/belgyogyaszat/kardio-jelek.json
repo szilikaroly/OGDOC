@@ -1,0 +1,209 @@
+{
+ "megnevezes": "Kardiológiai jelek terhességben — ugyanaz a szám, más jelentés",
+ "modul": 33,
+ "alairas": null,
+ "note": "EZ A REGISZTER EGY MEGLÉVŐ HIÁNYRA VÁLASZ. A `lab.dimer` változó `pitfalls` szövege eddig is leírta, hogy terhességben elvész a negatív prediktív értéke — de a SZÖVEG NEM TARTJA VISSZA A KÜSZÖBÖT. Egy prózai figyelmeztetés a mezőleírásban nem akadályozza meg, hogy a rendszer egy III. trimeszteri 0,4 mg/L-es D-dimert „normális”-ként jelöljön, és hogy valaki erre hivatkozva ne kérjen képalkotást. Ez a rendszer visszatérő hibacsaládja: a próza olyat ígér, amit a szerkezet nem tud hordozni.\n\nKÉT ELLENTÉTES IRÁNYÚ TÉVEDÉS. A D-dimernél a NORMÁLIS értéket hisszük megnyugtatónak, pedig terhesen nem az. A troponinnál a KÓROS értéket hisszük ártalmatlannak („biztos a terhesség miatt”), pedig a troponin élettanilag nem emelkedik. A kettő tükörképe egymásnak, és mindkettő halálos kimenetelű lehet — ezért van mindkettő kimondva, külön.\n\nA KONTEXTUS NÉLKÜL NINCS ÉRTELMEZÉS. Ha a terhességi állapot vagy a gesztációs kor ismeretlen, a jel `nemErtelmezheto` — NEM „nem terhes”. A hiányzó adat sehol nem „nem”.\n\nA TÁBLA ALÁÍRATLAN. Kardiológus és laborszakorvos aláírásáig tájékoztató: megmondja, mit NEM szabad állítani, de nem ad küszöböt. A küszöbök helyi laborvalidálást kívánnak.\n\nEGY JEL TÖBB VÁLTOZÓRA VONATKOZHAT. Az első változatban minden jelhez EGYETLEN változó tartozott, és a T-inverziós szabály szövege azt mondta: „a III. elvezetés és V1–V3”. A szerkezet viszont csak a `ekg.iii.t` mezőt hordozta, tehát a V1–V3 T-inverziójára a szabály NEM hatott. Ez ugyanaz a hiba, ami ellen a regiszter épült — csak most a regiszteren belül.",
+ "kontextusok": [
+  "nonpregnant",
+  "pregnancy.t1",
+  "pregnancy.t2",
+  "pregnancy.t3",
+  "postpartum.korai",
+  "postpartum.kesoi"
+ ],
+ "jelek": [
+  {
+   "id": "kardio.dimer",
+   "valtozok": [
+    "lab.dimer"
+   ],
+   "megnevezes": "D-dimer",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "emelkedik",
+    "pregnancy.t2": "emelkedik",
+    "pregnancy.t3": "emelkedik",
+    "postpartum.korai": "emelkedik",
+    "postpartum.kesoi": "emelkedik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": false,
+    "pregnancy.t2": false,
+    "pregnancy.t3": false,
+    "postpartum.korai": false,
+    "postpartum.kesoi": false
+   },
+   "mitJelent": "Terhességen kívül alacsony klinikai valószínűség mellett a küszöb alatti érték KIZÁRJA a tüdőembóliát. Terhességben a szint élettanilag emelkedik, ezért a szokásos küszöb alatti érték NEM zár ki.",
+   "tiltas": "A rendszer terhes vagy gyermekágyas betegnél NEM jelölheti a küszöb alatti D-dimert „normális”-ként, és nem használhatja kizárásra. Terhességre igazított algoritmus (pl. YEARS) nélkül a képalkotás nem halasztható a D-dimerre hivatkozva.",
+   "mertek": "a szint a terhesség előrehaladtával folyamatosan nő; a szülés utáni első napokban a legmagasabb",
+   "forras": "A `lab.dimer` változó `pitfalls` szövege ezt eddig is leírta — de a szöveg nem tartja vissza a küszöböt. Ezért lett szabály."
+  },
+  {
+   "id": "kardio.troponin",
+   "valtozok": [
+    "lab.troponin.hs"
+   ],
+   "megnevezes": "Nagy érzékenységű troponin",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "nemValtozik",
+    "pregnancy.t2": "nemValtozik",
+    "pregnancy.t3": "nemValtozik",
+    "postpartum.korai": "nemValtozik",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": true,
+    "pregnancy.t2": true,
+    "pregnancy.t3": true,
+    "postpartum.korai": true,
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "A troponin a terhességben NEM emelkedik élettanilag. Az emelkedett érték MINDIG kóros, és kivizsgálást kíván — akkor is, ha a beteg fiatal, és akkor is, ha a panasz „terhességre jellemző”.",
+   "tiltas": "A rendszer NEM adhat olyan magyarázatot, hogy az emelkedett troponin „a terhesség miatt van”. Ez a D-dimer TÜKÖRKÉPE, és a két hiba ellentétes irányba visz: a D-dimernél a normális értéket hisszük megnyugtatónak, a troponinnál a kórosat hisszük ártalmatlannak.",
+   "mertek": "nincs élettani terhességi emelkedés",
+   "forras": "ESC 2018 terhességi irányelv; a preeclampsiában leírt enyhe emelkedés is KÓROS, nem élettani."
+  },
+  {
+   "id": "kardio.ntprobnp",
+   "valtozok": [
+    "lab.ntprobnp"
+   ],
+   "megnevezes": "NT-proBNP",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "emelkedik",
+    "pregnancy.t2": "emelkedik",
+    "pregnancy.t3": "emelkedik",
+    "postpartum.korai": "emelkedik",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": "reszben",
+    "pregnancy.t2": "reszben",
+    "pregnancy.t3": "reszben",
+    "postpartum.korai": "reszben",
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "Élettanilag mérsékelten emelkedik, de a NEGATÍV irány megmarad: a normális NT-proBNP a szívelégtelenség ellen szól. A kifejezetten magas érték terhességben is kóros, és szívfunkció-vizsgálatot kíván.",
+   "tiltas": "A rendszer nem magyarázhatja a KIFEJEZETTEN magas NT-proBNP-t a terhességgel. A „mérsékelten emelkedik” nem jelent tetszőleges emelkedést.",
+   "mertek": "a normálishoz képest nagyságrendileg kétszeres tartomány, jellemzően a nem terhes felső határ közelében marad",
+   "forras": "ESC 2018 terhességi irányelv. A pontos terhességi küszöb helyi laborvalidálást kíván — ezért a küszöb itt NINCS kimondva."
+  },
+  {
+   "id": "kardio.ekg.tengely",
+   "valtozok": [
+    "ekg.axis"
+   ],
+   "megnevezes": "QRS-tengely",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "nemValtozik",
+    "pregnancy.t2": "balra",
+    "pregnancy.t3": "balra",
+    "postpartum.korai": "balra",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": true,
+    "pregnancy.t2": false,
+    "pregnancy.t3": false,
+    "postpartum.korai": false,
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "A rekesz megemelkedése a szívet elforgatja, ezért a tengely balra tolódik. Ez ÉLETTANI, és a III. trimeszterben a szokásos.",
+   "tiltas": "A rendszer NEM jelölheti kórosnak a balra tolódott tengelyt a II–III. trimeszterben. A `ekg.axis` változó `plausible` sávja (−30…90°) a NEM TERHES tartomány: terhesen a −30° alatti érték is lehet élettani, és a figyelmeztetés hamis riasztás volna.",
+   "mertek": "jellemzően 15–20 fokos balra tolódás a III. trimeszterre",
+   "forras": "A terhességi élettani EKG-eltérések régóta leírt köre."
+  },
+  {
+   "id": "kardio.ekg.t.inverzio",
+   "valtozok": [
+    "ekg.iii.t",
+    "ekg.v1.t",
+    "ekg.v2.t",
+    "ekg.v3.t"
+   ],
+   "megnevezes": "T-hullám inverzió (III., V1–V3)",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "nemValtozik",
+    "pregnancy.t2": "elofordul",
+    "pregnancy.t3": "elofordul",
+    "postpartum.korai": "elofordul",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": true,
+    "pregnancy.t2": false,
+    "pregnancy.t3": false,
+    "postpartum.korai": false,
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "A III. elvezetésben és a V1–V3 felett a T-inverzió terhességben előfordulhat élettanilag, ahogy a III-ban a kis Q-hullám is.",
+   "tiltas": "A rendszer ebből önmagában NEM következtethet ischaemiára. Ez viszont NEM terjed ki az ST-depresszióra: az nem élettani, és nem magyarázható a terhességgel.",
+   "mertek": "a III. elvezetés és V1–V3; MÁS elvezetésekre nem terjed ki",
+   "forras": "A terhességi élettani EKG-eltérések régóta leírt köre."
+  },
+  {
+   "id": "kardio.pulzus",
+   "valtozok": [
+    "vitals.pulse"
+   ],
+   "megnevezes": "Nyugalmi szívfrekvencia",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "emelkedik",
+    "pregnancy.t2": "emelkedik",
+    "pregnancy.t3": "emelkedik",
+    "postpartum.korai": "csokken",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": "reszben",
+    "pregnancy.t2": "reszben",
+    "pregnancy.t3": "reszben",
+    "postpartum.korai": true,
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "A nyugalmi frekvencia a terhesség során 10–20/min-nel emelkedik, és a III. trimeszterben a legmagasabb.",
+   "tiltas": "A rendszer NEM jelölhet tachycardiát pusztán a nem terhes felső határ alapján a III. trimeszterben. Ugyanakkor a 120/min feletti nyugalmi frekvencia terhesen SEM élettani.",
+   "mertek": "10–20/min emelkedés",
+   "forras": "Terhességi élettani keringési változások."
+  },
+  {
+   "id": "kardio.vernyomas",
+   "valtozok": [
+    "vitals.bp.systolic",
+    "vitals.bp.diastolic"
+   ],
+   "megnevezes": "Vérnyomás",
+   "elettaniValtozas": {
+    "nonpregnant": "nemValtozik",
+    "pregnancy.t1": "csokken",
+    "pregnancy.t2": "csokken",
+    "pregnancy.t3": "visszater",
+    "postpartum.korai": "emelkedik",
+    "postpartum.kesoi": "nemValtozik"
+   },
+   "kuszobHasznalhato": {
+    "nonpregnant": true,
+    "pregnancy.t1": true,
+    "pregnancy.t2": true,
+    "pregnancy.t3": true,
+    "postpartum.korai": true,
+    "postpartum.kesoi": true
+   },
+   "mitJelent": "A vérnyomás a II. trimeszterben élettanilag a legalacsonyabb, majd a III-ra visszatér a kiindulási szintre. A KÜSZÖB nem változik — a TREND viszont félrevezet.",
+   "tiltas": "A II. trimeszteri „szép” vérnyomás elfedheti a krónikus hypertoniát: az alapérték ismerete nélkül a III. trimeszteri visszatérés újonnan kialakult magas vérnyomásnak látszik. A rendszer ezért a küszöböt nem igazítja, de a fogamzás előtti alapértéket KÜLÖN adatként kéri.",
+   "mertek": "a küszöb változatlan; a viszonyítási alap az, ami hiányzik",
+   "forras": "Terhességi élettani keringési változások."
+  }
+ ]
+}

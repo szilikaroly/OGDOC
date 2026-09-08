@@ -1,4 +1,4 @@
-# Modul 33 — Belgyógyászat, endokrinológia, diabetológia
+# Modul 33 — Belgyógyászat: endokrinológia, diabetológia, kardiológia, palliatív ellátás
 
 *Ahol ugyanaz a labor mást jelent — és a rendszer már tudja, hogyan mondja meg.*
 
@@ -86,16 +86,34 @@ kritériumok, küszöbökkel, aláírással.
 
 ---
 
-## 4. Amit ez a modul NEM tesz
+## 4. Amit ez a modul NEM tesz — és ami e szakaszból kikerült
 
 **Nem lesz általános belgyógyászati rendszer.** A hatóköre az, ami a szülészeti
 és nőgyógyászati ellátásban ténylegesen felmerül: anyagcsere, pajzsmirigy,
 hypertonia, thrombophilia, vesefunkció, autoimmun kórképek terhességi
 vonatkozása.
 
-Ami ezen kívül esik — kardiológia, gasztroenterológia, onkológia a nőgyógyászati
-körön túl —, oda **beutalás** megy, nem saját protokoll. Ugyanaz a döntés, mint
-a védőnői modulban: aki nem az adott kérdés gazdája, az **továbbküld**.
+Ami ezen kívül esik — gasztroenterológia, onkológia a nőgyógyászati körön túl —,
+oda **beutalás** megy, nem saját protokoll. Ugyanaz a döntés, mint a védőnői
+modulban: aki nem az adott kérdés gazdája, az **továbbküld**.
+
+> **A KARDIOLÓGIA KORÁBBAN EBBEN A FELSOROLÁSBAN VOLT, ÉS KIKERÜLT BELŐLE.**
+>
+> A „beutalás, nem saját protokoll" álláspont ott állt meg, hogy a szívbetegség
+> a fejlett világ **vezető anyai halálokainak egyike**, és a beutalás akkor
+> segít, ha valaki előbb észreveszi, hogy be kell utalni. A rendszernek épp
+> abban a pillanatban nem volt mondanivalója, amikor a legtöbb múlt rajta.
+>
+> A hatókör ezért **nem a kezelésre** terjedt ki, hanem három olyan dologra,
+> amit a szülészeti dokumentáció maga tud, és amit senki más nem néz meg:
+> a **kockázati besorolásra**, a **félreolvasott laborjelekre**, és a **szülés
+> utáni átadásra**. A kezelés kardiológusé maradt — és a 7. szakasz kimondja,
+> hol áll meg a rendszer.
+>
+> Ugyanígy került be a **palliatív ellátás**: nem azért, mert a hospice ehhez a
+> modulhoz tartozik, hanem mert a „hospice" szó ebben a rendszerben **két
+> különböző dolgot** jelent, és a kettő összemosása konkrét kárt okoz. Lásd a
+> 8. szakaszt.
 
 ---
 
@@ -161,7 +179,202 @@ ezekre épül.
 
 ---
 
-## 7. Elfogadási kritérium
+---
+
+## 7. Kardiológia — a vezető anyai halálok
+
+`core/belgyogyaszat/kardio.ts` · `registry/belgyogyaszat/mwho.json` ·
+`registry/belgyogyaszat/kardio-jelek.json`
+
+### 7.1 A besorolás nem a diagnózis tulajdonsága
+
+**38 állapot, 5 kockázati osztály — és 11 diagnózis több osztályban is
+szerepel.** Ez a modul lényege:
+
+| Ugyanaz a diagnózis | Állapot | mWHO |
+|---|---|---|
+| Súlyos aortastenosis | **tünetmentes** | III. |
+| Súlyos aortastenosis | **tünetes** | **IV.** |
+| Korábbi peripartalis cardiomyopathia | a kamrafunkció **rendeződött** | III. |
+| Korábbi peripartalis cardiomyopathia | **bármilyen** maradvány | **IV.** |
+| Marfan-szindróma | aorta 40–45 mm | III. |
+| Marfan-szindróma | aorta **> 45 mm** | **IV.** |
+
+Egy `aortastenosis: igen` mező ezt a különbséget nem tudja hordozni. Ezért
+minden állapothoz `kellAdat` lista tartozik: ha a mérés hiányzik, a besorolás
+**`nemBesorolhato`**, és megnevezi, mi hiányzik.
+
+**A hiányzó adat nem a kedvezőbb osztály.** A korábbi peripartalis
+cardiomyopathiánál ez a III. és a IV. osztály közti különbség — vagyis egy
+ismételt terhesség egész kimenetele.
+
+### 7.2 A IV. osztály tény, nem javaslat
+
+Az irányelv szövege szerint a IV. osztályban a terhesség ellenjavallt, és a
+megszakítás megbeszélendő. **A rendszer ezt nem fordítja tanáccsá.** A
+szerkezet kényszeríti ki a megkülönböztetést, nem a szóhasználat:
+
+| Mező | Mit tartalmaz |
+|---|---|
+| `miert` | **a rendszer saját megállapítása** — itt soha nincs tanács |
+| `iranyelvSzovege` | **idézet** az irányelvből, külön mezőben |
+| `dontesGazdaja` | „a beteg, a terhesszív-csapattal" — a rendszer soha nem ez |
+| `javaslat` | típusszinten `false`, más érték nem vehető fel |
+
+Az első változatban ez egy bekezdés volt. Egy bekezdésbe öntve a felület az
+irányelv „megszakítás megbeszélendő" mondatát a rendszer állításának mutatja,
+és egy leolvasott mondatból tanács lesz. **Külön mezőben a felület kénytelen
+megkülönböztetni**, mit mond az irányelv, és mit állít a rendszer.
+
+### 7.3 Két ellentétes irányú tévedés ugyanazon a laborleleten
+
+Ez a réteg egy **meglévő hiányra** válasz. A `lab.dimer` változó `pitfalls`
+szövege eddig is leírta, hogy terhességben elvész a negatív prediktív értéke.
+**A szöveg viszont nem tartja vissza a küszöböt**: egy prózai figyelmeztetés a
+mezőleírásban nem akadályozza meg, hogy a rendszer egy III. trimeszteri
+0,4 mg/L-es D-dimert „normális"-ként mutasson, és hogy erre hivatkozva
+elmaradjon a képalkotás. Ez a rendszer visszatérő hibacsaládja: **a próza olyat
+ígér, amit a szerkezet nem hordoz.**
+
+| Jel | Élettani változás terhességben | A tévedés iránya |
+|---|---|---|
+| **D-dimer** | emelkedik | a **normális** értéket hisszük megnyugtatónak |
+| **Troponin** | **nem** emelkedik | a **kóros** értéket hisszük ártalmatlannak |
+| NT-proBNP | mérsékelten emelkedik | a negatív irány megmarad |
+| QRS-tengely | balra tolódik (II–III. trimeszter) | hamis riasztás |
+| T-inverzió (III., V1–V3) | előfordul | hamis riasztás |
+| Nyugalmi pulzus | +10–20/min | hamis riasztás |
+| Vérnyomás | a II. trimeszterben a legalacsonyabb | **a küszöb marad, a viszonyítási alap hiányzik** |
+
+A `kuszobHasznalhato` mező kontextusonként mondja meg, érvényes-e a szokásos
+küszöb. **Hiányzó bejegyzés nincs**: a validátor hibát ad, mert a hallgatás
+hallgatólagos „használható"-t jelentene — és épp ez a csendes engedés a baj.
+
+Az **ST-depresszióra** az engedmény **nem terjed ki**: az nem élettani, és nem
+magyarázható a terhességgel.
+
+### 7.4 Peripartalis cardiomyopathia — amit a terhesség vége elrejt
+
+Tünetei — nehézlégzés, lábdagadás, fáradékonyság, éjszakai fulladás —
+**megkülönböztethetetlenek** a terhesség végének élettani panaszaitól. Ezért a
+rendszer **nem a tünetekből** dönt: kimondja, hogy mérés nélkül a gyanú nem
+zárható ki.
+
+**A hiányzó ejekciós frakció nem jó szív, hanem nem mért szív.**
+
+### 7.5 A gyermekágyi átadás
+
+A szülés utáni napokban a méh összehúzódásával jelentős vérmennyiség kerül
+vissza a keringésbe — épp azt a szívet terhelve, amelyik a terhességet még
+bírta. A beteg ilyenkor a szülészeti gondozásból már kikerült, a kardiológiaiba
+pedig még nem érkezett meg: **ezt az átadást senki nem birtokolja.**
+
+A magasabb kockázati osztályokban (II–III., III., IV.) a rendszer a rögzített
+kardiológiai időpont hiányát **nyitott résként** jelzi. Besorolás nélkül a rés
+**nem „nem kell"** — eldöntetlen.
+
+---
+
+## 8. Palliatív ellátás és hospice — két különböző dolog egy néven
+
+`core/belgyogyaszat/palliativ.ts` · `registry/belgyogyaszat/palliativ.json`
+
+| | Felnőtt palliatív / hospice | Perinatális palliatív |
+|---|---|---|
+| **Ki haldoklik** | a beteg | a magzat — **a beteg NEM** |
+| **Ki dönt** | a beteg, vagy az előzetes rendelkezése | a szülők, a magzat helyett |
+| **Az ellátás tárgya** | tünetkontroll, méltóság | a szülés terve, a búcsú |
+| **Meddig tart** | a halálig | a szülés **után** is, hónapokig |
+| **Jellemző út** | előrehaladott nőgyógyászati daganat | letális magzati rendellenesség |
+
+**Az összemosás következménye konkrét.** Egyetlen közös „palliatív" zászló azt
+eredményezné, hogy a letális magzati rendellenességgel gondozott terhes nő
+**ellátása is visszafogódik** — pedig ő nem haldoklik, és a vérzés, a
+preeclampsia, a fertőzés ugyanúgy teljes ellátást kíván. A rendszer ezért nem
+enged közös zászlót, és a `dosszieVizsgal()` **hibát ad**, ha felnőtt ellátási
+cél kerül perinatális dossziéba.
+
+### 8.1 Az ellátási cél nem kétállású
+
+A „teljes ellátás" és a „komfort" közti egyetlen kapcsoló a leggyakoribb és
+legkárosabb egyszerűsítés: a **„nem újraélesztendő" jelölést a gyakorlat
+rendszeresen „ne kezeld"-ként olvassa.**
+
+Ezért **13 külön döntés** van, nem egy: újraélesztés, intubálás, intenzív
+felvétel, antibiotikum, folyadék, táplálás, transzfúzió, műtét — és
+perinatálisan: az újszülött élesztése, a **császármetszés**, a szülés alatti
+monitorozás, a búcsú, a boncolás. Az antibiotikum és a transzfúzió a palliatív
+ellátásban gyakran **tünetkontroll**, nem gyógyítás.
+
+A **császármetszés külön, kimondott döntés**: letális magzati rendellenesség
+mellett a magzati javallatú császármetszés **anyai kockázatot jelent magzati
+haszon nélkül**. Ez nem következhet sodródásból.
+
+Minden döntéshez **név** tartozik. „A család" és „a csapat" nem cselekvő: a
+visszavonás és a felülvizsgálat is ehhez a névhez kötődik.
+
+### 8.2 Ahol a gép megáll
+
+Három jogi feltétel van rögzítve, és **mindháromnál ki van mondva, meddig megy
+el a gép**. A legélesebb: a magyar szabályozás szerint az életfenntartó
+beavatkozás visszautasításának joga nem gyakorolható, ha a beteg terhes, és
+előreláthatóan képes a gyermek kihordására.
+
+**A rendszer ezt soha nem alkalmazza magától.** Két olyan elem van benne, amit
+gép nem dönthet el: hogy a beavatkozás „életfenntartó"-e, és hogy a beteg
+„előreláthatóan képes-e a gyermek kihordására" — az utóbbi **orvosi jóslat, nem
+adat**. A rendszer annyit tesz, hogy **jelzi**: terhesség mellett rögzített
+visszautasítás van, és ez jogi és klinikai megítélést kíván, megnevezett
+embertől. **Egy előzetes rendelkezést gép nem érvényteleníthet** — a dosszié a
+jelzés után is használható marad.
+
+A §-szintű hivatkozásokat **jogásznak**; a tábla aláíratlan.
+
+### 8.3 Három átadási rés
+
+| Rés | Amit senki nem birtokol |
+|---|---|
+| onkológia → hospice | az utolsó kezelés és az első hospice-kapcsolat közti hetek |
+| szülőszoba → gyászgondozás | az anya kikerül a szülészeti ellátásból, a gyász hónapokig tart |
+| gyászgondozás → következő terhesség | az új gondozó nem tudja, hogy volt veszteség |
+
+Mindhárom a 15. modul **elmulasztott vizit** mintájára működik: a hiány **jel**,
+nem üres mező. Küszöb nélkül a rés nem mérhető — és ez **nem azt jelenti, hogy
+nincs rés**, hanem hogy nem mérhető.
+
+---
+
+## 9. Amit ez a két terület sem tesz
+
+- **Nem kezel.** A kardiológiai kezelés kardiológusé, a tünetkontroll
+  palliatív szakorvosé. A rendszer besorol, jelez és átad.
+- **Nem ad küszöböt az NT-proBNP-hez.** Az helyi laborvalidálást kíván.
+- **Nem javasol terhességmegszakítást, és nem beszél le róla.**
+- **Nem érvénytelenít előzetes rendelkezést.**
+- **Nem dönti el, hogy egy beavatkozás életfenntartó-e.**
+- **Nem sorol be aláírás nélkül gondozási szintet.** Mindkét tábla aláíratlan,
+  tehát tájékoztató.
+
+---
+
+## 10. Ami még hiányzik a teljeskörűséghez
+
+A kardiológia és a palliatív réteg ezzel megvan; a belgyógyászati teljesség
+ezen túl még nyitott. A hiányjegyzék ezeket a modul saját regisztereiből gyűjti:
+
+- **thrombophilia és antikoagulálás** — a mechanikus műbillentyűnél már
+  felmerül (a K-vitamin-antagonista magzatkárosító, a heparin kevésbé véd), de
+  önálló rétege nincs;
+- **vesebetegség és eGFR terhességben** — a kreatinin-alapú becslés terhesen
+  félrevezet;
+- **autoimmun kórképek** (SLE, antifoszfolipid-szindróma) terhességi
+  vonatkozása;
+- **gasztroenterológia** — beutalás marad;
+- **pulmonológia** — az asztma terhességi kezelése a gyógyszerrétegre épülne.
+
+---
+
+## 11. Elfogadási kritérium
 
 1. A GDM és a praegestatiós diabétesz **külön entitás**, nem egy mező két
    értéke.
@@ -174,7 +387,7 @@ ezekre épül.
 
 ---
 
-## 8. Nyitott kérdések
+## 12. Nyitott kérdések
 
 - **Melyik trimeszterspecifikus referencia?** Nemzetközi ajánlás vagy hazai
   labor sajátja? Ez a 18. lépés kérdésének endokrin változata: *idegen

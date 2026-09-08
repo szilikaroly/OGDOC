@@ -76,6 +76,12 @@ import {
   loadDicom, merleg as dicomMerleg, validateDicom,
 } from "../core/interop/dicom.ts";
 import {
+  loadJelek, loadMwho, merleg as kardioMerleg, validateKardio,
+} from "../core/belgyogyaszat/kardio.ts";
+import {
+  loadPalliativ, merleg as pallMerleg, validatePalliativ,
+} from "../core/belgyogyaszat/palliativ.ts";
+import {
   gyujt, loadHianyok, merleg as hianyMerleg, validateHianyok,
 } from "../core/hianyzo/jegyzek.ts";
 import type { ModulHiany } from "../core/hianyzo/jegyzek.ts";
@@ -224,6 +230,9 @@ const hianyok = loadHianyok("registry/hianyzo/tetelek.json");
 const szolgaltatok = loadSzolgaltatok("registry/auth/szolgaltatok.json");
 const sorosProfilok = loadProfilok("registry/interop/soros-profilok.json");
 const dicom = loadDicom("registry/interop/dicom.json");
+const mwho = loadMwho("registry/belgyogyaszat/mwho.json");
+const kardioJelek = loadJelek("registry/belgyogyaszat/kardio-jelek.json");
+const palliativ = loadPalliativ("registry/belgyogyaszat/palliativ.json");
 
 /**
  * A HIÁNYJEGYZÉK GYŰJT, NEM ÍR ÚJRA.
@@ -256,6 +265,42 @@ const MODUL_HIANYOK: ModulHiany[] = [
     kinel: p.fajta === "kornyezet" ? "biobank-vezető" : "klinikai vezető",
     fajta: "eszkoz" as const,
   })),
+  // A BELGYÓGYÁSZATI TÁBLÁK ALÁÍRÁSAI — szervezeti tételek, nem fejlesztőiek.
+  ...(mwho.alairas === null
+    ? [{
+      forras: "registry/belgyogyaszat/mwho.json", modul: 33, id: "mwho.alairas",
+      cim: "Anyai kardiovaszkuláris kockázat (mWHO) — a tábla aláírása",
+      hianyzik: [
+        "Kardiológus tételes összevetése az ESC 2018 terhességi irányelv hivatalos szövegpéldányával: a 38 állapot besorolása és a kellAdat listák.",
+        "Annak eldöntése, hogy a gondozási szintek (helyi / megyei / terhesszív-csapat) mit jelentenek ebben az intézményi hálózatban.",
+      ],
+      kinel: "kardiológus szakorvos", fajta: "dokumentum" as const,
+    }]
+    : []),
+  ...(kardioJelek.alairas === null
+    ? [{
+      forras: "registry/belgyogyaszat/kardio-jelek.json", modul: 33, id: "kardio.jelek.alairas",
+      cim: "Kardiológiai jelek terhességben — a tábla aláírása",
+      hianyzik: [
+        "A terhességi NT-proBNP küszöb helyi laborvalidálása. A tábla szándékosan nem ad küszöböt.",
+        "Laborszakorvosi és kardiológusi jóváhagyás arról, hogy mely kontextusban melyik küszöb marad érvényben.",
+      ],
+      kinel: "laborszakorvos és kardiológus", fajta: "dokumentum" as const,
+    }]
+    : []),
+  ...(palliativ.alairas === null
+    ? [{
+      forras: "registry/belgyogyaszat/palliativ.json", modul: 33, id: "palliativ.alairas",
+      cim: "Palliatív ellátás és hospice — a tábla aláírása",
+      hianyzik: [
+        "Palliatív szakorvosi jóváhagyás az ellátási célok listájáról és a tünetkörökről.",
+        "Szülész-nőgyógyász jóváhagyás a perinatális palliatív út elemeiről (szülésterv, búcsú, boncolás).",
+        "JOGÁSZI ellenőrzés a három jogi feltétel §-szintű hivatkozásáról. A rendszer ezeket nem alkalmazza, csak jelzi — de a hivatkozásnak akkor is pontosnak kell lennie.",
+        "Az átadási rések küszöbnapjainak megállapítása (onkológia→hospice, szülőszoba→gyászgondozás, gyászgondozás→következő terhesség).",
+      ],
+      kinel: "palliatív szakorvos, szülész-nőgyógyász és jogász", fajta: "dokumentum" as const,
+    }]
+    : []),
   // A DICOM-OLDALKOCSI HIÁNYAI a saját regiszteréből jönnek, nem kézzel.
   ...(dicom.oldalkocsi.hianyzik.length
     ? [{
@@ -412,6 +457,8 @@ const issues = [
   ...validateCsatornak(csatornak),
   ...validateProfilok(sorosProfilok, (id) => reg.all().some((v) => v.id === id)),
   ...validateDicom(dicom),
+  ...validateKardio(mwho, kardioJelek, (id) => reg.all().some((v) => v.id === id)),
+  ...validatePalliativ(palliativ),
   ...validateIsber(isber),
   ...validateHianyok(hianyok),
   ...validateSzolgaltatok(szolgaltatok),
@@ -612,6 +659,20 @@ console.log(
                        `(${dc.szolgaltatas} szolgáltatás, ${dc.tlsNelkul} TLS nélkül, ` +
                        `${dc.veglegesithetoArchivum} véglegesíthető archívum, ` +
                        `oldalkocsi: ${dc.oldalkocsiKesz ? "kész" : "TERVEZETT"})`;
+             })()} · ` +
+             `${(() => {
+                const kd = kardioMerleg(mwho, kardioJelek);
+                const pl = pallMerleg(palliativ);
+                return `Kardiológia: ${kd.allapot} állapot ${kd.osztaly} mWHO-osztályban ` +
+                       `(${kd.legmagasabb} a legmagasabbban, ${kd.tobbOsztalyuDiagnozis} ` +
+                       `diagnózis több osztályban), ${kd.jel} jel ` +
+                       `(${kd.kontextusfuggo} kontextusfüggő), ` +
+                       `${kd.mwhoAlairt ? "aláírva" : "ALÁÍRATLAN — tájékoztató"} · ` +
+                       `Palliatív: ${pl.fajta} fajta, ${pl.cel} ellátási cél ` +
+                       `(${pl.felnottCel} felnőtt, ${pl.perinatalisCel} perinatális), ` +
+                       `${pl.tunetkor} tünetkör, ${pl.atadas} átadási rés, ` +
+                       `${pl.gepiHatarral}/${pl.jogiFeltetel} jogi feltételnél kimondott ` +
+                       `gépi határ, ${pl.alairt ? "aláírva" : "ALÁÍRATLAN"}`;
              })()} · ` +
              `ISBER: ${ib.fedett}/${ib.osszes} fedett (${ib.reszben} részben) · ` +
              `Hiányjegyzék: ${h.osszes} tétel (${h.blokkolo} BLOKKOLÓ, ` +

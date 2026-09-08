@@ -1,0 +1,358 @@
+[
+ {
+  "id": "lab.troponin.hs",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Nagy érzékenységű troponin"
+  },
+  "module": "lab",
+  "datatype": "quantity",
+  "unit": "ng/L",
+  "domain": {
+   "min": 0,
+   "max": 50000
+  },
+  "cardinality": "series",
+  "standards": {
+   "loinc": "67151-1"
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A szívizomsejt-károsodás keringő jelzője, nagy érzékenységű módszerrel mérve."
+   },
+   "pitfalls": {
+    "hu": "TERHESSÉGBEN NEM EMELKEDIK ÉLETTANILAG. Az emelkedett érték MINDIG kóros, és kivizsgálást kíván — akkor is, ha a beteg fiatal, és akkor is, ha a panasz „terhességre jellemző”. Preeclampsiában leírt enyhe emelkedés is KÓROS, nem élettani. Ez a D-dimer TÜKÖRKÉPE: ott a normális értéket hisszük tévesen megnyugtatónak, itt a kórosat ártalmatlannak."
+   },
+   "whyItMatters": {
+    "hu": "A szívbetegség a fejlett világ vezető anyai halálokának egyike, és a terhes betegnél a mellkasi panaszt rendszeresen a terhességnek tulajdonítják. A troponin az a szám, amelyik ezt a tévedést megfogja — ha nem magyarázzák el a terhességgel."
+   }
+  }
+ },
+ {
+  "id": "lab.ntprobnp",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "NT-proBNP"
+  },
+  "module": "lab",
+  "datatype": "quantity",
+  "unit": "pg/mL",
+  "domain": {
+   "min": 0,
+   "max": 40000
+  },
+  "cardinality": "series",
+  "standards": {
+   "loinc": "33762-6"
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A kamrai falfeszülésre felszabaduló natriuretikus peptid N-terminális prohormonja."
+   },
+   "pitfalls": {
+    "hu": "Terhességben élettanilag MÉRSÉKELTEN emelkedik, de a negatív irány megmarad: a normális érték a szívelégtelenség ellen szól. A kifejezetten magas érték terhességben is KÓROS. A terhességi küszöb helyi laborvalidálást kíván, ezért a rendszer küszöböt nem ad."
+   },
+   "whyItMatters": {
+    "hu": "Peripartalis cardiomyopathia gyanújában és ismert szívbetegség követésében a szívfunkció-romlás korai, olcsó jelzője — a nehézlégzés és a lábdagadás önmagában nem az, mert a terhesség vége élettanilag ugyanígy néz ki."
+   }
+  }
+ },
+ {
+  "id": "cardio.nyha",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "NYHA funkcionális osztály"
+  },
+  "module": "cardio",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "I",
+    "label_hu": "I. — a szokásos terhelés nem okoz panaszt"
+   },
+   {
+    "code": "II",
+    "label_hu": "II. — a szokásos terhelés panaszt okoz"
+   },
+   {
+    "code": "III",
+    "label_hu": "III. — a szokásosnál kisebb terhelés is panaszt okoz",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "IV",
+    "label_hu": "IV. — nyugalomban is panasz",
+    "flags": [
+     "redflag"
+    ]
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A szívelégtelenség tüneteinek terhelhetőség szerinti besorolása."
+   },
+   "pitfalls": {
+    "hu": "TERHESSÉGBEN A BESOROLÁS ELCSÚSZIK: az élettani terhelhetőség-csökkenés a III. trimeszterben önmagában II. osztálynak látszik. A besorolás ezért a TERHESSÉG ELŐTTI állapothoz viszonyítva értelmes — és a fogamzás előtti osztály az, ami leggyakrabban hiányzik."
+   },
+   "whyItMatters": {
+    "hu": "A NYHA III–IV a legmagasabb anyai kockázati osztály egyik kritériuma, súlyos balkamra-diszfunkcióval együtt. Enélkül a besorolás nem zárható le."
+   }
+  }
+ },
+ {
+  "id": "echo.lvef",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Balkamrai ejekciós frakció"
+  },
+  "module": "cardio",
+  "datatype": "quantity",
+  "unit": "%",
+  "domain": {
+   "min": 5,
+   "max": 85,
+   "plausible": [
+    45,
+    70
+   ]
+  },
+  "cardinality": "series",
+  "standards": {
+   "loinc": "10230-1"
+  },
+  "documentation": {
+   "definition": {
+    "hu": "A bal kamra szisztolés funkciója szívultrahanggal mérve."
+   },
+   "pitfalls": {
+    "hu": "A HIÁNYZÓ EJEKCIÓS FRAKCIÓ NEM JÓ SZÍV, HANEM NEM MÉRT SZÍV. A peripartalis cardiomyopathia tünetei megkülönböztethetetlenek a terhesség végének élettani panaszaitól, ezért mérés nélkül a gyanú NEM zárható ki."
+   },
+   "whyItMatters": {
+    "hu": "Az mWHO-besorolás több sávja kizárólag ezen a számon múlik: EF > 45%, 30–45%, és < 30% három különböző kockázati osztály. Korábbi peripartalis cardiomyopathia után pedig ez az egyetlen szám dönti el, hogy III. vagy IV. osztály — vagyis egy ismételt terhesség egész kimenetelét."
+   }
+  }
+ },
+ {
+  "id": "echo.aorta.atmero",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Aortagyök / ascendens átmérő"
+  },
+  "module": "cardio",
+  "datatype": "quantity",
+  "unit": "mm",
+  "domain": {
+   "min": 10,
+   "max": 90
+  },
+  "cardinality": "series",
+  "documentation": {
+   "definition": {
+    "hu": "Az aorta legnagyobb átmérője szívultrahanggal vagy keresztmetszeti képalkotással."
+   },
+   "pitfalls": {
+    "hu": "TURNER-SZINDRÓMÁBAN AZ ABSZOLÚT ÁTMÉRŐ FÉLREVEZET: a betegek alacsonyak, ezért a testfelszínre vetített aortaméret-index a mérvadó. A mérés helyét (gyök, sinotubularis junctio, ascendens) rögzíteni kell, különben két vizsgálat nem összehasonlítható."
+   },
+   "whyItMatters": {
+    "hu": "Marfan-szindrómában 40–45 mm és > 45 mm, bicuspidalis billentyűnél 45–50 mm és > 50 mm külön kockázati osztály. A dissectio kockázata a terhesség alatt és közvetlenül utána a legnagyobb."
+   }
+  }
+ },
+ {
+  "id": "echo.pap",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Becsült szisztolés pulmonalis artériás nyomás"
+  },
+  "module": "cardio",
+  "datatype": "quantity",
+  "unit": "mm[Hg]",
+  "domain": {
+   "min": 5,
+   "max": 150
+  },
+  "cardinality": "series",
+  "documentation": {
+   "definition": {
+    "hu": "A tricuspidalis regurgitáció sebességéből becsült pulmonalis nyomás."
+   },
+   "pitfalls": {
+    "hu": "A becsült érték nem helyettesíti a jobbszívfél-katéterezést, ha a diagnózis következménye a terhesség vállalhatósága. Terhességben a keringési többlet miatt a becsült érték is emelkedhet."
+   },
+   "whyItMatters": {
+    "hu": "A pulmonalis arteriás hypertonia a legmagasabb anyai halálozású kórkép, és a legveszélyesebb szakasza a SZÜLÉS UTÁNI első hetek — nem a szülés maga."
+   }
+  }
+ },
+ {
+  "id": "echo.mitralis.terulet",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Mitralis szájadék területe"
+  },
+  "module": "cardio",
+  "datatype": "quantity",
+  "unit": "cm2",
+  "domain": {
+   "min": 0.2,
+   "max": 6
+  },
+  "cardinality": "series",
+  "documentation": {
+   "definition": {
+    "hu": "A mitralis billentyű nyílásfelszíne szívultrahanggal."
+   },
+   "pitfalls": {
+    "hu": "A terhesség megnövekedett perctérfogata a közepes szűkületet is tünetessé teheti — a terhesség előtt panaszmentes beteg a II. trimeszterben dekompenzálódhat."
+   },
+   "whyItMatters": {
+    "hu": "Közepes és súlyos mitralis stenosis két különböző anyai kockázati osztály."
+   }
+  }
+ },
+ {
+  "id": "echo.aorta.gradiens",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Aortabillentyű maximális gradiens"
+  },
+  "module": "cardio",
+  "datatype": "quantity",
+  "unit": "mm[Hg]",
+  "domain": {
+   "min": 0,
+   "max": 200
+  },
+  "cardinality": "series",
+  "documentation": {
+   "definition": {
+    "hu": "A bal kamra és az aorta közti nyomáskülönbség csúcsértéke."
+   },
+   "pitfalls": {
+    "hu": "UGYANAZ A GRADIENS KÉT KOCKÁZATI OSZTÁLY: a súlyos aortastenosis TÜNETMENTESEN a III., TÜNETESEN a IV. osztályba sorol. A tünet megléte önálló, rögzítendő adat — és ha hiányzik, a besorolás nem a kedvezőbb."
+   },
+   "whyItMatters": {
+    "hu": "Az mWHO-besorolás egyik leggyakoribb bemenete."
+   }
+  }
+ },
+ {
+  "id": "cardio.mwho",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Anyai kardiovaszkuláris kockázat (mWHO)"
+  },
+  "module": "cardio",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "I",
+    "label_hu": "I. — nem kimutathatóan emelkedett"
+   },
+   {
+    "code": "II",
+    "label_hu": "II. — kismértékben emelkedett"
+   },
+   {
+    "code": "II-III",
+    "label_hu": "II–III. — köztes"
+   },
+   {
+    "code": "III",
+    "label_hu": "III. — jelentősen emelkedett",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "IV",
+    "label_hu": "IV. — rendkívül magas",
+    "flags": [
+     "redflag"
+    ]
+   },
+   {
+    "code": "nemBesorolhato",
+    "label_hu": "Nem besorolható — hiányzik a mérés"
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "A terhesség anyai kardiovaszkuláris kockázatának besorolása a módosított WHO-osztályozás szerint."
+   },
+   "pitfalls": {
+    "hu": "A BESOROLÁS NEM A DIAGNÓZIS TULAJDONSÁGA: ugyanaz a kórkép a súlyosság, a korrekció és a tünetek függvényében több osztályba is kerülhet. A `nemBesorolhato` ÉRVÉNYES érték, és NEM a legkedvezőbb osztályt jelenti — a teendő a hiányzó mérés pótlása. A IV. osztály TÉNY, amit a rendszer közöl; javaslatot nem fűz hozzá."
+   },
+   "whyItMatters": {
+    "hu": "A gondozás szintjét, a kontroll gyakoriságát és a szülés helyét ez a besorolás jelöli ki. Aláíratlan táblával TÁJÉKOZTATÓ."
+   }
+  }
+ },
+ {
+  "id": "cardio.szivbetegseg.allapot",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Ismert szívbetegség — állapot az mWHO-táblából"
+  },
+  "module": "cardio",
+  "datatype": "coded",
+  "valueSet": [
+   {
+    "code": "nincs",
+    "label_hu": "Nincs ismert szívbetegség"
+   },
+   {
+    "code": "ismeretlen",
+    "label_hu": "Nem tudjuk"
+   },
+   {
+    "code": "tablabol",
+    "label_hu": "Az mWHO-tábla egyik állapota (a kód a táblából jön)"
+   }
+  ],
+  "documentation": {
+   "definition": {
+    "hu": "Melyik mWHO-táblabeli állapot áll fenn. A konkrét kódot a registry/belgyogyaszat/mwho.json adja."
+   },
+   "pitfalls": {
+    "hu": "Az „ismeretlen” NEM „nincs”. A besorolatlan szívbeteg a terhesség alatt ugyanúgy szívbeteg — csak nem tudunk róla."
+   },
+   "whyItMatters": {
+    "hu": "Ez a besorolás bemenete; nélküle az mWHO-osztály nem határozható meg."
+   }
+  }
+ },
+ {
+  "id": "cardio.kardiologiai.idopont",
+  "version": 1,
+  "status": "active",
+  "label": {
+   "hu": "Szülés utáni kardiológiai kontroll időpontja"
+  },
+  "module": "cardio",
+  "datatype": "date",
+  "documentation": {
+   "definition": {
+    "hu": "A gyermekágyi kardiológiai átadás rögzített időpontja."
+   },
+   "pitfalls": {
+    "hu": "A HIÁNYA NEM „NEM KELL”. A szülés utáni napokban a méh összehúzódásával jelentős vérmennyiség kerül vissza a keringésbe — épp azt a szívet terhelve, amelyik a terhességet még bírta. Ilyenkor a beteg a szülészeti gondozásból már kikerült, a kardiológiaiba pedig még nem érkezett meg."
+   },
+   "whyItMatters": {
+    "hu": "A magasabb kockázati osztályokban ezt az átadást a rendszer esedékességként követi."
+   }
+  }
+ }
+]
