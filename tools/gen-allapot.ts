@@ -43,13 +43,37 @@ const coreFiles = walk("core", ".ts");
 const testFiles = walk("test", ".ts");
 const docFiles = walk("docs", ".md");
 
-/** Hány teszt fut — a `node --test` kimenetéből, nem becslésből. */
+/**
+ * Hány teszt fut — a `node --test` kimenetéből, nem becslésből.
+ *
+ * A RIPORTERT KIMONDJUK. A kiolvasás a `# pass` sorra épül, ami TAP-alak, de a
+ * `node --test` alapértelmezett riportere a Node verziójától függ: újabb
+ * Node-on csővezetéken is `spec`, ami `ℹ pass 1938`-at ír. Megadás nélkül ez a
+ * függvény 22-nél újabb Node-on NÉMÁN NULLÁT adott vissza, és a nulla bekerült
+ * a generált állapotjelentésbe — abba a dokumentumba, aminek az egyetlen
+ * létjogosultsága, hogy nem hazudik.
+ *
+ * ÉS EZÉRT NEM NULLÁZUNK TÖBBÉ. A hiányzó szám nem nulla: a nulla egy állítás
+ * a rendszerről („nincs tesztünk”), a hiány pedig annyit tesz, hogy nem tudjuk.
+ * A kettőt összemosni pontosan az a hiba, ami ellen ez a fájl épült, ezért itt
+ * inkább elszáll a generálás, mint hogy egy hamis számot írjon a doksiba.
+ */
 function testCount(): number {
+  let out: string;
   try {
-    const out = execSync("node --experimental-strip-types --test test/*.test.ts 2>&1 | tail -20",
+    out = execSync(
+      "node --experimental-strip-types --test --test-reporter=tap test/*.test.ts 2>&1 | tail -20",
       { encoding: "utf8", shell: "/bin/bash" });
-    return Number(/^# pass (\d+)/m.exec(out)?.[1] ?? 0);
-  } catch { return 0; }
+  } catch (e) {
+    throw new Error(`a tesztfuttatás nem indult el, így a tesztek száma nem állapítható meg: ${e}`);
+  }
+  const m = /^# pass (\d+)/m.exec(out);
+  if (!m) {
+    throw new Error(
+      "a tesztfuttatás kimenetéből nem olvasható ki a „# pass” sor (TAP-riporter kérve). " +
+      "A tesztek száma NEM nulla, hanem ismeretlen — a generálás ezért áll le.");
+  }
+  return Number(m[1]);
 }
 
 const maps = readdirSync("registry/felulet")
