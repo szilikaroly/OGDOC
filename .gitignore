@@ -1,3 +1,21 @@
+# NEM TERJESZTHETŐ ÉS COPYLEFT SZÁRMAZÉKOK — helyben települnek.
+#
+# A `core/kulso/protokoll.ts` (validateKulsoTerjesztes) azt kényszeríti ki, hogy
+# minden copyleft származék útvonala `helyi/` könyvtárban álljon, és a hibaüzenete
+# szó szerint „a .gitignore-olt `helyi/` könyvtárra” hivatkozik. Ez a fájl az a
+# .gitignore. A kettő EGYÜTT véd — külön egyik sem:
+#
+#   · SNOMED CT GPS (CC BY-ND 4.0) → registry/kodok/helyi/ — az átalakított mű
+#     terjesztését a licenc TILTJA;
+#   · PRBPERIsk és társai (GPL-2.0 / GPL-3.0) → registry/kulso/helyi/ — a
+#     copyleft az MIT-művel a TERJESZTÉS irányában összeegyeztethetetlen.
+#
+# A GPL a HASZNÁLATOT nem korlátozza, a TERJESZTÉST igen — és a nyilvános repó
+# terjesztés. A minta bármilyen mélységben álló `helyi` KÖNYVTÁRRA illeszkedik,
+# mert az őr is így fogalmaz; a `helyi` szót a NEVÜKBEN viselő fájlok
+# (`core/us/helyi.ts`, `registry/normogramok/helyi-us-ac.json`) a rendszer saját
+# forrásai, és bent maradnak.
+helyi/
 
 # A FORRÁSTÁR VISZONT BEKERÜL (ogdoc/forrasok/). A fenti kizárások a
 # SZÁRMAZTATOTT táblákra vonatkoznak, nem az eredeti forrásokra: a
