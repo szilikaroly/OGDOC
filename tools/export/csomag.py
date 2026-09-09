@@ -266,9 +266,13 @@ def olvasd_szamokat() -> dict:
         tesztek = sorted(
             os.path.join("test", f) for f in os.listdir(os.path.join(ROOT, "test"))
             if f.endswith(".test.ts"))
+        # A RIPORTERT KIMONDJUK: a kiolvasás a `# pass` sorra épül, ami
+        # TAP-alak, a `node --test` alapértelmezett riportere viszont a Node
+        # verziójától függ (újabb Node-on `spec`, ami `ℹ pass N`-t ír). Megadás
+        # nélkül a jegyzékbe „? sikeres, ? bukott” került volna.
         r = subprocess.run(["node", "--experimental-strip-types", "--test",
-                            *tesztek], cwd=ROOT, capture_output=True,
-                           text=True, timeout=900)
+                            "--test-reporter=tap", *tesztek], cwd=ROOT,
+                           capture_output=True, text=True, timeout=900)
         m = re.search(r"^# pass (\d+)", r.stdout, re.M)
         f = re.search(r"^# fail (\d+)", r.stdout, re.M)
         ki["teszt"] = f"{m.group(1) if m else '?'} sikeres, {f.group(1) if f else '?'} bukott"
