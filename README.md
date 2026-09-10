@@ -13,11 +13,15 @@ tesztelhető. Kifelé minden adat FHIR R4 alakon megy át, hogy a HIS- és EESZT
 adapter-írás legyen, ne adatmodell-átírás.
 
 > **Jelenlegi állapot — 2026. szeptember.** A terv és a változóregiszter mellett fut a
-> **klinikai mag** (894 változó, levezetési motor, kalkulátor-réteg, űrlap- és
-> dokumentációgenerálás), a **hitelesítési réteg** és a **webes réteg**, ami a titkosított,
-> láncolt, jogosultság- és auditnapló-védett tárolón megy — **1875 teszt, 0 hiba**.
-> A [tizennyolc lépésből](docs/13-18-lepes.md) **3 kész**, kettőnél a gépi fele áll
-> (a 3. aláírásokra, az 5. két klinikai olvasatra vár).
+> **klinikai mag** (levezetési motor, kalkulátor-réteg, űrlap- és dokumentációgenerálás),
+> a **hitelesítési réteg** és a **webes réteg**, ami a titkosított, láncolt,
+> jogosultság- és auditnapló-védett tárolón megy.
+>
+> <!-- generált: allapot — `npm run docs` írja -->
+> A regiszterben **905 változó** áll, és **1953 teszt** fut, 0 hiba.
+> A [tizennyolc lépésből](docs/13-18-lepes.md) **3 kész**,
+> **15-nél a gépi fele áll, az emberi nem** — aláírás, illetve klinikai olvasat.
+> <!-- /generált: allapot -->
 >
 > **A rendszer valódi betegadaton nem futhat.** A megnevezett blokkoló — „bárki egy
 > kérésfejléccel bárkinek kiadhatja magát" — megszűnt: a jelszavas belépés megvan. Ebből
@@ -38,7 +42,7 @@ adapter-írás legyen, ne adatmodell-átírás.
 ```bash
 git clone https://github.com/szilikaroly/OGDOC
 cd OGDOC
-npm run check                      # validálás + 1875 teszt + generált dokumentumok
+npm run check                      # validálás + tesztek + generált dokumentumok
 npm run demo                       # szintetikus betegút végigvezetve
 OGDOC_SYNTHETIC=1 npm run web      # webes réteg (valódi betegadaton nem indul)
 npm run csomag                     # teljes exportcsomag

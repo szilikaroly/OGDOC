@@ -6,16 +6,20 @@
  *
  * Futtatás: `npm run docs` (a többi generált doksival együtt)
  *
- * MIÉRT NEM ELLENŐRZI A `docs:check`. A tesztek száma minden új teszttel
- * változik, és a szám előállításához MAGUKAT A TESZTEKET kell lefuttatni —
- * egy build-hiba abból, hogy „a doksi elavult", itt csak zajt adna. A
- * generált kalkulátor- és mezőkatalógusnál más a helyzet: azok a
- * regiszterből jönnek, és az elavulásuk valódi hiba.
+ * A `docs:check` ELLENŐRZI ezt a fájlt — de csak ott, ahol a helyben települő
+ * regiszterfák telepítve vannak, mert a regiszterfájlok darabszáma tőlük függ.
+ * Egy friss klónban az összevetés kimarad, és ezt a checker ki is mondja
+ * („NEM MEGÁLLAPÍTHATÓ”) — a hallgatás itt naprakészséget állítana ott, ahol
+ * nem mértünk.
+ *
+ * A SZÁMOK FORRÁSA a `allapot-forras.ts`, közösen a README-vel. Két másolatban
+ * tartva ugyanaz a kiolvasás előbb-utóbb két különböző számot adna ugyanarra a
+ * kérdésre — ebben a repóban ez már megtörtént.
  */
-import { execSync } from "node:child_process";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { loadRegistry } from "../core/load.ts";
+import { lepesAllas, zoldTesztMerleg } from "./allapot-forras.ts";
 import { loadUiMap, auditFields } from "../core/ui/felulet.ts";
 import { CALCULATORS } from "../core/calc/defs.ts";
 import {
@@ -42,39 +46,6 @@ const lines = (files: string[]) =>
 const coreFiles = walk("core", ".ts");
 const testFiles = walk("test", ".ts");
 const docFiles = walk("docs", ".md");
-
-/**
- * Hány teszt fut — a `node --test` kimenetéből, nem becslésből.
- *
- * A RIPORTERT KIMONDJUK. A kiolvasás a `# pass` sorra épül, ami TAP-alak, de a
- * `node --test` alapértelmezett riportere a Node verziójától függ: újabb
- * Node-on csővezetéken is `spec`, ami `ℹ pass 1938`-at ír. Megadás nélkül ez a
- * függvény 22-nél újabb Node-on NÉMÁN NULLÁT adott vissza, és a nulla bekerült
- * a generált állapotjelentésbe — abba a dokumentumba, aminek az egyetlen
- * létjogosultsága, hogy nem hazudik.
- *
- * ÉS EZÉRT NEM NULLÁZUNK TÖBBÉ. A hiányzó szám nem nulla: a nulla egy állítás
- * a rendszerről („nincs tesztünk”), a hiány pedig annyit tesz, hogy nem tudjuk.
- * A kettőt összemosni pontosan az a hiba, ami ellen ez a fájl épült, ezért itt
- * inkább elszáll a generálás, mint hogy egy hamis számot írjon a doksiba.
- */
-function testCount(): number {
-  let out: string;
-  try {
-    out = execSync(
-      "node --experimental-strip-types --test --test-reporter=tap test/*.test.ts 2>&1 | tail -20",
-      { encoding: "utf8", shell: "/bin/bash" });
-  } catch (e) {
-    throw new Error(`a tesztfuttatás nem indult el, így a tesztek száma nem állapítható meg: ${e}`);
-  }
-  const m = /^# pass (\d+)/m.exec(out);
-  if (!m) {
-    throw new Error(
-      "a tesztfuttatás kimenetéből nem olvasható ki a „# pass” sor (TAP-riporter kérve). " +
-      "A tesztek száma NEM nulla, hanem ismeretlen — a generálás ezért áll le.");
-  }
-  return Number(m[1]);
-}
 
 const maps = readdirSync("registry/felulet")
   .filter((f) => f.endsWith("-felulet.json"))
@@ -105,7 +76,10 @@ P("|---|---:|");
 P(`| Regiszterbeli változó | **${reg.all().length}** |`);
 P(`| Kalkulátor | ${CALCULATORS.length} |`);
 P(`| ebből kapu mögött (\`verified: false\`) | **${gated.length}** |`);
-P(`| Teszt | **${testCount()}** |`);
+/* A LÉTEZŐ tesztek száma (`# tests`), nem a sikereseké (`# pass`). A kettő
+ * ott tér el, ahol egy teszt kimarad telepítetlen helyi fa miatt: a `# pass`
+ * fánként más, a `# tests` mindenütt ugyanaz. A kihagyott teszt is teszt. */
+P(`| Teszt | **${zoldTesztMerleg().tesztek}** |`);
 P(`| Mag: fájl / sor | ${coreFiles.length} / ${lines(coreFiles)} |`);
 P(`| Teszt: fájl / sor | ${testFiles.length} / ${lines(testFiles)} |`);
 P(`| Dokumentum | ${docFiles.length} |`);
@@ -225,15 +199,8 @@ P("");
  * karbantartott „hol tartunk” két hét alatt elszakad attól, ami a lépéslistán
  * áll — és akkor két különböző igazság lesz a repóban.
  */
-const lepesSzoveg = readFileSync("docs/13-18-lepes.md", "utf8");
-const lepesek = [...lepesSzoveg.matchAll(/^## (\d+)\. (.+)$/gm)].map((m) => {
-  const szam = Number(m[1]);
-  const cim = m[2];
-  // A cím utáni idézetblokk a lépés állapota; az első félkövér mondat a jelölés.
-  const utan = lepesSzoveg.slice(m.index! + m[0].length, m.index! + m[0].length + 900);
-  const jelzes = /^\s*>\s+\*\*([^*]+)\*\*/m.exec(utan)?.[1]?.replace(/[.:]\s*$/, "");
-  return { szam, cim, jelzes: jelzes ?? null };
-});
+const { lepesek, teljes, reszben } = lepesAllas(
+  readFileSync("docs/13-18-lepes.md", "utf8"));
 
 P("## A tizennyolc lépés állása");
 P("");
@@ -246,12 +213,8 @@ for (const l of lepesek) {
   P(`| ${l.szam} | ${l.cim} | ${l.jelzes ? `**${l.jelzes}**` : "—"} |`);
 }
 P("");
-// A „MEGVAN” és a „gépi fele megvan” KÉT KÜLÖNBÖZŐ ÁLLAPOT. Egybeszámolva a
-// jelentés többet állítana, mint amennyi igaz: a 3. és az 5. lépés emberi
-// felére a gép egyetlen sort sem tud hozzátenni.
-const teljes = lepesek.filter((l) => /^MEGVAN/.test(l.jelzes ?? "")).length;
-const reszben = lepesek.filter(
-  (l) => l.jelzes && /MEGVAN/.test(l.jelzes) && !/^MEGVAN/.test(l.jelzes)).length;
+// A „MEGVAN” és a „gépi fele megvan” KÉT KÜLÖNBÖZŐ ÁLLAPOT; a szétválasztás
+// a `lepesAllas()`-ban áll, hogy a README és ez a jelentés ugyanazt mondja.
 P(`A tizennyolcból **${teljes} lépés kész**, **${reszben}-nél a gépi fele áll, `,
   `az emberi nem** — aláírás, illetve klinikai olvasat. A jelölés sehol nem `,
   "„kész projekt”: mindegyiknél ott áll, mi maradt nyitva.");

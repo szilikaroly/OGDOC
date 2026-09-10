@@ -6,15 +6,15 @@
   "type": "module",
   "description": "OGDOC — szülészeti és nőgyógyászati integrált dokumentációs rendszer; a klinikai mag prototípusa",
   "engines": {
-    "node": ">=22.6"
+    "node": ">=22.18"
   },
   "scripts": {
     "test": "node --test \"test/*.test.ts\"",
     "demo": "node --experimental-strip-types demo/eset.ts",
     "validate": "node tools/validate.ts",
     "web": "node web/server.ts",
-    "docs": "node tools/gen-calc-doc.ts > docs/fejlesztes/07-kalkulatorok.md && node tools/gen-field-catalog.ts > docs/fejlesztes/05-mezokatalogus.md && node tools/gen-coverage.ts > docs/fejlesztes/11-lefedettseg.md && node tools/gen-dontes-allokacio.ts > docs/fejlesztes/37-dontes-allokacio.md && node tools/gen-complaint-roster.ts && node tools/gen-drug-roster.ts && node tools/gen-procedure-roster.ts && node tools/gen-allapot.ts > docs/14-allapot.md",
-    "docs:check": "node tools/check-generated.ts && node tools/gen-complaint-roster.ts --check && node tools/gen-drug-roster.ts --check && node tools/gen-procedure-roster.ts --check",
+    "docs": "node tools/gen-calc-doc.ts > docs/fejlesztes/07-kalkulatorok.md && node tools/gen-field-catalog.ts > docs/fejlesztes/05-mezokatalogus.md && node tools/gen-coverage.ts > docs/fejlesztes/11-lefedettseg.md && node tools/gen-dontes-allokacio.ts > docs/fejlesztes/37-dontes-allokacio.md && node tools/gen-complaint-roster.ts && node tools/gen-drug-roster.ts && node tools/gen-procedure-roster.ts && node tools/gen-allapot.ts > docs/14-allapot.md && node tools/gen-readme-allapot.ts",
+    "docs:check": "node tools/check-generated.ts && node tools/gen-complaint-roster.ts --check && node tools/gen-drug-roster.ts --check && node tools/gen-procedure-roster.ts --check && node tools/gen-readme-allapot.ts --check",
     "test:modules": "node --test \"modules/*/teszt/*.test.ts\"",
     "check": "npm run validate && npm test && npm run test:modules && npm run docs:check && npm run artifact:check",
     "xlsx": "python3 tools/export/felulet_xlsx.py felulet-mezoleltar.xlsx",
