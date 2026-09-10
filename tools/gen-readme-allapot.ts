@@ -27,7 +27,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { loadRegistry } from "../core/load.ts";
-import { lepesAllas, tesztMerleg } from "./allapot-forras.ts";
+import { lepesAllas, zoldTesztMerleg } from "./allapot-forras.ts";
 
 const FAJL = "README.md";
 const LEPESFAJL = "docs/13-18-lepes.md";
@@ -72,15 +72,49 @@ export function allapotBlokk(sz: Szamok): string {
  * tartja naprakészen.
  */
 export function blokkCsere(szoveg: string, blokk: string): string {
-  const sorok = szoveg.split("\n");
+  // A SORVÉGET MEGŐRIZZÜK. Egy CRLF-es fájlba LF-fel visszaírt blokktól a
+  // `--check` valódi tartalmi eltérés nélkül bukna el, az író ág pedig vegyes
+  // sorvégű fájlt hagyna maga után — a következő ellenőrzés már átmenne rajta,
+  // tehát a hiba egyszer felvillanna, aztán eltűnne. Az ilyen a legrosszabb fajta.
+  const sorveg = szoveg.includes("\r\n") ? "\r\n" : "\n";
+  const sorok = szoveg.split(/\r?\n/);
+
+  // A BEÍRANDÓ BLOKK NEM TARTALMAZHAT JELÖLŐT. Enélkül egy hibás blokk némán
+  // beírna egy második nyitójelölőt, és a hiba csak a KÖVETKEZŐ futáskor
+  // derülne ki — akkor viszont már a fájlban áll.
+  if (blokk.includes(NYIT) || blokk.includes(ZAR)) {
+    throw new Error(
+      `${FAJL}: a beírandó blokk maga is tartalmaz jelölőt. Ez a következő ` +
+      `futásra elrontaná a fájlt, ezért most áll le.`);
+  }
+
+  /**
+   * A JELÖLŐ EGÉSZ SOR, NEM RÉSZSZÖVEG.
+   *
+   * Ha részszövegként fogadnánk el, egy „<jelölő> 1875 teszt” alakú soron
+   * elavult kézi szám maradhatna: a csere a jelölősorokat érintetlenül hagyja,
+   * tehát a `--check` zölden átmenne fölötte. Épp az a hiba maradna
+   * ellenőrizetlenül, ami miatt ez a fájl megszületett.
+   *
+   * A README-ben a jelölők idézetblokkban állnak, ezért a `> ` előtag
+   * megengedett — de utána már csak a jelölő állhat.
+   */
+  const jeloloSor = (sor: string, jelolo: string) =>
+    sor.replace(/^\s*>\s?/, "").trim() === jelolo;
+
   const hol = (jelolo: string, nev: string): number => {
     const talalatok = sorok
-      .map((s, i) => (s.includes(jelolo) ? i : -1))
+      .map((sor, i) => (jeloloSor(sor, jelolo) ? i : -1))
       .filter((i) => i >= 0);
     if (!talalatok.length) {
+      const reszkent = sorok.some((sor) => sor.includes(jelolo));
       throw new Error(
         `${FAJL}: hiányzik a ${nev} jelölő (${jelolo}). A blokk így nem ` +
-        `frissíthető — és némán átengedni rosszabb volna, mint elszállni.`);
+        `frissíthető — és némán átengedni rosszabb volna, mint elszállni.` +
+        (reszkent
+          ? ` (Egy soron SZEREPEL a jelölő, de nem egyedül áll rajta: ott ` +
+            `egyéb szöveg is van. A jelölő legyen a sor teljes tartalma.)`
+          : ""));
     }
     if (talalatok.length > 1) {
       throw new Error(
@@ -89,18 +123,22 @@ export function blokkCsere(szoveg: string, blokk: string): string {
     }
     return talalatok[0];
   };
+
   const nyit = hol(NYIT, "nyitó");
   const zar = hol(ZAR, "záró");
   if (zar <= nyit) {
     throw new Error(`${FAJL}: a záró jelölő a nyitó ELŐTT áll — a blokk nem értelmezhető.`);
   }
-  return [...sorok.slice(0, nyit + 1), ...blokk.split("\n"), ...sorok.slice(zar)].join("\n");
+  // Az ÜRES blokk nulla sor, nem egy üres sor: a `"".split()` egyetlen üres
+  // elemet adna, és attól a jelölők közé egy fölösleges üres sor kerülne.
+  const blokkSorok = blokk === "" ? [] : blokk.split(/\r?\n/);
+  return [...sorok.slice(0, nyit + 1), ...blokkSorok, ...sorok.slice(zar)].join(sorveg);
 }
 
 /** A számok összegyűjtése a forrásokból. */
 export function szamokBeolvas(): Szamok {
   const reg = loadRegistry("registry/variables");
-  const t = tesztMerleg();
+  const t = zoldTesztMerleg();
   const l = lepesAllas(readFileSync(LEPESFAJL, "utf8"));
   return {
     valtozo: reg.all().length,

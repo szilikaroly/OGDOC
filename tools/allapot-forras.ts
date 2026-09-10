@@ -12,16 +12,20 @@
  *
  * A TAP-kimenet négy különböző számot ad, és NEM MINDEGY, melyiket olvassuk:
  *
- *     # tests 1939     ennyi teszt LÉTEZIK
- *     # pass  1938     ennyi futott le sikeresen EBBEN a fában
+ *     # tests N        ennyi teszt LÉTEZIK
+ *     # pass  N − K    ennyi futott le sikeresen EBBEN a fában
  *     # fail  0
- *     # skipped 1      a telepített országos jegyzékre épülő teszt kimaradt
+ *     # skipped K      ennyi maradt ki
+ *
+ * SZÁNDÉKOSAN NINCS ITT KONKRÉT SZÁM. Egy kommentbe írt darabszám ugyanaz a
+ * hazug szám, mint a README-ben állt — csak nehezebb észrevenni, mert a
+ * kommentet semmilyen ellenőrzés nem nézi.
  *
  * Korábban a `# pass` sort olvastuk. Az a szám a FÁTÓL FÜGG: ahol a helyben
- * települő regiszterek megvannak, ott 1939, ahol nincsenek, ott 1938 — mert
- * egy teszt kimarad. A generált doksi „Teszt” sora így valójában a sikeres
- * futások számát mondta, két különböző értékkel két fában, és emiatt kellett
- * az összevetést egészében kihagyni ott, ahol a helyi fák hiányoznak.
+ * települő regiszterek megvannak, ott eggyel több teszt fut le, mert a
+ * telepített országos jegyzékre épülő teszt nem marad ki. A generált doksi
+ * „Teszt” sora így valójában a sikeres futások számát mondta, két különböző
+ * értékkel két fában.
  *
  * A `# tests` viszont MINDKÉT FÁBAN UGYANAZ: a kihagyott teszt is létező
  * teszt. A kihagyást nem eltüntetjük, hanem külön mondjuk ki (`kihagyott`) —
@@ -48,6 +52,12 @@ export interface TesztMerleg {
   kihagyott: number;
 }
 
+/**
+ * FOLYAMATONKÉNTI gyorsítótár. A tesztfuttatás másodpercekbe telik, és egy
+ * generálás során többször is kellhet — de a gyorsítótár SOHA nem frissül:
+ * ezek az eszközök egyszer futó parancsok, nem hosszan élő szolgáltatások.
+ * Ha valaha hosszú életű folyamatból hívnánk, ez a cache elavult mérleget adna.
+ */
 let gyorsitotar: TesztMerleg | null = null;
 
 /**
@@ -83,12 +93,47 @@ export function tesztMerleg(): TesztMerleg {
     }
     return Number(m[1]);
   };
-  return (gyorsitotar = {
+  const merleg: TesztMerleg = {
     tesztek: szam("tests"),
     sikeres: szam("pass"),
     bukott: szam("fail"),
     kihagyott: szam("skipped"),
-  });
+  };
+  // A NULLA TESZT NEM EREDMÉNY, HANEM TÜNET. A `node --test` egy semmire nem
+  // illeszkedő mintára `# tests 0`-t ír és NULLÁVAL lép ki — egy elgépelt
+  // glob, egy átnevezett könyvtár vagy egy elköltöztetett tesztfa mind ilyen.
+  // Ezt elfogadva a README-be „0 teszt fut, 0 hiba” kerülne: pontosan az a
+  // néma nulla, ami ellen ez az egész fájl épült.
+  if (merleg.tesztek === 0) {
+    throw new Error(
+      "a tesztfuttatás NULLA tesztet talált a `test/*.test.ts` mintára. Ez nem " +
+      "azt jelenti, hogy nincs tesztünk, hanem azt, hogy nem futott le semmi — " +
+      "a minta, a könyvtár vagy a futtatás romlott el. A nulla itt tünet, nem adat.");
+  }
+  return (gyorsitotar = merleg);
+}
+
+/**
+ * A mérleg, de KIZÁRÓLAG zöld futásból.
+ *
+ * Egy bukott teszt melletti darabszám nem állítás a rendszerről, hanem
+ * törmelék: ha egy modul betöltése száll el, a fájl későbbi tesztjei be sem
+ * regisztrálódnak, tehát a `# tests` már nem „a létező tesztek száma”. A
+ * generált dokumentumok ezért NEM készülnek el piros fán — inkább nem
+ * számolunk, mint rosszul.
+ *
+ * A nyers `tesztMerleg()` továbbra is visszaadja a bukást (az a README-blokk
+ * dolga, hogy ki tudja írni); a generátorok ezt a szigorúbb kaput használják.
+ */
+export function zoldTesztMerleg(): TesztMerleg {
+  const m = tesztMerleg();
+  if (m.bukott > 0) {
+    throw new Error(
+      `a tesztfuttatás ${m.bukott} hibával zárult, ezért a generálás leáll. Egy ` +
+      `piros fából származó darabszám nem a rendszerről szól, hanem a törésről — ` +
+      `előbb a tesztek, utána a dokumentáció.`);
+  }
+  return m;
 }
 
 export interface Lepes {

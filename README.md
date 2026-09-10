@@ -18,7 +18,7 @@ adapter-írás legyen, ne adatmodell-átírás.
 > jogosultság- és auditnapló-védett tárolón megy.
 >
 > <!-- generált: allapot — `npm run docs` írja -->
-> A regiszterben **905 változó** áll, és **1948 teszt** fut, 0 hiba.
+> A regiszterben **905 változó** áll, és **1953 teszt** fut, 0 hiba.
 > A [tizennyolc lépésből](docs/13-18-lepes.md) **3 kész**,
 > **15-nél a gépi fele áll, az emberi nem** — aláírás, illetve klinikai olvasat.
 > <!-- /generált: allapot -->

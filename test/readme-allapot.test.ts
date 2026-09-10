@@ -42,6 +42,9 @@ test("a blokkcsere a jelölők közét cseréli, a többit érintetlenül hagyja
   assert.ok(uj.startsWith("# OGDOC"), "a fejléc megmaradt");
   assert.ok(uj.includes("> **A rendszer valódi betegadaton nem futhat.**"),
     "a blokk utáni szöveg megmaradt");
+  assert.ok(uj.includes("## Futtatás"), "a fájl végi szakasz is megmaradt");
+  assert.ok(uj.includes("> **Jelenlegi állapot.** Fut a klinikai mag."),
+    "a blokk előtti próza megmaradt");
   assert.ok(uj.includes(NYIT) && uj.includes(ZAR), "a jelölők bent maradtak");
 });
 
@@ -50,25 +53,68 @@ test("a blokkcsere IDEMPOTENS — kétszer futtatva ugyanaz jön ki", () => {
   assert.equal(blokkCsere(egyszer, "> ÚJ SZÖVEG"), egyszer);
 });
 
-test("hiányzó nyitójelölő HIBA, nem néma átengedés", () => {
-  assert.throws(() => blokkCsere("# OGDOC\n\ncsak szöveg\n", "> ÚJ"), /jelölő/i);
+test("hiányzó nyitójelölő HIBA — a záró MEGVAN, csak a nyitó nincs", () => {
+  // A feltétel IZOLÁLVA: ha mindkét jelölő hiányozna, egy olyan hibás
+  // implementáció is átmenne, ami csak a záró hiányát veszi észre.
+  const csakZar = `# OGDOC\n> ${ZAR}\nvége\n`;
+  assert.throws(() => blokkCsere(csakZar, "> ÚJ"), /nyitó/i);
 });
 
 test("hiányzó zárójelölő HIBA", () => {
   assert.throws(() => blokkCsere(`# OGDOC\n> ${NYIT}\n> valami\n`, "> ÚJ"), /jelölő/i);
 });
 
-test("kétszer álló jelölő HIBA — nem tippelünk, melyiket cseréljük", () => {
-  const ketszer = README_MINTA + "\n" + README_MINTA;
-  assert.throws(() => blokkCsere(ketszer, "> ÚJ"), /egyszer/i);
+test("kétszer álló NYITÓ jelölő HIBA — nem tippelünk, melyiket cseréljük", () => {
+  const sorok = README_MINTA.split("\n");
+  sorok.splice(2, 0, `> ${NYIT}`);          // csak a nyitó duplázva
+  assert.throws(() => blokkCsere(sorok.join("\n"), "> ÚJ"), /nyitó.*egyszer|egyszer/is);
+});
+
+test("kétszer álló ZÁRÓ jelölő HIBA", () => {
+  const sorok = README_MINTA.split("\n");
+  sorok.push(`> ${ZAR}`);                    // csak a záró duplázva
+  assert.throws(() => blokkCsere(sorok.join("\n"), "> ÚJ"), /záró.*egyszer|egyszer/is);
+});
+
+/* ── AMIT A KERESZTELLENŐRZÉS TALÁLT ───────────────────────────────────── */
+
+test("a jelölő EGÉSZ SORKÉNT illeszkedik, részszövegként nem", () => {
+  // Ha részszövegként illeszkedne, ezen a soron elavult kézi szám maradhatna,
+  // és a `--check` zölden átmenne fölötte — épp az a hiba, ami miatt ez a
+  // fájl megszületett.
+  const sorok = README_MINTA.split("\n").map((sor) =>
+    sor.includes(NYIT) ? `${sor} KÉZI SZÁM: 1875 teszt` : sor);
+  assert.throws(() => blokkCsere(sorok.join("\n"), "> ÚJ"), /nyitó/i);
+});
+
+test("a jelölő megtalálása CRLF-es fájlban is működik, és a sorvég megmarad", () => {
+  const crlf = README_MINTA.replace(/\n/g, "\r\n");
+  const uj = blokkCsere(crlf, "> ÚJ SZÖVEG");
+  assert.ok(uj.includes("> ÚJ SZÖVEG"), "a csere megtörtént");
+  assert.ok(!/[^\r]\n/.test(uj), "nem keletkezett vegyes sorvég");
+  assert.equal(blokkCsere(uj, "> ÚJ SZÖVEG"), uj, "CRLF mellett is idempotens");
+});
+
+test("a beírandó blokk NEM tartalmazhat jelölőt", () => {
+  assert.throws(() => blokkCsere(README_MINTA, `> valami\n> ${NYIT}`), /jelölőt/i);
+});
+
+test("az üres blokk nulla sor, nem egy üres sor", () => {
+  const uj = blokkCsere(README_MINTA, "");
+  const sorok = uj.split("\n");
+  const nyit = sorok.findIndex((s) => s.includes(NYIT));
+  const zar = sorok.findIndex((s) => s.includes(ZAR));
+  assert.equal(zar - nyit, 1, "a két jelölő közvetlenül egymás után áll");
 });
 
 test("a blokk kiírja mind a három számot", () => {
   const b = allapotBlokk({ valtozo: 905, tesztek: 1939, bukott: 0, teljes: 3, reszben: 15 });
-  assert.match(b, /905/);
-  assert.match(b, /1939/);
-  assert.match(b, /\b3\b/);
-  assert.match(b, /\b15\b/);
+  // Konkrét szöveget várunk, nem puszta számjegy-előfordulást: a mezők
+  // felcserélése így nem tud átcsúszni az ellenőrzésen.
+  assert.ok(b.includes("**905 változó**"), "a változószám a helyén");
+  assert.ok(b.includes("**1939 teszt**"), "a tesztszám a helyén");
+  assert.ok(b.includes("**3 kész**"), "a kész lépések száma a helyén");
+  assert.ok(b.includes("**15-nél a gépi fele áll"), "a félkész lépések száma a helyén");
   for (const sor of b.split("\n")) {
     assert.match(sor, /^> /, `a blokk minden sora idézetben áll: ${JSON.stringify(sor)}`);
   }

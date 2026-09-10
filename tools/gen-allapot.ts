@@ -19,7 +19,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { loadRegistry } from "../core/load.ts";
-import { lepesAllas, tesztMerleg } from "./allapot-forras.ts";
+import { lepesAllas, zoldTesztMerleg } from "./allapot-forras.ts";
 import { loadUiMap, auditFields } from "../core/ui/felulet.ts";
 import { CALCULATORS } from "../core/calc/defs.ts";
 import {
@@ -79,7 +79,7 @@ P(`| ebből kapu mögött (\`verified: false\`) | **${gated.length}** |`);
 /* A LÉTEZŐ tesztek száma (`# tests`), nem a sikereseké (`# pass`). A kettő
  * ott tér el, ahol egy teszt kimarad telepítetlen helyi fa miatt: a `# pass`
  * fánként más, a `# tests` mindenütt ugyanaz. A kihagyott teszt is teszt. */
-P(`| Teszt | **${tesztMerleg().tesztek}** |`);
+P(`| Teszt | **${zoldTesztMerleg().tesztek}** |`);
 P(`| Mag: fájl / sor | ${coreFiles.length} / ${lines(coreFiles)} |`);
 P(`| Teszt: fájl / sor | ${testFiles.length} / ${lines(testFiles)} |`);
 P(`| Dokumentum | ${docFiles.length} |`);
