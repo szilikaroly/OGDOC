@@ -40,7 +40,7 @@ jobs:
         #   piros, akkor az `engines` a hazug szám, és azt kell javítani.
         # 22, 24, 26 — a karbantartott sávok legfrissebbje. A 26 az, amin a
         #   fejlesztés folyik, a 22 és a 24 azt őrzi, hogy ne csússzon el tőle.
-        node: ["22.6.0", "22", "24", "26"]
+        node: ["22.6.0", "22.17.0", "22.18.0", "22", "24", "26"]
     steps:
       - name: A fa kivétele
         uses: actions/checkout@v4
