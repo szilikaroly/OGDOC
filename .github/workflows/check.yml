@@ -1,0 +1,61 @@
+# A KAPU, AMI EDDIG NEM VOLT.
+#
+# A repó a saját dokumentációjában kimondja, hogy a `npm run check`-nek zöldnek
+# kell lennie — de eddig SEMMI nem kényszerítette ki. A `gen-drug-roster.ts`
+# fejléce már ma azt írja, hogy „az elcsúszást a CI fogja meg, nem a
+# felhasználó”; ez a fájl az a CI.
+#
+# Nem elméleti hiány. Egy néma törés hetekig állt a fában: a tesztszám
+# kiolvasása a `node --test` alapértelmezett riporterére épült, az pedig
+# Node-verziónként más. A `gen-allapot.ts` emiatt NÉMÁN NULLÁT adott vissza, a
+# `check-artifact.ts` pedig kivétellel szállt el. Pontosan ezt a fajtát fogja
+# meg egy verziómátrix, és csak az.
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Egy ágon a legutolsó futás érdekes; a korábbit fölösleges végigvinni.
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: npm run check — Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      # Nem áll le az első pirosnál: ha egy verzión bukik, azt akarjuk látni,
+      # MELYIKEN — egy félig lefutott mátrix erre nem ad választ.
+      fail-fast: false
+      matrix:
+        # 22.6.0 — az `engines` mezőben kimondott ALSÓ HATÁR. Nem kényelmi
+        #   tétel: ez méri meg, igaz-e, amit a package.json állít magáról. Ha
+        #   piros, akkor az `engines` a hazug szám, és azt kell javítani.
+        # 22, 24, 26 — a karbantartott sávok legfrissebbje. A 26 az, amin a
+        #   fejlesztés folyik, a 22 és a 24 azt őrzi, hogy ne csússzon el tőle.
+        node: ["22.6.0", "22", "24", "26"]
+    steps:
+      - name: A fa kivétele
+        uses: actions/checkout@v4
+
+      - name: Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: A futtatókörnyezet kimondva
+        run: node --version && npm --version
+
+      # NINCS TELEPÍTÉSI LÉPÉS, ÉS EZ NEM FELEDÉKENYSÉG. A repónak nincs
+      # függősége: a `node_modules` üresen marad, a TypeScript natívan fut.
+      # Egy `npm ci` itt lockfile híján el is szállna — a hiányzó lépés maga az
+      # állítás, hogy a rendszer függőség nélkül áll össze.
+      - name: npm run check
+        run: npm run check
