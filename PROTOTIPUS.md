@@ -7,7 +7,7 @@ webes rendszer, az exportáló és a lekérdező egyaránt ráépül, és amit a
 
 ## Futtatás
 
-Node 22.6 vagy újabb kell (a natív TypeScript-futtatás miatt).
+Node 22.18 vagy újabb kell (a natív, jelöletlen TypeScript-futtatás miatt).
 
 ```
 cd ogdoc

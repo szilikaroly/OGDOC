@@ -6,7 +6,7 @@
   "type": "module",
   "description": "OGDOC — szülészeti és nőgyógyászati integrált dokumentációs rendszer; a klinikai mag prototípusa",
   "engines": {
-    "node": ">=22.6"
+    "node": ">=22.18"
   },
   "scripts": {
     "test": "node --test \"test/*.test.ts\"",

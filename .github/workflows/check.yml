@@ -35,12 +35,15 @@ jobs:
       # MELYIKEN — egy félig lefutott mátrix erre nem ad választ.
       fail-fast: false
       matrix:
-        # 22.6.0 — az `engines` mezőben kimondott ALSÓ HATÁR. Nem kényelmi
-        #   tétel: ez méri meg, igaz-e, amit a package.json állít magáról. Ha
-        #   piros, akkor az `engines` a hazug szám, és azt kell javítani.
+        # 22.18.0 — az `engines` mezőben kimondott ALSÓ HATÁR, és ez MÉRT
+        #   érték, nem tipp: ez a CI mondta ki. A mező korábban „>=22.6”-ot
+        #   állított, de a 22.6.0 és a 22.17.0 is elszáll
+        #   (ERR_UNKNOWN_FILE_EXTENSION a `node tools/validate.ts`-nél), mert a
+        #   jelöletlen típuslehúzás csak a 22.18.0-val kapcsolt be. A határt
+        #   azért tartjuk a mátrixban, hogy az állítás ellenőrzött maradjon.
         # 22, 24, 26 — a karbantartott sávok legfrissebbje. A 26 az, amin a
         #   fejlesztés folyik, a 22 és a 24 azt őrzi, hogy ne csússzon el tőle.
-        node: ["22.6.0", "22.17.0", "22.18.0", "22", "24", "26"]
+        node: ["22.18.0", "22", "24", "26"]
     steps:
       - name: A fa kivétele
         uses: actions/checkout@v4
