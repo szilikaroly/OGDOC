@@ -171,3 +171,94 @@ BMI (168 cm, 64 kg) újratöltés nélkül         22.7   ✔  számláló: „2
 390 px: mezősor egymás alá                    container query  ✔
 kezeletlen JS-kivétel                         nincs
 ```
+
+## 8. A harmadik változat — feladat-adaptív felület, skála, kimondott lefedettség
+
+A második változat panasza pontos volt: **„a mező nagyon kevésnek tűnik”** és
+**„az i18n nem működik”**. Egyik sem az volt, aminek látszott — és épp ezért
+kellett mindkettőt szerkezetileg megoldani, nem stílussal.
+
+A mező nem volt kevés: 893 volt, csukva. A felület a betegút sorrendjét mutatta
+mindenkinek, és egy szülésznőnek a 46 modulból az első — az azonosító adatok —
+nyílt ki. Az i18n nem volt elromolva: a felület saját szövegei átváltottak, de a
+**klinikai címkék 3 %-a** (30/905) van angolul, és a nyelvválasztó ezt nem mondta
+ki — „Angol”-t ígért, és magyar címkéket adott `HU` jellel.
+
+### A feladatprofil adat, nem kód
+
+`registry/felulet/feladatprofilok.json` — 8 profil: felvétel, vizit, ügyelet,
+szülés, ápolás, zárás, szakterületi konzultáció, kutatás. Egy profil a
+**nyitott modulok** listája és sorrendje, meg a segédpanelek sorrendje. A
+jogosultság dönti el, mit *lehet* látni; a profil azt, mi van **nyitva és elöl**.
+A kettő nem keverhető: a szülésznő a labort is látja, ha a jogosultsága engedi —
+csak nem az van elöl.
+
+Az alapértelmezés a bejelentkezett felhasználó **élő megbízásának csoportjából**
+jön, de bármikor átváltható: a feladat nem a munkakör, hanem az, amit épp csinál.
+A validálás négy dolgot fog meg: ismeretlen modulkulcs; klinikai csoport profil
+nélkül; **modul, amit egyetlen feladat sem hoz elő** (7 ilyen volt az első
+változatban — `admin`, `addr`, `demog`, `anthro`, `hx`, `hx.origin`, `ekg`);
+ismétlés a sorrendben.
+
+### A nyelvválasztó kimondja, mit kap, aki vált
+
+„Angol · 3% klinikai címke — csak a felület.” A szám a kiszolgálótól jön
+(`coverage()`), nem becslés. A fordítás nem gépi: a klinikai szöveget a rendszer
+elvből nem fordítja. Ehhez készült a **fordítói munkalap**
+(`npm run forditas` → `docs/fejlesztes/forditas-munkalap-en.md`): 875 címke és
+2 451 opciócímke, modulonként, forrásnyelvi alakkal — a fordító dolga, nem a
+felületé.
+
+És ami ebből derült ki: a **mezősúgó angolul némán eltűnt**. A címke
+forrásnyelvre esett vissza jelölve; a súgó (`howToMeasure`, `pitfalls`) csak a
+célnyelvet nézte, és 350 mező mérési útmutatója hiányzott. Most ugyanúgy esik
+vissza, jelölve (`hintFallback`).
+
+### A mért érték a sávon: ⊢──·──⊣
+
+A mező alatt egy skála: a zárójel a sáv, a pont a mért érték, és a tartományon
+kívüli érték a zárójelen **kívül** ül — nem a szélére szorítva. Két különböző
+zárójel, két szín: a **referenciatartomány** (kék) és a **kritikus küszöb** (rózsa,
+„beavatkozási küszöb — nem referencia”). A kettő nem ugyanaz, és a skála sem nézhet
+ki ugyanúgy. A felirat a kontextust és a hitelesítési szintet is mondja
+(`pregnancy.t3 · assumed`), és a küszöb nélküli mérés is megszólal: „nincs mihez
+mérni”.
+
+Minden szám a magból jön: a `MeresErtekeles` kapott egy numerikus `sav` mezőt
+(`low`, `high`, `fajta`), a `/api/case` kiviszi, a felület csak pozíciót számol.
+A `hatar` szöveg megvolt már — abból visszafejteni azt jelentette volna, hogy a
+szám két helyen él.
+
+### Ami menet közben derült ki
+
+**A várható szülési időpont `1795132800000` volt.** A Naegele-kalkulátor
+epoch-ezredmásodpercet ad; a zárójelentés ezt ISO-dátummá formázta, a webes nézet
+és a levezetett mező nem. Ugyanaz a tény három helyen, kétféle alakban — és a
+`ctx.edd` dátum-változóban a szám a saját típusát sértette: a rá épülő kalkulátor
+`Date.parse`-szal olvasta volna, ami NaN, vagyis némán „hiányzó bemenet”. Most a
+kalkulátor-réteg adja a megjelenítési (`display`) és a tárolási (`stored`) alakot,
+és minden fogyasztó azt használja. Teszt: `test/kalkulator-datum.test.ts`.
+
+**Az alapértelmezett feladat az első megbízást nézte.** A rendszergazdai megbízás
+az első a listában, és annak nincs profilja — a mellette lévő klinikai megbízás
+sosem szólalt volna meg. Az első *profillal rendelkező* megbízás dönt.
+
+**Egy osztálynév két dolgot jelentett.** A `.feladat` volt a feladatsor tárolója
+és a navigátor „ehhez a feladathoz tartozó" tétele is: a navigátor minden tétele
+kártyát kapott. A tároló `.feladatsor` lett.
+
+### Ellenőrzött viselkedés
+
+```
+osztályos orvos belép → „Felvétel és anamnézis”     19 modul nyitva, javaslatok elöl
+szülésznő feladatra vált                              9 modul, kalkulátor + teendő elöl
+nyelvválasztó                                         „Angol · 3% klinikai címke — csak a felület"
+(i) súgó ráállva                                      látszik; angolul 350/350 marad, HU jellel
+ALT 95 (kritikus −∞–70)                               pont a zárójelen KÍVÜL, vörös
+éhomi vércukor 5,8 (terhes: 3–5,1)                    kritikus, kontextus kiírva
+LDH 300 (82–524, pregnancy.t3, assumed)               sávban, zöld, „assumed" kiírva
+ctx.edd                                               2026-11-20 (volt: 1795132800000)
+haladás                                               10 kitöltve · 778 látható · 893 összesen
+390 px, sötét mód                                     rendben
+kezeletlen JS-kivétel                                 nincs
+```

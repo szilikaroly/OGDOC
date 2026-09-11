@@ -18,7 +18,7 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 /* ── NYELV ────────────────────────────────────────────────────────────
    A felület saját szövegei lefordíthatók. A KLINIKAI TARTALOM nem: ha egy
    címkének nincs célnyelvi alakja, a forrásnyelvi jelenik meg — MEGJELÖLVE. */
-let I18N = { lang: "hu", sourceLang: "hu", strings: {}, coverage: null };
+let I18N = { lang: "hu", sourceLang: "hu", strings: {}, coverage: null, coverages: [] };
 const T = (k, vars) => {
   const text = I18N.strings[k] ?? `⟨${k}⟩`;
   return vars ? text.replace(/\{(\w+)\}/g, (m, n) => (n in vars ? vars[n] : m)) : text;
@@ -160,7 +160,7 @@ function mezoSor(f) {
   if (f.patientEntry) tags.push(["pat", T("tag.patientEntry")]);
   if (f.control === "readonly") tags.push(["derived", T("tag.derived")]);
   if (f.prefillable) tags.push(["", T("tag.prefillable")]);
-  if (tags.length || f.hint) {
+  if (tags.length) {
     const small = document.createElement("small");
     for (const [cls, text] of tags) {
       const t = document.createElement("span");
@@ -168,8 +168,26 @@ function mezoSor(f) {
       t.textContent = text;
       small.append(t);
     }
-    if (f.hint) small.append(document.createTextNode(f.hint));
     lab.append(small);
+  }
+  // A SÚGÓ EGY (i) IKON MÖGÖTT: ráállva vagy fókuszálva látszik. A mérési
+  // útmutató és a buktatók hosszúak; a lap átfuthatósága fontosabb, mint hogy
+  // minden mező alatt ott legyen — de egy mozdulatra ott van, nem veszett el.
+  if (f.hint) {
+    const info = document.createElement("span");
+    info.className = "info";
+    info.tabIndex = 0;
+    info.setAttribute("role", "note");
+    info.setAttribute("aria-label", T("field.hint"));
+    info.textContent = "i";
+    const tip = document.createElement("span");
+    tip.className = "tip";
+    tip.id = "tip_" + f.id;
+    tip.textContent = f.hint;
+    if (f.hintFallback) tip.append(" ", srcMark());
+    info.setAttribute("aria-describedby", tip.id);
+    info.append(tip);
+    b.append(info);
   }
   row.append(lab);
 
@@ -248,7 +266,102 @@ function renderForm(spec) {
   for (const sec of spec) root.append(modulSzakasz(sec));
   navigatorEpit(spec);
   nyitasVisszaallit(spec);
+  feladatSorEpit();
   figyeloIndit();
+}
+
+/* ── FELADATPROFILOK — mi van nyitva és elöl ─────────────────────────
+   A profil ADAT (registry/felulet/feladatprofilok.json). A felület csak
+   annyit tud: egy profil modulkulcsok és segédpanelek sorrendje. A választás
+   ezé a böngészőé (ogdoc.feladat); az alapértelmezés a bejelentkezett
+   felhasználó élő megbízásának csoportjából jön, de bármikor átváltható —
+   a feladat nem a munkakör, hanem az, amit épp csinál. */
+let FELADATOK = { profilok: [], alap: {} };
+let FELADAT = null;   // profil id, "" = betegút (minden modul), null = még nincs döntés
+
+function feladatProfil() { return FELADATOK.profilok.find((p) => p.id === FELADAT) || null; }
+
+function feladatSorEpit() {
+  const sor = $("#feladatSor"), lista = $("#feladatLista");
+  if (!sor || !FELADATOK.profilok.length) return;
+  lista.textContent = "";
+  const chip = (id, cim, fallback) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.dataset.feladat = id;
+    b.textContent = cim;
+    if (fallback) b.append(srcMark());
+    b.addEventListener("click", () => feladatValaszt(id, true));
+    return b;
+  };
+  lista.append(chip("", T("feladat.all"), false));
+  for (const p of FELADATOK.profilok) lista.append(chip(p.id, p.title, p.titleFallback));
+  sor.hidden = false;
+  feladatJelol();
+}
+
+/** Csak a jelölés: chip, navigátor, segédpanelek sorrendje. Nem nyit modult. */
+function feladatJelol() {
+  const p = feladatProfil();
+  const modulok = new Set(p?.modulok ?? []);
+  for (const b of $$(".chip[data-feladat]")) b.setAttribute("aria-pressed", String(b.dataset.feladat === (FELADAT ?? "")));
+  for (const b of $$(".nav-tetel")) {
+    b.classList.toggle("feladat", modulok.has(b.dataset.modul));
+    b.classList.toggle("mas", Boolean(p) && !modulok.has(b.dataset.modul));
+  }
+  const le = $("#feladatLeiras");
+  if (p?.description) { le.textContent = p.description; le.hidden = false; } else le.hidden = true;
+  const db = $("#feladatDb");
+  const van = SPEC.filter((s) => modulok.has(s.module)).length;
+  db.textContent = p ? T("feladat.opened", { n: van }) : T("feladat.explain");
+  // A segédpanelek sorrendje: a profil által elöl kértek, aztán a többi —
+  // DOM-mozgatás, hogy a fókusz-sorrend is kövesse a képernyőt.
+  const aside = document.querySelector("aside.seged");
+  if (aside) {
+    const elol = p?.seged ?? [];
+    for (const id of [...elol, ...[...aside.children].map((c) => c.id).filter((id) => !elol.includes(id))]) {
+      const el = document.getElementById(id);
+      if (el) { aside.append(el); el.toggleAttribute("data-elol", elol.includes(id)); }
+    }
+  }
+}
+
+/** A választás: pontosan a profil moduljai nyílnak, a többi csukódik. */
+function feladatValaszt(id, gorget) {
+  FELADAT = id;
+  tarolo("ogdoc.feladat", id);
+  const p = feladatProfil();
+  if (p) {
+    const modulok = new Set(p.modulok);
+    for (const s of SPEC) modulNyit(s.module, modulok.has(s.module), false);
+    nyitasMent();
+    if (gorget) {
+      const elso = SPEC.find((s) => modulok.has(s.module));
+      document.querySelector(`.mod[data-modul="${CSS.escape(elso?.module ?? "")}"]`)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  } else {
+    // Betegút: minden modul a regiszter sorrendjében, az első nyitva.
+    for (const s of SPEC) modulNyit(s.module, s === SPEC[0], false);
+    nyitasMent();
+  }
+  feladatJelol();
+}
+
+/** Az alapértelmezés a bejelentkezés UTÁN dől el — addig nincs csoport. */
+function feladatAlap() {
+  if (FELADAT !== null) return;
+  const mentett = tarolo("ogdoc.feladat");
+  if (mentett !== null && (mentett === "" || FELADATOK.profilok.some((p) => p.id === mentett))) {
+    FELADAT = mentett; feladatJelol(); return;
+  }
+  // Az ELSŐ olyan élő megbízás dönt, amelynek csoportjához van profil — nem
+  // az első megbízás. A rendszergazdai megbízás rendszerint az első a
+  // listában, és annak nincs profilja: ha az döntene, a klinikai megbízás
+  // mellette sosem szólalna meg.
+  const alap = (EN?.elo ?? []).map((m) => FELADATOK.alap[m.csoport]).find(Boolean) ?? null;
+  if (alap) feladatValaszt(alap, false); else { FELADAT = ""; feladatJelol(); }
 }
 
 /* ── NYITÁS / CSUKÁS — az állapot ezé a böngészőé, nem a rendszeré. */
@@ -412,6 +525,88 @@ function frissit(r) {
   }
 }
 
+/* ── A MÉRT ÉRTÉK A SÁVON: ⊢──·──⊣ ────────────────────────────────────
+   A mező alatt egy skála: a zárójel a sáv (referencia vagy kritikus küszöb —
+   a kettő más színt kap), a pont a mért érték. A tartományon kívüli érték a
+   zárójelen KÍVÜL ül, nem a szélére szorítva: a „kívül” látsszon. Minden
+   szám a kiszolgálótól jön (view.meresek); ez a fájl csak pozíciót számol.
+   A nyitott határ (null) esetén a rajzolt hossz csak megjelenítési
+   segédlet — a felirat a valódi határt mondja. */
+const SKALA_BEL = 0.6;   // a zárójel a sáv szélességének ennyi részét foglalja
+
+function skalaPozicio(v, low, high) {
+  // Virtuális határok nyitott végnél — CSAK a rajzhoz.
+  let lo = low, hi = high;
+  if (lo == null && hi == null) return null;
+  if (lo == null) lo = hi > 0 ? 0 : hi - Math.abs(hi || 1);
+  if (hi == null) hi = lo > 0 ? lo * 2 : lo + Math.abs(lo || 1);
+  if (hi <= lo) return null;
+  const rel = (v - lo) / (hi - lo);                       // 0..1 a sávon belül
+  const p = (1 - SKALA_BEL) / 2 + rel * SKALA_BEL;        // a sáv a közepén ül
+  return Math.min(0.985, Math.max(0.015, p));
+}
+
+function skalak(view) {
+  for (const el of $$(".skala")) el.remove();
+  for (const m of view.meresek ?? []) {
+    const row = document.querySelector(`.field[data-id="${CSS.escape(m.id)}"]`);
+    if (!row || m.value == null) continue;
+    const sk = document.createElement("div");
+    sk.className = "skala " + m.allapot;
+    sk.title = m.miert;
+    if (m.sav) {
+      const p = skalaPozicio(m.value, m.sav.low, m.sav.high);
+      const sav = document.createElement("span");
+      sav.className = "skala-sav " + m.sav.fajta;
+      sav.style.left = ((1 - SKALA_BEL) / 2) * 100 + "%";
+      sav.style.width = SKALA_BEL * 100 + "%";
+      sav.classList.toggle("nyitott-bal", m.sav.low == null);
+      sav.classList.toggle("nyitott-jobb", m.sav.high == null);
+      sk.append(sav);
+      if (p != null) {
+        const pont = document.createElement("span");
+        pont.className = "skala-pont";
+        pont.style.left = p * 100 + "%";
+        sk.append(pont);
+      }
+      const felirat = document.createElement("span");
+      felirat.className = "skala-felirat";
+      const hatar = `${m.sav.low ?? "−∞"}–${m.sav.high ?? "∞"}`;
+      felirat.textContent = `${m.value}${m.unit ? " " + m.unit : ""} · ${hatar} · ` +
+        (m.sav.fajta === "referencia" ? T("meres.referencia") : T("meres.kritikusSav")) +
+        (m.kontextus ? ` · ${m.kontextus}` : "") +
+        (m.verification && m.verification !== "primary" ? ` · ${m.verification}` : "");
+      sk.append(felirat);
+    } else {
+      const felirat = document.createElement("span");
+      felirat.className = "skala-felirat";
+      felirat.textContent = `${m.value}${m.unit ? " " + m.unit : ""} · ${T("meres." + m.allapot)}`;
+      sk.append(felirat);
+    }
+    row.append(sk);
+  }
+}
+
+/** Látható haladás: kitöltött / látható / összes. A látható a click-open
+ *  lánc után értendő — a rejtett mezőt nem várja senkitől. */
+function haladKiir(view) {
+  const box = $("#halad");
+  if (!box) return;
+  const byId = new Set(view.values.map((v) => v.id));
+  let lathato = 0, kitoltve = 0;
+  for (const row of $$(".field")) {
+    if (row.hidden) continue;
+    lathato++;
+    if (byId.has(row.dataset.id)) kitoltve++;
+  }
+  const t = FIELD_BY_ID.size;
+  const szazalek = lathato ? Math.round((kitoltve / lathato) * 100) : 0;
+  $("#haladCsik").style.width = szazalek + "%";
+  box.querySelector("[role=progressbar]").setAttribute("aria-valuenow", String(szazalek));
+  fillNodes($("#haladSzoveg"), T("halad.summary"), { n: strong(kitoltve), v: lathato, t });
+  box.hidden = false;
+}
+
 /* ── MEGJELENÍTÉS ─────────────────────────────────────────────────────── */
 function fill(boxSel, listSel, items, make) {
   const box = $(boxSel), list = $(listSel);
@@ -463,6 +658,9 @@ function paint(view) {
     const nb = $(`.nav-tetel[data-modul="${CSS.escape(m.dataset.modul)}"] .db`);
     if (nb) { nb.textContent = kitoltve ? `${kitoltve}/${osszes}` : String(osszes); nb.classList.toggle("van", kitoltve > 0); }
   }
+
+  haladKiir(view);
+  skalak(view);
 
   const e = view.effort;
   fillNodes($("#effort"), T("effort.summary"),
@@ -529,7 +727,7 @@ function paint(view) {
     if (c.status === "ok") {
       const val = document.createElement("div");
       val.className = "val " + (c.severity ? "sev-" + c.severity : "");
-      val.textContent = `${c.value}${c.unit && c.unit !== "1" ? " " + c.unit : ""}` + (c.band ? ` — ${c.band}` : "");
+      val.textContent = (c.display ?? `${c.value}${c.unit && c.unit !== "1" ? " " + c.unit : ""}`) + (c.band ? ` — ${c.band}` : "");
       d.append(val);
     } else {
       const m = document.createElement("div");
@@ -831,6 +1029,7 @@ async function loadCase() {
     $("#entries").textContent = String(view.entries ?? 0);
     dpoPanel(view.roles);
     document.querySelector("main").hidden = false;
+    feladatAlap();
   } catch (e) {
     document.querySelector("main").hidden = true;
     showDenied(e);
@@ -849,8 +1048,21 @@ async function loadAll() {
   applyStaticStrings();
   const w = $("#langWarn"), c = I18N.coverage;
   if (c && !c.usable) { w.textContent = c.why; w.hidden = false; } else w.hidden = true;
+  nyelvLefedettseg();
+  FELADATOK = await api(q("/api/feladatprofilok")).catch(() => ({ profilok: [], alap: {} }));
   SPEC = await api(q("/api/formspec"));
   renderForm(SPEC);
+}
+
+/** A NYELVVÁLASZTÓ KIMONDJA, MIT KAP, AKI VÁLT. „Angol” önmagában azt
+ *  ígérte, hogy a felület angol lesz — és 893-ból 864 címke magyar maradt,
+ *  HU jellel. A lefedettség a kiszolgálótól jön (coverage), nem becslés. */
+function nyelvLefedettseg() {
+  for (const opt of $$("#lang option")) {
+    const c = (I18N.coverages || []).find((x) => x.lang === opt.value);
+    if (!c || c.lang === I18N.sourceLang) continue;
+    opt.textContent += " · " + T("lang.coverage", { p: c.percent }) + (c.usable ? "" : " — " + T("lang.uiOnly"));
+  }
 }
 
 /** Előbb a séma, aztán a hitelesítés, és csak utána az adat. */

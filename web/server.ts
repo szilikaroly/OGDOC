@@ -48,6 +48,8 @@ import { coverage, LANGS, SOURCE_LANG, UI } from "../core/i18n.ts";
 import type { Lang } from "../core/types.ts";
 import { docFor, formSpec } from "./api.ts";
 import { loadModulcimek } from "../core/ui/modulcimek.ts";
+import { alapProfil, feladatNezet, loadFeladatok } from "../core/ui/feladat.ts";
+import { loadCsoportok } from "../core/auth/csoport.ts";
 import {
   archiveHealth, readCase, torlesElonezet, torlesVegrehajtas,
   visszavonasElonezet, writeValue,
@@ -101,6 +103,9 @@ const CASE_ID = process.env.OGDOC_CASE ?? "eset-demo";
 const docs = loadDocuments(join(ROOT, "registry", "documents", "core.json"));
 // A MODULCÍMEK ADATBÓL JÖNNEK. A felület eddig a nyers kulcsot írta ki.
 const modulcimek = loadModulcimek(join(ROOT, "registry", "felulet", "modulcimek.json"));
+// A FELADATPROFIL ADAT: mely modulok nyílnak egy feladathoz. Nem jogosultság.
+const feladatok = loadFeladatok(join(ROOT, "registry", "felulet", "feladatprofilok.json"));
+const csoportKeszlet = loadCsoportok(join(ROOT, "registry", "auth", "csoportok.json"));
 
 /* ── HITELESÍTÉS ────────────────────────────────────────────────────── */
 
@@ -260,10 +265,25 @@ const server = createServer(async (req, res) => {
     if (path === "/api/i18n") {
       const strings: Record<string, string> = {};
       for (const [k, v] of Object.entries(UI)) strings[k] = v[lang] ?? v[SOURCE_LANG] ?? k;
+      const cimkek = reg.all().map((d) => d.label);
       return json(res, 200, {
         lang, langs: LANGS, sourceLang: SOURCE_LANG, strings,
-        coverage: coverage(reg.all().map((d) => d.label), lang),
+        coverage: coverage(cimkek, lang),
+        // MINDEN NYELV LEFEDETTSÉGE — a nyelvválasztó ezt írja az opcióra.
+        // Egy 3%-os nyelvet „English”-nek hívni a listában azt sugallja, hogy
+        // létezik; „English · 3% — csak a felület” azt mondja, ami igaz.
+        coverages: LANGS.map((l) => coverage(cimkek, l)),
       });
+    }
+
+    /** A feladatprofilok — nem betegadat, munkamenet nélkül is kérhető. */
+    if (path === "/api/feladatprofilok") {
+      const alap: Record<string, string> = {};
+      for (const c of csoportKeszlet.csoportok) {
+        const pr = alapProfil(feladatok, c.id);
+        if (pr) alap[c.id] = pr.id;
+      }
+      return json(res, 200, { profilok: feladatNezet(feladatok, lang), alap });
     }
 
     /**

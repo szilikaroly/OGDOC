@@ -78,6 +78,16 @@ export interface MeresErtekeles {
   source: string | null;
   /** Miért ez az állapot — ez megy a felületre és a teendő indoklásába. */
   miert: string;
+  /**
+   * A SÁV SZÁMKÉNT — a felület skálájához (⊢──·──⊣ és rajta a mért érték).
+   *
+   * A `hatar` emberi olvasat; ebből a felület nem tudna rajzolni, és ha a
+   * szövegből visszafejtené, a szám két helyen élne. A `fajta` kimondja, mit
+   * jelöl a zárójel: REFERENCIA (élettani tartomány) vagy KRITIKUS küszöb
+   * (beavatkozási sáv) — a kettő nem ugyanaz, és a skála sem nézhet ki
+   * ugyanúgy. `null`, ha nincs mihez mérni.
+   */
+  sav: { low: number | null; high: number | null; fajta: "referencia" | "kritikus" } | null;
 }
 
 const L = (x: I18n | undefined, lang: Lang): string | null =>
@@ -203,6 +213,7 @@ export function ertekelMeres(
     value: null as number | null, hatar: null as string | null,
     verification: null as MeresErtekeles["verification"], kontextus: null as string | null,
     source: null as string | null,
+    sav: null as MeresErtekeles["sav"],
   };
 
   const r = resolve(reg, state, primary);
@@ -233,6 +244,7 @@ export function ertekelMeres(
       ? `${crit[0]} alatt` : `${crit[1]} felett`;
     return {
       ...be, allapot: "kritikus", hatar,
+      sav: { low: crit[0], high: crit[1], fajta: "kritikus" },
       kontextus: kctx.kontextus,
       source: d.evidence?.[0]?.cite ?? null,
       miert:
@@ -254,6 +266,7 @@ export function ertekelMeres(
       const sav = `${crit[0] ?? "−∞"}–${crit[1] ?? "∞"}` + (unit ? ` ${unit}` : "");
       return {
         ...be, allapot: "savban", hatar: sav,
+        sav: { low: crit[0], high: crit[1], fajta: "kritikus" },
         source: d.evidence?.[0]?.cite ?? null,
         miert:
           `${label}: ${v}${unit ? " " + unit : ""} — a kritikus sávon (${sav}) ` +
@@ -300,6 +313,7 @@ export function ertekelMeres(
     ...be,
     allapot: kiv ? "referencianKivul" : "savban",
     hatar: sav, kontextus,
+    sav: { low: range.low ?? null, high: range.high ?? null, fajta: "referencia" },
     verification: d.reference.verification,
     source: d.reference.source.cite,
     miert:
@@ -378,7 +392,7 @@ export function meresek(
       out.push({
         id: d.id, label, allapot: "nincsKuszob",
         value: typeof r.value === "number" ? r.value : null,
-        unit, hatar: null, verification: null, kontextus: null, source: null,
+        unit, hatar: null, verification: null, kontextus: null, source: null, sav: null,
         miert:
           `${label}: ${typeof r.value === "number" ? r.value : "?"}` +
           `${unit ? " " + unit : ""} — RÖGZÍTVE, DE NINCS MIHEZ MÉRNI. Ehhez a ` +

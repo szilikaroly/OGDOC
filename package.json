@@ -45,6 +45,7 @@
     "ingest:vedono-lista": "python3 tools/ingest/vedono_lista.py --src forrasok/vedono/Vedono_ujhonlap.xls --out registry/vedono/helyi/szolgalatok.json",
     "fedes": "node --experimental-strip-types tools/dupla-mezok.ts",
     "artifact": "node --experimental-strip-types tools/gen-artifact.ts",
-    "artifact:check": "node --experimental-strip-types tools/check-artifact.ts"
+    "artifact:check": "node --experimental-strip-types tools/check-artifact.ts",
+    "forditas": "node --experimental-strip-types tools/gen-forditas.ts"
   }
 }

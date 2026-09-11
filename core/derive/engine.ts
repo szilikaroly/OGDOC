@@ -136,8 +136,12 @@ export function recompute(reg: Registry, state: CaseState): CaseState {
       continue;
     }
 
+    // A DÁTUM-KIMENET DÁTUMKÉNT — a `ctx.edd` datatype-ja `date`, és egy
+    // epoch-szám benne a saját típusát sérti: a `toNumber` a dátum-változót
+    // `Date.parse`-szal olvassa, ami a számból NaN-t csinál, és minden
+    // ráépülő kalkulátor némán „hiányzó bemenet” lett volna.
     next.values[id] = [{
-      value: r.value, unit: def.unit ?? null, t: state.ctx.now,
+      value: r.stored, unit: def.unit ?? null, t: state.ctx.now,
       recordedAt: state.ctx.now, provenance: "derived", confidence: "estimated",
       sourceRef: dv.calc,
     }];

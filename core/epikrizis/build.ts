@@ -73,10 +73,9 @@ export function buildEpicrisis(
     if (!def) continue;
     const r = runCalc(reg, state, calcId, lang);
     if (r.status === "ok") {
-      // A DÁTUM-kimenet nyers számként értelmezhetetlen a leleten.
-      const shown = def.output.isDate
-        ? new Date(r.value).toISOString().slice(0, 10)
-        : withUnit(r.value, r.unit, lang);
+      // A megjelenítési alak a kalkulátor-rétegé (dátum → ISO-dátum): itt
+      // volt egy második, helyi formázás, és a webes nézet egy harmadik hiánya.
+      const shown = r.display;
       // A bemeneti PILLANATKÉP is bekerül: mit látott az algoritmus, amikor számolt.
       risk.push({
         kind: "score",

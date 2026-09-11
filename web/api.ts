@@ -18,6 +18,7 @@ import { CALCULATORS, CALC_BY_ID } from "../core/calc/defs.ts";
 import { runCalc } from "../core/calc/run.ts";
 import { interactionCount, visibleFields } from "../core/ui/disclosure.ts";
 import { needsConfirmation, patientSummary, recommendations } from "../core/ui/output.ts";
+import { meresek, type MeresErtekeles } from "../core/ui/meres.ts";
 
 export interface ValueView {
   id: string;
@@ -47,9 +48,19 @@ export interface CaseView {
   /** Kalkulátoronként: eredmény vagy a hiány oka. Sosem üres helyett nulla. */
   calc: Array<{
     id: string; label: string; status: "ok" | "insufficient";
-    value?: number; unit?: string | null; band?: string; severity?: string;
+    value?: number; display?: string; unit?: string | null; band?: string; severity?: string;
     missing?: string[]; reason?: string;
   }>;
+  /**
+   * A MÉRT ÉRTÉKEK MEGÍTÉLÉSE MEZŐNKÉNT — a skálához.
+   *
+   * A felület a mező alatt rajzolja a sávot és rajta a mért értéket. A
+   * megítélés (kontextus, kritikus vagy referencia, hitelesítési szint) a
+   * magban dől el; a felület csak a kész számokat kapja. A „nincs mihez
+   * mérni” állapot is itt van — a hallgatás nem megnyugtatás.
+   */
+  meresek: Array<Pick<MeresErtekeles,
+    "id" | "allapot" | "value" | "unit" | "sav" | "kontextus" | "verification" | "miert">>;
 }
 
 /** A teljes eset nézete — ezt kapja a felület minden változás után. */
@@ -70,7 +81,7 @@ export function caseView(reg: Registry, state: CaseState, lang: "hu" | "en" = "h
     const r = runCalc(reg, state, c.id, lang);
     const label = c.label[lang] ?? c.label.hu ?? c.id;
     return r.status === "ok"
-      ? { id: c.id, label, status: "ok" as const, value: r.value, unit: r.unit,
+      ? { id: c.id, label, status: "ok" as const, value: r.value, display: r.display, unit: r.unit,
           band: r.band?.label, severity: r.band?.severity }
       : { id: c.id, label, status: "insufficient" as const,
           missing: r.missing, reason: r.reason };
@@ -92,6 +103,10 @@ export function caseView(reg: Registry, state: CaseState, lang: "hu" | "en" = "h
       id: s.id, value: s.value, note: s.note, sourceRef: s.sourceRef,
     })),
     calc,
+    meresek: meresek(reg, state, lang).map((m) => ({
+      id: m.id, allapot: m.allapot, value: m.value, unit: m.unit, sav: m.sav,
+      kontextus: m.kontextus, verification: m.verification, miert: m.miert,
+    })),
   };
 }
 

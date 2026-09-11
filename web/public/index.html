@@ -77,6 +77,22 @@
   </nav>
 
   <section id="form" class="fo" aria-label="Űrlap" data-i18n-label="form.title">
+    <!-- A FELADAT DÖNTI EL, MI VAN NYITVA ÉS ELÖL — a jogosultság azt, mi
+         látható. A profilok a regiszterből jönnek (/api/feladatprofilok);
+         ez a fájl egyetlen feladatnevet sem tud. -->
+    <div class="feladatsor" id="feladatSor" hidden>
+      <div class="feladat-fej">
+        <span class="szemcsik" data-i18n="feladat.title">Feladat</span>
+        <span class="feladat-db" id="feladatDb"></span>
+      </div>
+      <div class="chipsor" id="feladatLista" role="group" aria-label="Feladat"></div>
+      <p class="hint" id="feladatLeiras" hidden></p>
+    </div>
+    <div class="halad" id="halad" hidden>
+      <div class="halad-sav" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+        aria-labelledby="haladSzoveg"><span id="haladCsik"></span></div>
+      <p class="halad-szoveg" id="haladSzoveg"></p>
+    </div>
     <p class="effort" id="effort"></p>
     <div id="sections"></div>
   </section>

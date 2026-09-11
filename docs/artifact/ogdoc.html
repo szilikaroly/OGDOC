@@ -377,7 +377,7 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <div class="meta">
       <span class="chip"><b data-szam="modul">37</b> modul kidolgozva</span>
       <span class="chip"><b data-szam="valtozo">905</b> változó a regiszterben</span>
-      <span class="chip"><b data-szam="teszt">1 948</b> teszt · 0 hiba</span>
+      <span class="chip"><b data-szam="teszt">1 961</b> teszt · 0 hiba</span>
       <span class="chip"><b>18/18</b> lépés gépi fele kész</span>
       <span class="chip"><b>1/5</b> éles feltétel áll</span>
       <span class="chip"><b data-szam="blokkolo">7</b> blokkoló hiány</span>
@@ -526,13 +526,13 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <div class="sources">
       <div class="src" style="border-top:3px solid var(--accent)">
         <h4>Változóregiszter</h4>
-        <div class="n" data-szam="valtozo">905</div><div class="u">definiált változó · <span data-szam="regiszterFajl">133</span> regiszterfájl</div>
+        <div class="n" data-szam="valtozo">905</div><div class="u">definiált változó · <span data-szam="regiszterFajl">134</span> regiszterfájl</div>
         <p>Ebből épül az űrlap  a dokumentáció  a validáció  a levezetési gráf  az export
         és a teszt. <strong>Egy mező sincs kézzel megírva.</strong></p>
       </div>
       <div class="src" style="border-top:3px solid var(--ok)">
         <h4>Tesztek</h4>
-        <div class="n" data-szam="teszt">1 948</div><div class="u">teszt · 0 hiba · <span data-szam="tesztFajl">83</span> fájl</div>
+        <div class="n" data-szam="teszt">1 961</div><div class="u">teszt · 0 hiba · <span data-szam="tesztFajl">85</span> fájl</div>
         <p>Nem lefedettséget mérünk  hanem <em>szabályokat</em>: a legtöbb teszt egy
         hibát ír be  és azt bizonyítja  hogy a rendszer elbukik rajta.</p>
       </div>
@@ -545,13 +545,13 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
       </div>
       <div class="src">
         <h4>A mag</h4>
-        <div class="n" data-szam="magSor">44 275</div><div class="u">sor · <span data-szam="magFajl">163</span> fájl · nulla futásidejű függőség</div>
+        <div class="n" data-szam="magSor">44 457</div><div class="u">sor · <span data-szam="magFajl">164</span> fájl · nulla futásidejű függőség</div>
         <p>Node 22 natív TypeScript  build nélkül. A klinikai mag tiszta függvényekből
         áll  DOM és adatbázis nélkül tesztelhető.</p>
       </div>
       <div class="src">
         <h4>Dokumentáció</h4>
-        <div class="n" data-szam="doksiFajl">135</div><div class="u">dokumentum · <span data-szam="doksiSor">29 839</span> sor</div>
+        <div class="n" data-szam="doksiFajl">136</div><div class="u">dokumentum · <span data-szam="doksiSor">33488</span> sor</div>
         <p>A generáltakat a <code>docs:check</code> ellenőrzi: ha valaki kézzel átírja 
         a build elbukik. Egy „generált” ígéret enélkül csak szándék.</p>
       </div>
@@ -1778,7 +1778,7 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <p class="wide">A webes réteget egy valódi böngésző (Chromium, Playwright) hajtotta
     végig, végig azon az úton, amit egy felhasználó bejár: betöltés, belépés, kötelező
     jelszócsere, megbízás adása az adminpanelen, adatbevitel, kilépés. Négy hiba került
-    elő, és <strong>egyikük sem adott hibaüzenetet</strong>: a kiszolgáló HTTP 200-at
+    elő (majd a harmadik körben három további), és <strong>egyikük sem adott hibaüzenetet</strong>: a kiszolgáló HTTP 200-at
     adott, a konzol tiszta volt, és 1935 egységteszt zöld.</p>
 
     <div class="rule-box">
@@ -1877,6 +1877,59 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
       <p>Ugyanaz a hibacsalád, ami a rendszer visszatérő témája: <strong>a próza olyat
       ígér, amit a szerkezet nem hordoz</strong>. Most elkészült: az
       <code>abcdefghijkl</code> és a magyar billentyűzet felső sora is elutasításra kerül.</p>
+    </div>
+
+    <h3>A harmadik kör: a felület a feladathoz igazodik — és a skála</h3>
+    <p class="wide">A második változat két panaszt kapott: <em>„a mező nagyon kevésnek
+    tűnik”</em> és <em>„az i18n nem működik”</em>. Egyik sem az volt, aminek látszott. A
+    mező nem volt kevés — 893 volt, <strong>csukva</strong>, és mindenkinek az azonosító
+    adatok nyíltak ki először, a szülésznőnek is. Az i18n nem romlott el — a felület
+    saját szövegei átváltottak, de a <strong>klinikai címkék 3 %-a</strong> (30/905) van
+    angolul, és a nyelvválasztó ezt nem mondta ki: „Angol”-t ígért, magyar címkéket adott.</p>
+
+    <div class="mechs">
+      <div class="mech" style="--m:var(--accent)">
+        <div class="k">A feladatprofil adat, nem kód</div>
+        <div class="d">8 profil a regiszterben · 46/46 modul lefedve</div>
+        <p>Felvétel, vizit, ügyelet, szülés, ápolás, zárás, konzílium, kutatás. A profil
+        azt dönti el, mi van <strong>nyitva és elöl</strong>; a jogosultság azt, mi
+        látható. A kettő nem keverhető. Az alapértelmezés az élő megbízás csoportjából
+        jön, de a feladat nem a munkakör: bármikor átváltható.</p>
+      </div>
+      <div class="mech" style="--m:var(--accent)">
+        <div class="k">⊢──·──⊣ a mező alatt</div>
+        <div class="d">a mért érték a sávon — kívül is</div>
+        <p>Kék zárójel a referenciatartomány, rózsa a <strong>kritikus küszöb</strong>
+        („beavatkozási küszöb — nem referencia”); a pont az érték, és a tartományon
+        kívüli érték a zárójelen <strong>kívül</strong> ül. A felirat a kontextust és a
+        hitelesítési szintet is mondja: <code>pregnancy.t3 · assumed</code>. Minden szám a
+        magból jön — a felület csak pozíciót számol.</p>
+      </div>
+      <div class="mech" style="--m:var(--accent)">
+        <div class="k">„Angol · 3 % klinikai címke — csak a felület”</div>
+        <div class="d">a nyelvválasztó kimondja, mit kap, aki vált</div>
+        <p>A szám a kiszolgálótól jön, nem becslés. A klinikai szöveget a rendszer elvből
+        nem fordítja gépileg: ehhez <strong>fordítói munkalap</strong> készült (875 címke,
+        2 451 opció, modulonként, forrásnyelvi alakkal).</p>
+      </div>
+    </div>
+
+    <div class="rule-box" style="border-left-color:var(--crit)">
+      <p class="t" style="color:var(--crit)">És három hiba, amit ez a kör hozott elő</p>
+      <p><strong>A várható szülési időpont <code>1795132800000</code> volt.</strong> A
+      Naegele-kalkulátor epoch-ezredmásodpercet ad; a zárójelentés ezt dátummá formázta, a
+      webes nézet és a levezetett mező nem. Ugyanaz a tény három helyen, kétféle alakban —
+      és a dátum-változóban a szám a saját típusát sértette: a rá épülő kalkulátor
+      <code>Date.parse</code>-szal olvasta volna, ami NaN, vagyis némán „hiányzó bemenet”.
+      Most a kalkulátor-réteg adja a megjelenítési és a tárolási alakot, egyszer.</p>
+      <p><strong>A mezősúgó angolul némán eltűnt.</strong> A címke forrásnyelvre esett
+      vissza <em>jelölve</em>; a súgó csak a célnyelvet nézte, és 350 mező mérési
+      útmutatója hiányzott. A hiányzó fordítás nem hiányzó tudás — most ugyanúgy esik
+      vissza, jelölve.</p>
+      <p><strong>Az alapértelmezett feladat az első megbízást nézte.</strong> A
+      rendszergazdai megbízás az első a listában, és annak nincs profilja — a mellette
+      lévő klinikai megbízás sosem szólalt volna meg. Az első <em>profillal rendelkező</em>
+      megbízás dönt.</p>
     </div>
 
     <h3>Amit a böngésző megerősített</h3>

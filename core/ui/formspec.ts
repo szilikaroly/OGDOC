@@ -36,6 +36,8 @@ export interface FieldSpec {
   /** Mely opciók címkéje forrásnyelvi. */
   optionsFallback?: boolean;
   hint?: string;
+  /** A súgó forrásnyelvi — a felület jelöli, mint a címkénél. */
+  hintFallback?: boolean;
   /** Click-open lelet: alapból csukva; kóros vagy korlátozott értéknél nyílik a lánc. */
   finding?: {
     normal: string | number;
@@ -163,8 +165,14 @@ function fieldOf(d: VariableDef, lang: "hu" | "en", reg: Registry): FieldSpec {
     f.computed = { explain: d.derivation.explain?.[lang], inputs: reg.computedInputs(d.id) };
   }
   if (d.derivation?.kind === "prefill") f.prefillable = true;
-  const hint = d.documentation.howToMeasure?.[lang] ?? d.documentation.pitfalls?.[lang];
-  if (hint) f.hint = hint;
+  // A SÚGÓ IS VISSZAESIK A FORRÁSNYELVRE — JELÖLVE. Korábban a célnyelvi
+  // alak hiányában a súgó egyszerűen ELTŰNT: az angol felületen 350 mező
+  // mérési útmutatója némán hiányzott, miközben a címke ugyanott forrásnyelvi
+  // jellel megjelent. A hiányzó fordítás nem hiányzó tudás.
+  const sugo = pick(d.documentation.howToMeasure ?? {}, lang).text
+    ? pick(d.documentation.howToMeasure!, lang)
+    : pick(d.documentation.pitfalls ?? {}, lang);
+  if (sugo.text) { f.hint = sugo.text; if (sugo.fallback) f.hintFallback = true; }
   return f;
 }
 

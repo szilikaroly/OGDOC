@@ -1,0 +1,250 @@
+{
+ "megnevezes": "Feladatprofilok — melyik feladathoz mely modulok nyílnak, milyen sorrendben",
+ "note": "A FELÜLET FELADAT SZERINT ADAPTÍV, NEM SZEREP SZERINT SZŰKÍTETT. A jogosultság dönti el, mit LEHET látni (megbízás × hatókör × idő); a feladatprofil azt, mi legyen NYITVA és ELÖL. A kettő nem keverhető: egy szülésznő a labort is láthatja, ha a jogosultsága engedi — csak nem az van elöl.\n\nA PROFIL ADAT, NEM KÓD. Egy új feladat felvétele ide egy bejegyzés, a felülethez nem kell nyúlni. A csoport → profil hozzárendelés is itt van: a bejelentkezett felhasználó élő megbízásának csoportja választja az alapértelmezett profilt, de a felhasználó bármikor átválthat — a feladat nem a munkakör, hanem az, amit éppen csinál.\n\nA VALIDÁLÁS: minden hivatkozott modulkulcsnak léteznie kell; minden klinikai csoportnak legyen legalább egy profilja; minden modul szerepeljen legalább egy profilban (különben van olyan mező, amit egyetlen feladat sem hoz elő); és a profil sorrendje nem tartalmazhat ismétlést.",
+ "seged_panelek": [
+  "suggestions",
+  "confirmBox",
+  "adviceBox",
+  "patientBox",
+  "calcs",
+  "docPanel"
+ ],
+ "profilok": [
+  {
+   "id": "feladat.felvetel",
+   "cim": {
+    "hu": "Felvétel és anamnézis",
+    "en": "Admission and history"
+   },
+   "csoportok": [
+    "csoport.osztalyos-orvos",
+    "csoport.asszisztens"
+   ],
+   "modulok": [
+    "admin",
+    "demog",
+    "addr",
+    "ctx",
+    "complaints",
+    "anthro",
+    "hx",
+    "hx.origin",
+    "hx.repro",
+    "hx.sys",
+    "hx.gyn",
+    "hx.surg",
+    "hx.family",
+    "hx.life",
+    "hx.psy",
+    "allergy",
+    "rx",
+    "hx.supp",
+    "diet"
+   ],
+   "seged": [
+    "suggestions",
+    "confirmBox"
+   ],
+   "leiras": {
+    "hu": "Az első találkozás: kontextus, panasz, előzmény. A javaslatok és a betegtől kapott, megerősítésre váró adatok elöl."
+   }
+  },
+  {
+   "id": "feladat.vizit",
+   "cim": {
+    "hu": "Osztályos vizit",
+    "en": "Ward round"
+   },
+   "csoportok": [
+    "csoport.osztalyos-orvos",
+    "csoport.ugyeletes-orvos"
+   ],
+   "modulok": [
+    "ctx",
+    "vitals",
+    "anthro",
+    "status",
+    "lab",
+    "ekg",
+    "imaging",
+    "vizsgalatok",
+    "cardio",
+    "plan",
+    "epi"
+   ],
+   "seged": [
+    "adviceBox",
+    "calcs"
+   ],
+   "leiras": {
+    "hu": "A napi állapot: vitális paraméterek, státusz, friss vizsgálatok, terv. A klinikusnak szóló javaslatok és a kalkulátorok elöl."
+   }
+  },
+  {
+   "id": "feladat.ugyelet",
+   "cim": {
+    "hu": "Ügyelet",
+    "en": "On call"
+   },
+   "csoportok": [
+    "csoport.ugyeletes-orvos"
+   ],
+   "modulok": [
+    "ctx",
+    "complaints",
+    "vitals",
+    "status",
+    "exam.obs",
+    "lab",
+    "imaging",
+    "score",
+    "rules",
+    "plan"
+   ],
+   "seged": [
+    "adviceBox",
+    "calcs"
+   ],
+   "leiras": {
+    "hu": "Ami most dönt: panasz, vitális paraméterek, szülészeti vizsgálat, pontszámok, szabálykimenetek. A kalkulátorok és a javaslatok elöl."
+   }
+  },
+  {
+   "id": "feladat.szules",
+   "cim": {
+    "hu": "Szülés és szülőszoba",
+    "en": "Labour and delivery room"
+   },
+   "csoportok": [
+    "csoport.szulesznő"
+   ],
+   "modulok": [
+    "ctx",
+    "exam.obs",
+    "labour",
+    "score",
+    "szuloszoba",
+    "nb",
+    "neo",
+    "op",
+    "vitals"
+   ],
+   "seged": [
+    "calcs",
+    "adviceBox"
+   ],
+   "leiras": {
+    "hu": "A szülőszoba sorrendje: vizsgálat, szülés, Bishop, Apgar, újszülött. Ami a szülés után jön (műtét, neonatológia), utána."
+   }
+  },
+  {
+   "id": "feladat.apolas",
+   "cim": {
+    "hu": "Ápolás",
+    "en": "Nursing"
+   },
+   "csoportok": [
+    "csoport.apolo"
+   ],
+   "modulok": [
+    "ctx",
+    "vitals",
+    "allergy",
+    "rx",
+    "diet",
+    "hx.supp",
+    "psy",
+    "prom"
+   ],
+   "seged": [
+    "patientBox",
+    "confirmBox"
+   ],
+   "leiras": {
+    "hu": "Vitális paraméterek, gyógyszerelés, allergia, diéta, a beteg saját kérdőívei. A betegnek szóló tájékoztató elöl."
+   }
+  },
+  {
+   "id": "feladat.zaras",
+   "cim": {
+    "hu": "Elbocsátás és lezárás",
+    "en": "Discharge and closure"
+   },
+   "csoportok": [
+    "csoport.osztalyos-orvos"
+   ],
+   "modulok": [
+    "epi",
+    "disch",
+    "code",
+    "out",
+    "fu",
+    "utankovetes",
+    "plan"
+   ],
+   "seged": [
+    "adviceBox",
+    "patientBox"
+   ],
+   "leiras": {
+    "hu": "Epikrízis, elbocsátás, kódolás, kimenetel, utánkövetés. Ami a lezáráshoz kell, és ami a következő ellátónak."
+   }
+  },
+  {
+   "id": "feladat.szakterulet",
+   "cim": {
+    "hu": "Szakterületi konzultáció",
+    "en": "Specialty consultation"
+   },
+   "csoportok": [
+    "csoport.osztalyos-orvos",
+    "csoport.ugyeletes-orvos"
+   ],
+   "modulok": [
+    "ctx",
+    "cardio",
+    "ekg",
+    "onc",
+    "pedgyn",
+    "hx.sys",
+    "lab",
+    "imaging"
+   ],
+   "seged": [
+    "adviceBox",
+    "docPanel"
+   ],
+   "leiras": {
+    "hu": "Kardiológia, onkológia, gyermeknőgyógyászat — a belgyógyászati és szakterületi rétegek egy helyen."
+   }
+  },
+  {
+   "id": "feladat.kutatas",
+   "cim": {
+    "hu": "Kutatás és minőség",
+    "en": "Research and quality"
+   },
+   "csoportok": [
+    "csoport.kutato",
+    "csoport.auditor"
+   ],
+   "modulok": [
+    "ctx",
+    "demog",
+    "out",
+    "code",
+    "prom",
+    "psy",
+    "hx.eeszt",
+    "rules",
+    "score"
+   ],
+   "seged": [
+    "calcs"
+   ],
+   "leiras": {
+    "hu": "Kimenetel, kódolás, kérdőívek, szabálykimenetek. Betegazonosító nélkül — az export is így megy."
+   }
+  }
+ ]
+}

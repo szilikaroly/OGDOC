@@ -14,10 +14,23 @@ import type { CaseState, ScoreResult } from "../types.ts";
 import { resolve } from "../derive/resolve.ts";
 import { CALC_BY_ID } from "./defs.ts";
 import type { CalcBand, CalcDef } from "./types.ts";
+import { withUnit } from "../ui/units.ts";
 
 export interface CalcOk {
   status: "ok";
   value: number;
+  /**
+   * A MEGJELENÍTÉSI ALAK — egy helyen, mert két helyen volt.
+   *
+   * A dátum-kimenetű kalkulátor (Naegele) epoch-ezredmásodpercet ad, és ezt
+   * a zárójelentés (`epikrizis/build.ts`) tudta: ISO-dátumot írt belőle. A
+   * webes nézet és a levezetett mező NEM tudta: a várható szülési időpont a
+   * képernyőn „1795132800000” volt — a mezőben ÉS a kalkulátorpanelen is. Ha a
+   * megjelenítés a hívóé, minden hívó külön rontja el; itt van, egyszer.
+   */
+  display: string;
+  /** Amit a levezetett VÁLTOZÓBA kell írni: dátum-változóba ISO-dátum, nem szám. */
+  stored: number | string;
   unit?: string | null;
   /** Az eredményhez tartozó sáv, ha van definiálva. */
   band?: { label: string; severity: CalcBand["severity"] };
@@ -138,9 +151,12 @@ export function runCalc(
   const digits = def.output.digits ?? 2;
   const value = Math.round(raw * 10 ** digits) / 10 ** digits;
 
+  const isoDatum = def.output.isDate ? new Date(value).toISOString().slice(0, 10) : null;
   return {
     status: "ok",
     value,
+    display: isoDatum ?? withUnit(value, def.output.unit, lang),
+    stored: isoDatum ?? value,
     unit: def.output.unit,
     band: bandFor(def, value, lang),
     interpretation: def.interpret?.(value, args)?.[lang],

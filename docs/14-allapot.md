@@ -11,11 +11,11 @@
 | Regiszterbeli változó | **905** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1948** |
-| Mag: fájl / sor | 163 / 44275 |
-| Teszt: fájl / sor | 83 / 21380 |
-| Dokumentum | 135 |
-| Regiszterfájl | 140 |
+| Teszt | **1961** |
+| Mag: fájl / sor | 164 / 44457 |
+| Teszt: fájl / sor | 85 / 21511 |
+| Dokumentum | 136 |
+| Regiszterfájl | 141 |
 
 ## A forrásrendszerek felülettérképe
 
@@ -102,8 +102,8 @@ Ami az átvételt megállítja, tételenként:
 
 | Egység | Fájl | Sor |
 |---|---:|---:|
-| `core/calc/` | 4 | 2435 |
-| `core/ui/` | 8 | 2385 |
+| `core/ui/` | 9 | 2531 |
+| `core/calc/` | 4 | 2451 |
 | `core/interop/` | 6 | 2086 |
 | `core/us/` | 6 | 2060 |
 | `core/coding/` | 8 | 1872 |
@@ -126,7 +126,7 @@ Ami az átvételt megállítja, tételenként:
 | `core/ett/` | 2 | 707 |
 | `core/pilot/` | 2 | 641 |
 | `core/zaro/` | 4 | 611 |
-| `core/derive/` | 4 | 601 |
+| `core/derive/` | 4 | 605 |
 | `core/lab/` | 3 | 588 |
 | `core/ai/` | 2 | 569 |
 | `core/journal/` | 2 | 555 |
@@ -141,7 +141,7 @@ Ami az átvételt megállítja, tételenként:
 | `core/audit/` | 1 | 400 |
 | `core/cms/` | 1 | 400 |
 | `core/admin/` | 1 | 397 |
-| `core/epikrizis/` | 2 | 391 |
+| `core/epikrizis/` | 2 | 390 |
 | `core/diet/` | 2 | 377 |
 | `core/riasztas/` | 2 | 375 |
 | `core/exassist/` | 1 | 355 |

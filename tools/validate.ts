@@ -85,6 +85,10 @@ import {
   loadModulcimek, merleg as cimMerleg, validateModulcimek,
 } from "../core/ui/modulcimek.ts";
 import {
+  loadFeladatok, merleg as feladatMerleg, validateFeladatok,
+} from "../core/ui/feladat.ts";
+import { loadCsoportok as loadCsoportKeszlet } from "../core/auth/csoport.ts";
+import {
   gyujt, loadHianyok, merleg as hianyMerleg, validateHianyok,
 } from "../core/hianyzo/jegyzek.ts";
 import type { ModulHiany } from "../core/hianyzo/jegyzek.ts";
@@ -238,6 +242,9 @@ const mwho = loadMwho("registry/belgyogyaszat/mwho.json");
 const kardioJelek = loadJelek("registry/belgyogyaszat/kardio-jelek.json");
 const palliativ = loadPalliativ("registry/belgyogyaszat/palliativ.json");
 const modulcimek = loadModulcimek("registry/felulet/modulcimek.json");
+const feladatok = loadFeladatok("registry/felulet/feladatprofilok.json");
+const klinikaiCsoportok = loadCsoportKeszlet("registry/auth/csoportok.json").csoportok
+  .filter((c) => c.szerepek.some((sz) => sz === "clinician" || sz === "assistant")).map((c) => c.id);
 
 /**
  * A HIÁNYJEGYZÉK GYŰJT, NEM ÍR ÚJRA.
@@ -397,6 +404,7 @@ const issues = [
   ...validateKardio(mwho, kardioJelek, (id) => reg.all().some((v) => v.id === id)),
   ...validatePalliativ(palliativ),
   ...validateModulcimek(modulcimek, new Set(reg.all().map((v) => v.module))),
+  ...validateFeladatok(feladatok, new Set(reg.all().map((v) => v.module)), klinikaiCsoportok),
   ...validateIsber(isber),
   ...validateHianyok(hianyok),
   ...validateSzolgaltatok(szolgaltatok),
@@ -613,7 +621,9 @@ console.log(
                        `gépi határ, ${pl.alairt ? "aláírva" : "ALÁÍRATLAN"} · ` +
                        `Modulcímek: ${(() => { const c = cimMerleg(modulcimek);
                          return `${c.modul} cím ${c.csoport} csoportban, ` +
-                                `${c.forditatlan} fordítatlan, ${c.leirasNelkul} leírás nélkül`; })()}`;
+                                `${c.forditatlan} fordítatlan, ${c.leirasNelkul} leírás nélkül`; })()} · ` +
+                       `Feladatprofil: ${(() => { const f = feladatMerleg(feladatok, new Set(reg.all().map((v) => v.module)));
+                         return `${f.profil} profil, ${f.lefedettModul}/${f.osszesModul} modul lefedve`; })()}`;
              })()} · ` +
              `ISBER: ${ib.fedett}/${ib.osszes} fedett (${ib.reszben} részben) · ` +
              `Hiányjegyzék: ${h.osszes} tétel (${h.blokkolo} BLOKKOLÓ, ` +
