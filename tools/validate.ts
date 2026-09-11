@@ -87,6 +87,9 @@ import {
 import {
   loadFeladatok, merleg as feladatMerleg, validateFeladatok,
 } from "../core/ui/feladat.ts";
+import {
+  loadFunkciok, merleg as funkcioMerleg, szakaszKulcsok, validateFunkciok,
+} from "../core/ui/funkciok.ts";
 import { loadCsoportok as loadCsoportKeszlet } from "../core/auth/csoport.ts";
 import {
   gyujt, loadHianyok, merleg as hianyMerleg, validateHianyok,
@@ -243,6 +246,9 @@ const kardioJelek = loadJelek("registry/belgyogyaszat/kardio-jelek.json");
 const palliativ = loadPalliativ("registry/belgyogyaszat/palliativ.json");
 const modulcimek = loadModulcimek("registry/felulet/modulcimek.json");
 const feladatok = loadFeladatok("registry/felulet/feladatprofilok.json");
+const funkciok = loadFunkciok("registry/felulet/funkciok.json");
+// A FELÜLETI SZAKASZOK: a mezővel maradó modulok + a virtuális szakaszok.
+const szakaszok = szakaszKulcsok(funkciok, reg.all().filter((v) => !v.aliasOf));
 const klinikaiCsoportok = loadCsoportKeszlet("registry/auth/csoportok.json").csoportok
   .filter((c) => c.szerepek.some((sz) => sz === "clinician" || sz === "assistant")).map((c) => c.id);
 
@@ -403,8 +409,9 @@ const issues = [
   ...validateDicom(dicom),
   ...validateKardio(mwho, kardioJelek, (id) => reg.all().some((v) => v.id === id)),
   ...validatePalliativ(palliativ),
-  ...validateModulcimek(modulcimek, new Set(reg.all().map((v) => v.module))),
-  ...validateFeladatok(feladatok, new Set(reg.all().map((v) => v.module)), klinikaiCsoportok),
+  ...validateFunkciok(funkciok, reg.all().filter((v) => !v.aliasOf)),
+  ...validateModulcimek(modulcimek, szakaszok),
+  ...validateFeladatok(feladatok, szakaszok, klinikaiCsoportok),
   ...validateIsber(isber),
   ...validateHianyok(hianyok),
   ...validateSzolgaltatok(szolgaltatok),
@@ -622,8 +629,11 @@ console.log(
                        `Modulcímek: ${(() => { const c = cimMerleg(modulcimek);
                          return `${c.modul} cím ${c.csoport} csoportban, ` +
                                 `${c.forditatlan} fordítatlan, ${c.leirasNelkul} leírás nélkül`; })()} · ` +
-                       `Feladatprofil: ${(() => { const f = feladatMerleg(feladatok, new Set(reg.all().map((v) => v.module)));
-                         return `${f.profil} profil, ${f.lefedettModul}/${f.osszesModul} modul lefedve`; })()}`;
+                       `Feladatprofil: ${(() => { const f = feladatMerleg(feladatok, szakaszok);
+                         return `${f.profil} profil, ${f.lefedettModul}/${f.osszesModul} modul lefedve`; })()}` +
+                       ` · Funkciók: ${(() => { const f = funkcioMerleg(funkciok, reg.all().filter((v) => !v.aliasOf));
+                         return `${f.szakasz} szakasz (${f.virtualis} virtuális), ${f.funkcio} funkció, ${f.fedett} mező fedve, ${f.athelyezett} áthelyezve` +
+                           (f.tervezett ? `, ${f.tervezett} tervezett` : ""); })()}`;
              })()} · ` +
              `ISBER: ${ib.fedett}/${ib.osszes} fedett (${ib.reszben} részben) · ` +
              `Hiányjegyzék: ${h.osszes} tétel (${h.blokkolo} BLOKKOLÓ, ` +

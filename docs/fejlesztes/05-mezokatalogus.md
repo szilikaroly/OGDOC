@@ -72,7 +72,7 @@ kizárja a valós beteget, adatvesztést okoz, mert a klinikus máshova írja be
 ## 5. A katalógus
 
 
-**905 változó**, 46 modulban.
+**906 változó**, 46 modulban.
 
 | Jellemző | Darab | Arány |
 |---|---:|---:|
@@ -885,7 +885,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `pedgyn.trauma.mechanism` | A sérülés elmondott mechanizmusa | text | — | — | — | — | — |
 | `pedgyn.vulva.finding` | Vulva lelet | coded | — | 7 kód | — | — | — |
 
-### `plan` — 23 mező
+### `plan` — 24 mező
 
 | Azonosító | Név | Típus | Egység | Tartomány | Levezetés | Feltölti ezeket | Jelölés |
 |---|---|---|---|---|---|---|---|
@@ -907,6 +907,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 | `plan.delivery.sharedDecision` | Megosztott döntéshozatal megtörtént | bool | — | — | — | — | — |
 | `plan.emergency.given` | Sürgősségi terv átadva | bool | — | — | — | — | — |
 | `plan.emergency.language` | A sürgősségi terv nyelve | coded | — | 4 kód | — | — | — |
+| `plan.family.intent` | Gyermekvállalási szándék | coded | — | 3 kód | — | — | sorozat |
 | `plan.institution.tolacCapable` | Az intézmény TOLAC-feltételei adottak | tristate | — | 3 kód | — | — | — |
 | `plan.nextVisit.at` | Következő vizit időpontja | date | — | — | — | — | sorozat |
 | `plan.nextVisit.rationale` | Eltérés a vizitrendtől — indoklás | text | — | — | — | — | — |
@@ -1223,7 +1224,7 @@ A szabad szöveges mezők aránya **5%** — a `docs/11-strukturalt-adat.md` cé
 
 ## 6. Lefedettség
 
-A tervezett **~4035** változóból **905** van meg (22.4%).
+A tervezett **~4035** változóból **906** van meg (22.5%).
 Ez szándékos: a mag **helyességét** bizonyítja, nem a lefedettséget. A hiányzó
 mezők felvétele mechanikus munka, amihez a `04-modul-csontvaz.md` adja az eljárást.
 

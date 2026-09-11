@@ -10,6 +10,7 @@ import assert from "node:assert/strict";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadRegistry } from "../core/load.ts";
+import { loadFunkciok, szakaszKulcsok } from "../core/ui/funkciok.ts";
 import { buildFormSpec } from "../core/ui/formspec.ts";
 import {
   cimzes, loadModulcimek, merleg, validateModulcimek,
@@ -19,7 +20,9 @@ import type { ModulCimKeszlet } from "../core/ui/modulcimek.ts";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REG = loadRegistry(join(ROOT, "registry", "variables"));
 const CIMEK = loadModulcimek(join(ROOT, "registry", "felulet", "modulcimek.json"));
-const KULCSOK = new Set(REG.all().map((v) => v.module));
+const FUNKCIOK = loadFunkciok(join(ROOT, "registry", "felulet", "funkciok.json"));
+// A FELÜLETI SZAKASZOK, nem a regiszter-modulok: a kiürült modul nem szakasz, a virtuális igen.
+const KULCSOK = szakaszKulcsok(FUNKCIOK, REG.all().filter((v) => !v.aliasOf));
 
 test("a modulcím-készlet hibátlan, és MINDEN modulkulcsot lefed", () => {
   assert.deepEqual(validateModulcimek(CIMEK, KULCSOK), []);
@@ -27,7 +30,7 @@ test("a modulcím-készlet hibátlan, és MINDEN modulkulcsot lefed", () => {
 });
 
 test("a formspec minden szekciója címet kap, és hu-ban egyik sem visszaesés", () => {
-  const spec = buildFormSpec(REG, "hu", CIMEK);
+  const spec = buildFormSpec(REG, "hu", CIMEK, FUNKCIOK);
   for (const s of spec) {
     assert.ok(s.title && s.title !== s.module, `${s.module}: a cím a nyers kulcs maradt`);
     assert.equal(s.titleFallback, false, `${s.module}: hu-ban nem lehet visszaesés`);
@@ -36,7 +39,7 @@ test("a formspec minden szekciója címet kap, és hu-ban egyik sem visszaesés"
 });
 
 test("angolul is minden címnek van alakja — a fordítatlan JELÖLVE volna", () => {
-  const spec = buildFormSpec(REG, "en", CIMEK);
+  const spec = buildFormSpec(REG, "en", CIMEK, FUNKCIOK);
   const vissza = spec.filter((s) => s.titleFallback).map((s) => s.module);
   assert.deepEqual(vissza, []);
   assert.equal(merleg(CIMEK, "en").forditatlan, 0);
@@ -51,7 +54,7 @@ test("cím nélkül a kulcs jön vissza — de JELÖLVE, nem csendben", () => {
 });
 
 test("a sorrend a betegúté: az azonosítás elöl, a lezárás hátul", () => {
-  const spec = buildFormSpec(REG, "hu", CIMEK);
+  const spec = buildFormSpec(REG, "hu", CIMEK, FUNKCIOK);
   const idx = (m: string) => spec.findIndex((s) => s.module === m);
   assert.ok(idx("ctx") < idx("complaints"), "a kontextus a panaszok előtt");
   assert.ok(idx("complaints") < idx("status"), "a panaszok a státusz előtt");

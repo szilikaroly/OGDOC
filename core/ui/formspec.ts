@@ -5,6 +5,7 @@
  */
 import type { Registry } from "../registry.ts";
 import { pick } from "../i18n.ts";
+import { hozzarendel, type FunkcioKeszlet } from "./funkciok.ts";
 import type { VariableDef } from "../types.ts";
 import { DerivationGraph } from "../derive/graph.ts";
 import { cimzes } from "./modulcimek.ts";
@@ -49,6 +50,19 @@ export interface FieldSpec {
   openedBy?: string[];
   /** A beteg tölti ki a betegfelvételkor. */
   patientEntry?: boolean;
+  /** Melyik funkcióhoz tartozik a szakaszon belül (`egyeb`, ha egyikhez sem). */
+  fn?: string;
+}
+
+/** Egy szakasz fő funkciója — a kezdőlap egy csempéje, aztán egy fül. */
+export interface FunctionSpec {
+  key: string;
+  /** `null` az automatikus „Egyebek”-nél — a felület a saját szótárából nevezi. */
+  title: string | null;
+  titleFallback: boolean;
+  description: string | null;
+  planned: boolean;
+  fields: string[];
 }
 
 export interface SectionSpec {
@@ -63,6 +77,10 @@ export interface SectionSpec {
   groupTitle: string;
   groupOrder: number;
   fields: FieldSpec[];
+  /** A kezdőlap fő funkciói — csak ott, ahol a regiszter kimondja. */
+  functions?: FunctionSpec[];
+  /** Virtuális szakasz: más modulok mezőiből, egy vizit köré. */
+  virtual?: boolean;
 }
 
 const CONTROL: Record<string, FieldSpec["control"]> = {
@@ -73,6 +91,7 @@ const CONTROL: Record<string, FieldSpec["control"]> = {
 
 export function buildFormSpec(
   reg: Registry, lang: "hu" | "en" = "hu", cimek: ModulCimKeszlet | null = null,
+  funkciok: FunkcioKeszlet | null = null,
 ): SectionSpec[] {
   // melyik mezőt melyik lelet nyitja meg — a gráf megfordítva
   const openedBy = new Map<string, string[]>();
@@ -82,10 +101,18 @@ export function buildFormSpec(
     for (const t of d.finding?.cascade ?? []) gate(t, d.id);
     for (const o of d.valueSet ?? []) for (const t of o.opens ?? []) gate(t, d.id);
   }
+  // A FELÜLETI SZAKASZ ≠ A REGISZTER-MODUL. A funkciókészlet mondja meg, mely
+  // mező megy virtuális szakaszba (a nőgyógyászat a státusz kolposzkópiáját
+  // viszi), és melyik funkció alá. Ami nincs kimondva, marad a moduljában.
+  const hozz = funkciok ? hozzarendel(funkciok, reg.all().filter((d) => !d.aliasOf).map((d) => d.id)) : null;
+  const virtualis = new Set(funkciok?.szakaszok.filter((x) => x.virtualis).map((x) => x.kulcs) ?? []);
   const byModule = new Map<string, FieldSpec[]>();
   for (const d of reg.all()) {
     if (d.aliasOf) continue;                       // a mirror nem önálló mező
     const f = fieldOf(d, lang, reg);
+    const cel = hozz?.mezo.get(d.id);
+    if (cel) f.fn = cel.funkcio;
+    const szakasz = cel && virtualis.has(cel.szakasz) ? cel.szakasz : d.module;
     if (d.finding) {
       f.finding = {
         normal: d.finding.normal,
@@ -97,15 +124,43 @@ export function buildFormSpec(
     const gates = openedBy.get(d.id);
     if (gates) f.openedBy = gates;
     if (d.patientEntry) f.patientEntry = true;
-    byModule.set(d.module, [...(byModule.get(d.module) ?? []), f]);
+    byModule.set(szakasz, [...(byModule.get(szakasz) ?? []), f]);
   }
   // A SORREND A BETEGÚTÉ, NEM AZ ÁBÉCÉÉ. Cím nélkül (cimek === null) marad
   // az ábécé — a régi viselkedés —, mert akkor nincs mi szerint rendezni.
   return [...byModule.entries()]
-    .map(([module, fields]) => ({
-      module, ...cimzes(cimek, module, lang), fields: orderByFinding(fields),
-    }))
+    .map(([module, fields]) => {
+      const sz = funkciok?.szakaszok.find((x) => x.kulcs === module);
+      const rendezett = sz ? funkcioSorrend(orderByFinding(fields), sz.funkciok.map((f) => f.kulcs)) : orderByFinding(fields);
+      const sec: SectionSpec = { module, ...cimzes(cimek, module, lang), fields: rendezett };
+      if (sz) {
+        sec.functions = sz.funkciok.map((f) => {
+          const t = pick(f.cim, lang);
+          return {
+            key: f.kulcs, title: t.text || f.kulcs, titleFallback: t.fallback,
+            description: f.leiras ? (pick(f.leiras, lang).text || null) : null,
+            planned: Boolean(f.tervezett),
+            fields: rendezett.filter((x) => x.fn === f.kulcs).map((x) => x.id),
+          };
+        });
+        const egyeb = rendezett.filter((x) => !x.fn);
+        if (egyeb.length) {
+          for (const x of egyeb) x.fn = "egyeb";
+          sec.functions.push({ key: "egyeb", title: null, titleFallback: false, description: null,
+            planned: false, fields: egyeb.map((x) => x.id) });
+        }
+        if (sz.virtualis) sec.virtual = true;
+      }
+      return sec;
+    })
     .sort((a, b) => a.groupOrder - b.groupOrder || a.title.localeCompare(b.title, lang));
+}
+
+/** A funkciók sorrendje a regiszteré; egy funkción belül a lelet-sorrend marad. */
+function funkcioSorrend(fields: FieldSpec[], kulcsok: string[]): FieldSpec[] {
+  const rang = new Map(kulcsok.map((k, i) => [k, i]));
+  const r = (f: FieldSpec) => (f.fn && rang.has(f.fn) ? rang.get(f.fn)! : kulcsok.length);
+  return fields.map((f, i) => [f, i] as const).sort((a, b) => r(a[0]) - r(b[0]) || a[1] - b[1]).map(([f]) => f);
 }
 
 /**

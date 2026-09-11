@@ -3,7 +3,7 @@
 > **Ez a fájl generált.** Forrása a `registry/variables/`; a
 > `node tools/gen-coverage.ts` állítja elő, és a CI ellenőrzi.
 
-**905 változó** a tervezett **~4035**-ból — **22.4%**.
+**906 változó** a tervezett **~4035**-ból — **22.5%**.
 
 A tervezett szám a `docs/modulok/` becslése: **nagyságrend, nem előrejelzés**. Arra jó,
 hogy lássuk, hol van a munka tömege — és hogy egy modul ne látsszon késznek, amíg a
@@ -23,7 +23,7 @@ felét sem tartalmazza.
 | 10 | Szülőszoba | 37 | 200 | 19% | `██░░░░░░░░` |
 | 11 | Műtő | 51 | 110 | 46% | `█████░░░░░` |
 | 12 | Onkológia | 21 | 120 | 18% | `██░░░░░░░░` |
-| 13 | Ellátás tervezés | 23 | 50 | 46% | `█████░░░░░` |
+| 13 | Ellátás tervezés | 24 | 50 | 48% | `█████░░░░░` |
 | 14 | Zárójelentés | 19 | 40 | 48% | `█████░░░░░` |
 | 15 | Utánkövetés | 52 | 90 | 58% | `██████░░░░` |
 | 16 | Betegelégedettség | 58 | 45 | 129% | `██████████` |

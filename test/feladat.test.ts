@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadRegistry } from "../core/load.ts";
+import { loadFunkciok, szakaszKulcsok } from "../core/ui/funkciok.ts";
 import { loadCsoportok } from "../core/auth/csoport.ts";
 import {
   alapProfil, feladatNezet, loadFeladatok, merleg, validateFeladatok,
@@ -16,7 +17,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REG = loadRegistry(join(ROOT, "registry", "variables"));
 const F = loadFeladatok(join(ROOT, "registry", "felulet", "feladatprofilok.json"));
 const CS = loadCsoportok(join(ROOT, "registry", "auth", "csoportok.json"));
-const MODULOK = new Set(REG.all().map((v) => v.module));
+const FUNKCIOK = loadFunkciok(join(ROOT, "registry", "felulet", "funkciok.json"));
+const MODULOK = szakaszKulcsok(FUNKCIOK, REG.all().filter((v) => !v.aliasOf));
 const KLINIKAI = CS.csoportok.filter((c) => c.szerepek.some((s) => s === "clinician" || s === "assistant")).map((c) => c.id);
 
 test("a feladatprofil-készlet hibátlan", () => {

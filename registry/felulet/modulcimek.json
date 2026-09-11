@@ -299,17 +299,6 @@
    }
   },
   {
-   "kulcs": "hx.gyn",
-   "cim": {
-    "hu": "Nőgyógyászati előzmény",
-    "en": "Gynaecological history"
-   },
-   "csoport": "elozmeny",
-   "leiras": {
-    "hu": "Méhnyakszűrési előzmény, CIN2+, méhnyakrák."
-   }
-  },
-  {
    "kulcs": "hx.life",
    "cim": {
     "hu": "Életmód",
@@ -604,6 +593,17 @@
    "csoport": "vizsgalat",
    "leiras": {
     "hu": "BPD, HC, AC, FL, becsült magzati súly."
+   }
+  },
+  {
+   "kulcs": "gyn",
+   "cim": {
+    "hu": "Nőgyógyászat",
+    "en": "Gynaecology"
+   },
+   "csoport": "szakterulet",
+   "leiras": {
+    "hu": "A nőgyógyászati vizit fő funkciói: manuális vizsgálat, ultrahang, kolposzkópia, kenetek, STI, koraterhesség, szűrés, emlő, családtervezés — más modulok mezőiből, egy helyen."
    }
   }
  ]

@@ -104,7 +104,11 @@ if (!(await p.locator("main").isVisible().catch(() => false))) {
 // MINDEN MODUL KINYITVA — a képernyő a modul tartalmát mutatja, nem a csukott
 // fejlécet. A nyitottság a néző böngészőjéé (localStorage), nem a rendszeré,
 // tehát itt szabadon állítható.
-await p.evaluate(() => { for (const m of document.querySelectorAll(".mod")) m.setAttribute("open", ""); });
+await p.evaluate(() => {
+  for (const m of document.querySelectorAll(".mod")) m.setAttribute("open", "");
+  // A funkciós modul kezdőlapot mutat — a galéria minden mezőt kér.
+  window.OGDOC?.mindenMezo?.();
+});
 await p.waitForTimeout(300);
 
 const modulok = await p.evaluate(() => {

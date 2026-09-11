@@ -69,6 +69,7 @@ function applyStaticStrings() {
   for (const el of $$("[data-i18n]")) el.textContent = T(el.dataset.i18n);
   for (const el of $$("[data-i18n-label]")) el.setAttribute("aria-label", T(el.dataset.i18nLabel));
   for (const el of $$("[data-i18n-placeholder]")) el.placeholder = T(el.dataset.i18nPlaceholder);
+  for (const el of $$("[data-i18n-title]")) el.title = T(el.dataset.i18nTitle);
   document.documentElement.lang = I18N.lang;
 }
 
@@ -203,6 +204,7 @@ function mezoSor(f) {
   row.append(el);
   // Kereséshez: a címke és az azonosító ékezettelen, kisbetűs alakja.
   row.dataset.kereso = norm(f.label + " " + f.id);
+  if (f.fn) row.dataset.fn = f.fn;
   return row;
 }
 
@@ -250,14 +252,99 @@ function modulSzakasz(sec) {
   fej.append(nyil, cimsor, db);
   fej.addEventListener("click", () => modulNyit(sec.module, !s.hasAttribute("open")));
 
+  if (sec.virtual) { s.dataset.virtualis = ""; kulcs.title = T("fn.virtual"); }
+
   const mezok = document.createElement("div");
   mezok.className = "mezok";
   mezok.id = s.id + "-mezok";
-  for (const f of sec.fields) mezok.append(mezoSor(f));
+  if (sec.functions) mezok.append(fulsor(sec), kezdolap(sec));
+  const lista = document.createElement("div");
+  lista.className = "mezolista";
+  for (const f of sec.fields) lista.append(mezoSor(f));
+  mezok.append(lista);
 
   s.append(fej, mezok);
   return s;
 }
+
+/* ── FŐ FUNKCIÓK — a modul kezdőlapja, aztán a fülek ────────────────────
+   A funkció ADAT (registry/felulet/funkciok.json). A modul nyitáskor a fő
+   funkcióit mutatja csempékként; egy csempe egy fül, és csak annak mezői
+   látszanak. „Minden mező” a régi, teljes lista. Az állapot a néző
+   böngészőjéé (ogdoc.funkcio), a keresés ideiglenesen mindent mutat. */
+let FN_AKTIV = {};
+function fnAllapotBetolt() { try { FN_AKTIV = JSON.parse(tarolo("ogdoc.funkcio") || "{}"); } catch { FN_AKTIV = {}; } }
+function fnCim(fn) { return fn.title ?? T("fn.other"); }
+
+function fulsor(sec) {
+  const sor = document.createElement("div");
+  sor.className = "mod-fulek";
+  sor.setAttribute("role", "tablist");
+  const ful = (key, cim, extra) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "ful" + (extra ? " " + extra : ""); b.dataset.fn = key;
+    b.setAttribute("role", "tab");
+    b.append(typeof cim === "string" ? document.createTextNode(cim) : cim);
+    b.addEventListener("click", () => funkcioValaszt(sec.module, key, true));
+    return b;
+  };
+  sor.append(ful("", "⌂ " + T("fn.start"), "ful-kezdo"));
+  for (const fn of sec.functions) {
+    const cim = document.createDocumentFragment();
+    cim.append(fnCim(fn));
+    if (fn.titleFallback) cim.append(srcMark());
+    const db = document.createElement("span"); db.className = "ful-db"; db.dataset.fnDb = fn.key;
+    cim.append(" ", db);
+    const b = ful(fn.key, cim, fn.planned ? "tervezett" : "");
+    if (fn.planned) b.title = T("fn.planned");
+    sor.append(b);
+  }
+  sor.append(ful("*", T("fn.all"), "ful-mind"));
+  return sor;
+}
+
+function kezdolap(sec) {
+  const lap = document.createElement("div");
+  lap.className = "mod-kezdo";
+  for (const fn of sec.functions) {
+    const cs = document.createElement("button");
+    cs.type = "button"; cs.className = "csempe" + (fn.planned ? " tervezett" : ""); cs.dataset.fn = fn.key;
+    const b = document.createElement("b"); b.textContent = fnCim(fn);
+    if (fn.titleFallback) b.append(srcMark());
+    const db = document.createElement("span"); db.className = "db"; db.dataset.fnDb = fn.key;
+    db.textContent = fn.planned ? T("fn.planned") : T("fn.fields", { n: fn.fields.length });
+    cs.append(b, db);
+    if (fn.description) { const le = document.createElement("small"); le.textContent = fn.description; cs.append(le); }
+    cs.addEventListener("click", () => funkcioValaszt(sec.module, fn.key, true));
+    lap.append(cs);
+  }
+  return lap;
+}
+
+/** Melyik funkció látszik: "" kezdőlap · "*" minden mező · kulcs. */
+function funkcioValaszt(modul, key, ment) {
+  const s = document.querySelector(`.mod[data-modul="${CSS.escape(modul)}"]`);
+  if (!s || !s.querySelector(".mod-fulek")) return;
+  s.dataset.fn = key;
+  for (const b of s.querySelectorAll(".ful")) b.setAttribute("aria-selected", String(b.dataset.fn === key));
+  const kezdo = s.querySelector(".mod-kezdo");
+  if (kezdo) kezdo.hidden = key !== "";
+  for (const row of s.querySelectorAll(".mezolista .field")) {
+    row.classList.toggle("fn-rejtett", key === "" || (key !== "*" && (row.dataset.fn ?? "egyeb") !== key));
+  }
+  for (const b of $$(`.nav-alsor[data-modul="${CSS.escape(modul)}"] .nav-al`)) {
+    b.toggleAttribute("aria-current", b.dataset.fn === key);
+  }
+  if (ment) { FN_AKTIV[modul] = key; tarolo("ogdoc.funkcio", JSON.stringify(FN_AKTIV)); }
+}
+function funkcioVisszaallit() {
+  for (const s of $$(".mod")) if (s.querySelector(".mod-fulek")) funkcioValaszt(s.dataset.modul, FN_AKTIV[s.dataset.modul] ?? "", false);
+}
+/** Kereséshez és a galériához: minden funkció minden mezője. */
+function funkcioMind() {
+  for (const s of $$(".mod")) if (s.querySelector(".mod-fulek")) funkcioValaszt(s.dataset.modul, "*", false);
+}
+window.OGDOC = { ...(window.OGDOC ?? {}), mindenMezo: funkcioMind, funkcio: funkcioValaszt };
 
 function renderForm(spec) {
   const root = $("#sections");
@@ -266,6 +353,8 @@ function renderForm(spec) {
   for (const sec of spec) root.append(modulSzakasz(sec));
   navigatorEpit(spec);
   nyitasVisszaallit(spec);
+  fnAllapotBetolt();
+  funkcioVisszaallit();
   feladatSorEpit();
   figyeloIndit();
 }
@@ -376,6 +465,8 @@ function modulNyit(kulcs, nyit, ment = true) {
   if (!s) return;
   s.toggleAttribute("open", nyit);
   s.querySelector(".mod-fej").setAttribute("aria-expanded", String(nyit));
+  const alsor = document.querySelector(`.nav-alsor[data-modul="${CSS.escape(kulcs)}"]`);
+  if (alsor) alsor.hidden = !nyit;
   if (ment) nyitasMent();
 }
 function nyitasVisszaallit(spec) {
@@ -422,6 +513,27 @@ function navigatorEpit(spec) {
       if (matchMedia("(max-width: 900px)").matches) fiokNyit(false);
     });
     tarto.append(b);
+    // A FA: nyitott modul alatt a fő funkciói — egy kattintás a funkcióra.
+    if (sec.functions) {
+      const al = document.createElement("div");
+      al.className = "nav-alsor"; al.dataset.modul = sec.module; al.hidden = true;
+      for (const fn of sec.functions) {
+        const ab = document.createElement("button");
+        ab.type = "button"; ab.className = "nav-al" + (fn.planned ? " tervezett" : ""); ab.dataset.fn = fn.key;
+        const nev = document.createElement("span"); nev.className = "nev"; nev.textContent = fnCim(fn);
+        const db = document.createElement("span"); db.className = "db"; db.dataset.fnDb = fn.key; db.textContent = String(fn.fields.length);
+        ab.append(nev, db);
+        ab.addEventListener("click", () => {
+          modulNyit(sec.module, true);
+          funkcioValaszt(sec.module, fn.key, true);
+          document.querySelector(`.mod[data-modul="${CSS.escape(sec.module)}"]`)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (matchMedia("(max-width: 900px)").matches) fiokNyit(false);
+        });
+        al.append(ab);
+      }
+      tarto.append(al);
+    }
   }
 }
 
@@ -459,8 +571,10 @@ function keres(q) {
     for (const b of $$(".nav-tetel.talalat")) b.classList.remove("talalat");
     ki.value = "";
     nyitasVisszaallit(SPEC);
+    funkcioVisszaallit();
     return;
   }
+  funkcioMind();
   let osszes = 0, modulok = 0;
   for (const m of $$(".mod")) {
     let db = 0;
@@ -587,6 +701,38 @@ function skalak(view) {
   }
 }
 
+/* ── ÁLLANDÓ KONTEXTUSFEJ ────────────────────────────────────────────────
+   Terhes-e, hányadik hét, terminus, többes — mindig látszik, mert minden
+   más ezen múlik. A címkék a regiszterből (FIELD_BY_ID), az értékek a
+   nézetből; a felület csak formáz. Ha nincs kontextus, azt mondja ki. */
+const KONTEXTUS_MEZOK = ["ctx.pregnant", "ctx.ga", "ctx.edd", "ctx.lmp", "ctx.multiple", "ctx.encounter"];
+function kontextusKiir(view) {
+  const csik = $("#kontextusCsik");
+  if (!csik) return;
+  const byId = new Map(view.values.map((v) => [v.id, v]));
+  csik.textContent = "";
+  const cim = document.createElement("span"); cim.className = "szemcsik"; cim.textContent = T("ctx.strip");
+  csik.append(cim);
+  let van = 0;
+  for (const id of KONTEXTUS_MEZOK) {
+    const f = FIELD_BY_ID.get(id), v = byId.get(id);
+    if (!f || !v || v.value == null || v.value === "") continue;
+    let ertek;
+    if (id === "ctx.ga" && typeof v.value === "number") {
+      const w = Math.floor(v.value), d = Math.round((v.value - w) * 7);
+      ertek = T("ctx.weeksDays", { w, d: d === 7 ? 6 : d });
+    } else if (f.options) {
+      ertek = f.options.find((o) => String(o.code) === String(v.value))?.label ?? String(v.value);
+    } else ertek = String(v.value).slice(0, 16).replace("T", " ");
+    const t = document.createElement("span"); t.className = "ktx";
+    const l = document.createElement("span"); l.className = "ktx-cim"; l.textContent = f.label;
+    const e = document.createElement("b"); e.textContent = ertek;
+    t.append(l, e); csik.append(t); van++;
+  }
+  if (!van) { const u = document.createElement("span"); u.className = "ktx-ures"; u.textContent = T("ctx.empty"); csik.append(u); }
+  csik.hidden = false;
+}
+
 /** Látható haladás: kitöltött / látható / összes. A látható a click-open
  *  lánc után értendő — a rejtett mezőt nem várja senkitől. */
 function haladKiir(view) {
@@ -652,6 +798,26 @@ function paint(view) {
       osszes++;
       if (byId.has(row.dataset.id)) kitoltve++;
     }
+    // Funkciónként is: a csempe, a fül és a navigátor alsora ugyanazt mondja.
+    if (m.querySelector(".mod-fulek")) {
+      const fnDb = new Map();
+      for (const row of m.querySelectorAll(".mezolista .field")) {
+        if (row.hidden) continue;
+        const k = row.dataset.fn ?? "egyeb";
+        const x = fnDb.get(k) ?? { o: 0, k: 0 };
+        x.o++; if (byId.has(row.dataset.id)) x.k++;
+        fnDb.set(k, x);
+      }
+      for (const el of document.querySelectorAll(`[data-fn-db]`)) {
+        if (!m.contains(el) && el.closest(".nav-alsor")?.dataset.modul !== m.dataset.modul) continue;
+        const x = fnDb.get(el.dataset.fnDb);
+        if (!x) continue;
+        el.textContent = el.classList.contains("ful-db") || el.closest(".nav-al")
+          ? (x.k ? `${x.k}/${x.o}` : String(x.o))
+          : (x.k ? T("mod.filled", { n: x.k, m: x.o }) : T("fn.fields", { n: x.o }));
+        el.classList.toggle("van", x.k > 0);
+      }
+    }
     const db = m.querySelector(".mod-db");
     db.textContent = kitoltve ? T("mod.filled", { n: kitoltve, m: osszes }) : T("mod.fields", { m: osszes });
     db.classList.toggle("van", kitoltve > 0);
@@ -661,6 +827,7 @@ function paint(view) {
 
   haladKiir(view);
   skalak(view);
+  kontextusKiir(view);
 
   const e = view.effort;
   fillNodes($("#effort"), T("effort.summary"),
@@ -1049,6 +1216,7 @@ async function loadAll() {
   const w = $("#langWarn"), c = I18N.coverage;
   if (c && !c.usable) { w.textContent = c.why; w.hidden = false; } else w.hidden = true;
   nyelvLefedettseg();
+  surusegAllit(document.documentElement.dataset.suruseg !== "tagas", false);
   FELADATOK = await api(q("/api/feladatprofilok")).catch(() => ({ profilok: [], alap: {} }));
   SPEC = await api(q("/api/formspec"));
   renderForm(SPEC);
@@ -1081,6 +1249,16 @@ new ResizeObserver(([e]) => {
   const h = e.borderBoxSize?.[0]?.blockSize ?? e.target.getBoundingClientRect().height;
   document.documentElement.style.setProperty("--sav-h", `${Math.ceil(h)}px`);
 }).observe($(".sav"));
+
+/* ── SŰRŰSÉG — tömör az alap: helyet spórol, a vizit gyorsabb ─────────── */
+function surusegAllit(tomor, ment) {
+  document.documentElement.dataset.suruseg = tomor ? "tomor" : "tagas";
+  const b = $("#suruseg");
+  if (b) { b.setAttribute("aria-pressed", String(tomor)); b.textContent = tomor ? T("density.compact") : T("density.roomy"); }
+  if (ment) tarolo("ogdoc.suruseg", tomor ? "tomor" : "tagas");
+}
+surusegAllit(tarolo("ogdoc.suruseg") !== "tagas", false);
+$("#suruseg")?.addEventListener("click", () => surusegAllit(document.documentElement.dataset.suruseg !== "tomor", true));
 
 /* ── VEZÉRLŐK ─────────────────────────────────────────────────────────── */
 $("#navToggle").addEventListener("click", () => fiokNyit(!$("#navigator").hasAttribute("data-nyitva")));

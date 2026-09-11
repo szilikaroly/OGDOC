@@ -48,6 +48,7 @@ import { coverage, LANGS, SOURCE_LANG, UI } from "../core/i18n.ts";
 import type { Lang } from "../core/types.ts";
 import { docFor, formSpec } from "./api.ts";
 import { loadModulcimek } from "../core/ui/modulcimek.ts";
+import { loadFunkciok } from "../core/ui/funkciok.ts";
 import { alapProfil, feladatNezet, loadFeladatok } from "../core/ui/feladat.ts";
 import { loadCsoportok } from "../core/auth/csoport.ts";
 import {
@@ -103,6 +104,8 @@ const CASE_ID = process.env.OGDOC_CASE ?? "eset-demo";
 const docs = loadDocuments(join(ROOT, "registry", "documents", "core.json"));
 // A MODULCÍMEK ADATBÓL JÖNNEK. A felület eddig a nyers kulcsot írta ki.
 const modulcimek = loadModulcimek(join(ROOT, "registry", "felulet", "modulcimek.json"));
+// A FUNKCIÓ ADAT: egy modul kezdőlapjának fő funkciói, és a virtuális szakaszok.
+const funkciok = loadFunkciok(join(ROOT, "registry", "felulet", "funkciok.json"));
 // A FELADATPROFIL ADAT: mely modulok nyílnak egy feladathoz. Nem jogosultság.
 const feladatok = loadFeladatok(join(ROOT, "registry", "felulet", "feladatprofilok.json"));
 const csoportKeszlet = loadCsoportok(join(ROOT, "registry", "auth", "csoportok.json"));
@@ -216,7 +219,7 @@ const server = createServer(async (req, res) => {
   try {
     /* ── Cselekvő nélkül is kiszolgálható: a séma, nem az adat ──────── */
 
-    if (path === "/api/formspec") return json(res, 200, formSpec(reg, lang, modulcimek));
+    if (path === "/api/formspec") return json(res, 200, formSpec(reg, lang, modulcimek, funkciok));
 
     /**
      * A KAPU ÁLLAPOTA — hitelesítés nélkül is olvasható.

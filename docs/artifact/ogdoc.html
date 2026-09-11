@@ -376,8 +376,8 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <p class="lede" style="margin-top:1rem"><strong>A megnevezett fejlesztési blokkoló — a hitelesítés — elhárult.</strong> A cselekvő kilétét már nem egy ellenőrizetlen kérésfejléc állítja: jelszavas belépés, munkamenet-süti, és a jogosultság minden kérésnél a beosztásból számolódik újra. Ebből viszont <em>nem következik</em>, hogy a rendszer éles üzemre kész — és a különbséget kimondani fontosabb, mint elfedni.</p>
     <div class="meta">
       <span class="chip"><b data-szam="modul">37</b> modul kidolgozva</span>
-      <span class="chip"><b data-szam="valtozo">905</b> változó a regiszterben</span>
-      <span class="chip"><b data-szam="teszt">1 961</b> teszt · 0 hiba</span>
+      <span class="chip"><b data-szam="valtozo">906</b> változó a regiszterben</span>
+      <span class="chip"><b data-szam="teszt">1969</b> teszt · 0 hiba</span>
       <span class="chip"><b>18/18</b> lépés gépi fele kész</span>
       <span class="chip"><b>1/5</b> éles feltétel áll</span>
       <span class="chip"><b data-szam="blokkolo">7</b> blokkoló hiány</span>
@@ -526,13 +526,13 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <div class="sources">
       <div class="src" style="border-top:3px solid var(--accent)">
         <h4>Változóregiszter</h4>
-        <div class="n" data-szam="valtozo">905</div><div class="u">definiált változó · <span data-szam="regiszterFajl">134</span> regiszterfájl</div>
+        <div class="n" data-szam="valtozo">906</div><div class="u">definiált változó · <span data-szam="regiszterFajl">135</span> regiszterfájl</div>
         <p>Ebből épül az űrlap  a dokumentáció  a validáció  a levezetési gráf  az export
         és a teszt. <strong>Egy mező sincs kézzel megírva.</strong></p>
       </div>
       <div class="src" style="border-top:3px solid var(--ok)">
         <h4>Tesztek</h4>
-        <div class="n" data-szam="teszt">1 961</div><div class="u">teszt · 0 hiba · <span data-szam="tesztFajl">85</span> fájl</div>
+        <div class="n" data-szam="teszt">1969</div><div class="u">teszt · 0 hiba · <span data-szam="tesztFajl">86</span> fájl</div>
         <p>Nem lefedettséget mérünk  hanem <em>szabályokat</em>: a legtöbb teszt egy
         hibát ír be  és azt bizonyítja  hogy a rendszer elbukik rajta.</p>
       </div>
@@ -545,13 +545,13 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
       </div>
       <div class="src">
         <h4>A mag</h4>
-        <div class="n" data-szam="magSor">44 457</div><div class="u">sor · <span data-szam="magFajl">164</span> fájl · nulla futásidejű függőség</div>
+        <div class="n" data-szam="magSor">44707</div><div class="u">sor · <span data-szam="magFajl">165</span> fájl · nulla futásidejű függőség</div>
         <p>Node 22 natív TypeScript  build nélkül. A klinikai mag tiszta függvényekből
         áll  DOM és adatbázis nélkül tesztelhető.</p>
       </div>
       <div class="src">
         <h4>Dokumentáció</h4>
-        <div class="n" data-szam="doksiFajl">136</div><div class="u">dokumentum · <span data-szam="doksiSor">33488</span> sor</div>
+        <div class="n" data-szam="doksiFajl">136</div><div class="u">dokumentum · <span data-szam="doksiSor">33557</span> sor</div>
         <p>A generáltakat a <code>docs:check</code> ellenőrzi: ha valaki kézzel átírja 
         a build elbukik. Egy „generált” ígéret enélkül csak szándék.</p>
       </div>
@@ -1778,7 +1778,7 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
     <p class="wide">A webes réteget egy valódi böngésző (Chromium, Playwright) hajtotta
     végig, végig azon az úton, amit egy felhasználó bejár: betöltés, belépés, kötelező
     jelszócsere, megbízás adása az adminpanelen, adatbevitel, kilépés. Négy hiba került
-    elő (majd a harmadik körben három további), és <strong>egyikük sem adott hibaüzenetet</strong>: a kiszolgáló HTTP 200-at
+    elő (majd a harmadik körben három, a negyedikben két további), és <strong>egyikük sem adott hibaüzenetet</strong>: a kiszolgáló HTTP 200-at
     adott, a konzol tiszta volt, és 1935 egységteszt zöld.</p>
 
     <div class="rule-box">
@@ -1930,6 +1930,49 @@ dialog.sheet::backdrop{background:rgba(24,18,14,.42)}
       rendszergazdai megbízás az első a listában, és annak nincs profilja — a mellette
       lévő klinikai megbízás sosem szólalt volna meg. Az első <em>profillal rendelkező</em>
       megbízás dönt.</p>
+    </div>
+
+    <h3>A negyedik kör: fő funkciók, virtuális szakasz, állandó kontextusfej</h3>
+    <p class="wide">A minta egy bevált klinikai szoftvertől jött: állandó kontextusfej,
+    fa-navigátor, fülek a modulon belül, mezők két oszlopban. <strong>A mintát vettük át,
+    a tartalmat nem</strong> — zárt szoftverből mezőlista vagy szöveg nem kerül át; a
+    mezők a saját regiszterünkéi. Az elrendezés helyet spórol, és a vizitet követi, nem
+    a regiszter szerkezetét.</p>
+
+    <div class="mechs">
+      <div class="mech" style="--m:var(--accent)">
+        <div class="k">A funkció adat, nem kód</div>
+        <div class="d">12 szakasz · 68 funkció · egy mező egy helyen</div>
+        <p>Egy modul nyitáskor a <strong>fő funkcióit</strong> mutatja — a labor a
+        vérképet, a májat, az alvadást; a státusz a belszervit, a szülészetit —, és egy
+        funkcióra lépve csak annak mezői látszanak. A kétszeres hozzárendelés hiba; amit
+        egyetlen funkció sem fed, „Egyebek”.</p>
+      </div>
+      <div class="mech" style="--m:var(--rose)">
+        <div class="k">Nőgyógyászat: virtuális szakasz</div>
+        <div class="d">54 mező költözött — és onnan eltűnt, ahol volt</div>
+        <p>Manuális vizsgálat, ultrahang, kolposzkópia, kenetek, STI, koraterhesség,
+        szűrés, emlő, családtervezés — más-más regiszter-modul mezőiből, egy vizit köré.
+        A regiszter-modul (hol van <em>dokumentálva</em> a változó) és a felületi szakasz
+        (hol <em>találkozik</em> vele a klinikus) mostantól két különböző dolog.</p>
+      </div>
+      <div class="mech" style="--m:var(--accent)">
+        <div class="k">Állandó kontextusfej · tömör mód</div>
+        <div class="d">30 hét + 0 nap · 2026-11-20 · két oszlop</div>
+        <p>Terhes-e, hányadik hét, terminus — mindig látszik, mert minden más ezen múlik;
+        ha nincs kontextus, azt mondja ki. A tömör mód két oszlopba rendezi a mezőket,
+        az azonosító csak ráállva látszik. A feladatsor a navigátorba került: a feladat a
+        navigáció része.</p>
+      </div>
+    </div>
+
+    <div class="rule-box" style="border-left-color:var(--warn)">
+      <p class="t" style="color:var(--warn)">Amit a validátor azonnal talált: a funkció nem hazudhat modult</p>
+      <p>Nem virtuális szakasz funkciója csak a saját moduljának mezőit fedheti — és ez a
+      szabály két regiszter-következetlenséget hozott elő: a biometria (BPD, HC, AC, FL,
+      EFW) a <code>vizsgalatok</code> modulé, nem a képalkotásé; a jelen terhesség
+      praeeclampsiája a <code>hx</code>-é, nem a <code>hx.repro</code>-é. Egyik sem a
+      felületé: a regiszterben döntésre várnak, a funkciók leírásában ki vannak mondva.</p>
     </div>
 
     <h3>Amit a böngésző megerősített</h3>

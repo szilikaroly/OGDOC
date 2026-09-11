@@ -765,5 +765,48 @@
         "hu": "A terv romlandó: a 12. héten készült vizitrend a 32. hétre új rizikófaktorokkal szembesül. A felülvizsgálat dátuma nélkül nem tudható, hogy a terv aktuális-e vagy csak régi."
       }
     }
+  },
+  {
+    "id": "plan.family.intent",
+    "version": 1,
+    "status": "active",
+    "label": {
+      "hu": "Gyermekvállalási szándék",
+      "en": "Pregnancy intention"
+    },
+    "module": "plan",
+    "datatype": "coded",
+    "valueSet": [
+      {
+        "code": "pos",
+        "label_hu": "Szeretne gyermeket",
+        "label_en": "Wants a pregnancy"
+      },
+      {
+        "code": "neg",
+        "label_hu": "Nem szeretne — fogamzásgátlás",
+        "label_en": "Does not want — contraception"
+      },
+      {
+        "code": "unk",
+        "label_hu": "Nem rögzített",
+        "label_en": "Not recorded",
+        "flags": [
+          "unknown"
+        ]
+      }
+    ],
+    "cardinality": "series",
+    "documentation": {
+      "definition": {
+        "hu": "A nőgyógyászati vizit családtervezési kérdése: a beteg most gyermeket szeretne-e, vagy fogamzásgátlást kér."
+      },
+      "pitfalls": {
+        "hu": "A „nem rögzített” nem „nem szeretne”: a hiányzó válasz sehol nem „nem”. A válasz időhöz kötött — a következő viziten újra kérdezendő."
+      },
+      "whyItMatters": {
+        "hu": "Ez a válasz dönti el, hogy a vizit fogamzásgátlási vagy prekoncepcionális tanácsadásba fut — a két út gyógyszerelése és vizsgálati sora eltér."
+      }
+    }
   }
 ]

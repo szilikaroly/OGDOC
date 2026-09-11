@@ -1,0 +1,870 @@
+{
+ "megnevezes": "Funkciók — egy modul kezdőlapjának fő funkciói, és melyik mező melyikhez tartozik",
+ "note": "A FUNKCIÓ ADAT, NEM KÓD. Egy modul nyitáskor a fő funkcióit mutatja (kezdőlap), és a klinikus egy funkcióra lép: csak annak mezői látszanak. Ez az elrendezés helyet spórol és a vizitet követi, nem a regiszter szerkezetét.\n\nA `mezok` bejegyzés egy mezőazonosító vagy előtag: a(z) „x” bejegyzés az „x” mezőt ÉS az „x.*” mezőket fedi. Egy mező LEGFELJEBB EGY funkcióhoz tartozhat — a kétszeres hozzárendelés hiba, mert két helyen élne ugyanaz a mező. Amit a modul egyetlen funkciója sem fed, az az „Egyebek” alá kerül automatikusan.\n\nA VIRTUÁLIS SZAKASZ (virtualis: true) nem regiszter-modul: más modulok mezőit gyűjti egy klinikai vizit köré (pl. Nőgyógyászat: a státusz kolposzkópiája, a labor STI-tesztje, a képalkotás emlőlelete). Az áthelyezett mező a saját moduljából ELTŰNIK a felületen — egy mező egy helyen. A nem virtuális szakasz funkciója csak a saját moduljának mezőit fedheti.\n\nAz ELRENDEZÉS mintája (kezdőlap fő funkciókkal, fülek, állandó kontextusfej) egy bevált klinikai szoftverektől tanult minta; a TARTALOM — mezők, címkék, kódlisták — a saját regiszterünk. Zárt szoftverből mezőlista vagy szöveg nem kerül át.",
+ "szakaszok": [
+  {
+   "kulcs": "gyn",
+   "virtualis": true,
+   "funkciok": [
+    {
+     "kulcs": "manualis",
+     "cim": {
+      "hu": "Manuális vizsgálat",
+      "en": "Manual examination"
+     },
+     "mezok": [
+      "status.gyn.speculum",
+      "status.gyn.vulva",
+      "status.gyn.portio",
+      "status.gyn.fluor",
+      "status.gyn.ph",
+      "status.gyn.bimanual",
+      "status.gyn.uterus",
+      "status.gyn.adnex",
+      "status.gyn.cmt",
+      "status.gyn.douglas"
+     ]
+    },
+    {
+     "kulcs": "ultrahang",
+     "cim": {
+      "hu": "Ultrahang",
+      "en": "Ultrasound"
+     },
+     "mezok": [
+      "us.gyn",
+      "us.endometrium",
+      "us.ovary",
+      "us.myoma"
+     ]
+    },
+    {
+     "kulcs": "kolposzkopia",
+     "cim": {
+      "hu": "Kolposzkópia",
+      "en": "Colposcopy"
+     },
+     "mezok": [
+      "status.gyn.colposcopy"
+     ]
+    },
+    {
+     "kulcs": "kenetek",
+     "cim": {
+      "hu": "Kenetek",
+      "en": "Smears"
+     },
+     "mezok": [
+      "status.gyn.cytology",
+      "status.gyn.hpv"
+     ]
+    },
+    {
+     "kulcs": "sti",
+     "cim": {
+      "hu": "STI",
+      "en": "STI"
+     },
+     "mezok": [
+      "lab.chlamydia",
+      "lab.gonorrhoea",
+      "lab.swab.vaginal"
+     ],
+     "leiras": {
+      "hu": "Chlamydia, gonorrhoea, hüvelyi tenyésztés. A syphilis, HIV, HBsAg a labor fertőzés-szűrésében marad: a terhesgondozás is kéri."
+     }
+    },
+    {
+     "kulcs": "koraterhesseg",
+     "cim": {
+      "hu": "Koraterhesség",
+      "en": "Early pregnancy"
+     },
+     "mezok": [
+      "us.pregnancy.location",
+      "us.gs",
+      "us.ys",
+      "us.crl",
+      "us.fetal.viability",
+      "us.subchorionic",
+      "lab.hcg"
+     ]
+    },
+    {
+     "kulcs": "szures",
+     "cim": {
+      "hu": "Szűrővizsgálat",
+      "en": "Screening"
+     },
+     "mezok": [
+      "hx.gyn.cervix"
+     ]
+    },
+    {
+     "kulcs": "emloszures",
+     "cim": {
+      "hu": "Emlőszűrés",
+      "en": "Breast screening"
+     },
+     "mezok": [
+      "img.mammography",
+      "us.breast"
+     ]
+    },
+    {
+     "kulcs": "csaladtervezes",
+     "cim": {
+      "hu": "Családtervezés",
+      "en": "Family planning"
+     },
+     "mezok": [
+      "plan.family.intent",
+      "hx.repro.contraception"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "status",
+   "funkciok": [
+    {
+     "kulcs": "internal",
+     "cim": {
+      "hu": "Belszervi",
+      "en": "Internal"
+     },
+     "mezok": [
+      "status.internal"
+     ]
+    },
+    {
+     "kulcs": "obs",
+     "cim": {
+      "hu": "Szülészeti",
+      "en": "Obstetric"
+     },
+     "mezok": [
+      "status.obs"
+     ]
+    },
+    {
+     "kulcs": "cardio",
+     "cim": {
+      "hu": "Kardiológiai",
+      "en": "Cardiac"
+     },
+     "mezok": [
+      "status.cardio"
+     ]
+    },
+    {
+     "kulcs": "endo",
+     "cim": {
+      "hu": "Endokrin",
+      "en": "Endocrine"
+     },
+     "mezok": [
+      "status.endo"
+     ]
+    },
+    {
+     "kulcs": "fert",
+     "cim": {
+      "hu": "Fertilitás és pubertás",
+      "en": "Fertility and puberty"
+     },
+     "mezok": [
+      "status.fert"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "ekg",
+   "funkciok": [
+    {
+     "kulcs": "vegtagi",
+     "cim": {
+      "hu": "Végtagi elvezetések",
+      "en": "Limb leads"
+     },
+     "mezok": [
+      "ekg.i",
+      "ekg.ii",
+      "ekg.iii",
+      "ekg.avr",
+      "ekg.avl",
+      "ekg.avf"
+     ]
+    },
+    {
+     "kulcs": "mellkasi",
+     "cim": {
+      "hu": "Mellkasi elvezetések",
+      "en": "Chest leads"
+     },
+     "mezok": [
+      "ekg.v1",
+      "ekg.v2",
+      "ekg.v3",
+      "ekg.v4",
+      "ekg.v5",
+      "ekg.v6"
+     ]
+    },
+    {
+     "kulcs": "qt",
+     "cim": {
+      "hu": "QT és korrekció",
+      "en": "QT and correction"
+     },
+     "mezok": [
+      "ekg.qt",
+      "ekg.qtc"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "lab",
+   "funkciok": [
+    {
+     "kulcs": "verkep",
+     "cim": {
+      "hu": "Vérkép",
+      "en": "Blood count"
+     },
+     "mezok": [
+      "lab.hgb",
+      "lab.htc",
+      "lab.rbc",
+      "lab.mcv",
+      "lab.plt",
+      "lab.wbc",
+      "lab.ferritin"
+     ]
+    },
+    {
+     "kulcs": "alvadas",
+     "cim": {
+      "hu": "Alvadás",
+      "en": "Coagulation"
+     },
+     "mezok": [
+      "lab.inr",
+      "lab.aptt",
+      "lab.fibrinogen",
+      "lab.antithrombin",
+      "lab.dimer"
+     ]
+    },
+    {
+     "kulcs": "maj",
+     "cim": {
+      "hu": "Máj és epe",
+      "en": "Liver"
+     },
+     "mezok": [
+      "lab.alt",
+      "lab.ast",
+      "lab.alp",
+      "lab.bili",
+      "lab.bileAcids",
+      "lab.ldh"
+     ]
+    },
+    {
+     "kulcs": "vese",
+     "cim": {
+      "hu": "Vese és ionok",
+      "en": "Renal and electrolytes"
+     },
+     "mezok": [
+      "lab.cr",
+      "lab.egfr",
+      "lab.urea",
+      "lab.ua",
+      "lab.na",
+      "lab.k",
+      "lab.mg",
+      "lab.ca"
+     ]
+    },
+    {
+     "kulcs": "szenhidrat",
+     "cim": {
+      "hu": "Szénhidrát-anyagcsere",
+      "en": "Glucose metabolism"
+     },
+     "mezok": [
+      "lab.glucose",
+      "lab.ogtt",
+      "lab.hba1c"
+     ]
+    },
+    {
+     "kulcs": "endokrin",
+     "cim": {
+      "hu": "Endokrin",
+      "en": "Endocrine"
+     },
+     "mezok": [
+      "lab.tsh",
+      "lab.ft4",
+      "lab.ft3",
+      "lab.antitpo",
+      "lab.trak",
+      "lab.cortisol",
+      "lab.testosterone",
+      "lab.dheas",
+      "lab.17ohp",
+      "lab.lh",
+      "lab.fsh",
+      "lab.e2",
+      "lab.amh",
+      "lab.prl"
+     ]
+    },
+    {
+     "kulcs": "fertozes",
+     "cim": {
+      "hu": "Fertőzés-szűrés",
+      "en": "Infection screening"
+     },
+     "mezok": [
+      "lab.cmv",
+      "lab.rubella",
+      "lab.toxo",
+      "lab.hiv",
+      "lab.hbsag",
+      "lab.hcv",
+      "lab.syphilis",
+      "lab.gbs"
+     ]
+    },
+    {
+     "kulcs": "vizelet",
+     "cim": {
+      "hu": "Vizelet",
+      "en": "Urine"
+     },
+     "mezok": [
+      "lab.urine"
+     ]
+    },
+    {
+     "kulcs": "vercsoport",
+     "cim": {
+      "hu": "Vércsoport és ellenanyag",
+      "en": "Blood group and antibodies"
+     },
+     "mezok": [
+      "lab.bloodGroup",
+      "lab.antibodyScreen"
+     ]
+    },
+    {
+     "kulcs": "praeeclampsia",
+     "cim": {
+      "hu": "Praeeclampsia és szív",
+      "en": "Pre-eclampsia and cardiac"
+     },
+     "mezok": [
+      "lab.sflt1",
+      "lab.sflt",
+      "lab.plgf",
+      "lab.troponin",
+      "lab.ntprobnp"
+     ]
+    },
+    {
+     "kulcs": "gyulladas",
+     "cim": {
+      "hu": "Gyulladás és szepszis",
+      "en": "Inflammation and sepsis"
+     },
+     "mezok": [
+      "lab.crp",
+      "lab.procalcitonin",
+      "lab.lactate"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "imaging",
+   "funkciok": [
+    {
+     "kulcs": "elsotrimeszter",
+     "cim": {
+      "hu": "Első trimeszter",
+      "en": "First trimester"
+     },
+     "mezok": [
+      "us.nt",
+      "us.nasalBone"
+     ]
+    },
+    {
+     "kulcs": "doppler",
+     "cim": {
+      "hu": "Doppler",
+      "en": "Doppler"
+     },
+     "mezok": [
+      "us.ua",
+      "us.mca",
+      "us.uta",
+      "us.dv",
+      "us.cpr",
+      "us.tricuspid"
+     ]
+    },
+    {
+     "kulcs": "magzatviz",
+     "cim": {
+      "hu": "Magzatvíz",
+      "en": "Amniotic fluid"
+     },
+     "mezok": [
+      "us.afi",
+      "us.sdp"
+     ]
+    },
+    {
+     "kulcs": "placenta",
+     "cim": {
+      "hu": "Placenta és cervix",
+      "en": "Placenta and cervix"
+     },
+     "mezok": [
+      "us.placenta",
+      "us.cervicalLength"
+     ]
+    },
+    {
+     "kulcs": "magzat",
+     "cim": {
+      "hu": "Magzat",
+      "en": "Fetus"
+     },
+     "mezok": [
+      "us.fetal.sex"
+     ]
+    },
+    {
+     "kulcs": "anyai",
+     "cim": {
+      "hu": "Anyai ultrahang",
+      "en": "Maternal ultrasound"
+     },
+     "mezok": [
+      "us.cardiac",
+      "us.ivc",
+      "us.lung",
+      "us.fast"
+     ]
+    },
+    {
+     "kulcs": "ctg",
+     "cim": {
+      "hu": "CTG",
+      "en": "CTG"
+     },
+     "mezok": [
+      "ctg"
+     ]
+    },
+    {
+     "kulcs": "rtg",
+     "cim": {
+      "hu": "Röntgen, MR, HSG",
+      "en": "X-ray, MRI, HSG"
+     },
+     "mezok": [
+      "img.alternativeConsidered",
+      "img.contrast",
+      "img.doseEstimate",
+      "img.fetalDoseEstimate",
+      "img.hsg",
+      "img.indication",
+      "img.modality",
+      "img.narrative",
+      "img.pregnancyStatusAtExam",
+      "img.radiationJustified",
+      "img.result"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "op",
+   "funkciok": [
+    {
+     "kulcs": "pre",
+     "cim": {
+      "hu": "Műtét előtt",
+      "en": "Pre-operative"
+     },
+     "mezok": [
+      "op.pre"
+     ]
+    },
+    {
+     "kulcs": "who",
+     "cim": {
+      "hu": "WHO ellenőrzőlista",
+      "en": "WHO checklist"
+     },
+     "mezok": [
+      "op.who"
+     ]
+    },
+    {
+     "kulcs": "intra",
+     "cim": {
+      "hu": "Műtét alatt",
+      "en": "Intra-operative"
+     },
+     "mezok": [
+      "op.intra"
+     ]
+    },
+    {
+     "kulcs": "cs",
+     "cim": {
+      "hu": "Császármetszés",
+      "en": "Caesarean"
+     },
+     "mezok": [
+      "op.cs"
+     ]
+    },
+    {
+     "kulcs": "post",
+     "cim": {
+      "hu": "Műtét után",
+      "en": "Post-operative"
+     },
+     "mezok": [
+      "op.post"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "psy",
+   "funkciok": [
+    {
+     "kulcs": "whooley",
+     "cim": {
+      "hu": "Whooley",
+      "en": "Whooley"
+     },
+     "mezok": [
+      "psy.whooley"
+     ]
+    },
+    {
+     "kulcs": "epds",
+     "cim": {
+      "hu": "EPDS",
+      "en": "EPDS"
+     },
+     "mezok": [
+      "psy.epds"
+     ]
+    },
+    {
+     "kulcs": "phq9",
+     "cim": {
+      "hu": "PHQ-9",
+      "en": "PHQ-9"
+     },
+     "mezok": [
+      "psy.phq9"
+     ]
+    },
+    {
+     "kulcs": "mspss",
+     "cim": {
+      "hu": "MSPSS",
+      "en": "MSPSS"
+     },
+     "mezok": [
+      "psy.mspss"
+     ]
+    },
+    {
+     "kulcs": "mibs",
+     "cim": {
+      "hu": "MIBS",
+      "en": "MIBS"
+     },
+     "mezok": [
+      "psy.mibs"
+     ]
+    },
+    {
+     "kulcs": "ppp",
+     "cim": {
+      "hu": "Postpartum pszichózis",
+      "en": "Postpartum psychosis"
+     },
+     "mezok": [
+      "psy.ppp"
+     ]
+    },
+    {
+     "kulcs": "social",
+     "cim": {
+      "hu": "Szociális helyzet",
+      "en": "Social situation"
+     },
+     "mezok": [
+      "psy.social"
+     ]
+    },
+    {
+     "kulcs": "violence",
+     "cim": {
+      "hu": "Bántalmazás",
+      "en": "Violence"
+     },
+     "mezok": [
+      "psy.violence"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "prom",
+   "funkciok": [
+    {
+     "kulcs": "eq5d",
+     "cim": {
+      "hu": "EQ-5D",
+      "en": "EQ-5D"
+     },
+     "mezok": [
+      "prom.eq5d"
+     ]
+    },
+    {
+     "kulcs": "whodas",
+     "cim": {
+      "hu": "WHODAS",
+      "en": "WHODAS"
+     },
+     "mezok": [
+      "prom.whodas"
+     ]
+    },
+    {
+     "kulcs": "bses",
+     "cim": {
+      "hu": "BSES",
+      "en": "BSES"
+     },
+     "mezok": [
+      "prom.bses"
+     ]
+    },
+    {
+     "kulcs": "bssr",
+     "cim": {
+      "hu": "BSS-R",
+      "en": "BSS-R"
+     },
+     "mezok": [
+      "prom.bssr"
+     ]
+    },
+    {
+     "kulcs": "sat",
+     "cim": {
+      "hu": "Elégedettség",
+      "en": "Satisfaction"
+     },
+     "mezok": [
+      "prom.sat"
+     ]
+    },
+    {
+     "kulcs": "resp",
+     "cim": {
+      "hu": "Tisztelet",
+      "en": "Respect"
+     },
+     "mezok": [
+      "prom.resp"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "hx.repro",
+   "funkciok": [
+    {
+     "kulcs": "prevBirth",
+     "cim": {
+      "hu": "Korábbi szülések",
+      "en": "Previous births"
+     },
+     "mezok": [
+      "hx.repro.prevBirth"
+     ]
+    },
+    {
+     "kulcs": "loss",
+     "cim": {
+      "hu": "Terhességvesztés",
+      "en": "Pregnancy loss"
+     },
+     "mezok": [
+      "hx.repro.loss"
+     ]
+    },
+    {
+     "kulcs": "currentPregnancy",
+     "cim": {
+      "hu": "Jelen terhesség",
+      "en": "Current pregnancy"
+     },
+     "mezok": [
+      "hx.repro.currentPregnancy.accreta",
+      "hx.repro.currentPregnancy.previa"
+     ],
+     "leiras": {
+      "hu": "A hx.repro.currentPregnancy.preeclampsia a regiszterben a „hx” modulé — ott marad; a funkció nem hazudhat modult."
+     }
+    }
+   ]
+  },
+  {
+   "kulcs": "diet",
+   "funkciok": [
+    {
+     "kulcs": "supp",
+     "cim": {
+      "hu": "Étrend-kiegészítők",
+      "en": "Supplements"
+     },
+     "mezok": [
+      "diet.supp"
+     ]
+    },
+    {
+     "kulcs": "carb",
+     "cim": {
+      "hu": "Szénhidrát-elosztás",
+      "en": "Carbohydrate distribution"
+     },
+     "mezok": [
+      "diet.carb"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "plan",
+   "funkciok": [
+    {
+     "kulcs": "delivery",
+     "cim": {
+      "hu": "Szülés módja",
+      "en": "Mode of birth"
+     },
+     "mezok": [
+      "plan.delivery",
+      "plan.institution"
+     ]
+    },
+    {
+     "kulcs": "birth",
+     "cim": {
+      "hu": "Szülési terv",
+      "en": "Birth plan"
+     },
+     "mezok": [
+      "plan.birth"
+     ]
+    },
+    {
+     "kulcs": "bf",
+     "cim": {
+      "hu": "Szoptatás",
+      "en": "Breastfeeding"
+     },
+     "mezok": [
+      "plan.bf"
+     ]
+    },
+    {
+     "kulcs": "contraception",
+     "cim": {
+      "hu": "Szülés utáni fogamzásgátlás",
+      "en": "Postpartum contraception"
+     },
+     "mezok": [
+      "plan.contraception"
+     ]
+    },
+    {
+     "kulcs": "consult",
+     "cim": {
+      "hu": "Konzílium",
+      "en": "Consultation"
+     },
+     "mezok": [
+      "plan.consult"
+     ]
+    },
+    {
+     "kulcs": "emergency",
+     "cim": {
+      "hu": "Sürgősségi tájékoztatás",
+      "en": "Emergency information"
+     },
+     "mezok": [
+      "plan.emergency"
+     ]
+    },
+    {
+     "kulcs": "nextVisit",
+     "cim": {
+      "hu": "Következő vizit",
+      "en": "Next visit"
+     },
+     "mezok": [
+      "plan.nextVisit"
+     ]
+    }
+   ]
+  },
+  {
+   "kulcs": "vizsgalatok",
+   "funkciok": [
+    {
+     "kulcs": "biometria",
+     "cim": {
+      "hu": "Biometria",
+      "en": "Biometry"
+     },
+     "mezok": [
+      "us.bpd",
+      "us.hc",
+      "us.ac",
+      "us.fl",
+      "us.ofd",
+      "us.efw",
+      "us.ga"
+     ],
+     "leiras": {
+      "hu": "A biometria a regiszterben a „vizsgalatok” modulé, nem a képalkotásé — a gesztációskor-levezetések miatt. Ezért itt van, és nem a képalkotás alatt: a funkció nem hazudhat modult."
+     }
+    }
+   ]
+  }
+ ]
+}

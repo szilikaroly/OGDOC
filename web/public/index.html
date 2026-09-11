@@ -61,11 +61,24 @@
 
 <main hidden>
   <nav id="navigator" class="navigator" aria-label="Modulok">
+    <!-- A FELADAT DÖNTI EL, MI VAN NYITVA ÉS ELÖL — a jogosultság azt, mi
+         látható. A profilok a regiszterből jönnek (/api/feladatprofilok);
+         ez a fájl egyetlen feladatnevet sem tud. A navigátorban van, mert a
+         feladat a navigáció része, nem az űrlapé. -->
+    <div class="feladatsor" id="feladatSor" hidden>
+      <div class="feladat-fej">
+        <span class="szemcsik" data-i18n="feladat.title">Feladat</span>
+        <span class="feladat-db" id="feladatDb"></span>
+      </div>
+      <div class="chipsor" id="feladatLista" role="group" aria-label="Feladat"></div>
+      <p class="hint" id="feladatLeiras" hidden></p>
+    </div>
     <div class="nav-fej">
       <h2 data-i18n="nav.title">Modulok</h2>
       <div class="nav-gombok">
         <button id="mindNyit" type="button" class="apro" data-i18n="nav.expandAll">Mind kinyit</button>
         <button id="mindCsuk" type="button" class="apro" data-i18n="nav.collapseAll">Mind becsuk</button>
+        <button id="suruseg" type="button" class="apro" aria-pressed="true" data-i18n-title="density.explain"></button>
       </div>
     </div>
     <div class="eset-sor">
@@ -77,17 +90,9 @@
   </nav>
 
   <section id="form" class="fo" aria-label="Űrlap" data-i18n-label="form.title">
-    <!-- A FELADAT DÖNTI EL, MI VAN NYITVA ÉS ELÖL — a jogosultság azt, mi
-         látható. A profilok a regiszterből jönnek (/api/feladatprofilok);
-         ez a fájl egyetlen feladatnevet sem tud. -->
-    <div class="feladatsor" id="feladatSor" hidden>
-      <div class="feladat-fej">
-        <span class="szemcsik" data-i18n="feladat.title">Feladat</span>
-        <span class="feladat-db" id="feladatDb"></span>
-      </div>
-      <div class="chipsor" id="feladatLista" role="group" aria-label="Feladat"></div>
-      <p class="hint" id="feladatLeiras" hidden></p>
-    </div>
+    <!-- ÁLLANDÓ KONTEXTUSFEJ: terhes-e, hányadik hét, terminus — mindig
+         látszik, mert minden más ezen múlik (referenciák, küszöbök). -->
+    <div class="kontextus" id="kontextusCsik" hidden></div>
     <div class="halad" id="halad" hidden>
       <div class="halad-sav" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
         aria-labelledby="haladSzoveg"><span id="haladCsik"></span></div>

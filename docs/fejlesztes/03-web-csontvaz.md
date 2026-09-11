@@ -262,3 +262,71 @@ haladás                                               10 kitöltve · 778 láth
 390 px, sötét mód                                     rendben
 kezeletlen JS-kivétel                                 nincs
 ```
+
+## 9. A negyedik változat — fő funkciók, virtuális szakasz, állandó kontextusfej
+
+A minta egy bevált klinikai szoftvertől jött, három képernyőn: **állandó
+kontextusfej** (terhességi kor, terminus), **fa-navigátor** bal oldalt, **fülek a
+modulon belül**, a mezők két oszlopban. Ezt a mintát vettük át — a tartalmat nem:
+zárt szoftverből mezőlista, címke vagy szöveg nem kerül át; a mezők a saját
+regiszterünkéi. Az elrendezés helyet spórol, és a vizitet követi, nem a regiszter
+szerkezetét.
+
+### A funkció adat, nem kód
+
+`registry/felulet/funkciok.json` — 12 szakasz, 68 funkció. Egy modul nyitáskor a
+**fő funkcióit** mutatja (kezdőlap, csempék), és egy funkcióra lépve csak annak
+mezői látszanak; „Minden mező” a teljes lista. A `mezok` bejegyzés azonosító vagy
+előtag (`x` fedi `x`-et és `x.*`-ot). Két szabály, ami nem stílus:
+
+- **Egy mező egy helyen.** A kétszeres hozzárendelés hiba — két vezérlő ugyanarra a
+  mezőre két igazság volna. Amit egyetlen funkció sem fed, az automatikusan az
+  „Egyebek” alá kerül.
+- **A virtuális szakasz elviszi a mezőt.** A Nőgyógyászat (`gyn`, `virtualis: true`)
+  más modulok mezőit gyűjti a vizit köré — manuális vizsgálat, ultrahang,
+  kolposzkópia, kenetek, STI, koraterhesség, szűrés, emlő, családtervezés —, és
+  ahonnan elvitte (státusz, labor, képalkotás, előzmény, terv), ott a mező **eltűnik**.
+  54 mező költözött. A regiszter-modul (hol van *dokumentálva* a változó) és a
+  felületi szakasz (hol *találkozik* vele a klinikus) mostantól két különböző dolog.
+
+A validátor fogja: ismeretlen vagy elgépelt bejegyzést, kétszeres mezőt, mező
+nélküli funkciót (ha tervezett, mondja ki: `tervezett: true` — a kezdőlap akkor
+szaggatottan, hiányként mutatja), és azt, hogy nem virtuális szakasz funkciója csak
+a saját moduljának mezőit fedheti. Ez utóbbi azonnal talált: a biometria (BPD, HC,
+AC, FL, EFW) a regiszterben a `vizsgalatok` modulé, nem a képalkotásé; a jelen
+terhesség praeeclampsiája a `hx`-é, nem a `hx.repro`-é. A funkció nem hazudhat modult
+— a két következetlenség most ki van mondva a leírásban, és a regiszterben döntésre vár.
+
+A felületi szakaszok készlete (`szakaszKulcsok`) megy a modulcímek és a
+feladatprofilok validálásába: a kiürült `hx.gyn` nem szakasz, a `gyn` az. Új mező:
+`plan.family.intent` — a családtervezés „poz/neg” kérdése (gyermeket szeretne /
+fogamzásgátlást kér / nem rögzített — és a nem rögzített nem „nem”). Új profil:
+**Nőgyógyászati vizit.**
+
+### Amit a felület kapott
+
+| | |
+|---|---|
+| **Feladatsor a navigátorban** | a feladat a navigáció része, nem az űrlapé |
+| **Kezdőlap** | csempék a fő funkciókkal, mezőszám és kitöltöttség; a tervezett szaggatott |
+| **Fülek** | ⌂ kezdőlap · funkciók · Minden mező; a fül, a csempe és a navigátor alsora ugyanazt a számot mondja |
+| **Fa-navigátor** | nyitott modul alatt a funkciói, egy kattintás a funkcióra |
+| **Állandó kontextusfej** | terhes-e, hét + nap, terminus, utolsó menses — a címkék a regiszterből; ha nincs kontextus, kimondja |
+| **Tömör mód** (alap) | két oszlop 42 rem tárolószélesség fölött, kisebb sorok, azonosító csak ráállva; „Tágas” egy gombbal |
+| **Keresés** | ideiglenesen minden funkció minden mezője; törléskor vissza a választott funkcióra |
+| **Galéria** | a generátor minden funkció minden mezőjét kéri (`window.OGDOC.mindenMezo`) |
+
+### Ellenőrzött viselkedés
+
+```
+feladatsor a nav#navigator-ban                        ✔
+kontextusfej üresen                                    „Nincs rögzített terhességi kontextus…"
+ctx.pregnant=pos, LMP 2026-02-13                       „Terhes-e Igen · 30 hét + 0 nap · 2026-11-20"
+Nőgyógyászati vizit → gyn kezdőlap                     9 csempe, 0 mező látszik, alsor nyitva, virtuális
+csempe: Kolposzkópia                                   fül és nav-alsor aktív, 1 mező (a lánc csukva)
+státuszban status.gyn.* mező                           0
+labor › Máj, ALT 95                                    csempe „1 / 5 kitöltve" · fül 1/5 · nav 1/5
+keresés „kolposz"                                      2 találat, gyn → minden mező; törlés → vissza
+tömör mód, 705 px tároló                               két oszlop
+kezeletlen JS-kivétel                                  nincs
+```

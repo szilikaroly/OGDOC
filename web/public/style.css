@@ -232,6 +232,64 @@ main {
 .chip .srclang { opacity: .85; }
 .feladatsor .hint { margin-top: .55rem; max-width: 70ch; }
 
+/* A feladatsor a navigátorban: a chipek egymás alatt is elférnek. */
+.navigator .feladatsor { margin: 0 0 .8rem; padding: .6rem .7rem .55rem; }
+.navigator .chip { font-size: .72rem; padding: .22rem .55rem; }
+
+/* ── ÁLLANDÓ KONTEXTUSFEJ ─────────────────────────────────────────────── */
+.kontextus { position: sticky; top: var(--sav-h); z-index: 10; display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: .25rem 1.1rem; margin: 0 0 .8rem; padding: .5rem .9rem; background: color-mix(in srgb, var(--lap) 94%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--vonal); border-radius: var(--r-2); }
+.ktx { display: inline-flex; align-items: baseline; gap: .4rem; font-size: .84rem; }
+.ktx-cim { color: var(--halvany); }
+.ktx b { font-family: var(--mono); font-weight: 600; font-size: .86rem; }
+.ktx-ures { font-size: .82rem; color: var(--watch); }
+
+/* ── FŐ FUNKCIÓK: kezdőlap, fülek, a navigátor alsora ─────────────────── */
+.mod-fulek { display: flex; flex-wrap: wrap; gap: .25rem; padding: .55rem 0 .4rem; border-bottom: 1px solid var(--vonal-2); }
+.ful { padding: .22rem .6rem; border: 1px solid transparent; border-radius: var(--r); background: none; font-size: .8rem;
+  color: var(--tinta-2); }
+.ful:hover { background: var(--lap-2); color: var(--tinta); border-color: transparent; }
+.ful[aria-selected="true"] { background: var(--kek-halk); color: var(--kek-tinta); border-color: var(--kek); font-weight: 600; }
+.ful-db { font-family: var(--mono); font-size: .7rem; color: var(--halvany); font-variant-numeric: tabular-nums; }
+.ful-db.van { color: var(--ok); }
+.ful.tervezett, .csempe.tervezett, .nav-al.tervezett { border-style: dashed; color: var(--halvany); }
+.ful-mind { margin-left: auto; color: var(--halvany); }
+.mod-kezdo { display: grid; grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr)); gap: .5rem; padding: .7rem 0 .5rem; }
+.csempe { display: grid; gap: .15rem; align-content: start; text-align: left; padding: .6rem .75rem; min-height: 4.2rem;
+  border: 1px solid var(--vonal); border-radius: var(--r-2); background: var(--lap-2); }
+.csempe:hover { background: var(--lap); border-color: var(--kek); color: inherit; }
+.csempe b { font-size: .92rem; font-weight: 600; }
+.csempe .db { font-family: var(--mono); font-size: .72rem; color: var(--halvany); }
+.csempe .db.van { color: var(--ok); }
+.csempe small { font-size: .74rem; color: var(--halvany); line-height: 1.35; }
+.field.fn-rejtett { display: none; }
+.mod[data-virtualis] .mod-kulcs { color: var(--rozsa); }
+.nav-alsor { margin: .05rem 0 .3rem; padding-left: .9rem; border-left: 2px solid var(--vonal-2); }
+.nav-al { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .5rem; width: 100%; padding: .2rem .5rem;
+  border: 0; border-radius: var(--r); background: none; text-align: left; font-size: .8rem; color: var(--halvany); }
+.nav-al:hover { background: var(--lap-2); color: var(--tinta); }
+.nav-al[aria-current] { color: var(--kek-tinta); font-weight: 600; }
+.nav-al .nev { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-al .db { font-family: var(--mono); font-size: .68rem; font-variant-numeric: tabular-nums; }
+.nav-al .db.van { color: var(--ok); }
+
+/* ── TÖMÖR MÓD — két oszlop, kisebb sorok: helyet spórol ──────────────── */
+[data-suruseg="tomor"] .mezolista { display: grid; grid-template-columns: 1fr; column-gap: 1.4rem; }
+@container (min-width: 42rem) {
+  [data-suruseg="tomor"] .mezolista { grid-template-columns: 1fr 1fr; }
+}
+[data-suruseg="tomor"] .field { grid-template-columns: minmax(0,1fr) 9.5rem; gap: .2rem .6rem; padding: .32rem 0; }
+[data-suruseg="tomor"] .label b { font-size: .88rem; }
+[data-suruseg="tomor"] .label .id { display: none; }
+[data-suruseg="tomor"] .field:hover .label .id, [data-suruseg="tomor"] .field:focus-within .label .id { display: block; }
+[data-suruseg="tomor"] input, [data-suruseg="tomor"] select { min-height: 2rem; padding: .3rem .5rem; }
+[data-suruseg="tomor"] .tag { font-size: .62rem; padding: 0 .3rem; }
+[data-suruseg="tomor"] .field.talalat, [data-suruseg="tomor"] .field.detail { margin-inline: 0; padding-inline: .4rem; }
+@container (max-width: 36rem) {
+  [data-suruseg="tomor"] .field { grid-template-columns: minmax(0,1fr); }
+}
+
 /* ── HALADÁS ──────────────────────────────────────────────────────────── */
 .halad { display: grid; gap: .3rem; margin: 0 0 .5rem; }
 .halad-sav { height: .32rem; border-radius: 999px; background: var(--lap-3); overflow: hidden; }
@@ -410,7 +468,8 @@ pre { white-space: pre-wrap; font: .8rem/1.5 var(--mono); margin: 0; max-height:
   main { display: block; padding: 0; }
   .mod { break-inside: avoid; border: 0; border-top: 2px solid #000; border-radius: 0; margin: 0 0 .6rem; }
   .mod .mezok { display: block !important; }
-  .mod-nyil, .label .id, .info, .feladatsor, .halad { display: none; }
+  .mod-nyil, .label .id, .info, .feladatsor, .halad, .mod-fulek, .mod-kezdo, .kontextus { display: none; }
+  .field.fn-rejtett { display: grid; }
   .skala-pont { box-shadow: none; }
   .field { break-inside: avoid; grid-template-columns: 1fr 12rem; }
   input, select { border: 0; border-bottom: 1px solid #999; border-radius: 0; background: none; }

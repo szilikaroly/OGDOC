@@ -31,7 +31,7 @@
     "hx.origin",
     "hx.repro",
     "hx.sys",
-    "hx.gyn",
+    "gyn",
     "hx.surg",
     "hx.family",
     "hx.life",
@@ -78,6 +78,36 @@
    ],
    "leiras": {
     "hu": "A napi állapot: vitális paraméterek, státusz, friss vizsgálatok, terv. A klinikusnak szóló javaslatok és a kalkulátorok elöl."
+   }
+  },
+  {
+   "id": "feladat.nogyogyaszat",
+   "cim": {
+    "hu": "Nőgyógyászati vizit",
+    "en": "Gynaecology visit"
+   },
+   "csoportok": [],
+   "modulok": [
+    "ctx",
+    "complaints",
+    "gyn",
+    "hx.repro",
+    "hx.sys",
+    "allergy",
+    "rx",
+    "lab",
+    "imaging",
+    "onc",
+    "pedgyn",
+    "plan"
+   ],
+   "seged": [
+    "calcs",
+    "adviceBox",
+    "patientBox"
+   ],
+   "leiras": {
+    "hu": "A nőgyógyászati járóbeteg-vizit: a Nőgyógyászat szakasz kezdőlapja a fő funkciókkal, mellette a panasz, az előzmény és a labor."
    }
   },
   {
@@ -208,7 +238,8 @@
     "pedgyn",
     "hx.sys",
     "lab",
-    "imaging"
+    "imaging",
+    "gyn"
    ],
    "seged": [
     "adviceBox",

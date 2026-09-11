@@ -8,14 +8,14 @@
 
 | | |
 |---|---:|
-| Regiszterbeli változó | **905** |
+| Regiszterbeli változó | **906** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1961** |
-| Mag: fájl / sor | 164 / 44457 |
-| Teszt: fájl / sor | 85 / 21511 |
+| Teszt | **1969** |
+| Mag: fájl / sor | 165 / 44707 |
+| Teszt: fájl / sor | 86 / 21628 |
 | Dokumentum | 136 |
-| Regiszterfájl | 141 |
+| Regiszterfájl | 142 |
 
 ## A forrásrendszerek felülettérképe
 
@@ -102,7 +102,7 @@ Ami az átvételt megállítja, tételenként:
 
 | Egység | Fájl | Sor |
 |---|---:|---:|
-| `core/ui/` | 9 | 2531 |
+| `core/ui/` | 10 | 2768 |
 | `core/calc/` | 4 | 2451 |
 | `core/interop/` | 6 | 2086 |
 | `core/us/` | 6 | 2060 |
