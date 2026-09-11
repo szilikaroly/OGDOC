@@ -47,6 +47,7 @@ import { loadDocuments } from "../core/docs/registry.ts";
 import { coverage, LANGS, SOURCE_LANG, UI } from "../core/i18n.ts";
 import type { Lang } from "../core/types.ts";
 import { docFor, formSpec } from "./api.ts";
+import { loadModulcimek } from "../core/ui/modulcimek.ts";
 import {
   archiveHealth, readCase, torlesElonezet, torlesVegrehajtas,
   visszavonasElonezet, writeValue,
@@ -98,6 +99,8 @@ if (issues.length) {
 const CASE_ID = process.env.OGDOC_CASE ?? "eset-demo";
 
 const docs = loadDocuments(join(ROOT, "registry", "documents", "core.json"));
+// A MODULCÍMEK ADATBÓL JÖNNEK. A felület eddig a nyers kulcsot írta ki.
+const modulcimek = loadModulcimek(join(ROOT, "registry", "felulet", "modulcimek.json"));
 
 /* ── HITELESÍTÉS ────────────────────────────────────────────────────── */
 
@@ -208,7 +211,7 @@ const server = createServer(async (req, res) => {
   try {
     /* ── Cselekvő nélkül is kiszolgálható: a séma, nem az adat ──────── */
 
-    if (path === "/api/formspec") return json(res, 200, formSpec(reg, lang));
+    if (path === "/api/formspec") return json(res, 200, formSpec(reg, lang, modulcimek));
 
     /**
      * A KAPU ÁLLAPOTA — hitelesítés nélkül is olvasható.
@@ -421,7 +424,7 @@ const server = createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`OGDOC webes réteg  →  http://localhost:${PORT}`);
-  console.log(`${reg.all().length} változó, ${formSpec(reg).length} szekció.`);
+  console.log(`${reg.all().length} változó, ${formSpec(reg, "hu", modulcimek).length} szekció.`);
   console.log(`Eset: ${CASE_ID} · adatkönyvtár: ${DATA}`);
   console.log("");
   console.log("Perzisztencia, jogosultság és auditnapló: ÉLES (core/store).");

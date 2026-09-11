@@ -46,7 +46,8 @@ ez a tulajdonos dolga, nem a build-é.
 ## A modulképernyő-galéria
 
 `tools/gen-modulkepernyok.mjs` + `tools/modulkepernyok.sablon.html` — végigmegy a
-futó felületen, és mind a 46 modulblokk tetejéről rögzít egy képernyőt.
+futó felületen, minden modult kinyit, és mind a 46 modulszakasz tetejéről rögzít
+egy képernyőt.
 
 ```bash
 OGDOC_SYNTHETIC=1 npm run web                  # egyik ablakban
@@ -55,14 +56,18 @@ NODE_PATH=$(npm root -g) node tools/gen-modulkepernyok.mjs --jelszo "…"
 
 **A kimenet (`modulkepernyok.html`, ~6,5 MB) gitignore-olt, a generátor nincs.**
 A galéria minden futásnál más: a felület a regiszterből generálódik, tehát egy új
-változó új mezőt tesz a lapra és eltolja alatta az összeset. Egy befagyasztott
-másolat két hét múlva már nem azt mutatná, ami fut — és épp az a hibacsalád, ami
-ellen ez a rendszer épül.
+változó új mezőt tesz a lapra. Egy befagyasztott másolat két hét múlva már nem azt
+mutatná, ami fut — és épp az a hibacsalád, ami ellen ez a rendszer épül.
+
+**A modulcím a felületről jön, mert a felület a regiszterből kapja.** Az első
+változat saját névtáblát hordozott, mert a felület a nyers kulcsot írta ki. Most a
+`registry/felulet/modulcimek.json` a forrás, a formspec szolgálja ki, a felület
+kirajzolja — és a galéria a `.mod-cim` elemből olvassa, onnan, ahonnan a felhasználó.
+Egy második névtábla két igazság volna.
 
 A generátor **Playwrightot kíván**, és ez az egyetlen ilyen eszköz a projektben.
 Ezért `.mjs` és nem `.ts`: a klinikai mag és a validálás továbbra is futásidejű
-függőség nélkül fut, és ez a fájl nem mossa el azt a határt. Playwright nélkül ez
-az egy eszköz nem fut le; minden más igen.
+függőség nélkül fut, és ez a fájl nem mossa el azt a határt.
 
 ### Amit a galéria készítése felszínre hozott
 

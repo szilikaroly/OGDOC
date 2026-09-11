@@ -1,0 +1,610 @@
+{
+ "megnevezes": "Modulcímek — a modulkulcsok megjelenítendő neve és csoportja",
+ "note": "A FELÜLET A MODULKULCSOT ÍRTA KI FEJLÉCKÉNT: `hx.repro`, `pedgyn`, `exam.obs`. Nem hiba volt — egy fejlesztői csontvázban a kulcs a pontosabb azonosító —, de klinikus elé kerülve 46 hiányzó név. A név ADAT, NEM KÓD: itt van, nem a HTML-ben, és ugyanaz a fájl szolgálja ki a magyar és az angol felületet. A `pick()` jelöli, ha a kért nyelven nincs meg.\n\nA VALIDÁLÁS KÉT IRÁNYBAN ELLENŐRIZ: minden regiszterbeli modulkulcsnak kell cím (különben a felület visszaesik a nyers kulcsra, jelölve), és minden címnek kell létező modulkulcs (különben elárvult sor marad, ami egy átnevezés után hazudik).\n\nA CSOPORT a navigátor szerkezete, nem klinikai besorolás: a 46 blokk egyetlen listája görgethetetlen, tizenkét csoportban átlátható. A sorrend a betegút sorrendje — ki a beteg, felvétel, előzmény, státusz, vizsgálatok… lezárás —, nem az ábécé.",
+ "csoportok": [
+  {
+   "id": "cselekvo",
+   "cim": {
+    "hu": "Ki a beteg",
+    "en": "Who the patient is"
+   },
+   "sorrend": 1
+  },
+  {
+   "id": "felvetel",
+   "cim": {
+    "hu": "Felvétel",
+    "en": "Admission"
+   },
+   "sorrend": 2
+  },
+  {
+   "id": "elozmeny",
+   "cim": {
+    "hu": "Előzmény",
+    "en": "History"
+   },
+   "sorrend": 3
+  },
+  {
+   "id": "statusz",
+   "cim": {
+    "hu": "Státusz",
+    "en": "Status"
+   },
+   "sorrend": 4
+  },
+  {
+   "id": "vizsgalat",
+   "cim": {
+    "hu": "Vizsgálatok",
+    "en": "Investigations"
+   },
+   "sorrend": 5
+  },
+  {
+   "id": "belgyogyaszat",
+   "cim": {
+    "hu": "Belgyógyászat",
+    "en": "Internal medicine"
+   },
+   "sorrend": 6
+  },
+  {
+   "id": "szuleszet",
+   "cim": {
+    "hu": "Szülészet",
+    "en": "Obstetrics"
+   },
+   "sorrend": 7
+  },
+  {
+   "id": "szakterulet",
+   "cim": {
+    "hu": "Szakterületek",
+    "en": "Specialties"
+   },
+   "sorrend": 8
+  },
+  {
+   "id": "kezeles",
+   "cim": {
+    "hu": "Kezelés",
+    "en": "Treatment"
+   },
+   "sorrend": 9
+  },
+  {
+   "id": "kerdoiv",
+   "cim": {
+    "hu": "Kérdőívek",
+    "en": "Questionnaires"
+   },
+   "sorrend": 10
+  },
+  {
+   "id": "levezetett",
+   "cim": {
+    "hu": "Levezetett",
+    "en": "Derived"
+   },
+   "sorrend": 11
+  },
+  {
+   "id": "lezaras",
+   "cim": {
+    "hu": "Lezárás",
+    "en": "Closure"
+   },
+   "sorrend": 12
+  }
+ ],
+ "modulok": [
+  {
+   "kulcs": "addr",
+   "cim": {
+    "hu": "Lakcím",
+    "en": "Address"
+   },
+   "csoport": "cselekvo",
+   "leiras": {
+    "hu": "A beteg lakcíme — irányítószámból levezetett település és megye."
+   }
+  },
+  {
+   "kulcs": "admin",
+   "cim": {
+    "hu": "Azonosító adatok",
+    "en": "Identifiers"
+   },
+   "csoport": "cselekvo",
+   "leiras": {
+    "hu": "Életkor, születési dátum, TAJ — beteg-azonosítók, az exportból kimaradnak."
+   }
+  },
+  {
+   "kulcs": "allergy",
+   "cim": {
+    "hu": "Allergia",
+    "en": "Allergy"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Ismert allergiák és az, hogy megkérdezték-e — a hiányzó válasz nem „nincs”."
+   }
+  },
+  {
+   "kulcs": "anthro",
+   "cim": {
+    "hu": "Antropometria",
+    "en": "Anthropometry"
+   },
+   "csoport": "statusz",
+   "leiras": {
+    "hu": "Magasság, testsúly, BMI, testfelszín — a kalkulátorok közös bemenete."
+   }
+  },
+  {
+   "kulcs": "cardio",
+   "cim": {
+    "hu": "Kardiológia",
+    "en": "Cardiology"
+   },
+   "csoport": "belgyogyaszat",
+   "leiras": {
+    "hu": "NYHA, ejekciós frakció, aortaátmérő — az mWHO-besorolás bemenetei."
+   }
+  },
+  {
+   "kulcs": "code",
+   "cim": {
+    "hu": "Kódolás — BNO és OENO",
+    "en": "Coding — ICD and procedures"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Fődiagnózis, kísérő betegségek, beavatkozások, finanszírozási kód."
+   }
+  },
+  {
+   "kulcs": "complaints",
+   "cim": {
+    "hu": "Panaszok",
+    "en": "Complaints"
+   },
+   "csoport": "felvetel",
+   "leiras": {
+    "hu": "Aktív panaszok, vezető panasz, időbeli alakulás."
+   }
+  },
+  {
+   "kulcs": "ctx",
+   "cim": {
+    "hu": "Ellátási kontextus",
+    "en": "Care context"
+   },
+   "csoport": "cselekvo",
+   "leiras": {
+    "hu": "Terhes-e, hányadik hét, szoptat-e, fogamzás módja — minden más ezen múlik."
+   }
+  },
+  {
+   "kulcs": "demog",
+   "cim": {
+    "hu": "Demográfia",
+    "en": "Demographics"
+   },
+   "csoport": "cselekvo",
+   "leiras": {
+    "hu": "Születési év."
+   }
+  },
+  {
+   "kulcs": "diet",
+   "cim": {
+    "hu": "Diéta",
+    "en": "Diet"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Étrend, ételallergia, szénhidrát-elosztás."
+   }
+  },
+  {
+   "kulcs": "disch",
+   "cim": {
+    "hu": "Elbocsátás",
+    "en": "Discharge"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Felvétel és elbocsátás időpontja, módja, állapot az elbocsátáskor."
+   }
+  },
+  {
+   "kulcs": "ekg",
+   "cim": {
+    "hu": "EKG — tizenkét elvezetés",
+    "en": "ECG — twelve leads"
+   },
+   "csoport": "vizsgalat",
+   "leiras": {
+    "hu": "Elvezetésenként hullám, szegmens, tengely, frekvencia."
+   }
+  },
+  {
+   "kulcs": "epi",
+   "cim": {
+    "hu": "Epikrízis",
+    "en": "Epicrisis"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Az okoslelet szövege, a konzíliumtól kért kérdés, utánkövetési terv."
+   }
+  },
+  {
+   "kulcs": "exam.obs",
+   "cim": {
+    "hu": "Szülészeti vizsgálat",
+    "en": "Obstetric examination"
+   },
+   "csoport": "statusz",
+   "leiras": {
+    "hu": "Cervix, méhszáj-tágulat, elvékonyodás, pozíció."
+   }
+  },
+  {
+   "kulcs": "fu",
+   "cim": {
+    "hu": "Utánkövetési hozzájárulás",
+    "en": "Follow-up consent"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Hozzájárul-e, milyen csatornán, hány kísérlet."
+   }
+  },
+  {
+   "kulcs": "hx",
+   "cim": {
+    "hu": "Anamnézis",
+    "en": "History"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Praeeclampsia a jelen terhességben."
+   }
+  },
+  {
+   "kulcs": "hx.eeszt",
+   "cim": {
+    "hu": "EESZT-előzmény",
+    "en": "EESZT history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Kockázati tényezők, ahogy az országos rendszer nyilvántartja."
+   }
+  },
+  {
+   "kulcs": "hx.family",
+   "cim": {
+    "hu": "Családi anamnézis",
+    "en": "Family history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Betegségek a családban, életkor a diagnóziskor, az adat forrása."
+   }
+  },
+  {
+   "kulcs": "hx.gyn",
+   "cim": {
+    "hu": "Nőgyógyászati előzmény",
+    "en": "Gynaecological history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Méhnyakszűrési előzmény, CIN2+, méhnyakrák."
+   }
+  },
+  {
+   "kulcs": "hx.life",
+   "cim": {
+    "hu": "Életmód",
+    "en": "Lifestyle"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Dohányzás, alkohol, kábítószer."
+   }
+  },
+  {
+   "kulcs": "hx.origin",
+   "cim": {
+    "hu": "Saját születési előzmény",
+    "en": "Own birth history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Saját születési súly, koraszülöttség, az anya praeeclampsiája."
+   }
+  },
+  {
+   "kulcs": "hx.psy",
+   "cim": {
+    "hu": "Pszichiátriai előzmény",
+    "en": "Psychiatric history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Depresszió, szorongás, bipoláris zavar, evészavar."
+   }
+  },
+  {
+   "kulcs": "hx.repro",
+   "cim": {
+    "hu": "Reprodukciós anamnézis",
+    "en": "Reproductive history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Fogamzásgátlás, korábbi terhességek, placenta-rendellenességek."
+   }
+  },
+  {
+   "kulcs": "hx.supp",
+   "cim": {
+    "hu": "Étrend-kiegészítők",
+    "en": "Supplements"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Folsav, D-vitamin, vas, B12, jód, omega-3."
+   }
+  },
+  {
+   "kulcs": "hx.surg",
+   "cim": {
+    "hu": "Műtéti előzmény",
+    "en": "Surgical history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Korábbi műtétek, aneszteziológiai probléma, szövődmény."
+   }
+  },
+  {
+   "kulcs": "hx.sys",
+   "cim": {
+    "hu": "Belszervi előzmény",
+    "en": "Systemic history"
+   },
+   "csoport": "elozmeny",
+   "leiras": {
+    "hu": "Krónikus betegségek: asztma, vérszegénység, autoimmun kórképek."
+   }
+  },
+  {
+   "kulcs": "imaging",
+   "cim": {
+    "hu": "Képalkotás és CTG",
+    "en": "Imaging and CTG"
+   },
+   "csoport": "vizsgalat",
+   "leiras": {
+    "hu": "Ultrahang és CTG — alapvonal, variabilitás, lassulások, Doppler."
+   }
+  },
+  {
+   "kulcs": "lab",
+   "cim": {
+    "hu": "Labor",
+    "en": "Laboratory"
+   },
+   "csoport": "vizsgalat",
+   "leiras": {
+    "hu": "Vérkép, máj, vese, endokrin, D-dimer, troponin — kontextusfüggő értelmezéssel."
+   }
+  },
+  {
+   "kulcs": "labour",
+   "cim": {
+    "hu": "Szülés",
+    "en": "Labour"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "Magzatvíz, méhszáj-tágulat, vérzés, a szülés lefolyása."
+   }
+  },
+  {
+   "kulcs": "nb",
+   "cim": {
+    "hu": "Újszülött",
+    "en": "Newborn"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "A születés időpontja, gesztációs kor, koraszülés típusa."
+   }
+  },
+  {
+   "kulcs": "neo",
+   "cim": {
+    "hu": "Neonatológia",
+    "en": "Neonatology"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "Újszülött vércukor, opioid-expozíció, táplálás."
+   }
+  },
+  {
+   "kulcs": "onc",
+   "cim": {
+    "hu": "Onkológia",
+    "en": "Oncology"
+   },
+   "csoport": "szakterulet",
+   "leiras": {
+    "hu": "FIGO-stádium, fertilitásmegőrzés, kezelési terv."
+   }
+  },
+  {
+   "kulcs": "op",
+   "cim": {
+    "hu": "Műtét",
+    "en": "Operation"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "Uterotomia, összenövések, a lepény eltávolítása, a korábbi heg."
+   }
+  },
+  {
+   "kulcs": "out",
+   "cim": {
+    "hu": "Kimenetel",
+    "en": "Outcome"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Anyai és újszülöttkori halál, halvaszületés, intenzív ellátás."
+   }
+  },
+  {
+   "kulcs": "pedgyn",
+   "cim": {
+    "hu": "Gyermeknőgyógyászat",
+    "en": "Paediatric gynaecology"
+   },
+   "csoport": "szakterulet",
+   "leiras": {
+    "hu": "Ki adta a beleegyezést, a kiskorú véleménye, titoktartás, jelzés."
+   }
+  },
+  {
+   "kulcs": "plan",
+   "cim": {
+    "hu": "Ellátástervezés",
+    "en": "Care planning"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "Tervezett szülésmód, a beteg preferenciája, megosztott döntés."
+   }
+  },
+  {
+   "kulcs": "prom",
+   "cim": {
+    "hu": "PROM-kérdőívek",
+    "en": "Patient-reported outcomes"
+   },
+   "csoport": "kerdoiv",
+   "leiras": {
+    "hu": "EQ-5D-5L, WHODAS és társai — a beteg tölti ki."
+   }
+  },
+  {
+   "kulcs": "psy",
+   "cim": {
+    "hu": "Pszichológia — EPDS és társai",
+    "en": "Psychology — EPDS and others"
+   },
+   "csoport": "kerdoiv",
+   "leiras": {
+    "hu": "Szülés utáni depresszió szűrése, szorongás, támogatottság."
+   }
+  },
+  {
+   "kulcs": "rules",
+   "cim": {
+    "hu": "Szabálykimenetek",
+    "en": "Rule outputs"
+   },
+   "csoport": "levezetett",
+   "leiras": {
+    "hu": "Amit a szabálymotor állapított meg — pl. tiltott gyógyszer."
+   }
+  },
+  {
+   "kulcs": "rx",
+   "cim": {
+    "hu": "Gyógyszerelés",
+    "en": "Medication"
+   },
+   "csoport": "kezeles",
+   "leiras": {
+    "hu": "Rendelt készítmények, gyógyszerallergia, terhességi állásfoglalás."
+   }
+  },
+  {
+   "kulcs": "score",
+   "cim": {
+    "hu": "Pontszámok — Bishop",
+    "en": "Scores — Bishop"
+   },
+   "csoport": "levezetett",
+   "leiras": {
+    "hu": "Bishop-kártya és összpontszám."
+   }
+  },
+  {
+   "kulcs": "status",
+   "cim": {
+    "hu": "Fizikális státusz",
+    "en": "Physical status"
+   },
+   "csoport": "statusz",
+   "leiras": {
+    "hu": "Szervrendszerenkénti vizsgálat — hallgatózás, pangásjelek, tapintás."
+   }
+  },
+  {
+   "kulcs": "szuloszoba",
+   "cim": {
+    "hu": "Szülőszoba — Apgar",
+    "en": "Delivery room — Apgar"
+   },
+   "csoport": "szuleszet",
+   "leiras": {
+    "hu": "Apgar-összetevők percenként."
+   }
+  },
+  {
+   "kulcs": "utankovetes",
+   "cim": {
+    "hu": "Utánkövetés",
+    "en": "Follow-up"
+   },
+   "csoport": "lezaras",
+   "leiras": {
+    "hu": "Prenatális diagnózis megerősítése, műtét utáni ellenőrzés."
+   }
+  },
+  {
+   "kulcs": "vitals",
+   "cim": {
+    "hu": "Vitális paraméterek",
+    "en": "Vital signs"
+   },
+   "csoport": "statusz",
+   "leiras": {
+    "hu": "Vérnyomás, pulzus, hőmérséklet, tudatállapot — terhességi olvasattal."
+   }
+  },
+  {
+   "kulcs": "vizsgalatok",
+   "cim": {
+    "hu": "Magzati biometria",
+    "en": "Fetal biometry"
+   },
+   "csoport": "vizsgalat",
+   "leiras": {
+    "hu": "BPD, HC, AC, FL, becsült magzati súly."
+   }
+  }
+ ]
+}

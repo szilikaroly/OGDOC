@@ -7,6 +7,8 @@ import type { Registry } from "../registry.ts";
 import { pick } from "../i18n.ts";
 import type { VariableDef } from "../types.ts";
 import { DerivationGraph } from "../derive/graph.ts";
+import { cimzes } from "./modulcimek.ts";
+import type { ModulCimKeszlet } from "./modulcimek.ts";
 
 export interface FieldSpec {
   id: string;
@@ -47,7 +49,19 @@ export interface FieldSpec {
   patientEntry?: boolean;
 }
 
-export interface SectionSpec { module: string; fields: FieldSpec[]; }
+export interface SectionSpec {
+  module: string;
+  /** A megjelenítendő cím — a `registry/felulet/modulcimek.json`-ból. */
+  title: string;
+  /** Igaz, ha a cím nem a kért nyelven van, vagy egyáltalán nincs — a felület jelöli. */
+  titleFallback: boolean;
+  description: string | null;
+  /** A navigátor csoportja és annak címe, sorrendje. */
+  group: string;
+  groupTitle: string;
+  groupOrder: number;
+  fields: FieldSpec[];
+}
 
 const CONTROL: Record<string, FieldSpec["control"]> = {
   quantity: "number", text: "text", date: "date", datetime: "datetime",
@@ -55,7 +69,9 @@ const CONTROL: Record<string, FieldSpec["control"]> = {
   structured: "text",
 };
 
-export function buildFormSpec(reg: Registry, lang: "hu" | "en" = "hu"): SectionSpec[] {
+export function buildFormSpec(
+  reg: Registry, lang: "hu" | "en" = "hu", cimek: ModulCimKeszlet | null = null,
+): SectionSpec[] {
   // melyik mezőt melyik lelet nyitja meg — a gráf megfordítva
   const openedBy = new Map<string, string[]>();
   const gate = (t: string, by: string) =>
@@ -81,9 +97,13 @@ export function buildFormSpec(reg: Registry, lang: "hu" | "en" = "hu"): SectionS
     if (d.patientEntry) f.patientEntry = true;
     byModule.set(d.module, [...(byModule.get(d.module) ?? []), f]);
   }
+  // A SORREND A BETEGÚTÉ, NEM AZ ÁBÉCÉÉ. Cím nélkül (cimek === null) marad
+  // az ábécé — a régi viselkedés —, mert akkor nincs mi szerint rendezni.
   return [...byModule.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([module, fields]) => ({ module, fields: orderByFinding(fields) }));
+    .map(([module, fields]) => ({
+      module, ...cimzes(cimek, module, lang), fields: orderByFinding(fields),
+    }))
+    .sort((a, b) => a.groupOrder - b.groupOrder || a.title.localeCompare(b.title, lang));
 }
 
 /**

@@ -50,32 +50,13 @@ const BONGESZO = ARG("bongeszo", process.env.OGDOC_CHROMIUM ?? undefined);
 const SZEL = 1400, MAG = 1050;
 
 /**
- * A MODULKULCSOK OLVASHATÓ NEVE.
+ * A MODULCÍM A FELÜLETRŐL JÖN — mert a felület a regiszterből kapja.
  *
- * A felület a NYERS kulcsot írja ki fejlécként (`hx.repro`, `pedgyn`), mert a
- * kulcsokhoz nincs megjelenítendő név a regiszterben. Ez a tábla CSAK a
- * galéria olvashatóságát szolgálja, és nem pótolja a hiányt: ha a felület
- * klinikus elé kerül, a nevek a REGISZTERBE valók, nem ide.
+ * Az első változat saját névtáblát hordozott, mert a felület a nyers kulcsot
+ * írta ki. Most a `registry/felulet/modulcimek.json` a forrás, a formspec
+ * szolgálja ki, a felület kirajzolja — és a galéria onnan olvassa, ahonnan a
+ * felhasználó: a `.mod-cim` elemből. Egy második névtábla két igazság volna.
  */
-const NEV = {
-  addr: "Lakcím", admin: "Azonosító adatok", allergy: "Allergia",
-  anthro: "Antropometria", cardio: "Kardiológia", code: "Kódolás — BNO és OENO",
-  complaints: "Panaszok", ctx: "Ellátási kontextus", demog: "Demográfia",
-  diet: "Diéta", disch: "Elbocsátás", ekg: "EKG — tizenkét elvezetés",
-  epi: "Epikrízis", "exam.obs": "Szülészeti vizsgálat", fu: "Utánkövetési hozzájárulás",
-  hx: "Anamnézis", "hx.eeszt": "EESZT-előzmény", "hx.family": "Családi anamnézis",
-  "hx.gyn": "Nőgyógyászati előzmény", "hx.life": "Életmód",
-  "hx.origin": "Saját születési előzmény", "hx.psy": "Pszichiátriai előzmény",
-  "hx.repro": "Reprodukciós anamnézis", "hx.supp": "Étrend-kiegészítők",
-  "hx.surg": "Műtéti előzmény", "hx.sys": "Belszervi előzmény",
-  imaging: "Képalkotás és CTG", lab: "Labor", labour: "Szülés", nb: "Újszülött",
-  neo: "Neonatológia", onc: "Onkológia", op: "Műtét", out: "Kimenetel",
-  pedgyn: "Gyermeknőgyógyászat", plan: "Ellátástervezés", prom: "PROM-kérdőívek",
-  psy: "Pszichológia — EPDS és társai", rules: "Szabálykimenetek", rx: "Gyógyszerelés",
-  score: "Pontszámok — Bishop", status: "Fizikális státusz",
-  szuloszoba: "Szülőszoba — Apgar", utankovetes: "Utánkövetés",
-  vitals: "Vitális paraméterek", vizsgalatok: "Magzati biometria",
-};
 
 /** Példamezők a regiszterből — hogy a kártya megmondja, mi van a blokkban. */
 function peldak() {
@@ -120,45 +101,26 @@ if (!(await p.locator("main").isVisible().catch(() => false))) {
   await b.close(); process.exit(1);
 }
 
-const modulok = await p.evaluate(() => {
-  const gy = [...document.querySelectorAll("#form > div > *")];
-  const jelolok = [];
-  gy.forEach((e, i) => { if (e.classList.contains("module")) jelolok.push(i); });
-  const teteje = (e) => e.getBoundingClientRect().top + scrollY;
+// MINDEN MODUL KINYITVA — a képernyő a modul tartalmát mutatja, nem a csukott
+// fejlécet. A nyitottság a néző böngészőjéé (localStorage), nem a rendszeré,
+// tehát itt szabadon állítható.
+await p.evaluate(() => { for (const m of document.querySelectorAll(".mod")) m.setAttribute("open", ""); });
+await p.waitForTimeout(300);
 
-  // A MAGASSÁGOT A KÖVETKEZŐ JELÖLŐ TETEJÉHEZ MÉRJÜK, nem az utolsó mező
-  // aljához.
-  //
-  // Az első változat az utolsó DOM-testvér `bottom`-ját vette — és három
-  // modulnál (`op`, `status`, `vitals`) az utolsó testvér egy REJTETT,
-  // kattintásra nyíló mező. A rejtett elem `getBoundingClientRect()`-je csupa
-  // nulla, tehát a `0 − top` nagy NEGATÍV számot adott: a galéria
-  // −92 156 pixeles összmagasságot írt ki, három modulnál pedig
-  // −50 000 körüli értéket. Ugyanaz a hibacsalád, mint a felület `hidden`
-  // bogara: egy nem látszó elem geometriája nem nulla, hanem NEM ÉRTELMEZETT.
-  const ki = [];
-  for (let k = 0; k < jelolok.length; k++) {
-    const i = jelolok[k];
-    let mezo = 0;
-    for (let j = i + 1; j < gy.length && !gy[j].classList.contains("module"); j++) {
-      mezo += gy[j].querySelectorAll("input,select,textarea").length;
-    }
-    const utolso = gy[gy.length - 1];
-    const kovetkezoTeteje = k + 1 < jelolok.length
-      ? teteje(gy[jelolok[k + 1]])
-      : teteje(utolso) + utolso.getBoundingClientRect().height;
-    ki.push({ kulcs: gy[i].textContent.trim(), index: i, mezo,
-              magassag: Math.round(kovetkezoTeteje - teteje(gy[i])) });
-  }
-  return ki;
+const modulok = await p.evaluate(() => {
+  // A MAGASSÁG A SZAKASZ SAJÁT MAGASSÁGA. Az első változat az utolsó
+  // DOM-testvér aljához mért, és egy REJTETT (kattintásra nyíló) mező csupa
+  // nulla geometriája negatív számot adott — a galéria −92 156 pixelt írt ki.
+  // A szakasz-alapú DOM-ban a modul egyetlen elem: a magassága az, ami.
+  return [...document.querySelectorAll("section.mod")].map((s) => ({
+    kulcs: s.dataset.modul,
+    id: s.id,
+    cim: s.querySelector(".mod-cim")?.textContent?.trim() ?? s.dataset.modul,
+    leiras: s.querySelector(".mod-leiras")?.textContent?.trim() ?? "",
+    mezo: s.querySelectorAll("input,select,textarea").length,
+    magassag: Math.round(s.getBoundingClientRect().height),
+  }));
 });
-const rossz = modulok.filter((m) => m.magassag <= 0);
-if (rossz.length) {
-  console.error(`${rossz.length} modul magassága nem pozitív ` +
-    `(${rossz.map((m) => `${m.kulcs}=${m.magassag}`).join(", ")}). ` +
-    `A galéria nem készül el hibás számokkal.`);
-  await b.close(); process.exit(1);
-}
 console.log(`${modulok.length} modulblokk · együtt ` +
   `${szam(modulok.reduce((a, m) => a + m.magassag, 0))} px`);
 
@@ -168,16 +130,17 @@ const kartyak = [];
 let osszMezo = 0, osszMag = 0;
 
 for (const [i, m] of modulok.entries()) {
-  await p.evaluate((idx) => {
-    const el = [...document.querySelectorAll("#form > div > *")][idx];
-    scrollTo({ top: el.getBoundingClientRect().top + scrollY - 12, behavior: "instant" });
-  }, m.index);
+  await p.evaluate((id) => {
+    const el = document.getElementById(id);
+    // A felső sáv rögzített (~3.4rem): a modul fejléce ALATTA kezdődjön.
+    scrollTo({ top: el.getBoundingClientRect().top + scrollY - 64, behavior: "instant" });
+  }, m.id);
   await p.waitForTimeout(120);
   const ut = join(konyvtar, `${i}.jpg`);
   await p.screenshot({ path: ut, type: "jpeg", quality: 74 });
   const kep = readFileSync(ut).toString("base64");
-  const nev = NEV[m.kulcs] ?? m.kulcs;
-  const pelda = (PELDA[m.kulcs] ?? []).map(esc).join(" · ");
+  const nev = m.cim;
+  const pelda = m.leiras ? esc(m.leiras) : (PELDA[m.kulcs] ?? []).map(esc).join(" · ");
   osszMezo += m.mezo; osszMag += m.magassag;
   kartyak.push(`<button class="kartya" data-kulcs="${esc(m.kulcs)}" data-mezo="${m.mezo}">
   <div class="kep"><img alt="A(z) ${esc(nev)} modul képernyője" loading="lazy"

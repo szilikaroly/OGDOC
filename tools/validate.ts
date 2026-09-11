@@ -82,6 +82,9 @@ import {
   loadPalliativ, merleg as pallMerleg, validatePalliativ,
 } from "../core/belgyogyaszat/palliativ.ts";
 import {
+  loadModulcimek, merleg as cimMerleg, validateModulcimek,
+} from "../core/ui/modulcimek.ts";
+import {
   gyujt, loadHianyok, merleg as hianyMerleg, validateHianyok,
 } from "../core/hianyzo/jegyzek.ts";
 import type { ModulHiany } from "../core/hianyzo/jegyzek.ts";
@@ -234,6 +237,7 @@ const dicom = loadDicom("registry/interop/dicom.json");
 const mwho = loadMwho("registry/belgyogyaszat/mwho.json");
 const kardioJelek = loadJelek("registry/belgyogyaszat/kardio-jelek.json");
 const palliativ = loadPalliativ("registry/belgyogyaszat/palliativ.json");
+const modulcimek = loadModulcimek("registry/felulet/modulcimek.json");
 
 /**
  * A HIÁNYJEGYZÉK GYŰJT, NEM ÍR ÚJRA.
@@ -392,6 +396,7 @@ const issues = [
   ...validateDicom(dicom),
   ...validateKardio(mwho, kardioJelek, (id) => reg.all().some((v) => v.id === id)),
   ...validatePalliativ(palliativ),
+  ...validateModulcimek(modulcimek, new Set(reg.all().map((v) => v.module))),
   ...validateIsber(isber),
   ...validateHianyok(hianyok),
   ...validateSzolgaltatok(szolgaltatok),
@@ -605,7 +610,10 @@ console.log(
                        `(${pl.felnottCel} felnőtt, ${pl.perinatalisCel} perinatális), ` +
                        `${pl.tunetkor} tünetkör, ${pl.atadas} átadási rés, ` +
                        `${pl.gepiHatarral}/${pl.jogiFeltetel} jogi feltételnél kimondott ` +
-                       `gépi határ, ${pl.alairt ? "aláírva" : "ALÁÍRATLAN"}`;
+                       `gépi határ, ${pl.alairt ? "aláírva" : "ALÁÍRATLAN"} · ` +
+                       `Modulcímek: ${(() => { const c = cimMerleg(modulcimek);
+                         return `${c.modul} cím ${c.csoport} csoportban, ` +
+                                `${c.forditatlan} fordítatlan, ${c.leirasNelkul} leírás nélkül`; })()}`;
              })()} · ` +
              `ISBER: ${ib.fedett}/${ib.osszes} fedett (${ib.reszben} részben) · ` +
              `Hiányjegyzék: ${h.osszes} tétel (${h.blokkolo} BLOKKOLÓ, ` +

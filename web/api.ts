@@ -13,6 +13,7 @@ import type { CaseState } from "../core/types.ts";
 import { recompute, resolve, setValue, suggestPrefills } from "../core/derive/engine.ts";
 import { DerivationGraph } from "../core/derive/graph.ts";
 import { buildFormSpec, fieldDoc } from "../core/ui/formspec.ts";
+import type { ModulCimKeszlet } from "../core/ui/modulcimek.ts";
 import { CALCULATORS, CALC_BY_ID } from "../core/calc/defs.ts";
 import { runCalc } from "../core/calc/run.ts";
 import { interactionCount, visibleFields } from "../core/ui/disclosure.ts";
@@ -132,8 +133,10 @@ export function write(
 }
 
 /** A generált űrlapleírás — a felület ebből épül, nem kézzel írt mezőkből. */
-export function formSpec(reg: Registry, lang: "hu" | "en" = "hu") {
-  return buildFormSpec(reg, lang);
+export function formSpec(
+  reg: Registry, lang: "hu" | "en" = "hu", cimek: ModulCimKeszlet | null = null,
+) {
+  return buildFormSpec(reg, lang, cimek);
 }
 
 /** Egy mező teljes dokumentációja, a generált keresztfeltöltési listákkal. */

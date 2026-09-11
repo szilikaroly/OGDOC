@@ -68,6 +68,24 @@ export function L(x: I18n | undefined, lang: Lang = SOURCE_LANG): string {
  * kimutatja, és a teszt bukik rá.
  */
 export const UI: Record<string, I18n> = {
+  // ── navigátor és modulfejléc ─────────────────────────────────────────
+  "nav.title":      { hu: "Modulok", en: "Modules" },
+  "nav.search":     { hu: "Keresés a mezők között", en: "Search fields" },
+  "nav.searchHint": { hu: "Címke vagy azonosító — a találatot tartalmazó modul kinyílik",
+                      en: "Label or identifier — modules with matches open" },
+  "nav.results":    { hu: "{n} találat {m} modulban", en: "{n} matches in {m} modules" },
+  "nav.noResults":  { hu: "Nincs találat", en: "No matches" },
+  "nav.expandAll":  { hu: "Mind kinyit", en: "Expand all" },
+  "nav.collapseAll":{ hu: "Mind becsuk", en: "Collapse all" },
+  "nav.open":       { hu: "Modulok megnyitása", en: "Open modules" },
+  "mod.filled":     { hu: "{n} / {m} kitöltve", en: "{n} / {m} filled" },
+  "mod.fields":     { hu: "{m} mező", en: "{m} fields" },
+  "mod.keyExplain": { hu: "A modul kulcsa a regiszterben", en: "The module key in the register" },
+  "mod.titleFallback": {
+    hu: "Ennek a modulnak nincs címe a regiszterben — a nyers kulcs látszik.",
+    en: "This module has no title in the register — the raw key is shown." },
+  "assist.title":   { hu: "Segéd", en: "Assist" },
+  "app.statusGate": { hu: "Éles üzem", en: "Production gate" },
   "app.title":            { hu: "OGDOC — klinikai mag", en: "OGDOC — clinical core" },
   "app.lang":             { hu: "Nyelv", en: "Language" },
   "app.sourceMarker":     { hu: "forrásnyelvi", en: "source language" },

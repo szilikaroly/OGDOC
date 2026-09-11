@@ -102,3 +102,72 @@ Becsült magzati súly (teljes UH) →  kapu mögött             ✔ nem ad sz�
 anthro.height = 500              →  elutasítva, a mező visszaállt 168-ra  ✔
 JS-hiba a konzolon               →  nincs                   ✔
 ```
+
+## 7. A második változat — navigátor, csukható modulok, adaptív elrendezés
+
+A csontváz első változata **egyetlen 56 000 pixeles lap** volt: 46 modul egymás
+alatt, 893 mező, navigáció nélkül, és a modulok fejléce a **nyers kulcs**
+(`hx.repro`, `pedgyn`, `exam.obs`), mert a névnek nem volt helye. A második
+változat ezt a négy dolgot oldja meg — és a regiszter-vezérelt elv változatlan:
+`app.js` továbbra sem tud egyetlen mezőnevet, és mostantól **modulcímet sem**.
+
+### A modulnév adat, nem kód
+
+`registry/felulet/modulcimek.json` — 46 cím (hu + en), 12 csoport, leírás. A
+`buildFormSpec()` a `SectionSpec`-be teszi (`title`, `titleFallback`, `group`,
+`groupTitle`, `groupOrder`), a felület onnan rajzolja. Ha egy kulcsnak nincs címe,
+a nyers kulcs látszik — **jelölve**, ugyanúgy, mint minden forrásnyelvi visszaesés.
+
+A validálás **két irányban** ellenőriz: minden regiszterbeli modulkulcsnak kell cím
+(különben klinikus elé nyers kulcs kerülne), és minden címnek kell létező kulcs
+(különben egy átnevezés után elárvult sor hazudik). A sorrend a **betegúté** — ki
+a beteg, felvétel, előzmény, státusz, vizsgálatok … lezárás —, nem az ábécé.
+
+### Amit a felület kapott
+
+| | |
+|---|---|
+| **Navigátor** | bal oszlop, 12 csoport, modulonként mezőszám és kitöltöttség; a képernyőn lévő modul aktív (IntersectionObserver) |
+| **Csukható modulok** | csukva indulnak, az első kivételével; a nyitottság a néző böngészőjéé (`localStorage`, try/catch-ben), nem a rendszeré |
+| **Kereső** | ékezet- és kisbetű-független, címkére és azonosítóra; a találatos modul kinyílik, a többi eltűnik; `/` fókuszál, `Esc` töröl |
+| **Számláló** | modulonként „n / m kitöltve" — csak a **látható** mezőket számolja, a rejtett click-open láncot nem |
+| **Három oszlop → kettő → egy** | 1240 px és 900 px a töréspontok; telefonon a navigátor fiók (☰) |
+| **Mezősor a tárolóhoz igazodik** | `@container (max-width: 36rem)` — a címke a mező fölé kerül, nem a képernyő, hanem az oszlop szélessége dönt |
+| **Nyomtatás** | navigátor és segéd eltűnik, minden modul nyitva, a mezősor nem törik |
+
+### Két döntés, ami nem stílus
+
+**Rendszer-betűkészlet, szándékosan.** Ez kórházi alkalmazás, és a kórházi intranet
+lehet offline: egy webről töltött betűtípus némán visszaesne, és a felület más lenne
+a demón, mint az osztályon. A tipográfia a skála és a súlyok, nem a betű neve.
+
+**A felső sáv magassága mérve, nem feltételezve.** Keskeny képernyőn a sáv három
+sorba törik. A fiók eltolása először rögzített `3.4rem` volt — és a sáv **rátakart a
+fiók tetejére**. Most a böngésző méri (`ResizeObserver`, border-box), és a CSS onnan
+olvassa (`--sav-h`). Az első javítás `contentRect`-et használt, és 1 pixellel a sáv
+alá csúszott: a padding és a szegély nem volt benne.
+
+### Ami menet közben derült ki
+
+A `paint(r.view)` hívás — amit a böngészős próba az írásnál tegnap megtalált —
+**két további helyen** is ott volt: a javaslat elfogadásánál és a megerősítésnél.
+Ugyanaz a TypeError, csak ritkábban futott. Most egyetlen `frissit()` van, hogy ne
+lehessen még egyszer háromfelé elrontani.
+
+### Ellenőrzött viselkedés
+
+Böngészőben (Chromium, Playwright), friss példányon, három szélességen:
+
+```
+46 modulszakasz, 1 nyitva induláskor          ✔
+egyetlen fejléc sem nyers kulcs               ✔  a cím a regiszterből
+laphossz csukott modulokkal                   4 009 px (volt: 56 058)
+kereső: „troponin"                            1 találat 1 modulban, a többi eltűnik
+Mind kinyit / Mind becsuk                     46 / 0
+BMI (168 cm, 64 kg) újratöltés nélkül         22.7   ✔  számláló: „2 / 4 kitöltve"
+1000 px                                       két oszlop
+390 px                                        egy oszlop, nincs vízszintes görgetés
+390 px: fiók a sáv ALATT kezdődik             135 → 135 px  ✔
+390 px: mezősor egymás alá                    container query  ✔
+kezeletlen JS-kivétel                         nincs
+```

@@ -11,11 +11,11 @@
 | Regiszterbeli változó | **905** |
 | Kalkulátor | 48 |
 | ebből kapu mögött (`verified: false`) | **12** |
-| Teszt | **1939** |
-| Mag: fájl / sor | 162 / 44108 |
-| Teszt: fájl / sor | 82 / 21294 |
+| Teszt | **1948** |
+| Mag: fájl / sor | 163 / 44275 |
+| Teszt: fájl / sor | 83 / 21380 |
 | Dokumentum | 135 |
-| Regiszterfájl | 139 |
+| Regiszterfájl | 140 |
 
 ## A forrásrendszerek felülettérképe
 
@@ -103,7 +103,7 @@ Ami az átvételt megállítja, tételenként:
 | Egység | Fájl | Sor |
 |---|---:|---:|
 | `core/calc/` | 4 | 2435 |
-| `core/ui/` | 7 | 2236 |
+| `core/ui/` | 8 | 2385 |
 | `core/interop/` | 6 | 2086 |
 | `core/us/` | 6 | 2060 |
 | `core/coding/` | 8 | 1872 |
