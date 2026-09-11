@@ -42,3 +42,36 @@ mind bekötni — de aki élő rendszerszámot ír le, az jelölje.
 
 A publikált változatot a megosztási tű mozgatása teszi láthatóvá a nézőknek —
 ez a tulajdonos dolga, nem a build-é.
+
+## A modulképernyő-galéria
+
+`tools/gen-modulkepernyok.mjs` + `tools/modulkepernyok.sablon.html` — végigmegy a
+futó felületen, és mind a 46 modulblokk tetejéről rögzít egy képernyőt.
+
+```bash
+OGDOC_SYNTHETIC=1 npm run web                  # egyik ablakban
+NODE_PATH=$(npm root -g) node tools/gen-modulkepernyok.mjs --jelszo "…"
+```
+
+**A kimenet (`modulkepernyok.html`, ~6,5 MB) gitignore-olt, a generátor nincs.**
+A galéria minden futásnál más: a felület a regiszterből generálódik, tehát egy új
+változó új mezőt tesz a lapra és eltolja alatta az összeset. Egy befagyasztott
+másolat két hét múlva már nem azt mutatná, ami fut — és épp az a hibacsalád, ami
+ellen ez a rendszer épül.
+
+A generátor **Playwrightot kíván**, és ez az egyetlen ilyen eszköz a projektben.
+Ezért `.mjs` és nem `.ts`: a klinikai mag és a validálás továbbra is futásidejű
+függőség nélkül fut, és ez a fájl nem mossa el azt a határt. Playwright nélkül ez
+az egy eszköz nem fut le; minden más igen.
+
+### Amit a galéria készítése felszínre hozott
+
+A modulmagasságot az első változat az utolsó DOM-testvér aljához mérte. Három
+modulnál (`op`, `status`, `vitals`) az utolsó testvér egy **rejtett, kattintásra
+nyíló mező**, amelynek a `getBoundingClientRect()`-je csupa nulla — a `0 − top`
+így nagy negatív számot adott, és a galéria **−92 156 pixeles** összmagasságot írt
+ki. Ugyanaz a hibacsalád, mint a felület `hidden`-bogara: egy nem látszó elem
+geometriája nem nulla, hanem **nem értelmezett**.
+
+A generátor most a következő modulhatár tetejéhez mér, és **megáll**, ha bármelyik
+magasság nem pozitív — hibás számokkal nem készül galéria.

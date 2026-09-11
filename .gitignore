@@ -2,3 +2,10 @@
 # A FORRÁSTÁR VISZONT BEKERÜL (ogdoc/forrasok/). A fenti kizárások a
 # SZÁRMAZTATOTT táblákra vonatkoznak, nem az eredeti forrásokra: a
 # származtatott tábla újraépíthető, az eredeti kiadás nem.
+
+# A modulképernyő-galéria KIMENETE — a generátor megy a repóba, nem ez.
+# ~6,5 MB beágyazott képernyőképpel, és minden futásnál más: a felület a
+# regiszterből generálódik, tehát egy új változó eltol mindent alatta. Egy
+# befagyasztott másolat két hét múlva már nem azt mutatná, ami fut.
+# Újra: NODE_PATH=$(npm root -g) node tools/gen-modulkepernyok.mjs --jelszo "…"
+docs/artifact/modulkepernyok.html

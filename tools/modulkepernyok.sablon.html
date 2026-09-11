@@ -1,0 +1,198 @@
+<title>Modulképernyők</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --papir:#f7f6f3; --lap:#fff; --lap2:#efedE8;
+  --tinta:#1c1b19; --halvany:#6b6862; --halvanyabb:#8e8a83;
+  --vonal:#e3e0da; --vonal2:#eeebe5;
+  --kek:#3a5f8a; --kek-halk:#e6ecf4;
+  --arny:0 1px 2px rgba(28,27,25,.05), 0 10px 24px -16px rgba(28,27,25,.22);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --papir:#17161a; --lap:#201f24; --lap2:#2a282f;
+  --tinta:#eceae6; --halvany:#a29e97; --halvanyabb:#7d7973;
+  --vonal:#35333a; --vonal2:#2b2930;
+  --kek:#8fb3d9; --kek-halk:#1e2733;
+  --arny:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.8);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --papir:#17161a; --lap:#201f24; --lap2:#2a282f;
+  --tinta:#eceae6; --halvany:#a29e97; --halvanyabb:#7d7973;
+  --vonal:#35333a; --vonal2:#2b2930;
+  --kek:#8fb3d9; --kek-halk:#1e2733;
+  --arny:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--papir); color:var(--tinta);
+  font-family:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;}
+.burok{width:min(100% - 2rem, 84rem); margin-inline:auto}
+a{color:var(--kek)}
+:focus-visible{outline:2px solid var(--kek); outline-offset:2px}
+
+header{border-bottom:1px solid var(--vonal); background:var(--lap)}
+header .burok{padding-block:clamp(2.2rem,5vw,3.4rem) clamp(1.6rem,3vw,2.2rem)}
+.szem{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.72rem;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--kek); margin:0 0 1rem}
+h1{font-size:clamp(2rem,4.6vw,3.1rem); font-weight:700; letter-spacing:-.025em;
+  line-height:1.04; margin:0; text-wrap:balance; max-width:18ch}
+.bevezeto{font-family:"Source Serif 4",Georgia,serif; font-size:1.06rem;
+  color:var(--halvany); max-width:62ch; margin:1.4rem 0 0}
+.bevezeto strong{color:var(--tinta); font-weight:600}
+
+.szamok{display:flex; flex-wrap:wrap; gap:0; margin-top:2rem;
+  border:1px solid var(--vonal); border-radius:2px; overflow:hidden; background:var(--lap)}
+.szamok div{flex:1 1 9rem; padding:.85rem 1.05rem; border-right:1px solid var(--vonal)}
+.szamok div:last-child{border-right:0}
+.szamok .ertek{font-family:"IBM Plex Mono",monospace; font-size:1.3rem; font-weight:500;
+  color:var(--kek); font-variant-numeric:tabular-nums; line-height:1.2}
+.szamok .cimke{font-size:.71rem; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--halvanyabb); margin-top:.15rem}
+
+.jegyzet{margin:1.6rem 0 0; padding:.95rem 1.1rem; border-left:3px solid var(--kek);
+  background:var(--kek-halk); font-size:.9rem; color:var(--tinta); max-width:70ch}
+.jegyzet code{font-family:"IBM Plex Mono",monospace; font-size:.88em}
+
+.sav{position:sticky; top:0; z-index:5; background:var(--papir);
+  border-bottom:1px solid var(--vonal)}
+.sav .burok{display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; padding-block:.7rem}
+.sav .db{font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--halvany);
+  margin-right:auto; font-variant-numeric:tabular-nums}
+.sav button{font:inherit; font-size:.83rem; font-weight:500; padding:.34rem .8rem;
+  border:1px solid var(--vonal); border-radius:2px; background:var(--lap);
+  color:var(--halvany); cursor:pointer}
+.sav button[aria-pressed="true"]{background:var(--kek); border-color:var(--kek); color:var(--lap)}
+:root[data-theme="dark"] .sav button[aria-pressed="true"],
+.sav button[aria-pressed="true"]{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sav button[aria-pressed="true"]{color:#17161a}}
+:root[data-theme="dark"] .sav button[aria-pressed="true"]{color:#17161a}
+
+main{padding-block:2rem 4rem}
+.racs{display:grid; grid-template-columns:repeat(auto-fill,minmax(19rem,1fr)); gap:1.4rem}
+.kartya{display:flex; flex-direction:column; background:var(--lap);
+  border:1px solid var(--vonal); border-radius:3px; overflow:hidden;
+  padding:0; text-align:left; font:inherit; color:inherit; cursor:zoom-in}
+.kartya:hover{border-color:var(--kek); box-shadow:var(--arny)}
+.kep{aspect-ratio:4/3; background:var(--lap2); border-bottom:1px solid var(--vonal2);
+  overflow:hidden}
+.kep img{width:100%; height:100%; object-fit:cover; object-position:top left; display:block}
+.fej{padding:.75rem .9rem .85rem; display:grid; gap:.28rem}
+.kulcs{font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--kek);
+  letter-spacing:.01em}
+.nev{font-weight:600; font-size:.97rem; line-height:1.25; text-wrap:balance}
+.meret{display:flex; gap:.7rem; font-family:"IBM Plex Mono",monospace; font-size:.74rem;
+  color:var(--halvanyabb); font-variant-numeric:tabular-nums; margin-top:.1rem}
+.meret b{color:var(--halvany); font-weight:500}
+.pelda{font-family:"Source Serif 4",Georgia,serif; font-size:.83rem; color:var(--halvany);
+  line-height:1.4; margin-top:.35rem}
+
+dialog{border:0; padding:0; max-width:min(96vw,1500px); max-height:94vh; width:auto;
+  background:var(--lap); color:var(--tinta); border-radius:3px; box-shadow:var(--arny)}
+dialog::backdrop{background:rgba(20,18,16,.72)}
+.nagyFej{display:flex; gap:1rem; align-items:baseline; padding:.8rem 1rem;
+  border-bottom:1px solid var(--vonal)}
+.nagyFej .kulcs{font-size:.85rem}
+.nagyFej .nev{font-size:1rem}
+.nagyFej .meret{margin:0 0 0 auto}
+dialog button.zar{margin-left:.6rem; font:inherit; font-size:1rem; line-height:1;
+  width:1.9rem; height:1.9rem; border:1px solid var(--vonal); border-radius:2px;
+  background:var(--lap2); color:var(--halvany); cursor:pointer; flex:0 0 auto}
+dialog img{display:block; max-width:100%; max-height:calc(94vh - 4rem); object-fit:contain}
+
+footer{border-top:1px solid var(--vonal); padding-block:1.6rem 3rem;
+  font-size:.86rem; color:var(--halvanyabb)}
+footer p{max-width:66ch; margin:0 0 .6rem}
+@media (prefers-reduced-motion:no-preference){.kartya{transition:border-color .13s, box-shadow .13s}}
+@media (max-width:30rem){.szamok div{flex-basis:50%}}
+</style>
+<header><div class="burok">
+  <p class="szem">OGDOC · a futó webes réteg</p>
+  <h1>{{db}} modulképernyő</h1>
+  <p class="bevezeto">Az OGDOC felülete nem kézzel megírt űrlapokból áll: a
+  <strong>változóregiszterből generálódik</strong>, egyetlen, {{osszMag}} pixel magas lapra. Ez a
+  galéria végigmegy rajta, és minden modulblokk tetejéről rögzít egy képernyőt — ugyanazt, amit
+  egy felhasználó lát, amikor odagörget. A képek egy valóban futó példányról készültek, nem
+  makettek.</p>
+
+  <div class="szamok">
+    <div><div class="ertek">{{db}}</div><div class="cimke">modulblokk</div></div>
+    <div><div class="ertek">{{osszMezo}}</div><div class="cimke">mező a lapon</div></div>
+    <div><div class="ertek">{{osszMag}}</div><div class="cimke">pixel teljes magasság</div></div>
+    <div><div class="ertek">{{legnagyobb}}</div><div class="cimke">a legnagyobb blokkban</div></div>
+  </div>
+
+  <p class="jegyzet">A felület a <strong>nyers modulkulcsot</strong> írja ki fejlécként —
+  <code>hx.repro</code>, <code>pedgyn</code>, <code>exam.obs</code> —, mert a kulcsokhoz nem
+  tartozik megjelenítendő név. A magyar elnevezések ebben a galériában olvashatóság kedvéért
+  kerültek a kulcsok mellé; a rendszerben nem szerepelnek.</p>
+</div></header>
+
+<div class="sav"><div class="burok">
+  <span class="db" id="db">{{db}} modul, a felület sorrendjében</span>
+  <button id="sorrendAbc" aria-pressed="true">A felület sorrendje</button>
+  <button id="sorrendMeret" aria-pressed="false">Méret szerint</button>
+</div></div>
+
+<main><div class="burok"><div class="racs" id="racs">
+{{kartyak}}
+</div></div></main>
+
+<footer><div class="burok">
+  <p>Minden kártya a modulblokk <strong>tetejét</strong> mutatja, {{szel}} × {{mag}} pixeles ablakban.
+  A megadott magasság a blokk teljes hossza a lapon: a <code>{{legmagasabbKulcs}}</code> blokk például
+  {{legmagasabbPx}} pixel, tehát a képernyő a töredékét mutatja. Kattintásra teljes méretben nyílik.</p>
+  <p>Rögzítve egy futó példányról, szintetikus adatokkal. A rendszer valódi betegadaton nem
+  futhat: a kiszolgáló <code>OGDOC_SYNTHETIC=1</code> nélkül el sem indul.</p>
+</div></footer>
+
+<dialog id="nagy">
+  <div class="nagyFej">
+    <span class="kulcs" id="nagyKulcs"></span>
+    <span class="nev" id="nagyNev"></span>
+    <span class="meret" id="nagyMeret"></span>
+    <button class="zar" id="nagyZar" aria-label="Bezár">×</button>
+  </div>
+  <img id="nagyKep" alt="">
+</dialog>
+
+<script>
+const racs = document.getElementById("racs");
+const eredeti = [...racs.children];
+const abc = document.getElementById("sorrendAbc");
+const meret = document.getElementById("sorrendMeret");
+const db = document.getElementById("db");
+
+function rendez(szerint) {
+  const sor = szerint === "meret"
+    ? [...eredeti].sort((a, b) => b.dataset.mezo - a.dataset.mezo)
+    : eredeti;
+  racs.replaceChildren(...sor);
+  abc.setAttribute("aria-pressed", String(szerint !== "meret"));
+  meret.setAttribute("aria-pressed", String(szerint === "meret"));
+  db.textContent = szerint === "meret"
+    ? `${eredeti.length} modul, a legtöbb mezőtől a legkevesebbig`
+    : `${eredeti.length} modul, a felület sorrendjében`;
+}
+abc.addEventListener("click", () => rendez("abc"));
+meret.addEventListener("click", () => rendez("meret"));
+
+const nagy = document.getElementById("nagy");
+racs.addEventListener("click", (e) => {
+  const k = e.target.closest(".kartya");
+  if (!k) return;
+  document.getElementById("nagyKulcs").textContent = k.dataset.kulcs;
+  document.getElementById("nagyNev").textContent = k.querySelector(".nev").textContent;
+  document.getElementById("nagyMeret").textContent = k.querySelector(".meret").textContent.replace(/\s+/g, " ").trim();
+  const kep = document.getElementById("nagyKep");
+  kep.src = k.querySelector("img").src;
+  kep.alt = k.querySelector("img").alt;
+  nagy.showModal();
+});
+document.getElementById("nagyZar").addEventListener("click", () => nagy.close());
+nagy.addEventListener("click", (e) => { if (e.target === nagy) nagy.close(); });
+</script>
